@@ -6,7 +6,8 @@ LAST=~/osw/night_last_launch; LOCK=~/osw/night.lock
 log() { echo "$(date -u +%H:%M) $*"; }
 vms() { ~/osw/osh "docker ps -q --filter ancestor=happysixd/osworld-docker" | wc -l; }
 exited() { tmux capture-pane -pt "$1" -S -30 2>/dev/null | grep -q "$2"; }
-running() { pgrep -f "results_val_$1_$2 " >/dev/null; }
+armpat() { echo "run_(osw|osw_verify|holo|holo_verify)[.a-z]* .*results_val_$1_$2 "; }  # only the arm's own processes
+running() { pgrep -f "$(armpat "$1" "$2")" >/dev/null; }
 GB_PER_VM=4  # measured 3.7-3.9 G RSS per OSWorld VM on orbit
 capacity() {  # VMs that fit under MAX_VMS and still leave MIN_AVAIL_G available after they boot; at most 3 per arm
   local c=$((MAX_VMS - $(vms))) r=$(( ($(free -g | awk '/^Mem:/ {print $7}') - MIN_AVAIL_G) / GB_PER_VM ))
@@ -43,9 +44,9 @@ ram_guard() {
   done
 }
 stop_arm() {  # SIGINT lets run_holo's workers close their VMs (finally: env.close())
-  local pids; pids=$(pgrep -f "results_val_$1_$2 " | tr '\n' ' ')
+  local pids; pids=$(pgrep -f "$(armpat "$1" "$2")" | tr '\n' ' ')
   [ -n "$pids" ] || return 0
   log "stop $1 $2 (SIGINT $pids)"; for p in $pids; do pkill -INT -P "$p" 2>/dev/null; kill -INT "$p" 2>/dev/null; done
   for i in $(seq 1 30); do running "$1" "$2" || break; sleep 5; done
-  running "$1" "$2" && { log "still running after SIGINT, TERM"; kill $(pgrep -f "results_val_$1_$2 ") 2>/dev/null; }
+  running "$1" "$2" && { log "still running after SIGINT, TERM"; kill $(pgrep -f "$(armpat "$1" "$2")") 2>/dev/null; }
 }
