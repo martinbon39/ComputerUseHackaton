@@ -1,0 +1,529 @@
+{
+ "results": "~/osw/results_diag*",
+ "passes": [
+  "results_diag",
+  "results_diag2"
+ ],
+ "n_tasks_scored": 119,
+ "seed": "val-ok-v1",
+ "fs": {
+  "chrome/47543840-672a-467d-80df-8f7c3b9788c9": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "chrome/6c4c23a1-42a4-43cc-9db1-2f86ff3738cc": [
+   {
+    "pass": "results_diag",
+    "category": "step_limit",
+    "fs_kind": null,
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "wrong_infeasible",
+    "score": 0.0
+   }
+  ],
+  "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "chrome/fc6d8143-9452-4171-9459-7f515143419a": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "wrong_infeasible",
+    "score": 0.0
+   }
+  ],
+  "gimp/045bf3ff-9077-4b86-b483-a1040a949cff": [
+   {
+    "pass": "results_diag",
+    "category": "step_limit",
+    "fs_kind": null,
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "gimp/2e6f678f-472d-4c55-99cc-8e7c5c402a71": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "step_limit",
+    "fs_kind": null,
+    "score": 0.0
+   }
+  ],
+  "gimp/38f48d40-764e-4e77-a7cf-51dfce880291": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "infeasible_correct",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "gimp/8ea73f6f-9689-42ad-8c60-195bbf06a7ba": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "gimp/e19bd559-633b-4b02-940f-d946248f088e": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "gimp/fbb548ca-c2a6-4601-9204-e39a2efc507b": [
+   {
+    "pass": "results_diag",
+    "category": "infeasible_correct",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "libreoffice_calc/37608790-6147-45d0-9f20-1137bb35703d": [
+   {
+    "pass": "results_diag",
+    "category": "step_limit",
+    "fs_kind": null,
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "step_limit",
+    "fs_kind": null,
+    "score": 0.0
+   }
+  ],
+  "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "libreoffice_writer/bb8ccc78-479f-4a2f-a71e-d565e439436b": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "multi_apps/5df7b33a-9f77-4101-823e-02f863e1c1ae": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "multi_apps/74d5859f-ed66-4d3e-aa0e-93d7a592ce41": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "os/5c1075ca-bb34-46a3-a7a0-029bd7463e79": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "os/fe41f596-a71b-4c2f-9b2f-9dcd40b568c3": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "vlc/386dbd0e-0241-4a0a-b6a2-6704fba26b1c": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "vlc/8f080098-ddb1-424c-b438-4e96e5e4786e": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "vlc/aa4b5023-aef6-4ed9-bdc9-705f59ab9ad6": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "vlc/cb130f0d-d36f-4302-9838-b3baf46139b6": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "vs_code/7c4cc09e-7a92-40dd-8338-b2286535c4ed": [
+   {
+    "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ]
+ },
+ "ok": {
+  "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "thunderbird/5203d847-2572-4150-912a-03f062254390": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "vlc/9195653c-f4aa-453d-aa95-787f6ccfaae9": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "vs_code/4e60007a-f5be-4bfc-9723-c39affa0a6d3": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ]
+ }
+}
