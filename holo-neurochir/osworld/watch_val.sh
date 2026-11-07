@@ -3,7 +3,7 @@
 # and at the end, the confirm block of compare_val over all arms present is sent
 # to <agent> with argos send. Ends when every window of tmux osw_val_<tag> printed its EXIT line and no launcher of
 # that tag is still waiting (WAIT=1), or after 8 h.
-# Usage: bash osworld/watch_val.sh <tag> <origin stuck|other> [agent=ares] [every=10]
+# Usage: [SUBSETS=confirm|all] bash osworld/watch_val.sh <tag> <origin stuck|other> [agent=ares] [every=10]
 set -uo pipefail
 TAG="$1"; ORIGIN="$2"; AGENT="${3:-ares}"; EVERY="${4:-10}"
 HERE="$(cd "$(dirname "$0")" && pwd)"; cd "$HERE/.."
@@ -13,7 +13,7 @@ report() {
   local why="$1" args=() scored="" out
   for a in $(present); do args+=("$a=$HOME/osw/results_val_${a}_$TAG"); scored+="$a $(count ~/osw/results_val_${a}_$TAG | wc -l), "; done
   [ ${#args[@]} -ge 2 ] || return 0
-  out=$(PYTHONPATH=. ~/osw/venv/bin/python osworld/compare_val.py --origin "$ORIGIN" --subsets confirm \
+  out=$(PYTHONPATH=. ~/osw/venv/bin/python osworld/compare_val.py --origin "$ORIGIN" --subsets "${SUBSETS:-confirm}" \
         --out ~/osw/val_${TAG}_compare.json "${args[@]}" 2>&1 | grep -v '^scored:')
   argos send "$AGENT" "online-eval [$TAG] $why — scored: ${scored%, }
 $out"

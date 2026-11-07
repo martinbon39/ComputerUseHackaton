@@ -3,7 +3,9 @@
 #   orig     original 4B, production vLLM :8000, prompt v2
 #   patched  patched 4B, vLLM pod :8011 seen as orbit :8001 (tmux osw_tunnel2), prompt v2
 #   prompt   original 4B on :8000 with prompt v2_verify (run_holo_verify.py; prompt baseline, AxBench-style)
-# Lists: confirm = val_confirm_tasks.json (main, never used to build an intervention); fs_insample = secondary, in-sample.
+# Lists: confirm = val_confirm_tasks.json (never used to build an intervention); fs_insample = secondary, in-sample;
+# test = split_test.json (passed to run_holo as --test_meta only, never opened here).
+# PATCHED_URL / PATCHED_NAME override the patched server (default orbit :8001 = pod :8011).
 # Results ~/osw/results_val_<arm>_<tag>/, tmux osw_val_<tag>:<arm>. Before EACH arm: running VMs + workers <= 6 and
 # >= 14 G available (override with MAX_VMS / MIN_AVAIL_G when ares sets another cap), else refuse (or with WAIT=1
 # retry every 5 min, up to 6 h).
@@ -20,9 +22,10 @@ LIST="${2:?list: confirm | fs_insample}"; W="${3:-3}"; shift $(( $# < 3 ? $# : 3
 [[ "$W" =~ ^[1-9]$ ]] || { echo "workers must be 1-9, got $W" >&2; exit 1; }
 ARMS="${ARMS:-orig patched}"; WAIT="${WAIT:-0}"; DRY_RUN="${DRY_RUN:-0}"; RESUME="${RESUME:-0}"
 HERE="$(cd "$(dirname "$0")" && pwd)"
-TASKS="$HERE/val_${LIST}_tasks.json"; [ -f "$TASKS" ] || { echo "no $TASKS" >&2; exit 1; }
+if [ "$LIST" = test ]; then TASKS="$HERE/split_test.json"; else TASKS="$HERE/val_${LIST}_tasks.json"; fi
+[ -f "$TASKS" ] || { echo "no $TASKS" >&2; exit 1; }
 MAX_VMS="${MAX_VMS:-6}"; MIN_AVAIL_G="${MIN_AVAIL_G:-14}"
-PATCHED_URL=http://127.0.0.1:8001/v1; PATCHED_NAME=Holo-3.1-4B-patched
+PATCHED_URL="${PATCHED_URL:-http://127.0.0.1:8001/v1}"; PATCHED_NAME="${PATCHED_NAME:-Holo-3.1-4B-patched}"
 META=~/osw/val_$TAG.json
 
 for arm in $ARMS; do
@@ -33,12 +36,12 @@ if [ -e "$META" ]; then cmp -s "$TASKS" "$META" || { echo "$META differs from $T
 elif [ "$DRY_RUN" != 1 ]; then cp "$TASKS" "$META"; fi
 echo "task list: $META"
 if [[ " $ARMS " == *" patched "* ]]; then
-  curl -sf "$PATCHED_URL/models" | grep -q "\"$PATCHED_NAME\"" || { echo "no $PATCHED_NAME on :8001: start it before any arm" >&2; exit 1; }
+  curl -sf "$PATCHED_URL/models" | grep -q "\"$PATCHED_NAME\"" || { echo "no $PATCHED_NAME on $PATCHED_URL: start it before any arm" >&2; exit 1; }
 fi
 
 preflight() {  # $1 = arm
   if [ "$1" = patched ]; then
-    curl -sf "$PATCHED_URL/models" | grep -q "\"$PATCHED_NAME\"" || { echo "no $PATCHED_NAME on :8001"; return 1; }
+    curl -sf "$PATCHED_URL/models" | grep -q "\"$PATCHED_NAME\"" || { echo "no $PATCHED_NAME on $PATCHED_URL"; return 1; }
   fi
   curl -sf -m 10 http://127.0.0.1:8000/v1/models | grep -q '"Holo-3.1-4B"' || { echo "production vLLM :8000 unreachable"; return 1; }
   local vms avail
