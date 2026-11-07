@@ -12,7 +12,7 @@ Goal: from a CANDIDATE `patch_spec.json` to both OSWorld arms running in < 10 mi
    Independent check: `scripts/check_ckpt_equiv.py /workspace/ckpt/<tag> /workspace/ckpt/_tests/probe.png [--device cpu --no_generate]` → differing tensors/rows, config diff, next-token logits moved, HF outputs (GPU ~4 min; CPU logits-only ~8 min).
 2. **Serve** (pod, ~2 min): `bash /workspace/projet/osworld/serve_patched.sh /workspace/ckpt/<tag>` → tmux `vllm_8011`, name `Holo-3.1-4B-patched`, `--gpu-memory-utilization 0.15`, pod port 8011 (the pod's 8001 is Runpod's nginx). Stop: `tmux kill-session -t vllm_8011`.
 3. **Tunnel** (orbit): tmux `osw_tunnel2` forwards orbit `127.0.0.1:8001` → pod `8011` (separate from `osw_tunnel`, :8000).
-   Sanity: `python3 osworld/probe_served.py diagnostic_examples/click-button__s0__imp_step00.png` (8000 vs 8001, temperature 0).
+   Sanity: `python3 osworld/probe_served.py diagnostic_examples/click-button__s0__imp_step00.png --ref osworld/probe_ref_vllm.json` (8001 vs saved vLLM answers of the null checkpoint, temperature 0; `--a` instead compares with production 8000, which varies under load).
 4. **Tasks**: `PYTHONPATH=. ~/osw/venv/bin/python osworld/make_val_tasks.py` (rerun once diag pass 2 is done) writes
    - `val_confirm_tasks.json`: main arm, all 45 tasks of `confirm_tasks.json` (frozen by ares, sha256 `03726f07b411…` checked, never used to build an intervention), tagged fs / ok / other from the diag passes in `val_tasks_provenance.json`;
    - `val_fs_insample_tasks.json`: secondary, **in-sample** — every split_diag task with ≥ 1 false-success pass (11 of them are also in confirm).

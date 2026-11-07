@@ -1,6 +1,8 @@
 """Send the same 3 prompts (2 text, 1 screenshot) at temperature 0, seed 0 to two OpenAI-compatible vLLM servers and
 compare the answers (null patch: expect identical; real patch: shows the served model is the edited one).
-Usage: python3 osworld/probe_served.py <image.png> [--a http://127.0.0.1:8000/v1 Holo-3.1-4B]
+--ref f.json replaces server a by saved answers (probe_ref_vllm.json: the null checkpoint served by vLLM), so the
+check does not depend on production :8000, whose answers vary under load even at temperature 0.
+Usage: python3 osworld/probe_served.py <image.png> [--a http://127.0.0.1:8000/v1 Holo-3.1-4B | --ref f.json]
                                        [--b http://127.0.0.1:8001/v1 Holo-3.1-4B-patched]
 """
 import base64, json, sys, urllib.request
@@ -30,9 +32,12 @@ def main():
     contents = [[{"type": "text", "text": p}] for p in PROMPTS]
     contents.append([{"type": "image_url", "image_url": {"url": f"data:image/png;base64,{img}"}},
                      {"type": "text", "text": IMAGE_PROMPT}])
+    ref = json.load(open(args[args.index("--ref") + 1]))["answers"] if "--ref" in args else None
+    if ref:
+        a = ("ref", args[args.index("--ref") + 1])
     same = []
-    for c in contents:
-        ra, rb = ask(*a, c), ask(*b, c)
+    for i, c in enumerate(contents):
+        ra, rb = (ref[i] if ref else ask(*a, c)), ask(*b, c)
         same.append(ra == rb)
         print(json.dumps({"identical": ra == rb, "a": ra, "b": rb}, ensure_ascii=False))
     print(json.dumps({"all_identical": all(same), "a": a, "b": b}))
