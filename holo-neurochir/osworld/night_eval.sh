@@ -2,13 +2,16 @@
 # Night plan (ares, 2026-11-07): after the confirm arms of <confirm_tag> free their VMs, run the TEST split
 # (split_test.json, never opened) with the best patched arm and the original arm, rescale the survivor when one ends,
 # use spare capacity for the prompt arm on confirm, and send the reports. Every wait is bounded; stops at DEADLINE.
-# Env: BEST_URL BEST_NAME (patched server for test), MAX_VMS (5), MIN_AVAIL_G (8), DEADLINE (UTC HH:MM, 09:00),
+# RAM guard: if available RAM stays under GUARD_G (4) for 2 min, the last launched arm is restarted (RESUME) with one
+# worker less. Launches and restarts are serialised by a lock.
+# Env: BEST_URL BEST_NAME (patched server for test), MAX_VMS (5), MIN_AVAIL_G (5), DEADLINE (UTC HH:MM, 09:00),
 #      CONFIRM_TAG (eager_m40), TEST_TAG (night_test), POOL (1 if the test patched ckpt == the confirm patched ckpt).
 # Usage: BEST_URL=http://127.0.0.1:8001/v1 BEST_NAME=Holo-3.1-4B-patched bash osworld/night_eval.sh
 set -uo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"; cd "$HERE/.."
 : "${BEST_URL:?}" "${BEST_NAME:?}"
-export MAX_VMS="${MAX_VMS:-5}" MIN_AVAIL_G="${MIN_AVAIL_G:-8}"
+export MAX_VMS="${MAX_VMS:-5}" MIN_AVAIL_G="${MIN_AVAIL_G:-5}" PATCHED_URL="$BEST_URL" PATCHED_NAME="$BEST_NAME"
+GUARD_G="${GUARD_G:-4}"; LAST=~/osw/night_last_launch; LOCK=~/osw/night.lock
 DEADLINE="${DEADLINE:-09:00}"; CT="${CONFIRM_TAG:-eager_m40}"; TT="${TEST_TAG:-night_test}"; POOL="${POOL:-0}"
 end_s=$(date -u -d "$DEADLINE" +%s); [ "$end_s" -gt "$(date +%s)" ] || end_s=$(date -u -d "tomorrow $DEADLINE" +%s)
 log() { echo "$(date -u +%H:%M) $*"; }
@@ -23,12 +26,32 @@ capacity() {  # VMs that fit under MAX_VMS and still leave MIN_AVAIL_G available
 wait_for() {  # $1 = description, $2 = condition command; bounded by DEADLINE
   until eval "$2"; do [ "$(date +%s)" -lt "$end_s" ] || { log "deadline while waiting for $1"; return 1; }; sleep 120; done
 }
-launch() {  # $1 = arm, $2 = tag, $3 = list, extra env passed by caller
-  local w; w=$(capacity)
-  until [ "$w" -ge 1 ]; do [ "$(date +%s)" -lt "$end_s" ] || return 1; sleep 120; w=$(capacity); done
+avail() { free -g | awk '/^Mem:/ {print $7}'; }
+launch() {  # $1 = arm, $2 = tag, $3 = list, [$4 = workers, else the free capacity]
+  local w="${4:-}"
+  if [ -z "$w" ]; then
+    w=$(capacity)
+    until [ "$w" -ge 1 ]; do [ "$(date +%s)" -lt "$end_s" ] || return 1; sleep 120; w=$(capacity); done
+  fi
   log "launch $1 $2 ($3) workers=$w"
   tmux kill-window -t "osw_val_$2:$1" 2>/dev/null
-  RESUME=1 WAIT=1 ARMS="$1" MIN_AVAIL_G=$((MIN_AVAIL_G + GB_PER_VM * w)) bash osworld/run_patched_eval.sh "$2" "$3" "$w"
+  (flock 9; echo "$1 $2 $3 $w" > "$LAST"
+   RESUME=1 WAIT=1 ARMS="$1" MIN_AVAIL_G=$((MIN_AVAIL_G + GB_PER_VM * w)) bash osworld/run_patched_eval.sh "$2" "$3" "$w") 9>"$LOCK"
+}
+ram_guard() {
+  local low=0
+  while [ "$(date +%s)" -lt "$end_s" ]; do
+    if [ "$(avail)" -lt "$GUARD_G" ]; then low=$((low + 1)); else low=0; fi
+    if [ $low -ge 4 ] && [ -s "$LAST" ]; then
+      read -r arm tag list w < "$LAST"
+      log "RAM guard: $(avail)G < ${GUARD_G}G for 2 min -> $arm $tag from $w to $((w - 1)) workers"
+      ( flock 9; stop_arm "$arm" "$tag"; tmux kill-window -t "osw_val_$tag:$arm" 2>/dev/null; : > "$LAST" ) 9>"$LOCK"
+      [ "$w" -gt 1 ] && launch "$arm" "$tag" "$list" $((w - 1))
+      argos send ares "online-eval night: RAM guard fired, $arm $tag restarted with $((w - 1)) workers (RESUME)"
+      low=0; sleep 180
+    fi
+    sleep 30
+  done
 }
 stop_arm() {  # SIGINT lets run_holo's workers close their VMs (finally: env.close())
   local pids; pids=$(pgrep -f "results_val_$1_$2 " | tr '\n' ' ')
@@ -57,9 +80,10 @@ $out"
 
 log "night plan: best=$BEST_NAME@$BEST_URL caps vms<=$MAX_VMS avail>=${MIN_AVAIL_G}G deadline $DEADLINE pool=$POOL"
 tmux kill-session -t "osw_val_followup_$CT" 2>/dev/null && log "prompt follow-up cancelled (prompt only if capacity remains)"
+ram_guard & GUARD_PID=$!; trap 'kill $GUARD_PID 2>/dev/null' EXIT
 
 wait_for "orig confirm" "exited osw_val_$CT:orig ORIG_EXIT" || { report "deadline before test start"; exit 1; }
-PATCHED_URL="$BEST_URL" PATCHED_NAME="$BEST_NAME" launch patched "$TT" test || exit 1
+launch patched "$TT" test || exit 1
 tmux new-session -d -s "osw_val_watch_$TT" "SUBSETS=all bash osworld/watch_val.sh $TT other ares 10; exec bash" 2>/dev/null
 
 wait_for "patched confirm" "exited osw_val_$CT:patched PATCHED_EXIT"
@@ -71,9 +95,8 @@ wait_for "a test arm to finish" "exited osw_val_$TT:patched PATCHED_EXIT || exit
 for arm in patched orig; do
   U=$(echo $arm | tr a-z A-Z)_EXIT
   if ! exited "osw_val_$TT:$arm" "$U" && running "$arm" "$TT"; then
-    stop_arm "$arm" "$TT"
-    if [ $arm = patched ]; then PATCHED_URL="$BEST_URL" PATCHED_NAME="$BEST_NAME" launch patched "$TT" test
-    else launch orig "$TT" test; fi
+    ( flock 9; stop_arm "$arm" "$TT" ) 9>"$LOCK"
+    launch "$arm" "$TT" test
   fi
 done
 wait_for "both test arms" "exited osw_val_$TT:patched PATCHED_EXIT && exited osw_val_$TT:orig ORIG_EXIT"
