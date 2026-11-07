@@ -6,9 +6,11 @@
  ],
  "n_tasks_scored": 119,
  "confirm_sha256": "03726f07b411869a7a4004b0f3c89ba37d89e948f34ac19cb70e4bb0c3cb5bb7",
+ "half_rule": "first byte of sha1(example_id utf-8) odd/even",
  "confirm": {
   "chrome/6c4c23a1-42a4-43cc-9db1-2f86ff3738cc": {
    "tag": "fs",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -26,6 +28,7 @@
   },
   "chrome/99146c54-4f37-4ab8-9327-5f3291665e1e": {
    "tag": "other",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -43,6 +46,7 @@
   },
   "gimp/045bf3ff-9077-4b86-b483-a1040a949cff": {
    "tag": "fs",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -60,6 +64,7 @@
   },
   "gimp/38f48d40-764e-4e77-a7cf-51dfce880291": {
    "tag": "fs",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -77,6 +82,7 @@
   },
   "gimp/fbb548ca-c2a6-4601-9204-e39a2efc507b": {
    "tag": "fs",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -94,6 +100,7 @@
   },
   "libreoffice_calc/2bd59342-0664-4ccb-ba87-79379096cc08": {
    "tag": "other",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -111,6 +118,7 @@
   },
   "libreoffice_calc/37608790-6147-45d0-9f20-1137bb35703d": {
    "tag": "fs",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -128,9 +136,16 @@
   },
   "libreoffice_impress/57667013-ea97-417c-9dce-2713091e6e2a": {
    "tag": "other",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
      "category": "step_limit",
      "fs_kind": null,
      "score": 0.0
@@ -139,6 +154,7 @@
   },
   "libreoffice_impress/bf4e9888-f10f-47af-8dba-76413038b73c": {
    "tag": "other",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -150,6 +166,7 @@
   },
   "libreoffice_writer/0e47de2a-32e0-456c-a366-8c607ef7a9d2": {
    "tag": "other",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -161,6 +178,7 @@
   },
   "libreoffice_writer/6f81754e-285d-4ce0-b59e-af7edb02d108": {
    "tag": "other",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -172,6 +190,7 @@
   },
   "multi_apps/20236825-b5df-46e7-89bf-62e1d640a897": {
    "tag": "other",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -183,6 +202,7 @@
   },
   "multi_apps/236833a3-5704-47fc-888c-4f298f09f799": {
    "tag": "other",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -194,6 +214,7 @@
   },
   "multi_apps/36037439-2044-4b50-b9d1-875b5a332143": {
    "tag": "other",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -205,6 +226,7 @@
   },
   "multi_apps/42d25c08-fb87-4927-8b65-93631280a26f": {
    "tag": "other",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -216,6 +238,7 @@
   },
   "multi_apps/67890eb6-6ce5-4c00-9e3d-fb4972699b06": {
    "tag": "other",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -227,10 +250,12 @@
   },
   "multi_apps/69acbb55-d945-4927-a87b-8480e1a5bb7e": {
    "tag": "other",
+   "half": "even",
    "runs": []
   },
   "multi_apps/7e287123-70ca-47b9-8521-47db09b69b14": {
    "tag": "other",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -242,6 +267,7 @@
   },
   "multi_apps/8e116af7-7db7-4e35-a68b-b0939c066c78": {
    "tag": "other",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -253,6 +279,7 @@
   },
   "multi_apps/9219480b-3aed-47fc-8bac-d2cffc5849f7": {
    "tag": "ok",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -264,6 +291,7 @@
   },
   "multi_apps/b5062e3e-641c-4e3a-907b-ac864d2e7652": {
    "tag": "other",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -275,6 +303,7 @@
   },
   "multi_apps/deec51c9-3b1e-4b9e-993c-4776f20e8bb2": {
    "tag": "other",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -286,6 +315,7 @@
   },
   "multi_apps/e1fc0df3-c8b9-4ee7-864c-d0b590d3aa56": {
    "tag": "other",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -297,6 +327,7 @@
   },
   "os/23393935-50c7-4a86-aeea-2b78fd089c5c": {
    "tag": "other",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -308,6 +339,7 @@
   },
   "os/5812b315-e7bd-4265-b51f-863c02174c28": {
    "tag": "other",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -319,6 +351,7 @@
   },
   "os/5c1075ca-bb34-46a3-a7a0-029bd7463e79": {
    "tag": "fs",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -330,6 +363,7 @@
   },
   "thunderbird/5203d847-2572-4150-912a-03f062254390": {
    "tag": "ok",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -341,6 +375,7 @@
   },
   "thunderbird/9bc3cc16-074a-45ac-9bdc-b2a362e1daf3": {
    "tag": "ok",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -352,6 +387,7 @@
   },
   "thunderbird/a10b69e1-6034-4a2b-93e1-571d45194f75": {
    "tag": "ok",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -363,6 +399,7 @@
   },
   "thunderbird/dd84e895-72fd-4023-a336-97689ded257c": {
    "tag": "ok",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -374,6 +411,7 @@
   },
   "thunderbird/f201fbc3-44e6-46fc-bcaa-432f9815454c": {
    "tag": "ok",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -385,6 +423,7 @@
   },
   "vlc/386dbd0e-0241-4a0a-b6a2-6704fba26b1c": {
    "tag": "fs",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -396,6 +435,7 @@
   },
   "vlc/5ac2891a-eacd-4954-b339-98abba077adb": {
    "tag": "ok",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -407,6 +447,7 @@
   },
   "vlc/8f080098-ddb1-424c-b438-4e96e5e4786e": {
    "tag": "fs",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -418,6 +459,7 @@
   },
   "vlc/9195653c-f4aa-453d-aa95-787f6ccfaae9": {
    "tag": "ok",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -429,6 +471,7 @@
   },
   "vlc/aa4b5023-aef6-4ed9-bdc9-705f59ab9ad6": {
    "tag": "fs",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -440,6 +483,7 @@
   },
   "vlc/cb130f0d-d36f-4302-9838-b3baf46139b6": {
    "tag": "fs",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -451,6 +495,7 @@
   },
   "vs_code/0512bb38-d531-4acf-9e7e-0add90816068": {
    "tag": "ok",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -462,6 +507,7 @@
   },
   "vs_code/4e60007a-f5be-4bfc-9723-c39affa0a6d3": {
    "tag": "ok",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -473,6 +519,7 @@
   },
   "vs_code/6ed0a554-cbee-4b44-84ea-fd6c042f4fe1": {
    "tag": "other",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -484,6 +531,7 @@
   },
   "vs_code/7c4cc09e-7a92-40dd-8338-b2286535c4ed": {
    "tag": "fs",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -495,6 +543,7 @@
   },
   "vs_code/9439a27b-18ae-42d8-9778-5f68f891805e": {
    "tag": "ok",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -506,6 +555,7 @@
   },
   "vs_code/971cbb5b-3cbf-4ff7-9e24-b5c84fcebfa6": {
    "tag": "other",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -517,6 +567,7 @@
   },
   "vs_code/982d12a5-beab-424f-8d38-d2a48429e511": {
    "tag": "ok",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -528,6 +579,7 @@
   },
   "vs_code/eabc805a-bfcf-4460-b250-ac92135819f6": {
    "tag": "ok",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -788,6 +840,20 @@
   "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": [
    {
     "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
     "category": "false_success",
     "fs_kind": "claimed_done",
     "score": 0.0

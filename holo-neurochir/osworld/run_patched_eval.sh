@@ -3,7 +3,7 @@
 # osw_tunnel2) and, mirrored, the original arm (production vLLM :8000) on the same task list, <workers> each.
 # Lists: confirm = val_confirm_tasks.json (main, never used to build an intervention); fs_insample = secondary, in-sample.
 # Results: ~/osw/results_val_patched_<tag>/ and ~/osw/results_val_orig_<tag>/; tmux osw_val_<tag>.
-# Then: PYTHONPATH=. ~/osw/venv/bin/python osworld/compare_val.py ~/osw/results_val_patched_<tag> ~/osw/results_val_orig_<tag>
+# Then: PYTHONPATH=. ~/osw/venv/bin/python osworld/compare_val.py ~/osw/results_val_patched_<tag> ~/osw/results_val_orig_<tag> --origin stuck|other
 # Usage: bash osworld/run_patched_eval.sh <tag> <confirm|fs_insample> [workers=3] [extra run_holo args, both arms]
 set -euo pipefail
 TAG="${1:?usage: run_patched_eval.sh <tag> <confirm|fs_insample> [workers=3] [run_holo args]}"

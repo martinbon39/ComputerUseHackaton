@@ -2,7 +2,9 @@
 
 val_confirm_tasks.json      main arm: ALL tasks of confirm_tasks.json (frozen by ares, never used to build an
                             intervention; sha256 checked), each tagged from the diagnostic passes:
-                            fs (>= 1 completed pass false_success) / ok (success in every completed pass) / other.
+                            fs (>= 1 completed pass false_success) / ok (success in every completed pass) / other,
+                            and half = odd | even (first byte of sha1(example_id); astra-stuck builds on the even
+                            half, FLEET_ORDERS.md).
 val_fs_insample_tasks.json  secondary diagnostic, IN-SAMPLE: every split_diag task with >= 1 false_success pass.
 Both are run_holo --test_meta files ({domain: [example_id]}); val_tasks_provenance.json keeps tags and outcomes.
 Usage: PYTHONPATH=. ~/osw/venv/bin/python osworld/make_val_tasks.py [--results "~/osw/results_diag*"]
@@ -14,6 +16,11 @@ from holo.osw_taxonomy import classify, find_tasks, load_task
 
 HERE = Path(__file__).resolve().parent
 CONFIRM_SHA256 = "03726f07b411869a7a4004b0f3c89ba37d89e948f34ac19cb70e4bb0c3cb5bb7"
+HALF_RULE = "first byte of sha1(example_id utf-8) odd/even"
+
+
+def half(key):
+    return "odd" if hashlib.sha1(key.split("/")[1].encode()).digest()[0] % 2 else "even"
 
 
 def outcomes(results_glob):
@@ -69,13 +76,14 @@ def main():
     (HERE / "val_confirm_tasks.json").write_text(json.dumps(as_meta(conf), indent=1))
     (HERE / "val_fs_insample_tasks.json").write_text(json.dumps(as_meta(fs_insample), indent=1))
     prov = {"results": a.results, "passes": sorted({o["pass"] for v in per_task.values() for o in v}),
-            "n_tasks_scored": len(per_task), "confirm_sha256": sha,
-            "confirm": {k: {"tag": tags[k], "runs": per_task.get(k, [])} for k in tags},
+            "n_tasks_scored": len(per_task), "confirm_sha256": sha, "half_rule": HALF_RULE,
+            "confirm": {k: {"tag": tags[k], "half": half(k), "runs": per_task.get(k, [])} for k in tags},
             "fs_insample": {k: per_task[k] for k in fs_insample}}
     (HERE / "val_tasks_provenance.json").write_text(json.dumps(prov, indent=1))
     count = lambda t: sum(v == t for v in tags.values())
     print(json.dumps({"passes": prov["passes"], "n_tasks_scored": len(per_task), "confirm": len(conf),
                       "confirm_tags": {t: count(t) for t in ("fs", "ok", "other")},
+                      "confirm_odd": sum(half(k) == "odd" for k in conf),
                       "fs_insample": len(fs_insample), "fs_insample_in_confirm": len(set(fs_insample) & conf)}))
 
 
