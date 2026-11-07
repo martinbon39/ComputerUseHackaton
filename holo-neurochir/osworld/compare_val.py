@@ -1,8 +1,9 @@
 """Paired comparison of the patched and original arms of an online validation run (run_patched_eval.sh).
 
 Per task present and scored in both arms: success (score > 0) and false success (holo.osw_taxonomy category).
-For each subset (fs = val_fs_tasks, ok = val_ok_tasks, all): rate per arm, paired delta (patched - original),
-bootstrap IC95 over tasks, and the discordant pairs.
+Subsets (from val_tasks_provenance.json): all pairs; confirm (out of sample, main) and its diag tags confirm:fs /
+confirm:ok / confirm:other; insample (fs tasks outside confirm, secondary). For each: rate per arm, paired delta
+(patched - original), bootstrap IC95 over tasks, and the discordant pairs.
 Usage: PYTHONPATH=. ~/osw/venv/bin/python osworld/compare_val.py <patched_results> <orig_results> [--out f.json]
 """
 import argparse, json
@@ -45,9 +46,12 @@ def main():
     ap.add_argument("patched"); ap.add_argument("orig"); ap.add_argument("--out")
     a = ap.parse_args()
     p, o = arm(a.patched), arm(a.orig)
-    sets = {name: {f"{dom}/{e}" for dom, ids in json.loads((HERE / f"val_{name}_tasks.json").read_text()).items()
-                   for e in ids} for name in ("fs", "ok")}
-    sets["all"] = sets["fs"] | sets["ok"]
+    prov = json.loads((HERE / "val_tasks_provenance.json").read_text())
+    conf = prov["confirm"]
+    sets = {"all": p.keys() | o.keys(), "confirm": set(conf)}
+    for t in ("fs", "ok", "other"):
+        sets[f"confirm:{t}"] = {k for k, v in conf.items() if v["tag"] == t}
+    sets["insample"] = set(prov["fs_insample"]) - set(conf)
     rng = np.random.default_rng(0)
     report = {"patched": a.patched, "orig": a.orig, "n_scored": {"patched": len(p), "orig": len(o)}, "subsets": {}}
     for name, ks in sets.items():

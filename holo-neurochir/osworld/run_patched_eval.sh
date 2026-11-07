@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
-# Online validation of a patched Holo-3.1-4B on orbit: patched arm (vLLM pod :8011 seen as orbit :8001 via tmux osw_tunnel2) and, mirrored,
-# the original arm (production vLLM :8000) on the same tasks (val_fs_tasks.json + val_ok_tasks.json), 2 workers each.
+# Online validation of a patched Holo-3.1-4B on orbit: patched arm (vLLM pod :8011 seen as orbit :8001 via tmux
+# osw_tunnel2) and, mirrored, the original arm (production vLLM :8000) on the same task list, <workers> each.
+# Lists: confirm = val_confirm_tasks.json (main, never used to build an intervention); fs_insample = secondary, in-sample.
 # Results: ~/osw/results_val_patched_<tag>/ and ~/osw/results_val_orig_<tag>/; tmux osw_val_<tag>.
 # Then: PYTHONPATH=. ~/osw/venv/bin/python osworld/compare_val.py ~/osw/results_val_patched_<tag> ~/osw/results_val_orig_<tag>
-# Usage: bash osworld/run_patched_eval.sh <tag> [extra run_holo args, applied to both arms]
+# Usage: bash osworld/run_patched_eval.sh <tag> <confirm|fs_insample> [workers=3] [extra run_holo args, both arms]
 set -euo pipefail
-TAG="${1:?usage: run_patched_eval.sh <tag> [run_holo args]}"; shift
+TAG="${1:?usage: run_patched_eval.sh <tag> <confirm|fs_insample> [workers=3] [run_holo args]}"
+LIST="${2:?list: confirm | fs_insample}"; W="${3:-3}"; shift $(( $# < 3 ? $# : 3 ))
+[[ "$W" =~ ^[1-9]$ ]] || { echo "workers must be 1-9, got $W" >&2; exit 1; }
 HERE="$(cd "$(dirname "$0")" && pwd)"
-W=2; MAX_VMS=6; MIN_AVAIL_G=14
+TASKS="$HERE/val_${LIST}_tasks.json"; [ -f "$TASKS" ] || { echo "no $TASKS" >&2; exit 1; }
+MAX_VMS=6; MIN_AVAIL_G=14
 PATCHED_URL=http://127.0.0.1:8001/v1; PATCHED_NAME=Holo-3.1-4B-patched
 RES_P=~/osw/results_val_patched_$TAG; RES_O=~/osw/results_val_orig_$TAG; META=~/osw/val_$TAG.json
 
@@ -20,16 +24,7 @@ if [ $((VMS + 2 * W)) -gt $MAX_VMS ] || [ "$AVAIL" -lt $MIN_AVAIL_G ]; then
   echo "refused: $VMS VMs running + $((2 * W)) > $MAX_VMS, or ${AVAIL}G available < ${MIN_AVAIL_G}G" >&2; exit 1
 fi
 
-~/osw/venv/bin/python - "$HERE" "$META" <<'EOF'
-import json, sys
-here, out = sys.argv[1], sys.argv[2]
-m = {}
-for f in ("val_fs_tasks.json", "val_ok_tasks.json"):
-    for dom, ids in json.load(open(f"{here}/{f}")).items():
-        m.setdefault(dom, []).extend(i for i in ids if i not in m.get(dom, []))
-json.dump(m, open(out, "w"), indent=1)
-print(f"{out}: {sum(map(len, m.values()))} tasks")
-EOF
+cp "$TASKS" "$META"; echo "frozen task list: $META <- $TASKS"
 
 tmux new-session -d -s "osw_val_$TAG" -n patched \
   "bash ~/osw/run_osw.sh $RES_P $META $W --base_url $PATCHED_URL --model $PATCHED_NAME --no_recording $*; echo PATCHED_EXIT; exec bash"

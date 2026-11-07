@@ -5,8 +5,540 @@
   "results_diag2"
  ],
  "n_tasks_scored": 119,
- "seed": "val-ok-v1",
- "fs": {
+ "confirm_sha256": "03726f07b411869a7a4004b0f3c89ba37d89e948f34ac19cb70e4bb0c3cb5bb7",
+ "confirm": {
+  "chrome/6c4c23a1-42a4-43cc-9db1-2f86ff3738cc": {
+   "tag": "fs",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "false_success",
+     "fs_kind": "wrong_infeasible",
+     "score": 0.0
+    }
+   ]
+  },
+  "chrome/99146c54-4f37-4ab8-9327-5f3291665e1e": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "gimp/045bf3ff-9077-4b86-b483-a1040a949cff": {
+   "tag": "fs",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "false_success",
+     "fs_kind": "claimed_done",
+     "score": 0.0
+    }
+   ]
+  },
+  "gimp/38f48d40-764e-4e77-a7cf-51dfce880291": {
+   "tag": "fs",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "false_success",
+     "fs_kind": "claimed_done",
+     "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "infeasible_correct",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "gimp/fbb548ca-c2a6-4601-9204-e39a2efc507b": {
+   "tag": "fs",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "infeasible_correct",
+     "fs_kind": null,
+     "score": 1.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "false_success",
+     "fs_kind": "claimed_done",
+     "score": 0.0
+    }
+   ]
+  },
+  "libreoffice_calc/2bd59342-0664-4ccb-ba87-79379096cc08": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "libreoffice_calc/37608790-6147-45d0-9f20-1137bb35703d": {
+   "tag": "fs",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "false_success",
+     "fs_kind": "claimed_done",
+     "score": 0.0
+    }
+   ]
+  },
+  "libreoffice_impress/57667013-ea97-417c-9dce-2713091e6e2a": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "libreoffice_impress/bf4e9888-f10f-47af-8dba-76413038b73c": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "libreoffice_writer/0e47de2a-32e0-456c-a366-8c607ef7a9d2": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "libreoffice_writer/6f81754e-285d-4ce0-b59e-af7edb02d108": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "multi_apps/20236825-b5df-46e7-89bf-62e1d640a897": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "multi_apps/236833a3-5704-47fc-888c-4f298f09f799": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "multi_apps/36037439-2044-4b50-b9d1-875b5a332143": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "multi_apps/42d25c08-fb87-4927-8b65-93631280a26f": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "multi_apps/67890eb6-6ce5-4c00-9e3d-fb4972699b06": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "multi_apps/69acbb55-d945-4927-a87b-8480e1a5bb7e": {
+   "tag": "other",
+   "runs": []
+  },
+  "multi_apps/7e287123-70ca-47b9-8521-47db09b69b14": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "multi_apps/8e116af7-7db7-4e35-a68b-b0939c066c78": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "multi_apps/9219480b-3aed-47fc-8bac-d2cffc5849f7": {
+   "tag": "ok",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "multi_apps/b5062e3e-641c-4e3a-907b-ac864d2e7652": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "multi_apps/deec51c9-3b1e-4b9e-993c-4776f20e8bb2": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "multi_apps/e1fc0df3-c8b9-4ee7-864c-d0b590d3aa56": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "other",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "os/23393935-50c7-4a86-aeea-2b78fd089c5c": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "os/5812b315-e7bd-4265-b51f-863c02174c28": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "os/5c1075ca-bb34-46a3-a7a0-029bd7463e79": {
+   "tag": "fs",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "false_success",
+     "fs_kind": "claimed_done",
+     "score": 0.0
+    }
+   ]
+  },
+  "thunderbird/5203d847-2572-4150-912a-03f062254390": {
+   "tag": "ok",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "thunderbird/9bc3cc16-074a-45ac-9bdc-b2a362e1daf3": {
+   "tag": "ok",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "thunderbird/a10b69e1-6034-4a2b-93e1-571d45194f75": {
+   "tag": "ok",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "thunderbird/dd84e895-72fd-4023-a336-97689ded257c": {
+   "tag": "ok",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "thunderbird/f201fbc3-44e6-46fc-bcaa-432f9815454c": {
+   "tag": "ok",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "vlc/386dbd0e-0241-4a0a-b6a2-6704fba26b1c": {
+   "tag": "fs",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "false_success",
+     "fs_kind": "claimed_done",
+     "score": 0.0
+    }
+   ]
+  },
+  "vlc/5ac2891a-eacd-4954-b339-98abba077adb": {
+   "tag": "ok",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "vlc/8f080098-ddb1-424c-b438-4e96e5e4786e": {
+   "tag": "fs",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "false_success",
+     "fs_kind": "claimed_done",
+     "score": 0.0
+    }
+   ]
+  },
+  "vlc/9195653c-f4aa-453d-aa95-787f6ccfaae9": {
+   "tag": "ok",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "vlc/aa4b5023-aef6-4ed9-bdc9-705f59ab9ad6": {
+   "tag": "fs",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "false_success",
+     "fs_kind": "claimed_done",
+     "score": 0.0
+    }
+   ]
+  },
+  "vlc/cb130f0d-d36f-4302-9838-b3baf46139b6": {
+   "tag": "fs",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "false_success",
+     "fs_kind": "claimed_done",
+     "score": 0.0
+    }
+   ]
+  },
+  "vs_code/0512bb38-d531-4acf-9e7e-0add90816068": {
+   "tag": "ok",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "vs_code/4e60007a-f5be-4bfc-9723-c39affa0a6d3": {
+   "tag": "ok",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "vs_code/6ed0a554-cbee-4b44-84ea-fd6c042f4fe1": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    }
+   ]
+  },
+  "vs_code/7c4cc09e-7a92-40dd-8338-b2286535c4ed": {
+   "tag": "fs",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "false_success",
+     "fs_kind": "claimed_done",
+     "score": 0.0
+    }
+   ]
+  },
+  "vs_code/9439a27b-18ae-42d8-9778-5f68f891805e": {
+   "tag": "ok",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "vs_code/971cbb5b-3cbf-4ff7-9e24-b5c84fcebfa6": {
+   "tag": "other",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "infeasible_correct",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "vs_code/982d12a5-beab-424f-8d38-d2a48429e511": {
+   "tag": "ok",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  },
+  "vs_code/eabc805a-bfcf-4460-b250-ac92135819f6": {
+   "tag": "ok",
+   "runs": [
+    {
+     "pass": "results_diag",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
+    }
+   ]
+  }
+ },
+ "fs_insample": {
   "chrome/47543840-672a-467d-80df-8f7c3b9788c9": [
    {
     "pass": "results_diag",
@@ -181,6 +713,12 @@
     "category": "false_success",
     "fs_kind": "claimed_done",
     "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
    }
   ],
   "libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b": [
@@ -365,164 +903,6 @@
     "category": "false_success",
     "fs_kind": "claimed_done",
     "score": 0.0
-   }
-  ]
- },
- "ok": {
-  "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   },
-   {
-    "pass": "results_diag2",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   },
-   {
-    "pass": "results_diag2",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   },
-   {
-    "pass": "results_diag2",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "thunderbird/5203d847-2572-4150-912a-03f062254390": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "vlc/9195653c-f4aa-453d-aa95-787f6ccfaae9": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "vs_code/4e60007a-f5be-4bfc-9723-c39affa0a6d3": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   },
-   {
-    "pass": "results_diag2",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   },
-   {
-    "pass": "results_diag2",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   },
-   {
-    "pass": "results_diag2",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
-   }
-  ],
-  "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f": [
-   {
-    "pass": "results_diag",
-    "category": "success",
-    "fs_kind": null,
-    "score": 1.0
    }
   ]
  }
