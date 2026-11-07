@@ -153,13 +153,19 @@
    ]
   },
   "libreoffice_impress/bf4e9888-f10f-47af-8dba-76413038b73c": {
-   "tag": "other",
+   "tag": "fs",
    "half": "even",
    "runs": [
     {
      "pass": "results_diag",
      "category": "step_limit",
      "fs_kind": null,
+     "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "false_success",
+     "fs_kind": "claimed_done",
      "score": 0.0
     }
    ]
@@ -173,6 +179,12 @@
      "category": "step_limit",
      "fs_kind": null,
      "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "success",
+     "fs_kind": null,
+     "score": 1.0
     }
    ]
   },
@@ -182,6 +194,12 @@
    "runs": [
     {
      "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
      "category": "step_limit",
      "fs_kind": null,
      "score": 0.0
@@ -197,6 +215,12 @@
      "category": "step_limit",
      "fs_kind": null,
      "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
     }
    ]
   },
@@ -206,6 +230,12 @@
    "runs": [
     {
      "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
      "category": "step_limit",
      "fs_kind": null,
      "score": 0.0
@@ -233,6 +263,12 @@
      "category": "step_limit",
      "fs_kind": null,
      "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
     }
    ]
   },
@@ -242,6 +278,12 @@
    "runs": [
     {
      "pass": "results_diag",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
      "category": "step_limit",
      "fs_kind": null,
      "score": 0.0
@@ -274,6 +316,12 @@
      "category": "step_limit",
      "fs_kind": null,
      "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "step_limit",
+     "fs_kind": null,
+     "score": 0.0
     }
    ]
   },
@@ -302,7 +350,7 @@
    ]
   },
   "multi_apps/deec51c9-3b1e-4b9e-993c-4776f20e8bb2": {
-   "tag": "other",
+   "tag": "fs",
    "half": "even",
    "runs": [
     {
@@ -310,17 +358,29 @@
      "category": "step_limit",
      "fs_kind": null,
      "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "false_success",
+     "fs_kind": "claimed_done",
+     "score": 0.0
     }
    ]
   },
   "multi_apps/e1fc0df3-c8b9-4ee7-864c-d0b590d3aa56": {
-   "tag": "other",
+   "tag": "fs",
    "half": "even",
    "runs": [
     {
      "pass": "results_diag",
      "category": "other",
      "fs_kind": null,
+     "score": 0.0
+    },
+    {
+     "pass": "results_diag2",
+     "category": "false_success",
+     "fs_kind": "claimed_done",
      "score": 0.0
     }
    ]
@@ -835,11 +895,65 @@
     "category": "false_success",
     "fs_kind": "claimed_done",
     "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
    }
   ],
   "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": [
    {
     "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   }
+  ],
+  "libreoffice_impress/bf4e9888-f10f-47af-8dba-76413038b73c": [
+   {
+    "pass": "results_diag",
+    "category": "step_limit",
+    "fs_kind": null,
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
     "category": "false_success",
     "fs_kind": "claimed_done",
     "score": 0.0
@@ -859,9 +973,29 @@
     "score": 0.0
    }
   ],
+  "libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
   "libreoffice_writer/bb8ccc78-479f-4a2f-a71e-d565e439436b": [
    {
     "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
     "category": "false_success",
     "fs_kind": "claimed_done",
     "score": 0.0
@@ -889,6 +1023,12 @@
     "category": "false_success",
     "fs_kind": "claimed_done",
     "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
    }
   ],
   "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38": [
@@ -905,11 +1045,101 @@
     "category": "false_success",
     "fs_kind": "claimed_done",
     "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
    }
   ],
   "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b": [
    {
     "pass": "results_diag",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "multi_apps/deec51c9-3b1e-4b9e-993c-4776f20e8bb2": [
+   {
+    "pass": "results_diag",
+    "category": "step_limit",
+    "fs_kind": null,
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "multi_apps/e1fc0df3-c8b9-4ee7-864c-d0b590d3aa56": [
+   {
+    "pass": "results_diag",
+    "category": "other",
+    "fs_kind": null,
+    "score": 0.0
+   },
+   {
+    "pass": "results_diag2",
+    "category": "false_success",
+    "fs_kind": "claimed_done",
+    "score": 0.0
+   }
+  ],
+  "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91": [
+   {
+    "pass": "results_diag",
+    "category": "success",
+    "fs_kind": null,
+    "score": 1.0
+   },
+   {
+    "pass": "results_diag2",
     "category": "false_success",
     "fs_kind": "claimed_done",
     "score": 0.0

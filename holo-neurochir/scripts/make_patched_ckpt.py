@@ -15,6 +15,10 @@ Spec kinds:
                      "delta" [n_tokens, d] or [d], "alpha"}: lm_head rows of those tokens += alpha * delta.
                      The snapshot is tied but already stores lm_head.weight (== embed_tokens): that tensor gets the
                      edit and tie_word_embeddings becomes false, so the input embeddings stay unchanged.
+  delta              {"kind": "delta", "edits": [{"key": <checkpoint tensor name>, "cols": [...] | "rows": [...],
+                     "delta_file": npz, "delta_key": "delta", "alpha": 1.0}, ...]}: raw column / row additions,
+                     W[:, cols] += alpha * delta ([d_out] or [d_out, n_cols]) or W[rows] += alpha * delta
+                     ([d_in] or [n_rows, d_in]). No model load. Editing lm_head.weight unties the checkpoint.
 Usage: PYTHONPATH=. HOLO_MODEL=Hcompany/Holo-3.1-4B python scripts/make_patched_ckpt.py <spec.json> <out_dir>
 """
 import holo.settings as S
@@ -76,6 +80,39 @@ def lm_head_edit(spec, src, weight_map):
     return W, {"token_ids": ids, "tokens": rows}
 
 
+def delta_edits(spec, src, weight_map):
+    """{checkpoint key: new tensor} for raw row / column additions."""
+    out, applied = {}, []
+    for e in spec["edits"]:
+        k = e["key"]
+        assert k in weight_map, f"unknown checkpoint tensor {k}"
+        W = out[k] if k in out else load_file(src / weight_map[k])[k].clone()
+        D = np.load(S.ROOT / e["delta_file"])
+        delta = torch.from_numpy(np.asarray(D[e.get("delta_key", "delta")])).float()
+        alpha = float(e.get("alpha", 1.0))
+        assert ("cols" in e) != ("rows" in e), "each edit needs exactly one of cols / rows"
+        if "cols" in e:
+            idx = [int(c) for c in e["cols"]]
+            delta = delta[:, None].expand(W.shape[0], len(idx)) if delta.dim() == 1 else delta
+            assert delta.shape == (W.shape[0], len(idx)), f"{k}: delta {tuple(delta.shape)} for cols {idx}"
+            W[:, idx] = (W[:, idx].float() + alpha * delta).to(W.dtype)
+        else:
+            idx = [int(r) for r in e["rows"]]
+            delta = delta[None].expand(len(idx), W.shape[1]) if delta.dim() == 1 else delta
+            assert delta.shape == (len(idx), W.shape[1]), f"{k}: delta {tuple(delta.shape)} for rows {idx}"
+            W[idx] = (W[idx].float() + alpha * delta).to(W.dtype)
+        out[k] = W
+        applied.append({"key": k, "cols" if "cols" in e else "rows": idx, "alpha": alpha,
+                        "delta_norm": float(delta.norm())})
+    return out, {"edits_applied": applied}
+
+
+def untie(config):
+    assert config["tie_word_embeddings"] and config["text_config"]["tie_word_embeddings"]
+    config["tie_word_embeddings"] = False
+    config["text_config"]["tie_word_embeddings"] = False
+
+
 def main(spec_path, out_dir):
     out_dir = Path(out_dir)
     assert not (out_dir / "model.safetensors.index.json").exists(), f"{out_dir} already holds a checkpoint"
@@ -88,11 +125,13 @@ def main(spec_path, out_dir):
     kind = spec.get("kind", "surgery")
 
     if kind == "lm_head":
-        assert config["tie_word_embeddings"] and config["text_config"]["tie_word_embeddings"]
         W, info = lm_head_edit(spec, src, weight_map)
         replaced = {LM_HEAD: W}
-        config["tie_word_embeddings"] = False
-        config["text_config"]["tie_word_embeddings"] = False
+        untie(config)
+    elif kind == "delta":
+        replaced, info = delta_edits(spec, src, weight_map)
+        if LM_HEAD in replaced:
+            untie(config)
     else:
         replaced, info = writer_edits(spec, src, out_dir, weight_map)
 
