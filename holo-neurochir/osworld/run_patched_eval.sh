@@ -5,27 +5,29 @@
 #   prompt   original 4B on :8000 with prompt v2_verify (run_holo_verify.py; prompt baseline, AxBench-style)
 # Lists: confirm = val_confirm_tasks.json (main, never used to build an intervention); fs_insample = secondary, in-sample.
 # Results ~/osw/results_val_<arm>_<tag>/, tmux osw_val_<tag>:<arm>. Before EACH arm: running VMs + workers <= 6 and
-# >= 14 G available, else refuse (or with WAIT=1 retry every 5 min, up to 6 h).
+# >= 14 G available (override with MAX_VMS / MIN_AVAIL_G when ares sets another cap), else refuse (or with WAIT=1
+# retry every 5 min, up to 6 h).
 # Then: PYTHONPATH=. ~/osw/venv/bin/python osworld/compare_val.py --origin stuck|other \
 #         patched=~/osw/results_val_patched_<tag> prompt=~/osw/results_val_prompt_<tag> orig=~/osw/results_val_orig_<tag>
+# RESUME=1: an arm whose results dir exists continues it (run_holo skips tasks that already have result.txt).
 # DRY_RUN=1: full checks, prints the commands, launches nothing (use it to test this script: a passing preflight
 # otherwise starts VMs for real).
-# Usage: [ARMS="orig patched"] [WAIT=1] [DRY_RUN=1] bash osworld/run_patched_eval.sh <tag> <confirm|fs_insample> [workers=3]
+# Usage: [ARMS="orig patched"] [WAIT=1] [RESUME=1] [DRY_RUN=1] bash osworld/run_patched_eval.sh <tag> <confirm|fs_insample> [workers=3]
 #        [extra run_holo args, all arms]
 set -euo pipefail
 TAG="${1:?usage: run_patched_eval.sh <tag> <confirm|fs_insample> [workers=3] [run_holo args]}"
 LIST="${2:?list: confirm | fs_insample}"; W="${3:-3}"; shift $(( $# < 3 ? $# : 3 ))
 [[ "$W" =~ ^[1-9]$ ]] || { echo "workers must be 1-9, got $W" >&2; exit 1; }
-ARMS="${ARMS:-orig patched}"; WAIT="${WAIT:-0}"; DRY_RUN="${DRY_RUN:-0}"
+ARMS="${ARMS:-orig patched}"; WAIT="${WAIT:-0}"; DRY_RUN="${DRY_RUN:-0}"; RESUME="${RESUME:-0}"
 HERE="$(cd "$(dirname "$0")" && pwd)"
 TASKS="$HERE/val_${LIST}_tasks.json"; [ -f "$TASKS" ] || { echo "no $TASKS" >&2; exit 1; }
-MAX_VMS=6; MIN_AVAIL_G=14
+MAX_VMS="${MAX_VMS:-6}"; MIN_AVAIL_G="${MIN_AVAIL_G:-14}"
 PATCHED_URL=http://127.0.0.1:8001/v1; PATCHED_NAME=Holo-3.1-4B-patched
 META=~/osw/val_$TAG.json
 
 for arm in $ARMS; do
   case $arm in orig|patched|prompt) ;; *) echo "unknown arm $arm" >&2; exit 1;; esac
-  [ ! -e ~/osw/results_val_${arm}_$TAG ] || { echo "~/osw/results_val_${arm}_$TAG exists: pick a new tag" >&2; exit 1; }
+  [ "$RESUME" = 1 ] || [ ! -e ~/osw/results_val_${arm}_$TAG ] || { echo "~/osw/results_val_${arm}_$TAG exists: pick a new tag or RESUME=1" >&2; exit 1; }
 done
 if [ -e "$META" ]; then cmp -s "$TASKS" "$META" || { echo "$META differs from $TASKS: arms must share the list" >&2; exit 1; }
 elif [ "$DRY_RUN" != 1 ]; then cp "$TASKS" "$META"; fi
