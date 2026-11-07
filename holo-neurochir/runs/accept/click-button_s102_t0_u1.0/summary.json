@@ -1,0 +1,17 @@
+{
+ "task": "click-button",
+ "seed": 102,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 6,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": false,
+ "error": null,
+ "goal": "Click on the \"Next\" button.",
+ "n_steps": 6,
+ "wall_s": 20.9,
+ "gen_s_mean": 3.12
+}

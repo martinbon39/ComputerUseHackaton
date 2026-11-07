@@ -1,0 +1,24 @@
+{
+ "task": "click-checkboxes-soft",
+ "seed": 1,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 12,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Select words similar to mini, houses, water and click Submit.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 6,
+ "wall_s": 50.4,
+ "gen_s_mean": 7.38,
+ "arm": "original"
+}

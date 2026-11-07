@@ -1,0 +1,24 @@
+{
+ "task": "multi-layouts",
+ "seed": 0,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 14,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": false,
+ "error": null,
+ "goal": "Search for crime movies directed by Holcomb from year 2010.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 14,
+ "wall_s": 97.2,
+ "gen_s_mean": 5.87,
+ "arm": "original"
+}

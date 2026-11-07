@@ -1,0 +1,24 @@
+{
+ "task": "click-button-sequence",
+ "seed": 0,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 8,
+ "reward": 0.0,
+ "claimed_done": true,
+ "abandoned": false,
+ "env_done": false,
+ "error": null,
+ "goal": "Click button ONE, then click button TWO.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 3,
+ "wall_s": 27.2,
+ "gen_s_mean": 7.8,
+ "arm": "original"
+}

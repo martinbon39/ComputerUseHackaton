@@ -1,0 +1,24 @@
+{
+ "task": "enter-password",
+ "seed": 3,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 12,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": false,
+ "error": null,
+ "goal": "Enter the password \"DT\" into both text fields and press submit.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 12,
+ "wall_s": 102.5,
+ "gen_s_mean": 6.9,
+ "arm": "original"
+}

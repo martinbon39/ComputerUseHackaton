@@ -1,0 +1,24 @@
+{
+ "task": "login-user-popup",
+ "seed": 0,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 14,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": false,
+ "error": null,
+ "goal": "Enter the username \"cierra\" and the password \"11L\" into the text fields and press login.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 14,
+ "wall_s": 112.2,
+ "gen_s_mean": 6.8,
+ "arm": "original"
+}

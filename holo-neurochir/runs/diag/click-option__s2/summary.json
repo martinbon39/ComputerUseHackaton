@@ -1,0 +1,24 @@
+{
+ "task": "click-option",
+ "seed": 2,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 8,
+ "reward": 1.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Select CA9b and click Submit.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 2,
+ "wall_s": 14.7,
+ "gen_s_mean": 4.94,
+ "arm": "original"
+}

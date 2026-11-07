@@ -1,0 +1,17 @@
+{
+ "task": "enter-text",
+ "seed": 101,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 6,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": false,
+ "error": null,
+ "goal": "Enter \"Livia\" into the text field and press Submit.",
+ "n_steps": 6,
+ "wall_s": 48.3,
+ "gen_s_mean": 6.58
+}

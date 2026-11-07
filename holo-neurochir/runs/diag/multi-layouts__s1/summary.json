@@ -1,0 +1,24 @@
+{
+ "task": "multi-layouts",
+ "seed": 1,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 14,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Search for urban movies directed by Bennett from year 2002.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 7,
+ "wall_s": 46.3,
+ "gen_s_mean": 5.49,
+ "arm": "original"
+}

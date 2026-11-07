@@ -1,0 +1,24 @@
+{
+ "task": "click-tab",
+ "seed": 0,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 6,
+ "reward": 1.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Click on Tab #2.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 1,
+ "wall_s": 6.9,
+ "gen_s_mean": 4.7,
+ "arm": "original"
+}

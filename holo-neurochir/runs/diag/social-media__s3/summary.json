@@ -1,0 +1,24 @@
+{
+ "task": "social-media",
+ "seed": 3,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 10,
+ "reward": 0.0,
+ "claimed_done": true,
+ "abandoned": false,
+ "env_done": false,
+ "error": null,
+ "goal": "For the user @jerald, click on the \"Reply\" button.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 2,
+ "wall_s": 37.4,
+ "gen_s_mean": 16.55,
+ "arm": "original"
+}

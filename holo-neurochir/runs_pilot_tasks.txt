@@ -1,0 +1,1 @@
+click-button-sequence,click-checkboxes,click-collapsible,click-dialog-2,click-option,click-tab,click-tab-2,click-widget,enter-password,enter-text-2,focus-text-2,login-user,login-user-popup,search-engine,use-autocomplete,social-media,click-menu,choose-list,navigate-tree,enter-date,multi-layouts,email-inbox-delete,click-checkboxes-soft,form-sequence

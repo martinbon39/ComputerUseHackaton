@@ -1,0 +1,24 @@
+{
+ "task": "form-sequence",
+ "seed": 2,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 10,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Select 2 with the slider, click the 3rd checkbox, then hit Submit.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 5,
+ "wall_s": 56.8,
+ "gen_s_mean": 9.42,
+ "arm": "original"
+}

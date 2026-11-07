@@ -1,0 +1,24 @@
+{
+ "task": "click-collapsible",
+ "seed": 1,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 8,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Expand the section below and click submit.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 1,
+ "wall_s": 9.1,
+ "gen_s_mean": 6.6,
+ "arm": "original"
+}

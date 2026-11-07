@@ -1,0 +1,24 @@
+{
+ "task": "multi-layouts",
+ "seed": 2,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 14,
+ "reward": 1.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Search for crime movies directed by Jefferson from year 2006.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 7,
+ "wall_s": 104.9,
+ "gen_s_mean": 12.8,
+ "arm": "original"
+}

@@ -1,0 +1,24 @@
+{
+ "task": "click-checkboxes",
+ "seed": 3,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 10,
+ "reward": 1.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Select Gh and click Submit.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 2,
+ "wall_s": 20.1,
+ "gen_s_mean": 7.69,
+ "arm": "original"
+}

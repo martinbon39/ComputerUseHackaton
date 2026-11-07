@@ -1,0 +1,24 @@
+{
+ "task": "enter-date",
+ "seed": 3,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 10,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": false,
+ "error": null,
+ "goal": "Enter 01/29/2010 as the date and hit submit.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 10,
+ "wall_s": 99.4,
+ "gen_s_mean": 8.35,
+ "arm": "original"
+}

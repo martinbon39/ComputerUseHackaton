@@ -1,0 +1,23 @@
+{
+ "task": "enter-text",
+ "seed": 103,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 6,
+ "reward": 1.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Enter \"Annis\" into the text field and press Submit.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 5,
+ "wall_s": 33.6,
+ "gen_s_mean": 5.46
+}

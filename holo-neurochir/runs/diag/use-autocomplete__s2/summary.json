@@ -1,0 +1,24 @@
+{
+ "task": "use-autocomplete",
+ "seed": 2,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 12,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": false,
+ "error": null,
+ "goal": "Enter an item that starts with \"Col\" and ends with \"mbia\".",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 12,
+ "wall_s": 85.1,
+ "gen_s_mean": 5.7,
+ "arm": "original"
+}

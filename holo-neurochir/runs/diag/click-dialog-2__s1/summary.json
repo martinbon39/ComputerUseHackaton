@@ -1,0 +1,24 @@
+{
+ "task": "click-dialog-2",
+ "seed": 1,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 6,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Click the button in the dialog box labeled \"x\".",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 1,
+ "wall_s": 6.2,
+ "gen_s_mean": 3.78,
+ "arm": "original"
+}

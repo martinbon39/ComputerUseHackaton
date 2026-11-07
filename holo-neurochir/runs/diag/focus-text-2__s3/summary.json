@@ -1,0 +1,24 @@
+{
+ "task": "focus-text-2",
+ "seed": 3,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 6,
+ "reward": 1.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Focus into the 2nd input textbox.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 3,
+ "wall_s": 33.2,
+ "gen_s_mean": 9.28,
+ "arm": "original"
+}

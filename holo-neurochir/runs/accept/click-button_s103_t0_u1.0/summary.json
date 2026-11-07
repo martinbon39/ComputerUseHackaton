@@ -1,0 +1,17 @@
+{
+ "task": "click-button",
+ "seed": 103,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 6,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": false,
+ "error": null,
+ "goal": "Click on the \"Cancel\" button.",
+ "n_steps": 6,
+ "wall_s": 42.5,
+ "gen_s_mean": 5.86
+}

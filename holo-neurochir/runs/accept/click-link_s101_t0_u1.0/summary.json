@@ -1,0 +1,17 @@
+{
+ "task": "click-link",
+ "seed": 101,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 6,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": false,
+ "error": null,
+ "goal": "Click on the link \"Leo\".",
+ "n_steps": 6,
+ "wall_s": 54.8,
+ "gen_s_mean": 7.56
+}

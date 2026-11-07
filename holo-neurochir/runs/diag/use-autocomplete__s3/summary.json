@@ -1,0 +1,24 @@
+{
+ "task": "use-autocomplete",
+ "seed": 3,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 12,
+ "reward": 1.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Enter an item that starts with \"Ala\" and ends with \"nds\".",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 6,
+ "wall_s": 108.1,
+ "gen_s_mean": 15.6,
+ "arm": "original"
+}

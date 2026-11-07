@@ -1,0 +1,24 @@
+{
+ "task": "enter-text-2",
+ "seed": 0,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 8,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Type \"myron\" in all upper case letters in the text input and press Submit.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 3,
+ "wall_s": 18.3,
+ "gen_s_mean": 4.82,
+ "arm": "original"
+}

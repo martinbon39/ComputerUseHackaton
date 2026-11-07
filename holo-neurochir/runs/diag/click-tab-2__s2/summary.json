@@ -1,0 +1,24 @@
+{
+ "task": "click-tab-2",
+ "seed": 2,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 10,
+ "reward": 1.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Switch between the tabs to find and click on the link \"rhoncus\".",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 2,
+ "wall_s": 13.7,
+ "gen_s_mean": 5.25,
+ "arm": "original"
+}

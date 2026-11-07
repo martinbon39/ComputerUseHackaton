@@ -1,0 +1,24 @@
+{
+ "task": "social-media",
+ "seed": 1,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 10,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "For the user @alan, click on the \"Copy link to Tweet\" button.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 3,
+ "wall_s": 21.7,
+ "gen_s_mean": 5.77,
+ "arm": "original"
+}

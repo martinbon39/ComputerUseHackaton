@@ -1,0 +1,24 @@
+{
+ "task": "choose-list",
+ "seed": 0,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 8,
+ "reward": 1.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": true,
+ "error": null,
+ "goal": "Select Ertha from the list and click Submit.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 7,
+ "wall_s": 48.8,
+ "gen_s_mean": 5.86,
+ "arm": "original"
+}

@@ -1,0 +1,24 @@
+{
+ "task": "login-user",
+ "seed": 2,
+ "impossible": false,
+ "corrective": false,
+ "thinking": false,
+ "max_steps": 12,
+ "reward": 0.0,
+ "claimed_done": false,
+ "abandoned": false,
+ "env_done": false,
+ "error": null,
+ "goal": "Enter the username \"cierra\" and the password \"CA9\" into the text fields and press login.",
+ "crop_box": [
+  0,
+  0,
+  240,
+  315
+ ],
+ "n_steps": 12,
+ "wall_s": 101.8,
+ "gen_s_mean": 7.32,
+ "arm": "original"
+}
