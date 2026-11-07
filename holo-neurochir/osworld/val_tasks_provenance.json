@@ -6,7 +6,7 @@
  ],
  "n_tasks_scored": 119,
  "confirm_sha256": "03726f07b411869a7a4004b0f3c89ba37d89e948f34ac19cb70e4bb0c3cb5bb7",
- "half_rule": "first byte of sha1(example_id utf-8) odd/even",
+ "half_rule": "first byte of sha1(task_id = 'domain/example_id', utf-8) odd/even",
  "confirm": {
   "chrome/6c4c23a1-42a4-43cc-9db1-2f86ff3738cc": {
    "tag": "fs",
@@ -28,7 +28,7 @@
   },
   "chrome/99146c54-4f37-4ab8-9327-5f3291665e1e": {
    "tag": "other",
-   "half": "even",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -46,7 +46,7 @@
   },
   "gimp/045bf3ff-9077-4b86-b483-a1040a949cff": {
    "tag": "fs",
-   "half": "even",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -64,7 +64,7 @@
   },
   "gimp/38f48d40-764e-4e77-a7cf-51dfce880291": {
    "tag": "fs",
-   "half": "odd",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -82,7 +82,7 @@
   },
   "gimp/fbb548ca-c2a6-4601-9204-e39a2efc507b": {
    "tag": "fs",
-   "half": "even",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -100,7 +100,7 @@
   },
   "libreoffice_calc/2bd59342-0664-4ccb-ba87-79379096cc08": {
    "tag": "other",
-   "half": "even",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -118,7 +118,7 @@
   },
   "libreoffice_calc/37608790-6147-45d0-9f20-1137bb35703d": {
    "tag": "fs",
-   "half": "odd",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -154,7 +154,7 @@
   },
   "libreoffice_impress/bf4e9888-f10f-47af-8dba-76413038b73c": {
    "tag": "other",
-   "half": "odd",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -166,7 +166,7 @@
   },
   "libreoffice_writer/0e47de2a-32e0-456c-a366-8c607ef7a9d2": {
    "tag": "other",
-   "half": "odd",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -190,7 +190,7 @@
   },
   "multi_apps/20236825-b5df-46e7-89bf-62e1d640a897": {
    "tag": "other",
-   "half": "even",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -226,7 +226,7 @@
   },
   "multi_apps/42d25c08-fb87-4927-8b65-93631280a26f": {
    "tag": "other",
-   "half": "odd",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -238,7 +238,7 @@
   },
   "multi_apps/67890eb6-6ce5-4c00-9e3d-fb4972699b06": {
    "tag": "other",
-   "half": "odd",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -279,7 +279,7 @@
   },
   "multi_apps/9219480b-3aed-47fc-8bac-d2cffc5849f7": {
    "tag": "ok",
-   "half": "even",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -303,7 +303,7 @@
   },
   "multi_apps/deec51c9-3b1e-4b9e-993c-4776f20e8bb2": {
    "tag": "other",
-   "half": "odd",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -351,7 +351,7 @@
   },
   "os/5c1075ca-bb34-46a3-a7a0-029bd7463e79": {
    "tag": "fs",
-   "half": "odd",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -375,7 +375,7 @@
   },
   "thunderbird/9bc3cc16-074a-45ac-9bdc-b2a362e1daf3": {
    "tag": "ok",
-   "half": "even",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -399,7 +399,7 @@
   },
   "thunderbird/dd84e895-72fd-4023-a336-97689ded257c": {
    "tag": "ok",
-   "half": "odd",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -423,7 +423,7 @@
   },
   "vlc/386dbd0e-0241-4a0a-b6a2-6704fba26b1c": {
    "tag": "fs",
-   "half": "even",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -435,7 +435,7 @@
   },
   "vlc/5ac2891a-eacd-4954-b339-98abba077adb": {
    "tag": "ok",
-   "half": "even",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -483,7 +483,7 @@
   },
   "vlc/cb130f0d-d36f-4302-9838-b3baf46139b6": {
    "tag": "fs",
-   "half": "even",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -495,7 +495,7 @@
   },
   "vs_code/0512bb38-d531-4acf-9e7e-0add90816068": {
    "tag": "ok",
-   "half": "odd",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -507,7 +507,7 @@
   },
   "vs_code/4e60007a-f5be-4bfc-9723-c39affa0a6d3": {
    "tag": "ok",
-   "half": "odd",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -519,7 +519,7 @@
   },
   "vs_code/6ed0a554-cbee-4b44-84ea-fd6c042f4fe1": {
    "tag": "other",
-   "half": "even",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",
@@ -543,7 +543,7 @@
   },
   "vs_code/9439a27b-18ae-42d8-9778-5f68f891805e": {
    "tag": "ok",
-   "half": "odd",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -555,7 +555,7 @@
   },
   "vs_code/971cbb5b-3cbf-4ff7-9e24-b5c84fcebfa6": {
    "tag": "other",
-   "half": "odd",
+   "half": "even",
    "runs": [
     {
      "pass": "results_diag",
@@ -579,7 +579,7 @@
   },
   "vs_code/eabc805a-bfcf-4460-b250-ac92135819f6": {
    "tag": "ok",
-   "half": "even",
+   "half": "odd",
    "runs": [
     {
      "pass": "results_diag",

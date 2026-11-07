@@ -3,7 +3,7 @@
 val_confirm_tasks.json      main arm: ALL tasks of confirm_tasks.json (frozen by ares, never used to build an
                             intervention; sha256 checked), each tagged from the diagnostic passes:
                             fs (>= 1 completed pass false_success) / ok (success in every completed pass) / other,
-                            and half = odd | even (first byte of sha1(example_id); astra-stuck builds on the even
+                            and half = odd | even (first byte of sha1("domain/example_id"), the fleet task_id; astra-stuck builds on the even
                             half, FLEET_ORDERS.md).
 val_fs_insample_tasks.json  secondary diagnostic, IN-SAMPLE: every split_diag task with >= 1 false_success pass.
 Both are run_holo --test_meta files ({domain: [example_id]}); val_tasks_provenance.json keeps tags and outcomes.
@@ -16,11 +16,11 @@ from holo.osw_taxonomy import classify, find_tasks, load_task
 
 HERE = Path(__file__).resolve().parent
 CONFIRM_SHA256 = "03726f07b411869a7a4004b0f3c89ba37d89e948f34ac19cb70e4bb0c3cb5bb7"
-HALF_RULE = "first byte of sha1(example_id utf-8) odd/even"
+HALF_RULE = "first byte of sha1(task_id = 'domain/example_id', utf-8) odd/even"
 
 
 def half(key):
-    return "odd" if hashlib.sha1(key.split("/")[1].encode()).digest()[0] % 2 else "even"
+    return "odd" if int(hashlib.sha1(key.encode()).hexdigest()[:2], 16) % 2 else "even"
 
 
 def outcomes(results_glob):
