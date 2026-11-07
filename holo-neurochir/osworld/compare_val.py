@@ -41,7 +41,9 @@ def one_dir(results_dir, stratum):
         if not steps or score is None:
             continue
         c = classify(meta, score, steps, [None] * len(steps), max_steps=MAX_STEPS)
-        out[f"{d.parent.name}/{d.name}"] = {"success": score > 0, "false_success": c["category"] == "false_success",
+        key = f"{d.parent.name}/{d.name}"
+        assert key not in out, f"{key} scored twice under {results_dir} (two jobs ran the same task?)"
+        out[key] = {"success": score > 0, "false_success": c["category"] == "false_success",
                                             "n_steps": c["n_steps"], "step_limit": c["step_limit"], "stratum": stratum}
     return out
 
