@@ -58,8 +58,8 @@ Réserve de harnais : notre harnais OSWorld (RealtimeGUI @ a763361) est plus per
 
 ## Live probe
 
-A live endpoint to try the probe from a web page is coming. URL: `LIVE_PROBE_URL` (placeholder, to be filled in once the Modal endpoint is up).
-Sonde en ligne : un endpoint live pour tester depuis une page web arrive. URL : `LIVE_PROBE_URL` (à remplir quand l'endpoint Modal sera en place).
+Endpoint: `https://martinbon39--holo-jury-probe-web.us-east.modal.run` (routes: `GET /contexts`, `GET /probe/<id>`). The server is open only during the judging window; outside it, it answers 503 "door closed".
+Sonde en ligne : `https://martinbon39--holo-jury-probe-web.us-east.modal.run` (routes : `GET /contexts`, `GET /probe/<id>`). Le serveur n'est ouvert que pendant la fenêtre de jugement ; en dehors, il répond 503 « porte fermée ».
 
 ## Merged checkpoint on Hugging Face
 
