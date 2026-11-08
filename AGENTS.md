@@ -37,7 +37,7 @@ bash jury_kit/quickstart.sh               # both of the above + checks the demo 
 | AlphaEdit +2.2 [−13.3, +17.8] n=45; ExPO −1.5 [−8.9, +5.7] n=120 → no gain | measured | same | same |
 | Merged checkpoint rebuilt bit-for-bit from 3 pinned public models | measured (on an independent machine) | `jury_kit/expected_sha256.json`, `jury_kit/README.md` | `python3 jury_kit/rebuild_merge.py --check 2 --merged DIR` |
 | Guard repair: 5/18 vs 2/18 branches, +16.7 [0, +44] | measured, **not distinguishable from 0** | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/repair/results.json` | read |
-| Guard + escalation to Holo4 | **running** (interim 4/10 vs 0/10 at 09:51 UTC; do not treat as final) | PR #1 (`rescue_bench/`) | read the PR |
+| Guard + escalation to Holo4 vs Holo4 alone | **running** (interim: 5 strict-valid episodes, 4/10 vs 0/10 branches repaired, +0.40 [0, 0.80]; two repairs independently audited: calc/37608790, impress/70bca0cc). Not final | draft PR #1, `holo-neurochir/rescue_bench/REPORT.md`, `MEASURED_REPAIRS_REVIEW.md` | read the PR |
 | Holo + Guard on the 120-task test split | **running**, pre-registered | `holo-neurochir/report/PREREG_ONLINE_GUARD.md` | read |
 | Guard v2 (Opus + history) vs v1 on the held-out half, used once: detection +13.8 pts [+2.9, +30] (20/29 vs 16/29); false rejection +4.3 [−5, +15] (15/116 vs 10/116) | measured offline, not run online | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/v2/PROTOCOL.md`, `v2/runs/` | read |
 | "A verifier can be added to any agent with one call" | design property, measured on Holo only | `feci_guard.py` docstring | read 61 lines |

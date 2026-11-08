@@ -63,6 +63,14 @@ flowchart LR
 - **Escalation**: after a refusal, Holo4-27B (served on Modal) continues the episode with the history and the feedback.
   Code: [`run_holo_guard_rescue.py`](holo-neurochir/feci_guard/run_holo_guard_rescue.py); measurement in progress
   ([PR #1](https://github.com/martinbon39/ComputerUseHackaton/pull/1)).
+- **Use it in any agent loop** (one call, synchronous, never raises, < 60 s):
+  ```python
+  import sys; sys.path.insert(0, "holo-neurochir/feci_guard"); import feci_guard
+  r = feci_guard.check(task_instruction, screenshot_png_bytes)
+  if r["verdict"] == "reject":          # INCOMPLETE with at least one requirement visibly "no"
+      tool_output = r["feedback"]       # tell the agent what is missing, and continue the episode
+  # r["requirements"]: [{"text", "status": "yes" | "no" | "cannot_tell", "evidence"}] for the episode journal
+  ```
 - **Backends**: local `claude -p` CLI, or any OpenAI-compatible endpoint (`GUARD_BACKEND=openai`), so it also runs on
   GitHub-hosted runners ([holo-osworld-runner](https://github.com/martinbon39/holo-osworld-runner)).
 
@@ -82,7 +90,7 @@ resamples, seed 0) for differences, and Wilson intervals for proportions.
 | 6 | Noise floor: same model, two servers | +1.5 pts [−4.5, +7.6], n=120 | reference | same script |
 | 7 | Feci Guard verifier, offline, same 268 episodes | detects **45/66 (68 % [56–78])**, wrongly rejects **21/202 (10 % [7–15])**; gap **+58 [+41, +74]** | **separates** | `python3 jury_kit/replay_guard.py` |
 | 8 | Guard repair on replayed false successes | 5/18 vs 2/18 branches repaired (9 episodes × 2); +16.7 pts [0, +44], sign test p=0.5 | **not distinguishable from 0** | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md) |
-| 9 | Guard + escalation to Holo4, vs Holo4 alone | interim snapshot 09:51 UTC: 4/10 vs 0/10, +40 pts [0, +80], 20/48 branches | **running**, not frozen | [PR #1](https://github.com/martinbon39/ComputerUseHackaton/pull/1) |
+| 9 | Guard + escalation to Holo4, vs Holo4 alone (replayed false successes, same boundary) | interim, 5 strict-valid episodes × 2: **4/10 vs 0/10** repaired, +0.40 [0, 0.80] (cluster CI); two repairs independently audited (`calc/37608790`, `impress/70bca0cc`) | **running**, numbers will move | [`rescue_bench/REPORT.md` in PR #1](https://github.com/martinbon39/ComputerUseHackaton/pull/1) |
 | 10 | Holo + Guard on the 120-task OSWorld test split | pre-registered ([`PREREG_ONLINE_GUARD.md`](holo-neurochir/report/PREREG_ONLINE_GUARD.md)) | **running** | [`report/PREREG_ONLINE_GUARD.md`](holo-neurochir/report/PREREG_ONLINE_GUARD.md) |
 | 11 | Stronger judge: Guard v2 (Opus + the 2 previous screens + action list) vs v1, held-out half used once | detects 20/29 (69 %) vs 16/29 (55 %): **+13.8 pts [+2.9, +30]**; false rejection 15/116 (12.9 %) vs 10/116 (8.6 %): +4.3 [−5, +15] | **more detection, significant**; offline only, not run online | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md#guard-v2-sprint-s1-offline-judge_bench-corpus-v2protocolmd-independently-recomputed), [`v2/PROTOCOL.md`](holo-neurochir/feci_guard/v2/PROTOCOL.md) |
 
