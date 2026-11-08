@@ -325,9 +325,9 @@ async function fillPick() {  // always visible: recorded duels by task (outcomes
 }
 async function fillCards() {  // the landing page: one big card per recorded task (its latest duel, Guard duels first)
   const rows = (await (await fetch('/api/duels')).json()).filter(d => d.sides.left.verdict && d.sides.right.verdict && !/INFRA/.test(d.note || ''));
-  // selected: the three reference duels (R2 is a Guard loss), then later valid Guard duels the Guard side won
+  // selected: the three reference duels (R2 is a Guard loss), then later valid duels with Holo ✗ / +Guard ✓
   const t1 = (rows.find(d => d.id === CARDS[0]) || { t0: Infinity }).t0;
-  const later = rows.filter(d => (d.preset || '').includes('guard') && d.t0 > t1 && !CARDS.includes(d.id) && d.sides.right.verdict.score >= 1).sort((a, b) => a.t0 - b.t0);
+  const later = rows.filter(d => (d.preset || '').includes('guard') && d.t0 > t1 && !CARDS.includes(d.id) && d.sides.right.verdict.score >= 1 && d.sides.left.verdict.score < 1).sort((a, b) => a.t0 - b.t0);
   const pick = [...CARDS.map(id => rows.find(d => d.id === id)).filter(Boolean), ...later];
   const ic = v => v.score >= 1 ? '<b class="ok">✓</b>' : '<b class="ko">✗</b>';
   $('#cards').innerHTML = pick.map(d => `<button class="card" data-id="${d.id}" data-task="${d.task}"><img class="shot" alt=""><div class="cb">
