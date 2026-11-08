@@ -259,6 +259,20 @@ m.add("ogBnotFd", sum(not Mb[k]["false_done"] for k in B_keys), OGS + " repaired
 nz = OG["noise_orig_pod_vs_modal"]
 m.add("ogNoiseDown", nz["flips_1_to_0"], OGS + " noise_orig_pod_vs_modal.flips_1_to_0")
 m.add("ogNoiseUp", nz["flips_0_to_1"], OGS + " noise_orig_pod_vs_modal.flips_0_to_1")
+CD = load("local/constraint_drop/RESULT.json")
+CDS = "data/local/constraint_drop/RESULT.json"
+pr = CD["primary"]
+assert CD["H1_holds"] is False and CD["n_unparseable"] == 0
+m.add("cdFs", f"{pr['FS_yes']}/{pr['FS_n']}", CDS + " primary.FS_yes/FS_n")
+m.add("cdFsPct", f"{100 * pr['FS_rate']:.0f}", CDS + " primary.FS_rate (%)")
+m.add("cdTs", f"{pr['TS_yes']}/{pr['TS_n']}", CDS + " primary.TS_yes/TS_n")
+m.add("cdTsPct", f"{100 * pr['TS_rate']:.0f}", CDS + " primary.TS_rate (%)")
+m.add("cdP", f"{pr['fisher_p_greater']:.2f}", CDS + " primary.fisher_p_greater (one-sided)")
+m.add("cdDiff", f"{100 * pr['diff']:+.1f}", CDS + " primary.diff (points)")
+m.add("cdDiffCi", " to ".join(f"{100 * x:+.1f}".replace("-", "$-$") for x in pr["diff_ci"]), CDS + " primary.diff_ci (Newcombe)")
+fi = CD["post_hoc"]["FS_on_infeasible_tasks"]
+m.add("cdRegex", fi["yes"], CDS + " post_hoc.FS_on_infeasible_tasks.yes (correct infeasibility answers missed by the harness regex)")
+m.add("cdAudit", CD["post_hoc"]["audit"]["audit_protocol_wording"]["agreement"], CDS + " post_hoc.audit.audit_protocol_wording.agreement")
 write_table("guard", "\\begin{tabular}{lcccc}\n\\toprule\nJudge & false successes detected & true successes rejected & gap, points [95\\% CI] & no verdict \\\\\n\\midrule\n"
             + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n", "guard")
 m.write()

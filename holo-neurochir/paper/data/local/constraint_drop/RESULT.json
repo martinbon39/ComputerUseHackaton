@@ -1,0 +1,202 @@
+{
+  "n_rows": 189,
+  "n_unparseable": 0,
+  "primary": {
+    "FS_yes": 9,
+    "FS_n": 56,
+    "TS_yes": 10,
+    "TS_n": 133,
+    "FS_rate": 0.16071428571428573,
+    "FS_ci": [
+      0.08692667607595139,
+      0.2780620666974952
+    ],
+    "TS_rate": 0.07518796992481203,
+    "TS_ci": [
+      0.0413507970129073,
+      0.13287607126342424
+    ],
+    "diff": 0.0855263157894737,
+    "diff_ci": [
+      -0.00813546068414013,
+      0.20765516566677927
+    ],
+    "fisher_p_greater": 0.06760461028653249
+  },
+  "by_arm": {
+    "modal": {
+      "FS_yes": 5,
+      "FS_n": 27,
+      "TS_yes": 7,
+      "TS_n": 65,
+      "FS_rate": 0.18518518518518517,
+      "FS_ci": [
+        0.08180707142976529,
+        0.3669868361854843
+      ],
+      "TS_rate": 0.1076923076923077,
+      "TS_ci": [
+        0.053154219531127755,
+        0.20601313581449843
+      ],
+      "diff": 0.07749287749287748,
+      "diff_ci": [
+        -0.06517463684119196,
+        0.2672986818475157
+      ],
+      "fisher_p_greater": 0.24726563712704808
+    },
+    "pod": {
+      "FS_yes": 4,
+      "FS_n": 29,
+      "TS_yes": 3,
+      "TS_n": 68,
+      "FS_rate": 0.13793103448275862,
+      "FS_ci": [
+        0.05497439964111964,
+        0.30558993720352023
+      ],
+      "TS_rate": 0.04411764705882353,
+      "TS_ci": [
+        0.01511661970804156,
+        0.12187195182496394
+      ],
+      "diff": 0.09381338742393508,
+      "diff_ci": [
+        -0.01988593172052977,
+        0.26396204962534825
+      ],
+      "fisher_p_greater": 0.11635241555347761
+    }
+  },
+  "not_declared_infeasible": {
+    "FS_yes": 9,
+    "FS_n": 56,
+    "TS_yes": 2,
+    "TS_n": 124,
+    "FS_rate": 0.16071428571428573,
+    "FS_ci": [
+      0.08692667607595139,
+      0.2780620666974952
+    ],
+    "TS_rate": 0.016129032258064516,
+    "TS_ci": [
+      0.004434364460542482,
+      0.056903005223984324
+    ],
+    "diff": 0.1445852534562212,
+    "diff_ci": [
+      0.060281468205707275,
+      0.26251432941536584
+    ],
+    "fisher_p_greater": 0.0005287785086302511
+  },
+  "H1_holds": false,
+  "quote_in_text": {
+    "yes_total": 19,
+    "quote_found": 17
+  },
+  "self_check_guard": {
+    "recall_FS": 0.16071428571428573,
+    "recall_ci": [
+      0.08692667607595139,
+      0.2780620666974952
+    ],
+    "false_reject_TS": 0.07518796992481203,
+    "false_reject_ci": [
+      0.0413507970129073,
+      0.13287607126342424
+    ],
+    "precision": 0.47368421052631576,
+    "external_guard_ref": {
+      "detection": "45/66 = 0.68",
+      "false_reject": "21/202 = 0.10"
+    }
+  },
+  "task_cluster_bootstrap_diff_ci": [
+    -0.0340938553279751,
+    0.2198501022030434
+  ],
+  "post_hoc": {
+    "FS_on_infeasible_tasks": {
+      "n": 5,
+      "yes": 5,
+      "note": "agent states the task cannot be done; harness regex missed the answer text, emitted DONE, scored 0"
+    },
+    "feasible_tasks_only": {
+      "FS_yes": 4,
+      "FS_n": 51,
+      "FS_ci": [
+        0.03092219678848919,
+        0.18499946312595889
+      ],
+      "TS_yes": 2,
+      "TS_n": 124,
+      "TS_ci": [
+        0.004434364460542482,
+        0.056903005223984324
+      ],
+      "diff": 0.06230234029095509,
+      "diff_ci": [
+        -0.0003046773098740463,
+        0.16951019067565937
+      ],
+      "fisher_p_greater": 0.060548764962082814
+    },
+    "audit": {
+      "sample": "20 rows of annotations.jsonl, random.Random(20261108).sample(range(189), 20); blind text in audit_sample_blind.jsonl, mapping in audit_key.json",
+      "audit_protocol_wording": {
+        "labels": [
+          "no",
+          "no",
+          "no",
+          "yes",
+          "no",
+          "no",
+          "no",
+          "no",
+          "no",
+          "no",
+          "no",
+          "no",
+          "no",
+          "no",
+          "no",
+          "no",
+          "yes",
+          "no",
+          "no",
+          "yes"
+        ],
+        "agreement": "20/20",
+        "annotator": "Sonnet subagent, exact PROTOCOL question, blind to label and score"
+      },
+      "audit_with_extra_example": {
+        "labels": [
+          "yes",
+          "no",
+          "no",
+          "yes",
+          "no",
+          "yes",
+          "yes",
+          "no",
+          "no",
+          "yes",
+          "yes",
+          "yes",
+          "yes",
+          "no",
+          "yes",
+          "yes",
+          "yes",
+          "yes",
+          "no",
+          "yes"
+        ],
+        "agreement": "10/20",
+        "note": "brief deviated from PROTOCOL: it added that a still-to-do step such as 'needs to be saved' counts as yes; every disagreement is such a step (save, press Enter, adjust), mostly done before the answer. Kept to show the label depends on that wording."
+      }
+    }
+  }
+}
