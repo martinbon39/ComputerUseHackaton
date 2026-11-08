@@ -18,7 +18,7 @@ echo; echo "== (c) demo replay pages =="
 "$PY" - <<'PY'
 import html.parser, pathlib
 for name, what in [("holo-neurochir/demo_live/repair_calc.html", "Feci Guard refuses a false done, the agent repairs"),
-                   ("holo-neurochir/demo_faux_fini/demo_faux_fini.html", "the original agent's false done, step by step")]:
+                   ("holo-neurochir/demo_faux_fini/demo_faux_fini.html", "one task, the original's false done next to the merged agent")]:
     p = pathlib.Path(name)
     s = p.read_text(encoding="utf-8")
     class P(html.parser.HTMLParser):
