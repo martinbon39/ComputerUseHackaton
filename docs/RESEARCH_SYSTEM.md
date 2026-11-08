@@ -29,7 +29,7 @@ produced them.
 
 ## 1. The agent team
 
-One human (Martin) supervised. The work was done by Claude Code (and some Codex) sessions on one server, linked on a
+A team of three supervised: Martin Bonan (research lead, day-to-day supervision of the agent fleet), Émile Jouannet (senior researcher, compute and Modal infrastructure) and Souad Boukhedenna (senior researcher, pitch and communication). The work was done by Claude Code (and some Codex) sessions on one server, linked on a
 supervision canvas ("argos"). Sessions talked to each other with two commands: `argos read <name>` reads another
 session's terminal without interrupting it, and `argos send <name> "…"` writes into it.
 

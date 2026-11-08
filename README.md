@@ -293,9 +293,9 @@ one human supervised:
 
 ## Team
 
-- **Émile Jouannet** (EPITA), GitHub [Symbioose](https://github.com/Symbioose)
-- **Souad Boukhedenna** (SKEMA Business School)
-- **Martin Bonan**, GitHub [martinbon39](https://github.com/martinbon39)
+- **Martin Bonan**, research lead, supervised the agent fleet day to day. GitHub [martinbon39](https://github.com/martinbon39)
+- **Émile Jouannet** (EPITA), senior researcher, compute and Modal infrastructure. GitHub [Symbioose](https://github.com/Symbioose)
+- **Souad Boukhedenna** (SKEMA Business School), senior researcher, pitch and communication
 
 ## Acknowledgements and license
 
