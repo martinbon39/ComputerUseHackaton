@@ -3,7 +3,8 @@
 ## In four lines
 1. **A stronger judge is a real verifier; the agent judging itself is not.** On the same 268 episodes, Claude Sonnet
    (Feci Guard v1, final screen only) detects 68 % of false successes for 10 % false rejections (gap +58 pts
-   [+41, +74]). Holo-3.1-4B judging itself: 53 % / 48 % (+5 [−13, +23]).
+   [+41, +74]). Holo-3.1-4B judging itself: 53 % / 48 % (+5 [−13, +23]). Holo4-27B behind the same Feci Guard
+   prompt: 47 % / 24 % (+23 [+5, +40]); at equal prompt Claude stays ahead by 35 pts [10, 59].
 2. **Adding history to an even stronger judge helps.** Claude Opus with the 2 screens before the answer and the
    action list detects significantly more than v1 (+13.8 pts [+2.9, +30]), and its extra false rejections are not
    significant (+4.3 [−5, +15]). This was selected on dev and confirmed once on the held-out half. It does not reach
@@ -20,17 +21,21 @@ Not run (cancelled by ares): the 60-item blind packet (replaced by judge_bench),
 minimum detectable effect is about 17 pts), the 30-step repair sensitivity, and an online v2 arm.
 
 ## 1. Judge bench: three judges on the same 268 episodes (final screen only)
-Source: `../judge_bench/` (verif-study corpus: 66 false successes, 202 true successes, 90 tasks). Wilson 95 % CI;
-CI of the gap from a task-level bootstrap.
+Source of record: `../judge_bench/REPORT.md` (verif-study corpus: 66 false successes, 202 true successes, 90 tasks).
+Wilson 95 % CI; CI of the gap from a task-level bootstrap (90 tasks).
 
-| | Holo-3.1-4B | Holo4-27B | Claude Sonnet (Feci Guard v1) |
+| | Holo-3.1-4B (V1 prompt) | Holo4-27B, Feci Guard prompt (V2c) | Claude Sonnet, Feci Guard prompt (v1) |
 |---|---|---|---|
 | False successes detected | 53 % (35/66) [41–65] | 47 % (31/66) [35–59] | **68 % (45/66) [56–78]** |
-| True successes wrongly rejected | 48 % (97/202) [41–55] | 31 % (63/202) [25–38] | **10 % (21/202) [7–15]** |
-| Gap | +5 pts [−13, +23] | +16 pts [−3, +33] | **+58 pts [+41, +74]** |
+| True successes wrongly rejected | 48 % (97/202) [41–55] | 24 % (49/202) [19–31] | **10 % (21/202) [7–15]** |
+| Gap | +5 pts [−13, +23] | +23 pts [+5, +40] | **+58 pts [+41, +74]** |
+| No verdict (counted as pass), false / true | 3 / 3 | 8 / 15 | 0 / 0 |
 
-Caveat: the Holo judges used verif-study's V1 prompt, while Claude used the Feci Guard prompt, so the Claude advantage
-mixes the model and the prompt.
+Second line, Holo4-27B with verif-study's V1 prompt (V2a): 47 % (31/66) detection, 31 % (63/202) false rejection,
+gap +16 pts [−3, +33].
+At equal prompt (V2c against Claude), Holo4-27B − Claude = −35 pts [−59, −10]: most of Claude's advantage comes from
+the model, not the prompt. V2c had 23 calls with no verdict (16 timeouts at 55 s, 7 outputs outside the schema),
+counted as pass. Claude: 268/268 valid verdicts, median latency 6 s, cost $7.60 shown by the CLI for 268 calls.
 
 ## 2. Guard v2, sprint S1 (offline; protocol `v2/PROTOCOL.md`, independently recomputed)
 Split by task hash, committed before any test (`v2/SPLIT.json`): dev has 37 false and 86 true successes; held-out has
@@ -95,4 +100,5 @@ Raw data: `~/osw/feci_repair/{nog,guard}/branches.jsonl`. Analysis: `analyze_rep
 ## 5. Verifier hand tests
 On vlc/386dbd0e (false success, a global hotkey setting), the passive mode answers COMPLETE because the setting is not
 visible (cannot_tell). The active mode answers NEED_CHECK and asks to open Tools > Preferences > Hotkeys. Latency is
-6.5–10.6 s, about $0.04 per check.
+6.5–10.6 s. Cost: $7.60 for the 268 judge_bench calls, about **$0.028 per check**
+(the ~$0.04 seen in the hand tests is not representative).
