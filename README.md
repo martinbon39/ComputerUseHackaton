@@ -39,7 +39,8 @@ its "done" is false:
   direction in the activations adds at most 0.04 AUROC over position. Text signals reach AUROC 0.66, against 0.72 for
   the step index. [`text_signal/REPORT.md`](holo-neurochir/text_signal/REPORT.md), paper §4.
 - **Weight surgery moves the decision but cannot aim it.** A closed-form edit and a weight merge lower `answer` on
-  false successes. They lower it as much on true finishes (15/16 → 3/16), so the edits have no discriminator. Online, no edit beats the
+  false successes, but at least as much on true finishes (broad AlphaEdit: false successes 15/16 → 8/16, true finishes
+  15/16 → 3/16), so the edits have no discriminator. Online, no edit beats the
   noise of the original. Merge vs original, 165 paired tasks: **+1.9 pts, CI95 [−4.3, +8.0]**, so no gain is
   claimed. About 15 other weight- and activation-edit experiments were screened and rejected. They are listed in [docs/REPO_MAP.md](docs/REPO_MAP.md).
 
@@ -76,6 +77,10 @@ flowchart LR
       tool_output = r["feedback"]       # tell the agent what is missing, and continue the episode
   # r["requirements"]: [{"text", "status": "yes" | "no" | "cannot_tell", "evidence"}] for the episode journal
   ```
+  Set the backend first: `FECI_CLAUDE=$(which claude)` for the Claude CLI (the default path is our server's), or
+  `GUARD_BACKEND=openai GUARD_BASE_URL=... GUARD_MODEL=... GUARD_API_KEY_ENV=<name of the key variable>`. The Guard
+  fails open: with no verdict (`r["kind"] == "no_verdict"`, cause in `r["detail"]["error"]`) the answer is accepted,
+  so check that field once when you integrate it. [`jury_kit/guard_live.py`](jury_kit/guard_live.py) sets this up for you.
 - **Backends**: local `claude -p` CLI, or any OpenAI-compatible endpoint (`GUARD_BACKEND=openai`), so it also runs on
   GitHub-hosted runners ([holo-osworld-runner](https://github.com/martinbon39/holo-osworld-runner)).
 
@@ -96,7 +101,7 @@ resamples, seed 0) for differences, and Wilson intervals for proportions.
 | 7 | Feci Guard verifier, offline, same 268 episodes (90 tasks) | detects **45/66 (68 % [56–78])**, wrongly rejects **21/202 (10 % [7–15])**; gap **+58 [+41, +74]** | **separates** | `python3 jury_kit/replay_guard.py` |
 | 8 | Guard repair on replayed false successes | 5/18 vs 2/18 branches repaired (9 episodes × 2); +16.7 pts [0, +44], sign test p=0.5 | **not distinguishable from 0** | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md) |
 | 9 | Guard + escalation to Holo4, vs Holo4 alone (replayed false successes, same boundary) | 9 replay-valid recorded false successes × 2 branches per arm: Guard → Holo4 **11/18** vs Holo4 alone **2/18** scored 1; **+50 pts [+22, +78]** (episode-cluster bootstrap, 9 episodes). After a real refusal, 9 of 11 branches were repaired by new actions. Sensitivity: strict replay (8 episodes) +50 [+12.5, +87.5]; all 12 episodes +33 [+4, +63] | **significant, in replay** (conditional on a recorded false "done"; not an online score gain) | [`rescue_bench/REPORT.md`](holo-neurochir/rescue_bench/REPORT.md), [`PREREG.md`](holo-neurochir/rescue_bench/PREREG.md) |
-| 10 | **Holo + Guard online**, 120-task OSWorld test split (pre-registered), vs the same model on the same server | false "done" rate **27/120 (22.5 %) → 13/120 (10.8 %): −11.7 pts [−19.2, −4.2]**; OSWorld score 58.6 → 60.2: +1.6 pts [−4.4, +7.7]; 8 tasks repaired, 4 true successes lost (within the original's own noise: 9 flips), 0 tasks excluded | **false "done" halved, significant**; **no score gain claimed**; useful under the pre-registered rule 5 | `python3 jury_kit/verify_online_guard.py`, [`report/ONLINE_GUARD_RESULT.md`](holo-neurochir/report/ONLINE_GUARD_RESULT.md) |
+| 10 | **Holo + Guard online**, 120-task OSWorld test split (pre-registered), vs the same model on the same server | false "done" rate **27/120 (22.5 %) → 13/120 (10.8 %): −11.7 pts [−19.2, −4.2]**; OSWorld score 58.6 → 60.2: +1.6 pts [−4.4, +7.7]; 19 false "done" avoided: 8 became successes, the others honest failures; 4 true successes lost (within the original's own noise: 9 flips); 0 tasks excluded | **false "done" halved, significant**; **no score gain claimed**; useful under the pre-registered rule 5 | `python3 jury_kit/verify_online_guard.py`, [`report/ONLINE_GUARD_RESULT.md`](holo-neurochir/report/ONLINE_GUARD_RESULT.md) |
 | 11 | Stronger judge: Guard v2 (Opus + the 2 previous screens + action list) vs v1, held-out half used once | detects 20/29 (69 %) vs 16/29 (55 %): **+13.8 pts [+2.9, +30]**; false rejection 15/116 (12.9 %) vs 10/116 (8.6 %): +4.3 [−5, +15] | **more detection, significant**; the target (≥ 80 % detection, ≤ 10 % false rejection) is **not met**; offline only | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md#2-guard-v2-sprint-s1-offline-protocol-v2protocolmd-independently-recomputed), [`v2/PROTOCOL.md`](holo-neurochir/feci_guard/v2/PROTOCOL.md) |
 
 Caveats that change how to read the table:
@@ -236,6 +241,11 @@ one human supervised:
   refusal into a success: the Guard halves false "done" but does not raise the score detectably.
 - The verifier sees the screen only. It cannot check file contents or saved settings; an "active" mode that asks the
   agent to make them visible exists but is not measured.
+- Deviations from the online pre-registration: the escalation arm (`orig_guard_rescue`) and the 45-task reserve
+  replication were not run online (time); the primary comparator moved from the pod-served original (29/120 false
+  "done") to the Modal-served one (27/120) after the pod outage (amendment 2, before any Guard episode). Against the
+  pod comparator the result holds: false "done" −13.3 pts [−20.8, −5.8], score +0.1 [−6.5, +6.6]
+  ([`ONLINE_GUARD_RESULT.md`](holo-neurochir/report/ONLINE_GUARD_RESULT.md)).
 - The Guard costs ~$0.03 and 5–10 s per `answer`, and works best with a closed model (Claude Sonnet); the open-weights
   Holo4-27B behind the same prompt separates less well (row 7 caveat).
 

@@ -49,8 +49,9 @@ refusal → repair on `libreoffice_calc/1de60575` (one episode, not an average e
 | "A verifier can be added to any agent with one call" | design property, measured on Holo only | `feci_guard.py` docstring | read 61 lines |
 | End-to-end plumbing: refusal → escalation → re-check → official score | measured on 1 task (no efficacy claim) | `holo-neurochir/feci_guard/smoke/impress_550ce7e7_rescue_guard.md` | read |
 
-Not claimed anywhere: an OSWorld score gain from any weight edit; a statistically significant repair effect (as of
-this writing); comparability of our absolute scores with H's published scores (our harness is more permissive on
+Not claimed anywhere: an OSWorld score gain from any weight edit or from the Guard (online score +1.6 [−4.4, +7.7]); a
+significant repair by Holo-3.1 alone (+16.7 [0, +44]); an online measure of the Holo4 escalation (significant in
+replay only); comparability of our absolute scores with H's published scores (our harness is more permissive on
 infeasible tasks).
 
 ## Repository map
