@@ -1,0 +1,808 @@
+{
+  "false_success_rule": "score == 0 and finished_by_agent; split by official infeasible_task and Guard exposure",
+  "guard_exposure_rule": "finished_by_agent and not model_declared_infeasible",
+  "judge_transport": {
+    "limitation": "The frozen judge corpus excluded officially infeasible episodes before judging, so 21/202 transports to Guard-exposed non-infeasibility answers, not to successful infeasibility refusals or partial scores.",
+    "reported_false_rejections": 21,
+    "reported_rate": 0.10396039603960396,
+    "reported_true_successes": 202,
+    "scope": "judge_bench binary-score final-answer corpus"
+  },
+  "partial_rule": "score not in {0, 1}; reported separately because judge_bench excluded partial scores",
+  "runs": {
+    "reserve45_modal_original": {
+      "counts": {
+        "declared_infeasible_all_scores": 3,
+        "episodes": 45,
+        "false_success_feasible": 5,
+        "false_success_feasible_guard_exposed": 5,
+        "false_success_infeasible_completion_claim": 3,
+        "partial_answer_declared_infeasible_guard_bypassed": 0,
+        "partial_answer_guard_exposed": 0,
+        "partial_nonanswer": 0,
+        "true_score1_answer_guard_exposed": 15,
+        "true_score1_declared_infeasible_guard_bypassed": 3,
+        "true_score1_nonanswer": 1
+      },
+      "fields_read": [
+        "score",
+        "finished_by_agent",
+        "infeasible_task",
+        "model_declared_infeasible"
+      ],
+      "prevalence": {
+        "false_success_feasible": {
+          "denominator": 45,
+          "numerator": 5,
+          "rate": 0.1111111111111111,
+          "wilson95": [
+            0.04840471794567186,
+            0.2349909699576858
+          ]
+        },
+        "false_success_feasible_guard_exposed": {
+          "denominator": 45,
+          "numerator": 5,
+          "rate": 0.1111111111111111,
+          "wilson95": [
+            0.04840471794567186,
+            0.2349909699576858
+          ]
+        },
+        "false_success_infeasible_completion_claim": {
+          "denominator": 45,
+          "numerator": 3,
+          "rate": 0.06666666666666667,
+          "wilson95": [
+            0.022932032599250987,
+            0.17856601963591895
+          ]
+        },
+        "true_score1_answer_guard_exposed": {
+          "denominator": 45,
+          "numerator": 15,
+          "rate": 0.3333333333333333,
+          "wilson95": [
+            0.21358874934330035,
+            0.47929511690099585
+          ]
+        }
+      },
+      "provenance": {
+        "manifest": [
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/6c4c23a1-42a4-43cc-9db1-2f86ff3738cc/meta.json",
+            "sha256": "a7a1040e9d43ea72c74eab5b9336dbff8d27981f407d7ea577fd067167bbe7ff"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/99146c54-4f37-4ab8-9327-5f3291665e1e/meta.json",
+            "sha256": "6b333e46cb1e70d1b5013dcf89be7fbc5e0b3a0cf37510c6878e183483efd3ef"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/gimp/045bf3ff-9077-4b86-b483-a1040a949cff/meta.json",
+            "sha256": "ef1f3f9df6e5c2315c71f2ab7648de6bb2130492aabdec960e87c25f8047fc48"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/gimp/38f48d40-764e-4e77-a7cf-51dfce880291/meta.json",
+            "sha256": "c77c4e06b7a3b04980b5b23bcfff8c130dbfaa435427b75c02153b41ee9d5f11"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/gimp/fbb548ca-c2a6-4601-9204-e39a2efc507b/meta.json",
+            "sha256": "503fa5f8b4892102b93dac865b1d7cb4163915e5afaf9217473ed1a6a426641d"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/2bd59342-0664-4ccb-ba87-79379096cc08/meta.json",
+            "sha256": "e6090e8e57eeab347ac63fa62ad61a180cd2e28c38c99df651abc21978a7ff82"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/37608790-6147-45d0-9f20-1137bb35703d/meta.json",
+            "sha256": "c261f9c844e9b577ea58bb4b0fbe0c8bbf6cf2aa7336c99444f02217b59e4835"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/57667013-ea97-417c-9dce-2713091e6e2a/meta.json",
+            "sha256": "442e9991efa36030bbf8a6d3d2f469d45065033c90161c4109c5c806e6eac9e8"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/bf4e9888-f10f-47af-8dba-76413038b73c/meta.json",
+            "sha256": "6ebac564b85efcd290467554404792ea03b2010ed0b0838d1818a79c51a3b93c"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_writer/0e47de2a-32e0-456c-a366-8c607ef7a9d2/meta.json",
+            "sha256": "1c7a48d69b4cfd4012fb0a099cd9c3564894b1b8be973a58bda968f1d080b76c"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_writer/6f81754e-285d-4ce0-b59e-af7edb02d108/meta.json",
+            "sha256": "78b9270f5b960d22ae41af1bf7caeef606e9d1534687321b8155ece2b98ec70e"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/20236825-b5df-46e7-89bf-62e1d640a897/meta.json",
+            "sha256": "13f46951f6aa6c9612777ebb50a5599ca40781f95183d2a027049b0e7a3bd4eb"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/236833a3-5704-47fc-888c-4f298f09f799/meta.json",
+            "sha256": "2738f99eefd4a63a27b60123c39eaa1cd87bc08f4d969a230dd995779bd7407e"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/36037439-2044-4b50-b9d1-875b5a332143/meta.json",
+            "sha256": "ed32b4af0672266f75860794b616c6ee949ef3da0b504b7ce8e235a89666d1ac"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/42d25c08-fb87-4927-8b65-93631280a26f/meta.json",
+            "sha256": "a9c0b17b4c806c822866851371db555ba217437302b1d94f59b9935d96cf8e85"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/67890eb6-6ce5-4c00-9e3d-fb4972699b06/meta.json",
+            "sha256": "476306bd425e8ce0577dc2a10a258296190ff95caf99716b1cd004ad0e42c5c1"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/69acbb55-d945-4927-a87b-8480e1a5bb7e/meta.json",
+            "sha256": "e6d5e85fc7f78d6a329ef7bee502706093cc3494731ac0f33380b52cd21ac9ef"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/7e287123-70ca-47b9-8521-47db09b69b14/meta.json",
+            "sha256": "a56c680d59510348fc2c4277b030fd897904a5b3cfa32cf3b3d0aafb5d6affe0"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/8e116af7-7db7-4e35-a68b-b0939c066c78/meta.json",
+            "sha256": "8dfdeba33bb68763d0738e7b809b0055138034412cf4b96fe2b13a96613b68ac"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/9219480b-3aed-47fc-8bac-d2cffc5849f7/meta.json",
+            "sha256": "d528bb5cb1b887e3a3d5a93f51fad0a7c2359735bdc1b43ad74056a14bdf93c5"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/b5062e3e-641c-4e3a-907b-ac864d2e7652/meta.json",
+            "sha256": "fa1942d6fe088845dbe49cc7aa411b6321514c0a09b3ec59b03b79f2ce483501"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/deec51c9-3b1e-4b9e-993c-4776f20e8bb2/meta.json",
+            "sha256": "3d381f289f0063aa37d6b3be5cb312ff477250e4d3f3a3dfad910a83a9c67689"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/e1fc0df3-c8b9-4ee7-864c-d0b590d3aa56/meta.json",
+            "sha256": "b83612c59c898d597efc0e59a4df44d9f3f003baef7004f6c3f7912a84174756"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/os/23393935-50c7-4a86-aeea-2b78fd089c5c/meta.json",
+            "sha256": "76f61cb37f7c29215e5d9363e3a17429446fbdbb8e7a3e7600dc1e7e8a1b96a2"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/os/5812b315-e7bd-4265-b51f-863c02174c28/meta.json",
+            "sha256": "36bd3b77a8cb2e91355b4b50b0975d51a6ba5192c20646efc71827e7a27dd3a9"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/os/5c1075ca-bb34-46a3-a7a0-029bd7463e79/meta.json",
+            "sha256": "c4e0e93a689602c2ccc00359258544c0a3eb08843345946e8fe8c358f53ab7d5"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/thunderbird/5203d847-2572-4150-912a-03f062254390/meta.json",
+            "sha256": "ca4a41979cd5e4d92343094de9e1ab97daf00916926ce8086cef90a5b7b570df"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/thunderbird/9bc3cc16-074a-45ac-9bdc-b2a362e1daf3/meta.json",
+            "sha256": "a723ff8b271e43df2ee7a7ff3a278b78950ec4e752f89b654f403413af58342b"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/thunderbird/a10b69e1-6034-4a2b-93e1-571d45194f75/meta.json",
+            "sha256": "6ea8ba9dc49607060bcc022662869a053567efe66b1ac35f7c67d49af9f09db6"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/thunderbird/dd84e895-72fd-4023-a336-97689ded257c/meta.json",
+            "sha256": "2a123c6e789a92787f6f2e9c98a77689ea6f8cc291a6f5710324f32dd1d1ff5b"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/thunderbird/f201fbc3-44e6-46fc-bcaa-432f9815454c/meta.json",
+            "sha256": "96493bf61cb04b0d0d60541176efdd9d1e0e8891e877b1ce5ea06b071cbec69d"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vlc/386dbd0e-0241-4a0a-b6a2-6704fba26b1c/meta.json",
+            "sha256": "ac8999a6a6e988183f071271af60236a73e816b0025f277b2cad14f0c7436fc5"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vlc/5ac2891a-eacd-4954-b339-98abba077adb/meta.json",
+            "sha256": "f88155309512a75bf06e98cadcf47e03cd4115199747d7d432f6d9536fa6cd75"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vlc/8f080098-ddb1-424c-b438-4e96e5e4786e/meta.json",
+            "sha256": "b2850ac5e369fb00ce9f1aaeb234569c4dd2b1a3ff9f1fd2ca85013f32e44508"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vlc/9195653c-f4aa-453d-aa95-787f6ccfaae9/meta.json",
+            "sha256": "c90ae7b5ffeb06483f2428415d22fbc89e67c42bc27dd322c7da9144c8b104f4"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vlc/aa4b5023-aef6-4ed9-bdc9-705f59ab9ad6/meta.json",
+            "sha256": "25768710152db02137db554a62d900cc7b5ee491f7795d1a0e6ca820c4d88962"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vlc/cb130f0d-d36f-4302-9838-b3baf46139b6/meta.json",
+            "sha256": "ca8bb3c166babbf703501d854b66292747cb77486d0b71fd53052cb80a3eaa07"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/0512bb38-d531-4acf-9e7e-0add90816068/meta.json",
+            "sha256": "f6a77d826efa5e0b207253577e022eee87f536b9260d4ea97c6e7bacb291d962"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/4e60007a-f5be-4bfc-9723-c39affa0a6d3/meta.json",
+            "sha256": "1fad420ea644231fdb605548f2f1bcbc0f0fe72653e5d569565ad0836b39b393"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/6ed0a554-cbee-4b44-84ea-fd6c042f4fe1/meta.json",
+            "sha256": "4c7aba9f4432d650b7fbc5919a0e24e9d489a5186f9d5d20380aeb86b0254b59"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/7c4cc09e-7a92-40dd-8338-b2286535c4ed/meta.json",
+            "sha256": "ee790adc8c081f370971c489129a9f08770a364f95dabf33440b9bd4152e1486"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/9439a27b-18ae-42d8-9778-5f68f891805e/meta.json",
+            "sha256": "ac6f81a4ad2de5480968d81e6c512b86767e425622be8fe6121515cb713a590e"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/971cbb5b-3cbf-4ff7-9e24-b5c84fcebfa6/meta.json",
+            "sha256": "6bdff7ae8900d111b1fffa85dd39ffddca36435cad0ae96c1b1f166c34879ddc"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/982d12a5-beab-424f-8d38-d2a48429e511/meta.json",
+            "sha256": "9b08d8aedbc33989d97e3c94c1c1cb3bb2aad59d39d470415f0cedd02fb0565e"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/eabc805a-bfcf-4460-b250-ac92135819f6/meta.json",
+            "sha256": "c7bb870d795c4ccc694e2d8153321d2028bc0e9792d57eb1fd6697dc4e8f8e66"
+          }
+        ],
+        "manifest_sha256": "317bbb600625ee6827249c5eb3dbbc3cbabc96930e20ce75bf7f6eda8d8418ba",
+        "meta_files": 45
+      },
+      "root": "/home/orbit/osw/results_confirm_gh_orig_modal_confirm"
+    },
+    "test120_modal_original": {
+      "counts": {
+        "declared_infeasible_all_scores": 5,
+        "episodes": 120,
+        "false_success_feasible": 25,
+        "false_success_feasible_guard_exposed": 25,
+        "false_success_infeasible_completion_claim": 2,
+        "partial_answer_declared_infeasible_guard_bypassed": 0,
+        "partial_answer_guard_exposed": 5,
+        "partial_nonanswer": 1,
+        "true_score1_answer_guard_exposed": 60,
+        "true_score1_declared_infeasible_guard_bypassed": 5,
+        "true_score1_nonanswer": 0
+      },
+      "fields_read": [
+        "score",
+        "finished_by_agent",
+        "infeasible_task",
+        "model_declared_infeasible"
+      ],
+      "prevalence": {
+        "false_success_feasible": {
+          "denominator": 120,
+          "numerator": 25,
+          "rate": 0.20833333333333334,
+          "wilson95": [
+            0.14528439608109694,
+            0.2894767843298135
+          ]
+        },
+        "false_success_feasible_guard_exposed": {
+          "denominator": 120,
+          "numerator": 25,
+          "rate": 0.20833333333333334,
+          "wilson95": [
+            0.14528439608109694,
+            0.2894767843298135
+          ]
+        },
+        "false_success_infeasible_completion_claim": {
+          "denominator": 120,
+          "numerator": 2,
+          "rate": 0.016666666666666666,
+          "wilson95": [
+            0.004582564565921141,
+            0.0587359629721589
+          ]
+        },
+        "true_score1_answer_guard_exposed": {
+          "denominator": 120,
+          "numerator": 60,
+          "rate": 0.5,
+          "wilson95": [
+            0.41193870541108385,
+            0.5880612945889161
+          ]
+        }
+      },
+      "provenance": {
+        "manifest": [
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/12086550-11c0-466b-b367-1d9e75b3910e/meta.json",
+            "sha256": "d6505409cbca19536943a943124b50e22795b22135dda2850cd3945d60cf93c8"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/2ad9387a-65d8-4e33-ad5b-7580065a27ca/meta.json",
+            "sha256": "c3140d9be6549eda5f2e6adee44e1907a4ffd6cbcdf86866902828a99ced4766"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/3720f614-37fd-4d04-8a6b-76f54f8c222d/meta.json",
+            "sha256": "9b9b8156d415388e3fd9b4d5aa993a2795ff1e78381c181dce6fad0860cbcc86"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/44ee5668-ecd5-4366-a6ce-c1c9b8d4e938/meta.json",
+            "sha256": "47047074d96940cfe4859b723e3dc1383b6b8bb680d0f53a83dd820e9ef7aab5"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/59155008-fe71-45ec-8a8f-dc35497b6aa8/meta.json",
+            "sha256": "03465d26c7cc43b2c785d9529ce976e65df87b8b0eafcda8d49d91ba8dd8a413"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/9656a811-9b5b-4ddf-99c7-5117bcef0626/meta.json",
+            "sha256": "8de9a19594dac8f6ec855de125b70e10d8ca04e7b3111ad54ce28e0622af9926"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/9f935cce-0a9f-435f-8007-817732bfc0a5/meta.json",
+            "sha256": "b86dcbf3962f4b41481b5f17e99cba5bfcc8a8e98e9fc57a16119ca41dd7a5da"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/a728a36e-8bf1-4bb6-9a03-ef039a5233f0/meta.json",
+            "sha256": "62daecaed054e175800a5bb1029f4d66ae045b16bb7c9c4d8e7a8e865a6684a0"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/a96b564e-dbe9-42c3-9ccf-b4498073438a/meta.json",
+            "sha256": "2b1779c3260b838a61cf4736885762f299326e58c371df2dc0abbc034ca2bf4c"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/ae78f875-5b98-4907-bbb5-9c737fc68c03/meta.json",
+            "sha256": "7cbcd5eaada6c28d03303447dd63c33201068a3bbfc936170e78806129518858"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/cabb3bae-cccb-41bd-9f5d-0f3a9fecd825/meta.json",
+            "sha256": "b547ac0819c3b31675b2d45e46ebbad9ecd9b1b5cfebcf1d04835abd667b1670"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/da46d875-6b82-4681-9284-653b0c7ae241/meta.json",
+            "sha256": "f15b07992de2b9d52b8182d7e6bb0ece6ae82c6d5a2df3ddd3ce43e05d4610e1"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/e1e75309-3ddb-4d09-92ec-de869c928143/meta.json",
+            "sha256": "465bbe5efb50c3655a193e15f1eb4b730edf34e672aede08e1d174cd5df32223"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/f0b971a1-6831-4b9b-a50e-22a6e47f45ba/meta.json",
+            "sha256": "dde074caf5da41b10986d57832c4c8bc026b3dafd95ba801f25b04dae266aed5"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/chrome/f3b19d1e-2d48-44e9-b4e1-defcae1a0197/meta.json",
+            "sha256": "7afe6aa47b11222d843643525fef6edc5b10dbf48ba9039c4252d4c40749f820"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/gimp/06ca5602-62ca-47f6-ad4f-da151cde54cc/meta.json",
+            "sha256": "a0ec2f491c4ce361c0a8018e6b69633547fb0b427d5e21d006a0e3616ce3bc17"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/gimp/2a729ded-3296-423d-aec4-7dd55ed5fbb3/meta.json",
+            "sha256": "dd6cb3225fd0af0e0eb91c7a5c8e8db5cadc4f4de85a26fb56a4b4f987508d8a"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/gimp/554785e9-4523-4e7a-b8e1-8016f565f56a/meta.json",
+            "sha256": "951f4f18a4575b93c686fbe3ff3601bcdf0388f10ce7e4b1dbe0a330734e210d"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/gimp/62f7fd55-0687-4a43-b6e1-3eda16fc6252/meta.json",
+            "sha256": "c9fc3722b80be5595aa2632a47449ea1055b59456290373a78f8250c61518d4e"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/gimp/72f83cdc-bf76-4531-9a1b-eb893a13f8aa/meta.json",
+            "sha256": "8a7552529812f4e8a81ae7029e55d4e7ab7861a186f69490c862aa81576a0380"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/gimp/734d6579-c07d-47a8-9ae2-13339795476b/meta.json",
+            "sha256": "b04d88573444b4c1e97478382d86f05695ff0caa09d37304b3a6b9464dc4e0c4"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/gimp/77b8ab4d-994f-43ac-8930-8ca087d7c4b4/meta.json",
+            "sha256": "7127847aaf648e91a3302155c707077fcaf30c1dc93845b8d9bc1591d8b545a9"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/gimp/dbbf4b99-2253-4b10-9274-45f246af2466/meta.json",
+            "sha256": "07208efc536e54a2b23cf786d644627d838aa02a48a20c847f92b1d10bd7bcd9"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/gimp/f4aec372-4fb0-4df5-a52b-79e0e2a5d6ce/meta.json",
+            "sha256": "78782dd9038f2f3a199ec8cdaf1323201aebef36e35b1d0e65be5fe23d5c08b9"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/0326d92d-d218-48a8-9ca1-981cd6d064c7/meta.json",
+            "sha256": "349e4562061093735bec7f62b2f6dece5e217d535996050242dfa01281f0b36d"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/04d9aeaf-7bed-4024-bedb-e10e6f00eb7f/meta.json",
+            "sha256": "ec8e5f8e58a83a955c4c4071dd01625b5860b8930298b8be46b2a4a13c34a9fa"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/0bf05a7d-b28b-44d2-955a-50b41e24012a/meta.json",
+            "sha256": "a27621694397a0b8526a50cc62ad4dc2d1a5f5e31ef42ceb98c7d0483987946a"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/1e8df695-bd1b-45b3-b557-e7d599cf7597/meta.json",
+            "sha256": "9803dcee8d1c44c58b08c67e7dc01a7c20c22edc7430c44c6c6195f2843a5561"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/21df9241-f8d7-4509-b7f1-37e501a823f7/meta.json",
+            "sha256": "8537495afce87da27160f971994317058c75bb3f7e383f24bea4165b65049c5d"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/347ef137-7eeb-4c80-a3bb-0951f26a8aff/meta.json",
+            "sha256": "fb69c295c286cf0e107dd64fe237f269335379d40bbfa763f3261c0bb2bc27fb"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/357ef137-7eeb-4c80-a3bb-0951f26a8aff/meta.json",
+            "sha256": "c59695a9b085a2db728ce1dd6a217bf9dbad5a8a1a1345c2e35661f235f2b7da"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/42e0a640-4f19-4b28-973d-729602b5a4a7/meta.json",
+            "sha256": "bf0da43b9e7ce22a14b932986034a14242f73b1da31848cfcc75e1171909cff8"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/4f07fbe9-70de-4927-a4d5-bb28bc12c52c/meta.json",
+            "sha256": "68eec167a55bac769ac5434cbf47bf3484ef8c84a6accf8d481b6f3c40765d91"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/51719eea-10bc-4246-a428-ac7c433dd4b3/meta.json",
+            "sha256": "c3d0f7cb2a60ce4eff13264c9bc9cf65246429dde935d89068e71cf85b5e8345"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/535364ea-05bd-46ea-9937-9f55c68507e8/meta.json",
+            "sha256": "ed145fdc0abd4684bc995e98d8e162041aa238f78dbad6cf1a050de96422da6b"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/7a4e4bc8-922c-4c84-865c-25ba34136be1/meta.json",
+            "sha256": "199a77d6b779bcd1931e2e4ba0feef2974f4ae6c4bf0cc3eb91c01df6717862e"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/a9f325aa-8c05-4e4f-8341-9e4358565f4f/meta.json",
+            "sha256": "3da7e4856713423e39b4ff6bf5d65631d25aac9d14852ee769ea41449eb94a4e"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/d681960f-7bc3-4286-9913-a8812ba3261a/meta.json",
+            "sha256": "ac8a712832a5242425e930012281554428baabe67ecd8b643bc4cd5aa2913eae"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_calc/ecb0df7a-4e8d-4a03-b162-053391d3afaf/meta.json",
+            "sha256": "397e47150c22e2f8e3156de5b9de1351ed6d31dfe765c29af5dec92a49772c5f"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/0a211154-fda0-48d0-9274-eaac4ce5486d/meta.json",
+            "sha256": "d4b35897da6485c1cd7791ec669bc983f8e3d82bb4467bc72370af96f2f2328d"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/0f84bef9-9790-432e-92b7-eece357603fb/meta.json",
+            "sha256": "ccd73600b49289e93c8c05366c485c269bd644f711c694563c9d737e2982f17f"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/2b94c692-6abb-48ae-ab0b-b3e8a19cb340/meta.json",
+            "sha256": "a56cfc04602908288e1a69c6e2ce7cd4887424c7af52c356a247b5efe747c4bd"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/3161d64e-3120-47b4-aaad-6a764a92493b/meta.json",
+            "sha256": "78f1e990acd3068b7deb385f77da42188ab60533918189ae3834acf1ea907dd5"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/358aa0a7-6677-453f-ae35-e440f004c31e/meta.json",
+            "sha256": "26f18c75c4b918a70cdfa29a28eff58ee46040383a661c0372e0b8648ca92599"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/3b27600c-3668-4abd-8f84-7bcdebbccbdb/meta.json",
+            "sha256": "1f8fdb310862ad6dac84181ef8e83309ba5def17253659c266bb43dca06e097f"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/5c1a6c3d-c1b3-47cb-9b01-8d1b7544ffa1/meta.json",
+            "sha256": "d63d174a7182a7287e93bb6e1a4a23dacc28b2b0ad3287410bc0fe270e649b59"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/5d901039-a89c-4bfb-967b-bf66f4df075e/meta.json",
+            "sha256": "a9ca9113c5c29905c142c4974d1a1b39d9484ae04ee72c3a3b3d2f32a5a5ec76"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/841b50aa-df53-47bd-a73a-22d3a9f73160/meta.json",
+            "sha256": "16cc7dcfd6db7fbdbbc473cded9f81197d82229cc01d455adba7ddb7d386f33f"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/9ec204e4-f0a3-42f8-8458-b772a6797cab/meta.json",
+            "sha256": "800faeea0ad172b5556ed5de6e6bb0994ada85ff8eb6b381dd713cbc1618178d"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/a434992a-89df-4577-925c-0c58b747f0f4/meta.json",
+            "sha256": "f4ed4f0f4e742595e445cf29d16f84e069aad68bff9eb0742f1f909778a267da"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/b8adbc24-cef2-4b15-99d5-ecbe7ff445eb/meta.json",
+            "sha256": "4268e2de3d6dc2dfa81c6fc15a67ea2f549493abe62d23e2bb15f9b224dc4b15"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/c59742c0-4323-4b9d-8a02-723c251deaa0/meta.json",
+            "sha256": "0b066916d0319c57b1a7c5c8243ba35f325c20ba601ec19ad4217182eed70cbe"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/e4ef0baf-4b52-4590-a47e-d4d464cca2d7/meta.json",
+            "sha256": "624d3ac3423e6be7036cc21d418f9bd615ca94786a86f630f4355a79d8d73b4b"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_impress/edb61b14-a854-4bf5-a075-c8075c11293a/meta.json",
+            "sha256": "8c4f9d8e05727c728029c7362a1518a55b4e8b9630aa3732618a2ec63d61d256"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_writer/0810415c-bde4-4443-9047-d5f70165a697/meta.json",
+            "sha256": "275e5fa1d4a7511e1a16081c6e1a4f3097bb94604f5967aa39ab1ee1df8c8582"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_writer/3ef2b351-8a84-4ff2-8724-d86eae9b842e/meta.json",
+            "sha256": "c600d288f3ca862c2337ebdb6633f8fab6d26fc7ab3f214ef3e2a2bf8cc50ef9"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_writer/6a33f9b9-0a56-4844-9c3f-96ec3ffb3ba2/meta.json",
+            "sha256": "c7e9587894d95e57dd2d44a367d79fc864afbe660dbdf6a89e323f14c0240eaf"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_writer/6ada715d-3aae-4a32-a6a7-429b2e43fb93/meta.json",
+            "sha256": "e47aa0c681edafbf4a4ecc6b8eda6e2e6b3e92b2b09f268a695f061b629cfece"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_writer/88fe4b2d-3040-4c70-9a70-546a47764b48/meta.json",
+            "sha256": "0cc38fe83d378512399856d19aca3efc76bfe017c4a73fdd80128de7b830d06c"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_writer/b21acd93-60fd-4127-8a43-2f5178f4a830/meta.json",
+            "sha256": "f318a8dfddf50f12c027e0eb5f5690ee3a6fe2b655a8c83ed49e8f819ba42706"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_writer/d53ff5ee-3b1a-431e-b2be-30ed2673079b/meta.json",
+            "sha256": "7c00de083a4a1380492d70e7a360040ab7c4b04c18f029663648f8fca1dc1bc8"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/libreoffice_writer/e246f6d8-78d7-44ac-b668-fcf47946cb50/meta.json",
+            "sha256": "fad5a2c80bd578ad31875391e6c575fdfa15c30d44354b129c7302efa9fa8567"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/02ce9a50-7af2-47ed-8596-af0c230501f8/meta.json",
+            "sha256": "58b3a3bac6c30c1d7392daf971594f5cc96aa0c52221e051e8199eb0d5675694"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/09a37c51-e625-49f4-a514-20a773797a8a/meta.json",
+            "sha256": "9d7d9bc8097ccc5ea56e1750db74266a7c84514fe5bbb844870eaa3349a520dd"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/0e5303d4-8820-42f6-b18d-daf7e633de21/meta.json",
+            "sha256": "ccec23ae9d947616e5b8814bb2cd8f2f4c4f536e323b21f954722241cd0ea1b2"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/185f29bd-5da0-40a6-b69c-ba7f4e0324ef/meta.json",
+            "sha256": "1ea6cd9b0a642be7317c842c7cccdd7ce6092d704fa859231182bcc8d847c5f7"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/1f18aa87-af6f-41ef-9853-cdb8f32ebdea/meta.json",
+            "sha256": "c70b75af666ec4617a99329806477db65369aa8e3eee2145d811a53f98ba7773"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/2c1ebcd7-9c6d-4c9a-afad-900e381ecd5e/meta.json",
+            "sha256": "95f1c98984886aa2c7994b2478081a5448f11daaea93ada44c3498592c0a4e0d"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/2fe4b718-3bd7-46ec-bdce-b184f5653624/meta.json",
+            "sha256": "85e41b1d2d70e2f00766d261da2609e79abebcb714e3002785f547f4a21b20b2"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/42f4d1c7-4521-4161-b646-0a8934e36081/meta.json",
+            "sha256": "9fa0875f137e5653ba7519a7597172a321128f7073fec7366a90717400ce0749"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/47f7c0ce-a5fb-4100-a5e6-65cd0e7429e5/meta.json",
+            "sha256": "d4d77c51bc653182dc55ec3920d4990014a4489f1fc7b2bcd0bc7b7b46f5ea4e"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/48c46dc7-fe04-4505-ade7-723cba1aa6f6/meta.json",
+            "sha256": "29e33478ce4c45103e894a0b0f3988960f667bce1a4d93ccff32578976aa80e9"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/48d05431-6cd5-4e76-82eb-12b60d823f7d/meta.json",
+            "sha256": "f5f9e37cdf3f035e869955b1b64b9d15543fce217c69a60bdc716b51333529ce"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/510f64c8-9bcc-4be1-8d30-638705850618/meta.json",
+            "sha256": "e67edf420b1be580f3391860e753b7d4182bd32d36fec4a2bcfd11677ff70763"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/58565672-7bfe-48ab-b828-db349231de6b/meta.json",
+            "sha256": "3e7d921df3e9b2ea07ada98a483b17458ca08e483115c897aee4c6d437a23a4b"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/5bc63fb9-276a-4439-a7c1-9dc76401737f/meta.json",
+            "sha256": "b72ddb336f54cd128aacae94c60aeee4ca2c1f039cf7be06c4359af3058f9b50"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/6f4073b8-d8ea-4ade-8a18-c5d1d5d5aa9a/meta.json",
+            "sha256": "8599dc6910c1939557b72e82d78a449f15d61f6123ab9328faddf653033b1335"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/788b3701-3ec9-4b67-b679-418bfa726c22/meta.json",
+            "sha256": "bd9077273ed8da8410dc3abb9a79987ff375c776565526db487839301edf978c"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/881deb30-9549-4583-a841-8270c65f2a17/meta.json",
+            "sha256": "7398f9e4c31cb32cd6399a511027f2f46a4272742a6e13970f6fb891e318a57e"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/a82b78bb-7fde-4cb3-94a4-035baf10bcf0/meta.json",
+            "sha256": "02205edbcc4db54a10b6ff035ec7477d0bc7d8a5bd66baa85b29600ec1558a90"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/bb83cab4-e5c7-42c7-a67b-e46068032b86/meta.json",
+            "sha256": "a1ff1b645bf9e9296e223a05b0c008be7a880e7dce33326f94a27afc162f6da4"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/bc2b57f3-686d-4ec9-87ce-edf850b7e442/meta.json",
+            "sha256": "37c58600d14b6ca0f3b7c1ae76ed25ae41f32ad55f7982411aaa5705db173942"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/c7c1e4c3-9e92-4eba-a4b8-689953975ea4/meta.json",
+            "sha256": "e66d89f8630a056eaf81ed8dd4aab91be3b4a2bb585fae505492bb7031d5a435"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/ce2b64a2-ddc1-4f91-8c7d-a88be7121aac/meta.json",
+            "sha256": "1160654a9b82c94d3250f983d7823a57cbc4f22536b43d11f906ac707b198e38"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/d1acdb87-bb67-4f30-84aa-990e56a09c92/meta.json",
+            "sha256": "00646dc396c5b169e849077dc927f0c0e36d2e25819cfd707e113f911f2b8c1e"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/d9b7c649-c975-4f53-88f5-940b29c47247/meta.json",
+            "sha256": "b7c5f2f360148024d0d79386a987b45145f6c9a623eb373c14aa936fa050aa7e"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/da52d699-e8d2-4dc5-9191-a2199e0b6a9b/meta.json",
+            "sha256": "bf918e7ffd69a349211a6edcd499cddae9c081b5ed3fa9379463aa92c2dc9ecf"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/da922383-bfa4-4cd3-bbad-6bebab3d7742/meta.json",
+            "sha256": "d8c548a77e59ca55df7a375851f3972b267796b09b771f103a18f4caad4c5567"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/dd60633f-2c72-42ba-8547-6f2c8cb0fdb0/meta.json",
+            "sha256": "936e87cb86fa3e05a8e5ed845cbeb51c814241ea08a1a0ea75b9ac261d113950"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/e135df7c-7687-4ac0-a5f0-76b74438b53e/meta.json",
+            "sha256": "085ebfc631a0ef7f591f05e96ca26dab980c81f03cca092dc5de51cce078e807"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/e2392362-125e-4f76-a2ee-524b183a3412/meta.json",
+            "sha256": "9e61458c389c32bd8b5c88d7ff04edd23e19df509538efd7193c305cbc57298b"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/e8172110-ec08-421b-a6f5-842e6451911f/meta.json",
+            "sha256": "606f3fe10006d41f64a7e1114d806069fe6e490be665d0aa32bc8dceb37c47d0"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/multi_apps/f7dfbef3-7697-431c-883a-db8583a4e4f9/meta.json",
+            "sha256": "3c810fc1ddcd4b2a463434722dc0378ef4ca023aacdb7e7067dc2230081e4877"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/os/37887e8c-da15-4192-923c-08fa390a176d/meta.json",
+            "sha256": "27b5be8ec59f91d8677413af4b18295d23d47c692b9cb6a9f211898a85338dfe"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/os/5ced85fc-fa1a-4217-95fd-0fb530545ce2/meta.json",
+            "sha256": "abc3242f83f5f23b2d1e392aeb5c954599cdd117a884411e700fe577716645bb"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/os/6f56bf42-85b8-4fbb-8e06-6c44960184ba/meta.json",
+            "sha256": "0ae9ce762279ea5087dce7173eb914f7d0fcac5d10b0936ec95a28a61ee7d6ce"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/os/a4d98375-215b-4a4d-aee9-3d4370fccc41/meta.json",
+            "sha256": "afa423476d6206e8d4cbe2f69b2e74cc4043398641175b9b8e284bea765758e8"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/os/b3d4a89c-53f2-4d6b-8b6a-541fb5d205fa/meta.json",
+            "sha256": "520088ead3aef6173e4eed557073c1b179d5ed571fe9d02069cd9cd463439fe7"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/os/bedcedc4-4d72-425e-ad62-21960b11fe0d/meta.json",
+            "sha256": "e7445ea6d7188686012bc867856cd12851884c0636337892ff350264513b0046"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/os/c288e301-e626-4b98-a1ab-159dcb162af5/meta.json",
+            "sha256": "82638f23e7cdf2d7b6385cd67fff450f1c83a51ab994396080437ad4aba9296d"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/os/ec4e3f68-9ea4-4c18-a5c9-69f89d1178b3/meta.json",
+            "sha256": "965132777fd47e4aa07f44daf090ab04480ddd1b884cd59b98bf6173f2bbab8d"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/thunderbird/08c73485-7c6d-4681-999d-919f5c32dcfa/meta.json",
+            "sha256": "8ccaa62e8ef350dedd921ef9cbd2855708cfdf3ebdeb24c419fe9ebfa4609031"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/thunderbird/10a730d5-d414-4b40-b479-684bed1ae522/meta.json",
+            "sha256": "6ac4ba8e834d846f7237c7d647085a79eb83c6ca069f17bbdfb41ee279f92a75"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/thunderbird/3f28fe4f-5d9d-4994-a456-efd78cfae1a3/meta.json",
+            "sha256": "8c5befb4af0a15bc4b7b00fdee732bb5203880a7291fe95f3d962e687b487df1"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/thunderbird/9b7bc335-06b5-4cd3-9119-1a649c478509/meta.json",
+            "sha256": "53d6b85af48f9f46c9c46c321a808fe4ca2a50d3752d79db1dddd8a365e36100"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/thunderbird/dfac9ee8-9bc4-4cdc-b465-4a4bfcd2f397/meta.json",
+            "sha256": "b29269788666237994b7ed2daafe024f779f6c3319f6eeba984831b52c88d7e5"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vlc/7882ed6e-bece-4bf0-bada-c32dc1ddae72/meta.json",
+            "sha256": "4cb022c621ad242f661c3f508e992d56fbcaab0c35c3f7d5b542368430913dce"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vlc/8d9fd4e2-6fdb-46b0-b9b9-02f06495c62f/meta.json",
+            "sha256": "3349997e3ea9e350b6d8c0215a150783a8f71ac743cd94787ee8ad79c9c92d91"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vlc/bba3381f-b5eb-4439-bd9e-80c22218d5a7/meta.json",
+            "sha256": "462bfeeab83ea4852d847c33ba95f3f6eba0aaec27264c235460ecc3b5b8cbd6"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vlc/d06f0d4d-2cd5-4ede-8de9-598629438c6e/meta.json",
+            "sha256": "be48a32b0fcd1480b84712e3ef001432c1415f28d52937ba9b1ad9dccb2e6848"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vlc/efcf0d81-0835-4880-b2fd-d866e8bc2294/meta.json",
+            "sha256": "50022505a428c0307560024d9d6d4aaf43b0618cbe196d2836855a0022ec13db"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vlc/f3977615-2b45-4ac5-8bba-80c17dbe2a37/meta.json",
+            "sha256": "8fdb068895efd13e1a5b18b1e50d2114923b3512ce6b9384c73576da80bbe5ff"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/53ad5833-3455-407b-bbc6-45b4c79ab8fb/meta.json",
+            "sha256": "2e17a5a3a6316d946ca5a09ea56ae963964cf3394986307fb9a24f33c1422bd2"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/57242fad-77ca-454f-b71b-f187181a9f23/meta.json",
+            "sha256": "ee63694b3e382cff72cded03afe57d51d1cfe4f65546c7df53892fec9107bbe4"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/5e2d93d8-8ad0-4435-b150-1692aacaa994/meta.json",
+            "sha256": "2c1cd966c8d92208b502d3db9bc9c766a68cdad70552dc5164c03414690044e7"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/70745df8-f2f5-42bd-8074-fbc10334fcc5/meta.json",
+            "sha256": "2f6e8eb91880efdae31b24269a38b8635c33f65c5165a91dd34863bba237045b"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/9d425400-e9b2-4424-9a4b-d4c7abac4140/meta.json",
+            "sha256": "54ab5ec32d653b92307ac5510373f6e51c166882b5c8cd6fef60fa0d9b7fa6ca"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/dcbe20e8-647f-4f1d-8696-f1c5bbb570e3/meta.json",
+            "sha256": "9a76c50b167652d14fde69894a3e7dbb8222c4e333f37549712836c171206688"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/ea98c5d7-3cf9-4f9b-8ad3-366b58e0fcae/meta.json",
+            "sha256": "c1821a6ff94d480d87bc28ba6f2d4cc4d31d5faf6a66eec165bc176c704b92dc"
+          },
+          {
+            "path": "pyautogui/screenshot/Holo-3.1-4B-modal-orig/vs_code/ec71221e-ac43-46f9-89b8-ee7d80f7e1c5/meta.json",
+            "sha256": "264d1f17d237bad9f612c64e3bfcf8b78ad3fbabbe4662d814845268ee52ebfb"
+          }
+        ],
+        "manifest_sha256": "aa24459651efbeeedcc6f1e29e512d2178094a2024ca9006248b892c0e3ce7f8",
+        "meta_files": 120
+      },
+      "root": "/home/orbit/osw/results_test_gh_orig_modal_test"
+    }
+  },
+  "schema_version": 1,
+  "true_success_fpr_transport_rule": "score == 1 and finished_by_agent and not model_declared_infeasible"
+}

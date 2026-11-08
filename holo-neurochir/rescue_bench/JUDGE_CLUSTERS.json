@@ -1,0 +1,754 @@
+{
+  "cluster_unit": "task_id; all repeated episodes of a task remain together",
+  "clusters": [
+    {
+      "domain": "libreoffice_impress",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "04578141-1d42-4146-b9cf-6fab4ce5fd74",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "vs_code",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "0512bb38-d531-4acf-9e7e-0add90816068",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "libreoffice_impress",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "08aced46-45a2-48d7-993b-ed3fb5b32302",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "libreoffice_writer",
+      "false_success_rejected": 1,
+      "false_success_total": 1,
+      "task_id": "0b17a146-2934-46c7-8727-73ff6b6483e8",
+      "true_success_rejected": 3,
+      "true_success_total": 3
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "0cecd4f3-74de-457b-ba94-29ad6b5dafb6",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "libreoffice_writer",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "0e47de2a-32e0-456c-a366-8c607ef7a9d2",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "libreoffice_writer",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "0e763496-b6bb-4508-a427-fad0b6c3e195",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "1273e544-688f-496b-8d89-3e0f40aa0606",
+      "true_success_rejected": 0,
+      "true_success_total": 3
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "1334ca3e-f9e3-4db8-9ca7-b4c653be7d17",
+      "true_success_rejected": 1,
+      "true_success_total": 3
+    },
+    {
+      "domain": "os",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "13584542-872b-42d8-b299-866967b5c3ef",
+      "true_success_rejected": 1,
+      "true_success_total": 3
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "1d17d234-e39d-4ed7-b46f-4417922a4e7c",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 3,
+      "false_success_total": 3,
+      "task_id": "1de60575-bb6e-4c3d-9e6a-2fa699f9f197",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 3,
+      "false_success_total": 3,
+      "task_id": "21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "227d2f97-562b-4ccb-ae47-a5ec9e142fbb",
+      "true_success_rejected": 0,
+      "true_success_total": 3
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "2373b66a-092d-44cb-bfd7-82e86e7a3b4d",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "26660ad1-6ebb-4f59-8cba-a8432dfe8d38",
+      "true_success_rejected": 1,
+      "true_success_total": 4
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 2,
+      "false_success_total": 2,
+      "task_id": "26a8440e-c166-4c50-aef4-bfb77314b46b",
+      "true_success_rejected": 0,
+      "true_success_total": 2
+    },
+    {
+      "domain": "os",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "28cc3b7e-b194-4bc9-8353-d04c0f4d56d2",
+      "true_success_rejected": 0,
+      "true_success_total": 3
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "2c9fc0de-3ee7-45e1-a5df-c86206ad78b5",
+      "true_success_rejected": 0,
+      "true_success_total": 3
+    },
+    {
+      "domain": "libreoffice_impress",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "2cd43775-7085-45d8-89fa-9e35c0a915cf",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "3299584d-8f11-4457-bf4c-ce98f7600250",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 1,
+      "false_success_total": 1,
+      "task_id": "35253b65-1c19-4304-8aa4-6884b8218fc0",
+      "true_success_rejected": 0,
+      "true_success_total": 3
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "368d9ba4-203c-40c1-9fa3-da2f1430ce63",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 1,
+      "false_success_total": 1,
+      "task_id": "37608790-6147-45d0-9f20-1137bb35703d",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "vlc",
+      "false_success_rejected": 0,
+      "false_success_total": 1,
+      "task_id": "386dbd0e-0241-4a0a-b6a2-6704fba26b1c",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 2,
+      "false_success_total": 2,
+      "task_id": "3a7c8185-25c1-4941-bd7b-96e823c9f21f",
+      "true_success_rejected": 0,
+      "true_success_total": 2
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "3aaa4e37-dc91-482e-99af-132a612d40f3",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 1,
+      "false_success_total": 1,
+      "task_id": "47543840-672a-467d-80df-8f7c3b9788c9",
+      "true_success_rejected": 0,
+      "true_success_total": 3
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 1,
+      "task_id": "4c26e3f3-3a14-4d86-b44a-d3cedebbb487",
+      "true_success_rejected": 1,
+      "true_success_total": 2
+    },
+    {
+      "domain": "vs_code",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "4e60007a-f5be-4bfc-9723-c39affa0a6d3",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "51b11269-2ca8-4b2a-9163-f21758420e78",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "thunderbird",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "5203d847-2572-4150-912a-03f062254390",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "libreoffice_impress",
+      "false_success_rejected": 4,
+      "false_success_total": 4,
+      "task_id": "550ce7e7-747b-495f-b122-acdc4d0b8e54",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 1,
+      "false_success_total": 2,
+      "task_id": "5990457f-2adb-467b-a4af-5c857c92d762",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "vlc",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "5ac2891a-eacd-4954-b339-98abba077adb",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "os",
+      "false_success_rejected": 0,
+      "false_success_total": 1,
+      "task_id": "5c1075ca-bb34-46a3-a7a0-029bd7463e79",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 3,
+      "false_success_total": 3,
+      "task_id": "5df7b33a-9f77-4101-823e-02f863e1c1ae",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "os",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57",
+      "true_success_rejected": 0,
+      "true_success_total": 3
+    },
+    {
+      "domain": "libreoffice_writer",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "66399b0d-8fda-4618-95c4-bfc6191617e9",
+      "true_success_rejected": 1,
+      "true_success_total": 4
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 1,
+      "false_success_total": 1,
+      "task_id": "6c4c23a1-42a4-43cc-9db1-2f86ff3738cc",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "libreoffice_impress",
+      "false_success_rejected": 2,
+      "false_success_total": 2,
+      "task_id": "70bca0cc-c117-427e-b0be-4df7299ebeb6",
+      "true_success_rejected": 1,
+      "true_success_total": 1
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 2,
+      "task_id": "716a6079-22da-47f1-ba73-c9d58f986a38",
+      "true_success_rejected": 1,
+      "true_success_total": 1
+    },
+    {
+      "domain": "libreoffice_impress",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "73c99fb9-f828-43ce-b87a-01dc07faa224",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 4,
+      "task_id": "74d5859f-ed66-4d3e-aa0e-93d7a592ce41",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "gimp",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "7a4deb26-d57d-4ea9-9a73-630f66a7b568",
+      "true_success_rejected": 1,
+      "true_success_total": 4
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "7a5a7856-f1b6-42a4-ade9-1ca81ca0f263",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "libreoffice_impress",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "7ae48c60-f143-4119-b659-15b8f485eb9a",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3",
+      "true_success_rejected": 4,
+      "true_success_total": 4
+    },
+    {
+      "domain": "gimp",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "7b7617bd-57cc-468e-9c91-40c4ec2bcb3d",
+      "true_success_rejected": 2,
+      "true_success_total": 4
+    },
+    {
+      "domain": "libreoffice_impress",
+      "false_success_rejected": 0,
+      "false_success_total": 2,
+      "task_id": "7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8",
+      "true_success_rejected": 0,
+      "true_success_total": 2
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "81c425f5-78f3-4771-afd6-3d2973825947",
+      "true_success_rejected": 0,
+      "true_success_total": 2
+    },
+    {
+      "domain": "libreoffice_impress",
+      "false_success_rejected": 3,
+      "false_success_total": 3,
+      "task_id": "8979838c-54a5-4454-a2b8-3d135a1a5c8f",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "8df7e444-8e06-4f93-8a1a-c5c974269d82",
+      "true_success_rejected": 0,
+      "true_success_total": 2
+    },
+    {
+      "domain": "vlc",
+      "false_success_rejected": 1,
+      "false_success_total": 1,
+      "task_id": "8f080098-ddb1-424c-b438-4e96e5e4786e",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "vlc",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "9195653c-f4aa-453d-aa95-787f6ccfaae9",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "libreoffice_writer",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "936321ce-5236-426a-9a20-e0e3c5dc536f",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "937087b6-f668-4ba6-9110-60682ee33441",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "vs_code",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "9439a27b-18ae-42d8-9778-5f68f891805e",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "vs_code",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "982d12a5-beab-424f-8d38-d2a48429e511",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "99146c54-4f37-4ab8-9327-5f3291665e1e",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "thunderbird",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "9bc3cc16-074a-45ac-9bdc-b2a362e1daf3",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 3,
+      "false_success_total": 4,
+      "task_id": "9f3f70fc-5afc-4958-a7b7-3bb4fcb01805",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "thunderbird",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "a10b69e1-6034-4a2b-93e1-571d45194f75",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 1,
+      "task_id": "a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a",
+      "true_success_rejected": 1,
+      "true_success_total": 3
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "aa3a8974-2e85-438b-b29e-a64df44deb4b",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "vlc",
+      "false_success_rejected": 1,
+      "false_success_total": 1,
+      "task_id": "aa4b5023-aef6-4ed9-bdc9-705f59ab9ad6",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "abed40dc-063f-4598-8ba5-9fe749c0615d",
+      "true_success_rejected": 1,
+      "true_success_total": 4
+    },
+    {
+      "domain": "libreoffice_impress",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "af2d657a-e6b3-4c6a-9f67-9e3ed015974c",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "b070486d-e161-459b-aa2b-ef442d973b92",
+      "true_success_rejected": 0,
+      "true_success_total": 2
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 2,
+      "false_success_total": 2,
+      "task_id": "b337d106-053f-4d37-8da0-7f9c4043a66b",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "os",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "b6781586-6346-41cd-935a-a6b1487918fc",
+      "true_success_rejected": 0,
+      "true_success_total": 3
+    },
+    {
+      "domain": "libreoffice_impress",
+      "false_success_rejected": 1,
+      "false_success_total": 1,
+      "task_id": "bf4e9888-f10f-47af-8dba-76413038b73c",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "c1fa57f3-c3db-4596-8f09-020701085416",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "c2751594-0cd5-4088-be1b-b5f2f9ec97c4",
+      "true_success_rejected": 0,
+      "true_success_total": 3
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 1,
+      "task_id": "c867c42d-a52d-4a24-8ae3-f75d256b5618",
+      "true_success_rejected": 0,
+      "true_success_total": 3
+    },
+    {
+      "domain": "gimp",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "d16c99dc-2a1e-46f2-b350-d97c86c85c15",
+      "true_success_rejected": 1,
+      "true_success_total": 4
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 1,
+      "false_success_total": 3,
+      "task_id": "d68204bf-11c1-4b13-b48b-d303c73d4bf6",
+      "true_success_rejected": 1,
+      "true_success_total": 1
+    },
+    {
+      "domain": "thunderbird",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "dd84e895-72fd-4023-a336-97689ded257c",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 1,
+      "false_success_total": 1,
+      "task_id": "deec51c9-3b1e-4b9e-993c-4776f20e8bb2",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 1,
+      "task_id": "e1fc0df3-c8b9-4ee7-864c-d0b590d3aa56",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "vs_code",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "eabc805a-bfcf-4460-b250-ac92135819f6",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "libreoffice_writer",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "ecc2413d-8a48-416e-a3a2-d30106ca36cb",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "libreoffice_impress",
+      "false_success_rejected": 2,
+      "false_success_total": 2,
+      "task_id": "ed43c15f-00cb-4054-9c95-62c880865d68",
+      "true_success_rejected": 0,
+      "true_success_total": 2
+    },
+    {
+      "domain": "libreoffice_impress",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "ef9d12bd-bcee-4ba0-a40e-918400f43ddf",
+      "true_success_rejected": 0,
+      "true_success_total": 4
+    },
+    {
+      "domain": "thunderbird",
+      "false_success_rejected": 0,
+      "false_success_total": 0,
+      "task_id": "f201fbc3-44e6-46fc-bcaa-432f9815454c",
+      "true_success_rejected": 0,
+      "true_success_total": 1
+    },
+    {
+      "domain": "multi_apps",
+      "false_success_rejected": 0,
+      "false_success_total": 1,
+      "task_id": "f5c13cdd-205c-4719-a562-348ae5cd1d91",
+      "true_success_rejected": 0,
+      "true_success_total": 3
+    },
+    {
+      "domain": "libreoffice_calc",
+      "false_success_rejected": 3,
+      "false_success_total": 3,
+      "task_id": "f9584479-3d0d-4c79-affa-9ad7afdd8850",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    },
+    {
+      "domain": "chrome",
+      "false_success_rejected": 2,
+      "false_success_total": 4,
+      "task_id": "fc6d8143-9452-4171-9459-7f515143419a",
+      "true_success_rejected": 0,
+      "true_success_total": 0
+    }
+  ],
+  "judge": "Claude (Feci Guard verifier)",
+  "provenance": {
+    "holo-neurochir/judge_bench/RESULT.json": {
+      "sha256": "b0bfca332d534bb2870447c6cb6fcdacb22e06f77a3f7ad2d75addb357359676"
+    },
+    "holo-neurochir/judge_bench/per_episode.json": {
+      "sha256": "7288d381495fd0fc9361378a0846741a5350f0d1951af23498d069cf57c21802"
+    }
+  },
+  "rejection_rule": "verdict == INCOMPLETE",
+  "schema_version": 1,
+  "source_fields": [
+    "domain",
+    "task_id",
+    "label",
+    "verdict"
+  ],
+  "sums": {
+    "false_success_rejected": 45,
+    "false_success_total": 66,
+    "true_success_rejected": 21,
+    "true_success_total": 202
+  },
+  "validation": {
+    "clusters": 90,
+    "episodes": 268,
+    "matches_target": true,
+    "target": "45/66 false-success rejected and 21/202 true-success rejected"
+  }
+}
