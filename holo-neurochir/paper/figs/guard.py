@@ -53,9 +53,6 @@ m.add("gbHolofourfeciVsHoloCi", " to ".join(spts(x) for x in pf["ci95"]), SRC + 
 pc = r["paired_gap_difference_vs_Claude"]["Holo4-27B (Feci Guard verifier)"]
 m.add("gbHolofourfeciVsClaude", spts(pc["point"]), SRC + " paired_gap_difference_vs_Claude.Holo4-27B (Feci Guard verifier).point")
 m.add("gbHolofourfeciVsClaudeCi", " to ".join(spts(x) for x in pc["ci95"]), SRC + " paired_gap_difference_vs_Claude...ci95")
-rp = load("local/feci_guard/repair/snapshot/results.json")
-RP = "data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC)"
-assert rp["no_guard"]["branches"] == rp["guard"]["branches"]
 vs = r["valid_only_sensitivity_holo4_feci"]
 m.add("gbHolofourfeciRejValid", pct(vs["true_success"][0] / vs["true_success"][1]), SRC + " valid_only_sensitivity_holo4_feci.true_success (%)")
 m.add("gbHolofourfeciNoVerdictTrue", r["judges"]["Holo4-27B (Feci Guard verifier)"]["true_success"]["error_or_invalid"]["numerator"], SRC + " judges.Holo4-27B (Feci Guard verifier).true_success.error_or_invalid.numerator")
@@ -74,13 +71,24 @@ m.add("fgBasePartialDone", sum(x["last_tool"] == "answer" and 0 < x["score"] < 1
 m.add("fgBaseF", f"{f:.2f}", LS + " false share of answered tasks, partial credit excluded")
 m.add("fgPrecision", f"{prec:.2f}", "det*f/(det*f+rej*(1-f)), Claude rates from " + SRC + " and f from " + LS)
 m.add("fgRepMaxSteps", re.search(r"max (\d+) new steps", (DATA / "local/feci_guard/PREREG.md").read_text()).group(1), "data/local/feci_guard/PREREG.md Repair measure (max new steps)")
-m.add("fgRepTaken", (DATA / "local/feci_guard/repair/snapshot/TAKEN_UTC").read_text().strip(), "data/local/feci_guard/repair/snapshot/TAKEN_UTC")
-m.add("fgRepEpisodes", rp["episodes_kept"], RP + " episodes_kept")
-m.add("fgRepBranches", rp["guard"]["branches"], RP + " guard.branches (= no_guard.branches)")
-m.add("fgRepRepairedNog", rp["no_guard"]["repaired"], RP + " no_guard.repaired")
-m.add("fgRepRepairedGuard", rp["guard"]["repaired"], RP + " guard.repaired")
+ref = load("local/rescue_bench/HOLO31_REFERENCE.json")
+rp = ref["contemporary_live_measure"]
+RP = "data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench)"
+assert rp["measure_complete"] and rp["no_guard"]["branches"] == rp["guard"]["branches"] == rp["primary_branches_per_arm"]
+m.add("fgRepEpisodes", rp["primary_complete_valid_episodes"], RP + " primary_complete_valid_episodes")
+m.add("fgRepExcluded", len(rp["dropped"]), RP + " dropped (replay_invalid)")
+m.add("fgRepBranches", rp["primary_branches_per_arm"], RP + " primary_branches_per_arm")
+m.add("fgRepRepairedNog", rp["no_guard"]["repaired_score1"], RP + " no_guard.repaired_score1")
+m.add("fgRepRepairedGuard", rp["guard"]["repaired_score1"], RP + " guard.repaired_score1")
+m.add("fgRepDiff", f"{rp['paired_diff_mean']:+.2f}", RP + " paired_diff_mean (episode level, mean over K)")
+m.add("fgRepDiffCi", " to ".join(f"{x:.2f}" for x in rp["paired_diff_ci95_episode_bootstrap"]), RP + " paired_diff_ci95_episode_bootstrap")
 m.add("fgRepRefused", rp["guard_branches_refused"], RP + " guard_branches_refused")
-m.add("fgRepPassedFalse", rp["guard_passed_without_refusal_still_false"], RP + " guard_passed_without_refusal_still_false")
+m.add("fgRepRefusedRepaired", rp["guard_refused_then_repaired"], RP + " guard_refused_then_repaired")
+m.add("fgRepBetter", rp["episodes_guard_better"], RP + " episodes_guard_better")
+m.add("fgRepWorse", rp["episodes_guard_worse"], RP + " episodes_guard_worse")
+both = [t for t, v in rp["episode_scores"].items() if not v["excluded"] and min(v["guard_scores"]) == 1 and min(v["no_guard_scores"]) == 1]
+assert len(both) == 1
+m.add("fgRepBothTask", both[0].split("/")[0].replace("libreoffice_", "") + "/" + both[0].split("/")[1][:8], RP + " episode_scores: solved in every branch of both arms")
 pd4 = r["paired_gap_difference_vs_Holo-3.1-4B"]["Holo4-27B"]
 m.add("gbHolofourVsHoloCi", " to ".join(spts(x) for x in pd4["ci95"]), SRC + " paired_gap_difference_vs_Holo-3.1-4B.Holo4-27B.ci95")
 m.add("gbTasks", re.search(r"resample (\d+) task groups", r["judges"]["Claude (Feci Guard verifier)"]["task_cluster_bootstrap"]["method"]).group(1), SRC + " task_cluster_bootstrap.method (task groups resampled)")

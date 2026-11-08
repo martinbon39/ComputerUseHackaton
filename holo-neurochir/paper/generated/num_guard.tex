@@ -36,13 +36,18 @@
 \newcommand{\fgBaseF}{0.29} % source: data/local/online/results_test_gh_orig_modal_test/last_steps.jsonl false share of answered tasks, partial credit excluded
 \newcommand{\fgPrecision}{0.73} % source: det*f/(det*f+rej*(1-f)), Claude rates from data/local/judge_bench/RESULT.json and f from data/local/online/results_test_gh_orig_modal_test/last_steps.jsonl
 \newcommand{\fgRepMaxSteps}{15} % source: data/local/feci_guard/PREREG.md Repair measure (max new steps)
-\newcommand{\fgRepTaken}{08:36} % source: data/local/feci_guard/repair/snapshot/TAKEN_UTC
-\newcommand{\fgRepEpisodes}{5} % source: data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC) episodes_kept
-\newcommand{\fgRepBranches}{10} % source: data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC) guard.branches (= no_guard.branches)
-\newcommand{\fgRepRepairedNog}{0} % source: data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC) no_guard.repaired
-\newcommand{\fgRepRepairedGuard}{0} % source: data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC) guard.repaired
-\newcommand{\fgRepRefused}{6} % source: data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC) guard_branches_refused
-\newcommand{\fgRepPassedFalse}{4} % source: data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC) guard_passed_without_refusal_still_false
+\newcommand{\fgRepEpisodes}{9} % source: data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench) primary_complete_valid_episodes
+\newcommand{\fgRepExcluded}{3} % source: data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench) dropped (replay_invalid)
+\newcommand{\fgRepBranches}{18} % source: data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench) primary_branches_per_arm
+\newcommand{\fgRepRepairedNog}{2} % source: data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench) no_guard.repaired_score1
+\newcommand{\fgRepRepairedGuard}{5} % source: data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench) guard.repaired_score1
+\newcommand{\fgRepDiff}{+0.17} % source: data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench) paired_diff_mean (episode level, mean over K)
+\newcommand{\fgRepDiffCi}{0.00 to 0.44} % source: data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench) paired_diff_ci95_episode_bootstrap
+\newcommand{\fgRepRefused}{12} % source: data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench) guard_branches_refused
+\newcommand{\fgRepRefusedRepaired}{3} % source: data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench) guard_refused_then_repaired
+\newcommand{\fgRepBetter}{2} % source: data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench) episodes_guard_better
+\newcommand{\fgRepWorse}{0} % source: data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench) episodes_guard_worse
+\newcommand{\fgRepBothTask}{impress/8979838c} % source: data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench) episode_scores: solved in every branch of both arms
 \newcommand{\gbHolofourVsHoloCi}{$-$8 to +28} % source: data/local/judge_bench/RESULT.json paired_gap_difference_vs_Holo-3.1-4B.Holo4-27B.ci95
 \newcommand{\gbTasks}{90} % source: data/local/judge_bench/RESULT.json task_cluster_bootstrap.method (task groups resampled)
 \newcommand{\fgRepairEpisodes}{12} % source: data/local/feci_guard/repair/episodes.txt (registered repair measure, not yet run)

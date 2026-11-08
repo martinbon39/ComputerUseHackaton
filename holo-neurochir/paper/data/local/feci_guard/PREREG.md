@@ -41,3 +41,10 @@ Valid branch = replay_valid (max pixel diff <= 0.05) in BOTH arms' branches of t
 analysis uses episodes whose branches are valid in both arms (all 4). Primary: repaired branches (score 1) per arm,
 episode-level paired difference (mean over K), bootstrap 95 % CI over episodes (10 000), plus exact counts.
 Secondary: answered-false-success branches per arm; refusals; refused-then-repaired.
+
+## Exploratory sensitivity (announced 08:29 UTC at ares' request, after the registered runs; NOT confirmatory)
+Guard arm only (one VM, after both registered arms; ares 08:3x), same runner and settings except --max_new 30, on every episode where at least one registered guard
+branch was refused; K=2. Question: is the absence of repair a lack of steps or a lack of skill? Reported separately,
+with its own counts; no paired test against the no-guard arm (that arm keeps 15 steps).
+
+Sensitivity episodes (fixed 09:18 UTC, before any 30-step branch): the 6 refused episodes with valid replay, writer/0b17a146, calc/37608790, impress/70bca0cc, multi_apps/d68204bf, calc/1de60575, impress/550ce7e7 (vlc/aa4b5023 excluded: replay invalid). One VM, after the rescue test, hard stop 11:00.
