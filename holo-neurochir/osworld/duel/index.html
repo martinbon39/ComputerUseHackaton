@@ -27,7 +27,7 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 .btn:disabled { opacity: .35; cursor: default; }
 .link { font-size: 13px; color: var(--muted); background: none; border: 0; cursor: pointer; font-family: inherit; padding: 4px; }
 main { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 8px 16px; align-content: start; }
-.gline { min-height: 24px; color: var(--accent); font-weight: 600; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gline { min-height: 24px; color: var(--accent); font-weight: 600; font-size: 15px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
 .who { font-weight: 700; font-size: 17px; margin: 0 0 8px; }
 .who .g { color: var(--accent); }
@@ -140,13 +140,18 @@ function showImg(side, file) {  // swap only once loaded (no blank flash), and n
   pre.src = url;
 }
 function state(side, text) { if (!S[side].end) $('#' + side + ' .state').textContent = text; }
+let batch = null;  // catching up on many events at once: only the last frame of each side is loaded
+function catchUp(fn) { batch = {}; try { fn(); } finally { const b = batch; batch = null; for (const side in b) showImg(side, b[side]); } }
 let toastTimer = null, G = { refusals: 0, last: '' };
 function guardLine(e) {  // the refused requirement stays visible under the right screen, to the end
   const bad = (e.requirements || []).find(r => r.mark === '✗');
   const times = n => n === 1 ? 'once' : n === 2 ? 'twice' : n + ' times';
-  if (e.decision === 'refused') { G.refusals++; G.last = bad ? bad.text : 'not done';
-    $('#gline').textContent = `Guard refused ${times(G.refusals)}: ✗ ${G.last}`; }
-  else if (G.refusals) $('#gline').textContent = `Guard refused ${times(G.refusals)}: ✗ ${G.last} → then ${e.decision === 'passed_complete' ? '✓ verified' : '✓ accepted'}`;
+  if (e.decision === 'refused') { G.refusals++;
+    G.last = bad ? bad.text + (bad.evidence ? ` (${bad.evidence.replace(/\.$/, '')})` : '') : 'task not complete'; }
+  else if (!G.refusals) return;
+  $('#gline').textContent = `Guard refused ${times(G.refusals)}: requirement not met — ${G.last}`
+    + (e.decision === 'refused' ? '' : e.decision === 'passed_complete' ? ' → ✓ verified' : ' → accepted');
+  $('#gline').title = $('#gline').textContent;
 }
 function toast(e, speed) {
   const t = $('#right .toast'), bad = (e.requirements || []).find(r => r.mark === '✗');
@@ -158,7 +163,7 @@ function toast(e, speed) {
 }
 function apply(side, e, speed) {
   const s = S[side], hist = side === 'left' ? '#histL' : '#histR';
-  if (e.kind === 'frame' && e.file) showImg(side, e.file);
+  if (e.kind === 'frame' && e.file) { if (batch) batch[side] = e.file; else showImg(side, e.file); }
   else if (e.kind === 'step') {
     s.step = e.i; state(side, `step ${e.i} · ${VERB[e.tool] ? VERB[e.tool] + '…' : e.tool}`);
     $(hist).insertAdjacentHTML('beforeend', `<li>${esc(e.action)}</li>`);
@@ -195,7 +200,7 @@ async function poll() {
     if (r.status === 404) { duelId = null; meta = null; return; }
     const d = await r.json();
     if (!meta || meta.id !== d.meta.id) setup(d.meta);
-    for (const side of ['left', 'right']) { d[side].forEach(e => apply(side, e, 1)); off[side] = d[side + '_n']; }
+    catchUp(() => { for (const side of ['left', 'right']) { d[side].forEach(e => apply(side, e, 1)); off[side] = d[side + '_n']; } });
     running = d.running; mode();
     $('#run').disabled = running; for (const b of ['#stopL', '#stopR', '#stopAll']) $(b).disabled = !running;
   } catch (e) { /* network blip: next poll */ } finally { busy = false; }
@@ -242,7 +247,7 @@ async function loadReplay() {
   // skip the VM boot and the 60 s task settle: start just before the first model call; ?t=<s> seeks
   const first = R.ev.find(([, e]) => e.kind === 'phase' && e.phase === 'thinking');
   const start = P.get('t') ? R.meta.t0 + +P.get('t') : REAL ? R.meta.t0 : first ? first[1].t - 1 : R.meta.t0;
-  while (R.i < R.ev.length && R.ev[R.i][1].t < start) { const [s, e] = R.ev[R.i++]; apply(s, e, R.speed); }
+  catchUp(() => { while (R.i < R.ev.length && R.ev[R.i][1].t < start) { const [s, e] = R.ev[R.i++]; apply(s, e, R.speed); } });
   R.clock = start - R.meta.t0;
   setInterval(tick, 100);  // timer, not requestAnimationFrame: rAF stops in background tabs and some browsers
 }
