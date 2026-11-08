@@ -477,3 +477,9 @@ Timestamp correction for the preceding astra-free entry: the GO message was deli
 - Why: ares. Résultats appariés, sans aucune action irréversible lancée par moi.
 - Verified: test 120 paires, expo125 contre orig, succès 0,592 contre 0,608 (Δ -0,017, IC95 [-0,09, +0,06]) ; poolé avec confirm, 164 paires, Δ -0,018 [-0,08, +0,04]. Rejeu de 10 vrais succès : 9/10. Pilote de branchement, 20 branches et 0 erreur : orig 5/10, merge_cua_b050 4/10, 1 épisode écarté sur 5 (web dynamique), 251 s par branche.
 - Result: aucune édition n'améliore OSWorld à ce stade. Leçon : un argos send lancé dans tmux échoue sans ARGOS_SESSION_ID (passer -e), ce qui a fait perdre des alertes pendant plusieurs heures.
+
+## 2026-11-08 · rescue-bench · experiment-preparation · Frozen-Guard Holo4 escalation
+- What: Added rescue_runner.py, preregistered 12-episode K2 paired study, fixed-parity two-worker scheduling, reproducible metadata prevalence, and episode-cluster analysis under rescue_bench/.
+- Why: Test whether stronger-agent escalation repairs feasible false completions after the frozen Claude Guard refuses them.
+- Verified: Independent runner and scheduling CPU reviews PASS; statistical synthetic checks PASS provisionally; one recorded-state Holo4 tool JSON valid. First live guarded pilot replay valid, official score0; full pilot remains running. Frozen Guard/harness hashes unchanged.
+- Result: partial — holo-neurochir/rescue_bench/REPORT.md; no gain claim. Only own new artifacts edited; shared dirty work preserved.
