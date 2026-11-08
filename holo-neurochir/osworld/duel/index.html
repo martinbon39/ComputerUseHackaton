@@ -254,6 +254,8 @@ const stop = side => duelId && post('/api/stop', { duel: duelId, side });
 // ---- replay ----
 const REAL = P.get('mode') === 'real';  // realistic: x1 from the VM boot on, with the recorded latencies
 const R = { ev: [], i: 0, clock: 0, last: null, speed: REAL ? 1 : 4 };
+const CARDS = ['20261108-110023_libreoffice_calc_1de60575-bb6e-4c3d-9e6a', '20261108-111313_libreoffice_calc_1de60575-bb6e-4c3d-9e6a',
+  '20261108-074039_libreoffice_impress_b8adbc24-cef2-4b15-9'];  // landing cards: Holo-3.1 alone vs + Feci Guard only
 const FEATURED = '20261108-110023_libreoffice_calc_1de60575-bb6e-4c3d-9e6a';  // R1: Guard refuses a false "done", agent repairs
 async function loadReplay() {
   const r = await fetch(`/api/events?duel=${REPLAY}&left=0&right=0`), d = await r.json();
@@ -309,7 +311,8 @@ const NAMES = { 'libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197': 'Calc �
   'os/bedcedc4-4d72-425e-ad62-21960b11fe0d': 'Ubuntu · dim screen setting' };
 const taskName = id => NAMES[id] || id.split('/')[0].replace('libreoffice_', '').replace(/^./, c => c.toUpperCase());
 async function fillPick() {  // always visible: recorded duels by task (outcomes on both sides), plus Run LIVE with the key
-  const rows = (await (await fetch('/api/duels')).json()).filter(d => d.sides.left.verdict && d.sides.right.verdict && !/INFRA/.test(d.note || ''));
+  const rows = (await (await fetch('/api/duels')).json()).filter(d => d.sides.left.verdict && d.sides.right.verdict && !/INFRA/.test(d.note || '')
+    && ((d.preset || '').includes('guard') || d.id === REPLAY));
   const ic = v => v.score >= 1 ? '✓' : '✗', hhmm = t => new Date(t * 1000).toISOString().slice(11, 16);
   const byTask = {}; rows.forEach(d => (byTask[d.task] = byTask[d.task] || []).push(d));
   let html = '';
@@ -322,13 +325,10 @@ async function fillPick() {  // always visible: recorded duels by task (outcomes
 }
 async function fillCards() {  // the landing page: one big card per recorded task (its latest duel, Guard duels first)
   const rows = (await (await fetch('/api/duels')).json()).filter(d => d.sides.left.verdict && d.sides.right.verdict && !/INFRA/.test(d.note || ''));
-  const best = {};
-  for (const d of rows) { const g = (d.preset || '').includes('guard'), b = best[d.task];
-    if (d.id === FEATURED || (!b || (g && !(b.preset || '').includes('guard'))) && (!b || b.id !== FEATURED)) best[d.task] = d; }
-  const pick = Object.values(best).sort((a, b) => ((b.preset || '').includes('guard') - (a.preset || '').includes('guard')) || b.t0 - a.t0);
+  const pick = CARDS.map(id => rows.find(d => d.id === id)).filter(Boolean);
   const ic = v => v.score >= 1 ? '<b class="ok">✓</b>' : '<b class="ko">✗</b>';
   $('#cards').innerHTML = pick.map(d => `<button class="card" data-id="${d.id}" data-task="${d.task}"><img class="shot" alt=""><div class="cb">
-    <div class="nm">${esc(taskName(d.task))}</div>
+    <div class="nm">${esc(taskName(d.task))} <span style="color:var(--muted);font-weight:500">· ${new Date(d.t0 * 1000).toISOString().slice(11, 16)}</span></div>
     <div class="oc">Holo ${ic(d.sides.left.verdict)} / ${(d.preset || '').includes('guard') ? '+Guard' : 'merged'} ${ic(d.sides.right.verdict)}</div></div></button>`).join('');
   $('#cards').onclick = e => { const c = e.target.closest('.card'); if (!c) return;
     $('#cards').querySelectorAll('.card').forEach(x => x.classList.toggle('on', x === c)); $('#runBig').disabled = false; $('#runBig').dataset.id = c.dataset.id; $('#startBig').dataset.task = c.dataset.task; };
