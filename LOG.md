@@ -477,3 +477,9 @@ Timestamp correction for the preceding astra-free entry: the GO message was deli
 - Why: ares. Résultats appariés, sans aucune action irréversible lancée par moi.
 - Verified: test 120 paires, expo125 contre orig, succès 0,592 contre 0,608 (Δ -0,017, IC95 [-0,09, +0,06]) ; poolé avec confirm, 164 paires, Δ -0,018 [-0,08, +0,04]. Rejeu de 10 vrais succès : 9/10. Pilote de branchement, 20 branches et 0 erreur : orig 5/10, merge_cua_b050 4/10, 1 épisode écarté sur 5 (web dynamique), 251 s par branche.
 - Result: aucune édition n'améliore OSWorld à ce stade. Leçon : un argos send lancé dans tmux échoue sans ARGOS_SESSION_ID (passer -e), ce qui a fait perdre des alertes pendant plusieurs heures.
+
+## 2026-11-08 10:18 UTC — repo-ready: jury-ready repository
+- README (EN + FR summary): problem, diagnosis, Feci Guard, mermaid architecture, results table with n and CIs, criteria → evidence, quickstart, levels 2-3, links, how we worked, limitations. AGENTS.md (for the AI judge: commands, claim → evidence, measured vs running), llms.txt, docs/REPO_MAP.md, LICENSE (Apache-2.0).
+- New CPU quickstart, no key: jury_kit/replay_guard.py (frozen feci_guard.check on the 268 real screenshots, recorded verdicts: 45/66, 21/202, +58 [+41, +74]), jury_kit/recount_judges.py (3 judges from raw responses), jury_kit/guard_live.py (level 2, CLI path run, --api not run), jury_kit/quickstart.sh; CI workflow quickstart (green). Proof from fresh clones: docs/QUICKSTART_PROOF.md.
+- Committed per ares: 50 experiment summaries (4c8b1ab), demo_live/repair_calc.html; untracked per ares: devin/README.md, pitch/PITCH.md, committed .pyc.
+- Two fresh-context jury reviews: 6.85/10 then 7.3/10 (finalist yes). Open: online Guard result (report/ONLINE_GUARD_RESULT.md ~11:15), rescue_bench final (PR #1), final paper PDFs before 12:15.
