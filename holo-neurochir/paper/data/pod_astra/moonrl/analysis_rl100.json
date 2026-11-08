@@ -1,0 +1,247 @@
+{
+  "arm": "rl100",
+  "n": 220,
+  "seed": 20261108,
+  "bootstrap_reps": 100000,
+  "strata": {
+    "fs+": {
+      "tasks": 19,
+      "generations": 76,
+      "metrics": {
+        "answer": {
+          "A": 0.7368421052631579,
+          "candidate": 0.8157894736842105,
+          "delta": 0.07894736842105263,
+          "ci95": [
+            0.02631578947368421,
+            0.14473684210526316
+          ]
+        },
+        "valid_nonanswer": {
+          "A": 0.2631578947368421,
+          "candidate": 0.17105263157894737,
+          "delta": -0.09210526315789473,
+          "ci95": [
+            -0.15789473684210525,
+            -0.02631578947368421
+          ]
+        },
+        "schema_valid": {
+          "A": 1.0,
+          "candidate": 0.9868421052631579,
+          "delta": -0.013157894736842105,
+          "ci95": [
+            -0.039473684210526314,
+            0.0
+          ]
+        },
+        "exact_tool": {
+          "A": 0.7368421052631579,
+          "candidate": 0.8157894736842105,
+          "delta": 0.07894736842105263,
+          "ci95": [
+            0.02631578947368421,
+            0.14473684210526316
+          ]
+        },
+        "truncated": {
+          "A": 0.0,
+          "candidate": 0.013157894736842105,
+          "delta": 0.013157894736842105,
+          "ci95": [
+            0.0,
+            0.039473684210526314
+          ]
+        },
+        "error": {
+          "A": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "tools": {
+        "A": {
+          "answer": 56,
+          "click": 5,
+          "hotkey": 6,
+          "double_click": 4,
+          "scroll": 2,
+          "write": 2,
+          "wait": 1
+        },
+        "rl100": {
+          "answer": 62,
+          "hotkey": 5,
+          "click": 2,
+          "null": 1,
+          "double_click": 3,
+          "scroll": 2,
+          "write": 1
+        }
+      }
+    },
+    "fs-": {
+      "tasks": 20,
+      "generations": 80,
+      "metrics": {
+        "answer": {
+          "A": 0.9375,
+          "candidate": 0.925,
+          "delta": -0.0125,
+          "ci95": [
+            -0.0375,
+            0.0
+          ]
+        },
+        "valid_nonanswer": {
+          "A": 0.0625,
+          "candidate": 0.075,
+          "delta": 0.0125,
+          "ci95": [
+            0.0,
+            0.0375
+          ]
+        },
+        "schema_valid": {
+          "A": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "exact_tool": {
+          "A": 0.9375,
+          "candidate": 0.925,
+          "delta": -0.0125,
+          "ci95": [
+            -0.0375,
+            0.0
+          ]
+        },
+        "truncated": {
+          "A": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "error": {
+          "A": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "tools": {
+        "A": {
+          "answer": 75,
+          "click": 4,
+          "hotkey": 1
+        },
+        "rl100": {
+          "answer": 74,
+          "hotkey": 3,
+          "click": 2,
+          "right_click": 1
+        }
+      }
+    },
+    "healthy": {
+      "tasks": 16,
+      "generations": 64,
+      "metrics": {
+        "answer": {
+          "A": 0.0625,
+          "candidate": 0.109375,
+          "delta": 0.046875,
+          "ci95": [
+            0.0,
+            0.125
+          ]
+        },
+        "valid_nonanswer": {
+          "A": 0.9375,
+          "candidate": 0.890625,
+          "delta": -0.046875,
+          "ci95": [
+            -0.125,
+            0.0
+          ]
+        },
+        "schema_valid": {
+          "A": 1.0,
+          "candidate": 1.0,
+          "delta": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "exact_tool": {
+          "A": 0.921875,
+          "candidate": 0.890625,
+          "delta": -0.03125,
+          "ci95": [
+            -0.109375,
+            0.03125
+          ]
+        },
+        "truncated": {
+          "A": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "error": {
+          "A": 0.0,
+          "candidate": 0.0,
+          "delta": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "tools": {
+        "A": {
+          "click": 43,
+          "hotkey": 7,
+          "wait": 6,
+          "press_key": 4,
+          "answer": 4
+        },
+        "rl100": {
+          "click": 40,
+          "hotkey": 8,
+          "wait": 5,
+          "press_key": 4,
+          "answer": 7
+        }
+      }
+    }
+  },
+  "numeric_gates": {
+    "json_rate": 0.9954545454545455,
+    "json_pass": true,
+    "healthy_delta": -0.046875,
+    "healthy_pass": false,
+    "fs_answer_delta": 0.07894736842105263,
+    "fs_signal_pass": false
+  },
+  "text_semantic_review": "REQUIRED",
+  "action_improvement_review": "NOT ASSUMED"
+}

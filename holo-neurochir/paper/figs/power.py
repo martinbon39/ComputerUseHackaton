@@ -5,7 +5,7 @@ Reads data/pod_astra/power/RESULT.json; POWER_RESULT overrides the path to dry-r
 import os
 from pathlib import Path
 
-from common import DATA, Macros
+from common import DATA, Macros, load
 
 import json
 
@@ -60,6 +60,20 @@ for arm, A in [("B", "Cua"), ("C", "Broad")]:
 v = json.loads((DATA / "pod_astra/power/VERIFY_FINAL.json").read_text())
 assert v["phase"] == "final" and v["status"] == "PASS" and all(c["status"] == "PASS" for c in v["checks"].values())
 assert d["status"] == "COMPLETE"
+sc = load("pod_astra/moonleak/screen_head4_s0.json")
+assert sc["arm"] == "head4_s0" and sc["metrics"]["fs+"]["tasks"] == 19 and sc["errors"] == 0
+SC = "data/pod_astra/moonleak/screen_head4_s0.json"
+m.add("mlZeroFsp", signed(-sc["metrics"]["fs+"]["drop"]), SC + " metrics.fs+.drop, sign flipped to answer change (points)")
+m.add("mlZeroFspCi", " to ".join(signed(-x) for x in reversed(sc["metrics"]["fs+"]["drop_ci95"])), SC + " metrics.fs+.drop_ci95, sign flipped")
+m.add("mlZeroHealthy", signed(-sc["metrics"]["healthy"]["drop"]), SC + " metrics.healthy.drop (valid non-answer), sign flipped")
+rl = load("pod_astra/moonrl/analysis_rl100.json")
+RL = "data/pod_astra/moonrl/analysis_rl100.json"
+assert rl["arm"] == "rl100" and rl["strata"]["fs+"]["tasks"] == 19
+x = rl["strata"]["fs+"]["metrics"]["answer"]
+m.add("rlFsp", signed(x["delta"]), RL + " strata.fs+.metrics.answer.delta")
+m.add("rlFspCi", " to ".join(signed(v) for v in x["ci95"]), RL + " strata.fs+.metrics.answer.ci95")
+h = rl["strata"]["healthy"]["metrics"]["valid_nonanswer"]
+m.add("rlHealthy", signed(h["delta"]), RL + " strata.healthy.metrics.valid_nonanswer.delta (REVIEW_RL100.md: healthy gate fails)")
 m.add("pwBootReps", f"{d['method']['bootstrap_replicates']:,}".replace(",", "{,}"), SRC + " method.bootstrap_replicates")
 m.add("pwStatus", d["status"], SRC + " status")
 m.write()

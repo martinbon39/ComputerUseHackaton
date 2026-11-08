@@ -46,5 +46,11 @@
 \newcommand{\pwBroadSensCiFsp}{$-$29.2 to $-$5.6} % source: data/pod_astra/power/RESULT.json excluding_C_...contrasts.C-A.strata.fs+.task_bootstrap95
 \newcommand{\pwCuaFspDown}{4} % source: data/pod_astra/power/RESULT.json contrasts.B-A.strata.fs+.context_deltas < 0
 \newcommand{\pwBroadFspDown}{9} % source: data/pod_astra/power/RESULT.json contrasts.C-A.strata.fs+.context_deltas < 0
+\newcommand{\mlZeroFsp}{+21.1} % source: data/pod_astra/moonleak/screen_head4_s0.json metrics.fs+.drop, sign flipped to answer change (points)
+\newcommand{\mlZeroFspCi}{+9.2 to +35.5} % source: data/pod_astra/moonleak/screen_head4_s0.json metrics.fs+.drop_ci95, sign flipped
+\newcommand{\mlZeroHealthy}{$-$3.1} % source: data/pod_astra/moonleak/screen_head4_s0.json metrics.healthy.drop (valid non-answer), sign flipped
+\newcommand{\rlFsp}{+7.9} % source: data/pod_astra/moonrl/analysis_rl100.json strata.fs+.metrics.answer.delta
+\newcommand{\rlFspCi}{+2.6 to +14.5} % source: data/pod_astra/moonrl/analysis_rl100.json strata.fs+.metrics.answer.ci95
+\newcommand{\rlHealthy}{$-$4.7} % source: data/pod_astra/moonrl/analysis_rl100.json strata.healthy.metrics.valid_nonanswer.delta (REVIEW_RL100.md: healthy gate fails)
 \newcommand{\pwBootReps}{100{,}000} % source: data/pod_astra/power/RESULT.json method.bootstrap_replicates
 \newcommand{\pwStatus}{COMPLETE} % source: data/pod_astra/power/RESULT.json status
