@@ -5,7 +5,7 @@ machines, the statistics, what happened during the night, and how to reproduce e
 are in [README.md](../README.md), and the claim → evidence map is in [AGENTS.md](../AGENTS.md).
 
 **How to read this page.** Each number is followed by the file it comes from, as `path:line`. Paths are relative to
-the repository root. The line numbers are those of `main` at commit `8e50b47` (2026-11-08). Most working notes are in
+the repository root. The line numbers are those of `main` at commit `407b672` (2026-11-08). Most working notes are in
 French (`JOURNAL.md`, `LOG.md`), so quoted strings are in French and translated inline. A few counts come from the raw
 episode folders on our server (`~/osw/`, not in the repo); those are marked **server-only**, with the command that
 produced them.
@@ -150,8 +150,9 @@ it (`holo-neurochir/JOURNAL.md:108`).
 
 **Loss of the pod and failover.** On 2026-11-08 "Le pod Runpod est tombé vers 09:30. Les 20 jobs ont échoué au
 contrôle des modèles, avec 0 tâche jouée" ("the Runpod pod went down around 09:30; the 20 jobs failed the model check
-with 0 tasks played") (`holo-neurochir/report/PREREG_ONLINE_GUARD.md:30`). The pod had run ~19 h at 5.29 $/h against
-a ~100 € credit; the repo records the outage, not a billing statement. Amendment 2, written at 09:40 when no Guard
+with 0 tasks played") (`holo-neurochir/report/PREREG_ONLINE_GUARD.md:30`). Cause: Runpod deleted the pod when the account balance
+fell below its threshold ("Low Balance Warning"); 25 $ were added afterwards, but the pod was not recreated because
+Modal had taken over (`holo-neurochir/JOURNAL.md:347`). Amendment 2, written at 09:40 when no Guard
 episode had run, moved the agent to Modal. Its primary comparator became the original served by the same Modal
 deployment, which removes the pod/Modal confound (`holo-neurochir/report/PREREG_ONLINE_GUARD.md:29-35`). At 09:45
 Martin raised Modal account 1 to 28 $ (`holo-neurochir/JOURNAL.md:345`).
@@ -177,7 +178,7 @@ base-model snapshot `8c88265a…` as the pod (`holo-neurochir/osworld/MODAL_MANI
 **Cost.** The repo has no single total. Recorded pieces: Modal 16.80 $ + 17.32 $ = 34.12 $ as of 08:35
 (`holo-neurochir/osworld/MODAL_COST.md:25`); the Claude judge on the 268 screens 7.60 $
 (`holo-neurochir/judge_bench/REPORT.md:60`); the Guard at ~0.03 $ per check (`README.md`, Level 2). For Runpod only
-the rate and the cap are recorded. AWS was tried and dropped: a new account had too little vCPU quota
+the rate, the cap and the low-balance deletion are recorded (`holo-neurochir/JOURNAL.md:347`). AWS was tried and dropped: a new account had too little vCPU quota
 (`holo-neurochir/JOURNAL.md:108`).
 
 ## 3. The OSWorld virtual machines
@@ -322,7 +323,7 @@ All times are copied from the files; `~` means the source itself is approximate.
 | 11-08 08:28-08:35 | Judge bench on 268 screens: Guard 45/66 detected, 21/202 wrongly rejected | `holo-neurochir/judge_bench/REPORT.md:27,67` |
 | 11-08 09:24 | Repair measure 5/18 vs 2/18, +16.7 [0, +44]; rescue harness tested end to end on one task | `LOG.md:574` |
 | 11-08 09:27-09:28 | Online Guard study pre-registered, then amended (benefit/cost rule) before launch | `holo-neurochir/report/PREREG_ONLINE_GUARD.md:1,15` |
-| 11-08 ~09:30 | Pod lost; the 20 runner jobs stop at the model check with 0 tasks played | `holo-neurochir/report/PREREG_ONLINE_GUARD.md:30` |
+| 11-08 ~09:30 | Pod deleted by Runpod (balance below threshold); the 20 runner jobs stop at the model check with 0 tasks played | `holo-neurochir/report/PREREG_ONLINE_GUARD.md:30`, `holo-neurochir/JOURNAL.md:347` |
 | 11-08 09:40 | Amendment 2: agent and comparator both on Modal; relaunch | `holo-neurochir/report/PREREG_ONLINE_GUARD.md:29-35` |
 | 11-08 09:31-10:08 | Guard v2 (Opus + history) on a held-out half used once: 20/29 vs 16/29 detected; targets not met | `holo-neurochir/feci_guard/v2/PROTOCOL.md`, `holo-neurochir/feci_guard/RESULTS.md` |
 | 11-08 10:05-10:19 | Repository made reviewable: CPU quickstart, CI, public audit | `LOG.md:588-592` |
