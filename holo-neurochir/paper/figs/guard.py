@@ -131,6 +131,59 @@ m.add("gbHolofourVsHoloCi", " to ".join(spts(x) for x in pd4["ci95"]), SRC + " p
 m.add("gbTasks", re.search(r"resample (\d+) task groups", r["judges"]["Claude (Feci Guard verifier)"]["task_cluster_bootstrap"]["method"]).group(1), SRC + " task_cluster_bootstrap.method (task groups resampled)")
 m.add("fgRepairEpisodes", len([l for l in (DATA / "local/feci_guard/repair/episodes.txt").read_text().splitlines() if l.strip()]),
       "data/local/feci_guard/repair/episodes.txt (registered repair measure, not yet run)")
+V2 = DATA / "local/feci_guard/v2"
+V2S = "data/local/feci_guard/v2/"
+man = {e["episode_id"]: e for e in json.loads((DATA / "local/judge_bench/verif_study_manifest.json").read_text())}
+assert __import__("hashlib").sha256((DATA / "local/judge_bench/verif_study_manifest.json").read_bytes()).hexdigest() == r["corpus"]["manifest_sha256"]
+hold = set(json.loads((V2 / "SPLIT.json").read_text())["holdout"])
+
+
+def verdicts(path):
+    out = {}
+    for x in path.read_text().splitlines():
+        j = json.loads(x)
+        if j["episode_id"] in hold:
+            out[j["episode_id"]] = j["result"].get("verdict") == "INCOMPLETE"
+    return out
+
+
+v1 = verdicts(DATA / "local/judge_bench/claude_responses.jsonl")
+v2 = verdicts(V2 / "runs/ab_holdout.jsonl")
+assert set(v1) == set(v2) == hold
+sc = {json.loads(x)["variant"]: json.loads(x) for x in (V2 / "holdout_scores.jsonl").read_text().splitlines()}
+lab = lambda e: man[e]["label"]
+for name, v, tag in [("v1", v1, "One"), ("ab", v2, "Two")]:
+    fsd = sum(v[e] for e in hold if lab(e) == "false_success"); fsn = sum(lab(e) == "false_success" for e in hold)
+    trd = sum(v[e] for e in hold if lab(e) == "true_success"); trn = sum(lab(e) == "true_success" for e in hold)
+    assert f"{fsd}/{fsn}" == sc[name]["detection"] and f"{trd}/{trn}" == sc[name]["false_rejection"], name
+    m.add(f"gv{tag}Det", f"{fsd}/{fsn}", V2S + f"runs + holdout_scores.jsonl {name} detection")
+    m.add(f"gv{tag}DetPct", f"{100 * fsd / fsn:.0f}", V2S + f"{name} detection (%)")
+    m.add(f"gv{tag}Rej", f"{trd}/{trn}", V2S + f"{name} false rejection")
+    m.add(f"gv{tag}RejPct", f"{100 * trd / trn:.1f}", V2S + f"{name} false rejection (%)")
+by = {}
+for e in hold:
+    by.setdefault((man[e]["domain"], man[e]["task_id"]), []).append(e)
+tasks = sorted(by)
+rnd = __import__("random").Random(0)
+dd, dr = [], []
+for _ in range(10000):
+    smp = [e for t in (rnd.choice(tasks) for _ in tasks) for e in by[t]]
+    f_ = [e for e in smp if lab(e) == "false_success"]; t_ = [e for e in smp if lab(e) == "true_success"]
+    if f_ and t_:
+        dd.append((sum(v2[e] for e in f_) - sum(v1[e] for e in f_)) / len(f_))
+        dr.append((sum(v2[e] for e in t_) - sum(v1[e] for e in t_)) / len(t_))
+dd.sort(); dr.sort()
+q = lambda xs: [xs[int(.025 * len(xs))], xs[int(.975 * len(xs)) - 1]]
+F = [e for e in hold if lab(e) == "false_success"]; T = [e for e in hold if lab(e) == "true_success"]
+m.add("gvTasks", len(tasks), V2S + "SPLIT.json holdout: distinct (domain, task_id)")
+m.add("gvDetDiff", f"{100 * (sum(v2[e] for e in F) - sum(v1[e] for e in F)) / len(F):+.1f}", "paired ab - v1 detection on the held-out half (points)")
+m.add("gvDetDiffCi", " to ".join(f"{100 * x:+.0f}" for x in q(dd)).replace("-", "$-$"), "task-cluster bootstrap, 10,000, seed 0 (figs/guard.py)")
+m.add("gvRejDiff", f"{100 * (sum(v2[e] for e in T) - sum(v1[e] for e in T)) / len(T):+.1f}", "paired ab - v1 false rejection on the held-out half (points)")
+m.add("gvRejDiffCi", " to ".join(f"{100 * x:+.0f}" for x in q(dr)).replace("-", "$-$"), "task-cluster bootstrap, 10,000, seed 0 (figs/guard.py)")
+pr = (V2 / "PROTOCOL.md").read_text()
+cm = __import__("re").search(r"c (\d+)/(\d+), (\d+)/(\d+)\.", pr)
+m.add("gvStrictDet", f"{cm.group(1)}/{cm.group(2)}", V2S + "PROTOCOL.md dev results, variant c (strict prompt) detection")
+m.add("gvStrictRej", f"{cm.group(3)}/{cm.group(4)}", V2S + "PROTOCOL.md dev results, variant c false rejection")
 write_table("guard", "\\begin{tabular}{lcccc}\n\\toprule\nJudge & false successes detected & true successes rejected & gap, points [95\\% CI] & no verdict \\\\\n\\midrule\n"
             + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n", "guard")
 m.write()

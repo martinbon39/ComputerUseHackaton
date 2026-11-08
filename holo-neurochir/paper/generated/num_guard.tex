@@ -64,3 +64,18 @@
 \newcommand{\gbHolofourVsHoloCi}{$-$8 to +28} % source: data/local/judge_bench/RESULT.json paired_gap_difference_vs_Holo-3.1-4B.Holo4-27B.ci95
 \newcommand{\gbTasks}{90} % source: data/local/judge_bench/RESULT.json task_cluster_bootstrap.method (task groups resampled)
 \newcommand{\fgRepairEpisodes}{12} % source: data/local/feci_guard/repair/episodes.txt (registered repair measure, not yet run)
+\newcommand{\gvOneDet}{16/29} % source: data/local/feci_guard/v2/runs + holdout_scores.jsonl v1 detection
+\newcommand{\gvOneDetPct}{55} % source: data/local/feci_guard/v2/v1 detection (%)
+\newcommand{\gvOneRej}{10/116} % source: data/local/feci_guard/v2/v1 false rejection
+\newcommand{\gvOneRejPct}{8.6} % source: data/local/feci_guard/v2/v1 false rejection (%)
+\newcommand{\gvTwoDet}{20/29} % source: data/local/feci_guard/v2/runs + holdout_scores.jsonl ab detection
+\newcommand{\gvTwoDetPct}{69} % source: data/local/feci_guard/v2/ab detection (%)
+\newcommand{\gvTwoRej}{15/116} % source: data/local/feci_guard/v2/ab false rejection
+\newcommand{\gvTwoRejPct}{12.9} % source: data/local/feci_guard/v2/ab false rejection (%)
+\newcommand{\gvTasks}{47} % source: data/local/feci_guard/v2/SPLIT.json holdout: distinct (domain, task_id)
+\newcommand{\gvDetDiff}{+13.8} % source: paired ab - v1 detection on the held-out half (points)
+\newcommand{\gvDetDiffCi}{+3 to +30} % source: task-cluster bootstrap, 10,000, seed 0 (figs/guard.py)
+\newcommand{\gvRejDiff}{+4.3} % source: paired ab - v1 false rejection on the held-out half (points)
+\newcommand{\gvRejDiffCi}{$-$5 to +15} % source: task-cluster bootstrap, 10,000, seed 0 (figs/guard.py)
+\newcommand{\gvStrictDet}{35/37} % source: data/local/feci_guard/v2/PROTOCOL.md dev results, variant c (strict prompt) detection
+\newcommand{\gvStrictRej}{33/86} % source: data/local/feci_guard/v2/PROTOCOL.md dev results, variant c false rejection
