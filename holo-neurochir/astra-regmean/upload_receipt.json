@@ -1,0 +1,11 @@
+{
+  "status": "UPLOADED",
+  "account": 1,
+  "volume": "holo-models",
+  "path": "/ckpt/regmean_cua_centered",
+  "local_checkpoint": "/dev/shm/regmean_cua_centered",
+  "upload_seconds": 29,
+  "proof_log_sha256": "c8e4cbc045f689b87d746237f48efd70d863a914ac789320d3f477f72b537b4f",
+  "checkpoint_manifest_sha256": "d7e71b960969aa5cf4b6f5ab20189148fd02a62ec2e3cf6e99667065d82e1b39",
+  "note": "Provider credential identifiers removed from log; success marker and file listing retained"
+}

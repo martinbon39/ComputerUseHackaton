@@ -1,0 +1,135 @@
+{
+  "candidate": "regmean",
+  "counts": {
+    "fs+": {
+      "original": {
+        "n": 16,
+        "answer": 15,
+        "valid_nonanswer": 1,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0
+      },
+      "candidate": {
+        "n": 16,
+        "answer": 13,
+        "valid_nonanswer": 3,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0
+      }
+    },
+    "fs-": {
+      "original": {
+        "n": 16,
+        "answer": 16,
+        "valid_nonanswer": 0,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0
+      },
+      "candidate": {
+        "n": 16,
+        "answer": 15,
+        "valid_nonanswer": 1,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0
+      }
+    },
+    "healthy": {
+      "original": {
+        "n": 16,
+        "answer": 0,
+        "valid_nonanswer": 16,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0
+      },
+      "candidate": {
+        "n": 16,
+        "answer": 0,
+        "valid_nonanswer": 16,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0
+      }
+    }
+  },
+  "differences": {
+    "fs+": {
+      "answer_reduction_pp": 12.5,
+      "per_task": {
+        "libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b": 0.0,
+        "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b": 25.0
+      },
+      "task_bootstrap95": [
+        0.0,
+        25.0
+      ],
+      "caveat": "Only two tasks; the cluster-bootstrap interval has very limited resolution."
+    },
+    "fs-": {
+      "answer_reduction_pp": 6.25,
+      "per_task": {
+        "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d": 0.0,
+        "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91": 12.5
+      },
+      "task_bootstrap95": [
+        0.0,
+        12.5
+      ],
+      "caveat": "Only two tasks; the cluster-bootstrap interval has very limited resolution."
+    },
+    "healthy": {
+      "answer_reduction_pp": 0.0,
+      "per_task": {
+        "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9": 0.0,
+        "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7": 0.0
+      },
+      "task_bootstrap95": [
+        0.0,
+        0.0
+      ],
+      "caveat": "Only two tasks; the cluster-bootstrap interval has very limited resolution."
+    }
+  },
+  "quantitative_gate": {
+    "fs_reduction": false,
+    "true_finish_preservation": true,
+    "zero_invalid_error_truncation": true
+  },
+  "quantitative_gate_passed": false,
+  "text_health": "PENDING_INDEPENDENT_REVIEW",
+  "texts": [
+    {
+      "prompt": "Compute 17 * 23. Give only the number.",
+      "original": "391",
+      "candidate": "391",
+      "original_error": null,
+      "candidate_error": null,
+      "candidate_truncated": false
+    },
+    {
+      "prompt": "Translate into French: The meeting starts at nine.",
+      "original": "La r\u00e9union commence \u00e0 neuf heures.",
+      "candidate": "La r\u00e9union commence \u00e0 neuf heures.",
+      "original_error": null,
+      "candidate_error": null,
+      "candidate_truncated": false
+    },
+    {
+      "prompt": "Explain in one sentence why water freezes.",
+      "original": "Water freezes because its molecules slow down and form a rigid structure when the temperature drops below 0\u00b0C (32\u00b0F).",
+      "candidate": "Water freezes because its molecules slow down and form a rigid structure when the temperature drops below 0\u00b0C (32\u00b0F).",
+      "original_error": null,
+      "candidate_error": null,
+      "candidate_truncated": false
+    }
+  ],
+  "files": {
+    "original": "93a7630290761123d434f481239709c9e2f0688f07f687c37b734b5359e4fb6c",
+    "candidate": "380adeda1be9a943f77624f99124fea781b0634f1584a53e364e09db04c1f2e3"
+  },
+  "scope": "Held-out DIAG regenerated next actions, not executed OSWorld outcomes"
+}

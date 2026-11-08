@@ -1,0 +1,110 @@
+{
+  "time_utc": "2026-11-08T02:39:13Z",
+  "scope": "Independent static and record-integrity audit of probe.py and evaluation_plan.json. No inference, server launch, checkpoint build, GPU work, action execution, reserve access, or behavioral classification was performed.",
+  "verdict": {
+    "probe_protocol": "PASS",
+    "original_record_integrity": "PASS",
+    "candidate_behavior": "NOT_RUN",
+    "candidate_identity": "NOT_YET_OBSERVED"
+  },
+  "files": {
+    "probe.py": "60a84698e688cdd3f84b37faf73cfb509f6dfb357d8a125fdc9cb2b543e076bb",
+    "evaluation_plan.json": "04f043da0fdc0bdeaeebeb91e1e42a1a391bdb45f051c79704332b39d303e599",
+    "canonical_astra_cohort_probe.py": "293bc19d21cb0224749c4ccbdbdfe9ba0e6ab513351ca4c18b8ece293d0da0b8",
+    "manifest.json": "f517da46643a8d1b5493cd5730075af6cff9de410523c23914e3eddc9de56878",
+    "evaluation_cohort.json": "2d7f8d9eb96c358214ad3de004a028d4797c53cb36fa4eecc21835831ba67f1b",
+    "PROBE_RECOVERY.json": "1b1fbc5f8ca616c68755c50eb693f6070b6c0691259bb4d8b3539a8f7034daaa",
+    "serve.sh": "3b1652a07d8ca62d713d3e292746b558ba3e04ff664e0ce8405b09ca6b1738f3"
+  },
+  "canonical_call": {
+    "implementation": "probe.py imports call, server_info, REQUEST_SETTINGS, and SCHEMA directly from osworld/astra_cohort_probe.py.",
+    "structured_gui": {
+      "temperature": 0.8,
+      "top_p": 0.9,
+      "top_k": 20,
+      "max_tokens": 3072,
+      "reasoning_effort": "medium",
+      "enable_thinking": true,
+      "structured_outputs": "exact imported SCHEMA",
+      "seed": "7100 through 7107 per context"
+    },
+    "text_controls": {
+      "temperature": 0.0,
+      "max_tokens": 256,
+      "enable_thinking": false,
+      "structured": false
+    },
+    "assessment": "PASS"
+  },
+  "cohort": {
+    "gui_contexts": 6,
+    "seeds": 8,
+    "text_controls": 3,
+    "planned_calls": 51,
+    "calculation": "6 * 8 + 3",
+    "manifest_hash_matches_pin": true,
+    "cohort_equals_frozen_manifest_evaluation": true,
+    "construction_task_ids_disjoint": true,
+    "files_hash_checked": 102,
+    "bytes_hash_checked": 17113000,
+    "all_file_hashes_match": true,
+    "reserve_or_test_read": false
+  },
+  "server_and_identity": {
+    "required_vllm": "0.23.x",
+    "probe_asserts_version": true,
+    "probe_asserts_served_model_id": true,
+    "probe_records_served_model_root": true,
+    "original_observed": {
+      "url": "http://127.0.0.1:18000/v1",
+      "model": "Holo-3.1-4B",
+      "vllm_version": "0.23.0",
+      "root": "Hcompany/Holo-3.1-4B"
+    },
+    "candidate_precondition": "Before behavioral comparison, require the candidate plan.json to show vLLM 0.23.x, model id regmean_cua_centered, and the expected verified checkpoint root."
+  },
+  "privacy_and_parsing": {
+    "order": "Canonical call parses JSON first; local jsonschema validation follows; output_record then removes token_ids and recursively redacts email strings from keys and values.",
+    "raw_response": "Only a SHA-256 of the unredacted parsed result is retained.",
+    "row_metadata_allowlist": ["task_id", "t", "label", "tool", "n_in", "text_prompt"],
+    "synthetic_email_key_and_value_redaction": "PASS",
+    "token_ids_omitted": true,
+    "assessment": "PASS"
+  },
+  "recovery": {
+    "first_attempt": "evaluation_original",
+    "planned_submitted_calls": 51,
+    "retained_records": 0,
+    "observed_generation_lines": 0,
+    "failure": "The previous privacy assertion saw an email-shaped screenshot filename in the full row dictionary.",
+    "correction": "output_record now persists only stable row metadata and redacts result keys and values after parsing.",
+    "preflight": "All 51 job metadata records are checked before output directory creation or HTTP submission; the documented six-context plus synthetic redaction preflight passed.",
+    "retry_limit": 1,
+    "recovery_attempt": "evaluation_original_v2",
+    "recovery_plan_identical_to_first": true,
+    "recovery_records": 51,
+    "recovery_generations_sha256": "93a7630290761123d434f481239709c9e2f0688f07f687c37b734b5359e4fb6c"
+  },
+  "retained_original_integrity": {
+    "json_records": 51,
+    "all_parse": true,
+    "email_regex_matches": 0,
+    "token_ids_present": 0,
+    "row_metadata_allowlist_only": true,
+    "raw_response_hash_present": true,
+    "behavioral_semantics_reviewed": false
+  },
+  "harness_scope": {
+    "canonical_helper_reused": true,
+    "settings_or_harness_patch": false,
+    "sampled_gui_actions_executed": false,
+    "live_environment_access": false,
+    "reserve_or_test_path_reference_in_probe": false
+  },
+  "limitations": [
+    "probe.py checks cohort equality and every source-file hash, but its emitted plan.json does not itself store the wrapper, manifest, or cohort hashes; this audit pins them above.",
+    "The probe asserts served model id and records model root, but does not assert the expected root string. Candidate identity must be checked from its plan.json and checkpoint verifier before interpreting behavior.",
+    "The one-recovery ceiling is documented in PROBE_RECOVERY.json rather than mechanically enforced across arbitrary output labels.",
+    "This audit validates protocol and record integrity only. It does not classify the 51 original generations or compare a candidate."
+  ]
+}

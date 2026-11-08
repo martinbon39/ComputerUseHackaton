@@ -1,0 +1,27 @@
+╭─ Modal Warning ──────────────────────────────────────────────────────────────╮
+│ Your Modal token [REDACTED_CREDENTIAL_ID] expires in 21h. Run `modal token  │
+│ new` to create a replacement.                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+✓ Uploaded directory '/dev/shm/regmean_cua_centered_fp16' to 
+'/ckpt/regmean_cua_centered_fp16'
+uploaded 9.7G in 33s -> holo-models:/ckpt/regmean_cua_centered_fp16
+╭─ Modal Warning ──────────────────────────────────────────────────────────────╮
+│ Your Modal token [REDACTED_CREDENTIAL_ID] expires in 21h. Run `modal token  │
+│ new` to create a replacement.                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ckpt/regmean_cua_centered_fp16/.gitattributes
+ckpt/regmean_cua_centered_fp16/README.md
+ckpt/regmean_cua_centered_fp16/chat_template.jinja
+ckpt/regmean_cua_centered_fp16/config.json
+ckpt/regmean_cua_centered_fp16/generation_config.json
+ckpt/regmean_cua_centered_fp16/latest
+ckpt/regmean_cua_centered_fp16/merges.txt
+ckpt/regmean_cua_centered_fp16/model-00001-of-00002.safetensors
+ckpt/regmean_cua_centered_fp16/model-00002-of-00002.safetensors
+ckpt/regmean_cua_centered_fp16/model.safetensors.index.json
+ckpt/regmean_cua_centered_fp16/preprocessor_config.json
+ckpt/regmean_cua_centered_fp16/regmean_manifest.json
+ckpt/regmean_cua_centered_fp16/tokenizer.json
+ckpt/regmean_cua_centered_fp16/tokenizer_config.json
+ckpt/regmean_cua_centered_fp16/video_preprocessor_config.json
+ckpt/regmean_cua_centered_fp16/vocab.json

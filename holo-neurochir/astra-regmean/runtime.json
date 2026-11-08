@@ -1,0 +1,9 @@
+{
+  "server_timeout_pid": 388035,
+  "upload_timeout_pid": 388060,
+  "local_tunnel_pid": 386129,
+  "candidate": "/dev/shm/regmean_cua_centered",
+  "upload_account": 1,
+  "endpoint": "http://127.0.0.1:18023/v1",
+  "ownership": "astra-regmean only; do not stop other process trees"
+}

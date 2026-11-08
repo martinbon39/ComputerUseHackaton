@@ -1,0 +1,27 @@
+╭─ Modal Warning ──────────────────────────────────────────────────────────────╮
+│ Your Modal token ************************* expires in 21h. Run `modal token  │
+│ new` to create a replacement.                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+✓ Uploaded directory '/dev/shm/regmean_cua_centered' to 
+'/ckpt/regmean_cua_centered'
+uploaded 9.7G in 29s -> holo-models:/ckpt/regmean_cua_centered
+╭─ Modal Warning ──────────────────────────────────────────────────────────────╮
+│ Your Modal token ************************* expires in 21h. Run `modal token  │
+│ new` to create a replacement.                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ckpt/regmean_cua_centered/.gitattributes
+ckpt/regmean_cua_centered/README.md
+ckpt/regmean_cua_centered/chat_template.jinja
+ckpt/regmean_cua_centered/config.json
+ckpt/regmean_cua_centered/generation_config.json
+ckpt/regmean_cua_centered/latest
+ckpt/regmean_cua_centered/merges.txt
+ckpt/regmean_cua_centered/model-00001-of-00002.safetensors
+ckpt/regmean_cua_centered/model-00002-of-00002.safetensors
+ckpt/regmean_cua_centered/model.safetensors.index.json
+ckpt/regmean_cua_centered/preprocessor_config.json
+ckpt/regmean_cua_centered/regmean_manifest.json
+ckpt/regmean_cua_centered/tokenizer.json
+ckpt/regmean_cua_centered/tokenizer_config.json
+ckpt/regmean_cua_centered/video_preprocessor_config.json
+ckpt/regmean_cua_centered/vocab.json

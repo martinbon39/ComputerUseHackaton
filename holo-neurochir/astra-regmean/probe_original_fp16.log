@@ -1,0 +1,16 @@
+original_fp16 ready
+Traceback (most recent call last):
+  File "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-regmean/probe.py", line 16, in <module>
+    from astra_cohort_probe import call, server_info, REQUEST_SETTINGS, SCHEMA
+  File "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/osworld/astra_cohort_probe.py", line 15, in <module>
+    from probe_answer_rate import SCHEMA, client_for  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/osworld/probe_answer_rate.py", line 15, in <module>
+    from openai import OpenAI
+ModuleNotFoundError: No module named 'openai'
+Traceback (most recent call last):
+  File "<stdin>", line 11, in <module>
+  File "/usr/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['python3', 'holo-neurochir/astra-regmean/probe.py', 'original_fp16', '--server', 'http://127.0.0.1:18023/v1', '--model', 'regmean_original_fp16']' returned non-zero exit status 1.

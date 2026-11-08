@@ -1,0 +1,42 @@
+{
+  "server": {
+    "url": "http://127.0.0.1:18000/v1",
+    "model": "Holo-3.1-4B",
+    "vllm_version": "0.23.0",
+    "models": [
+      {
+        "id": "Holo-3.1-4B",
+        "root": "Hcompany/Holo-3.1-4B"
+      }
+    ]
+  },
+  "settings": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 20,
+    "max_tokens": 3072,
+    "reasoning_effort": "medium",
+    "enable_thinking": true,
+    "structured_outputs": "holo_agent step schema (build_schema(make_step_model(TOOLS)))",
+    "seed": "per request",
+    "text_prompts": {
+      "temperature": 0.0,
+      "max_tokens": 256,
+      "enable_thinking": false
+    }
+  },
+  "seed_list": [
+    7100,
+    7101,
+    7102,
+    7103,
+    7104,
+    7105,
+    7106,
+    7107
+  ],
+  "planned_calls": 51,
+  "schema_sha256": "16409e28c825ef787ae55ab13fdcb49f4b4f91c5274b98d2f36ae6cdff551304",
+  "canonical_probe_sha256": "293bc19d21cb0224749c4ccbdbdfe9ba0e6ab513351ca4c18b8ece293d0da0b8",
+  "privacy": "Email strings redacted after parsing and validation; raw-response hash retained, token IDs omitted."
+}

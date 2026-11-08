@@ -1,0 +1,29 @@
+{
+  "dtype": "float16",
+  "server_port": 8023,
+  "tunnel_port": 18023,
+  "original_launch_shell_pid": 391136,
+  "precision_checkpoint_receipt_sha256": "a07fc9497eda080815ad7b6f2fd4a3b225d6a985e8d76a0b42a704ad97ad4d78",
+  "fixed_factors": true,
+  "original_timeout_pid": 391137,
+  "original_api_pid": 391143,
+  "probe_python": "/home/orbit/osw/venv/bin/python",
+  "python_version": "3.12.15",
+  "openai_version": "3.46.0",
+  "jsonschema_version": "4.26.0",
+  "launch_recovery": {
+    "failed_before_http": false,
+    "failed_before_output_directory": true,
+    "reason": "defaultpython3.14 lackedopenai; reused existing3.12env",
+    "record": "probe_original_fp16.log",
+    "fix": "run_probe.sh pins existing interpreter",
+    "failed_before_generation": true,
+    "readiness_get_completed": true
+  },
+  "candidate_timeout_pid": 393473,
+  "candidate_api_pid": 393478,
+  "candidate_engine_pid": 393689,
+  "all_owned_servers_stopped": true,
+  "tunnel_pid": 386129,
+  "tunnel_stopped": true
+}

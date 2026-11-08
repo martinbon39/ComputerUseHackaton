@@ -1,0 +1,56 @@
+{
+  "time_utc": "2026-11-08T02:29:25Z",
+  "scope": "Independent read-only review of selective RegMean derive.py and build.py, plus deterministic CPU toy verification. No checkpoint was built and no behavioral evaluation was run.",
+  "verdict": {
+    "math_artifact": "PASS",
+    "efficacy": "NOT_RUN",
+    "checkpoint": "NOT_BUILT",
+    "intended_use": "research_candidate_not_admitted"
+  },
+  "files": {
+    "derive.py": "b899ad2d032e5807d6257df40f12401410a0f8adb8e8ba36f4a36f173dd1f374",
+    "build.py": "3157e231f3c96aaa8aae7cb58cd29af68112fe1ed7039a5aef74855d1aac1824",
+    "local_and_pod_copies_identical": true
+  },
+  "formula": {
+    "donor_delta": "0.5 * (W_CUA - W_Qwen)",
+    "candidate": "W_H + E",
+    "update": "E = delta F F^T (F F^T + T T^T + G G^T + epsilon I)^-1",
+    "dual_factorization": "X=[F,T,G], J=[I;0;0], C=(X^T X+epsilon I)^-1 J, Y=XC, E=(delta F)Y^T",
+    "epsilon": "alpha * trace(X^T X) / d",
+    "alphas": [0.01, 0.1, 1.0],
+    "normalization": "Each F/T/G block is divided by sqrt(number of columns), so each block contributes a mean covariance.",
+    "assessment": "Correct. The implementation never forms a d by d inverse and preserves W_H exactly on the orthogonal complement in FP64."
+  },
+  "toy_test": {
+    "seed": 20261108,
+    "dtype": "float64",
+    "dimensions": {"d": 17, "output": 11, "n_f": 3, "n_t": 4, "n_g": 2},
+    "results": [
+      {"alpha": 0.01, "epsilon": 0.1274537956879917, "dual_dense_relative_error": 1.8768331748635792e-14, "normal_equation_relative_error": 4.1087759152754165e-16, "nullspace_update_norm": 2.540999830491574e-16, "nullspace_preservation_relative_error": 1.483231938056571e-16, "solver_residual": 4.311361829180884e-16},
+      {"alpha": 0.1, "epsilon": 1.2745379568799167, "dual_dense_relative_error": 1.9687847975703916e-15, "normal_equation_relative_error": 3.643393136775715e-16, "nullspace_update_norm": 3.5625662567188675e-16, "nullspace_preservation_relative_error": 1.7341428571145564e-16, "solver_residual": 4.0005140196042334e-16},
+      {"alpha": 1.0, "epsilon": 12.745379568799168, "dual_dense_relative_error": 4.811695313184258e-16, "normal_equation_relative_error": 3.2734865644074245e-16, "nullspace_update_norm": 1.4882269437304651e-16, "nullspace_preservation_relative_error": 2.2859824217352363e-16, "solver_residual": 2.2097224045044008e-16}
+    ]
+  },
+  "construction_cv": {
+    "selection_inputs": "Frozen construction rows only; the six evaluation contexts are not loaded by derive.py.",
+    "folding": "For each inherited fold, training excludes that fold and held-out blocks contain only that fold. Generic text anchors are training-only and are omitted from held-out healthy blocks.",
+    "cost": "For fs+: ||E X - delta X||^2 / ||delta X||^2. For fs- and healthy: ||E X||^2 / ||delta X||^2. The three ratios are summed, then averaged equally over 24 writers and inherited folds.",
+    "baselines": "W_H has exact cost 1; the unrestricted donor has exact cost 2.",
+    "selection": "Minimum construction-CV cost over the three frozen alphas; exact ties choose the stronger ridge.",
+    "interpretation": "This ranks research candidates. It is not an admission criterion or evidence of behavioral efficacy."
+  },
+  "build_review": {
+    "edited_tensors": "Exactly the 24 declared residual writers in layers 12 through 23.",
+    "preserved_tensors": "All other Holo tensors remain sourced from the frozen Holo checkpoint.",
+    "arithmetic": "The FP64 low-rank update is added to Holo and cast once to the stored dtype.",
+    "provenance": "The factor hash and construction metadata are copied into the checkpoint manifest.",
+    "assessment": "PASS for producing a research checkpoint. Exhaustive post-build tensor verification and behavioral efficacy remain separate nodes."
+  },
+  "limitations": [
+    "BF16 rounding can introduce an off-subspace component; exact nullspace preservation applies to the FP64 requested update.",
+    "The CV ratios are energy-weighted within each held-out stratum, so high donor-response examples contribute more than weak-response examples.",
+    "A lower construction-CV cost does not establish the user behavioral gate or online task success.",
+    "build.py records embedded source hashes but does not independently revalidate them before materializing the checkpoint; the post-build verifier must check factor provenance and all preserved tensors."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "prefill": {
+    "auroc_ridge_median": 0.704225352112676,
+    "auroc_ridge_range": [
+      0.6056338028169014,
+      0.9014084507042254
+    ],
+    "median_principal_angle": 66.8338845180541,
+    "mean_cos_squared": 0.27705908991730666,
+    "f_energy_in_t": 0.862292389761135
+  },
+  "endthink_before_note": {
+    "auroc_ridge_median": 0.6338028169014085,
+    "auroc_ridge_range": [
+      0.5070422535211268,
+      0.7746478873239436
+    ],
+    "median_principal_angle": 68.67704333746372,
+    "mean_cos_squared": 0.24481614552067874,
+    "f_energy_in_t": 0.8320601280986342
+  },
+  "baselines": {
+    "t": {
+      "ridge": 0.852112676056338,
+      "centroid": 0.852112676056338
+    },
+    "n_in": {
+      "ridge": 0.8450704225352113,
+      "centroid": 0.8450704225352113
+    },
+    "step_and_length": {
+      "ridge": 0.8591549295774648,
+      "centroid": 0.8450704225352113
+    }
+  },
+  "total_empirical_overlap": false
+}

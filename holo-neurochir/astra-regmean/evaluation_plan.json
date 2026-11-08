@@ -1,0 +1,46 @@
+{
+  "original": "http://127.0.0.1:18000/v1=Holo-3.1-4B",
+  "candidate": "http://127.0.0.1:18023/v1=regmean_cua_centered",
+  "same_backend": "pod vLLM0.23",
+  "gui_contexts": 6,
+  "k": 8,
+  "seeds": [
+    7100,
+    7101,
+    7102,
+    7103,
+    7104,
+    7105,
+    7106,
+    7107
+  ],
+  "text_controls": 3,
+  "criterion": {
+    "fs_answer_reduction_pp": 25,
+    "true_finish_max_loss_pp": 30,
+    "invalid": 0,
+    "healthy_text": true
+  },
+  "secondary_mechanism_if_regmean_fails": {
+    "method": "deterministic discriminant neuron-column mask on same24writers",
+    "top_fraction": 0.05,
+    "beta": 2.0,
+    "score": "abs(mean(fs)-mean(true))/pooled_std",
+    "selection_data": "same frozen construction only",
+    "normalization": "no 1/density amplification"
+  },
+  "maximum_learned_mechanisms": 2,
+  "random_control": "one matched realized BF16 norm control if any mechanism meets primary behavioral gate",
+  "scope": "No inference on reserve/test. No execution of sampled GUI actions. Changes in answer are not OSWorld success.",
+  "amendment_precision": {
+    "authorized_by": "ares message6248",
+    "recorded_utc": "2026-11-08T02:51Z",
+    "reason": "BF16 arm failed fs+ gate; 51.9% median delta-norm quantization error",
+    "candidate": "same frozen FP64 factors with edited24 tensors storedFP16; 700 tensors unchanged",
+    "reference": "original Holo runtimeFP16 same dedicated server flags and seeds",
+    "selection": "no new fitting, hyperparameters or evaluation tuning",
+    "replaces": "previous optional discriminant-mask secondary arm",
+    "maximum_precision_arms": 1,
+    "random_control": "one matched realized update-norm control only if primary gate met"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "first_attempt": "evaluation_original",
+  "planned_submitted_calls": 51,
+  "retained_generations": 0,
+  "failure": "Privacy assertion falsely matched screenshot filenames in row hash dictionary; generated results were not retained",
+  "correction": "Persist only stable context identifiers; sanitize keys and values; preflight all rows before HTTP",
+  "preflight": "PASS six rows plus synthetic redaction",
+  "retry_limit": 1,
+  "second_attempt": "evaluation_original_v2"
+}

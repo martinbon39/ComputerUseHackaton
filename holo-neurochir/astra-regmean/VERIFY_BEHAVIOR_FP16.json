@@ -1,0 +1,164 @@
+{
+  "time_utc": "2026-11-08T03:06:09Z",
+  "scope": "Independent CPU-only audit of the completed paired original-FP16 versus centered-RegMean-FP16 static next-action probe. The earlier BF16 arm is unchanged and excluded from this verdict.",
+  "overall": {
+    "protocol_and_record_integrity": "PASSED",
+    "comparison_implementation_and_report": "CORRECT",
+    "text_and_action_health": "PASSED",
+    "fp16_behavioral_efficacy_gate": "FAILED",
+    "online_task_success": "NOT_RUN"
+  },
+  "evidence_status": {
+    "RAN": [
+      "Audited and paired all 51 original-FP16 and 51 candidate-FP16 records.",
+      "Independently revalidated all 96 structured GUI records against the live imported canonical SCHEMA.",
+      "Recomputed all answer, valid-nonanswer, invalid, error and truncation counts.",
+      "Checked both server logs and plans, all 16 candidate healthy actions, the sole changed classification and all three text controls."
+    ],
+    "PASSED": [
+      "Exact frozen-context pairing, seeds, settings, schema hash, canonical-probe hash and vLLM version.",
+      "Both servers used float16 and identical runtime flags apart from checkpoint and served-model identity.",
+      "Zero invalid, error, nonfinite or truncated records in either arm; all 102 completions ended with stop.",
+      "All 16 candidate healthy actions remained coherent valid nonanswers and all three text controls exactly matched original."
+    ],
+    "CORRECT": [
+      "compare.py and regmean_fp16_comparison.json match the independent recount.",
+      "The report correctly marks the fs+ reduction gate failed, true-finish preservation passed, and validity passed."
+    ],
+    "NOT_RUN": [
+      "This audit launched no inference or server process.",
+      "No generated GUI action was executed and no OSWorld outcome was measured.",
+      "No reserve/test evaluation, new mechanism, discriminant mask or further generation was run."
+    ]
+  },
+  "files": {
+    "compare.py": "fd891880dfe1ce49e085f9a8ab175069965fe9e2c7b70cea29dfa68cd51a337c",
+    "regmean_fp16_comparison.json": "28943daf1afe46b9fd9952c12b13f4310985dcc32a2bec68b0e8b35d5fe0a0bb",
+    "original_plan.json": "0a36205f7c2096ed47558a7272065d4b9a29d5726a676c87f72e4be30108bf93",
+    "original_generations.jsonl": "5c71eb263722003c3e30a5bc6f25704d44592849eb5fad1922ef14ae254d858d",
+    "candidate_plan.json": "d8cb57c88e3baf02a8d1d74974f5e1787db662552817c21aec699074566367f7",
+    "candidate_generations.jsonl": "ee054782947b1306a832e1b5e6ffcfca7576677f35d58ff065a413f83967542b",
+    "server_original_fp16.log": "387718a67b669f5860ffc9fb1c475f91a595d2b880cfa7c79ff0db50d8fb64ed",
+    "server_candidate_fp16.log": "223c5aead1e78b5a7b544f85461307cb782c1369589ff37277d4149cb07f8b37",
+    "server_cleanup_original_fp16.json": "1e35616b902a79781134cc9a40842e7741c9dedd7ada74ac3395e1fa0eb7af92",
+    "server_cleanup_candidate_fp16.json": "9503f8d054e2d0618cb454f514933827114b23909f19c164e8781edde5807fc3",
+    "probe_original_fp16_run.log": "5cd14bfca725427860b9aba415efe0c0495d7cdeeeea6ffcf0fade5427e34fc5",
+    "probe_regmean_fp16.log": "516618fc27cc4c3342bbb644a5acb49c4e3ba1b568076d9738e1576da9a6ada3",
+    "serve_fp16.sh": "7b92c7c3360f9d810a3d45cc95a10ab506b2539bcfb21d5758ac916d1254aac7",
+    "run_probe.sh": "ce3bb8192fa3b688a511819f9b2b025b3a8663f261918d03fc50b2d9b0ebf073",
+    "VERIFY_CHECKPOINT_FP16.json": "a07fc9497eda080815ad7b6f2fd4a3b225d6a985e8d76a0b42a704ad97ad4d78",
+    "precision_runtime.json": "3b2bbb9aa972eaf4a70634234358403165178bc38234e6f4d4de6163babb76d6",
+    "evaluation_plan.json": "fd44d09099d0efaa2ecad7ae8ee7c1b021c52a9ecf5334baaa798af9fe46e0b3"
+  },
+  "pairing_and_protocol": {
+    "records_per_arm": 51,
+    "paired_records": 51,
+    "structured_gui_per_arm": 48,
+    "text_controls_per_arm": 3,
+    "contexts": 6,
+    "seeds": [7100, 7101, 7102, 7103, 7104, 7105, 7106, 7107],
+    "structured_keys_and_order_equal": true,
+    "settings_equal_and_canonical": true,
+    "settings": {
+      "temperature": 0.8,
+      "top_p": 0.9,
+      "top_k": 20,
+      "max_tokens": 3072,
+      "reasoning_effort": "medium",
+      "enable_thinking": true,
+      "text_temperature": 0.0,
+      "text_max_tokens": 256,
+      "text_enable_thinking": false
+    },
+    "schema_sha256": "16409e28c825ef787ae55ab13fdcb49f4b4f91c5274b98d2f36ae6cdff551304",
+    "canonical_probe_sha256": "293bc19d21cb0224749c4ccbdbdfe9ba0e6ab513351ca4c18b8ece293d0da0b8",
+    "all_96_structured_records_independently_schema_valid": true,
+    "all_102_records_finite": true,
+    "vllm_versions": {"original": "0.23.0", "candidate": "0.23.0"},
+    "original_model": "regmean_original_fp16",
+    "original_root": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+    "candidate_model": "regmean_cua_centered_fp16",
+    "candidate_root": "/dev/shm/regmean_cua_centered_fp16",
+    "candidate_checkpoint_verifier_status": "PASSED",
+    "server_dtype_both": "float16",
+    "engine_dtype_both": "torch.float16",
+    "server_flags_equal_except_model_identity": true,
+    "server_flags": {
+      "port": 8023,
+      "max_model_len": 32768,
+      "max_num_seqs": 64,
+      "gpu_memory_utilization": 0.15,
+      "kv_cache_memory_bytes": 4294967296,
+      "image_limit": 5,
+      "reasoning_parser": "qwen3",
+      "prefix_caching": true
+    },
+    "successful_chat_completion_posts": {"original": 51, "candidate": 51},
+    "owned_server_cleanup_all_exited": {"original": true, "candidate": true},
+    "launch_recovery_provenance": "The first original probe attempt used system Python 3.14 and failed on the missing openai import after a readiness GET /v1/models but before any generation and before creation of an evaluation directory. The completed run used the existing pinned Python 3.12 environment."
+  },
+  "independent_counts": {
+    "fs+": {
+      "original": {"n": 16, "answer": 15, "valid_nonanswer": 1, "invalid": 0, "error": 0, "truncated": 0},
+      "candidate": {"n": 16, "answer": 16, "valid_nonanswer": 0, "invalid": 0, "error": 0, "truncated": 0},
+      "original_answer_rate_percent": 93.75,
+      "candidate_answer_rate_percent": 100.0,
+      "answer_reduction_pp": -6.25
+    },
+    "true_finish": {
+      "original": {"n": 16, "answer": 16, "valid_nonanswer": 0, "invalid": 0, "error": 0, "truncated": 0},
+      "candidate": {"n": 16, "answer": 16, "valid_nonanswer": 0, "invalid": 0, "error": 0, "truncated": 0},
+      "original_answer_rate_percent": 100.0,
+      "candidate_answer_rate_percent": 100.0,
+      "answer_loss_pp": 0.0
+    },
+    "healthy": {
+      "original": {"n": 16, "answer": 0, "valid_nonanswer": 16, "invalid": 0, "error": 0, "truncated": 0},
+      "candidate": {"n": 16, "answer": 0, "valid_nonanswer": 16, "invalid": 0, "error": 0, "truncated": 0}
+    }
+  },
+  "task_cluster_results": {
+    "fs+_answer_reduction_pp": [0.0, -12.5],
+    "true_finish_answer_loss_pp": [0.0, 0.0],
+    "healthy_answer_change_pp": [0.0, 0.0],
+    "caveat": "Each stratum contains only two tasks. The sole classification change worsens one fs+ task by 12.5 points; finite-sample task-level evidence remains weak."
+  },
+  "gate": {
+    "required_fs+_answer_reduction_pp": 25.0,
+    "observed_fs+_answer_reduction_pp": -6.25,
+    "fs+_gate": "FAILED",
+    "maximum_true_finish_loss_pp": 30.0,
+    "observed_true_finish_loss_pp": 0.0,
+    "true_finish_gate": "PASSED",
+    "required_invalid_error_truncated": 0,
+    "observed_invalid_error_truncated": 0,
+    "validity_gate": "PASSED",
+    "required_healthy_text": true,
+    "healthy_text_gate": "PASSED",
+    "overall": "FAILED"
+  },
+  "qualitative_review": {
+    "structured_records_checked_mechanically": 96,
+    "candidate_healthy_outputs_read_manually": 16,
+    "changed_classifications_read_manually": 1,
+    "text_controls_read_manually": 3,
+    "all_finish_reasons": "stop",
+    "candidate_structured_output_tokens": {"minimum": 147, "median": 329.5, "maximum": 938},
+    "candidate_empty_thoughts": 0,
+    "candidate_empty_answer_contents": 0,
+    "candidate_healthy_coordinates_checked": 16,
+    "candidate_healthy_coordinates_in_0_to_1000_range": true,
+    "healthy_findings": [
+      "Chrome: seven seeds clicked the three-dot menu and one first closed an update popup; all are coherent first steps.",
+      "LibreOffice Impress: all eight seeds clicked the File menu to begin PNG export; all are coherent first steps."
+    ],
+    "changed_fs+_finding": "On multi_apps/b337d106... at seed 7103, the original scrolled for more Vim-tutorial detail while the candidate emitted a complete, coherent final tutorial answer. This is the sole classification change and moves in the wrong direction for the selective fs+ objective.",
+    "corruption_assessment": "No malformed, incoherent, empty, nonfinite, truncated or obviously corrupted output was found. The failure is reversed selective efficacy, not output corruption."
+  },
+  "text_controls": [
+    {"prompt": "Compute 17 * 23. Give only the number.", "original": "391", "candidate": "391", "exact_match": true},
+    {"prompt": "Translate into French: The meeting starts at nine.", "original": "La réunion commence à neuf heures.", "candidate": "La réunion commence à neuf heures.", "exact_match": true},
+    {"prompt": "Explain in one sentence why water freezes.", "original": "Water freezes because its molecules slow down and form a rigid structure when the temperature drops below 0°C (32°F).", "candidate": "Water freezes because its molecules slow down and form a rigid structure when the temperature drops below 0°C (32°F).", "exact_match": true}
+  ],
+  "conclusion": "The FP16 centered RegMean checkpoint is structurally and semantically healthy on this static probe, but it fails the predeclared primary efficacy gate and moves fs+ in the wrong direction: answer rate rises from 93.75% to 100%, an answer reduction of -6.25 points versus the required +25 points. No OSWorld success claim follows from regenerated next actions that were not executed."
+}

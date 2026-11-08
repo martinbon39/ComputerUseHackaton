@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-regmean/probe.py", line 92, in <module>
+    main()
+  File "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-regmean/probe.py", line 83, in main
+    assert EMAIL.search(encoded) is None
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

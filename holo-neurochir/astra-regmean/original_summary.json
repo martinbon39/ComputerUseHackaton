@@ -1,0 +1,49 @@
+{
+  "records": 51,
+  "counts": {
+    "fs+": {
+      "n": 16,
+      "answer": 15,
+      "valid_nonanswer": 1,
+      "invalid": 0,
+      "error": 0,
+      "truncated": 0
+    },
+    "fs-": {
+      "n": 16,
+      "answer": 16,
+      "valid_nonanswer": 0,
+      "invalid": 0,
+      "error": 0,
+      "truncated": 0
+    },
+    "healthy": {
+      "n": 16,
+      "answer": 0,
+      "valid_nonanswer": 16,
+      "invalid": 0,
+      "error": 0,
+      "truncated": 0
+    }
+  },
+  "text": [
+    {
+      "prompt": "Compute 17 * 23. Give only the number.",
+      "content": "391",
+      "error": null,
+      "truncated": false
+    },
+    {
+      "prompt": "Translate into French: The meeting starts at nine.",
+      "content": "La r\u00e9union commence \u00e0 neuf heures.",
+      "error": null,
+      "truncated": false
+    },
+    {
+      "prompt": "Explain in one sentence why water freezes.",
+      "content": "Water freezes because its molecules slow down and form a rigid structure when the temperature drops below 0\u00b0C (32\u00b0F).",
+      "error": null,
+      "truncated": false
+    }
+  ]
+}

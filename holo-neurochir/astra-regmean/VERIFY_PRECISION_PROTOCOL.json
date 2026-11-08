@@ -1,0 +1,141 @@
+{
+  "time_utc": "2026-11-08T03:06:09Z",
+  "scope": "Independent protocol review of the completed authorized FP16 storage/runtime precision pair, including original and candidate runtime validation.",
+  "verdict": {
+    "static_protocol": "PASS",
+    "candidate_checkpoint": "PASSED_EXHAUSTIVE_VERIFIER",
+    "original_fp16_baseline": "PASSED_INDEPENDENT_AUDIT",
+    "candidate_launch_gate": "PASSED",
+    "candidate_behavior": "PASSED_HEALTH_AND_INTEGRITY",
+    "precision_efficacy": "FAILED"
+  },
+  "authorization_boundary": {
+    "factors": "Same frozen factors as the BF16 arm; no refit or hyperparameter change.",
+    "candidate_change": "Only the same 24 writer tensors are stored in float16; 700 tensors remain source tensors on disk.",
+    "runtime": "Both original and candidate are served sequentially with dtype float16 and otherwise identical flags.",
+    "mechanisms": "No discriminant mask or other learned mechanism is part of this run."
+  },
+  "files": {
+    "build_fp16.py": "d6f868f97069256ad2e19991f71e7410cb5c12ea545706932214b79b833b8cc4",
+    "serve_fp16.sh": "7b92c7c3360f9d810a3d45cc95a10ab506b2539bcfb21d5758ac916d1254aac7",
+    "checkpoint_manifest_fp16.json": "af40d9feb3451edf947b7dc5e42d7181d4c6e017b6afa98d373bb455a5e5122b",
+    "VERIFY_CHECKPOINT_FP16.json": "a07fc9497eda080815ad7b6f2fd4a3b225d6a985e8d76a0b42a704ad97ad4d78",
+    "precision_runtime.json": "210b971ce5124ba2e8e1c54a2d0fdf072b042f4f0752d3b8cf73f9840b8a7806",
+    "evaluation_original_fp16/plan.json": "0a36205f7c2096ed47558a7272065d4b9a29d5726a676c87f72e4be30108bf93",
+    "evaluation_original_fp16/generations.jsonl": "5c71eb263722003c3e30a5bc6f25704d44592849eb5fad1922ef14ae254d858d",
+    "evaluation_regmean_fp16/plan.json": "d8cb57c88e3baf02a8d1d74974f5e1787db662552817c21aec699074566367f7",
+    "evaluation_regmean_fp16/generations.jsonl": "ee054782947b1306a832e1b5e6ffcfca7576677f35d58ff065a413f83967542b",
+    "regmean_fp16_comparison.json": "28943daf1afe46b9fd9952c12b13f4310985dcc32a2bec68b0e8b35d5fe0a0bb",
+    "VERIFY_BEHAVIOR_FP16.json": "bd878106f1ef6bad820da91eb2605aca03ecc879ed58fd025c99666aa0081c09",
+    "VERIFY_BEHAVIOR_FP16.md": "52aa262f8d3cc2b9e3e0a2f90a8072e0dc33ffd1bf9e14ca5d52f6ce72c50a22"
+  },
+  "checkpoint": {
+    "target": "/dev/shm/regmean_cua_centered_fp16",
+    "verifier_status": "PASSED",
+    "tensor_keys": 724,
+    "finite_tensors": 724,
+    "edited_tensors": 24,
+    "unchanged_tensors": 700,
+    "factor_sha256": "0250daf2e861f034b31fadbb9b895eb04bb82f0e5de470fbe19745c05724efdb",
+    "fp16_quantization_relative_error": {
+      "minimum": 0.07347673520740737,
+      "median": 0.12424859667653465,
+      "maximum": 0.16010535723977984
+    },
+    "bf16_median_for_context": 0.5193591797250886
+  },
+  "server_pairing": {
+    "single_branch_script": true,
+    "sequential_same_port": 8023,
+    "original_model": "regmean_original_fp16",
+    "original_checkpoint": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+    "candidate_model": "regmean_cua_centered_fp16",
+    "candidate_checkpoint": "/dev/shm/regmean_cua_centered_fp16",
+    "identical_flags": {
+      "dtype": "float16",
+      "max_model_len": 32768,
+      "max_num_seqs": 64,
+      "gpu_memory_utilization": 0.15,
+      "kv_cache_memory_bytes": "4G",
+      "image_limit": 5,
+      "reasoning_parser": "qwen3",
+      "prefix_caching": true
+    },
+    "candidate_launch_requires_exact_verifier_target_and_pass": true,
+    "owned_process_cleanup_script_present": true
+  },
+  "installed_vllm_dtype_review": {
+    "version_family": "0.23",
+    "qwen3_5.py_sha256": "04f3de5372973770d71c5c05f2e8a5e221ec52b62cca7a1e302d9201b61b8adc",
+    "qwen_gdn_linear_attn.py_sha256": "885c56f5e3584ab60bb4ce4b42cf8259e5e92c86ba13aa6128e6ed7a2a20d2b0",
+    "fla_chunk.py_sha256": "c105ead259e86aedc248c53e7c4cef07034d0ff12da608d80265d1dd0990803f",
+    "mamba_utils.py_sha256": "aa9b7dc46725a012fc61b83a7181baaddad7ab4b0eb8e4144350799697ad6a42",
+    "finding": "Qwen3.5 passes the configured model dtype into GatedDeltaNet state dtype selection. The installed FLA chunk path rejects float32 but has no static prohibition on float16, and the GDN path allocates projected/output tensors from the input dtype.",
+    "limit": "Source inspection establishes no static FP16 rejection; it does not prove numerical runtime health."
+  },
+  "original_fp16_runtime_audit": {
+    "records": 51,
+    "structured_records": 48,
+    "text_controls": 3,
+    "same_frozen_structured_keys_as_bf16": true,
+    "unique_structured_keys": 48,
+    "canonical_schema_revalidated": "48/48",
+    "schema_and_probe_hashes_match_live_canonical_files": true,
+    "request_settings_match_canonical_and_bf16": true,
+    "all_values_finite": true,
+    "errors": 0,
+    "truncated": 0,
+    "finish_reason_stop": "51/51",
+    "raw_response_hashes_unique": "51/51",
+    "rates": {
+      "fs_positive_answer": "15/16",
+      "true_finish_answer": "16/16",
+      "healthy_answer": "0/16",
+      "healthy_valid_nonanswer": "16/16"
+    },
+    "text_health": {
+      "arithmetic": "391",
+      "translation": "Correct French translation with no extraneous material.",
+      "water_freezing": "Correct one-sentence explanation.",
+      "reasoning_empty": "3/3"
+    },
+    "plan_identity": {
+      "model": "regmean_original_fp16",
+      "root": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+      "vllm_version": "0.23.0"
+    },
+    "server_log_dtype_evidence": "Launch recorded dtype=float16 and engine config dtype=torch.float16.",
+    "verdict": "PASSED; the original baseline is healthy and the candidate arm may run."
+  },
+  "candidate_fp16_runtime_audit": {
+    "records": 51,
+    "structured_records": 48,
+    "text_controls": 3,
+    "canonical_schema_revalidated": "48/48",
+    "all_values_finite": true,
+    "errors": 0,
+    "truncated": 0,
+    "finish_reason_stop": "51/51",
+    "rates": {
+      "fs_positive_answer": "16/16",
+      "true_finish_answer": "16/16",
+      "healthy_answer": "0/16",
+      "healthy_valid_nonanswer": "16/16"
+    },
+    "paired_flags_equal_except_model_identity": true,
+    "dtype": "float16",
+    "engine_dtype": "torch.float16",
+    "text_controls_exact_original_matches": "3/3",
+    "owned_server_processes_all_exited": true,
+    "health_verdict": "PASSED",
+    "efficacy_verdict": "FAILED: fs+ answer reduction was -6.25 percentage points versus the required +25 points."
+  },
+  "hard_runtime_gates": [
+    "The original FP16 arm must finish all 51 calls with the expected model id/root, vLLM 0.23.x, canonical settings/schema and no error, invalid, truncation or nonfinite symptom.",
+    "If the original FP16 baseline fails any health condition, stop: candidate behavior is not interpretable.",
+    "Fully stop and verify cleanup of the original server before starting the candidate on the same port.",
+    "The candidate plan must identify the verified FP16 checkpoint root and use the exact same server and probe settings.",
+    "Compare only the new FP16 original baseline with the FP16 candidate via compare.py --original; do not reuse the BF16-runtime baseline."
+  ],
+  "conclusion": "The completed FP16 pair is protocol-valid and structurally healthy. The candidate fails the predeclared selective-efficacy gate and moves fs+ in the wrong direction: answer rate rises from 15/16 to 16/16. No online OSWorld outcome was run."
+}

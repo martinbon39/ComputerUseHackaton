@@ -1,0 +1,11 @@
+{
+  "checkpoint": "regmean_cua_centered_fp16",
+  "account": 1,
+  "volume": "holo-models",
+  "path": "/ckpt/regmean_cua_centered_fp16",
+  "required_runtime_dtype": "float16",
+  "log_sha256": "2c892125a66b431e08a1c3a21aa3fd37b5e1c424e6ecc144745092ef35746491",
+  "verifier_sha256": "a07fc9497eda080815ad7b6f2fd4a3b225d6a985e8d76a0b42a704ad97ad4d78",
+  "status": "UPLOADED",
+  "eligibility": "NOT_YET_BEHAVIORALLY_ADMITTED"
+}

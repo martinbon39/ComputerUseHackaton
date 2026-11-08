@@ -1,0 +1,223 @@
+{
+  "review": {
+    "kind": "independent_read_only_preflight_and_live_run_review",
+    "reviewed_at_utc": "2026-11-08T02:26:51Z",
+    "reviewer_wrote_reviewed_code": false,
+    "scope": [
+      "common.py",
+      "prepare.py",
+      "capture.py",
+      "frozen manifest and allowlist",
+      "source replay logs",
+      "live capture process"
+    ],
+    "verdict_current_run": "CONTINUE",
+    "verdict_reason": "No identified issue invalidates the current captures. The frozen cohort has the intended quotas and task grouping, the current-step action JSON is absent at both capture positions, the selected source pass has zero env.step failures, and the live process is bounded by the fleet slot, CPU affinity, VRAM fraction, context count, and wall-clock timeout.",
+    "hardening_next_run": "RECOMMENDED",
+    "hardening_is_current_run_blocker": false
+  },
+  "artifact_identity": {
+    "local_remote_script_hashes_match": true,
+    "common_py_sha256": "7fcb7c778ff22eb714b4f5a8a6714627afb015d21fbe6dd7603d0ed400f8d7eb",
+    "prepare_py_sha256": "896e481ee552806ba84ea61e3e641f4d0d744a893aab7d20349a2490bcc40dfd",
+    "capture_py_sha256": "3aafc35c334baf1e71a2e8562c326fb41634d375276667100ba42c19ec145286",
+    "manifest_sha256": "f517da46643a8d1b5493cd5730075af6cff9de410523c23914e3eddc9de56878",
+    "source_manifest_sha256": "ced58cdc941ea79c9bbe032cd6180e85635eff7b0c7ef5d4e2d5eff87be69fcf",
+    "broad_manifest_sha256": "35499feb2f482f811814d2e88f62b9ca202e91e37e99b336f9969e770564d332",
+    "allowlist_sha256": "95741a08cfb272efc25cf1270707f5619041aadf92fdf0c0eecf478d4d4feccf",
+    "allowlist_local_path": "/home/orbit/projects/holo-osworld-runner/tasks/diag_extra.json",
+    "allowlist_remote_path": "/dev/shm/astra-regmean/diag_extra.json",
+    "allowlist_count": 75
+  },
+  "frozen_cohort": {
+    "rows": 54,
+    "unique_tasks": 38,
+    "text_controls": 3,
+    "expected_forwards": 57,
+    "labels": {
+      "fs+": 19,
+      "fs-": 19,
+      "healthy": 16
+    },
+    "folds_all_rows": {
+      "0": 15,
+      "1": 9,
+      "2": 11,
+      "3": 5,
+      "4": 14
+    },
+    "folds_by_label": {
+      "fs+": {
+        "0": 3,
+        "1": 5,
+        "2": 3,
+        "3": 3,
+        "4": 5
+      },
+      "fs-": {
+        "0": 7,
+        "1": 2,
+        "2": 4,
+        "3": 1,
+        "4": 5
+      },
+      "healthy": {
+        "0": 5,
+        "1": 2,
+        "2": 4,
+        "3": 1,
+        "4": 4
+      }
+    },
+    "task_grouping": {
+      "task_in_multiple_folds": false,
+      "fs_positive_tasks": 19,
+      "true_finish_tasks": 19,
+      "healthy_contexts_are_on_16_of_the_19_true_finish_tasks": true,
+      "cross_label_task_pairs": 16
+    },
+    "exclusion_checks": {
+      "reserved_ids": 45,
+      "development_evaluation_ids": 6,
+      "explicit_banned_id": "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381",
+      "selected_overlap_reserved": 0,
+      "selected_overlap_evaluation": 0,
+      "selected_contains_banned": false,
+      "episode_content_loaded_only_after_allowlist_and_exclusion_filter": true
+    },
+    "n_in": {
+      "all_rows_present": true,
+      "minimum": 9073,
+      "maximum": 17826,
+      "capture_recomputes_and_asserts_exact_equality_before_each_forward": true,
+      "limitation": "Token-count equality detects template or image-budget drift but is not a content hash against an independently recorded live prompt. The capture records a new input_ids SHA256 for provenance."
+    }
+  },
+  "capture_semantics": {
+    "writer_modules": 24,
+    "layers": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "modules_per_layer": [
+      "mlp.down_proj",
+      "linear_attn.out_proj or self_attn.o_proj"
+    ],
+    "captured_value": "forward-hook args[0] at the selected sequence positions",
+    "positions": {
+      "prefill": "last generation-prompt token, before current reasoning and current action JSON",
+      "endthink_before_note": "last token of recorded reasoning plus closing think delimiter, before the current action JSON begins"
+    },
+    "current_action_json_tokens": 0,
+    "prior_step_json_in_history": "present as required by exact trajectory replay",
+    "label_leakage_limit": "The endthink position contains recorded current reasoning and may semantically reveal the intended tool even though note, thought, tool_call, and the current JSON are absent. Prefill is the strict anti-leakage position."
+  },
+  "trajectory_and_run_log_evidence": {
+    "check_traj_behavior": [
+      "requires a non-empty trajectory",
+      "requires contiguous one-based step_num",
+      "rejects answer before the final recorded step",
+      "requires each recorded screenshot file",
+      "requires tool_call.tool_name to equal tool_name"
+    ],
+    "check_traj_reads_run_logs": false,
+    "source_pass": "results_diag",
+    "source_log_path": "/home/orbit/osw/results_diag.log",
+    "source_log_sha256": "9c4caa1e33fecc3f00fda24316d114e0a891e0d15812d81da6497a3316fc79a3",
+    "source_log_counts": {
+      "env_step_failed": 0,
+      "model_call_or_parse_failed_attempt_3": 6
+    },
+    "second_pass_not_used_by_selected_rows": {
+      "path": "/home/orbit/osw/results_diag2.log",
+      "sha256": "f162259477cb3df0ed89704e82987c0b60e265130b0a53ec0754a402294b736b",
+      "env_step_failed": 0,
+      "model_call_or_parse_failed_attempt_3": 3
+    },
+    "per_task_warning_attribution": "NOT PROVABLE from these logs because four VM workers share an interleaved log and warning lines contain no task or worker identifier.",
+    "parse_failure_replay_evidence": {
+      "source": "holo-neurochir/JOURNAL.md line 148",
+      "test": "Real HoloComputerAgent.run loop with three empty responses before step 1, 4, or 5; reconstructed messages equaled actual messages for 7 of 7 subsequent steps.",
+      "conclusion": "A third parse failure does not change later reconstructed contexts because the extra-evicted fourth-oldest image would be evicted by the next observation. It is recorded evidence, not an exclusion criterion.",
+      "stale_detail": "The JOURNAL mentions four parse failures at an earlier snapshot; the final sealed source log contains six. The replay-invariance test is independent of that count."
+    },
+    "hard_failure_policy": "An env.step failure would leave an unrecorded assistant message and invalidate later replay for that episode. None occurs in the selected source pass."
+  },
+  "live_run_observation": {
+    "observed_at_utc": "2026-11-08T02:26:51Z",
+    "timeout_pid": 382361,
+    "python_pid": 382362,
+    "launcher": "timeout --signal=TERM --kill-after=30s 2100 bash /workspace/osw_shared/gpu_slot.sh",
+    "gpu_slot": 2,
+    "cpu_affinity": "34-35",
+    "omp_threads": 2,
+    "mkl_threads": 2,
+    "openblas_threads": 2,
+    "torch_num_threads": 2,
+    "torch_num_interop_threads_explicitly_set": false,
+    "vram_fraction_cap_decimal_gb": 18,
+    "completed_contexts_at_observation": 8,
+    "last_completed_context": "context_007",
+    "peak_reserved_bytes_at_observation": 13715374080,
+    "partial_capture_present": true,
+    "invalid_or_nonfinite_capture_reported": false,
+    "current_run_impact_of_missing_interop_setting": "No observed correctness impact. CPU affinity is restricted to two CPUs and BLAS/OpenMP thread limits are two. Set torch interop threads explicitly on the next run for a complete resource contract."
+  },
+  "hardening_for_next_run": [
+    {
+      "priority": "high",
+      "change": "Seal source-log path, SHA256, aggregate event counts, and replay policy into the frozen manifest or a required hashed sidecar. Emit per-task or per-worker event records containing task_id so a future env.step failure can be attributed without guessing. If attribution is unavailable and env.step failures are nonzero, fail closed instead of silently skipping rows."
+    },
+    {
+      "priority": "medium",
+      "change": "Assert exact frozen cohort counts: 19 fs+, 19 fs-, 16 healthy, 54 rows, 38 unique tasks, one fold per task, and the intended fold coverage. The current frozen manifest satisfies all of these checks despite prepare.py using weaker assertions."
+    },
+    {
+      "priority": "medium",
+      "change": "Call torch.set_num_interop_threads(2) during common-module initialization."
+    },
+    {
+      "priority": "medium",
+      "change": "Check STOP files and fleet admission before loading the model. Keep gpu_slot.sh, explicit parent/timeout ownership, the 18 GB cap, finite row cap, and wall-clock timeout."
+    },
+    {
+      "priority": "scientific_choice",
+      "change": "Use only prefill for a strict no-current-decision feature. If endthink is retained, report that recorded reasoning is part of the feature and may expose the intended decision."
+    }
+  ],
+  "verification": {
+    "RAN": [
+      "line-by-line review of common.py, prepare.py, and capture.py",
+      "local versus remote SHA256 comparison",
+      "independent deterministic reconstruction of cohort selection and fold counts",
+      "reserved, evaluation, banned-ID, allowlist, and task-fold overlap checks",
+      "source-log warning counts and SHA256",
+      "live process, launcher, affinity, partial-output, progress-log, and VRAM observation"
+    ],
+    "PASSED": [
+      "artifact identity",
+      "actual frozen quotas and task grouping",
+      "allowlist and exclusions",
+      "24 writer args[0] hooks",
+      "no current action JSON at capture positions",
+      "exact n_in runtime assertion",
+      "zero source-pass env.step failures",
+      "bounded live resource envelope"
+    ],
+    "CORRECT": "The current capture run may continue. Its outputs remain teacher-forced activation evidence; endthink features carry the stated reasoning-leakage limitation.",
+    "NOT_RUN": [
+      "No GPU forward was launched by the reviewer.",
+      "No model weights, manifest, capture code, source episodes, or run state were modified by the reviewer."
+    ]
+  }
+}

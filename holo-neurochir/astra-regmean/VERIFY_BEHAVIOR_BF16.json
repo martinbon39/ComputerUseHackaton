@@ -1,0 +1,141 @@
+{
+  "time_utc": "2026-11-08T02:52:01Z",
+  "scope": "Independent CPU-only audit of the completed BF16 original-versus-RegMean static next-action probe. The precision amendment is explicitly excluded.",
+  "overall": {
+    "protocol_and_record_integrity": "PASSED",
+    "comparison_implementation": "CORRECT",
+    "text_and_action_health": "PASSED",
+    "bf16_behavioral_efficacy_gate": "FAILED",
+    "online_task_success": "NOT_RUN"
+  },
+  "evidence_status": {
+    "RAN": [
+      "Parsed and paired all 51 original and 51 BF16 candidate records.",
+      "Validated all 96 structured GUI records independently against the live imported canonical SCHEMA.",
+      "Recomputed every answer, valid-nonanswer, invalid, error and truncation count.",
+      "Checked all 16 candidate healthy tool calls, all four changed-tool pairs, one stable output from each of the four fs+/fs- contexts, and all three text controls."
+    ],
+    "PASSED": [
+      "Exact pairing, settings, seeds, schema hash, canonical probe hash and vLLM version.",
+      "Zero invalid, error or truncated BF16 candidate records.",
+      "All healthy actions remained coherent valid nonanswers.",
+      "All three text controls were exact matches to original."
+    ],
+    "CORRECT": [
+      "compare.py keys records by context, step and seed, checks plan equivalence, and computes the reported BF16 counts and gates correctly.",
+      "regmean_comparison.json matches the independent recount and correctly reports quantitative gate failure."
+    ],
+    "NOT_RUN": [
+      "No inference or server process was launched by this audit.",
+      "No sampled GUI action was executed.",
+      "No OSWorld outcome or reserve/test evaluation was run.",
+      "The precision arm was not inspected or evaluated."
+    ]
+  },
+  "files": {
+    "compare.py_at_bf16_recount": "640a8f2aea85789a8410a7873ddd42a716c740f580c12f54b880d2e51b0f36d2",
+    "compare.py_current_after_default_preserving_fp16_cli_extension": "fd891880dfe1ce49e085f9a8ab175069965fe9e2c7b70cea29dfa68cd51a337c",
+    "regmean_comparison.json": "038ebcb7ee953d68e73035bd8282bad07caf959de2d6c9407a30223eecc8d1c7",
+    "original_plan.json": "a6eba55ac58aaeff762b5e818dd70ab30ea5cb951b57768442e0461b25dc1990",
+    "original_generations.jsonl": "93a7630290761123d434f481239709c9e2f0688f07f687c37b734b5359e4fb6c",
+    "candidate_plan.json": "61d2f147ce91f70bfe657083f26e7641215b4407aacf1fafa48157e578e4aa7a",
+    "candidate_generations.jsonl": "380adeda1be9a943f77624f99124fea781b0634f1584a53e364e09db04c1f2e3",
+    "VERIFY_CHECKPOINT.json": "4941b654d31e783b0a7078ebba3936ebc74de404eebfa3c820b05a97981706ce",
+    "checkpoint_manifest.json": "d7e71b960969aa5cf4b6f5ab20189148fd02a62ec2e3cf6e99667065d82e1b39",
+    "evaluation_plan.json_current_including_later_precision_amendment": "fd44d09099d0efaa2ecad7ae8ee7c1b021c52a9ecf5334baaa798af9fe46e0b3"
+  },
+  "pairing_and_protocol": {
+    "records_per_arm": 51,
+    "paired_keys": 51,
+    "structured_gui_per_arm": 48,
+    "text_controls_per_arm": 3,
+    "contexts": 6,
+    "seeds": [7100, 7101, 7102, 7103, 7104, 7105, 7106, 7107],
+    "row_metadata_equal_for_every_pair": true,
+    "settings_equal": true,
+    "settings": {
+      "temperature": 0.8,
+      "top_p": 0.9,
+      "top_k": 20,
+      "max_tokens": 3072,
+      "reasoning_effort": "medium",
+      "enable_thinking": true,
+      "text_temperature": 0.0,
+      "text_enable_thinking": false
+    },
+    "schema_sha256": "16409e28c825ef787ae55ab13fdcb49f4b4f91c5274b98d2f36ae6cdff551304",
+    "all_96_structured_records_independently_schema_valid": true,
+    "canonical_probe_sha256_equal": true,
+    "vllm_versions": {"original": "0.23.0", "candidate": "0.23.0"},
+    "candidate_model": "regmean_cua_centered",
+    "candidate_root": "/dev/shm/regmean_cua_centered",
+    "candidate_checkpoint_verifier_status": "PASSED"
+  },
+  "independent_counts": {
+    "fs+": {
+      "original": {"n": 16, "answer": 15, "valid_nonanswer": 1, "invalid": 0, "error": 0, "truncated": 0},
+      "candidate": {"n": 16, "answer": 13, "valid_nonanswer": 3, "invalid": 0, "error": 0, "truncated": 0},
+      "original_answer_rate_percent": 93.75,
+      "candidate_answer_rate_percent": 81.25,
+      "answer_reduction_pp": 12.5
+    },
+    "true_finish": {
+      "original": {"n": 16, "answer": 16, "valid_nonanswer": 0, "invalid": 0, "error": 0, "truncated": 0},
+      "candidate": {"n": 16, "answer": 15, "valid_nonanswer": 1, "invalid": 0, "error": 0, "truncated": 0},
+      "original_answer_rate_percent": 100.0,
+      "candidate_answer_rate_percent": 93.75,
+      "answer_loss_pp": 6.25
+    },
+    "healthy": {
+      "original": {"n": 16, "answer": 0, "valid_nonanswer": 16, "invalid": 0, "error": 0, "truncated": 0},
+      "candidate": {"n": 16, "answer": 0, "valid_nonanswer": 16, "invalid": 0, "error": 0, "truncated": 0}
+    }
+  },
+  "task_cluster_results": {
+    "fs+_answer_reduction_pp": [0.0, 25.0],
+    "true_finish_answer_loss_pp": [0.0, 12.5],
+    "healthy_answer_change_pp": [0.0, 0.0],
+    "caveat": "Each stratum contains only two tasks. The apparent fs+ effect occurs entirely on one task, so the task-level evidence is weak."
+  },
+  "gate": {
+    "required_fs+_answer_reduction_pp": 25.0,
+    "observed_fs+_answer_reduction_pp": 12.5,
+    "fs+_gate": "FAILED",
+    "maximum_true_finish_loss_pp": 30.0,
+    "observed_true_finish_loss_pp": 6.25,
+    "true_finish_gate": "PASSED",
+    "required_invalid_error_truncated": 0,
+    "observed_invalid_error_truncated": 0,
+    "validity_gate": "PASSED",
+    "required_healthy_text": true,
+    "healthy_text_gate": "PASSED",
+    "overall": "FAILED"
+  },
+  "qualitative_review": {
+    "structured_records_checked_mechanically": 96,
+    "candidate_structured_outputs_read_manually": 24,
+    "text_controls_read_manually": 3,
+    "all_candidate_finish_reasons": "stop",
+    "candidate_output_tokens": {"minimum": 144, "median": 319.0, "maximum": 1007},
+    "empty_thoughts": 0,
+    "empty_answer_contents": 0,
+    "coordinates_checked": 19,
+    "coordinates_in_0_to_1000_range": true,
+    "healthy_findings": [
+      "Chrome: seven seeds clicked the three-dot menu and one first closed an update popup; all are coherent first steps.",
+      "LibreOffice Impress: all eight seeds clicked the File menu to begin PNG export; all are coherent first steps."
+    ],
+    "changed_tool_findings": [
+      "Two fs+ samples changed from answer to a plausible continuation on the same multi-app task: one opened a terminal and one scrolled for more tutorial detail.",
+      "One additional fs+ sample remained nonanswer but changed from hotkey to scroll, so it does not contribute to the answer-rate reduction.",
+      "One true-finish sample changed from answer to a plausible but unnecessary click on an email-recipient suggestion, producing the measured 6.25-point preservation loss."
+    ],
+    "corruption_assessment": "No malformed, incoherent, truncated, empty or obviously corrupted output was found in the reviewed BF16 sample. The failure is insufficient selective efficacy, not output corruption."
+  },
+  "text_controls": [
+    {"prompt": "Compute 17 * 23. Give only the number.", "original": "391", "candidate": "391", "exact_match": true},
+    {"prompt": "Translate into French: The meeting starts at nine.", "original": "La réunion commence à neuf heures.", "candidate": "La réunion commence à neuf heures.", "exact_match": true},
+    {"prompt": "Explain in one sentence why water freezes.", "original": "Water freezes because its molecules slow down and form a rigid structure when the temperature drops below 0°C (32°F).", "candidate": "Water freezes because its molecules slow down and form a rigid structure when the temperature drops below 0°C (32°F).", "exact_match": true}
+  ],
+  "conclusion": "The BF16 centered RegMean checkpoint is healthy on this static probe but fails its predeclared primary efficacy gate: fs+ answer rate falls by only 12.5 percentage points, below the required 25 points. No OSWorld success claim follows from these regenerated next actions."
+}

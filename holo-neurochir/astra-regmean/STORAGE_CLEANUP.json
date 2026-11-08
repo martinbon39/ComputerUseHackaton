@@ -1,0 +1,25 @@
+{
+  "timestamp_utc": "2026-11-08T03:07:47.065469+00:00",
+  "status": "COMPLETE",
+  "removed": [
+    {
+      "path": "/dev/shm/regmean_cua_centered",
+      "bytes": 10373051500,
+      "modal_volume": "holo-models",
+      "modal_account": 1,
+      "modal_path": "/ckpt/regmean_cua_centered",
+      "manifest_sha256": "d7e71b960969aa5cf4b6f5ab20189148fd02a62ec2e3cf6e99667065d82e1b39"
+    },
+    {
+      "path": "/dev/shm/regmean_cua_centered_fp16",
+      "bytes": 10373051545,
+      "modal_volume": "holo-models",
+      "modal_account": 1,
+      "modal_path": "/ckpt/regmean_cua_centered_fp16",
+      "manifest_sha256": "af40d9feb3451edf947b7dc5e42d7181d4c6e017b6afa98d373bb455a5e5122b"
+    }
+  ],
+  "bytes_freed": 20746103045,
+  "captures_and_factors_retained": "/dev/shm/astra-regmean",
+  "free_shm_bytes": 29685719040
+}
