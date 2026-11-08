@@ -70,6 +70,18 @@ main { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 8px 16
 .picker .o b { font-weight: 800; } .picker .ok { color: var(--ok); } .picker .ko { color: var(--bad); }
 .mode.ended { background: #e9e9e4; color: #4a4a46; }
 .empty { position: fixed; inset: 56px 0 0 0; display: grid; place-items: center; background: var(--bg); z-index: 5; }
+.empty { overflow: auto; align-items: start; padding: 28px 20px; }
+.pickp { max-width: 1200px; width: 100%; margin: 0 auto; }
+.pickp .sub { text-align: center; color: var(--muted); margin: -12px 0 22px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-bottom: 22px; }
+.card { background: #fff; border: 2px solid var(--line); border-radius: 12px; overflow: hidden; cursor: pointer; text-align: left; padding: 0; font: inherit; color: inherit; }
+.card:hover { border-color: #f3b48c; }
+.card.on { border-color: var(--accent); box-shadow: 0 0 0 3px #fbd9c5; }
+.card .shot { aspect-ratio: 16 / 9; background: #1b1b1b; display: block; width: 100%; object-fit: cover; object-position: top; }
+.card .cb { padding: 10px 12px 12px; }
+.card .nm { font-weight: 700; font-size: 16px; }
+.card .oc { color: var(--muted); font-size: 14px; margin-top: 2px; }
+.card .oc b.ok { color: var(--ok); } .card .oc b.ko { color: var(--bad); }
 .empty h1 { font-size: 40px; font-weight: 800; margin: 0 0 22px; letter-spacing: -.5px; text-align: center; }
 .empty .row { display: flex; gap: 12px; justify-content: center; }
 .empty .big { font: 700 17px Inter, sans-serif; padding: 14px 26px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; text-decoration: none; }
@@ -95,9 +107,11 @@ main { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 8px 16
   <button class="link" id="detBtn">details</button>
 </div>
 <div class="empty" id="empty" hidden>
-  <div><h1>No live duel running</h1>
-    <div class="row"><button class="big go" id="startBig" hidden>Start live duel</button><a class="big" id="watchBig">Watch recorded duel</a></div>
-    <select id="taskBig" hidden aria-label="task"></select></div>
+  <div class="pickp"><h1>Pick a task</h1>
+    <p class="sub">Recorded duels on real Ubuntu VMs: Holo-3.1 alone vs Holo-3.1 + Feci Guard.</p>
+    <div class="cards" id="cards"></div>
+    <div class="row"><button class="big go" id="runBig" disabled>▶ Run duel</button><button class="big" id="startBig" hidden>Run LIVE</button></div>
+    <select id="taskBig" hidden aria-label="task"></select><a id="watchBig" hidden></a></div>
 </div>
 <div class="picker" id="picker" hidden><h2>Recorded duels</h2><div id="pickList"></div></div>
 <main>
@@ -295,7 +309,7 @@ const NAMES = { 'libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197': 'Calc �
   'os/bedcedc4-4d72-425e-ad62-21960b11fe0d': 'Ubuntu · dim screen setting' };
 const taskName = id => NAMES[id] || id.split('/')[0].replace('libreoffice_', '').replace(/^./, c => c.toUpperCase());
 async function fillPick() {  // always visible: recorded duels by task (outcomes on both sides), plus Run LIVE with the key
-  const rows = (await (await fetch('/api/duels')).json()).filter(d => d.sides.left.verdict && d.sides.right.verdict);
+  const rows = (await (await fetch('/api/duels')).json()).filter(d => d.sides.left.verdict && d.sides.right.verdict && !/INFRA/.test(d.note || ''));
   const ic = v => v.score >= 1 ? '✓' : '✗', hhmm = t => new Date(t * 1000).toISOString().slice(11, 16);
   const byTask = {}; rows.forEach(d => (byTask[d.task] = byTask[d.task] || []).push(d));
   let html = '';
@@ -305,6 +319,25 @@ async function fillPick() {  // always visible: recorded duels by task (outcomes
   $('#taskPick').innerHTML = html;
   $('#taskPick').value = REPLAY || (rows.some(d => d.id === FEATURED) ? FEATURED : rows[0] && rows[0].id);
   $('#go').disabled = false;
+}
+async function fillCards() {  // the landing page: one big card per recorded task (its latest duel, Guard duels first)
+  const rows = (await (await fetch('/api/duels')).json()).filter(d => d.sides.left.verdict && d.sides.right.verdict && !/INFRA/.test(d.note || ''));
+  const best = {};
+  for (const d of rows) { const g = (d.preset || '').includes('guard'), b = best[d.task];
+    if (d.id === FEATURED || (!b || (g && !(b.preset || '').includes('guard'))) && (!b || b.id !== FEATURED)) best[d.task] = d; }
+  const pick = Object.values(best).sort((a, b) => ((b.preset || '').includes('guard') - (a.preset || '').includes('guard')) || b.t0 - a.t0);
+  const ic = v => v.score >= 1 ? '<b class="ok">✓</b>' : '<b class="ko">✗</b>';
+  $('#cards').innerHTML = pick.map(d => `<button class="card" data-id="${d.id}" data-task="${d.task}"><img class="shot" alt=""><div class="cb">
+    <div class="nm">${esc(taskName(d.task))}</div>
+    <div class="oc">Holo ${ic(d.sides.left.verdict)} / ${(d.preset || '').includes('guard') ? '+Guard' : 'merged'} ${ic(d.sides.right.verdict)}</div></div></button>`).join('');
+  $('#cards').onclick = e => { const c = e.target.closest('.card'); if (!c) return;
+    $('#cards').querySelectorAll('.card').forEach(x => x.classList.toggle('on', x === c)); $('#runBig').disabled = false; $('#runBig').dataset.id = c.dataset.id; $('#startBig').dataset.task = c.dataset.task; };
+  $('#runBig').onclick = () => { if ($('#runBig').dataset.id) location.href = '/?replay=' + $('#runBig').dataset.id + '&mode=real'; };
+  for (const d of pick) {  // a desktop frame of the duel as the card's picture
+    fetch(`/api/events?duel=${d.id}&left=0&right=0`).then(r => r.json()).then(x => {
+      const fr = x.right.filter(e => e.kind === 'step' && e.file); const f = fr[Math.min(2, fr.length - 1)];
+      if (f) document.querySelector(`.card[data-id="${d.id}"] .shot`).src = `/duels/${d.id}/right/${f.file}`; }).catch(() => {});
+  }
 }
 function go() {
   const v = $('#taskPick').value; if (!v) return;
@@ -320,6 +353,7 @@ async function init() {
   $('#detBtn').onclick = () => { $('#details').hidden = !$('#details').hidden; if (!$('#details').hidden) listDuels(); };
   cfg = await (await fetch('/api/config')).json();
   fillPick(); $('#go').onclick = go;
+  if (!REPLAY && !P.get('duel')) fillCards();
   if (REPLAY) {
     $('#speed').onclick = e => { const b = e.target.closest('button'); if (!b) return; R.speed = +b.dataset.s;
       $('#speed').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); };
@@ -333,8 +367,8 @@ async function init() {
   for (const side of ['left', 'right']) $('#' + side + ' .who').innerHTML = side === 'left' ? 'Holo-3.1' : 'Holo-3.1 <span class="g">+ Feci Guard</span>';
   $('#watchBig').href = '#'; $('#watchBig').onclick = e => { e.preventDefault(); go(); };
   if (cfg.control) {
-    $('#startBig').hidden = false; $('#taskBig').hidden = false; $('#taskBig').innerHTML = $('#taskSel').innerHTML;
-    $('#startBig').onclick = () => startLive($('#taskBig').value);
+    $('#startBig').hidden = false; $('#taskBig').innerHTML = $('#taskSel').innerHTML;
+    $('#startBig').onclick = () => startLive($('#startBig').dataset.task || $('#taskBig').value);
   }
   setInterval(() => { if ($('#picker').hidden) poll(); }, 400); setInterval(() => { mode(); bootClock(); }, 500); poll();
 }

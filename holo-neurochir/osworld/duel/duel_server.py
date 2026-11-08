@@ -179,7 +179,7 @@ class Duels:
                 ph = [e["phase"] for e in evs if e["kind"] == "phase"]
                 res[side] = {"verdict": v[-1] if v else None, "last_phase": next((p for p in reversed(ph) if p in ("done", "stopped", "error")), ph[-1] if ph else None),
                              "steps": sum(e["kind"] == "step" for e in evs)}
-            out.append({"id": d.name, "task": meta["task"], "t0": meta["t0"], "preset": meta.get("preset"),
+            out.append({"id": d.name, "task": meta["task"], "t0": meta["t0"], "preset": meta.get("preset"), "note": meta.get("note"),
                         "running": d.name in self.running(), "sides": res})
         return out
 
