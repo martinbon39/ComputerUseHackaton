@@ -15,6 +15,8 @@ Spec kinds:
                      "delta" [n_tokens, d] or [d], "alpha"}: lm_head rows of those tokens += alpha * delta.
                      The snapshot is tied but already stores lm_head.weight (== embed_tokens): that tensor gets the
                      edit and tie_word_embeddings becomes false, so the input embeddings stay unchanged.
+  lm_head_scale      {"kind": "lm_head_scale", "scale": s}: lm_head = s * embed_tokens (untied; no other tensor
+                     changes): sampling at temperature T then behaves like T / s on the original logits.
   delta              {"kind": "delta", "edits": [{"key": <checkpoint tensor name>, "cols": [...] | "rows": [...],
                      "delta_file": npz, "delta_key": "delta", "alpha": 1.0}, ...]}: raw column / row additions,
                      W[:, cols] += alpha * delta ([d_out] or [d_out, n_cols]) or W[rows] += alpha * delta
@@ -127,6 +129,11 @@ def main(spec_path, out_dir):
     if kind == "lm_head":
         W, info = lm_head_edit(spec, src, weight_map)
         replaced = {LM_HEAD: W}
+        untie(config)
+    elif kind == "lm_head_scale":
+        E = load_file(src / weight_map[EMBED])[EMBED]
+        replaced = {LM_HEAD: (E.float() * float(spec["scale"])).to(E.dtype)}
+        info = {"scale": float(spec["scale"])}
         untie(config)
     elif kind == "delta":
         replaced, info = delta_edits(spec, src, weight_map)

@@ -1,6 +1,7 @@
 """Behavioural pre-launch check of an 'answer' lever: on recorded steps (context rebuilt exactly as holo.osw_replay
 does), sample the next action from each server with the harness' own call (holo_agent schema under
-structured_outputs, thinking on, temperature 0.8, top_p 0.9, max_tokens 3072) and count the tool names.
+structured_outputs, thinking on, temperature 0.8, top_p 0.9, max_tokens 3072) and count the tool names; the
+sampled x,y (0-1000 grid) are kept next to the recorded action for pointing tools.
 A step is <task_dir> (its final answer step) or <task_dir>@<t> (step t, e.g. a healthy mid-trajectory step).
 A server is URL=MODEL or URL=MODEL=ENVVAR, where the environment variable ENVVAR holds the auth headers, one
 "Name: value" per line (kept out of the command line and the logs); "Authorization: Bearer X" becomes the api key.
@@ -41,9 +42,9 @@ def sample(url, model, messages, auth_env=None):
                                        extra_body={"structured_outputs": {"json": SCHEMA},
                                                    "chat_template_kwargs": {"enable_thinking": True}})
     try:
-        return json.loads(r.choices[0].message.content)["tool_call"]["tool_name"]
+        return json.loads(r.choices[0].message.content)["tool_call"]
     except Exception:  # noqa: BLE001 - an unparsable answer is itself the measurement
-        return "<unparsable>"
+        return {"tool_name": "<unparsable>"}
 
 
 def main():
@@ -65,16 +66,19 @@ def main():
             assert steps[-1]["tool_name"] == "answer", f"{d}: final step is not answer (give <task_dir>@<t>)"
         t = int(t) if t else len(steps) - 1
         msgs = to_openai(rebuild(d, steps, (d / "system_prompt.txt").read_text(encoding="utf-8"), t))
-        label = f"{d.parent.name}/{d.name}@{t}({steps[t]['tool_name']})"
+        rec = steps[t]["tool_call"]
+        label = f"{d.parent.name}/{d.name}@{t}({rec['tool_name']}" + (f" {rec['x']},{rec['y']})" if "x" in rec else ")")
         for url, model, auth in servers:
             jobs += [(label, model, url, msgs, auth) for _ in range(a.n)]
     with ThreadPoolExecutor(8) as ex:
-        names = list(ex.map(lambda j: sample(j[2], j[1], j[3], j[4]), jobs))
-    out = {}
-    for (task, model, *_), name in zip(jobs, names):
-        out.setdefault(task, {}).setdefault(model, Counter())[name] += 1
-    rows = [{"step": task, "model": model, "answer_rate": c["answer"] / sum(c.values()), "tools": dict(c)}
-            for task, per in out.items() for model, c in per.items()]
+        calls = list(ex.map(lambda j: sample(j[2], j[1], j[3], j[4]), jobs))
+    out, pts = {}, {}
+    for (task, model, *_), tc in zip(jobs, calls):
+        out.setdefault(task, {}).setdefault(model, Counter())[tc["tool_name"]] += 1
+        if "x" in tc:
+            pts.setdefault((task, model), []).append([tc["x"], tc["y"]])
+    rows = [{"step": task, "model": model, "answer_rate": c["answer"] / sum(c.values()), "tools": dict(c),
+             "points": pts.get((task, model), [])} for task, per in out.items() for model, c in per.items()]
     for r in rows:
         print(json.dumps(r))
     if a.out:
