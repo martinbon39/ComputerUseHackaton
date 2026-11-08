@@ -214,7 +214,7 @@ Files in this repository come first. Hosted copies are signed links that expire 
 - **False-"done" replay page**: [`holo-neurochir/demo_faux_fini/demo_faux_fini.html`](holo-neurochir/demo_faux_fini/demo_faux_fini.html).
   Hosted copy, link expires: [holo-demo-faux-fini.html](https://argos.martinbonan.com/artifacts/holo-demo-faux-fini.html?t=mxec08h4.ypUQurEtCFn45XOw47vn5eHhOEl5Gyfd).
 - **Slides** (the research system) and **pitch cockpit**: sources in [`holo-neurochir/pitch_design/`](holo-neurochir/pitch_design/)
-  (`python3 build.py pages/pitch.html out/pitch.html`). Hosted copies, links expire: [slides](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxelxkol.AJDAnrhAH9FvnKfF3n2qxlh1tmsblqOz) · [cockpit](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxel9bc8.a7vQeBaoBiUCIj4L8kuDDqkhdsROZEUD).
+  (`python3 build.py pages/pitch.html out/pitch.html`). Hosted copies, links expire: [slides](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxelxkol.AJDAnrhAH9FvnKfF3n2qxlh1tmsblqOz) · [cockpit](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxemflec.3ExIvcsdztpuBL232ElgzO4JONEwayea).
 - **Agent-team dashboard** (who did what, live during the hackathon), hosted only, link expires: [holo-team-dashboard.html](https://argos.martinbonan.com/artifacts/holo-team-dashboard.html?t=mxek8e49.ufV1Pb8Fk9vGO-OmMMUJevLsFPiYtuKc).
 - **Agent runner**: [martinbon39/holo-osworld-runner](https://github.com/martinbon39/holo-osworld-runner)
 - **Model studied**: [Hcompany/Holo-3.1-4B](https://huggingface.co/Hcompany/Holo-3.1-4B) @ `8c88265a`
