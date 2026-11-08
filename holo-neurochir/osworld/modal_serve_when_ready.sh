@@ -1,24 +1,26 @@
 #!/usr/bin/env bash
-# On orbit: wait until holo-models:/ckpt/<ckpt> on account <1|2> is complete (config, tokenizer, safetensors; listing
-# unchanged over 60 s) and the optional --after file exists, then deploy it as Holo-3.1-4B-<ckpt> (modal_deploy.sh),
-# wait for /v1/models, run the 3-request smoke with full outputs (modal_probe.py --out; skipped for astra-free's
-# free_* checkpoints, which get read-only checks only), commit manifest + smoke, and report to ares.
-# --skip-if <ckpt2>: give up if <ckpt2> got deployed on this account first (queue order).
-# Usage: bash osworld/modal_serve_when_ready.sh <1|2> <ckpt> [--after <file>] [--skip-if <ckpt2>]
+# On orbit: serve a checkpoint on the first FREE Modal account of a preference list, as soon as its upload is complete.
+# 1. Wait until holo-models:/ckpt/<ckpt> on the source account (first in the list) is complete (config, tokenizer,
+#    safetensors; listing unchanged over 60 s).
+# 2. Wait until one account of the list is free, i.e. its lock ~/modal_queue/busy_acct<n> can be taken (mkdir, atomic).
+#    A lock means "a model is served there and may be under measurement": it is released ONLY by hand, on ares' signal
+#    "<model> mesuré" (rmdir ~/modal_queue/busy_acct<n>). Nothing ever replaces a model under measurement.
+# 3. If the free account is not the source, upload the checkpoint there from the pod's /dev/shm/<ckpt>.
+# 4. Deploy as Holo-3.1-4B-<ckpt> (modal_deploy.sh), wait for /v1/models, run the 3-request smoke with full outputs
+#    (modal_probe.py --out; none for astra-free's free_* checkpoints), commit manifest + smoke, report to ares.
+# Usage: bash osworld/modal_serve_when_ready.sh <ckpt> <accounts, e.g. 2,1>
 set -uo pipefail
 cd "$(dirname "$0")/.."
-ACCOUNT="$1"; CKPT="$2"; shift 2; AFTER=""; SKIP=""
-while [ $# -gt 0 ]; do case "$1" in --after) AFTER="$2"; shift 2 ;; --skip-if) SKIP="$2"; shift 2 ;; *) exit 2 ;; esac; done
-case "$ACCOUNT" in 1) PROFILE=emilejouannet ;; 2) PROFILE=martinbon39 ;; *) exit 2 ;; esac
-NAME="Holo-3.1-4B-$CKPT"; URL="https://$PROFILE--holo-vllm-serve.us-east.modal.run/v1"
+CKPT="$1"; IFS=, read -ra ACCOUNTS <<< "$2"
+LOCKS=~/modal_queue; mkdir -p "$LOCKS"
+profile() { [ "$1" = 1 ] && echo emilejouannet || echo martinbon39; }
+POD="ssh -o BatchMode=yes -i $HOME/.ssh/runpod_holo -p 15780 root@213.181.111.151"
+NAME="Holo-3.1-4B-$CKPT"
 TASK=/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/fc6d8143-9452-4171-9459-7f515143419a
-START=$(date -u +%Y%m%dT%H%M%S)
-skipped() { [ -n "$SKIP" ] && ls osworld/modal_deploys/*_acct${ACCOUNT}_Holo-3.1-4B-${SKIP}.json 2>/dev/null |
-  awk -F/ '{print $NF}' | awk -v s="$START" '$0 > s' | grep -q .; }
+SRC=$(profile "${ACCOUNTS[0]}")
 prev=""
 for i in $(seq 1 480); do
-  skipped && { echo "$(date -u +%T) $SKIP was deployed first on account $ACCOUNT: $CKPT waits for ares"; exit 0; }
-  cur=$(MODAL_PROFILE=$PROFILE modal volume ls holo-models "/ckpt/$CKPT" --json 2>/dev/null | python3 -c "
+  cur=$(MODAL_PROFILE=$SRC modal volume ls holo-models "/ckpt/$CKPT" --json 2>/dev/null | python3 -c "
 import sys, json
 d = {x['filename'].split('/')[-1]: x['size'] for x in json.load(sys.stdin)}
 ok = 'config.json' in d and 'tokenizer.json' in d and any(k.endswith('.safetensors') for k in d)
@@ -26,10 +28,20 @@ print(sorted(d.items()) if ok else '')" 2>/dev/null)
   [ -n "$cur" ] && [ "$cur" = "$prev" ] && break
   prev="$cur"; sleep 60
 done
-[ -n "$cur" ] && [ "$cur" = "$prev" ] || { echo "$CKPT never completed on account $ACCOUNT"; exit 1; }
-echo "$(date -u +%T) $CKPT complete on account $ACCOUNT"
-if [ -n "$AFTER" ]; then until [ -e "$AFTER" ]; do sleep 15; done; echo "$(date -u +%T) $AFTER exists"; fi
-skipped && { echo "$(date -u +%T) $SKIP was deployed first on account $ACCOUNT: $CKPT waits for ares"; exit 0; }
+[ -n "$cur" ] && [ "$cur" = "$prev" ] || { echo "$CKPT never completed on account ${ACCOUNTS[0]}"; exit 1; }
+echo "$(date -u +%T) $CKPT complete on account ${ACCOUNTS[0]}"
+ACCOUNT=""
+until [ -n "$ACCOUNT" ]; do
+  for a in "${ACCOUNTS[@]}"; do mkdir "$LOCKS/busy_acct$a" 2>/dev/null && { ACCOUNT=$a; break; }; done
+  [ -z "$ACCOUNT" ] && sleep 30
+done
+echo "$NAME $(date -u +%FT%TZ)" > "$LOCKS/busy_acct$ACCOUNT/holder"
+echo "$(date -u +%T) took account $ACCOUNT"
+PROFILE=$(profile "$ACCOUNT"); URL="https://$PROFILE--holo-vllm-serve.us-east.modal.run/v1"
+if [ "$ACCOUNT" != "${ACCOUNTS[0]}" ]; then
+  $POD "bash /workspace/modal_put_ckpt.sh /dev/shm/$CKPT $CKPT $ACCOUNT" 2>&1 | grep -aE "uploaded|missing|rror" ||
+    { argos send ares "modal-serve: $CKPT absent de /dev/shm du pod, impossible de le servir sur le compte $ACCOUNT"; exit 1; }
+fi
 MANIFEST=$(bash osworld/modal_deploy.sh "$ACCOUNT" "$NAME" "$CKPT" | grep "modal_deploys/") || { echo "deploy failed"; exit 1; }
 echo "$(date -u +%T) deployed $MANIFEST"
 t=$(date +%s)
@@ -58,5 +70,5 @@ fi
 git add "$MANIFEST" $( [ -f "$SMOKE" ] && echo "$SMOKE" ) && git commit -q -m "holo-neurochir: Modal deploy of $NAME on account $ACCOUNT (manifest + smoke)
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -- osworld/modal_deploys/ && git push -q origin main
-argos send ares "modal-serve: $NAME prêt sur le compte $ACCOUNT, $URL (Bearer ~/.holo_modal_key), prêt en ${READY}s. Smoke : $SUMMARY. Manifeste et sorties complètes : $MANIFEST (+ .smoke.json), poussés."
+argos send ares "modal-serve: $NAME prêt sur le compte $ACCOUNT, $URL (Bearer ~/.holo_modal_key), prêt en ${READY}s. Smoke : $SUMMARY. Manifeste et sorties complètes : $MANIFEST (+ .smoke.json), poussés. Compte $ACCOUNT verrouillé jusqu'à ton signal « $CKPT mesuré »."
 echo "$(date -u +%T) done: $SUMMARY"
