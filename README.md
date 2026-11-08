@@ -8,7 +8,8 @@ every requirement on the screen, refuses a false "done" with a reason, and can h
 **Online, on 120 held-out OSWorld tasks (pre-registered), the Guard halves the agent's false "done" rate (22.5 % →
 10.8 %, −11.7 pts [−19.2, −4.2]) without a measurable loss of score; no score gain is claimed (+1.6 [−4.4, +7.7]).**
 
-> **Watch first:** [demo video](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7) · [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32): the Guard refuses a false "done" and the agent
+> **Watch first:** [demo video](holo-neurochir/video_demo/holo-demo-video.mp4) · [Guard repair replay](holo-neurochir/demo_live/repair_calc.html)
+> (files in this repo; [hosted video](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7) and [hosted replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32), links expire 2026-12-08): the Guard refuses a false "done" and the agent
 > repairs it, step by step.
 >
 > **Judges in a hurry:** run the 3-command [quickstart](#quickstart-under-5-minutes-no-gpu-no-key-no-vm) (no GPU, no
@@ -142,7 +143,7 @@ bash jury_kit/quickstart.sh                 # all of the above + (c), exit code 
   [`results/online_guard_tasks.csv`](jury_kit/results/online_guard_tasks.csv) (score, steps, false "done" per task and
   arm) with the analysis function committed before the Guard results were read, and checks the published JSON exactly.
 - **(c)** Demo of the Guard: open [`holo-neurochir/demo_live/repair_calc.html`](holo-neurochir/demo_live/repair_calc.html)
-  in a browser (one file with every screenshot embedded and no external script, English and French; hosted copy: [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32)). On OSWorld task `libreoffice_calc/1de60575`, the agent
+  in a browser (one file with every screenshot embedded and no external script, English and French; hosted copy, link expires: [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32)). On OSWorld task `libreoffice_calc/1de60575`, the agent
   says "done" with the pivot table on the wrong sheet; the Guard refuses ("the table is on 'Pivot Table_Sheet1_1', not
   'Sheet2'"); the agent renames the sheet in 5 steps; the second check passes and the official evaluator scores 1.
   This is one recorded episode of the repair measure (row 8), not evidence of an average gain. The problem itself:
@@ -199,16 +200,22 @@ on GitHub runners. A judge cannot run them in 5 minutes.
 
 ## Links
 
+Files in this repository come first. Hosted copies are signed links that expire on 2026-12-08 (30 days).
+
 - **Paper**: *Cogito, Ergo Feci: False Success and the Limits of Weight Surgery in a Computer-Use Agent*.
-  [arXiv-style PDF](holo-neurochir/paper/main.pdf) · [NeurIPS-format PDF](holo-neurochir/paper/neurips.pdf) (with the filled
-  reproducibility checklist). Every number is regenerated from `paper/data/` by `paper/build.sh`. Hosted copies:
-  [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxelhqws.MrJLSn9ALy0ExZeylVvzjzQRw94Mndm_) ·
-  [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxelhr01.9_ebcRpYQRJ22aZnjzbeRJvI9f5stk8U).
-- **Demo video**: [holo-demo-video.mp4](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7)
-- **Guard repair replay** (the Guard refuses a false "done" on `calc/1de60575`, the agent renames the sheet, the second check passes): [holo-guard-repair.html](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32)
-- **Slides** (the research system): [holo-pitch-system.html](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxel9bap.omSEnhbk5HaxlM8gpkVeVegN4DndZZUE) · **pitch cockpit**: [holo-cockpit-pitch.html](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxel9bc8.a7vQeBaoBiUCIj4L8kuDDqkhdsROZEUD)
-- **Agent-team dashboard** (who did what, live during the hackathon): [holo-team-dashboard.html](https://argos.martinbonan.com/artifacts/holo-team-dashboard.html?t=mxek8e49.ufV1Pb8Fk9vGO-OmMMUJevLsFPiYtuKc)
-- **False-"done" replay page** (hosted copy of quickstart (c)): [holo-demo-faux-fini.html](https://argos.martinbonan.com/artifacts/holo-demo-faux-fini.html?t=mxec08h4.ypUQurEtCFn45XOw47vn5eHhOEl5Gyfd)
+  [arXiv-style PDF](holo-neurochir/paper/main.pdf) · [NeurIPS-format PDF](holo-neurochir/paper/neurips.pdf) (anonymous,
+  with the filled reproducibility checklist). Every number is regenerated from `paper/data/` by `paper/build.sh`.
+  Hosted copies, link expires: [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxelhqws.MrJLSn9ALy0ExZeylVvzjzQRw94Mndm_) · [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxelhr01.9_ebcRpYQRJ22aZnjzbeRJvI9f5stk8U).
+- **Demo video**: [`holo-neurochir/video_demo/holo-demo-video.mp4`](holo-neurochir/video_demo/holo-demo-video.mp4)
+  (13 MB). Hosted copy, link expires: [holo-demo-video.mp4](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7).
+- **Guard repair replay** (the Guard refuses a false "done" on `calc/1de60575`, the agent renames the sheet, the second
+  check passes): [`holo-neurochir/demo_live/repair_calc.html`](holo-neurochir/demo_live/repair_calc.html). Hosted copy,
+  link expires: [holo-guard-repair.html](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32).
+- **False-"done" replay page**: [`holo-neurochir/demo_faux_fini/demo_faux_fini.html`](holo-neurochir/demo_faux_fini/demo_faux_fini.html).
+  Hosted copy, link expires: [holo-demo-faux-fini.html](https://argos.martinbonan.com/artifacts/holo-demo-faux-fini.html?t=mxec08h4.ypUQurEtCFn45XOw47vn5eHhOEl5Gyfd).
+- **Slides** (the research system) and **pitch cockpit**: sources in [`holo-neurochir/pitch_design/`](holo-neurochir/pitch_design/)
+  (`python3 build.py pages/pitch.html out/pitch.html`). Hosted copies, links expire: [slides](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxel9bap.omSEnhbk5HaxlM8gpkVeVegN4DndZZUE) · [cockpit](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxel9bc8.a7vQeBaoBiUCIj4L8kuDDqkhdsROZEUD).
+- **Agent-team dashboard** (who did what, live during the hackathon), hosted only, link expires: [holo-team-dashboard.html](https://argos.martinbonan.com/artifacts/holo-team-dashboard.html?t=mxek8e49.ufV1Pb8Fk9vGO-OmMMUJevLsFPiYtuKc).
 - **Agent runner**: [martinbon39/holo-osworld-runner](https://github.com/martinbon39/holo-osworld-runner)
 - **Model studied**: [Hcompany/Holo-3.1-4B](https://huggingface.co/Hcompany/Holo-3.1-4B) @ `8c88265a`
 

@@ -29,7 +29,10 @@ false successes, so a refusal always says what is missing. **Results: `RESULTS.m
   - a `feci_guard` summary in `meta.json`.
 - Options: `--guard on|off`, `--guard_mode passive|active` (active: NEED_CHECK asks the agent for a read-only check
   first), `--guard_model`, `--guard_max_refusals`.
-- Judge backend from the environment:
+- Claude CLI location: `verifier.py` is frozen and finds the CLI through `FECI_CLAUDE`, which defaults to our server's
+path (`/home/orbit/.local/bin/claude`). On your machine run `export FECI_CLAUDE=$(which claude)` first, otherwise every
+check returns no verdict and, by the fail-open rule, every answer is accepted (`r["kind"] == "no_verdict"`).
+`jury_kit/guard_live.py` sets it for you. Judge backend from the environment:
   - `GUARD_BACKEND=claude` (local `claude -p`);
   - `openai`, for any OpenAI-compatible endpoint: `GUARD_BASE_URL`, `GUARD_MODEL`, and `GUARD_API_KEY_ENV` = the name
     of the variable holding the key. GitHub runs use the relay `guard_server.py` (127.0.0.1:9911,
