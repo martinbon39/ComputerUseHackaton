@@ -619,6 +619,27 @@ Timestamp correction for the preceding astra-free entry: the GO message was deli
 - Result: primary9 replay-valid episodes official11/18 versus2/18, after-action9 versus0, paired+50.0pp CI95[22.2,77.8]. Strict8 episodes+50.0pp[12.5,87.5]. All12+33.3pp[4.2,62.5], retaining genuine control f5 repair. Conditional after-refusal repair9/11[42.9%,100%]. Two no-action positives per arm receive zero repair credit. Predictions only: reserve+2.73..6.20pp/test+6.42..11.62pp under loss1..0; neither split rerun. Historical Holo3.1 0/10 is distinguished from its completed nonrandomized reference.
 - Delivery: feat/rescue-bench, PR https://github.com/martinbon39/ComputerUseHackaton/pull/1 ; final raw evidence stays in /home/orbit/osw/rescue_bench/. No endpoint/VM job remains owned by rescue-bench.
 
+## 2026-11-08 10:55 UTC · gh-runner2 · OSWorld arms on GitHub Actions (night + morning)
+- Arms collected in ~/osw (compare_val layout): test orig, expo125, merge_cua_b050, orig_modal_test, orig_guard_claude (120/120, 3 runs, RUNS.txt); reserve orig_confirm, merge_cua_b050, broad_residual_p100, orig_modal_confirm; prompt test PARTIAL; lmscale16 INVALID (pod 8012 frozen).
+- Workflow (martinbon39/holo-osworld-runner): base_url (Modal, MODAL_KEY), Feci Guard judge/rescue inputs, keyless relay via tunnel_host=orbit, setup-uv retries, VM-wait race fixed. gh_collect.sh NO_PNG=1.
+- Orbit: restricted SSH key gh-runner-relay-hackathon-0811 (port 9911 only) added with Martin's OK; removal steps in holo-neurochir/report/CLEANUP.md. Freed 8.76 GB of report.html in my results_*_gh_* dirs.
+
+## 2026-11-08 11:25 UTC — demo-director : démo live du pitch
+- Livrables : holo-neurochir/demo_live/RUN-OF-SHOW.md (déroulé minute par minute, live central, plans B/C), CHECKLIST_JOUR_J.md (checklist + Q&R sourcé), cockpit (restylé par design-pass), page holo-guard-repair.
+- 3 répétitions live en modal_guard (online-eval, 11:00-11:20) : calc/1de60575, arc complet (faux succès à gauche, refus du Guard, réparation, score 1 à droite) en R1 et R3, en ~4:03 ; R2 inversée (gauche réussit, droite erre 50 pas). Stratégie : live lancé à 0:00, décision à 3:30, sinon replay R1 (20261108-110023…).
+- Deux relectures indépendantes : 14 défauts corrigés, puis 1 excès (5/18 contre 2/18 = 3 vraies réparations contre 0, signalé à ares).
+- Risques ouverts pour Martin : connexion du CLI claude sur orbit (« can end until 2026-11-10 »), dépôt GitHub privé (kit jury), pod 8000 hors service (live sur Modal, réveil à T−3 min).
+
+## process-viz — 2026-11-08 11:22 UTC
+- holo-neurochir/demo_live/process_viz/ : boucle three.js immersive (8 chapitres, ~3 min) remplaçant les slides du pitch. src.html + build.py (inline des captures) -> holo-process-viz.html. Espace = pause, flèches/0-7 = chapitres, ?ch=N&t=S pour sauter.
+- Ch0 vrai faux succès gimp/77b8ab4d (export.jpg.jpg, score 0, bras orig_pod) ; ch2 C1 = L19 H15, L23 H1, L31 H14 + neurones L30/L31 (circuit/REPORT.md) ; ch6 refus réel calc/1de60575.
+- Relecture fraîche : ~75 chaînes, 0 chiffre faux ; 7 formulations corrigées (pas de « l'information n'est pas dedans », « aucun gain détecté » au lieu d'« inchangé », contrôle aléatoire α=0,5, poids d'attention non causaux).
+- URL : https://argos.martinbonan.com/artifacts/holo-process-viz.html?t=mxelzud7.ioGG-_IygscNm_-hWPlsSze5GIT01QC-
+
+## 2026-11-08 11:46 UTC · devin-review
+- Devin M4 (session devin-13e97ca8…705b): gpu_ctl.zip/.patch downloaded (api.devin.ai/v1/attachments), 4 sha256 OK, reviewed, 39/39 tests on argos, dry run, real read-only `status` on both Modal accounts (22.9 $ / 24.1 $). Committed unmodified as 3363a03, review in infra/DEVIN_SESSION.md (99c683b), pushed. ACU not exposed by API v1.
+
 ## 2026-11-08 12:05 UTC — repo-ready: final jury corrections
 - Correction of an earlier entry: a Devin API session WAS launched at 10:51 UTC (finished 11:05); it wrote `holo-neurochir/infra/gpu_ctl.py` after the reported experiments; see `holo-neurochir/infra/DEVIN_SESSION.md`. No reported number depends on it.
 - README/AGENTS/llms.txt: online false-done breakdown corrected (7 of 19 avoided became successes, 12 ended without answering, 5 new false done, net 27 → 13); online arm = Holo-3.1 + refusal only, escalation measured in replay only; weight-edit and rule-timing claims aligned with paper §5.5–5.6; limitations added. Jury simulations: 6.85 → 7.3 → 7.6 → 7.8 → 7.7 (ares' jury-ai). Quickstart and link check green.
+- 2026-11-08 12:45 UTC ares : soumission prête. Dépôt public ; README avec le papier, la page Try live (/try), la page des duels, les vidéos de 2 min (ElevenLabs et voix de Martin) ; quickstart vert ; 132 liens relatifs OK ; CI links et quickstart vertes. Résultats : en ligne, faux done 22,5 % → 10,8 % (significatif, score inchangé de façon mesurable) ; escalade vers Holo4 en rejeu +50 pts [+22 ; +78]. À FAIRE APRÈS LE JURY : révoquer la clé Devin (passée en clair), changer ~/.duel_key et arrêter les tmux duel_tunnel, guard_tunnel et guard_server, retirer la clé SSH gh-runner-relay-hackathon-0811 (report/CLEANUP.md), arrêter holo-jury-probe et modal-orig, relancer voice-api sur son port.
