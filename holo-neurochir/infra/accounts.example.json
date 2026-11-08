@@ -1,0 +1,11 @@
+{
+ "vllm_key_file": "~/.holo_modal_key",
+ "repo_root": "../..",
+ "deploys_dir": "osworld/modal_deploys",
+ "accounts": {
+  "1": {"profile": "emilejouannet", "warn_usd": 20, "stop_usd": 24, "budget_start": "2026-11-01",
+        "gpu_apps": ["holo-vllm", "holo-slot", "holo-judge"]},
+  "2": {"profile": "martinbon39", "warn_usd": 27, "stop_usd": 29.5, "budget_start": "2026-11-01",
+        "gpu_apps": ["holo-vllm", "holo-slot", "holo-judge"]}
+ }
+}
