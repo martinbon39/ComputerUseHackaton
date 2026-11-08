@@ -47,5 +47,6 @@
 
 % Mode switch: the NeurIPS wrapper sets \neuripstrue after \input{shared/preamble}.
 \newif\ifneurips
+\usepackage{placeins}
 % Each figure or table lives in fig/<key>.tex and is placed once, wherever \placefig{<key>} first occurs.
 \newcommand{\placefig}[1]{\ifcsname placed@#1\endcsname\else\expandafter\gdef\csname placed@#1\endcsname{}\input{fig/#1}\fi}

@@ -66,6 +66,11 @@ ov = load("pod_astra/regmean/overlap.json")
 m.add("rmFsp", ov["n_fs_positive"], "data/pod_astra/regmean/overlap.json n_fs_positive")
 m.add("rmFsm", ov["n_true_finish"], "data/pod_astra/regmean/overlap.json n_true_finish")
 m.add("rmWriters", len({r["writer"] for r in ov["records"]}), "data/pod_astra/regmean/overlap.json distinct writers")
+rm_fsp = sorted({r["task_id"] for r in load("pod_astra/regmean/manifest.json")["rows"] if r["label"] == "fs+"})
+assert len(rm_fsp) == ov["n_fs_positive"]
+rm_inf = [t for t in rm_fsp if load(f"local/osworld_tasks/{t.split('/')[-1]}.json")["evaluator"]["func"] == "infeasible"]
+assert len(rm_inf) == 5 and "five of original 19" in load("pod_astra/power/BUILD_AUDIT.json")["shortfall"]
+m.add("rmFspInfeasible", len(rm_inf), "data/local/osworld_tasks/<id>.json evaluator.func == infeasible over regmean/manifest.json fs+ tasks; agrees with data/pod_astra/power/BUILD_AUDIT.json shortfall")
 for pos, P in [("prefill", "Pre"), ("endthink_before_note", "End")]:
     g = og[pos]
     m.add(f"rm{P}Auc", f"{g['auroc_ridge_median']:.3f}", SG + f" {pos}.auroc_ridge_median (over writers)")

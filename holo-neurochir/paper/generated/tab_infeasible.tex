@@ -3,7 +3,7 @@
 \toprule
 Source & Arm & fs+ \texttt{answer} (all) & fs+ \texttt{answer} (excl.\ infeasible) \\
 \midrule
-Table 2 (4B screening) & original reference & 8/8 & 4/4$^{*}$ \\ % source: data/pod_astra/4b/runtime_status.json strata.fs+ (cohort: original block of 4b/pilot_c1_add_l24_metrics.json, rows in 4b/pilot_c1_add_l24.jsonl)
+Steering screens (Table~\ref{tab:causal}) & original reference & 8/8 & 4/4$^{*}$ \\ % source: data/pod_astra/4b/runtime_status.json strata.fs+ (cohort: original block of 4b/pilot_c1_add_l24_metrics.json, rows in 4b/pilot_c1_add_l24.jsonl)
  & residual addition L16 & 8/8 & 4/4$^{*}$ \\ % source: data/pod_astra/4b/pilot_c1_add_l16_metrics.json strata.fs+ (job indices = 4b/pilot_c1_add_l24_job.json)
  & residual addition L24 & 8/8 & 4/4 \\ % source: data/pod_astra/4b/pilot_c1_add_l24.jsonl
  & ``conclusion'' direction, L31 & 8/8 & 4/4$^{*}$ \\ % source: data/pod_astra/think/metrics_active.json screen_add_half.strata.fs+ (job indices = 4b/pilot_c1_add_l24_job.json)
@@ -31,7 +31,7 @@ Table 2 (4B screening) & original reference & 8/8 & 4/4$^{*}$ \\ % source: data/
  & linear-attention retention $\times1.25$ & 8/8 & 4/4 \\ % source: data/pod_astra/mit1/lot09_decay125.summary.json brief
  & H4 audit: false-completion claims & 5/8 & 2/4 \\ % source: data/pod_astra/mit1/semantic_lot14.json outputs
 \midrule
-Mechanism-level edits (Table attractor) & original (re-served) & 16/16 & 8/8 \\ % source: data/pod_astra/free/external/orig_modal/summary.json per_row
+Mechanism-level edits (Table~\ref{tab:attractor}) & original (re-served) & 16/16 & 8/8 \\ % source: data/pod_astra/free/external/orig_modal/summary.json per_row
  & H2 & 16/16 & 8/8 \\ % source: data/pod_astra/free/external/free_h2/summary.json per_row
  & H3, $\lambda=0.5$ & 16/16 & 8/8 \\ % source: data/pod_astra/free/external/free_h3_l05/summary.json per_row
  & H5, $\lambda=0.5$ & 16/16 & 8/8 \\ % source: data/pod_astra/free/external/free_h5_l05/summary.json per_row

@@ -2,7 +2,7 @@
 \label{sec:mw}
 We first tried the recipe on the defect behind the weight-space programming result, looping, in Holo-3.1-0.8B on MiniWoB++. On \mwNNormal{} rollouts over \mwNTasks{} tasks the model succeeds on \mwSuccessPct\%; loops affect \mwLoopSharePct\% of failures (\mwLoopPos{} \textsc{loop+} steps), above the GO threshold.
 
-\paragraph{Detection works.} The loop direction reaches AUROC \mwAucBestExact{} at layer \mwAucBestLayer{} against \mwAucStep{} and \mwAucCtx{} for the position baselines, and \mwAstraAuc{} on an independent refit (Fig.~\ref{fig:traps}a).
+\paragraph{Detection works.} At layer \mwAucBestLayer, the loop direction reaches AUROC \mwAucBestExact{} (Fig.~\ref{fig:traps}a). The position baselines reach \mwAucStep{} (step index) and \mwAucCtx{} (context length), and an independent refit of the direction reaches \mwAstraAuc.
 
 \paragraph{The weight edit is not selective.} Two rounds screened \mwOffNCand{} weight edits along this direction (layers, writers, top-$k$ columns, $\alpha$ from 0.3 to 16; Appendix Table~\ref{tab:candidates}). The screening winner was frozen before the reserved seeds were read. It edits \mwPatchChanged{} weights (\mwPatchPct\% of the model). On reserved seeds it lowers the log-probability of loop actions by \mwFinLoopDec{} mnat/token and that of healthy actions by \mwFinHealthyDec{} (ratio \mwFinRatio). A random direction under the same scope gives a ratio of \mwFinRatioRand, so it is \emph{more} selective than the learned one (Table~\ref{tab:mw-offline}, Fig.~\ref{fig:mw}a).
 

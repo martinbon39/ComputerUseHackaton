@@ -1,0 +1,28 @@
+{
+  "counts": {
+    "fs+": 19,
+    "fs-": 20,
+    "healthy": 16
+  },
+  "unique_tasks": 55,
+  "total_contexts": 55,
+  "reserve_overlap": [],
+  "excluded_overlap": [],
+  "all_feasible": true,
+  "all_sources_allowlisted": true,
+  "screenshot_bytes": 64850068,
+  "retained_screenshot_counts": {
+    "3": 52,
+    "2": 2,
+    "1": 1
+  },
+  "construction_C_overlap": [
+    "chrome/47543840-672a-467d-80df-8f7c3b9788c9"
+  ],
+  "preservation_C_overlap": [
+    "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3"
+  ],
+  "manifest_sha256": "2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0",
+  "shortfall": "Only 19 distinct feasible fs+ tasks occur in frozen regmean pool plus the two new passes after required exclusions; five of original 19 frozen fs+ tasks have evaluator.func=infeasible."
+}

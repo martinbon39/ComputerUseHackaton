@@ -95,8 +95,15 @@ def compare(arm, base, tag, label, src, exclude=()):
             + f"{delta:+.1f} [{100 * lo:+.1f}, {100 * hi:+.1f}]".replace("-", "$-$") + f" & {win}/{loss} \\\\ % source: {src}")
 
 
+NOISE3 = [("res_orig", "orbit/pod"), ("res_orig_gh", "GitHub/pod"), ("res_orig_modal", "GitHub/Modal")]
+pcts = [100 * sum(R[k].values()) / len(R[k]) for k, _ in NOISE3]
+ns = sorted({len(R[k]) for k, _ in NOISE3})
+m.add("onReserveOrigRange", f"{max(pcts) - min(pcts):.1f}", S + " max - min mean score of the three reserve runs of the original")
 rows = [
     "\\multicolumn{6}{l}{\\emph{Reserve, noise reference: the original against itself}} \\\\",
+    ("Original, three runs, harness/server (" + "; ".join(l for _, l in NOISE3) + ") & " + "--".join(map(str, ns)) + " & \\multicolumn{2}{c}{"
+     + " / ".join(f"{x:.1f}" for x in pcts) + f"}} & spread {max(pcts) - min(pcts):.1f} points & -- \\\\ % source: "
+     + ", ".join(S + RUNS[k] for k, _ in NOISE3)),
     compare("res_orig", "res_orig_gh", "onNoise", "Original, orbit vs.\\ GitHub harness (both served by the pod)", S + RUNS["res_orig"]),
     compare("res_orig_gh", "res_orig_modal", "onNoiseServer", "Original, pod vs.\\ Modal (both on the GitHub harness)", S + RUNS["res_orig_gh"]),
     "\\midrule\\multicolumn{6}{l}{\\emph{Reserve, arms served by the pod, vs.\\ the pod original on the orbit harness}} \\\\",

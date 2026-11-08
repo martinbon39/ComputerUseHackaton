@@ -71,7 +71,7 @@ for D in sorted(dom, key=lambda k: -dom[k]["n"]):
 tot = Counter()
 for c in dom.values():
     tot.update(c)
-body = ("\\begin{tabular}{lrrrrrr}\n\\toprule\nDomain & Tasks & Success & FS & Step lim. & Loop & Other/unsc. \\\\\n\\midrule\n"
+body = ("\\begin{tabular}{lrrrrrr}\n\\toprule\nDomain & Tasks & Success & FS & Step lim. & Loop & Other + unsc. \\\\\n\\midrule\n"
         + "\n".join(rows) + "\n\\midrule\n"
         + f"Total & {tot['n']} & {tot['succ']}/{tot['scored']} & {tot['false_success']} & {tot['step_limit']} & {tot['loop']} & {tot['other'] + tot['unscored']} \\\\\n"
         + "\\bottomrule\n\\end{tabular}\n")

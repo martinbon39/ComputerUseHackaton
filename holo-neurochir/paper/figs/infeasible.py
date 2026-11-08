@@ -81,7 +81,7 @@ m.add("infTaskId", tex_escape(TASK), "data/local/diagnostic_osw_diag.json tasks[
 m.add("infStep", STEP, "data/local/diagnostic_osw_diag.json tasks[].fs_labels index of fs+")
 
 # ---------------------------------------------------------------- Table 2 (figs/causal.py)
-G = "Table 2 (4B screening)"
+G = "Steering screens (Table~\\ref{tab:causal})"
 l24 = []
 for r in jsonl("pod_astra/4b/pilot_c1_add_l24.jsonl"):
     if "tool" in r and "row" in r and as_dict(r["row"])["label"] == "fs+":
@@ -193,7 +193,7 @@ for f in ("semantic_lot19.json", "SEMANTIC_AUDIT_LOT15_ADDED_BASELINE.json"):
     assert not any(a["task_id"] == TASK for a in load("pod_astra/mit1/" + f)["annotations"])
 
 # ---------------------------------------------------------------- attractor arms (figs/attractor.py) and blind audits
-G = "Mechanism-level edits (Table attractor)"
+G = "Mechanism-level edits (Table~\\ref{tab:attractor})"
 S = PA + "free/"
 ARMS = [("orig_modal", "original (re-served)", "Orig"), ("free_h2", "H2", "Htwo"), ("free_h3_l05", "H3, $\\lambda=0.5$", "Hthreehalf"),
         ("free_h5_l05", "H5, $\\lambda=0.5$", "Hfivehalf"), ("free_h6_s05", "H6", "Hsix"), ("free_h2_l2", "H2, $\\lambda=2$", "Htwotwo"),
