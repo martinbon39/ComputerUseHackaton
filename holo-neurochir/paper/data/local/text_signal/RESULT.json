@@ -1,0 +1,1041 @@
+{
+ "n_episodes": 268,
+ "n_fs": 66,
+ "n_true": 202,
+ "n_tasks": 90,
+ "collection_audit": {
+  "n_result": 349,
+  "partial": 7,
+  "no_traj": 0,
+  "infeasible": 34,
+  "no_eval": 0,
+  "not_answer": 40,
+  "dup": 0,
+  "bad_score": 0
+ },
+ "models": {
+  "tfidf_final_note_thought": {
+   "auroc_logo": 0.5868586858685869,
+   "ci95_task_boot": [
+    0.4769129732274323,
+    0.6938471473310716
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.5917941794179418,
+   "auroc_5fold_grouped_range": [
+    0.5672817281728173,
+    0.623012301230123
+   ]
+  },
+  "tfidf_last3_notes": {
+   "auroc_logo": 0.555055505550555,
+   "ci95_task_boot": [
+    0.45640333674972955,
+    0.658607058935338
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.5742124212421242,
+   "auroc_5fold_grouped_range": [
+    0.5268901890189018,
+    0.6101110111011101
+   ]
+  },
+  "tfidf_final_reasoning": {
+   "auroc_logo": 0.6042604260426043,
+   "ci95_task_boot": [
+    0.5033313422812347,
+    0.6961395670854048
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.6163666366636663,
+   "auroc_5fold_grouped_range": [
+    0.5756075607560756,
+    0.6536153615361536
+   ]
+  },
+  "tfidf_final_all(note+thought+reasoning)": {
+   "auroc_logo": 0.6034353435343534,
+   "ci95_task_boot": [
+    0.49206468998242586,
+    0.7034285965785059
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.6197119711971197,
+   "auroc_5fold_grouped_range": [
+    0.5863336333633363,
+    0.6464896489648965
+   ]
+  },
+  "hand_final_note_thought": {
+   "auroc_logo": 0.659015901590159,
+   "ci95_task_boot": [
+    0.548315589108272,
+    0.7630658230614344
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.6441944194419443,
+   "auroc_5fold_grouped_range": [
+    0.6188118811881188,
+    0.6743174317431744
+   ]
+  },
+  "hand_final_all": {
+   "auroc_logo": 0.6357635763576358,
+   "ci95_task_boot": [
+    0.5146335844775736,
+    0.7458266633219502
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.6121062106210622,
+   "auroc_5fold_grouped_range": [
+    0.5894839483948395,
+    0.641989198919892
+   ]
+  },
+  "domain_onehot": {
+   "auroc_logo": 0.5354785478547855,
+   "ci95_task_boot": [
+    0.424656441543135,
+    0.6588883990462618
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.5495874587458747,
+   "auroc_5fold_grouped_range": [
+    0.5357785778577857,
+    0.5794704470447046
+   ]
+  },
+  "baseline_final_step": {
+   "auroc_logo": 0.7191344134413441,
+   "ci95_task_boot": [
+    0.6091175347889711,
+    0.8155486107972522
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.7231773177317732,
+   "auroc_5fold_grouped_range": [
+    0.7146339633963396,
+    0.7343234323432344
+   ],
+   "auroc_raw_feature_no_fit": 0.7367611761176117
+  },
+  "baseline_n_steps": {
+   "auroc_logo": 0.7191344134413441,
+   "ci95_task_boot": [
+    0.6074558931138014,
+    0.8183299127648852
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.7231773177317732,
+   "auroc_5fold_grouped_range": [
+    0.7146339633963396,
+    0.7343234323432344
+   ],
+   "auroc_raw_feature_no_fit": 0.7367611761176117
+  },
+  "baseline_final_reasoning_chars": {
+   "auroc_logo": 0.6056855685568556,
+   "ci95_task_boot": [
+    0.49523359634551495,
+    0.7087658918772314
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.5977047704770476,
+   "auroc_5fold_grouped_range": [
+    0.5777077707770777,
+    0.611011101110111
+   ],
+   "auroc_raw_feature_no_fit": 0.6195244524452445
+  },
+  "baseline_total_reasoning_chars": {
+   "auroc_logo": 0.7435493549354937,
+   "ci95_task_boot": [
+    0.6395988240141453,
+    0.8399704373532735
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.7427692769276928,
+   "auroc_5fold_grouped_range": [
+    0.7233723372337234,
+    0.7512751275127513
+   ],
+   "auroc_raw_feature_no_fit": 0.7539003900390039
+  }
+ },
+ "n_mixed_tasks": 18,
+ "within_mixed_tasks": {
+  "n_episodes": 68,
+  "n_fs": 33,
+  "tfidf_final_note_thought": 0.4865800865800866,
+  "tfidf_last3_notes": 0.5246753246753247,
+  "tfidf_final_reasoning": 0.5116883116883117,
+  "tfidf_final_all(note+thought+reasoning)": 0.5108225108225108,
+  "hand_final_note_thought": 0.48658008658008656,
+  "hand_final_all": 0.47359307359307357,
+  "domain_onehot": 0.4727272727272728,
+  "baseline_final_step": 0.5372294372294373,
+  "baseline_n_steps": 0.5372294372294373,
+  "baseline_final_reasoning_chars": 0.46320346320346323,
+  "baseline_total_reasoning_chars": 0.4987012987012987
+ },
+ "best_text_model": "hand_final_note_thought",
+ "best_minus_final_step_ci95": [
+  -0.17944083947644543,
+  0.05651388587794519
+ ],
+ "best_minus_domain_ci95": [
+  -0.02699059922367768,
+  0.2621127506460802
+ ],
+ "permutation": {
+  "model": "hand_final_note_thought",
+  "observed_auroc": 0.659015901590159,
+  "n_perm": 500,
+  "within_task_p": 0.4411177644710579,
+  "within_task_null_mean": 0.6547098709870988,
+  "within_task_null_95pct": 0.6930055505550555,
+  "global_p": 0.001996007984031936,
+  "global_null_mean": 0.4849605460546055,
+  "note": "within-task permutation only shuffles labels inside the mixed tasks; pure tasks keep labels, so its null keeps task/domain signal and tests only the extra within-task signal"
+ },
+ "top_ngrams": {
+  "tfidf_final_note_thought": {
+   "false_success": [
+    [
+     "png",
+     0.579
+    ],
+    [
+     "through",
+     0.489
+    ],
+    [
+     "pdf",
+     0.488
+    ],
+    [
+     "jerseys",
+     0.473
+    ],
+    [
+     "extension",
+     0.466
+    ],
+    [
+     "total",
+     0.464
+    ],
+    [
+     "color",
+     0.458
+    ],
+    [
+     "ctrl",
+     0.457
+    ],
+    [
+     "happy extension",
+     0.437
+    ],
+    [
+     "background",
+     0.433
+    ],
+    [
+     "both",
+     0.433
+    ],
+    [
+     "multiple",
+     0.432
+    ],
+    [
+     "conversion",
+     0.421
+    ],
+    [
+     "nike",
+     0.42
+    ],
+    [
+     "totals",
+     0.42
+    ]
+   ],
+   "true_success": [
+    [
+     "page",
+     -0.495
+    ],
+    [
+     "settings",
+     -0.47
+    ],
+    [
+     "bar",
+     -0.459
+    ],
+    [
+     "in the",
+     -0.392
+    ],
+    [
+     "changed",
+     -0.382
+    ],
+    [
+     "closed",
+     -0.376
+    ],
+    [
+     "status",
+     -0.366
+    ],
+    [
+     "confirms the",
+     -0.358
+    ],
+    [
+     "changes",
+     -0.348
+    ],
+    [
+     "the page",
+     -0.34
+    ],
+    [
+     "selected",
+     -0.322
+    ],
+    [
+     "is now",
+     -0.319
+    ],
+    [
+     "window",
+     -0.319
+    ],
+    [
+     "fully",
+     -0.318
+    ],
+    [
+     "will",
+     -0.307
+    ]
+   ]
+  },
+  "tfidf_last3_notes": {
+   "false_success": [
+    [
+     "png",
+     0.654
+    ],
+    [
+     "complete",
+     0.639
+    ],
+    [
+     "pdf",
+     0.571
+    ],
+    [
+     "is complete",
+     0.532
+    ],
+    [
+     "jerseys",
+     0.478
+    ],
+    [
+     "total",
+     0.466
+    ],
+    [
+     "background",
+     0.441
+    ],
+    [
+     "chapter",
+     0.41
+    ],
+    [
+     "home",
+     0.399
+    ],
+    [
+     "women",
+     0.399
+    ],
+    [
+     "through",
+     0.399
+    ],
+    [
+     "nike",
+     0.395
+    ],
+    [
+     "over 60",
+     0.393
+    ],
+    [
+     "projects",
+     0.389
+    ],
+    [
+     "all",
+     0.386
+    ]
+   ],
+   "true_success": [
+    [
+     "page",
+     -0.463
+    ],
+    [
+     "settings",
+     -0.459
+    ],
+    [
+     "bar",
+     -0.418
+    ],
+    [
+     "dropdown",
+     -0.41
+    ],
+    [
+     "docx",
+     -0.398
+    ],
+    [
+     "option",
+     -0.377
+    ],
+    [
+     "been successfully",
+     -0.374
+    ],
+    [
+     "new",
+     -0.365
+    ],
+    [
+     "status",
+     -0.354
+    ],
+    [
+     "change",
+     -0.344
+    ],
+    [
+     "successfully changed",
+     -0.323
+    ],
+    [
+     "now shows",
+     -0.317
+    ],
+    [
+     "is open",
+     -0.303
+    ],
+    [
+     "status bar",
+     -0.302
+    ],
+    [
+     "the new",
+     -0.299
+    ]
+   ]
+  },
+  "tfidf_final_reasoning": {
+   "false_success": [
+    [
+     "through",
+     0.645
+    ],
+    [
+     "all",
+     0.542
+    ],
+    [
+     "total",
+     0.533
+    ],
+    [
+     "png",
+     0.513
+    ],
+    [
+     "color",
+     0.511
+    ],
+    [
+     "strike through",
+     0.482
+    ],
+    [
+     "strike",
+     0.482
+    ],
+    [
+     "extension",
+     0.463
+    ],
+    [
+     "for",
+     0.46
+    ],
+    [
+     "jerseys",
+     0.45
+    ],
+    [
+     "nike",
+     0.433
+    ],
+    [
+     "60",
+     0.43
+    ],
+    [
+     "women",
+     0.428
+    ],
+    [
+     "completed the",
+     0.427
+    ],
+    [
+     "graph",
+     0.418
+    ]
+   ],
+   "true_success": [
+    [
+     "settings",
+     -0.483
+    ],
+    [
+     "in the",
+     -0.456
+    ],
+    [
+     "bar",
+     -0.414
+    ],
+    [
+     "and the",
+     -0.368
+    ],
+    [
+     "dialog",
+     -0.355
+    ],
+    [
+     "page",
+     -0.344
+    ],
+    [
+     "status",
+     -0.343
+    ],
+    [
+     "is now",
+     -0.342
+    ],
+    [
+     "closed and",
+     -0.337
+    ],
+    [
+     "confirm",
+     -0.332
+    ],
+    [
+     "re",
+     -0.33
+    ],
+    [
+     "we re",
+     -0.33
+    ],
+    [
+     "closed",
+     -0.326
+    ],
+    [
+     "textbox",
+     -0.32
+    ],
+    [
+     "confirms",
+     -0.315
+    ]
+   ]
+  },
+  "tfidf_final_all(note+thought+reasoning)": {
+   "false_success": [
+    [
+     "through",
+     0.51
+    ],
+    [
+     "png",
+     0.481
+    ],
+    [
+     "color",
+     0.461
+    ],
+    [
+     "pdf",
+     0.431
+    ],
+    [
+     "total",
+     0.42
+    ],
+    [
+     "created with",
+     0.414
+    ],
+    [
+     "jerseys",
+     0.411
+    ],
+    [
+     "strike",
+     0.39
+    ],
+    [
+     "strike through",
+     0.39
+    ],
+    [
+     "nike",
+     0.385
+    ],
+    [
+     "using",
+     0.384
+    ],
+    [
+     "extension",
+     0.382
+    ],
+    [
+     "happy extension",
+     0.381
+    ],
+    [
+     "60",
+     0.381
+    ],
+    [
+     "created",
+     0.379
+    ]
+   ],
+   "true_success": [
+    [
+     "settings",
+     -0.479
+    ],
+    [
+     "bar",
+     -0.441
+    ],
+    [
+     "in the",
+     -0.422
+    ],
+    [
+     "status",
+     -0.383
+    ],
+    [
+     "changed",
+     -0.365
+    ],
+    [
+     "closed",
+     -0.356
+    ],
+    [
+     "page",
+     -0.35
+    ],
+    [
+     "status bar",
+     -0.33
+    ],
+    [
+     "confirms",
+     -0.328
+    ],
+    [
+     "closed and",
+     -0.321
+    ],
+    [
+     "is now",
+     -0.317
+    ],
+    [
+     "and the",
+     -0.308
+    ],
+    [
+     "we re",
+     -0.303
+    ],
+    [
+     "the status",
+     -0.294
+    ],
+    [
+     "confirms the",
+     -0.292
+    ]
+   ]
+  }
+ },
+ "hand_feature_means": {
+  "chars": {
+   "fs": 635.1666666666666,
+   "true": 540.0693069306931,
+   "auroc_raw": 0.6254875487548754
+  },
+  "words": {
+   "fs": 97.37878787878788,
+   "true": 85.61881188118812,
+   "auroc_raw": 0.5906840684068406
+  },
+  "hedge_n": {
+   "fs": 0.45454545454545453,
+   "true": 0.39603960396039606,
+   "auroc_raw": 0.5173267326732672
+  },
+  "done_n": {
+   "fs": 6.636363636363637,
+   "true": 6.603960396039604,
+   "auroc_raw": 0.4996624662466247
+  },
+  "hedge_rate": {
+   "fs": 0.004886878769923286,
+   "true": 0.004392359074384625,
+   "auroc_raw": 0.5137638763876388
+  },
+  "done_rate": {
+   "fs": 0.07757092986163269,
+   "true": 0.08176490422639283,
+   "auroc_raw": 0.46722172217221725
+  }
+ },
+ "domain_counts": {
+  "chrome": {
+   "fs": 11,
+   "true": 37
+  },
+  "gimp": {
+   "fs": 0,
+   "true": 12
+  },
+  "libreoffice_calc": {
+   "fs": 14,
+   "true": 36
+  },
+  "libreoffice_impress": {
+   "fs": 14,
+   "true": 34
+  },
+  "libreoffice_writer": {
+   "fs": 1,
+   "true": 20
+  },
+  "multi_apps": {
+   "fs": 22,
+   "true": 39
+  },
+  "os": {
+   "fs": 1,
+   "true": 12
+  },
+  "thunderbird": {
+   "fs": 0,
+   "true": 5
+  },
+  "vlc": {
+   "fs": 3,
+   "true": 2
+  },
+  "vs_code": {
+   "fs": 0,
+   "true": 5
+  }
+ },
+ "B_sampling_consistency": {
+  "source": "astra-power runs/A/generations.jsonl (RESULT.json absent; arm A COMPLETE 220/220 per RESULT_ABC_PRELIMINARY.json)",
+  "n_contexts_fs": 19,
+  "n_contexts_true": 20,
+  "n_samples_per_context": [
+   4
+  ],
+  "n_distinct_tasks": 39,
+  "mean_answer_rate_fs": 0.7236842105263158,
+  "mean_answer_rate_true": 0.9375,
+  "rate_hist_fs": {
+   "0": 3,
+   "0.25": 1,
+   "0.5": 2,
+   "0.75": 2,
+   "1": 11
+  },
+  "rate_hist_true": {
+   "0": 1,
+   "0.25": 0,
+   "0.5": 0,
+   "0.75": 1,
+   "1": 18
+  },
+  "auroc_1_minus_rate": 0.6618421052631579,
+  "ci95_task_boot": [
+   0.529405637254902,
+   0.7986906502367028
+  ],
+  "flag_if_rate_lt_1": {
+   "tpr_fs": 0.42105263157894735,
+   "fpr_true": 0.1
+  },
+  "per_context": [
+   {
+    "context_id": "power_000",
+    "task": "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",
+    "label": "fs+",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_001",
+    "task": "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487",
+    "label": "fs+",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_002",
+    "task": "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f",
+    "label": "fs+",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_003",
+    "task": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+    "label": "fs+",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_004",
+    "task": "chrome/fc6d8143-9452-4171-9459-7f515143419a",
+    "label": "fs+",
+    "answer_rate": 0.0
+   },
+   {
+    "context_id": "power_005",
+    "task": "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0",
+    "label": "fs+",
+    "answer_rate": 0.75
+   },
+   {
+    "context_id": "power_006",
+    "task": "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197",
+    "label": "fs+",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_007",
+    "task": "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6",
+    "label": "fs+",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_008",
+    "task": "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f",
+    "label": "fs+",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_009",
+    "task": "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68",
+    "label": "fs+",
+    "answer_rate": 0.0
+   },
+   {
+    "context_id": "power_010",
+    "task": "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38",
+    "label": "fs+",
+    "answer_rate": 0.5
+   },
+   {
+    "context_id": "power_011",
+    "task": "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850",
+    "label": "fs+",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_012",
+    "task": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+    "label": "fs+",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_013",
+    "task": "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8",
+    "label": "fs+",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_014",
+    "task": "multi_apps/74d5859f-ed66-4d3e-aa0e-93d7a592ce41",
+    "label": "fs+",
+    "answer_rate": 0.25
+   },
+   {
+    "context_id": "power_015",
+    "task": "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805",
+    "label": "fs+",
+    "answer_rate": 0.5
+   },
+   {
+    "context_id": "power_016",
+    "task": "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762",
+    "label": "fs+",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_017",
+    "task": "multi_apps/5df7b33a-9f77-4101-823e-02f863e1c1ae",
+    "label": "fs+",
+    "answer_rate": 0.75
+   },
+   {
+    "context_id": "power_018",
+    "task": "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6",
+    "label": "fs+",
+    "answer_rate": 0.0
+   },
+   {
+    "context_id": "power_019",
+    "task": "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_020",
+    "task": "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_021",
+    "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_022",
+    "task": "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_023",
+    "task": "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_024",
+    "task": "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_025",
+    "task": "os/13584542-872b-42d8-b299-866967b5c3ef",
+    "label": "fs-",
+    "answer_rate": 0.0
+   },
+   {
+    "context_id": "power_026",
+    "task": "chrome/3299584d-8f11-4457-bf4c-ce98f7600250",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_027",
+    "task": "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_028",
+    "task": "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_029",
+    "task": "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_030",
+    "task": "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_031",
+    "task": "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_032",
+    "task": "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_033",
+    "task": "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_034",
+    "task": "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568",
+    "label": "fs-",
+    "answer_rate": 0.75
+   },
+   {
+    "context_id": "power_035",
+    "task": "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_036",
+    "task": "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_037",
+    "task": "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f",
+    "label": "fs-",
+    "answer_rate": 1.0
+   },
+   {
+    "context_id": "power_038",
+    "task": "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c",
+    "label": "fs-",
+    "answer_rate": 1.0
+   }
+  ],
+  "tasks_also_in_text_set": 39
+ }
+}

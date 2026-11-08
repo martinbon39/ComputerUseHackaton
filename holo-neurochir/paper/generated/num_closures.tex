@@ -30,6 +30,22 @@
 \newcommand{\pwFsp}{19} % source: data/pod_astra/power/BUILD_AUDIT.json counts.fs+ (strictly feasible cohort, astra-power)
 \newcommand{\pwFsm}{20} % source: data/pod_astra/power/BUILD_AUDIT.json counts.fs- (strictly feasible cohort, astra-power)
 \newcommand{\pwHealthy}{16} % source: data/pod_astra/power/BUILD_AUDIT.json counts.healthy (strictly feasible cohort, astra-power)
+\newcommand{\tsNFs}{66} % source: data/local/text_signal/RESULT.json n_fs (feasible false successes)
+\newcommand{\tsNTrue}{202} % source: data/local/text_signal/RESULT.json n_true
+\newcommand{\tsNTasks}{90} % source: data/local/text_signal/RESULT.json n_tasks
+\newcommand{\tsNModels}{7} % source: data/local/text_signal/RESULT.json text and domain models compared
+\newcommand{\tsBestAuc}{0.66} % source: data/local/text_signal/RESULT.json models.hand_final_note_thought.auroc_logo
+\newcommand{\tsBestCi}{0.55--0.76} % source: data/local/text_signal/RESULT.json models.hand_final_note_thought.ci95_task_boot
+\newcommand{\tsStepAuc}{0.72} % source: data/local/text_signal/RESULT.json models.baseline_final_step.auroc_logo
+\newcommand{\tsStepCi}{0.61--0.82} % source: data/local/text_signal/RESULT.json models.baseline_final_step.ci95_task_boot
+\newcommand{\tsMixed}{18} % source: data/local/text_signal/RESULT.json n_mixed_tasks
+\newcommand{\tsMixedMin}{0.46} % source: data/local/text_signal/RESULT.json within_mixed_tasks min over detectors
+\newcommand{\tsMixedMax}{0.54} % source: data/local/text_signal/RESULT.json within_mixed_tasks max over detectors
+\newcommand{\tsPermP}{0.44} % source: data/local/text_signal/RESULT.json permutation.within_task_p
+\newcommand{\tsConsAuc}{0.66} % source: data/local/text_signal/RESULT.json B_sampling_consistency.auroc_1_minus_rate
+\newcommand{\tsConsCi}{0.53--0.80} % source: data/local/text_signal/RESULT.json B_sampling_consistency.ci95_task_boot
+\newcommand{\tsConsRateFs}{0.72} % source: data/local/text_signal/RESULT.json B_sampling_consistency.mean_answer_rate_fs
+\newcommand{\tsConsRateTrue}{0.94} % source: data/local/text_signal/RESULT.json B_sampling_consistency.mean_answer_rate_true
 \newcommand{\rmFspInfeasible}{5} % source: data/local/osworld_tasks/<id>.json evaluator.func == infeasible over regmean/manifest.json fs+ tasks; agrees with data/pod_astra/power/BUILD_AUDIT.json shortfall
 \newcommand{\rmPreAuc}{0.704} % source: data/pod_astra/regmean/overlap_summary.json prefill.auroc_ridge_median (over writers)
 \newcommand{\rmPreAngle}{67} % source: data/pod_astra/regmean/overlap_summary.json prefill.median_principal_angle (degrees)

@@ -74,6 +74,28 @@ ba = load("pod_astra/power/BUILD_AUDIT.json")
 assert ba["all_feasible"] is True
 for k, tag in [("fs+", "Fsp"), ("fs-", "Fsm"), ("healthy", "Healthy")]:
     m.add("pw" + tag, ba["counts"][k], f"data/pod_astra/power/BUILD_AUDIT.json counts.{k} (strictly feasible cohort, astra-power)")
+ts = load("local/text_signal/RESULT.json")
+TS = "data/local/text_signal/RESULT.json"
+best = ts["best_text_model"]
+assert best == ts["permutation"]["model"]
+m.add("tsNFs", ts["n_fs"], TS + " n_fs (feasible false successes)")
+m.add("tsNTrue", ts["n_true"], TS + " n_true")
+m.add("tsNTasks", ts["n_tasks"], TS + " n_tasks")
+m.add("tsNModels", sum(not k.startswith("baseline") for k in ts["models"]), TS + " text and domain models compared")
+m.add("tsBestAuc", f"{ts['models'][best]['auroc_logo']:.2f}", TS + f" models.{best}.auroc_logo")
+m.add("tsBestCi", "--".join(f"{x:.2f}" for x in ts["models"][best]["ci95_task_boot"]), TS + f" models.{best}.ci95_task_boot")
+m.add("tsStepAuc", f"{ts['models']['baseline_final_step']['auroc_logo']:.2f}", TS + " models.baseline_final_step.auroc_logo")
+m.add("tsStepCi", "--".join(f"{x:.2f}" for x in ts["models"]["baseline_final_step"]["ci95_task_boot"]), TS + " models.baseline_final_step.ci95_task_boot")
+m.add("tsMixed", ts["n_mixed_tasks"], TS + " n_mixed_tasks")
+wm = [v for k, v in ts["within_mixed_tasks"].items() if k not in ("n_episodes", "n_fs")]
+m.add("tsMixedMin", f"{min(wm):.2f}", TS + " within_mixed_tasks min over detectors")
+m.add("tsMixedMax", f"{max(wm):.2f}", TS + " within_mixed_tasks max over detectors")
+m.add("tsPermP", f"{ts['permutation']['within_task_p']:.2f}", TS + " permutation.within_task_p")
+bc = ts["B_sampling_consistency"]
+m.add("tsConsAuc", f"{bc['auroc_1_minus_rate']:.2f}", TS + " B_sampling_consistency.auroc_1_minus_rate")
+m.add("tsConsCi", "--".join(f"{x:.2f}" for x in bc["ci95_task_boot"]), TS + " B_sampling_consistency.ci95_task_boot")
+m.add("tsConsRateFs", f"{bc['mean_answer_rate_fs']:.2f}", TS + " B_sampling_consistency.mean_answer_rate_fs")
+m.add("tsConsRateTrue", f"{bc['mean_answer_rate_true']:.2f}", TS + " B_sampling_consistency.mean_answer_rate_true")
 m.add("rmFspInfeasible", len(rm_inf), "data/local/osworld_tasks/<id>.json evaluator.func == infeasible over regmean/manifest.json fs+ tasks; agrees with data/pod_astra/power/BUILD_AUDIT.json shortfall")
 for pos, P in [("prefill", "Pre"), ("endthink_before_note", "End")]:
     g = og[pos]
