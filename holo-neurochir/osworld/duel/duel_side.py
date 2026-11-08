@@ -1,0 +1,165 @@
+"""One side of a live duel: one OSWorld VM, one model, the exact run_holo harness (v2 prompt, T=0.8, top_p 0.9,
+image budget 3, 60 s settle, answer -> DONE/FAIL, 20 s settle, official evaluator).
+Everything the page shows is appended to <out>/events.jsonl (one JSON object per line, field t = unix time):
+  phase    {phase: booting|settling|thinking|acting|evaluating|done|stopped|error, ...}
+  frame    {file}             live VM screenshot (every --live_every s, JPEG 960x540, from the VM's own HTTP server)
+  step     {i, note, thought, action, tool, file}   one agent step (file = the observation the model saw)
+  verdict  {score, claimed_done, answer, declined, steps}
+Stop: create <out>/STOP (the episode ends at the next step boundary, no evaluation), or SIGTERM (immediate). The VM
+is closed in every case. Run through ~/osw/osh (docker + kvm), from the OSWorld root (duel_server.py does it).
+Usage: python duel_side.py --task domain/example_id --server URL=NAME[=ENVVAR] --out DIR [--max_steps 50]
+"""
+import argparse, json, logging, os, signal, sys, threading, time
+from io import BytesIO
+from pathlib import Path
+
+HOLO_REPRO = os.path.expanduser("~/osw/rtg/Env/OSWorld/holo_repro")
+sys.path.insert(0, HOLO_REPRO); sys.path.insert(0, os.path.dirname(HOLO_REPRO))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from PIL import Image  # noqa: E402
+import run_holo as RH  # noqa: E402
+from holo_agent import SYSTEM_PROMPTS, HoloComputerAgent  # noqa: E402
+from osworld_computer_env import OSWorldComputerEnv  # noqa: E402
+from probe_answer_rate import client_for  # noqa: E402
+
+log = logging.getLogger("duel")
+
+
+class Events:
+    def __init__(self, out):
+        self.out, self.lock, self.n_frames = Path(out), threading.Lock(), 0
+        (self.out / "frames").mkdir(parents=True, exist_ok=True)
+
+    def emit(self, kind, **kw):
+        with self.lock, open(self.out / "events.jsonl", "a") as f:
+            f.write(json.dumps({"t": round(time.time(), 3), "kind": kind, **kw}, ensure_ascii=False, default=str) + "\n")
+
+    def save(self, image, prefix):
+        with self.lock:
+            self.n_frames += 1
+            name = f"frames/{prefix}_{self.n_frames:05d}.jpg"
+        image.convert("RGB").resize((960, 540)).save(self.out / name, quality=80)
+        return name
+
+
+class StopFile(Exception):
+    pass
+
+
+class DuelEnv(OSWorldComputerEnv):
+    stop_path = None
+    def is_done(self):
+        return super().is_done() or (self.stop_path is not None and self.stop_path.exists())
+
+
+class DuelAgent(HoloComputerAgent):
+    events = None
+    def _call_model(self, messages):
+        self.events.emit("phase", phase="thinking")
+        out = super()._call_model(messages)
+        self.events.emit("phase", phase="acting")
+        return out
+
+
+def serialize_screenshots(env):
+    """The VM's HTTP server returns broken PNGs to concurrent /screenshot calls (seen: both sides of the first duel
+    crashed), so the live thread and the agent take turns."""
+    lock, inner = threading.Lock(), env.controller.get_screenshot
+    def get_screenshot(*a, **kw):
+        with lock:
+            return inner(*a, **kw)
+    env.controller.get_screenshot = get_screenshot
+
+
+def live_frames(env, ev, every, stop):
+    while not stop.wait(every):
+        try:
+            raw = env.controller.get_screenshot()
+            if raw:
+                ev.emit("frame", file=ev.save(Image.open(BytesIO(raw)), "live"))
+        except Exception as e:  # noqa: BLE001 - a missed live frame is harmless
+            log.debug("live frame failed: %s", e)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--task", required=True)
+    ap.add_argument("--server", required=True)
+    ap.add_argument("--out", required=True)
+    ap.add_argument("--max_steps", type=int, default=50)
+    ap.add_argument("--live_every", type=float, default=2.0)
+    args = ap.parse_args()
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
+    out = Path(args.out); ev = Events(out)
+    stop_path = out / "STOP"
+    url, model, auth = (args.server.split("=", 2) + [None])[:3]
+    domain, example_id = args.task.split("/")
+    rh = RH.parse_args(["--max_steps", str(args.max_steps)])
+    example = json.loads(open(os.path.join(rh.examples_dir, domain, f"{example_id}.json")).read())
+    ev.emit("phase", phase="booting", pid=os.getpid(), model=model, task=args.task, instruction=example["instruction"])
+
+    def on_term(signum, frame):
+        raise SystemExit(143)
+    signal.signal(signal.SIGTERM, on_term)
+
+    env, live_stop = None, threading.Event()
+    try:
+        env = RH._make_env(rh)
+        env.reset(task_config=example)
+        ev.emit("phase", phase="settling", container=getattr(env.provider.container, "id", None),
+                vnc_port=getattr(env.provider, "vnc_port", None))
+        serialize_screenshots(env)
+        threading.Thread(target=live_frames, args=(env, ev, args.live_every, live_stop), daemon=True).start()
+        time.sleep(rh.sleep_after_reset)
+        if stop_path.exists():
+            raise StopFile()
+        cenv = DuelEnv(env, example["instruction"], pause=rh.pause); cenv.stop_path = stop_path
+
+        def on_step(i, image, step, info, reasoning):
+            tc = step.tool_call
+            try:
+                file = ev.save(image, f"step{i + 1:03d}")
+            except OSError as e:  # an unreadable observation must not end the episode run_holo would continue
+                log.warning("step frame not saved: %s", e); file = None
+            ev.emit("step", i=i + 1, note=step.note, thought=step.thought, action=RH._fmt_action(tc),
+                    tool=tc.tool_name, file=file)
+        DuelAgent.events = ev
+        agent = DuelAgent(client=client_for(url, auth), model=model, env=cenv, max_steps=rh.max_steps,
+                          temperature=rh.temperature, reasoning_effort=rh.reasoning_effort,
+                          image_budget=rh.image_budget, on_step=on_step,
+                          system_prompt_template=SYSTEM_PROMPTS[rh.prompt])
+        summary = agent.run()
+        if stop_path.exists():
+            raise StopFile()
+        answer = summary.get("answer")
+        declined = bool(answer is not None and RH._INFEASIBLE_RE.search(answer))
+        ev.emit("phase", phase="evaluating", answer=answer)
+        if answer is not None:
+            env.step("FAIL" if declined else "DONE", rh.pause)
+        time.sleep(20)
+        score = float(env.evaluate())
+        live_stop.set()
+        try:
+            ev.emit("frame", file=ev.save(Image.open(BytesIO(env.controller.get_screenshot())), "final"))
+        except Exception:  # noqa: BLE001
+            pass
+        ev.emit("verdict", score=score, claimed_done=answer is not None and not declined, answer=answer,
+                declined=declined, steps=summary.get("steps"), finished_by_agent=summary.get("finished_by_agent"))
+        ev.emit("phase", phase="done")
+    except (StopFile, SystemExit, KeyboardInterrupt):
+        ev.emit("phase", phase="stopped")
+    except Exception as e:  # noqa: BLE001 - the page must show why the side ended
+        log.exception("duel side failed"); ev.emit("phase", phase="error", error=repr(e)[:400])
+    finally:
+        live_stop.set()
+        signal.signal(signal.SIGTERM, signal.SIG_IGN)
+        if env is not None:
+            try:
+                env.close()
+                ev.emit("phase", phase="vm_closed")
+            except Exception as e:  # noqa: BLE001
+                ev.emit("phase", phase="vm_close_failed", error=repr(e)[:200])
+
+
+if __name__ == "__main__":
+    main()

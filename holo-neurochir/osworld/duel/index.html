@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Duel OSWorld en direct</title>
+<style>
+:root {
+  --bg: #0b0d12; --panel: #141821; --panel2: #1b2030; --line: #2a3142; --text: #e8ebf2; --muted: #9aa3b5;
+  --orig: #f2a541; --mod: #4cc3ff; --ok: #3ddc84; --bad: #ff5d5d; --warn: #ffcc4d;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+header { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; padding: 12px 18px; border-bottom: 1px solid var(--line); background: var(--panel); }
+header h1 { font-size: 19px; margin: 0; letter-spacing: .2px; }
+header h1 span { color: var(--muted); font-weight: 500; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-left: auto; }
+select, button, input { font: inherit; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; }
+button { cursor: pointer; font-weight: 600; }
+button:disabled { opacity: .45; cursor: default; }
+button.go { background: #1f6f43; border-color: #2c9a5d; }
+button.stop { background: #8f1d1d; border-color: #d33; color: #fff; letter-spacing: .5px; }
+button.stop.big { font-size: 18px; padding: 10px 22px; }
+#stopAll { font-size: 16px; padding: 9px 18px; }
+.task { padding: 10px 18px; border-bottom: 1px solid var(--line); display: flex; gap: 14px; flex-wrap: wrap; align-items: baseline; }
+.task .id { color: var(--muted); font-family: ui-monospace, monospace; font-size: 13px; }
+.task .instr { font-size: 17px; flex: 1 1 500px; }
+.note { padding: 7px 18px; background: #2a2410; color: var(--warn); font-size: 13.5px; border-bottom: 1px solid var(--line); }
+.badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12.5px; font-weight: 700; letter-spacing: .4px; }
+.badge.live { background: var(--bad); color: #fff; animation: pulse 1.6s infinite; }
+.badge.replay { background: #5b4bd6; color: #fff; }
+@keyframes pulse { 50% { opacity: .55; } }
+main { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 14px 18px; }
+@media (max-width: 1100px) { main { grid-template-columns: 1fr; } }
+.side { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+.side .top { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.side.left .top { border-top: 4px solid var(--orig); }
+.side.right .top { border-top: 4px solid var(--mod); }
+.side .name { font-weight: 700; font-size: 16px; }
+.side.left .name { color: var(--orig); } .side.right .name { color: var(--mod); }
+.side .model { color: var(--muted); font-size: 12px; font-family: ui-monospace, monospace; }
+.side .stat { margin-left: auto; margin-right: 6px; text-align: right; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.side .stat b { color: var(--text); font-size: 15px; }
+.screen { position: relative; background: #000; aspect-ratio: 16 / 9; }
+.screen img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.screen .ph { position: absolute; left: 10px; top: 10px; padding: 4px 10px; border-radius: 6px; background: rgba(0,0,0,.72); font-size: 13.5px; font-weight: 600; }
+.screen .empty { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); }
+.verdict { display: none; position: absolute; inset: auto 0 0 0; padding: 12px 14px; background: rgba(8,10,14,.9); border-top: 2px solid var(--line); }
+.verdict.show { display: block; }
+.verdict .claim { font-size: 14px; color: var(--muted); }
+.verdict .official { font-size: 24px; font-weight: 800; margin-top: 2px; }
+.verdict .official.ok { color: var(--ok); } .verdict .official.bad { color: var(--bad); }
+.verdict .fs { display: inline-block; margin-left: 10px; font-size: 14px; padding: 2px 8px; border-radius: 6px; background: var(--bad); color: #fff; vertical-align: middle; }
+.cur { padding: 10px 12px; border-bottom: 1px solid var(--line); min-height: 120px; }
+.cur .lbl { color: var(--muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: .6px; }
+.cur .action { font-family: ui-monospace, monospace; font-size: 13.5px; background: var(--panel2); border-radius: 6px; padding: 5px 8px; margin: 3px 0 7px; word-break: break-word; }
+.cur .txt { font-size: 14px; margin: 2px 0 7px; }
+.cur .thought { color: #c7cede; font-size: 13.5px; max-height: 5.8em; overflow: auto; }
+.hist { max-height: 210px; overflow: auto; padding: 6px 0; }
+.hist div { display: grid; grid-template-columns: 34px 1fr; gap: 6px; padding: 3px 12px; font-size: 12.5px; font-family: ui-monospace, monospace; color: #c7cede; }
+.hist div b { color: var(--muted); font-weight: 600; text-align: right; }
+.hist div.term { color: var(--warn); }
+.bottom { padding: 10px 12px; border-top: 1px solid var(--line); display: flex; justify-content: center; margin-top: auto; }
+section.list { padding: 0 18px 22px; }
+section.list h2 { font-size: 15px; color: var(--muted); font-weight: 600; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+td, th { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: left; }
+th { color: var(--muted); font-weight: 600; }
+a { color: var(--mod); }
+.replay .side .stop { display: none; }
+.rp { display: none; gap: 8px; align-items: center; }
+.err { color: var(--bad); font-size: 13.5px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Duel OSWorld <span>· même tâche, deux VMs, en même temps</span></h1>
+  <span id="modeBadge"></span>
+  <div class="controls" id="liveControls">
+    <select id="task" aria-label="Tâche"></select>
+    <select id="preset" aria-label="Serveurs"></select>
+    <label style="color:var(--muted);font-size:13px">pas max <input id="maxSteps" type="number" min="5" max="100" value="50" style="width:64px"></label>
+    <button class="go" id="start">▶ Lancer le duel</button>
+    <button class="stop" id="stopAll" disabled>■ STOP GLOBAL</button>
+  </div>
+  <div class="controls rp" id="replayControls">
+    <button id="rpPlay">⏸ Pause</button>
+    <select id="rpSpeed" aria-label="Vitesse"><option value="1">vitesse réelle</option><option value="2">×2</option><option value="4">×4</option><option value="8">×8</option></select>
+    <button id="rpRestart">⟲ Recommencer</button>
+    <a href="/">← direct</a>
+  </div>
+</header>
+<div class="task"><span class="id" id="taskId">—</span><span class="instr" id="instr">Choisissez une tâche puis lancez le duel.</span><span class="err" id="err"></span></div>
+<div class="note">Le résultat varie d'un run à l'autre : les deux modèles échantillonnent (température 0,8). Ce duel est un exemple, pas une mesure ; les taux de réussite sont mesurés sur des dizaines de tâches. Verdict = évaluateur officiel d'OSWorld.</div>
+<main>
+  <div class="side left" id="left"></div>
+  <div class="side right" id="right"></div>
+</main>
+<section class="list"><h2>Duels enregistrés</h2><table id="duels"><thead><tr><th>date (UTC)</th><th>tâche</th><th>original</th><th>modifié</th><th></th></tr></thead><tbody></tbody></table></section>
+<script>
+const $ = s => document.querySelector(s);
+const params = new URLSearchParams(location.search);
+const REPLAY = params.get('replay');
+const PHASES = { booting: 'Démarrage de la VM…', settling: 'Ouverture de la tâche…', thinking: 'Le modèle réfléchit…',
+  acting: 'Action en cours', evaluating: 'Évaluation officielle…', done: 'Terminé', stopped: "Arrêté par l'utilisateur",
+  stop_requested: 'Arrêt demandé…', error: 'Erreur', vm_closed: null, vm_close_failed: 'VM : fermeture échouée' };
+let config = null, duelId = params.get('duel'), state = null, offsets = { left: 0, right: 0 }, meta = null, running = false;
+
+function sideSkeleton(side, label, model) {
+  $('#' + side).innerHTML = `
+    <div class="top"><div><div class="name">${label}</div><div class="model">${model || ''}</div></div>
+      <div class="stat">pas <b class="steps">0</b> · <b class="clock">0:00</b></div>
+      <button class="stop big" disabled>■ STOP</button></div>
+    <div class="screen"><div class="empty">en attente</div><img alt="" hidden><div class="ph" hidden></div>
+      <div class="verdict"><div class="claim"></div><div class="official"></div></div></div>
+    <div class="cur"><div class="lbl">action</div><div class="action">—</div><div class="lbl">note</div><div class="txt note2">—</div>
+      <div class="lbl">raisonnement</div><div class="thought">—</div></div>
+    <div class="hist"></div>`;
+  $('#' + side + ' .stop').onclick = () => stop(side);
+}
+function freshState() { return { left: { steps: 0, start: null, end: null, phase: null }, right: { steps: 0, start: null, end: null, phase: null } }; }
+function fmtClock(s) { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
+function esc(s) { return String(s ?? '').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c])); }
+
+function apply(side, e) {
+  const S = state[side], el = $('#' + side);
+  if (e.kind === 'phase') {
+    if (e.phase === 'booting') S.start = e.t;
+    if (['done', 'stopped', 'error'].includes(e.phase)) S.end = e.t;
+    if (PHASES[e.phase] !== null) { S.phase = e.phase; const ph = el.querySelector('.ph'); ph.hidden = false;
+      ph.textContent = (PHASES[e.phase] || e.phase) + (e.error ? ' — ' + e.error : ''); }
+    if (e.phase === 'vm_closed') el.querySelector('.ph').textContent += ' · VM fermée';
+  } else if ((e.kind === 'frame' || e.kind === 'step') && e.file) {
+    const img = el.querySelector('img'); img.hidden = false; el.querySelector('.empty').hidden = true;
+    img.src = `/duels/${meta.id}/${side}/${e.file}`;
+  }
+  if (e.kind === 'step') {
+    S.steps = e.i; el.querySelector('.steps').textContent = e.i;
+    el.querySelector('.action').textContent = e.action; el.querySelector('.note2').textContent = e.note || '—';
+    el.querySelector('.thought').textContent = e.thought || '—';
+    const h = el.querySelector('.hist'), row = document.createElement('div');
+    if (e.tool === 'answer') row.className = 'term';
+    row.innerHTML = `<b>${e.i}</b><span>${esc(e.action)}</span>`; h.appendChild(row); h.scrollTop = h.scrollHeight;
+  }
+  if (e.kind === 'verdict') {
+    const v = el.querySelector('.verdict'); v.classList.add('show');
+    const claim = e.declined ? "L'agent déclare la tâche impossible" : e.claimed_done ? "L'agent annonce : « tâche terminée »"
+      : `L'agent n'a pas conclu (${e.steps} pas)`;
+    const ok = e.score >= 1;
+    v.querySelector('.claim').textContent = claim;
+    v.querySelector('.official').className = 'official ' + (ok ? 'ok' : 'bad');
+    v.querySelector('.official').innerHTML = (ok ? '✓ RÉUSSI' : '✗ ÉCHEC') + ' <span style="font-size:14px;color:var(--muted);font-weight:600">évaluateur officiel</span>'
+      + (!ok && e.claimed_done ? '<span class="fs">FAUX SUCCÈS</span>' : '');
+  }
+}
+function tickClocks(now) {
+  for (const side of ['left', 'right']) {
+    const S = state[side]; if (!S.start) continue;
+    $('#' + side + ' .clock').textContent = fmtClock((S.end || now) - S.start);
+  }
+}
+function setupDuel(m) {
+  meta = m; state = freshState(); offsets = { left: 0, right: 0 };
+  $('#taskId').textContent = m.task; $('#instr').textContent = m.instruction;
+  for (const side of ['left', 'right']) sideSkeleton(side, m.sides[side].label, m.sides[side].model);
+}
+
+// ---- live ----
+async function poll() {
+  if (!duelId || (!running && meta)) {  // follow a duel started from elsewhere (another tab, the CLI)
+    const c = await (await fetch('/api/config')).json();
+    if (c.running.length && c.running[0] !== duelId) { duelId = c.running[0]; meta = null; }
+  }
+  if (!duelId) return;
+  const r = await fetch(`/api/events?duel=${duelId}&left=${offsets.left}&right=${offsets.right}`);
+  if (r.status === 404) { duelId = null; meta = null; return; }
+  if (!r.ok) return;
+  const d = await r.json();
+  if (!meta || meta.id !== d.meta.id) setupDuel(d.meta);
+  for (const side of ['left', 'right']) { d[side].forEach(e => apply(side, e)); offsets[side] = d[side + '_n']; }
+  running = d.running;
+  const ended = s => ['done', 'stopped', 'error'].includes(state[s].phase);
+  for (const side of ['left', 'right']) $('#' + side + ' .stop').disabled = !running || ended(side);
+  $('#stopAll').disabled = !running; $('#start').disabled = running;
+}
+async function stop(side) {
+  if (!duelId) return;
+  await fetch('/api/stop', { method: 'POST', body: JSON.stringify({ duel: duelId, side }) });
+  poll();
+}
+async function start() {
+  $('#err').textContent = ''; $('#start').disabled = true;
+  const r = await fetch('/api/start', { method: 'POST', body: JSON.stringify({ task: $('#task').value, preset: $('#preset').value, max_steps: +$('#maxSteps').value }) });
+  const d = await r.json();
+  if (!r.ok) { $('#err').textContent = d.error; $('#start').disabled = false; return; }
+  duelId = d.id; meta = null; history.replaceState(null, '', '?duel=' + duelId); poll(); listDuels();
+}
+async function listDuels() {
+  const r = await fetch('/api/duels'); const rows = await r.json();
+  const cell = s => s.verdict ? (s.verdict.score >= 1 ? '✓ réussi' : (s.verdict.claimed_done ? '✗ faux succès' : '✗ échec')) + ` (${s.steps} pas)` : (s.last_phase || '—');
+  $('#duels tbody').innerHTML = rows.map(d => `<tr><td>${new Date(d.t0 * 1000).toISOString().slice(0, 16).replace('T', ' ')}</td>
+    <td>${esc(d.task)}${d.preset ? ' · ' + d.preset : ''}</td><td>${cell(d.sides.left)}</td><td>${cell(d.sides.right)}</td>
+    <td>${d.running ? '<a href="?duel=' + d.id + '">en direct</a>' : '<a href="?replay=' + d.id + '">rejouer</a>'}</td></tr>`).join('');
+}
+
+// ---- replay ----
+let rp = { events: [], i: 0, clock: 0, last: null, speed: 1, playing: true };
+async function loadReplay() {
+  const r = await fetch(`/api/events?duel=${REPLAY}&left=0&right=0`); const d = await r.json();
+  if (!r.ok) { $('#err').textContent = d.error; return; }
+  rp.meta = d.meta;
+  rp.events = [...d.left.map(e => ['left', e]), ...d.right.map(e => ['right', e])].sort((a, b) => a[1].t - b[1].t);
+  restartReplay();
+  requestAnimationFrame(stepReplay);
+}
+function restartReplay() { setupDuel(rp.meta); rp.i = 0; rp.clock = 0; rp.last = null;
+  $('#modeBadge').innerHTML = `<span class="badge replay">REPLAY · enregistré le ${new Date(rp.meta.t0 * 1000).toISOString().slice(0, 16).replace('T', ' ')} UTC</span>`; }
+function stepReplay(ts) {
+  if (rp.last !== null && rp.playing) rp.clock += (ts - rp.last) / 1000 * rp.speed;
+  rp.last = ts;
+  const now = rp.meta.t0 + rp.clock;
+  while (rp.i < rp.events.length && rp.events[rp.i][1].t <= now) { const [s, e] = rp.events[rp.i++]; apply(s, e); }
+  tickClocks(now);
+  requestAnimationFrame(stepReplay);
+}
+
+async function init() {
+  if (REPLAY) {
+    document.body.classList.add('replay'); $('#liveControls').style.display = 'none'; $('#replayControls').style.display = 'flex';
+    $('#rpPlay').onclick = () => { rp.playing = !rp.playing; $('#rpPlay').textContent = rp.playing ? '⏸ Pause' : '▶ Lecture'; };
+    $('#rpSpeed').onchange = e => rp.speed = +e.target.value;
+    $('#rpRestart').onclick = restartReplay;
+    sideSkeleton('left', '', ''); sideSkeleton('right', '', '');
+    await loadReplay(); listDuels(); return;
+  }
+  config = await (await fetch('/api/config')).json();
+  $('#task').innerHTML = config.tasks.map(t => `<option value="${t.id}">${t.id.split('/')[0]} · ${esc(t.instruction.slice(0, 60))}…</option>`).join('');
+  $('#preset').innerHTML = Object.entries(config.presets).map(([k, p]) => `<option value="${k}" ${k === config.default_preset ? 'selected' : ''}>${k === 'modal' ? 'Modal (H100)' : 'pod (H200)'} : ${p.left} vs ${p.right}</option>`).join('');
+  sideSkeleton('left', config.labels.left, ''); sideSkeleton('right', config.labels.right, '');
+  $('#start').onclick = start; $('#stopAll').onclick = () => stop('all');
+  if (!duelId && config.running.length) duelId = config.running[0];
+  $('#modeBadge').innerHTML = '<span class="badge live">EN DIRECT</span>';
+  setInterval(() => { poll(); }, 1000);
+  setInterval(() => { if (state) tickClocks(Date.now() / 1000); }, 500);
+  setInterval(listDuels, 10000);
+  poll(); listDuels();
+}
+init();
+</script>
+</body>
+</html>
