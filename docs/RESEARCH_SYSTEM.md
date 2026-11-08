@@ -313,7 +313,7 @@ All times are copied from the files; `~` means the source itself is approximate.
 | 11-07 ~19:30 | Regression to the mean measured with no patch (42 % of false successes repeat), so naive re-tests are unsafe; reserve frozen at 19:15 | `holo-neurochir/JOURNAL.md:164-167` |
 | 11-07 22:45 | astra-mit1 hypothesis: a false "done" is a partly satisfied task ("satisfaction partielle des exigences") | `holo-neurochir/JOURNAL.md:206` |
 | 11-07 23:55 | Recap of 21 weight-edit leads, nearly all failed; e.g. direction edits at L16, L24, 16/24/28 and L31, and neuron ablation, leave false successes answering (8/8, 8/8, 4/4) | `holo-neurochir/JOURNAL.md:211-236` |
-| 11-08 00:09-02:11 | astra-mit2, astra-short, astra-ratio, astra-mit1 close negative | `LOG.md:128`, `:199`, `:226`, `:247` |
+| 11-08 00:43-02:11 | astra-mit2, astra-short, astra-ratio, astra-mit1 close negative | `LOG.md:153`, `:199`, `:226`, `:247` |
 | 11-08 ~02:10-03:35 | Fresh-eyes rounds 1-2 and two red teams; server confound found | `holo-neurochir/report/IDEATION_ROUNDS.md`, `REDTEAM2_0335.md` |
 | 11-08 03:36 | Decision rule fixed before reading results | `holo-neurochir/JOURNAL.md:303` |
 | 11-08 05:12 | Primary verdict: merge vs Modal original, 165 tasks, no detectable gain | `holo-neurochir/JOURNAL.md:312` |
