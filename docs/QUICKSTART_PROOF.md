@@ -1,6 +1,6 @@
 # Quickstart proof
 
-Every command of the README quickstart, run on 2026-11-08 at 10:18 UTC in a **fresh clone** of `main` at commit `a016560`,
+Every command of the README quickstart, run on 2026-11-08 at 11:00 UTC in a **fresh clone** of `main` at commit `5eaf4e6`,
 with a **fresh virtual environment** (nothing installed), Python 3.14.4, Linux x86-64, CPU only. Every command exited 0, and
 `git status` in the clone was still clean afterwards. The same quickstart runs in GitHub Actions with the runner's
 preinstalled Python 3, whenever the jury kit, the Guard code or its data change:
@@ -86,6 +86,22 @@ OK  Claude Sonnet (Feci Guard)  45/66         21/202             [+41, +74]  pub
 (this recount uses its own seed, the published CIs come from judge_bench/analyze.py).
 ```
 
+## (b3) `python3 jury_kit/verify_online_guard.py`, exit 0
+```
+Online Feci Guard test, OSWorld test split, paired by task (bootstrap 10,000, seed 0)
+  tasks: 120, excluded: 0
+  false 'done' rate : original 22.5 % -> Guard 10.8 %   diff -11.7 pts CI95 [-19.2, -4.2]
+  OSWorld score     : original 58.6 -> Guard 60.2   diff +1.6 pts CI95 [-4.4, +7.7]
+  repaired B=8  true successes lost C=4  net=+4  false done avoided E=19
+  criterion 1 (false done down): True   criterion 2 (score gain): False -> NO SCORE GAIN CLAIMED   rule 5 useful: True
+Matches ONLINE_GUARD_RESULT.json exactly.
+```
+
+## Links: `python3 jury_kit/check_links.py`, exit 0
+```
+109 relative links checked in 6 documents, 0 broken
+```
+
 ## All of it: `bash jury_kit/quickstart.sh`, exit 0
 ```
 == (a) OSWorld paired comparisons, recomputed from per-task scores ==
@@ -138,9 +154,18 @@ OK  Claude Sonnet (Feci Guard)  45/66         21/202             [+41, +74]  pub
 268 episodes from 90 tasks; the bootstrap resamples tasks. Counts must match exactly; the CI bounds within 2 pts
 (this recount uses its own seed, the published CIs come from judge_bench/analyze.py).
 
+== (b3) online Feci Guard test, 120 OSWorld tasks (README row 10) ==
+Online Feci Guard test, OSWorld test split, paired by task (bootstrap 10,000, seed 0)
+  tasks: 120, excluded: 0
+  false 'done' rate : original 22.5 % -> Guard 10.8 %   diff -11.7 pts CI95 [-19.2, -4.2]
+  OSWorld score     : original 58.6 -> Guard 60.2   diff +1.6 pts CI95 [-4.4, +7.7]
+  repaired B=8  true successes lost C=4  net=+4  false done avoided E=19
+  criterion 1 (false done down): True   criterion 2 (score gain): False -> NO SCORE GAIN CLAIMED   rule 5 useful: True
+Matches ONLINE_GUARD_RESULT.json exactly.
+
 == (c) demo replay pages ==
-holo-neurochir/demo_live/repair_calc.html: 1.0 MB, self-contained (8 embedded screenshots, 0 external scripts): Feci Guard refuses a false done, the agent repairs
-holo-neurochir/demo_faux_fini/demo_faux_fini.html: 3.1 MB, self-contained (47 embedded screenshots, 0 external scripts): the original agent's false done, step by step
+holo-neurochir/demo_live/repair_calc.html: 1.0 MB, 8 embedded screenshots, 0 external scripts: Feci Guard refuses a false done, the agent repairs
+holo-neurochir/demo_faux_fini/demo_faux_fini.html: 3.1 MB, 47 embedded screenshots, 0 external scripts: one task, the original's false done next to the merged agent
 
 QUICKSTART OK: (a) and (b) match the published numbers, (c) the two demo pages are ready to open in a browser.
 ```
