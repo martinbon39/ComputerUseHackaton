@@ -1,0 +1,16 @@
+import {chromium} from '/home/orbit/ooper-brand/tools/node_modules/playwright-core/index.mjs';
+import fs from 'fs';
+const b=await chromium.launch({executablePath:process.env.CHROME});
+const ctx=await b.newContext({viewport:{width:1920,height:1080},recordVideo:{dir:'/tmp/wall/v3/vid/',size:{width:1920,height:1080}}});
+const p=await ctx.newPage();const t0=Date.now();const M={};const mark=n=>{M[n]=(Date.now()-t0)/1000;console.log(n,M[n])};
+const sc=async(y,ms)=>{await p.evaluate(([y,ms])=>new Promise(r=>{const s=scrollY,t=performance.now();function f(n){const k=Math.min(1,(n-t)/ms);scrollTo(0,s+(y-s)*(k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2));k<1?requestAnimationFrame(f):r()}requestAnimationFrame(f)}),[y,ms])};
+const top=async id=>p.evaluate(id=>document.getElementById(id).offsetTop-60,id);
+await p.goto('file:///tmp/wall/v3/paper.html');await p.waitForTimeout(800);mark('paper');
+await p.waitForTimeout(4500);
+await sc(await top('pg3'),1200);mark('p3');await p.waitForTimeout(5500);
+await sc(await top('pg12'),1200);mark('p12');await p.waitForTimeout(4000);await sc((await top('pg12'))+450,2500);await p.waitForTimeout(5500);
+await sc(await top('pg14'),1200);mark('p14');await p.waitForTimeout(6000);
+await p.goto('https://github.com/martinbon39/ComputerUseHackaton');await p.waitForTimeout(1500);mark('gh');await p.waitForTimeout(2500);await sc(900,2500);await p.waitForTimeout(1500);
+await p.goto('https://github.com/martinbon39/ComputerUseHackaton/blob/main/holo-neurochir/JOURNAL.md');await p.waitForTimeout(1800);mark('journal');await sc(1400,2500);await p.waitForTimeout(800);
+await p.goto('file:///tmp/wall/v3/term.html');mark('term');await p.waitForTimeout(6500);mark('end');
+await ctx.close();await b.close();fs.writeFileSync('/tmp/wall/v3/marks.json',JSON.stringify(M));
