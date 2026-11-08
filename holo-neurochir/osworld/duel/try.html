@@ -49,7 +49,7 @@ footer a { color: var(--muted); }
   <p>Six real OSWorld episodes. In each one the agent said “done”. Some are not. Ask Feci Guard, then see the official evaluator.</p>
 </header>
 <div class="grid" id="grid"></div>
-<footer>Final screenshots from real episodes (Holo-3.1, Ubuntu VMs). Live check by the frozen Feci Guard verifier (Claude Sonnet), one at a time, 60 per hour. <a href="/">duel page</a></footer>
+<footer><p style="margin:0 0 6px">6 examples picked from our 268-episode benchmark. Over the full benchmark the Guard catches 68 % of false “done” and wrongly rejects 10 % of true ones.</p>Final screenshots from real episodes (Holo-3.1, Ubuntu VMs). Live check by the frozen Feci Guard verifier (Claude Sonnet), one at a time, 60 per hour. <a href="/">duel page</a></footer>
 <div class="zoom" id="zoom" hidden><img alt=""></div>
 <script>
 const $ = s => document.querySelector(s);
