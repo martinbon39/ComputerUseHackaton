@@ -70,6 +70,10 @@ rm_fsp = sorted({r["task_id"] for r in load("pod_astra/regmean/manifest.json")["
 assert len(rm_fsp) == ov["n_fs_positive"]
 rm_inf = [t for t in rm_fsp if load(f"local/osworld_tasks/{t.split('/')[-1]}.json")["evaluator"]["func"] == "infeasible"]
 assert len(rm_inf) == 5 and "five of original 19" in load("pod_astra/power/BUILD_AUDIT.json")["shortfall"]
+ba = load("pod_astra/power/BUILD_AUDIT.json")
+assert ba["all_feasible"] is True
+for k, tag in [("fs+", "Fsp"), ("fs-", "Fsm"), ("healthy", "Healthy")]:
+    m.add("pw" + tag, ba["counts"][k], f"data/pod_astra/power/BUILD_AUDIT.json counts.{k} (strictly feasible cohort, astra-power)")
 m.add("rmFspInfeasible", len(rm_inf), "data/local/osworld_tasks/<id>.json evaluator.func == infeasible over regmean/manifest.json fs+ tasks; agrees with data/pod_astra/power/BUILD_AUDIT.json shortfall")
 for pos, P in [("prefill", "Pre"), ("endthink_before_note", "End")]:
     g = og[pos]

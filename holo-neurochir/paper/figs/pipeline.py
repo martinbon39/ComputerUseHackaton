@@ -21,11 +21,11 @@ stages = [
     ("5  Direction", f"diff-of-means, {adm['fs+']} fs+ vs {adm['fs-']} fs−\nno gain over position", "negative"),
     ("6  Steering", "free generation, k=4,\npre-registered gate", "negative"),
     ("7  Weight edit", "compile into writers\nW ← (I − αuuᵀ)W", "blocked"),
-    ("8  Paired validation", f"{conf['n']} untouched tasks,\nboth arms re-run fresh", "blocked"),
+    ("8  Paired validation", f"{conf['n']} reserve + test tasks, run on\nnon-admitted arms: no gain", "negative"),
 ]
 style = {"done": ("#E6F2EC", C["green"], "-"), "partial": ("#FFF4DC", C["orange"], "-"),
          "negative": ("#FBE5DC", C["red"], "-"), "blocked": ("#F4F4F4", "#9A9A9A", "--")}
-legend = {"done": "done", "negative": "run: negative or no candidate passes the gate",
+legend = {"done": "done", "negative": "run: negative, or no large effect",
           "blocked": "ready, not reached"}
 
 plt = setup_mpl()

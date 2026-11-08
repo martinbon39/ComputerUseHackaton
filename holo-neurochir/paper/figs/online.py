@@ -95,6 +95,13 @@ def compare(arm, base, tag, label, src, exclude=()):
             + f"{delta:+.1f} [{100 * lo:+.1f}, {100 * hi:+.1f}]".replace("-", "$-$") + f" & {win}/{loss} \\\\ % source: {src}")
 
 
+miss = sorted(set(R["res_orig_gh"]) - set(R["res_orig"]))
+assert len(miss) == 1 and not set(R["res_orig"]) - set(R["res_orig_gh"]), miss
+dom = {f.parts[-3] for f in (ROOT / RUNS["res_orig_gh"]).rglob("result.txt") if f.parts[-2] == miss[0]}
+assert len(dom) == 1
+m.add("onNoiseMissingTask", miss[0][:8], S + RUNS["res_orig_gh"] + " task absent from " + RUNS["res_orig"])
+m.add("onNoiseMissingDomain", dom.pop().replace("_", "\\_"), S + RUNS["res_orig_gh"] + " domain directory of that task")
+m.add("onNoiseMissingScore", f"{R['res_orig_gh'][miss[0]]:.0f}", S + RUNS["res_orig_gh"] + " its score")
 NOISE3 = [("res_orig", "orbit/pod"), ("res_orig_gh", "GitHub/pod"), ("res_orig_modal", "GitHub/Modal")]
 pcts = [100 * sum(R[k].values()) / len(R[k]) for k, _ in NOISE3]
 ns = sorted({len(R[k]) for k, _ in NOISE3})
