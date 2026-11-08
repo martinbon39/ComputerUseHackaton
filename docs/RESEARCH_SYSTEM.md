@@ -289,7 +289,7 @@ recorded task and replays the recorded actions up to the false "done", checking 
 recorded one (mean pixel difference). From that state it lets the model continue for at most 15 new steps (`--max_new`,
 default 15), K times per arm, and scores with the official evaluator. The two arms (with / without the Guard) branch from
 the same state "on the same server at the same time" (`holo-neurochir/feci_guard/RESULTS.md:61`). The CI is a bootstrap over episodes (clusters), not branches
-(`holo-neurochir/feci_guard/analyze_repair.py`). Result: 5/18 vs 2/18 branches repaired, +16.7 pt [0, +44], "cannot
+(`holo-neurochir/feci_guard/analyze_repair.py`). Result: 5/18 vs 2/18 branches scored 1 (of which 3 vs 0 are real repairs after a new action; 2 per arm succeed with no new action), +16.7 pt [0, +44], "cannot
 be told apart" from zero (`holo-neurochir/feci_guard/RESULTS.md:13`). The escalation study to Holo4-27B uses the same
 design with a strict-valid criterion: all four branches error-free and replay difference ≤ .05
 (`holo-neurochir/paper/data/local/rescue_bench/PREREG.md`). It is still running (draft PR #1), and nothing is
@@ -321,7 +321,7 @@ All times are copied from the files; `~` means the source itself is approximate.
 | 11-08 07:36-07:53 | Pivot to an external verifier: Feci Guard pre-registered and built; the agent judging itself is at chance | `holo-neurochir/feci_guard/PREREG.md:1`, `LOG.md:522-531` |
 | 11-08 08:00-08:29 | Last weight-edit workers close: moon-combo, moon-rl, moon-vision, moon-leak NO-GO; proof_anchor finds no robust discriminator | `LOG.md:533-567` |
 | 11-08 08:28-08:35 | Judge bench on 268 screens: Guard 45/66 detected, 21/202 wrongly rejected | `holo-neurochir/judge_bench/REPORT.md:27,67` |
-| 11-08 09:24 | Repair measure 5/18 vs 2/18, +16.7 [0, +44]; rescue harness tested end to end on one task | `LOG.md:574` |
+| 11-08 09:24 | Repair measure 5/18 vs 2/18 (3 vs 0 real repairs), +16.7 [0, +44]; rescue harness tested end to end on one task | `LOG.md:574` |
 | 11-08 09:27-09:28 | Online Guard study pre-registered, then amended (benefit/cost rule) before launch | `holo-neurochir/report/PREREG_ONLINE_GUARD.md:1,15` |
 | 11-08 ~09:30 | Pod deleted by Runpod (balance below threshold); the 20 runner jobs stop at the model check with 0 tasks played | `holo-neurochir/report/PREREG_ONLINE_GUARD.md:30`, `holo-neurochir/JOURNAL.md:347` |
 | 11-08 09:40 | Amendment 2: agent and comparator both on Modal; relaunch | `holo-neurochir/report/PREREG_ONLINE_GUARD.md:29-35` |
