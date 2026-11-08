@@ -590,3 +590,31 @@ Timestamp correction for the preceding astra-free entry: the GO message was deli
 - New CPU quickstart, no key: jury_kit/replay_guard.py (frozen feci_guard.check on the 268 real screenshots, recorded verdicts: 45/66, 21/202, +58 [+41, +74]), jury_kit/recount_judges.py (3 judges from raw responses), jury_kit/guard_live.py (level 2, CLI path run, --api not run), jury_kit/quickstart.sh; CI workflow quickstart (green). Proof from fresh clones: docs/QUICKSTART_PROOF.md.
 - Committed per ares: 50 experiment summaries (4c8b1ab), demo_live/repair_calc.html; untracked per ares: devin/README.md, pitch/PITCH.md, committed .pyc.
 - Two fresh-context jury reviews: 6.85/10 then 7.3/10 (finalist yes). Open: online Guard result (report/ONLINE_GUARD_RESULT.md ~11:15), rescue_bench final (PR #1), final paper PDFs before 12:15.
+
+## 2026-11-08 · design-pass · the 4 pitch pages in one editorial style
+- What: rebuilt the pitch (holo-pitch-system, 10 screens), the repair replay (holo-guard-repair = demo_live/repair_calc.html, now English first, French second), the cockpit (style only) and the team dashboard (style only) on one shared sheet, holo-neurochir/pitch_design/style.css. It has a paper ground, EB Garamond, Inter and mono, and one orange accent for the refused requirement. Four isometric Hairline figures: claim, guard, absent, repair.
+- Why: Martin asked for one minimal visual style modelled on skills.wheresryan.sh/anatomy.
+- Verified: every Hairline figure passes look.mjs (frame, read-out, console, no flicker). All pages have no console error or horizontal overflow at 1600×900 and 390×844 (pitch_design/shoot.mjs). quickstart.sh is OK. An independent reviewer checked every number against the sources and the old pages: no number changed. Its claim fixes were applied: softer slide-3 and slide-9 wording, the strict-replay CI and "rejeu conditionnel" on slide 6, the prompt caveat on slide 5, and the small-sample label on slide 4.
+- Result: published under the same names. Interim rescue numbers are read from rescue_bench/REPORT.md at build time (`python3 holo-neurochir/pitch_design/build.py pages/pitch.html out/pitch.html`, then republish). Pre-existing cockpit inconsistencies were left as they are: Holo4 "47 % / 24 %" vs RESULTS "47 % / 31 %" (a different prompt column), and Guard cost "~0,03 $" vs "~0,04 $".
+
+## 2026-11-08 · infra-doc · feat · docs/RESEARCH_SYSTEM.md (how the research was run)
+- What: one English page for the AI judge: agent team (orchestrator, workers, prereg table, red teams, fresh-eyes rounds, verifiers, journal), compute (H200 pod, its ~09:30 loss and Modal failover, 2 Modal accounts, budget guard, recorded spend), OSWorld VMs (VPS Docker+KVM, GitHub KVM runners, pre-run model check, one-port Guard relay key), eval method (splits, paired bootstrap, prior rule, noise, branch replay), timeline, reproduce table. 4 mermaid diagrams.
+- Why: show the system is real, understandable and reproducible; every number cites path:line at 8e50b47.
+- Verified: fresh-context fact-check agent, ~95 claims, 17 problems found, all fixed (wrong lines, 42→22 deploy names, unsupported counterfactuals removed, level numbering aligned with README); level-0 commands re-run exit 0. No secrets/IPs.
+- Result: kept · commit 296b882. README link to be added by repo-ready (asked via ares).
+
+## devin-infra — 2026-11-08 10:35 UTC
+- Intégration API Devin installée et authentifiée (GET /v1/sessions?limit=1, lecture seule, clé apk_ v1). Mission M4 (contrôleur GPU gpu_ctl.py) écrite et testée en dry-run. AUCUNE session lancée (0 ACU), sur consigne de Martin via ares. Commit 3cc2173. Page : argos artifact devin-lab.html.
+
+## 2026-11-08 10:50 UTC — hypnos: English pitch script, 3 min, 3 speakers
+- What: holo-neurochir/pitch/PITCH_EN_3MIN.md + pitch_en_3min.html (published as holo-pitch-en-3min.html): A (problem) → B (weight surgery, negative) → C (Guard, recorded repair demo, close), ~370 words, two handoffs, Q&A, pre-stage update list.
+- Verified: independent fact-check against README, rescue_bench/REPORT.md, RUN-OF-SHOW, feci_guard/RESULTS.md (+ replay_guard.py, verify_results.py exit 0); 3 overstatements fixed (absent signal, Holo4 detection gap, "official evaluator").
+- Open: "11/18 vs 2/18" moves while rescue_bench runs; live duel kept optional (timing unproven in 3 min).
+
+## 2026-11-08 10:46 UTC — rescue-bench completed 48-branch escalation experiment
+
+- What: completed12 registered feasible false-completion recordings ×2 arms ×K2, official OSWorld evaluator; archived48 outcomes in holo-neurochir/rescue_bench/data/ with REPORT.md, RESULT.json and reproducible analysis. New rescue_runner.py imports frozen Guard/harness sources unchanged. Both workers exited0 and owned VMs closed at10:41; ares informed.
+- Why: test whether a frozen Claude Guard refusal followed by Holo4-27B can repair failures against Holo4 continuation without Guard, capped20 new turns; separate actual replay outcomes from predicted reserve/test online gain.
+- Verified: independent raw audit48 unique outcomes/result payloads, identical archived journal bytes and call counts; no recorded branch/model/verifier errors. Five missing required-output getter events retained as official zeros and disclosed. Numerical reviewer independently reproduced primary, strict/all-complete sensitivities,20k episode bootstraps, conditional repair and prediction scenarios; FINAL_REVIEW.md PASSED/CORRECT. verify_analysis.py and repository quickstart exit0. Nine frozen source hashes unchanged.
+- Result: primary9 replay-valid episodes official11/18 versus2/18, after-action9 versus0, paired+50.0pp CI95[22.2,77.8]. Strict8 episodes+50.0pp[12.5,87.5]. All12+33.3pp[4.2,62.5], retaining genuine control f5 repair. Conditional after-refusal repair9/11[42.9%,100%]. Two no-action positives per arm receive zero repair credit. Predictions only: reserve+2.73..6.20pp/test+6.42..11.62pp under loss1..0; neither split rerun. Historical Holo3.1 0/10 is distinguished from its completed nonrandomized reference.
+- Delivery: feat/rescue-bench, PR https://github.com/martinbon39/ComputerUseHackaton/pull/1 ; final raw evidence stays in /home/orbit/osw/rescue_bench/. No endpoint/VM job remains owned by rescue-bench.
