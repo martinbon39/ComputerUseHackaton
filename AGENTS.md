@@ -42,7 +42,7 @@ refusal → repair on `libreoffice_calc/1de60575` (one episode, not an average e
 | Merged checkpoint rebuilt bit-for-bit from 3 pinned public models | measured (on an independent machine) | `jury_kit/expected_sha256.json`, `jury_kit/README.md` | `python3 jury_kit/rebuild_merge.py --check 2 --merged DIR` |
 | Guard repair: 5/18 vs 2/18 branches, +16.7 [0, +44] | measured, **not distinguishable from 0** | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/repair/results.json` | read |
 | Guard + escalation to Holo4 vs Holo4 alone | **running** (interim: 5 strict-valid episodes, 4/10 vs 0/10 branches repaired, +0.40 [0, 0.80]; two repairs independently audited: calc/37608790, impress/70bca0cc). Not final | draft PR #1, `holo-neurochir/rescue_bench/REPORT.md`, `MEASURED_REPAIRS_REVIEW.md` | read the PR |
-| Holo + Guard on the 120-task test split | **running** (first launch lost to a pod outage with 0 tasks, amendment 2; relaunched on Modal), pre-registered, no result yet | `holo-neurochir/report/PREREG_ONLINE_GUARD.md` | read |
+| Holo + Guard on the 120-task test split | **running** (first launch lost to a pod outage with 0 tasks, amendment 2; relaunched with the agent on Modal and the VMs on GitHub runners, runs 42468308809 + 42468884640 of holo-osworld-runner), pre-registered, no result yet | `holo-neurochir/report/PREREG_ONLINE_GUARD.md` | read |
 | Guard v2 (Opus + history) vs v1 on the held-out half, used once: detection +13.8 pts [+2.9, +30] (20/29 vs 16/29); false rejection +4.3 [−5, +15] (15/116 vs 10/116) | measured offline, not run online; target ≥ 80 % / ≤ 10 % not met | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/v2/PROTOCOL.md`, `v2/runs/` | read |
 | "A verifier can be added to any agent with one call" | design property, measured on Holo only | `feci_guard.py` docstring | read 61 lines |
 | End-to-end plumbing: refusal → escalation → re-check → official score | measured on 1 task (no efficacy claim) | `holo-neurochir/feci_guard/smoke/impress_550ce7e7_rescue_guard.md` | read |
@@ -54,6 +54,7 @@ infeasible tasks).
 ## Repository map
 - `README.md`: overview, results table, criteria → evidence. `docs/REPO_MAP.md`: one line per folder of
   `holo-neurochir/` with status (RESULT / NEGATIVE / ABANDONED / IN PROGRESS / TOOLING / DEMO) and its source-of-truth file.
+- `docs/RESEARCH_SYSTEM.md`: how the research was done (agent team, compute, VMs, statistics), each number sourced to `path:line`.
 - `jury_kit/`: everything a judge can run (levels 1–3), with `results/scores.csv` and frozen `contexts/`.
 - `holo-neurochir/feci_guard/`: the Guard (verifier, decision rule, agent loop copy, repair and rescue runners, prereg, results).
 - `holo-neurochir/judge_bench/`, `verif_study/`: offline comparison of judges on 268 labelled final screens.
@@ -61,6 +62,9 @@ infeasible tasks).
 - `holo-neurochir/osworld/`: online evaluation (Modal serving, GitHub runner collection, live duel page).
 - `holo-neurochir/holo/`, `scripts/`: harness and weight-edit code. `astra-*`, `moon-*`: weight-edit experiments, mostly negative.
 - `holo-neurochir/JOURNAL.md` and the root `LOG.md`: raw working logs of the agent team (French, chronological). They are not needed for review.
+
+## Sponsors
+- Devin: Devin API integration installed and authenticated (client + GPU-controller mission, dry-run tested; no session run to preserve credits): `holo-neurochir/devin/README.md`. No Devin-written code exists in this repository.
 
 ## Things that look odd but are intended
 - Many folders hold negative results. They are kept on purpose, and `docs/REPO_MAP.md` gives each one's status.

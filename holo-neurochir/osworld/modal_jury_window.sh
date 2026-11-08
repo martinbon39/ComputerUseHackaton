@@ -42,7 +42,8 @@ up() {
   M2=$(bash osworld/modal_deploy.sh 2 Holo-3.1-4B-merge_cua_b050 merge_cua_b050 | grep "modal_deploys/") || { echo "deploy 2 failed"; down; exit 1; }
   git add "$M1" "$M2" && git commit -q -m "holo-neurochir: Modal deploys for the jury window (modal-orig on 1, merge_cua_b050 on 2)
 
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -- "$M1" "$M2" && git push -q origin main
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Co-authored-by: Emile Jouannet <123695416+Symbioose@users.noreply.github.com>" -- "$M1" "$M2" && git push -q origin main
   local t=$(date +%s)
   until models_ok emilejouannet Holo-3.1-4B-modal-orig && models_ok martinbon39 Holo-3.1-4B-merge_cua_b050; do
     [ $(( $(date +%s) - t )) -gt 1800 ] && { echo "not ready after 30 min"; down; exit 1; }

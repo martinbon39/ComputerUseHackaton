@@ -6,7 +6,7 @@
 "task done" when it is not. The fix is not in its weights. It is an external verifier, **Feci Guard**, that checks
 every requirement on the screen, refuses a false "done" with a reason, and can hand the task to a stronger agent (Holo4).
 
-> **Watch first:** [demo video](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7) · [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxehqaqs.SsRdAM7BfXxBtWZEUzqCHbXqFzQApOsO): the Guard refuses a false "done" and the agent
+> **Watch first:** [demo video](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7) · [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32): the Guard refuses a false "done" and the agent
 > repairs it, step by step.
 >
 > **Judges in a hurry:** run the 3-command [quickstart](#quickstart-under-5-minutes-no-gpu-no-key-no-vm) (no GPU, no
@@ -94,8 +94,8 @@ resamples, seed 0) for differences, and Wilson intervals for proportions.
 | 7 | Feci Guard verifier, offline, same 268 episodes (90 tasks) | detects **45/66 (68 % [56–78])**, wrongly rejects **21/202 (10 % [7–15])**; gap **+58 [+41, +74]** | **separates** | `python3 jury_kit/replay_guard.py` |
 | 8 | Guard repair on replayed false successes | 5/18 vs 2/18 branches repaired (9 episodes × 2); +16.7 pts [0, +44], sign test p=0.5 | **not distinguishable from 0** | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md) |
 | 9 | Guard + escalation to Holo4, vs Holo4 alone (replayed false successes, same boundary) | interim, 5 strict-valid episodes × 2 branches: **4/10 vs 0/10** branches repaired, i.e. 2 of 5 episodes repaired in both branches (`calc/37608790`, `impress/70bca0cc`, independently audited); +0.40 [0, 0.80] (cluster CI) | **running**, numbers will move | [`rescue_bench/REPORT.md` in PR #1](https://github.com/martinbon39/ComputerUseHackaton/pull/1) |
-| 10 | Holo + Guard on the 120-task OSWorld test split, vs the same model on the same server | pre-registered; first launch lost to a pod outage with 0 tasks played (amendment 2: the agent moves to Modal, comparator = the original on Modal); relaunched on GitHub runners, runs 42468308809 and 42468884640 of [holo-osworld-runner](https://github.com/martinbon39/holo-osworld-runner/actions) | **running**, no result yet | [`report/PREREG_ONLINE_GUARD.md`](holo-neurochir/report/PREREG_ONLINE_GUARD.md) |
-| 11 | Stronger judge: Guard v2 (Opus + the 2 previous screens + action list) vs v1, held-out half used once | detects 20/29 (69 %) vs 16/29 (55 %): **+13.8 pts [+2.9, +30]**; false rejection 15/116 (12.9 %) vs 10/116 (8.6 %): +4.3 [−5, +15] | **more detection, significant**; the target (≥ 80 % detection, ≤ 10 % false rejection) is **not met**; offline only | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md#guard-v2-sprint-s1-offline-judge_bench-corpus-v2protocolmd-independently-recomputed), [`v2/PROTOCOL.md`](holo-neurochir/feci_guard/v2/PROTOCOL.md) |
+| 10 | Holo + Guard on the 120-task OSWorld test split, vs the same model on the same server | pre-registered; first launch lost to a pod outage with 0 tasks played (amendment 2: the agent moves to Modal, comparator = the original on Modal); relaunched with the agent on Modal and the VMs on GitHub runners: run 42468308809 played 13 of 20 shards (7 failed at setup on a GitHub 504), run 42468884640 replays exactly those 7 shards ([holo-osworld-runner](https://github.com/martinbon39/holo-osworld-runner/actions)) | **running**, no result yet | [`report/PREREG_ONLINE_GUARD.md`](holo-neurochir/report/PREREG_ONLINE_GUARD.md) |
+| 11 | Stronger judge: Guard v2 (Opus + the 2 previous screens + action list) vs v1, held-out half used once | detects 20/29 (69 %) vs 16/29 (55 %): **+13.8 pts [+2.9, +30]**; false rejection 15/116 (12.9 %) vs 10/116 (8.6 %): +4.3 [−5, +15] | **more detection, significant**; the target (≥ 80 % detection, ≤ 10 % false rejection) is **not met**; offline only | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md#2-guard-v2-sprint-s1-offline-protocol-v2protocolmd-independently-recomputed), [`v2/PROTOCOL.md`](holo-neurochir/feci_guard/v2/PROTOCOL.md) |
 
 Caveats that change how to read the table:
 - Row 7: the Holo rows used a different prompt than the Claude verifier. A fourth judge settles most of it: Holo4-27B
@@ -131,7 +131,7 @@ bash jury_kit/quickstart.sh                 # all of the above + (c), exit code 
   agent would have received. [`jury_kit/recount_judges.py`](jury_kit/recount_judges.py) recounts all three judges
   (Holo-3.1-4B, Holo4-27B, Claude) from their raw responses, as the independent recount did during the hackathon.
 - **(c)** Demo of the Guard: open [`holo-neurochir/demo_live/repair_calc.html`](holo-neurochir/demo_live/repair_calc.html)
-  in a browser (one self-contained 1 MB file, French captions; hosted copy: [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxehqaqs.SsRdAM7BfXxBtWZEUzqCHbXqFzQApOsO)). On OSWorld task `libreoffice_calc/1de60575`, the agent
+  in a browser (one file with every screenshot embedded and no external script, English and French; hosted copy: [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32)). On OSWorld task `libreoffice_calc/1de60575`, the agent
   says "done" with the pivot table on the wrong sheet; the Guard refuses ("the table is on 'Pivot Table_Sheet1_1', not
   'Sheet2'"); the agent renames the sheet in 5 steps; the second check passes and the official evaluator scores 1.
   This is one recorded episode of the repair measure (row 8), not evidence of an average gain. The problem itself:
@@ -194,14 +194,17 @@ on GitHub runners. A judge cannot run them in 5 minutes.
   [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxejdbei.e3VHNdhebV_SJ8R0wLl3xTjkUyMV-i1O) ·
   [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxejdbgj.RgncRPbt6dqkr8uMBww4pW_vSoe45k5K).
 - **Demo video**: [holo-demo-video.mp4](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7)
-- **Guard repair replay** (the Guard refuses a false "done" on `calc/1de60575`, the agent renames the sheet, the second check passes): [holo-guard-repair.html](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxehqaqs.SsRdAM7BfXxBtWZEUzqCHbXqFzQApOsO)
-- **Slides** (the research system): [holo-pitch-system.html](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxecxpk6.j0qXMMEz_gD19Udmb-PtgbdfH0vQshbj) · **pitch cockpit**: [holo-cockpit-pitch.html](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxehr551.VZFbsI5yivsEwoRTc0MXXXbMOs73kLaU)
-- **Agent-team dashboard** (who did what, live during the hackathon): [holo-team-dashboard.html](https://argos.martinbonan.com/artifacts/holo-team-dashboard.html?t=mxdiu0lc.nt4fYBALfUzTctGJh0GtUh0xpnlo8QFF)
+- **Guard repair replay** (the Guard refuses a false "done" on `calc/1de60575`, the agent renames the sheet, the second check passes): [holo-guard-repair.html](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32)
+- **Slides** (the research system): [holo-pitch-system.html](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxek8dtm.dkmDOjnAdcQkCGXMW-yuf5L8ksbIQWf-) · **pitch cockpit**: [holo-cockpit-pitch.html](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxek8dvg.8s_I9BVtWXyTrkRGHqB2_aUQMHBiNtFO)
+- **Agent-team dashboard** (who did what, live during the hackathon): [holo-team-dashboard.html](https://argos.martinbonan.com/artifacts/holo-team-dashboard.html?t=mxek8e49.ufV1Pb8Fk9vGO-OmMMUJevLsFPiYtuKc)
 - **False-"done" replay page** (hosted copy of quickstart (c)): [holo-demo-faux-fini.html](https://argos.martinbonan.com/artifacts/holo-demo-faux-fini.html?t=mxec08h4.ypUQurEtCFn45XOw47vn5eHhOEl5Gyfd)
 - **Agent runner**: [martinbon39/holo-osworld-runner](https://github.com/martinbon39/holo-osworld-runner)
 - **Model studied**: [Hcompany/Holo-3.1-4B](https://huggingface.co/Hcompany/Holo-3.1-4B) @ `8c88265a`
 
 ## How we worked
+
+Full account, with every number sourced to `path:line` (agent team, compute, OSWorld VMs, statistics, the night's
+incidents, how to reproduce each level): **[docs/RESEARCH_SYSTEM.md](docs/RESEARCH_SYSTEM.md)**.
 
 The research was run by a team of AI agents (Claude Code sessions on one server, linked on a supervision canvas) that
 one human supervised:
@@ -228,6 +231,16 @@ one human supervised:
 - The Guard costs ~$0.03 and 5–10 s per `answer`, and works best with a closed model (Claude Sonnet); the open-weights
   Holo4-27B behind the same prompt separates less well (row 7 caveat).
 - Rows 9–10 are still running at the time of writing. Read the linked files for their final state.
+
+## Team
+
+- **Émile Jouannet** (EPITA), GitHub [Symbioose](https://github.com/Symbioose)
+- **Souad Boukhedenna** (SKEMA Business School)
+- **Martin Bonan**, GitHub [martinbon39](https://github.com/martinbon39)
+
+## Sponsors
+
+- **Devin**: Devin API integration installed and authenticated (client + GPU-controller mission, dry-run tested; no session run to preserve credits): [`holo-neurochir/devin/README.md`](holo-neurochir/devin/README.md).
 
 ## Acknowledgements and license
 

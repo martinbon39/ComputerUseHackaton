@@ -10,6 +10,7 @@ on:
       - "holo-neurochir/verif_study/images/**"
       - "holo-neurochir/judge_bench/claude_responses.jsonl"
       - "holo-neurochir/demo_faux_fini/**"
+      - "holo-neurochir/demo_live/**"
       - ".github/workflows/quickstart.yml"
   workflow_dispatch:
 concurrency:

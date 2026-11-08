@@ -81,6 +81,7 @@ EOF
 fi
 git add "$MANIFEST" $( [ -f "$SMOKE" ] && echo "$SMOKE" ) && git commit -q -m "holo-neurochir: Modal deploy of $NAME on account $ACCOUNT (manifest + smoke)
 
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -- osworld/modal_deploys/ && git push -q origin main
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Co-authored-by: Emile Jouannet <123695416+Symbioose@users.noreply.github.com>" -- osworld/modal_deploys/ && git push -q origin main
 argos send ares "modal-serve: $NAME prêt sur le compte $ACCOUNT, $URL (Bearer ~/.holo_modal_key), prêt en ${READY}s. Smoke : $SUMMARY. Manifeste et sorties complètes : $MANIFEST (+ .smoke.json), poussés. Compte $ACCOUNT verrouillé jusqu'à ton signal « $CKPT mesuré »."
 echo "$(date -u +%T) done: $SUMMARY"

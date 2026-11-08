@@ -18,7 +18,7 @@ echo; echo "== (c) demo replay pages =="
 "$PY" - <<'PY'
 import html.parser, pathlib
 for name, what in [("holo-neurochir/demo_live/repair_calc.html", "Feci Guard refuses a false done, the agent repairs"),
-                   ("holo-neurochir/demo_faux_fini/demo_faux_fini.html", "the original agent's false done, step by step")]:
+                   ("holo-neurochir/demo_faux_fini/demo_faux_fini.html", "one task, the original's false done next to the merged agent")]:
     p = pathlib.Path(name)
     s = p.read_text(encoding="utf-8")
     class P(html.parser.HTMLParser):
@@ -31,6 +31,6 @@ for name, what in [("holo-neurochir/demo_live/repair_calc.html", "Feci Guard ref
     P().feed(s)
     n_data = s.count("data:image/")
     assert n_data > 0 and not P.ext, (name, n_data, P.ext)
-    print(f"{p}: {p.stat().st_size/1e6:.1f} MB, self-contained ({n_data} embedded screenshots, 0 external scripts): {what}")
+    print(f"{p}: {p.stat().st_size/1e6:.1f} MB, {n_data} embedded screenshots, 0 external scripts: {what}")
 PY
 echo; echo "QUICKSTART OK: (a) and (b) match the published numbers, (c) the two demo pages are ready to open in a browser."

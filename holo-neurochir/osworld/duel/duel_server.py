@@ -12,6 +12,7 @@ from urllib.parse import urlparse, parse_qs
 
 HERE = Path(__file__).resolve().parent
 TASKS = [  # original made a false 'done' and the merged model succeeded, in recorded runs
+    "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197",  # bench-wall: repaired 2/2 with the guard in replay
     "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",  # demo-director's live rehearsal task
     "libreoffice_impress/b8adbc24-cef2-4b15-99d5-ecbe7ff445eb",
     "chrome/9f935cce-0a9f-435f-8007-817732bfc0a5",
