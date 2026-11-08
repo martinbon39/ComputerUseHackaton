@@ -1,0 +1,174 @@
+{
+  "alias": {
+    "model_card_url": "https://huggingface.co/OnAnOrange/qwen3.5-4b-lite-osworld-scalecua-cuagym-sft-ep3",
+    "repo": "OnAnOrange/qwen3.5-4b-lite-osworld-scalecua-cuagym-sft-ep3",
+    "reported_base": "Qwen/Qwen3.5-4B",
+    "reported_training": "SFT on CUA-Lite Lite.OSWorld + Lite.ScaleCUA + Lite.CUAGym; 10,934 exported rows including 5,000 Lite.ScaleCUA; epoch 3",
+    "resolved_sha": "75822745d08cf23eea35f7db1514c1cad968f6fb",
+    "revision": "main"
+  },
+  "arm_exact_tables": {
+    "Qwen2.5-7B_Table2": {
+      "ARM": [
+        64.2,
+        28.5,
+        22.0,
+        40.3,
+        51.3,
+        68.0,
+        45.7
+      ],
+      "TIES": [
+        62.0,
+        16.7,
+        13.3,
+        2.9,
+        22.3,
+        14.0,
+        21.9
+      ],
+      "TIES+DARE": [
+        50.8,
+        13.9,
+        15.2,
+        2.9,
+        21.7,
+        12.0,
+        19.4
+      ]
+    },
+    "Qwen3-8B_Table1": {
+      "ARM": [
+        62.9,
+        35.4,
+        28.5,
+        44.9,
+        47.7,
+        48.0,
+        44.6
+      ],
+      "TIES": [
+        50.6,
+        25.0,
+        20.0,
+        43.3,
+        46.3,
+        32.0,
+        36.2
+      ],
+      "TIES+DARE": [
+        54.7,
+        20.8,
+        23.6,
+        18.3,
+        37.0,
+        14.0,
+        28.1
+      ]
+    },
+    "caveat": "ARM tables use Qwen3-8B and Qwen2.5-7B Simia expert pools, not Qwen3.5-4B CUA donors.",
+    "columns": [
+      "WebShop",
+      "OS",
+      "tau-bench",
+      "OfficeBench",
+      "DB",
+      "AlfWorld",
+      "Avg"
+    ],
+    "source": "https://arxiv.org/html/2601.07309"
+  },
+  "classification": "Distinct fine-tuned donor, not byte-identical to pinned Qwen base. Alias has same 738-key index and same total_size (9,319,737,856), but both shard LFS SHA256 values differ; shard 2 size also differs by 7,136 bytes. No weight bytes downloaded.",
+  "comparison_corrected": {
+    "classification": "Not byte-identical; same architecture/config and tensor map, but both LFS shard hashes differ. Treat as two distinct SFT donors. Alias explicitly combines Lite.OSWorld, Lite.ScaleCUA, Lite.CUAGym; target is the separate gpt5_5 epoch3 public donor. Exclude both from first campaign unless provenance policy permits contamination-unknown donors.",
+    "config_exact_equal": true,
+    "config_git_blob_oid": "eea748927d1d169d61e4438d64ac44025d378193",
+    "config_sha256_equal": true,
+    "index": {
+      "alias_git_blob_oid": "0bb2dd4df4934b5d18d83ac2cd7299e85b8cf05d",
+      "alias_raw_sha256": "c02fd9c7beb8f135b4aaa6a2c5cf068e5310b1ff0c2a078d55f2d29224d7b4e7",
+      "same_tensor_key_map": true,
+      "target_git_blob_oid": "ef30a5fcfbdd99d1a0023f6599ab599f10bf8e0e",
+      "target_raw_sha256": "b2fcc402fd11a30944ce93805f6de15000b6f87d5e28bb18e2950142ad4218b7",
+      "tensor_keys": 738,
+      "total_size_equal": true
+    },
+    "safetensors": {
+      "model.safetensors-00001-of-00002.safetensors": {
+        "alias_lfs_sha256": "eb2ea849ac645a91c4e0b98072e39c3b4c95b79654a9ef36ba7003696eec1a2e",
+        "same": false,
+        "size_equal": true,
+        "target_lfs_sha256": "a8ad0e6fb47369fed2262d423d713e47f8f7d878851e0ee8bdd7c90bc47d8237"
+      },
+      "model.safetensors-00002-of-00002.safetensors": {
+        "alias_lfs_sha256": "319efd75765650d19eaac38f9d6536bdf2dabdee1b106100e440584bf2305818",
+        "same": false,
+        "size_equal": true,
+        "target_lfs_sha256": "ae5828491a638b66d198b52297fcf07c1cb9970326c7e027c55afc791bdff213"
+      }
+    },
+    "target_repo": "OnAnOrange/CUA-Lite-Qwen3.5-4B-ScaleCUA-gpt5_5-epoch3-public",
+    "target_revision": "df6eba93efb2df3ed9adc810e0f7f4e038959c74",
+    "target_url": "https://huggingface.co/OnAnOrange/CUA-Lite-Qwen3.5-4B-ScaleCUA-gpt5_5-epoch3-public/tree/df6eba93efb2df3ed9adc810e0f7f4e038959c74"
+  },
+  "config_vs_pinned_qwen": {
+    "exact_equal": false,
+    "pinned_qwen_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "semantic_differences": [
+      {
+        "a": null,
+        "b": "absent",
+        "path": "/text_config/bos_token_id"
+      },
+      {
+        "a": null,
+        "b": "absent",
+        "path": "/text_config/pad_token_id"
+      },
+      {
+        "a": 0.25,
+        "b": "absent",
+        "path": "/text_config/partial_rotary_factor"
+      },
+      {
+        "a": 10000000,
+        "b": "absent",
+        "path": "/text_config/rope_theta"
+      },
+      {
+        "a": "5.6.0",
+        "b": "4.57.0.dev0",
+        "path": "/transformers_version"
+      },
+      {
+        "a": "qwen3_5_vision",
+        "b": "qwen3_5",
+        "path": "/vision_config/model_type"
+      }
+    ]
+  },
+  "cua_lite_provenance": "Alias README reports CUA-Lite source commit 8d2205b146a9857ed508f55bb09ba60d8e524b0c. The requested short df6eba identifier was not found in the public repo/API lookup, so no equivalence to df6eba can be established.",
+  "safetensor_lfs": {
+    "model.safetensors-00001-of-00002.safetensors": {
+      "alias_lfs_sha256": "eb2ea849ac645a91c4e0b98072e39c3b4c95b79654a9ef36ba7003696eec1a2e",
+      "alias_size": 5329398688,
+      "base_lfs_sha256": "26a93f066e1916adb13453dae5a0c707c0fbc71299ed98779571a907b8e74c61",
+      "base_size": 5329398688,
+      "identical": false
+    },
+    "model.safetensors-00002-of-00002.safetensors": {
+      "alias_lfs_sha256": "319efd75765650d19eaac38f9d6536bdf2dabdee1b106100e440584bf2305818",
+      "alias_size": 3990422272,
+      "base_lfs_sha256": "cb544bd9bfae93dc59b0f22b292f5933573854a7f9b97835c67060d7d910e188",
+      "base_size": 3990429408,
+      "identical": false
+    },
+    "model.safetensors.index.json": {
+      "alias_lfs_sha256": null,
+      "alias_size": 79160,
+      "base_lfs_sha256": null,
+      "base_size": 76196,
+      "identical": true
+    }
+  }
+}

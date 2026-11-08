@@ -1,0 +1,44 @@
+{
+  "status": "NON_ADMISSIBLE_STATIC_BEHAVIOR",
+  "audit_method": "Computed by /tmp/astra-merge-work/audit_behavior.py from raw generations.jsonl and checked against the original artifact summary.json and frozen cohort.",
+  "artifact": "/tmp/astra-merge-work/merge_cua_b100_full",
+  "full": {
+    "rows": 51,
+    "structured_rows": 48,
+    "text_rows": 3,
+    "tasks_match_frozen_cohort": true,
+    "seeds": [0,1,2,3,4,5,6,7],
+    "settings": {"temperature": 0.8, "top_p": 0.9, "top_k": 20, "max_tokens": 3072, "reasoning_effort": "medium", "enable_thinking": true, "structured_outputs": "holo_agent step schema", "text_temperature": 0.0, "text_max_tokens": 256, "text_enable_thinking": false},
+    "identity": {"url": "https://emilejouannet--holo-vllm-serve.us-east.modal.run/v1", "model": "Holo-3.1-4B-merge_cua_b100", "root": "/models/ckpt/merge_cua_b100", "vllm_version": "0.23.0"},
+    "errors": 0,
+    "truncated": 6,
+    "per_stratum": {
+      "fs+": {"n": 16, "answer": 2, "valid_nonanswer": 7, "invalid": 7, "empty_stop_invalid": 7, "truncated": 0},
+      "fs-": {"n": 16, "answer": 5, "valid_nonanswer": 2, "invalid": 9, "empty_stop_invalid": 3, "truncated": 6},
+      "healthy": {"n": 16, "answer": 0, "valid_nonanswer": 16, "invalid": 0, "truncated": 0}
+    },
+    "invalid_mechanism": {
+      "fs+": "7/7 invalid are finish_reason=stop with empty content, reasoning length 5, n_out=3, parsed=null; no JSON tool call was produced",
+      "fs-": "3/9 invalid are the same empty stop pattern; 6/9 are finish_reason=length at n_out=3072 with ~9.3k content chars and parsed=null",
+      "unsupported_tool_or_answer_refusal": "none identified; invalid records do not contain parseable JSON and cannot be classified as valid answer/refusal schema outputs",
+      "useful_continuation": "valid non-answers include fs+ scrolls and fs- click/hotkey actions, but empty/truncated records are not actions"
+    },
+    "concrete_valid_nonanswers": {
+      "fs+_47543840": "7 scroll outputs after recognizing the 12-passenger van result",
+      "fs-_c867c42d": "one click output around contacts.xlsx save",
+      "fs-_ed43c15f": "one hotkey output saving the presentation",
+      "healthy_8df7e444": "8 write outputs in file-manager search",
+      "healthy_af2d657a": "8 scroll outputs in font dropdown"
+    }
+  },
+  "smoke": {
+    "rows": 4,
+    "errors": 0,
+    "truncated": 0,
+    "healthy_valid_nonanswer": "write",
+    "text_transport": "3/3 nonempty stop",
+    "text_quality": {"completion_prompt": "one sentence despite two-sentence request", "rename_prompt": "fluent but generic; omits mv command and syntax", "sky_prompt": "coherent one-sentence scattering explanation"}
+  },
+  "correction": "The initial audit transcription incorrectly reported fs+ as answer1/nonanswer8. Mechanical checking shows raw generations and the original summary agree: fs+ answer2/valid_nonanswer7/invalid7. No repaired summary is admissible or used.",
+  "gate_note": "Do not change the predeclared gate post hoc. This artifact is non-admissible because of invalid/truncated structured outputs and the smoke text specificity loss; no OSWorld score is inferred from six static contexts."
+}

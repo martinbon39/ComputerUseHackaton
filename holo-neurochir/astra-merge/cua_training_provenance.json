@@ -1,0 +1,51 @@
+{
+  "alias_distinction": {
+    "conclusion": "The primary public gpt5_5 donor is exactly the 5,000-trajectory Lite.ScaleCUA desktop-use run. Do not attribute aliasmix counts to this donor.",
+    "repo": "OnAnOrange/qwen3.5-4b-lite-osworld-scalecua-cuagym-sft-ep3",
+    "training": "Combined Lite.OSWorld + Lite.ScaleCUA + Lite.CUAGym; README reports 10,934 exported rows, including 5,000 Lite.ScaleCUA rows."
+  },
+  "caveats": [
+    "README and remote training_config agree on 5,000 trajectories, 42,427 serialized steps, 3 epochs, 468 optimizer updates, iter_467, and 5e-6 cosine LR to 1e-6.",
+    "The README describes a seeded candidate pool replenished to 5,000 usable trajectories after filtering; the raw dataset total and rejected-row count are not documented here.",
+    "No downstream benchmark evaluation is reported in the pinned README.",
+    "No prompts, emails, credentials, or raw config were copied."
+  ],
+  "evidence_sources": {
+    "hf_dataset_pin": "https://huggingface.co/datasets/cua-lite/Lite.ScaleCUA/tree/3aa5998a84cdf034e7907b1bb597899dce890417",
+    "hf_readme": "https://huggingface.co/OnAnOrange/CUA-Lite-Qwen3.5-4B-ScaleCUA-gpt5_5-epoch3-public/blob/df6eba93efb2df3ed9adc810e0f7f4e038959c74/README.md",
+    "remote_training_config": "/dev/shm/astra_merge_cua/training_config.json (read remotely; selected scalar fields only)"
+  },
+  "primary_donor": {
+    "facts": {
+      "base_model": "Qwen/Qwen3.5-4B",
+      "base_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "batch_size": 32,
+      "checkpoint": "iter_467",
+      "dataset": "cua-lite/Lite.ScaleCUA",
+      "dataset_revision": "3aa5998a84cdf034e7907b1bb597899dce890417",
+      "dataset_variant": "desktop.use.train.gpt5_5",
+      "dtype": "BF16",
+      "epochs": 3,
+      "filter": "non-excluded trajectories with episode return > 0.5; replenish candidates until 5,000 usable trajectories",
+      "full_vs_adapter": "Full-parameter supervised fine-tuning; full BF16 model. No adapter-only artifact indicated.",
+      "learning_rate": 5e-06,
+      "lr_schedule": "cosine",
+      "microbatch": 1,
+      "min_learning_rate": 1e-06,
+      "optimizer": "Adam",
+      "optimizer_updates": 468,
+      "reasoning_enabled": false,
+      "serialized_steps": 42427,
+      "source_cua_lite_revision": "47deef05c5525d98fcb79399c6c33215925e4479",
+      "steps_per_epoch": 156,
+      "teacher": "gpt5_5",
+      "training_date": "2026-09-09",
+      "trajectories": 5000,
+      "warmup_fraction": 0.1,
+      "weight_decay": 0.1
+    },
+    "repo": "OnAnOrange/CUA-Lite-Qwen3.5-4B-ScaleCUA-gpt5_5-epoch3-public",
+    "revision": "df6eba93efb2df3ed9adc810e0f7f4e038959c74",
+    "url": "https://huggingface.co/OnAnOrange/CUA-Lite-Qwen3.5-4B-ScaleCUA-gpt5_5-epoch3-public/tree/df6eba93efb2df3ed9adc810e0f7f4e038959c74"
+  }
+}

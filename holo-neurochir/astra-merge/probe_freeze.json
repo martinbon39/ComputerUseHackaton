@@ -1,0 +1,11 @@
+{
+  "files": {
+    "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/osworld/astra_cohort_probe.py": "293bc19d21cb0224749c4ccbdbdfe9ba0e6ab513351ca4c18b8ece293d0da0b8",
+    "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/osworld/probe_answer_rate.py": "770daab44530efbd8fd5b897cfbfa7d1dd21a7b26a7c325e860140dfe0084769",
+    "/tmp/astra-merge-work/cohort.json": "92b9d498b02e1c429a289836abcfb67bdc71cc5410c37f1fadae10eeff82733b"
+  },
+  "baseline_sha256": "7c56871078e6cd4db5dff71a834abba92d272db19d70732f5c9054db104ec89e",
+  "n": 51,
+  "truncated": 0,
+  "errors": 0
+}

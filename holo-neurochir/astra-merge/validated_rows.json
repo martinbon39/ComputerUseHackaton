@@ -1,0 +1,56 @@
+[
+  {
+    "task_id": "pyautogui/screenshot/Holo-3.1-4B/chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+    "t": 13,
+    "tool": "answer",
+    "label": "fs+",
+    "score": 0.0,
+    "n_steps": 14,
+    "path": "/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/47543840-672a-467d-80df-8f7c3b9788c9"
+  },
+  {
+    "task_id": "pyautogui/screenshot/Holo-3.1-4B/chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381",
+    "t": 4,
+    "tool": "answer",
+    "label": "fs+",
+    "score": 0.0,
+    "n_steps": 5,
+    "path": "/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381"
+  },
+  {
+    "task_id": "pyautogui/screenshot/Holo-3.1-4B/multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618",
+    "t": 17,
+    "tool": "answer",
+    "label": "fs-",
+    "score": 1.0,
+    "n_steps": 18,
+    "path": "/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618"
+  },
+  {
+    "task_id": "pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68",
+    "t": 17,
+    "tool": "answer",
+    "label": "fs-",
+    "score": 1.0,
+    "n_steps": 18,
+    "path": "/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68"
+  },
+  {
+    "task_id": "pyautogui/screenshot/Holo-3.1-4B/multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82",
+    "t": 15,
+    "tool": "write",
+    "label": "healthy",
+    "score": 1.0,
+    "n_steps": 30,
+    "path": "/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82"
+  },
+  {
+    "task_id": "pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c",
+    "t": 9,
+    "tool": "scroll",
+    "label": "healthy",
+    "score": 1.0,
+    "n_steps": 19,
+    "path": "/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c"
+  }
+]

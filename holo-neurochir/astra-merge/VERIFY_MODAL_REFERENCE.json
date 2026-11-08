@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "scope": "read-only artifact audit; no inference",
+  "artifacts": {
+    "original": {
+      "path": "/tmp/astra-merge-work/Holo-3.1-4B_full",
+      "rows": 51,
+      "structured_rows": 48,
+      "text_rows": 3,
+      "server": "https://emilejouannet--holo-vllm-serve.us-east.modal.run/v1",
+      "model": "Holo-3.1-4B-modal-orig",
+      "root": "Hcompany/Holo-3.1-4B",
+      "vllm_version": "0.23.0",
+      "modal_account": "emilejouannet (account 1)",
+      "fs_plus": "16/16 answer",
+      "fs_minus": "16/16 answer",
+      "healthy": "16/16 valid_nonanswer",
+      "invalid": 0,
+      "truncated": 0
+    },
+    "candidate": {
+      "path": "/tmp/astra-merge-work/merge_cua_b050_full",
+      "rows": 51,
+      "structured_rows": 48,
+      "text_rows": 3,
+      "server": "https://martinbon39--holo-vllm-serve.us-east.modal.run/v1",
+      "model": "Holo-3.1-4B-merge_cua_b050",
+      "root": "/models/ckpt/merge_cua_b050",
+      "vllm_version": "0.23.0",
+      "modal_account": "martinbon39 (account 2)",
+      "fs_plus": "11/16 answer, 5/16 valid_nonanswer",
+      "fs_minus": "2/16 answer, 14/16 valid_nonanswer",
+      "healthy": "16/16 valid_nonanswer",
+      "invalid": 0,
+      "truncated": 0
+    }
+  },
+  "shared_design": {
+    "same_tasks_and_seeds": true,
+    "row_identity_sha256": "29ac4a34f41bf52bc4650285bfb73ef12ba1941777bca30c1b0bf7a67d601a39",
+    "seeds": [0,1,2,3,4,5,6,7],
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 20,
+    "max_tokens": 3072,
+    "reasoning_effort": "medium",
+    "enable_thinking": true,
+    "structured_outputs": "holo_agent step schema",
+    "text_temperature": 0.0,
+    "text_max_tokens": 256,
+    "text_enable_thinking": false
+  },
+  "text_sanity": {
+    "original": "3/3 non-empty, stop; coherent completion-check, mv rename, and Rayleigh-scattering answers",
+    "candidate": "3/3 non-empty, stop; coherent completion-check, mv rename, and atmospheric-scattering answers"
+  },
+  "provenance": "Original revision 8c88265a5a159bfd1492db9243733dd2e6e04a6e was separately verified by ares/modal-serve. Both artifacts use Modal H100 backends, but different accounts/containers; this supports backend-class comparability, not exact stochastic determinism."
+}

@@ -1,0 +1,104 @@
+{
+  "cua_lite_contamination": {
+    "action": "Mark CUA-Lite/ScaleCUA-derived donors as contamination-unknown for the virgin holdout; require task-ID and source-manifest audit before using behavioral results.",
+    "risk_assessment": "Donor models trained on ScaleCUA or CUA-Lite ScaleCUA rollouts may have direct or near-direct OSWorld task, setup, judge, or trajectory overlap. This is a provenance risk only; public metadata does not prove overlap with the reserved local holdout IDs.",
+    "sources": [
+      "https://github.com/cua-lite/cua-lite/blob/main/lite/gym/envs/lite/scalecua/README.md",
+      "https://github.com/THUDM/SCALE-CUA",
+      "https://arxiv.org/abs/2607.11185"
+    ],
+    "verified_claims": [
+      "CUA-Lite Lite.ScaleCUA exposes a train split (20,289 rows) and an rl split (2,049 rows) sourced from extreme1228/ScaleCUA/osworld/generated_tasks and extreme1228/ScaleCUA/osworld/rl_tasks.",
+      "The adapter states that these are OSWorld-shaped tasks and recommends canonical lite.osworld eval for evaluation.",
+      "ScaleCUA publicly releases OSWorld RL tasks and OSWorld judge functions; its paper reports OSWorld evaluation."
+    ]
+  },
+  "sanitization": {
+    "donor_metadata_json_email_scan": "passed; no email-like strings found in /tmp/astra-merge-fara-tmax.json",
+    "full_cards_not_copied": true,
+    "secrets_scan": "No tokens or credentials collected."
+  },
+  "semantic_config_differences": {
+    "Fara_vs_Qwen": [
+      {
+        "fara": null,
+        "meaning": "Null/default-equivalent token setting.",
+        "path": "text_config.bos_token_id",
+        "qwen": "absent"
+      },
+      {
+        "fara": null,
+        "meaning": "Null/default-equivalent token setting.",
+        "path": "text_config.pad_token_id",
+        "qwen": "absent"
+      },
+      {
+        "fara": 0.25,
+        "meaning": "Fara repeats the value already present in rope_parameters.partial_rotary_factor; semantically equivalent.",
+        "path": "text_config.partial_rotary_factor",
+        "qwen": "absent"
+      },
+      {
+        "fara": "qwen3_5_vision",
+        "meaning": "Qwen Transformers explicitly normalizes qwen3_5 to qwen3_5_vision in __post_init__; equivalent under official loader, but raw strings are not identical.",
+        "path": "vision_config.model_type",
+        "qwen": "qwen3_5"
+      }
+    ],
+    "Holo_vs_Fara": [
+      {
+        "fara": 1,
+        "holo": "absent",
+        "meaning": "Fara advertises one MTP layer; Holo does not.",
+        "path": "text_config.mtp_num_hidden_layers"
+      },
+      {
+        "fara": false,
+        "holo": "absent",
+        "meaning": "Fara explicitly disables dedicated MTP embeddings; Holo omits the field.",
+        "path": "text_config.mtp_use_dedicated_embeddings"
+      },
+      {
+        "fara": "absent",
+        "holo": 0.001,
+        "meaning": "Holo retains a router auxiliary-loss field, although both are dense Qwen3.5 configs and no router tensors were observed.",
+        "path": "text_config.router_aux_loss_coef"
+      }
+    ],
+    "strict_gate_recommendation": "Treat vision configs as semantically equivalent only after applying the official loader normalization; retain a raw-config warning. Holo/Fara still differ in MTP/router metadata, but their 723 common tensor keys have exact shapes and dtypes."
+  },
+  "sources": [
+    {
+      "caveat": "Do not transfer ARM numerical results to this merge: architecture, expert pool, calibration data, and benchmarks differ.",
+      "id": "arm",
+      "title": "ARM: Role-Conditioned Neuron Transplantation for Training-Free Generalist LLM Agent Merging",
+      "url": "https://arxiv.org/html/2601.07309",
+      "verified_claims": [
+        "Training-free three-stage pipeline: candidate backbone construction, role-conditioned activation selection, conflict-aware neuron transplantation.",
+        "Uses role-conditioned MLP activation tracing on calibration trajectories; reports four in-domain suites and two out-of-domain benchmarks.",
+        "The paper explicitly includes OS and WebShop in case studies, but find/search of the official HTML found no OSWorld occurrence."
+      ]
+    },
+    {
+      "caveat": "These are UI-Venus results and include OSWorld-G variants; they do not establish that the local virgin holdout is uncontaminated.",
+      "id": "ui_venus_1_5",
+      "title": "UI-Venus-1.5 Technical Report",
+      "url": "https://arxiv.org/html/2602.09082",
+      "verified_claims": [
+        "Mid-training uses 10 billion tokens across 30+ datasets.",
+        "Pipeline is mid-training, task-specific offline RL, online RL, then model merge.",
+        "Model merge combines grounding, web, and mobile specialists using linear merge or TIES-Merge.",
+        "Reports ScreenSpot-Pro 69.6%, VenusBench-GD 75.0%, AndroidWorld 77.6%; OSWorld-G and OSWorld-G-R are evaluated, with 70.6% and 76.4% for the 30B-A3B model."
+      ]
+    },
+    {
+      "id": "qwen_transformers_config",
+      "title": "Official Transformers Qwen3.5 configuration",
+      "url": "https://github.com/huggingface/transformers/blob/main/src/transformers/models/qwen3_5/configuration_qwen3_5.py",
+      "verified_claims": [
+        "Qwen3_5Config.__post_init__ rewrites a nested vision_config model_type of qwen3_5 to qwen3_5_vision as an old-checkpoint compatibility fix.",
+        "Qwen3_5VisionConfig.model_type is qwen3_5_vision."
+      ]
+    }
+  ]
+}

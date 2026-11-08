@@ -1,0 +1,29 @@
+{
+  "status": "PASS_STATIC_AUDIT",
+  "artifact": "/tmp/astra-merge-work/merge_fara_b050_full",
+  "smoke": {"rows": 4, "text_rows": 3, "healthy_rows": 1, "errors": 0, "truncated": 0, "identity": "Holo-3.1-4B-merge_fara_b050 -> /models/ckpt/merge_fara_b050, vLLM 0.23.0"},
+  "full": {
+    "rows": 51,
+    "structured_rows": 48,
+    "text_rows": 3,
+    "seeds": [0,1,2,3,4,5,6,7],
+    "tasks_match_frozen_cohort": true,
+    "settings": {"temperature": 0.8, "top_p": 0.9, "top_k": 20, "max_tokens": 3072, "reasoning_effort": "medium", "enable_thinking": true, "structured_outputs": "holo_agent step schema", "text_temperature": 0.0, "text_max_tokens": 256, "text_enable_thinking": false},
+    "identity": {"url": "https://emilejouannet--holo-vllm-serve.us-east.modal.run/v1", "model": "Holo-3.1-4B-merge_fara_b050", "root": "/models/ckpt/merge_fara_b050", "vllm_version": "0.23.0"},
+    "errors": 0,
+    "truncated": 0,
+    "per_stratum": {
+      "fs+": {"n": 16, "answer": 16, "valid_nonanswer": 0, "invalid": 0, "error": 0},
+      "fs-": {"n": 16, "answer": 14, "valid_nonanswer": 2, "invalid": 0, "error": 0},
+      "healthy": {"n": 16, "answer": 0, "valid_nonanswer": 16, "invalid": 0, "error": 0}
+    },
+    "concrete_nonanswer_behavior": {
+      "fs-_multi_apps_c867c42d": "two click outputs describing confirmation of contacts.xlsx save; six answer outputs",
+      "healthy_multi_apps_8df7e444": "all eight write outputs enter/search in the file-manager search field",
+      "healthy_libreoffice_impress_af2d657a": "all eight scroll outputs navigate the font dropdown toward Microsoft JhengHei"
+    }
+  },
+  "text_sanity": {"n": 3, "nonempty_stop": 3, "coherent": ["completion verification", "Linux mv rename", "atmospheric scattering"]},
+  "limitations": ["Only two fs+ and two fs- static contexts are sampled; do not infer OSWorld score from this stop-proxy.", "Healthy semantic validity remains a static action/context audit; no VM replay was run."],
+  "readme_audit": {"status": "NO_BLOCKER_FOUND", "findings": [], "notes": ["merge.py and merge_v1.py are byte-identical in the available evidence", "README tensor-count wording is consistent: 723 common tensors plus Holo explicit lm_head gives 724 total", "README claims were checked against builder, checker, manifests, and REPORT evidence without editing README"]}
+}

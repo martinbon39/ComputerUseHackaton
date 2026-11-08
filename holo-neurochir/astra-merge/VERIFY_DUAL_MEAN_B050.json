@@ -1,0 +1,24 @@
+{
+  "verdict": "PASS",
+  "checker": "/workspace/astra/astra-merge/verify_candidate.py",
+  "checker_sha256": "115e24029fc1302a1d823e70d1e64ce32571f3317550827f1ca98f06c349d4cd",
+  "artifact": "/dev/shm/merge_dual_mean_b050",
+  "manifest": "/dev/shm/merge_dual_mean_b050/merge_manifest.json",
+  "method": "arithmetic",
+  "beta": 0.5,
+  "density": 0.2,
+  "seed": 20261108,
+  "donors": [
+    "/dev/shm/astra_merge_cua",
+    "/root/astra_merge_fara"
+  ],
+  "tensors": 724,
+  "language_formula_verified": 426,
+  "physically_changed": 364,
+  "preserved_policy_verified": 298,
+  "shards": 2,
+  "aux": 11,
+  "config_class": "Qwen3_5Config",
+  "processor_class": "Qwen3VLProcessor",
+  "full_model_allocation": "NOT RUN"
+}

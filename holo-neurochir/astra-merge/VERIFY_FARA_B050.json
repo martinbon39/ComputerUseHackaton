@@ -1,0 +1,20 @@
+{
+  "verdict": "PASS",
+  "evidence_publication": "WORKSPACE_QUOTA_BLOCKED",
+  "artifact": "/dev/shm/merge_fara_b050",
+  "method": "arithmetic",
+  "beta": 0.5,
+  "tensors": 724,
+  "language_formula_verified": 426,
+  "physically_changed": 381,
+  "preserved_policy_verified": 298,
+  "retained_manifest_count": 343,
+  "shards": 2,
+  "aux": 11,
+  "config_class": "Qwen3_5Config",
+  "processor_class": "Qwen3VLProcessor",
+  "full_model_allocation": "NOT RUN",
+  "checker": "/workspace/astra/astra-merge/verify_candidate.py",
+  "checker_sha256": "115e24029fc1302a1d823e70d1e64ce32571f3317550827f1ca98f06c349d4cd",
+  "publication_error": "OSError: [Errno 122] Disk quota exceeded"
+}

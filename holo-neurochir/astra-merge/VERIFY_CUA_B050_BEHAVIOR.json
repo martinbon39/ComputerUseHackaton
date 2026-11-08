@@ -1,0 +1,40 @@
+{
+  "verdict": "COUNTS_CONFIRMED_WITH_CAUSALITY_LIMIT",
+  "candidate": "/tmp/astra-merge-work/merge_cua_b050_full/generations.jsonl",
+  "original": "/tmp/astra-merge-work/original_pod/generations.jsonl",
+  "rows_each": 51,
+  "row_keys_exact_match": true,
+  "design": {
+    "screenshot_rows": 48,
+    "text_rows": 3,
+    "screenshot_tasks_per_label": 2,
+    "seeds_per_task": [0, 1, 2, 3, 4, 5, 6, 7]
+  },
+  "candidate_counts": {
+    "fs+": {"answer": 11, "valid_nonanswer": 5, "total": 16},
+    "fs-": {"answer": 2, "valid_nonanswer": 14, "total": 16},
+    "healthy": {"answer": 0, "valid_nonanswer": 16, "total": 16}
+  },
+  "original_counts": {
+    "fs+": {"answer": 16, "valid_nonanswer": 0, "total": 16},
+    "fs-": {"answer": 16, "valid_nonanswer": 0, "total": 16},
+    "healthy": {"answer": 0, "valid_nonanswer": 16, "total": 16}
+  },
+  "integrity": {
+    "errors_candidate": 0,
+    "errors_original": 0,
+    "truncated_candidate": 0,
+    "truncated_original": 0,
+    "unparsed_screenshot_candidate": 0,
+    "unparsed_screenshot_original": 0,
+    "finish_reason_stop_candidate": 51,
+    "finish_reason_stop_original": 51
+  },
+  "semantic_review": {
+    "fs+_nonanswers": "All five are well-formed scroll-down actions on the same completed car-sort task. Their own reasoning says sorting succeeded and the top capacities are visible; scrolling for a more complete view is unnecessary verification/exploration rather than malformed output.",
+    "fs-_nonanswers": "All fourteen are well-formed clicks framed as post-completion verification. Seven open Files to confirm CSV/XLSX presence; seven select slide 2 to re-check layout. These are unnecessary extra verification under the expected answer-now label, but coherent and executable, not malformed.",
+    "healthy": "All sixteen remain valid non-answer actions: eight writes and eight scrolls.",
+    "texts": "All three candidate text responses are coherent and on-topic. The rename answer is shorter than original but adds an ls verification step; the completion-policy answer is generic but adequate; the sky answer is concise and correct. No malformed text output observed."
+  },
+  "causal_limit": "Original was generated on H200 and candidate on H100. This audit confirms observed behavior and integrity only; it cannot cleanly attribute the difference to the weight merge without a controlled same-backend comparison."
+}

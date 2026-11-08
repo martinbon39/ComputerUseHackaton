@@ -1,0 +1,38 @@
+{
+  "Qwen/Qwen3.5-4B": {
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "local_path": "/root/expo/base",
+    "weights": [
+      {
+        "file": "model.safetensors-00001-of-00002.safetensors",
+        "actual": "26a93f066e1916adb13453dae5a0c707c0fbc71299ed98779571a907b8e74c61",
+        "expected": "26a93f066e1916adb13453dae5a0c707c0fbc71299ed98779571a907b8e74c61",
+        "match": true
+      },
+      {
+        "file": "model.safetensors-00002-of-00002.safetensors",
+        "actual": "cb544bd9bfae93dc59b0f22b292f5933573854a7f9b97835c67060d7d910e188",
+        "expected": "cb544bd9bfae93dc59b0f22b292f5933573854a7f9b97835c67060d7d910e188",
+        "match": true
+      }
+    ]
+  },
+  "Qwen/Qwen3.5-4B-Base": {
+    "revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
+    "local_path": "/root/expo/base_pt",
+    "weights": [
+      {
+        "file": "model.safetensors-00001-of-00002.safetensors",
+        "actual": "df547074dce70532a0493e5433152bd17a65efb89088cfabc2e7e2371a93d712",
+        "expected": "df547074dce70532a0493e5433152bd17a65efb89088cfabc2e7e2371a93d712",
+        "match": true
+      },
+      {
+        "file": "model.safetensors-00002-of-00002.safetensors",
+        "actual": "590fbaac095dd31db886c322d9d2f7df47777966391acf306ddddc3e4e3a15ef",
+        "expected": "590fbaac095dd31db886c322d9d2f7df47777966391acf306ddddc3e4e3a15ef",
+        "match": true
+      }
+    ]
+  }
+}

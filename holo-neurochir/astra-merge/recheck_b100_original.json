@@ -1,0 +1,68 @@
+{
+  "artifact": "/tmp/astra-merge-work/merge_cua_b100_full",
+  "summary_source": "/tmp/astra-merge-work/merge_cua_b100_full/summary.json",
+  "rows": 51,
+  "structured_rows": 48,
+  "text_rows": 3,
+  "tasks_and_seeds_match_cohort": true,
+  "settings": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 20,
+    "max_tokens": 3072,
+    "reasoning_effort": "medium",
+    "enable_thinking": true,
+    "structured_outputs": "holo_agent step schema (build_schema(make_step_model(TOOLS)))",
+    "seed": "per request",
+    "text_prompts": {
+      "temperature": 0.0,
+      "max_tokens": 256,
+      "enable_thinking": false
+    }
+  },
+  "identity": [
+    {
+      "url": "https://emilejouannet--holo-vllm-serve.us-east.modal.run/v1",
+      "model": "Holo-3.1-4B-merge_cua_b100",
+      "vllm_version": "0.23.0",
+      "models": [
+        {
+          "id": "Holo-3.1-4B-merge_cua_b100",
+          "root": "/models/ckpt/merge_cua_b100"
+        }
+      ]
+    }
+  ],
+  "errors": 0,
+  "truncated": 6,
+  "per_stratum": {
+    "fs+": {
+      "answer": 2,
+      "valid_nonanswer": 7,
+      "invalid": 7
+    },
+    "fs-": {
+      "answer": 5,
+      "valid_nonanswer": 2,
+      "invalid": 9
+    },
+    "healthy": {
+      "answer": 0,
+      "valid_nonanswer": 16,
+      "invalid": 0
+    }
+  },
+  "invalid_mechanism": {
+    "fs+": {
+      "stop:empty_or_unparsed": 7
+    },
+    "fs-": {
+      "stop:empty_or_unparsed": 3,
+      "length:truncated": 6
+    }
+  },
+  "text_transport": {
+    "nonempty": 3,
+    "stop": 3
+  }
+}

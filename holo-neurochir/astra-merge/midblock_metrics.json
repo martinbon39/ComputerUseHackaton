@@ -1,0 +1,13 @@
+{
+  "source": "cua_metrics.json",
+  "layer_range": [
+    12,
+    24
+  ],
+  "n_tensors": 159,
+  "donor_vector_l2": 2.4457124708330085,
+  "holo_vector_l2": 20.062492897457165,
+  "cos_tau_d_tau_h": 0.007785743638407015,
+  "fraction_language_layer_donor_energy": 0.3711191192333096,
+  "limitation": "Descriptive geometry only; not evidence of selective false-success correction."
+}

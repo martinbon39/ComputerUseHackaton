@@ -1,0 +1,721 @@
+{
+  "owner": "astra-merge",
+  "construction_cap": 9,
+  "constructed": 9,
+  "online_evaluation_owner": "ares",
+  "osworld_score_improvement_established": false,
+  "note": "HEALTHY refers to the frozen static screen and independent behavioral audit, not OSWorld success. QUEUED means no runtime health measurement yet. Cloud account availability is documented by upload records, deployment identities and REPORT.md.",
+  "checkpoints": [
+    {
+      "name": "merge_cua_b025",
+      "method": "arithmetic",
+      "beta": 0.25,
+      "layer_range_half_open": null,
+      "donors": [
+        "/dev/shm/astra_merge_cua"
+      ],
+      "complete_hf": true,
+      "weight_verification": "PASS",
+      "weight_evidence": "VERIFY_CUA_B025.json",
+      "modal_accounts": [
+        1,
+        2
+      ],
+      "modal_volume_path": "holo-models:/ckpt/merge_cua_b025",
+      "served_root": "/models/ckpt/merge_cua_b025",
+      "served_name": "Holo-3.1-4B-merge_cua_b025",
+      "static_status": "HEALTHY",
+      "static_evidence": "merge_cua_b025_full/generations.jsonl",
+      "behavior_audit": "VERIFY_CUA_B025_BEHAVIOR.json",
+      "changed_tensors": 325,
+      "changed_elements": 1310310186,
+      "actual_update_l2": 1.0308778041402544,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1570,
+          "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+        },
+        "chat_template.jinja": {
+          "bytes": 7756,
+          "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+        },
+        "config.json": {
+          "bytes": 2785,
+          "sha256": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1"
+        },
+        "generation_config.json": {
+          "bytes": 213,
+          "sha256": "a219dff6ed1d52d8a88fe50026de36ebcbcb913cbac0e70fdfaecf380949d7f1"
+        },
+        "merges.txt": {
+          "bytes": 3353259,
+          "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+        },
+        "model-00001-of-00002.safetensors": {
+          "bytes": 6459239120,
+          "sha256": "94da1195961437b493b0ad938aaa99b1cab2ace8baab1002f298c75a95eb0b02"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 3890779664,
+          "sha256": "29de0366af9f813d7031840681ae543bab1375251cd659a8d88b0b798abea428"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 66258,
+          "sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7"
+        },
+        "preprocessor_config.json": {
+          "bytes": 390,
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        "tokenizer.json": {
+          "bytes": 12807982,
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        },
+        "tokenizer_config.json": {
+          "bytes": 16710,
+          "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+        },
+        "video_preprocessor_config.json": {
+          "bytes": 385,
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        "vocab.json": {
+          "bytes": 6722759,
+          "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+        }
+      }
+    },
+    {
+      "name": "merge_cua_b050",
+      "method": "arithmetic",
+      "beta": 0.5,
+      "layer_range_half_open": null,
+      "donors": [
+        "/dev/shm/astra_merge_cua"
+      ],
+      "complete_hf": true,
+      "weight_verification": "PASS",
+      "weight_evidence": "VERIFY_CUA_B050.json",
+      "modal_accounts": [
+        2
+      ],
+      "modal_volume_path": "holo-models:/ckpt/merge_cua_b050",
+      "served_root": "/models/ckpt/merge_cua_b050",
+      "served_name": "Holo-3.1-4B-merge_cua_b050",
+      "static_status": "HEALTHY",
+      "static_evidence": "merge_cua_b050_full/generations.jsonl",
+      "behavior_audit": "VERIFY_CUA_B050_BEHAVIOR.json",
+      "changed_tensors": 338,
+      "changed_elements": 2125448677,
+      "actual_update_l2": 2.337738928725211,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1570,
+          "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+        },
+        "chat_template.jinja": {
+          "bytes": 7756,
+          "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+        },
+        "config.json": {
+          "bytes": 2785,
+          "sha256": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1"
+        },
+        "generation_config.json": {
+          "bytes": 213,
+          "sha256": "a219dff6ed1d52d8a88fe50026de36ebcbcb913cbac0e70fdfaecf380949d7f1"
+        },
+        "merges.txt": {
+          "bytes": 3353259,
+          "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+        },
+        "model-00001-of-00002.safetensors": {
+          "bytes": 6459239120,
+          "sha256": "b7acdd12152d0f2b351831ce7b691259cbd9e4188eba084050505e504c60eecd"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 3890779664,
+          "sha256": "6f88c913b715d1f66ae08ddc995c4eb3df0bd75e1919df7e60a944d5b61652ad"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 66258,
+          "sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7"
+        },
+        "preprocessor_config.json": {
+          "bytes": 390,
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        "tokenizer.json": {
+          "bytes": 12807982,
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        },
+        "tokenizer_config.json": {
+          "bytes": 16710,
+          "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+        },
+        "video_preprocessor_config.json": {
+          "bytes": 385,
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        "vocab.json": {
+          "bytes": 6722759,
+          "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+        }
+      }
+    },
+    {
+      "name": "merge_cua_b100",
+      "method": "arithmetic",
+      "beta": 1.0,
+      "layer_range_half_open": null,
+      "donors": [
+        "/dev/shm/astra_merge_cua"
+      ],
+      "complete_hf": true,
+      "weight_verification": "PASS",
+      "weight_evidence": "VERIFY_CUA_B100.json",
+      "modal_accounts": [
+        1
+      ],
+      "modal_volume_path": "holo-models:/ckpt/merge_cua_b100",
+      "served_root": "/models/ckpt/merge_cua_b100",
+      "served_name": "Holo-3.1-4B-merge_cua_b100",
+      "static_status": "REJECTED",
+      "static_evidence": "merge_cua_b100_full/generations.jsonl",
+      "behavior_audit": "VERIFY_CUA_B100_BEHAVIOR.json",
+      "changed_tensors": 364,
+      "changed_elements": 2677413844,
+      "actual_update_l2": 4.121938832244872,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1570,
+          "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+        },
+        "chat_template.jinja": {
+          "bytes": 7756,
+          "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+        },
+        "config.json": {
+          "bytes": 2785,
+          "sha256": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1"
+        },
+        "generation_config.json": {
+          "bytes": 213,
+          "sha256": "a219dff6ed1d52d8a88fe50026de36ebcbcb913cbac0e70fdfaecf380949d7f1"
+        },
+        "merges.txt": {
+          "bytes": 3353259,
+          "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+        },
+        "model-00001-of-00002.safetensors": {
+          "bytes": 6459239120,
+          "sha256": "123b62320928339fb0aa8fa8b3295e75d18bb97cc644a1ebfdc06f9593bc14b1"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 3890779664,
+          "sha256": "f726b70952792d017333293bcb348b6912b3c294906ba1b6b31dacd79abd5591"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 66258,
+          "sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7"
+        },
+        "preprocessor_config.json": {
+          "bytes": 390,
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        "tokenizer.json": {
+          "bytes": 12807982,
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        },
+        "tokenizer_config.json": {
+          "bytes": 16710,
+          "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+        },
+        "video_preprocessor_config.json": {
+          "bytes": 385,
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        "vocab.json": {
+          "bytes": 6722759,
+          "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+        }
+      }
+    },
+    {
+      "name": "merge_fara_b025",
+      "method": "arithmetic",
+      "beta": 0.25,
+      "layer_range_half_open": null,
+      "donors": [
+        "/root/astra_merge_fara"
+      ],
+      "complete_hf": true,
+      "weight_verification": "PASS",
+      "weight_evidence": "VERIFY_FARA_B025.json",
+      "modal_accounts": [
+        1
+      ],
+      "modal_volume_path": "holo-models:/ckpt/merge_fara_b025",
+      "served_root": "/models/ckpt/merge_fara_b025",
+      "served_name": "Holo-3.1-4B-merge_fara_b025",
+      "static_status": "NOT_RUN_SCOPE_AMENDMENT",
+      "static_evidence": null,
+      "behavior_audit": null,
+      "changed_tensors": 364,
+      "changed_elements": 3436931110,
+      "actual_update_l2": 9.572228852306873,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1570,
+          "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+        },
+        "chat_template.jinja": {
+          "bytes": 7756,
+          "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+        },
+        "config.json": {
+          "bytes": 2785,
+          "sha256": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1"
+        },
+        "generation_config.json": {
+          "bytes": 213,
+          "sha256": "a219dff6ed1d52d8a88fe50026de36ebcbcb913cbac0e70fdfaecf380949d7f1"
+        },
+        "merges.txt": {
+          "bytes": 3353259,
+          "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+        },
+        "model-00001-of-00002.safetensors": {
+          "bytes": 6459239120,
+          "sha256": "f219dea5792580607ced8082daf23438a7a32b63e61116c77f0eea03d742a531"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 3890779664,
+          "sha256": "4670bc5e68eb0cbd4c167a07549d7012b60995e1421c37f8f996c41496fa2a2d"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 66258,
+          "sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7"
+        },
+        "preprocessor_config.json": {
+          "bytes": 390,
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        "tokenizer.json": {
+          "bytes": 12807982,
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        },
+        "tokenizer_config.json": {
+          "bytes": 16710,
+          "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+        },
+        "video_preprocessor_config.json": {
+          "bytes": 385,
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        "vocab.json": {
+          "bytes": 6722759,
+          "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+        }
+      }
+    },
+    {
+      "name": "merge_fara_b050",
+      "method": "arithmetic",
+      "beta": 0.5,
+      "layer_range_half_open": null,
+      "donors": [
+        "/root/astra_merge_fara"
+      ],
+      "complete_hf": true,
+      "weight_verification": "PASS",
+      "weight_evidence": "VERIFY_FARA_B050.json",
+      "modal_accounts": [
+        1
+      ],
+      "modal_volume_path": "holo-models:/ckpt/merge_fara_b050",
+      "served_root": "/models/ckpt/merge_fara_b050",
+      "served_name": "Holo-3.1-4B-merge_fara_b050",
+      "static_status": "HEALTHY",
+      "static_evidence": "merge_fara_b050_full/generations.jsonl",
+      "behavior_audit": "VERIFY_FARA_B050_BEHAVIOR.json",
+      "changed_tensors": 381,
+      "changed_elements": 3749637334,
+      "actual_update_l2": 19.048310410119132,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1570,
+          "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+        },
+        "chat_template.jinja": {
+          "bytes": 7756,
+          "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+        },
+        "config.json": {
+          "bytes": 2785,
+          "sha256": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1"
+        },
+        "generation_config.json": {
+          "bytes": 213,
+          "sha256": "a219dff6ed1d52d8a88fe50026de36ebcbcb913cbac0e70fdfaecf380949d7f1"
+        },
+        "merges.txt": {
+          "bytes": 3353259,
+          "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+        },
+        "model-00001-of-00002.safetensors": {
+          "bytes": 6459239120,
+          "sha256": "a5e53f3102cd6372284bec7a7f8d253d431057e59c208521242823cde80dab01"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 3890779664,
+          "sha256": "332bdd4834fa5999e5f13759e21d0b82cbeb750e2a99029be2403052a8f70e53"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 66258,
+          "sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7"
+        },
+        "preprocessor_config.json": {
+          "bytes": 390,
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        "tokenizer.json": {
+          "bytes": 12807982,
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        },
+        "tokenizer_config.json": {
+          "bytes": 16710,
+          "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+        },
+        "video_preprocessor_config.json": {
+          "bytes": 385,
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        "vocab.json": {
+          "bytes": 6722759,
+          "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+        }
+      }
+    },
+    {
+      "name": "merge_fara_b100",
+      "method": "arithmetic",
+      "beta": 1.0,
+      "layer_range_half_open": null,
+      "donors": [
+        "/root/astra_merge_fara"
+      ],
+      "complete_hf": true,
+      "weight_verification": "PASS",
+      "weight_evidence": "VERIFY_FARA_B100.json",
+      "modal_accounts": [
+        1
+      ],
+      "modal_volume_path": "holo-models:/ckpt/merge_fara_b100",
+      "served_root": "/models/ckpt/merge_fara_b100",
+      "served_name": "Holo-3.1-4B-merge_fara_b100",
+      "static_status": "NOT_RUN_SCOPE_AMENDMENT",
+      "static_evidence": null,
+      "behavior_audit": null,
+      "changed_tensors": 405,
+      "changed_elements": 3926878780,
+      "actual_update_l2": 37.992194423689256,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1570,
+          "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+        },
+        "chat_template.jinja": {
+          "bytes": 7756,
+          "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+        },
+        "config.json": {
+          "bytes": 2785,
+          "sha256": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1"
+        },
+        "generation_config.json": {
+          "bytes": 213,
+          "sha256": "a219dff6ed1d52d8a88fe50026de36ebcbcb913cbac0e70fdfaecf380949d7f1"
+        },
+        "merges.txt": {
+          "bytes": 3353259,
+          "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+        },
+        "model-00001-of-00002.safetensors": {
+          "bytes": 6459239120,
+          "sha256": "c785ef870d672a174a0b757f678996f745d8ee563dc2a6a146e2bab059b5f3e9"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 3890779664,
+          "sha256": "fd7091b73ee77f64a54218de244aa8999746372704f6b64915eddc43bfb51300"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 66258,
+          "sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7"
+        },
+        "preprocessor_config.json": {
+          "bytes": 390,
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        "tokenizer.json": {
+          "bytes": 12807982,
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        },
+        "tokenizer_config.json": {
+          "bytes": 16710,
+          "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+        },
+        "video_preprocessor_config.json": {
+          "bytes": 385,
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        "vocab.json": {
+          "bytes": 6722759,
+          "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+        }
+      }
+    },
+    {
+      "name": "merge_dual_mean_b050",
+      "method": "arithmetic",
+      "beta": 0.5,
+      "layer_range_half_open": null,
+      "donors": [
+        "/dev/shm/astra_merge_cua",
+        "/root/astra_merge_fara"
+      ],
+      "complete_hf": true,
+      "weight_verification": "PASS",
+      "weight_evidence": "VERIFY_DUAL_MEAN_B050.json",
+      "modal_accounts": [
+        1
+      ],
+      "modal_volume_path": "holo-models:/ckpt/merge_dual_mean_b050",
+      "served_root": "/models/ckpt/merge_dual_mean_b050",
+      "served_name": "Holo-3.1-4B-merge_dual_mean_b050",
+      "static_status": "NOT_RUN_SCOPE_AMENDMENT",
+      "static_evidence": null,
+      "behavior_audit": null,
+      "changed_tensors": 364,
+      "changed_elements": 3441220178,
+      "actual_update_l2": 9.659805061370525,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1570,
+          "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+        },
+        "chat_template.jinja": {
+          "bytes": 7756,
+          "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+        },
+        "config.json": {
+          "bytes": 2785,
+          "sha256": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1"
+        },
+        "generation_config.json": {
+          "bytes": 213,
+          "sha256": "a219dff6ed1d52d8a88fe50026de36ebcbcb913cbac0e70fdfaecf380949d7f1"
+        },
+        "merges.txt": {
+          "bytes": 3353259,
+          "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+        },
+        "model-00001-of-00002.safetensors": {
+          "bytes": 6459239120,
+          "sha256": "4b821c06ddf6c4c42af27d2f1af7e9137ff905b16b486480240c8898a99e277d"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 3890779664,
+          "sha256": "af5e1a010cba8eb7cc937c562f9c5818da44d6520d7962c7caab4a2a65715deb"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 66258,
+          "sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7"
+        },
+        "preprocessor_config.json": {
+          "bytes": 390,
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        "tokenizer.json": {
+          "bytes": 12807982,
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        },
+        "tokenizer_config.json": {
+          "bytes": 16710,
+          "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+        },
+        "video_preprocessor_config.json": {
+          "bytes": 385,
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        "vocab.json": {
+          "bytes": 6722759,
+          "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+        }
+      }
+    },
+    {
+      "name": "merge_cua_mid_b050",
+      "method": "arithmetic",
+      "beta": 0.5,
+      "layer_range_half_open": [
+        12,
+        24
+      ],
+      "donors": [
+        "/dev/shm/astra_merge_cua"
+      ],
+      "complete_hf": true,
+      "weight_verification": "PASS",
+      "weight_evidence": "VERIFY_CUA_MID_B050.json",
+      "modal_accounts": [
+        1,
+        2
+      ],
+      "modal_volume_path": "holo-models:/ckpt/merge_cua_mid_b050",
+      "served_root": "/models/ckpt/merge_cua_mid_b050",
+      "served_name": "Holo-3.1-4B-merge_cua_mid_b050",
+      "static_status": "QUEUED",
+      "static_evidence": null,
+      "behavior_audit": null,
+      "changed_tensors": 126,
+      "changed_elements": 780857461,
+      "actual_update_l2": 1.3865373135738688,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1570,
+          "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+        },
+        "chat_template.jinja": {
+          "bytes": 7756,
+          "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+        },
+        "config.json": {
+          "bytes": 2785,
+          "sha256": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1"
+        },
+        "generation_config.json": {
+          "bytes": 213,
+          "sha256": "a219dff6ed1d52d8a88fe50026de36ebcbcb913cbac0e70fdfaecf380949d7f1"
+        },
+        "merges.txt": {
+          "bytes": 3353259,
+          "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+        },
+        "model-00001-of-00002.safetensors": {
+          "bytes": 6459239120,
+          "sha256": "e3be935eda0b224fc22aa7fb70c01e98b4a6c50815f2a0df9a8e4b0eb12aa621"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 3890779664,
+          "sha256": "d3b0b8e3ddad9d060db2da448349c442d1d43b91b7f956dc06b5cea349e34093"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 66258,
+          "sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7"
+        },
+        "preprocessor_config.json": {
+          "bytes": 390,
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        "tokenizer.json": {
+          "bytes": 12807982,
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        },
+        "tokenizer_config.json": {
+          "bytes": 16710,
+          "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+        },
+        "video_preprocessor_config.json": {
+          "bytes": 385,
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        "vocab.json": {
+          "bytes": 6722759,
+          "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+        }
+      }
+    },
+    {
+      "name": "merge_cua_mid_b025",
+      "method": "arithmetic",
+      "beta": 0.25,
+      "layer_range_half_open": [
+        12,
+        24
+      ],
+      "donors": [
+        "/dev/shm/astra_merge_cua"
+      ],
+      "complete_hf": true,
+      "weight_verification": "PASS",
+      "weight_evidence": "VERIFY_CUA_MID_B025.json",
+      "modal_accounts": [
+        2
+      ],
+      "modal_volume_path": "holo-models:/ckpt/merge_cua_mid_b025",
+      "served_root": "/models/ckpt/merge_cua_mid_b025",
+      "served_name": "Holo-3.1-4B-merge_cua_mid_b025",
+      "static_status": "QUEUED",
+      "static_evidence": null,
+      "behavior_audit": null,
+      "changed_tensors": 125,
+      "changed_elements": 486244378,
+      "actual_update_l2": 0.6138762129425228,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1570,
+          "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+        },
+        "chat_template.jinja": {
+          "bytes": 7756,
+          "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+        },
+        "config.json": {
+          "bytes": 2785,
+          "sha256": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1"
+        },
+        "generation_config.json": {
+          "bytes": 213,
+          "sha256": "a219dff6ed1d52d8a88fe50026de36ebcbcb913cbac0e70fdfaecf380949d7f1"
+        },
+        "merges.txt": {
+          "bytes": 3353259,
+          "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+        },
+        "model-00001-of-00002.safetensors": {
+          "bytes": 6459239120,
+          "sha256": "7015854f4d0457f88450405a123a2d3f388f92cf37d102a9633c838b5a8316b2"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 3890779664,
+          "sha256": "99c2ef7452852c62685ab7a203932415d9d5d3bf0812de9971a94554d8708741"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 66258,
+          "sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7"
+        },
+        "preprocessor_config.json": {
+          "bytes": 390,
+          "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+        },
+        "tokenizer.json": {
+          "bytes": 12807982,
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        },
+        "tokenizer_config.json": {
+          "bytes": 16710,
+          "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+        },
+        "video_preprocessor_config.json": {
+          "bytes": 385,
+          "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+        },
+        "vocab.json": {
+          "bytes": 6722759,
+          "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "name": "merge_cua_mid_b050",
+  "account": 2,
+  "checkpoint": "/dev/shm/merge_cua_mid_b050",
+  "destination": "holo-models:/ckpt/merge_cua_mid_b050",
+  "exit_code": 0,
+  "seconds": 10.840779304504395,
+  "completed_utc": "2026-11-08T02:25:52Z",
+  "files": {
+    ".gitattributes": {
+      "bytes": 1570,
+      "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+    },
+    "chat_template.jinja": {
+      "bytes": 7756,
+      "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+    },
+    "config.json": {
+      "bytes": 2785,
+      "sha256": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1"
+    },
+    "generation_config.json": {
+      "bytes": 213,
+      "sha256": "a219dff6ed1d52d8a88fe50026de36ebcbcb913cbac0e70fdfaecf380949d7f1"
+    },
+    "merges.txt": {
+      "bytes": 3353259,
+      "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+    },
+    "model-00001-of-00002.safetensors": {
+      "bytes": 6459239120,
+      "sha256": "e3be935eda0b224fc22aa7fb70c01e98b4a6c50815f2a0df9a8e4b0eb12aa621"
+    },
+    "model-00002-of-00002.safetensors": {
+      "bytes": 3890779664,
+      "sha256": "d3b0b8e3ddad9d060db2da448349c442d1d43b91b7f956dc06b5cea349e34093"
+    },
+    "model.safetensors.index.json": {
+      "bytes": 66258,
+      "sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7"
+    },
+    "preprocessor_config.json": {
+      "bytes": 390,
+      "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+    },
+    "tokenizer.json": {
+      "bytes": 12807982,
+      "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+    },
+    "tokenizer_config.json": {
+      "bytes": 16710,
+      "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+    },
+    "video_preprocessor_config.json": {
+      "bytes": 385,
+      "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+    },
+    "vocab.json": {
+      "bytes": 6722759,
+      "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+    }
+  },
+  "client_output": "discarded before storage"
+}

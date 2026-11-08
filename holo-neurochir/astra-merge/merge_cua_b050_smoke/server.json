@@ -1,0 +1,11 @@
+{
+  "url": "https://martinbon39--holo-vllm-serve.us-east.modal.run/v1",
+  "model": "Holo-3.1-4B-merge_cua_b050",
+  "vllm_version": "0.23.0",
+  "models": [
+    {
+      "id": "Holo-3.1-4B-merge_cua_b050",
+      "root": "/models/ckpt/merge_cua_b050"
+    }
+  ]
+}

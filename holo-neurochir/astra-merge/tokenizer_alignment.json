@@ -1,0 +1,46 @@
+{
+  "method": "read-only tokenizer.json model.vocab + tokenizer.json added_tokens content-to-id; tokenizer_config added_tokens_decoder counted only",
+  "holo_reference": "Hcompany/Holo-3.1-4B snapshot 8c88265a5a159bfd1492db9243733dd2e6e04a6e represented by /workspace/astra/astra-mit1/h9_metadata/holo",
+  "paths": {
+    "holo_snapshot8c882": {
+      "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+      "tokenizer_config_sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+      "model_vocab_count": 248044,
+      "tokenizer_added_count": 26,
+      "config_added_decoder_count": 33,
+      "effective_count": 248070
+    },
+    "qwen_expo_base": {
+      "path": "/root/expo/base",
+      "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+      "tokenizer_config_sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+      "model_vocab_count": 248044,
+      "tokenizer_added_count": 26,
+      "config_added_decoder_count": 33,
+      "effective_count": 248070
+    },
+    "astra_merge_cua": {
+      "path": "/dev/shm/astra_merge_cua",
+      "tokenizer_sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+      "tokenizer_config_sha256": "792fa3f0cb88b111e54ef3134c873531008c4df471d108da17903426e308aa7b",
+      "model_vocab_count": 248044,
+      "tokenizer_added_count": 33,
+      "config_added_decoder_count": 0,
+      "effective_count": 248077
+    }
+  },
+  "comparisons_to_holo": {
+    "qwen_expo_base": {
+      "model_vocab": {"keys_compared": 248044, "same_string_id": 248044, "missing": 0, "extra": 0, "same_string_different_id": 0},
+      "added_tokens": {"keys_compared": 26, "same_string_id": 26, "missing": 0, "extra": 0, "same_string_different_id": 0},
+      "effective": {"keys_compared": 248070, "same_string_id": 248070, "missing": 0, "extra": 0, "same_string_different_id": 0}
+    },
+    "astra_merge_cua": {
+      "model_vocab": {"keys_compared": 248044, "same_string_id": 248044, "missing": 0, "extra": 0, "same_string_different_id": 0},
+      "added_tokens": {"keys_compared": 33, "same_string_id": 26, "missing": 0, "extra": 7, "same_string_different_id": 0},
+      "effective": {"keys_compared": 248077, "same_string_id": 248070, "missing": 0, "extra": 7, "same_string_different_id": 0}
+    }
+  },
+  "conclusion": "Base model vocabulary is perfectly aligned. Candidate preserves all 248044 base vocab IDs and all 26 Holo added-token IDs, with 7 additional candidate-only added tokens; no shared string has a changed ID. Inspect candidate architecture/config separately before row-wise fusion.",
+  "constraints": ["No token strings emitted", "No inference run", "No shared source modified", "Python environment capped at 2 threads; pod command used taskset -c 40,41"]
+}
