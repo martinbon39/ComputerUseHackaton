@@ -1,0 +1,791 @@
+{
+  "owner": "moon-combo",
+  "decision": "REJECT_ALL_NO_ONLINE",
+  "decision_utc": "2026-11-08T08:00:52.467865+00:00",
+  "deadline_utc": "2026-11-08T09:45:00+00:00",
+  "cohort_sha256": "2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0",
+  "candidate_draws": 660,
+  "candidate_text_controls": 9,
+  "reused_baseline_draws": 440,
+  "arms": {
+    "U12": {
+      "arm": "U12",
+      "complete": true,
+      "cohort_sha256": "2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0",
+      "summaries": {
+        "A": {
+          "fs+": {
+            "n": 76,
+            "tasks": 19,
+            "answer": 55,
+            "valid_nonanswer": 21,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "fs-": {
+            "n": 80,
+            "tasks": 20,
+            "answer": 75,
+            "valid_nonanswer": 5,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "healthy": {
+            "n": 64,
+            "tasks": 16,
+            "answer": 5,
+            "valid_nonanswer": 59,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "json_valid_pct": 100.0
+        },
+        "B": {
+          "fs+": {
+            "n": 76,
+            "tasks": 19,
+            "answer": 47,
+            "valid_nonanswer": 29,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "fs-": {
+            "n": 80,
+            "tasks": 20,
+            "answer": 66,
+            "valid_nonanswer": 14,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "healthy": {
+            "n": 64,
+            "tasks": 16,
+            "answer": 0,
+            "valid_nonanswer": 64,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "json_valid_pct": 100.0
+        },
+        "U12": {
+          "fs+": {
+            "n": 76,
+            "tasks": 19,
+            "answer": 48,
+            "valid_nonanswer": 28,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "fs-": {
+            "n": 80,
+            "tasks": 20,
+            "answer": 65,
+            "valid_nonanswer": 15,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "healthy": {
+            "n": 64,
+            "tasks": 16,
+            "answer": 0,
+            "valid_nonanswer": 64,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "json_valid_pct": 100.0
+        }
+      },
+      "vs_A": {
+        "fs+": {
+          "metric": "answer",
+          "tasks": 19,
+          "delta_pp": -9.210526315789474,
+          "ci95_pp": [
+            -23.68421052631579,
+            2.6315789473684212
+          ]
+        },
+        "fs-": {
+          "metric": "answer",
+          "tasks": 20,
+          "delta_pp": -12.5,
+          "ci95_pp": [
+            -23.75,
+            -2.5
+          ]
+        },
+        "healthy": {
+          "metric": "valid_nonanswer",
+          "tasks": 16,
+          "delta_pp": 7.8125,
+          "ci95_pp": [
+            0.0,
+            20.3125
+          ]
+        }
+      },
+      "vs_B": {
+        "fs+": {
+          "metric": "answer",
+          "tasks": 19,
+          "delta_pp": 1.3157894736842106,
+          "ci95_pp": [
+            0.0,
+            3.9473684210526314
+          ]
+        },
+        "fs-": {
+          "metric": "answer",
+          "tasks": 20,
+          "delta_pp": -1.25,
+          "ci95_pp": [
+            -3.75,
+            0.0
+          ]
+        },
+        "healthy": {
+          "metric": "valid_nonanswer",
+          "tasks": 16,
+          "delta_pp": 0.0,
+          "ci95_pp": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "disjoint_vs_A": {
+        "fs+": {
+          "metric": "answer",
+          "tasks": 18,
+          "delta_pp": -9.722222222222221,
+          "ci95_pp": [
+            -25.0,
+            2.7777777777777777
+          ]
+        },
+        "fs-": {
+          "metric": "answer",
+          "tasks": 19,
+          "delta_pp": -13.157894736842104,
+          "ci95_pp": [
+            -25.0,
+            -2.6315789473684212
+          ]
+        },
+        "healthy": {
+          "metric": "valid_nonanswer",
+          "tasks": 15,
+          "delta_pp": 8.333333333333334,
+          "ci95_pp": [
+            0.0,
+            20.0
+          ]
+        }
+      },
+      "sensitivity_excluded": [
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+        "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+        "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3"
+      ],
+      "input_hashes": {
+        "A": "c7f309a97947452e47a343bb07f429937f200a5159d0868be2aad8d7fb9ad546",
+        "B": "d557568c3e9906870119d6d83c23c65fa571999235bea9717391167bf2de5e02",
+        "U12": "5c63a8493cd8a28d609bc122c1337311417d7e5c6ed8654a3f295f61a7283a62"
+      },
+      "structural_gates": {
+        "json": true,
+        "healthy_loss_le_2pp": true,
+        "fs_answer_reduction_ge_15pp": false
+      },
+      "text_health": "REQUIRES independent reading of text_controls.json",
+      "action_quality": "REQUIRES independent review; valid nonanswer does not establish task progress",
+      "admission": {
+        "complete": true,
+        "json_valid_at_least_95pct": true,
+        "healthy_valid_nonanswer_loss_pp_vs_A": 7.8125,
+        "healthy_loss_within_2pp": true,
+        "fs_plus_answer_reduction_pp_vs_A": -9.21052631578948,
+        "fs_plus_reduction_at_least_15pp": false,
+        "text_controls_coherent": true,
+        "visibly_better_actions": false,
+        "decision": "REJECT",
+        "reason": "U12 has only a 9.21pp fs+ answer reduction versus A, below the 15pp gate. The gate’s action comparison is against A. Targeted screenshots show plausible continuations but no action clearly better than A’s claimed terminal state or demonstrable progress; matching B is contextual evidence, not alone admission."
+      },
+      "writer_delta_energy_removed_pct": 0.05045541384790299,
+      "draws": 220,
+      "sha256": "5c63a8493cd8a28d609bc122c1337311417d7e5c6ed8654a3f295f61a7283a62",
+      "true_finish_answers_by_task": {
+        "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d": 4,
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217": 4,
+        "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82": 4,
+        "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9": 1,
+        "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": 4,
+        "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb": 3,
+        "os/13584542-872b-42d8-b299-866967b5c3ef": 0,
+        "chrome/3299584d-8f11-4457-bf4c-ce98f7600250": 4,
+        "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57": 4,
+        "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4": 3,
+        "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224": 4,
+        "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74": 4,
+        "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78": 4,
+        "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf": 2,
+        "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5": 4,
+        "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568": 0,
+        "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c": 4,
+        "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f": 4,
+        "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c": 4,
+        "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d": 4
+      },
+      "true_finish_tasks_all_four": 14,
+      "true_finish_tasks_zero": 2
+    },
+    "U32": {
+      "arm": "U32",
+      "complete": true,
+      "cohort_sha256": "2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0",
+      "summaries": {
+        "A": {
+          "fs+": {
+            "n": 76,
+            "tasks": 19,
+            "answer": 55,
+            "valid_nonanswer": 21,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "fs-": {
+            "n": 80,
+            "tasks": 20,
+            "answer": 75,
+            "valid_nonanswer": 5,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "healthy": {
+            "n": 64,
+            "tasks": 16,
+            "answer": 5,
+            "valid_nonanswer": 59,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "json_valid_pct": 100.0
+        },
+        "B": {
+          "fs+": {
+            "n": 76,
+            "tasks": 19,
+            "answer": 47,
+            "valid_nonanswer": 29,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "fs-": {
+            "n": 80,
+            "tasks": 20,
+            "answer": 66,
+            "valid_nonanswer": 14,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "healthy": {
+            "n": 64,
+            "tasks": 16,
+            "answer": 0,
+            "valid_nonanswer": 64,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "json_valid_pct": 100.0
+        },
+        "U32": {
+          "fs+": {
+            "n": 76,
+            "tasks": 19,
+            "answer": 46,
+            "valid_nonanswer": 30,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "fs-": {
+            "n": 80,
+            "tasks": 20,
+            "answer": 65,
+            "valid_nonanswer": 15,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "healthy": {
+            "n": 64,
+            "tasks": 16,
+            "answer": 1,
+            "valid_nonanswer": 63,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "json_valid_pct": 100.0
+        }
+      },
+      "vs_A": {
+        "fs+": {
+          "metric": "answer",
+          "tasks": 19,
+          "delta_pp": -11.842105263157896,
+          "ci95_pp": [
+            -26.31578947368421,
+            0.0
+          ]
+        },
+        "fs-": {
+          "metric": "answer",
+          "tasks": 20,
+          "delta_pp": -12.5,
+          "ci95_pp": [
+            -23.75,
+            -2.5
+          ]
+        },
+        "healthy": {
+          "metric": "valid_nonanswer",
+          "tasks": 16,
+          "delta_pp": 6.25,
+          "ci95_pp": [
+            0.0,
+            15.625
+          ]
+        }
+      },
+      "vs_B": {
+        "fs+": {
+          "metric": "answer",
+          "tasks": 19,
+          "delta_pp": -1.3157894736842106,
+          "ci95_pp": [
+            -5.2631578947368425,
+            2.6315789473684212
+          ]
+        },
+        "fs-": {
+          "metric": "answer",
+          "tasks": 20,
+          "delta_pp": -1.25,
+          "ci95_pp": [
+            -3.75,
+            0.0
+          ]
+        },
+        "healthy": {
+          "metric": "valid_nonanswer",
+          "tasks": 16,
+          "delta_pp": -1.5625,
+          "ci95_pp": [
+            -4.6875,
+            0.0
+          ]
+        }
+      },
+      "disjoint_vs_A": {
+        "fs+": {
+          "metric": "answer",
+          "tasks": 18,
+          "delta_pp": -11.11111111111111,
+          "ci95_pp": [
+            -26.38888888888889,
+            0.0
+          ]
+        },
+        "fs-": {
+          "metric": "answer",
+          "tasks": 19,
+          "delta_pp": -13.157894736842104,
+          "ci95_pp": [
+            -25.0,
+            -2.6315789473684212
+          ]
+        },
+        "healthy": {
+          "metric": "valid_nonanswer",
+          "tasks": 15,
+          "delta_pp": 6.666666666666667,
+          "ci95_pp": [
+            0.0,
+            16.666666666666668
+          ]
+        }
+      },
+      "sensitivity_excluded": [
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+        "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+        "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3"
+      ],
+      "input_hashes": {
+        "A": "c7f309a97947452e47a343bb07f429937f200a5159d0868be2aad8d7fb9ad546",
+        "B": "d557568c3e9906870119d6d83c23c65fa571999235bea9717391167bf2de5e02",
+        "U32": "cc76db1a22aa9521b9d63e1016cda71a22da776a0187b8833cb584bb55104018"
+      },
+      "structural_gates": {
+        "json": true,
+        "healthy_loss_le_2pp": true,
+        "fs_answer_reduction_ge_15pp": false
+      },
+      "text_health": "REQUIRES independent reading of text_controls.json",
+      "action_quality": "REQUIRES independent review; valid nonanswer does not establish task progress",
+      "admission": {
+        "json95": true,
+        "healthy_loss_pp_vs_A": 6.25,
+        "healthy_gate": true,
+        "fs_plus_reduction_pp_vs_A": -11.842105263157897,
+        "fs_plus_15pp_gate": false,
+        "true_finish_delta_pp_vs_B": -1.2499999999999956,
+        "visible_better_actions_vs_A": false,
+        "decision": "REJECT",
+        "reason": "fs+ suppression is only -11.84pp versus A, below -15pp. Healthy and JSON/text gates pass, but true finishes are -1.25pp versus B (65/80 vs 66/80), so no restoration. Targeted screenshots find no action visibly better than A."
+      },
+      "writer_delta_energy_removed_pct": 0.051340149803890886,
+      "draws": 220,
+      "sha256": "cc76db1a22aa9521b9d63e1016cda71a22da776a0187b8833cb584bb55104018",
+      "true_finish_answers_by_task": {
+        "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d": 4,
+        "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82": 4,
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217": 4,
+        "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9": 1,
+        "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": 4,
+        "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb": 3,
+        "os/13584542-872b-42d8-b299-866967b5c3ef": 0,
+        "chrome/3299584d-8f11-4457-bf4c-ce98f7600250": 4,
+        "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57": 4,
+        "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4": 3,
+        "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224": 4,
+        "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74": 4,
+        "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78": 4,
+        "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf": 2,
+        "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5": 4,
+        "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568": 0,
+        "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c": 4,
+        "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f": 4,
+        "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d": 4,
+        "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c": 4
+      },
+      "true_finish_tasks_all_four": 14,
+      "true_finish_tasks_zero": 2
+    },
+    "K32": {
+      "arm": "K32",
+      "complete": true,
+      "cohort_sha256": "2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0",
+      "summaries": {
+        "A": {
+          "fs+": {
+            "n": 76,
+            "tasks": 19,
+            "answer": 55,
+            "valid_nonanswer": 21,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "fs-": {
+            "n": 80,
+            "tasks": 20,
+            "answer": 75,
+            "valid_nonanswer": 5,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "healthy": {
+            "n": 64,
+            "tasks": 16,
+            "answer": 5,
+            "valid_nonanswer": 59,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "json_valid_pct": 100.0
+        },
+        "B": {
+          "fs+": {
+            "n": 76,
+            "tasks": 19,
+            "answer": 47,
+            "valid_nonanswer": 29,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "fs-": {
+            "n": 80,
+            "tasks": 20,
+            "answer": 66,
+            "valid_nonanswer": 14,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "healthy": {
+            "n": 64,
+            "tasks": 16,
+            "answer": 0,
+            "valid_nonanswer": 64,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "json_valid_pct": 100.0
+        },
+        "K32": {
+          "fs+": {
+            "n": 76,
+            "tasks": 19,
+            "answer": 49,
+            "valid_nonanswer": 27,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "fs-": {
+            "n": 80,
+            "tasks": 20,
+            "answer": 65,
+            "valid_nonanswer": 15,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "healthy": {
+            "n": 64,
+            "tasks": 16,
+            "answer": 1,
+            "valid_nonanswer": 63,
+            "invalid": 0,
+            "truncated": 0,
+            "error": 0
+          },
+          "json_valid_pct": 100.0
+        }
+      },
+      "vs_A": {
+        "fs+": {
+          "metric": "answer",
+          "tasks": 19,
+          "delta_pp": -7.894736842105263,
+          "ci95_pp": [
+            -22.36842105263158,
+            3.9473684210526314
+          ]
+        },
+        "fs-": {
+          "metric": "answer",
+          "tasks": 20,
+          "delta_pp": -12.5,
+          "ci95_pp": [
+            -26.25,
+            -1.25
+          ]
+        },
+        "healthy": {
+          "metric": "valid_nonanswer",
+          "tasks": 16,
+          "delta_pp": 6.25,
+          "ci95_pp": [
+            0.0,
+            15.625
+          ]
+        }
+      },
+      "vs_B": {
+        "fs+": {
+          "metric": "answer",
+          "tasks": 19,
+          "delta_pp": 2.6315789473684212,
+          "ci95_pp": [
+            0.0,
+            6.578947368421052
+          ]
+        },
+        "fs-": {
+          "metric": "answer",
+          "tasks": 20,
+          "delta_pp": -1.25,
+          "ci95_pp": [
+            -5.0,
+            2.5
+          ]
+        },
+        "healthy": {
+          "metric": "valid_nonanswer",
+          "tasks": 16,
+          "delta_pp": -1.5625,
+          "ci95_pp": [
+            -4.6875,
+            0.0
+          ]
+        }
+      },
+      "disjoint_vs_A": {
+        "fs+": {
+          "metric": "answer",
+          "tasks": 19,
+          "delta_pp": -7.894736842105263,
+          "ci95_pp": [
+            -22.36842105263158,
+            3.9473684210526314
+          ]
+        },
+        "fs-": {
+          "metric": "answer",
+          "tasks": 20,
+          "delta_pp": -12.5,
+          "ci95_pp": [
+            -26.25,
+            -1.25
+          ]
+        },
+        "healthy": {
+          "metric": "valid_nonanswer",
+          "tasks": 16,
+          "delta_pp": 6.25,
+          "ci95_pp": [
+            0.0,
+            15.625
+          ]
+        }
+      },
+      "sensitivity_excluded": [
+        "libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606",
+        "libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17",
+        "libreoffice_impress/7ae48c60-f143-4119-b659-15b8f485eb9a",
+        "libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8",
+        "multi_apps/937087b6-f668-4ba6-9110-60682ee33441",
+        "os/b6781586-6346-41cd-935a-a6b1487918fc"
+      ],
+      "input_hashes": {
+        "A": "c7f309a97947452e47a343bb07f429937f200a5159d0868be2aad8d7fb9ad546",
+        "B": "d557568c3e9906870119d6d83c23c65fa571999235bea9717391167bf2de5e02",
+        "K32": "586f8a3b168dc008ed7afc311f9d338d4e8e4c172f5a08474be7b056bbacdae0"
+      },
+      "structural_gates": {
+        "json": true,
+        "healthy_loss_le_2pp": true,
+        "fs_answer_reduction_ge_15pp": false
+      },
+      "text_health": "REQUIRES independent reading of text_controls.json",
+      "action_quality": "REQUIRES independent review; valid nonanswer does not establish task progress",
+      "admission": {
+        "json95": true,
+        "healthy_loss_pp_vs_A": 6.25,
+        "healthy_gate": true,
+        "fs_plus_reduction_pp_vs_A": -7.8947368421052655,
+        "fs_plus_15pp_gate": false,
+        "true_finish_delta_pp_vs_B": -1.2499999999999956,
+        "visible_better_actions_vs_A": false,
+        "decision": "REJECT",
+        "reason": "fs+ answer reduction is only -7.89pp vs A, below -15pp. Healthy/JSON/text pass, but true finish is -1.25pp vs B, so restoration absent. Targeted screenshots show only plausible unexecuted continuation, not visibly better action vs A."
+      },
+      "writer_delta_energy_removed_pct": 0.47431899136678457,
+      "draws": 220,
+      "sha256": "586f8a3b168dc008ed7afc311f9d338d4e8e4c172f5a08474be7b056bbacdae0",
+      "true_finish_answers_by_task": {
+        "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d": 4,
+        "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82": 4,
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217": 4,
+        "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9": 0,
+        "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": 4,
+        "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb": 4,
+        "os/13584542-872b-42d8-b299-866967b5c3ef": 0,
+        "chrome/3299584d-8f11-4457-bf4c-ce98f7600250": 4,
+        "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57": 4,
+        "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4": 3,
+        "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224": 4,
+        "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74": 4,
+        "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78": 4,
+        "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf": 2,
+        "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5": 4,
+        "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568": 0,
+        "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c": 4,
+        "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d": 4,
+        "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f": 4,
+        "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c": 4
+      },
+      "true_finish_tasks_all_four": 15,
+      "true_finish_tasks_zero": 3
+    }
+  },
+  "references": {
+    "A": {
+      "draws": 220,
+      "sha256": "c7f309a97947452e47a343bb07f429937f200a5159d0868be2aad8d7fb9ad546",
+      "true_finish_answers_by_task": {
+        "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d": 4,
+        "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82": 4,
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217": 4,
+        "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9": 4,
+        "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": 4,
+        "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb": 4,
+        "os/13584542-872b-42d8-b299-866967b5c3ef": 0,
+        "chrome/3299584d-8f11-4457-bf4c-ce98f7600250": 4,
+        "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57": 4,
+        "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4": 4,
+        "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224": 4,
+        "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74": 4,
+        "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78": 4,
+        "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf": 4,
+        "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5": 4,
+        "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568": 3,
+        "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c": 4,
+        "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f": 4,
+        "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d": 4,
+        "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c": 4
+      },
+      "true_finish_tasks_all_four": 18,
+      "true_finish_tasks_zero": 1
+    },
+    "B": {
+      "draws": 220,
+      "sha256": "d557568c3e9906870119d6d83c23c65fa571999235bea9717391167bf2de5e02",
+      "true_finish_answers_by_task": {
+        "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d": 4,
+        "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82": 4,
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217": 4,
+        "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9": 1,
+        "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": 4,
+        "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb": 3,
+        "os/13584542-872b-42d8-b299-866967b5c3ef": 0,
+        "chrome/3299584d-8f11-4457-bf4c-ce98f7600250": 4,
+        "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57": 4,
+        "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4": 3,
+        "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224": 4,
+        "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74": 4,
+        "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78": 4,
+        "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf": 3,
+        "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5": 4,
+        "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568": 0,
+        "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c": 4,
+        "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d": 4,
+        "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f": 4,
+        "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c": 4
+      },
+      "true_finish_tasks_all_four": 14,
+      "true_finish_tasks_zero": 2
+    }
+  }
+}

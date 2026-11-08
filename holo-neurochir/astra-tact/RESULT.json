@@ -1,0 +1,412 @@
+{
+  "owner": "astra-tact",
+  "status": "CLOSED_NO_CANDIDATE",
+  "updated_utc": "2026-11-08T03:22:17.912553+00:00",
+  "candidate": false,
+  "weight_edits": false,
+  "checkpoint_compiled": false,
+  "uploaded": false,
+  "online_osworld_tested": false,
+  "reserve_trajectory_content_opened": false,
+  "split_test_opened": false,
+  "manifest_sha256": "cdef6ea3b55406a1bd7574b3840a632ffa72c5ee39f4efbe5756b9a1b577d2f7",
+  "axes_sha256": "eff834646fa65134a545094c67745dbcb560b63b82f170a047d86f7dde9c1a44",
+  "detection": {
+    "ot_best_pooled_development_cv_auroc": 0.9827889005971198,
+    "ot_best_mean_task_development_cv_auroc": 0.9375,
+    "position_auroc": 0.8830347734457324,
+    "position_and_reasoning_length_auroc": 0.9487179487179487,
+    "paired_tasks": {
+      "OT": 2,
+      "OA": 1
+    },
+    "oa_cv_estimable": false,
+    "selected_layers": [
+      19,
+      30,
+      29,
+      31,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ]
+  },
+  "arms": [
+    {
+      "name": "baseline_v1",
+      "scope": "boundary",
+      "strength": -0.5,
+      "mode": "baseline",
+      "scaled": false,
+      "counts": {
+        "fs+": {
+          "n": 16,
+          "answer": 15,
+          "valid_nonanswer": 1,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        },
+        "fs-": {
+          "n": 16,
+          "answer": 12,
+          "valid_nonanswer": 4,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        },
+        "healthy": {
+          "n": 24,
+          "answer": 0,
+          "valid_nonanswer": 24,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        }
+      },
+      "useful_healthy_reviewed": 24,
+      "text_correct_reviewed": 3,
+      "seconds": 384.8001356124878,
+      "runtime": [
+        {
+          "boundary_rows": 0,
+          "forward_calls": 0,
+          "changed_rows": 0,
+          "delta_norm_sum": 0.0,
+          "input_ids_calls": 0,
+          "embedding_calls": 0
+        }
+      ],
+      "outputs_sha256": "7b43249f35a1dd47566cc65846bbbacaa094d3e4752d13e8b9fcd2585469580b",
+      "text_sha256": "e91277910f05a39efd5ddbd39f8e4e203f8e52784d25da69b71f7835ac015a4f"
+    },
+    {
+      "name": "gate_v1",
+      "scope": "boundary",
+      "strength": -0.5,
+      "mode": "gate",
+      "scaled": false,
+      "counts": {
+        "fs+": {
+          "n": 16,
+          "answer": 15,
+          "valid_nonanswer": 1,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        },
+        "fs-": {
+          "n": 16,
+          "answer": 12,
+          "valid_nonanswer": 4,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        },
+        "healthy": {
+          "n": 24,
+          "answer": 0,
+          "valid_nonanswer": 24,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        }
+      },
+      "useful_healthy_reviewed": 24,
+      "text_correct_reviewed": 3,
+      "seconds": 545.9759962558746,
+      "runtime": [
+        {
+          "boundary_count": 0,
+          "boundary_rows": 59,
+          "forward_calls": 9251,
+          "target_rows": 590,
+          "changed_rows": 59,
+          "delta_norm_sum": 15.543987154960632,
+          "realized_delta_norm_sum": 15.563233434571885,
+          "input_ids_calls": 0,
+          "embedding_calls": 9251
+        }
+      ],
+      "outputs_sha256": "e3ec4bca8e2ac811f5423e787da3471e61a9de6a7c62f350150d633131d907e5",
+      "text_sha256": "dd9f44ae34820cd644e6ee33a2b1a263cf16c1404750921a16cb37eb4b9945d0"
+    },
+    {
+      "name": "add_m05",
+      "scope": "boundary",
+      "strength": -0.5,
+      "mode": "add",
+      "scaled": false,
+      "counts": {
+        "fs+": {
+          "n": 16,
+          "answer": 15,
+          "valid_nonanswer": 1,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        },
+        "fs-": {
+          "n": 16,
+          "answer": 12,
+          "valid_nonanswer": 4,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        },
+        "healthy": {
+          "n": 24,
+          "answer": 0,
+          "valid_nonanswer": 24,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        }
+      },
+      "useful_healthy_reviewed": 24,
+      "text_correct_reviewed": 3,
+      "seconds": 570.9285507202148,
+      "runtime": [
+        {
+          "boundary_count": 0,
+          "boundary_rows": 59,
+          "forward_calls": 9370,
+          "target_rows": 590,
+          "changed_rows": 590,
+          "delta_norm_sum": 417.19299376010895,
+          "realized_delta_norm_sum": 417.47325176000595,
+          "input_ids_calls": 0,
+          "embedding_calls": 9370
+        }
+      ],
+      "outputs_sha256": "9fd2a8ce0f4d3712d66cf6cf159e8e633bbdb15d3d5e8f4f74fcabe1c2da516d",
+      "text_sha256": "dd9f44ae34820cd644e6ee33a2b1a263cf16c1404750921a16cb37eb4b9945d0"
+    },
+    {
+      "name": "add_m1",
+      "scope": "boundary",
+      "strength": -1.0,
+      "mode": "add",
+      "scaled": false,
+      "counts": {
+        "fs+": {
+          "n": 16,
+          "answer": 15,
+          "valid_nonanswer": 1,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        },
+        "fs-": {
+          "n": 16,
+          "answer": 12,
+          "valid_nonanswer": 4,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        },
+        "healthy": {
+          "n": 24,
+          "answer": 0,
+          "valid_nonanswer": 24,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        }
+      },
+      "useful_healthy_reviewed": 24,
+      "text_correct_reviewed": 3,
+      "seconds": 509.5191366672516,
+      "runtime": [
+        {
+          "boundary_count": 0,
+          "boundary_rows": 59,
+          "forward_calls": 9224,
+          "target_rows": 590,
+          "changed_rows": 590,
+          "delta_norm_sum": 834.3859875202179,
+          "realized_delta_norm_sum": 834.4981960058212,
+          "input_ids_calls": 0,
+          "embedding_calls": 9224
+        }
+      ],
+      "outputs_sha256": "a64611a8d3746e62b65b6a1f72a9845c343bb30e233f476da8c03cd6c60bdde4",
+      "text_sha256": "6312e9fb3a7959b83794bbcfdf8fbc2d633e83606d1637fea6565d3ee750babf"
+    },
+    {
+      "name": "add_m2",
+      "scope": "boundary",
+      "strength": -2.0,
+      "mode": "add",
+      "scaled": false,
+      "counts": {
+        "fs+": {
+          "n": 16,
+          "answer": 15,
+          "valid_nonanswer": 1,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        },
+        "fs-": {
+          "n": 16,
+          "answer": 12,
+          "valid_nonanswer": 4,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        },
+        "healthy": {
+          "n": 24,
+          "answer": 0,
+          "valid_nonanswer": 24,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        }
+      },
+      "useful_healthy_reviewed": 24,
+      "text_correct_reviewed": 3,
+      "seconds": 472.3360266685486,
+      "runtime": [
+        {
+          "boundary_count": 0,
+          "boundary_rows": 59,
+          "forward_calls": 9309,
+          "target_rows": 590,
+          "changed_rows": 590,
+          "delta_norm_sum": 1668.7719750404358,
+          "realized_delta_norm_sum": 1668.8126718997955,
+          "input_ids_calls": 0,
+          "embedding_calls": 9309
+        }
+      ],
+      "outputs_sha256": "710cd8e90f2d680f269bf5548979d5f33b5b7454d453358add52b0dc910b5d29",
+      "text_sha256": "a79d27fc72671d066170eccf7d2335b156665862699b01d90928786f90b76201"
+    },
+    {
+      "name": "random_m2",
+      "scope": "boundary",
+      "strength": -2.0,
+      "mode": "random",
+      "scaled": false,
+      "counts": {
+        "fs+": {
+          "n": 16,
+          "answer": 15,
+          "valid_nonanswer": 1,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        },
+        "fs-": {
+          "n": 16,
+          "answer": 12,
+          "valid_nonanswer": 4,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        },
+        "healthy": {
+          "n": 24,
+          "answer": 0,
+          "valid_nonanswer": 24,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        }
+      },
+      "useful_healthy_reviewed": 24,
+      "text_correct_reviewed": 3,
+      "seconds": 489.5217046737671,
+      "runtime": [
+        {
+          "boundary_count": 0,
+          "boundary_rows": 59,
+          "forward_calls": 9131,
+          "target_rows": 590,
+          "changed_rows": 590,
+          "delta_norm_sum": 1668.7719750404358,
+          "realized_delta_norm_sum": 1668.801343202591,
+          "input_ids_calls": 0,
+          "embedding_calls": 9131
+        }
+      ],
+      "outputs_sha256": "a7e4da0228ce14c13fcbc306065eec50cacfb496ddbe7b9bcb5290064dd409f6",
+      "text_sha256": "dd9f44ae34820cd644e6ee33a2b1a263cf16c1404750921a16cb37eb4b9945d0"
+    },
+    {
+      "name": "scaled_m05",
+      "scope": "boundary",
+      "strength": -0.5,
+      "mode": "add",
+      "scaled": true,
+      "counts": {
+        "fs+": {
+          "n": 16,
+          "answer": 15,
+          "valid_nonanswer": 1,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        },
+        "fs-": {
+          "n": 16,
+          "answer": 11,
+          "valid_nonanswer": 5,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 1
+        },
+        "healthy": {
+          "n": 24,
+          "answer": 0,
+          "valid_nonanswer": 24,
+          "invalid": 0,
+          "answer_flips_vs_baseline": 0
+        }
+      },
+      "useful_healthy_reviewed": 23,
+      "text_correct_reviewed": 0,
+      "seconds": 517.5149536132812,
+      "runtime": [
+        {
+          "boundary_count": 0,
+          "boundary_rows": 59,
+          "forward_calls": 9277,
+          "target_rows": 590,
+          "changed_rows": 590,
+          "delta_norm_sum": 10365.999017715454,
+          "realized_delta_norm_sum": 10365.836427688599,
+          "input_ids_calls": 0,
+          "embedding_calls": 9277
+        }
+      ],
+      "outputs_sha256": "d21042347d23cf3b77973988dca22cb1c799e9a6b78c4e459c45deb85fe90b6a",
+      "text_sha256": "9f1b80a5b02b7316fbaacd1a40af9556080525e7ea18fbb79fbb672208c5a8b4"
+    }
+  ],
+  "accounting": {
+    "starts": 10,
+    "completed_arms": 7,
+    "completed_gui_outputs": 392,
+    "completed_text_outputs": 21,
+    "partial_gate_gui_outputs": 8,
+    "all_retained_outputs": 421,
+    "extraction_forwards": 270
+  },
+  "stopped_arm": {
+    "name": "random_scaled_m05",
+    "exit": 143,
+    "outputs": 0,
+    "done": false,
+    "pid_terminated": 398692,
+    "reason": "Text collapse discovered in scaled_m05 after this startup had been launched; enforced safety stop."
+  },
+  "admission_failures": [
+    "False-completion reduction is zero in every completed learned arm.",
+    "Strong residual-scaled dose corrupts all three text controls."
+  ],
+  "not_run": [
+    "Task-disjoint OA pilot: no independently confirmed OA task available.",
+    "All-position causal Add pilot.",
+    "Weight compilation and equivalence.",
+    "HF checkpoint upload.",
+    "Online reserve/test evaluation."
+  ],
+  "limitations": [
+    "Two fs+ contexts with eight seeds each, not sixteen independent tasks.",
+    "Only two OT/CAL paired tasks and one OA/CAL paired task.",
+    "Layer selection uses development CV; no independent detector estimate.",
+    "Original sampled reasoning IDs were not logged; canonical HF replay retokenizes recorded reasoning.",
+    "Boundary-only Add cannot be assumed equivalent to a static all-position weight edit."
+  ],
+  "verification": [
+    "VERIFY_QUANTITATIVE.md",
+    "VERIFY_SEMANTIC.md",
+    "VERIFY_RUNTIME.md"
+  ]
+}

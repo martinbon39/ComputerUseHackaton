@@ -1,0 +1,233 @@
+{
+  "comparison_warning": "The 08:36 result is a historical partial snapshot (0/10 in each arm). The contemporary registered primary is 2/18 no-guard versus 5/18 Guard, not 0/10 versus 5/18. Neither is a randomized third arm for Holo4 rescue-bench.",
+  "contemporary_live_measure": {
+    "as_of_utc": "2026-11-08T09:18:16.805367+00:00",
+    "dropped": {
+      "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91": "replay_invalid",
+      "vlc/386dbd0e-0241-4a0a-b6a2-6704fba26b1c": "replay_invalid",
+      "vlc/aa4b5023-aef6-4ed9-bdc9-705f59ab9ad6": "replay_invalid"
+    },
+    "episode_scores": {
+      "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197": {
+        "excluded": null,
+        "guard_scores": [
+          1.0,
+          1.0
+        ],
+        "no_guard_scores": [
+          0.0,
+          0.0
+        ]
+      },
+      "libreoffice_calc/37608790-6147-45d0-9f20-1137bb35703d": {
+        "excluded": null,
+        "guard_scores": [
+          0.0,
+          0.0
+        ],
+        "no_guard_scores": [
+          0.0,
+          0.0
+        ]
+      },
+      "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54": {
+        "excluded": null,
+        "guard_scores": [
+          0.0,
+          0.0
+        ],
+        "no_guard_scores": [
+          0.0,
+          0.0
+        ]
+      },
+      "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6": {
+        "excluded": null,
+        "guard_scores": [
+          0.0,
+          0.0
+        ],
+        "no_guard_scores": [
+          0.0,
+          0.0
+        ]
+      },
+      "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8": {
+        "excluded": null,
+        "guard_scores": [
+          0.0,
+          0.0
+        ],
+        "no_guard_scores": [
+          0.0,
+          0.0
+        ]
+      },
+      "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": {
+        "excluded": null,
+        "guard_scores": [
+          1.0,
+          1.0
+        ],
+        "no_guard_scores": [
+          1.0,
+          1.0
+        ]
+      },
+      "libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8": {
+        "excluded": null,
+        "guard_scores": [
+          0.0,
+          1.0
+        ],
+        "no_guard_scores": [
+          0.0,
+          0.0
+        ]
+      },
+      "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38": {
+        "excluded": null,
+        "guard_scores": [
+          0.0,
+          0.0
+        ],
+        "no_guard_scores": [
+          0.0,
+          0.0
+        ]
+      },
+      "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6": {
+        "excluded": null,
+        "guard_scores": [
+          0.0,
+          0.0
+        ],
+        "no_guard_scores": [
+          0.0,
+          0.0
+        ]
+      },
+      "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91": {
+        "excluded": "replay_invalid",
+        "guard_scores": [
+          0.0,
+          0.0
+        ],
+        "no_guard_scores": [
+          0.0,
+          0.0
+        ]
+      },
+      "vlc/386dbd0e-0241-4a0a-b6a2-6704fba26b1c": {
+        "excluded": "replay_invalid",
+        "guard_scores": [
+          0.0,
+          0.0
+        ],
+        "no_guard_scores": [
+          0.0,
+          0.0
+        ]
+      },
+      "vlc/aa4b5023-aef6-4ed9-bdc9-705f59ab9ad6": {
+        "excluded": "replay_invalid",
+        "guard_scores": [
+          0.0,
+          0.0
+        ],
+        "no_guard_scores": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "episodes_guard_better": 2,
+    "episodes_guard_worse": 0,
+    "guard": {
+      "answered_done": 10,
+      "branches": 18,
+      "declined": 0,
+      "false_success": 6,
+      "no_answer": 8,
+      "repaired_score1": 5
+    },
+    "guard_branches_refused": 12,
+    "guard_refusals_total": 16,
+    "guard_refused_then_repaired": 3,
+    "interpretation": "All 12 x K=2 branches exist in both arms. The registered primary denominator is 9 episodes / 18 branches per arm after common four-branch replay validity; three episodes are excluded for replay drift.",
+    "k_per_arm": 2,
+    "measure_complete": true,
+    "no_guard": {
+      "answered_done": 17,
+      "branches": 18,
+      "declined": 0,
+      "false_success": 15,
+      "no_answer": 1,
+      "repaired_score1": 2
+    },
+    "paired_diff_ci95_episode_bootstrap": [
+      0.0,
+      0.444
+    ],
+    "paired_diff_mean": 0.167,
+    "primary_branches_per_arm": 18,
+    "primary_complete_valid_episodes": 9,
+    "raw_branches": {
+      "guard": 24,
+      "no_guard": 24
+    },
+    "raw_episode_coverage": {
+      "guard": 12,
+      "no_guard": 12
+    },
+    "registered_episodes": 12
+  },
+  "historical_snapshot_0836": {
+    "branches_per_arm": 10,
+    "episodes_kept": 5,
+    "episodes_total_at_snapshot": 7,
+    "guard_branches_refused": 6,
+    "guard_refused_then_repaired": 0,
+    "guard_repaired": 0,
+    "no_guard_repaired": 0,
+    "paired_diff_ci95": [
+      0.0,
+      0.0
+    ],
+    "paired_diff_mean": 0.0,
+    "status": "historical partial snapshot; 5 complete valid episodes, 10 branches per arm; must not be overwritten by later results",
+    "taken_utc": "08:36"
+  },
+  "provenance": {
+    "/home/orbit/osw/feci_repair/guard/branches.jsonl": {
+      "mtime_utc": "2026-11-08T09:18:16.805367+00:00",
+      "sha256": "0dcb9c4d8484ca120a9daf1452fbea0de66938ec1af312bbc003bb0abb9d551d"
+    },
+    "/home/orbit/osw/feci_repair/nog/branches.jsonl": {
+      "mtime_utc": "2026-11-08T09:02:24.818082+00:00",
+      "sha256": "38139435c15a98a8b517a8632d608c34309990ad3984c06a6e71a80e69731f71"
+    },
+    "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/feci_guard/PREREG.md": {
+      "mtime_utc": "2026-11-08T09:18:39.481302+00:00",
+      "sha256": "93355424f0bd5d9d0e7c621537d94731d698d0442d7473404836e2742101b4d9"
+    },
+    "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/feci_guard/analyze_repair.py": {
+      "mtime_utc": "2026-11-08T08:05:47.252277+00:00",
+      "sha256": "8c358274d29e1de09dbf3a9ac1b85266455844b98d0c96f976d259326f9eed5b"
+    },
+    "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/feci_guard/repair/episodes.txt": {
+      "mtime_utc": "2026-11-08T07:54:39.403716+00:00",
+      "sha256": "90651efe30b038409808be7b8b5a48225504c49a95b6538d923d8e7d53504dc5"
+    },
+    "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/paper/data/local/feci_guard/repair/snapshot/TAKEN_UTC": {
+      "mtime_utc": "2026-11-08T08:36:48.844690+00:00",
+      "sha256": "7c94d89900eb9f349b3640fc8f79e1f913dfdad635b5e46279c8f3b145e646a3"
+    },
+    "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/paper/data/local/feci_guard/repair/snapshot/results.json": {
+      "mtime_utc": "2026-11-08T08:36:57.895855+00:00",
+      "sha256": "59ea8f318b7aa8501f34f189cc2f4ede990f257d715d5a552eca1e8de193819b"
+    }
+  },
+  "purpose": "Keep the historical Holo-3.1+Guard snapshot separate from the completed contemporary live measure.",
+  "schema_version": 1
+}

@@ -5,13 +5,14 @@ Usage: devcap python duel_server.py [--port 8765] [--root ~/osw/duels] [--preset
   page:   http://127.0.0.1:8765/            replay: http://127.0.0.1:8765/?replay=<duel_id>
 Bound to 127.0.0.1 only: the page starts and stops VMs.
 """
-import argparse, json, os, re, signal, subprocess, threading, time
+import argparse, json, os, re, signal, subprocess, threading, time, urllib.request
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
 
 HERE = Path(__file__).resolve().parent
 TASKS = [  # original made a false 'done' and the merged model succeeded, in recorded runs
+    "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",  # demo-director's live rehearsal task
     "libreoffice_impress/b8adbc24-cef2-4b15-99d5-ecbe7ff445eb",
     "chrome/9f935cce-0a9f-435f-8007-817732bfc0a5",
     "os/bedcedc4-4d72-425e-ad62-21960b11fe0d",
@@ -21,6 +22,9 @@ PRESETS = {
             "right": "http://127.0.0.1:8001/v1=Holo-3.1-4B-merge_cua_b050"},
     # Feci Guard demo: the same original model on both sides, only the guard differs (guard=right)
     "pod_guard": {"left": "http://127.0.0.1:8000/v1=Holo-3.1-4B", "right": "http://127.0.0.1:8000/v1=Holo-3.1-4B"},
+    # Feci Guard demo on Modal (pod down): the original on account 1 on both sides
+    "modal_guard": {"left": "https://emilejouannet--holo-vllm-serve.us-east.modal.run/v1=Holo-3.1-4B-modal-orig=MODAL_HDR",
+                    "right": "https://emilejouannet--holo-vllm-serve.us-east.modal.run/v1=Holo-3.1-4B-modal-orig=MODAL_HDR"},
     "modal": {"left": "https://emilejouannet--holo-vllm-serve.us-east.modal.run/v1=Holo-3.1-4B-modal-orig=MODAL_HDR",
               "right": "https://martinbon39--holo-vllm-serve.us-east.modal.run/v1=Holo-3.1-4B-merge_cua_b050=MODAL_HDR"},
 }
@@ -39,6 +43,19 @@ def env_line():
 
 def guard_available():
     return (HERE.parent.parent / "feci_guard" / "run_holo_guard.py").exists()
+
+
+def served(server):
+    """True when the server lists the model: never boot two VMs against a dead or unready endpoint."""
+    url, name, auth = (server.split("=", 2) + [None])[:3]
+    req = urllib.request.Request(url.rstrip("/") + "/models")
+    if auth:  # MODAL_HDR: the bearer token is read here, never put on a command line or logged
+        req.add_header("Authorization", "Bearer " + (Path.home() / ".holo_modal_key").read_text().strip())
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            return any(m.get("id") == name for m in json.load(r).get("data", []))
+    except Exception:  # noqa: BLE001 - unreachable, cold or wrong model: not served
+        return False
 
 
 def mem_available_gb():
@@ -88,6 +105,9 @@ class Duels:
         with self.lock:
             if self.running():
                 raise RuntimeError(f"a duel is already running: {self.running()[0]}")
+            down = [PRESETS[preset][s] for s in ("left", "right") if not served(PRESETS[preset][s])]
+            if down:
+                raise RuntimeError("model not served: " + ", ".join(sorted({d.split("=")[1] + " @ " + d.split("=")[0] for d in down})))
             avail = mem_available_gb()
             if avail < MIN_AVAIL_GB:
                 raise RuntimeError(f"RAM: {avail:.1f} GB available < {MIN_AVAIL_GB} GB needed for two VMs")

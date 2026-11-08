@@ -478,11 +478,100 @@ Timestamp correction for the preceding astra-free entry: the GO message was deli
 - Verified: test 120 paires, expo125 contre orig, succès 0,592 contre 0,608 (Δ -0,017, IC95 [-0,09, +0,06]) ; poolé avec confirm, 164 paires, Δ -0,018 [-0,08, +0,04]. Rejeu de 10 vrais succès : 9/10. Pilote de branchement, 20 branches et 0 erreur : orig 5/10, merge_cua_b050 4/10, 1 épisode écarté sur 5 (web dynamique), 251 s par branche.
 - Result: aucune édition n'améliore OSWorld à ce stade. Leçon : un argos send lancé dans tmux échoue sans ARGOS_SESSION_ID (passer -e), ce qui a fait perdre des alertes pendant plusieurs heures.
 
+## 2026-11-08 04:45 UTC · ares (orchestrateur) · nuit de chirurgie OSWorld : bilan d'étape
+- What: coordination de ~25 agents (Astra codex, Claude) sur la chirurgie de poids de Holo-3.1-4B. Pistes testées : directions et ablations, steering, lm_head, circuits de neurones, MIT p50c (astra-ratio), TACT (astra-tact), promotion de </think> (short), H2-H10 (astra-free : portes DeltaNet, MLP vers Qwen, q_norm, gates d'attention), ExPO, chirurgie large AlphaEdit (astra-broad), RegMean contrastif (astra-regmean), fusion évolutive (astra-evo), fusions CUA-Lite/Fara (astra-merge), infaisables (astra-infeas). Infra : 2 H100 Modal, GitHub Actions, branchement apparié (online-eval).
+- Why: objectif de Martin « +10 points prouvés sur OSWorld par édition des poids seule ».
+- Verified: deux relectures adversariales à contexte frais (report/REDTEAM_0305.md, REDTEAM2_0335.md) ; vérifieurs indépendants par agent ; recalcul des comparaisons en ligne depuis les result.txt, identique.
+- Result: aucun gain significatif à ce stade. Meilleur : fusion CUA β=0,5, réserve de 45, à serveur identique (Modal) : +6,6 points [IC95 −6,7 ; +22,1]. Le test de 120 tâches (fusion contre original Modal) est en cours. Règle de décision fixée avant résultat (journal, 03:36). Journal complet : holo-neurochir/JOURNAL.md ; index : holo-neurochir/report/INDEX_PAPIER.md.
+
+## 2026-11-08T04:56:18+00:00 — astra-free
+
+- What: Completed H10 half-dose lot21 metadata and independent blinded semantic audits, then reserved final exploration lot22 H10zero.
+- Why: Half-dose produced no useful gain but preserved protected and text controls, satisfying the pre-frozen condition for the second dose.
+- Verified: 51 complete requests; metadata PASS; 102 blinded outputs reviewed; contracts38/38 and64/64 PASS; half-dose0/16 useful,16/16 false completions,15/16 true completions,16/16 healthy,3/3 texts. Volume config+2shard SHA match CPU; index unrecorded, resident GPU identity not cryptographically attested.
+- Result: Half-dose rejected. Lot22 reserved at04:55:13UTC, exact V2 GO account2 sent; no heldout opening or weight adaptation.22/25 reserved,586 requests through21. H9a.4 and H10half own temporary checkpoints retired after manifests; all specs/deltas/results preserved.
+
+## 2026-11-08T05:05:44+00:00 — astra-free
+
+- What: Completed final H10zero lot22 metadata and independent blinded semantic audits; closed exploration and retired the last owned temporary checkpoint.
+- Why: The frozen second dose produces no useful fs+ behavior and loses12.5 percentage points in both protected categories, exceeding the user limit.
+- Verified: 51 attempts and51 outputs; metadata PASS with3 truncations. Blind contracts38/38 and64/64 PASS; aggregate0/16 useful,8/16 false completions,13/16 true completions,14/16 healthy,3/3 texts. CPU Volume config and2shard hashes match; index not recorded, no GPU attestation. No owned temporary checkpoints remain in/dev/shm; Ares6424 confirms Modal account2 closed after exit0.
+- Result: No candidate;22/25 lots reserved and executed/charged,637 requests currently reconciled pending final independent accounting;3 validation lots unused. No heldout behavior opened, no further forwards planned. Final report under independent review.
+
+## 2026-11-08T05:08:48+00:00 — astra-free
+
+- What: Published the independently reviewed final astra-free report and closed the research run without a candidate.
+- Why: No tested edit meets useful-behavior construction criteria; H10zero also exceeds the protected-loss limit. Frozen stop conditions prohibit further exploration.
+- Verified: VERIFY_FINAL_REPORT PASS; VERIFY_FINAL_BUDGET PASS,22 reservations and637 requests=621 main+16 ancillary with recorded evidence limits. Published report differs from reviewed snapshot only by automatic UTC timestamp; SHA8aa8ea9df23b42caaa105e199a287bbdc37de1da0e371895354e0e3b3611b512. All owned temporary checkpoints removed; no own GPU/server left active.
+- Result: No CANDIDAT signal. Three validation lots unused; no heldout behavioral evaluation or further requests. Final REPORT.md and all evidence preserved in /workspace/astra/astra-free and local /tmp/astra-free-work.
+
+## 2026-11-08T05:50:49.919043+00:00 — astra-preamble
+
+- What: Closed weights-only preamble experiment on the24 designated Holo3.1-4B layer12–23 writers. Original, learned dose2 and norm-matched random each generated27 complete offline responses; ares6456 cancelled dose1 during construction.
+- Why: Frozen gates fail: exact preamble+verification0/8 (<6); healthy full text14/16 and exact tool-call11/16 differ (>1). Generic Before7/8 adds no verification action.
+- Verified: Independent numerical/tensor/provenance audits PASS;81/81 outputs,72/72 GUI JSON valid,0errors/truncations,3/3 text controls each.158/160 capture forwards. Data allowlisted before read, evaluation task-disjoint; reserve/test contents untouched. Exact differences are not all demonstrated semantic regressions; only one original sample per context.
+- Result: No admitted checkpoint or online run. Owned GPU/API, CPU builder and tunnel stopped;41,492,037,065 temporary-checkpoint bytes freed, captures/factors retained on pod. Evidence: holo-neurochir/astra-preamble/REPORT.md and /workspace/astra/astra-preamble. No continuation; ares owns fleet Git archival.
+
+## 2026-11-08T07:35:08.656848+00:00 — astra-power
+
+- What: Measured A original, B CUA beta0.5, C AlphaEdit broad_residual_p100 and D matched random on one frozen55-task cohort, four common seeds each; completed880 requests before07:29UTC and obtained final independent audit before07:35UTC.
+- Why: Replace the prior single-context feasible-false-success evidence with task-level inference and a random-edit comparison. Exact prescribed sources supply19 admissible FS tasks, not20; all19 included without reserve/test exposure.
+- Verified: Independent checkpoint67/67 PASS and final PASS: raw880/880 valid,1536 fields agree within1e-13,112 bootstrap endpoints exactly equal. No transport errors/truncations. Strict scores and feasible evaluators checked; known construction overlap sensitivity reported. Canonical mirror211 file hashes match. Owned research processes stopped, production healthy and unchanged.
+- Result: C suppresses FS answer17.1pp (95%taskCI6.6–28.9pp), versus8.8pp estimated suppression on true finishes; selective benefit versus A remains unresolved. B estimate−10.5pp includes0; D increases FS answer15.8pp. No online gain or general impossibility claim. REPORT.md/RESULT.json and audited evidence under holo-neurochir/astra-power and /workspace/astra/astra-power. Ares notified; no further run or own Git commit.
+
+## 2026-11-08 07:52 UTC — feci-guard
+- Built holo-neurochir/feci_guard (commit aa5907f): external verifier on the agent answer (claude -p Sonnet or any OpenAI-compatible judge; passive or active NEED_CHECK mode), guarded copy of run_holo (--guard on|off), guard.md/guard.jsonl per episode, feci_guard.check() for the duel and verif-study; synced to holo-osworld-runner 2f1f38a for GitHub runs. Independent review fixed the stale screenshot, rule enforcement, timeout.
+- 1-task VM run impress/550ce7e7: the guard refused a visibly incomplete answer with correct evidence, the agent repaired it, the evaluator still scored 0 (difference not visible on screen). Blind 60 packet and the 45-task online run were cancelled by ares; offline = verif-study 268 episodes, repair = with online-eval.
+
+## 2026-11-08T07:53:27.368733+00:00 — verif-study
+
+- What: Measured the exact requirement-by-requirement final-screen prompt on 268 deduplicated feasible final-answer episodes: original Holo at T=0 plus three T=.8 replicates, 1,072 complete HTTP responses with raw reasoning retained. Excluded partial scores and official infeasible evaluators; reported repeated-task and invalid-output sensitivities.
+- Why: Test whether explicit verification detects the model's own false successes using existing saved episodes, without any new rollout or weight edit.
+- Verified: Independent corpus and screenshot reconstruction, all request/body/model hashes, raw response accounting, Wilson intervals, task-cluster sensitivity, stability, requirement correction map, branch simulation and report assertions PASS WITH LIMITATIONS. Six maker parser tests and four independent tests pass. No retries; max concurrency 4; 16 invalid/truncated final verdicts retained and reported. Local/pod 389-file mirror verified by SHA256; all 268 images and task references match the frozen manifest.
+- Result: T=0 detection 35/66=53.03% versus true-success rejection 97/202=48.02%; majority 40/66 versus 98/202. Difference uncertainty spans zero. Requirement counts 493/95/126 (yes/no/cannot tell), not requirement-level accuracy. Feasible branch 0/2 repairs; naive 1/4 nontransferable. No measured OSWorld gain; V2 not run because no stronger independent cached VLM exists. REPORT.md, RESULT.json and audit delivered locally and at /workspace/astra/verif-study before 10:30 UTC. No running owned server, new experimental continuation or own Git commit.
+
+## 2026-11-08 — moon-combo — fusion CUA + protection done
+
+- What: U12, U32 et K32 construits, vérifiés et criblés sur Power gelé (3 × 220 tirages + 9 textes).
+- Why: tester si la projection de la fusion protège les vrais fini sans perdre son signal sur fs+.
+- Verified: contrôles indépendants des 724 tenseurs par checkpoint, six captures hors cohorte et audits comportementaux ; JSON 660/660, textes 9/9 ; nettoyage attesté.
+- Result: trois REJECT à 2026-11-08T08:00:52.467865+00:00 ; vrais fini 65/80 pour chaque variante vs A75/80 et B66/80. Aucun passage en ligne. Rapport holo-neurochir/moon-combo/REPORT.md, données RESULT.json. Aucun fichier d'un autre chercheur modifié ; pull initial bloqué par modifications partagées préexistantes, laissées intactes.
+
+## 2026-11-08 · moon-rl · decision · RL donor and anti-posttraining offline screen
+- What: Four fixed full-language weight edits tested on the frozen astra-power cohort, k=4, plus original A; 1,100 GUI generations and 15 text controls.
+- Why: Test whether terminal RL transfer or partial removal of Qwen chat posttraining reduces false success.
+- Verified: Independent exact-formula/provenance and raw-output audits PASS; 427 formula tensors, 297 preserved vision tensors per checkpoint. No numeric fs+ improvement. Anti .5 admitted only through a narrow, reviewed next-action quality exception; adverse PDF finish and healthy diagnostics retained.
+- Result: RL .5/RL 1/Anti .25 rejected; Anti .5 full HF `/dev/shm/moon_rl_anti_b050` handed to ares at 08:02 UTC for online45+120. Own server/tunnel stopped; three rejected checkpoints removed. Evidence: `holo-neurochir/moon-rl/REPORT.md`, `FINAL_AUDIT.md`, `DECISIONS.json`.
+
+- moon-combo clôture 08:05 UTC : revue finale indépendante PASS (20 contrôles, 1100 lignes), miroir pod 77/77 SHA conformes ; décision auditée transmise à ares.
+
+## 2026-11-08T08:07:05.439587+00:00 — moon-vision
+
+- What: Built and independently verified three full HF checkpoints editing only297 visual tensors, including merger; all427 other tensors byte-identical to Holo. CUA−Qwen visual norm1.28010 is nonzero; tested CUA beta0.5/1.0, plus Holo gamma0.25 explicitly added by ares before candidate outputs.
+- Why: Test whether perceptual weight adaptation reduces premature completion while preserving the language tower, prompts and harness.
+- Verified: Frozen55-task astra-power cohort, k4 and exact generation settings; 660 new GUI plus9 text responses, A220 reused verbatim. All JSON valid, no errors/truncations. Independent exhaustive tensor/SHA and statistics/bootstrap audits PASS; screenshot-grounded semantic reviews completed. Reserve45/split_test untouched.
+- Result: No admission: FS+ answers57/54/57 versus55/76 A, required≤43. No convincing qualitative improvement; E025 healthy next-action preservation PASS, V05/V10 uncertain. Servers/tunnel stopped, rejected weights removed (31,119,988,803 bytes), sources/evidence preserved. REPORT.md and DECISION.json in holo-neurochir/moon-vision and pod workspace. No own Git commit; ares handles shared archival.
+
+## 2026-11-08T08:07:16Z — proof-anchor
+
+- What: Completed four-condition anchoring on39 strictly feasible tasks and captured six residual layers at three positions;72 primary LOTO probes, matched metadata baselines,1000 task-label permutations, oracle power and one declared MLP optimization sensitivity.
+- Why: Replace n=1/2 paper evidence with task-level estimates while distinguishing margin attenuation from tool decisions and lack of evidence from information absence.
+- Verified: Independent final numerical audit RAN/PASSED/CORRECT,10098 checks,exit0; separate model/replay/capture/source audits PASS,156/156 forwards and39 residual arrays. Pod/orbit manifest verifies81/81 file hashes. REPORT SHA d1ada976f4979755cc8e4f369a385e8eb90dd9ff392c8596fe5034c3965cc0f5; RESULT SHA00525ab78b91af451c5c812c3dc446c7939e52f739e70a7c6db25e7e311511fd.
+- Result: Neutralization attenuates about80% of raw margin in both strata, yet answer stays favored37/39; attenuation interaction−.461[−2.362;1.499],p=.645. Best exploratoryAUROC.639[.466;.803] versus rawstep.704, correctedp=1; no robust discriminator or proof of absent information. Artifacts local holo-neurochir/proof_anchor and pod /workspace/astra/proof-anchor. Ares notified; all owned compute exited, no generation/deploy/paper edits.
+
+## 2026-11-08 08:29 UTC — moon-leak: offline NO-GO
+
+- What: Completed39-context head/DeltaNet attribution and four targeted o_proj head edits plus two matched random controls on the frozen55-task astra-power cohort, k4.
+- Why: Test whether weight-only attenuation of note/thought-reading heads selectively reduces false completion.
+- Verified: Independent fresh review reconstructs all1320 new GUI outputs and paired statistics; JSON100%, zero errors/truncations. Lowest targeted fs+ count56/76 versusA55/76, with true finishes71/80 versus75/80. No arm reduces fs+ answer. All six724-tensor audits and data audits PASS; original+six arms each have3 text controls, with common translation failure. Attribution6435 main forwards,7426 attempted including debugging, under8500; the two-failure stop-rule audit explicitly FAILS and is disclosed.
+- Result: NO-GO recorded08:20UTC, before09:45. Ares notified; no online request. All14 owned process IDs absent, GPU/checkpoint directories clear. Report, decision, raw evidence, frozen snapshot and independent final review: holo-neurochir/moon-leak/. No mixed shared-checkout commit.
+
 ## 2026-11-08 · rescue-bench · experiment-preparation · Frozen-Guard Holo4 escalation
 - What: Added rescue_runner.py, preregistered 12-episode K2 paired study, fixed-parity two-worker scheduling, reproducible metadata prevalence, and episode-cluster analysis under rescue_bench/.
 - Why: Test whether stronger-agent escalation repairs feasible false completions after the frozen Claude Guard refuses them.
 - Verified: Independent runner and scheduling CPU reviews PASS; statistical synthetic checks PASS provisionally; one recorded-state Holo4 tool JSON valid. First live guarded pilot replay valid, official score0; full pilot remains running. Frozen Guard/harness hashes unchanged.
 - Result: partial — holo-neurochir/rescue_bench/REPORT.md; no gain claim. Only own new artifacts edited; shared dirty work preserved.
+- 2026-11-08 09:24 UTC feci-guard: repair measure done (guard 5/18 vs 2/18, paired +17 pts [0,+44], not distinguishable from zero; independent recompute OK; best case calc/1de60575, demo in ~/osw/feci_demo/). Rescue harness run_holo_guard_rescue.py pushed to holo-osworld-runner (b1cd76d) and tested on 1 real task: refusal -> Holo4-27B -> COMPLETE, official 0 (invisible .pptx difference). Commits 1206f3c, 8862d4a. VM released.
 
 ## 2026-11-08 09:39 UTC — rescue-bench analysis correction
 - What: separated official score1 from action-qualified repair credit; preserved historical and completed Holo3.1 references; added reusable independent analysis checks and first Calc pairing audit.
@@ -495,3 +584,9 @@ Timestamp correction for the preceding astra-free entry: the GO message was deli
 - Why: distinguish actual GUI corrections and official evaluations from claimed completion.
 - Verified: all eight paired replays and boundaries valid; real edits/saves; no setup, model, getter or evaluator failures; independent MEASURED_REPAIRS_REVIEW.md.
 - Result: five complete episodes currently yield Guard4/10/control0/10, cluster95 [0,.80] for difference .40. Collection remains partial; no online-gain claim.
+
+## 2026-11-08 10:18 UTC — repo-ready: jury-ready repository
+- README (EN + FR summary): problem, diagnosis, Feci Guard, mermaid architecture, results table with n and CIs, criteria → evidence, quickstart, levels 2-3, links, how we worked, limitations. AGENTS.md (for the AI judge: commands, claim → evidence, measured vs running), llms.txt, docs/REPO_MAP.md, LICENSE (Apache-2.0).
+- New CPU quickstart, no key: jury_kit/replay_guard.py (frozen feci_guard.check on the 268 real screenshots, recorded verdicts: 45/66, 21/202, +58 [+41, +74]), jury_kit/recount_judges.py (3 judges from raw responses), jury_kit/guard_live.py (level 2, CLI path run, --api not run), jury_kit/quickstart.sh; CI workflow quickstart (green). Proof from fresh clones: docs/QUICKSTART_PROOF.md.
+- Committed per ares: 50 experiment summaries (4c8b1ab), demo_live/repair_calc.html; untracked per ares: devin/README.md, pitch/PITCH.md, committed .pyc.
+- Two fresh-context jury reviews: 6.85/10 then 7.3/10 (finalist yes). Open: online Guard result (report/ONLINE_GUARD_RESULT.md ~11:15), rescue_bench final (PR #1), final paper PDFs before 12:15.

@@ -13,8 +13,8 @@ Livrer les 9 artefacts de la section 9 du brief, vérifiés. Phases : 1 infra �
 
 ## Où sont les choses
 - Code : `~/projects/ComputerUseHackaton/holo-neurochir/` (ici). `holo/` = harness + analyse, `dashboard/` = IRM (FastAPI + HTML), `scripts/` = lanceurs pod.
-- **GPU Runpod** : pod `fbup7c0tebnkwf` (1× H200 141 Go, EUR-IS-4, **5,29 $/h**, allumé depuis 14:37 UTC le 2026-11-07). Volume réseau `8206qbtznz` (100 Go) monté sur `/workspace`.
-  - SSH depuis orbit : `ssh -i ~/.ssh/runpod_holo -p 15780 root@213.181.111.151`. L'adresse change si le pod est stoppé puis redémarré : la relire dans la console Runpod ou via le MCP Runpod.
+- **GPU Runpod** : pod RunPod (1× H200 141 Go, EUR-IS-4, **5,29 $/h**, allumé depuis 14:37 UTC le 2026-11-07). Volume réseau (100 Go) monté sur `/workspace`.
+  - SSH depuis orbit avec une clé dédiée (adresse, port et nom de clé retirés de la version publique ; le pod est terminé). L'adresse change si le pod est stoppé puis redémarré : la relire dans la console Runpod ou via le MCP Runpod.
   - Budget : ~100 € de crédit. **Plafond ~90 $ cumulés** (≈ 17 h de pod). Note le coût cumulé dans `JOURNAL.md` toutes les 2 h.
   - Le MCP Runpod (plugin officiel `runpod@runpod`, OAuth) est configuré sur le PC de Martin, pas forcément sur orbit. Sans lui, Martin stoppe le pod depuis la console.
 - Sur le pod : venv `/workspace/venv` (torch 2.11+cu128, transformers 5.22.2, flash-linear-attention, causal-conv1d, browsergym-miniwob 0.14.3), Chromium `/workspace/pw`, modèles dans `/workspace/hf` (Holo-3.1-0.8B et 4B), code dans `/workspace/projet` (copie à resynchroniser depuis ici avec `tar` + `scp`, extraire avec `tar xzf … --no-same-owner`), runs dans `/workspace/runs`, logs dans `/workspace/logs`.

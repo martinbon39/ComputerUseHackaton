@@ -7,6 +7,7 @@ Secret 'holo-vllm-key', copy on orbit in ~/.holo_modal_key). Budget: 1 GPU max, 
   modal run    osworld/modal_vllm.py::revision [--ckpt <subdir>]    # CPU: refs/main, snapshot, sha256 of what serve() loads
   modal deploy osworld/modal_vllm.py                                # serve Hcompany/Holo-3.1-4B as 'Holo-3.1-4B'
   HOLO_CKPT=<subdir> HOLO_NAME=Holo-3.1-4B-patched modal deploy osworld/modal_vllm.py
+  HOLO_SCALEDOWN=120 modal deploy osworld/modal_vllm.py                 # scale to zero after 2 min idle (default 300)
                                                                     # serve /models/ckpt/<subdir> instead
   modal volume put holo-models <local_ckpt_dir> /ckpt/<subdir>      # upload a modified checkpoint (HF layout)
   modal app stop holo-vllm                                          # nothing left running
@@ -24,6 +25,7 @@ VLLM_ARGS = ["--dtype", "bfloat16", "--max-model-len", "32768", "--max-num-seqs"
              "--limit-mm-per-prompt", '{"image": 5}', "--reasoning-parser", "qwen3", "--enable-prefix-caching"]
 CKPT = os.environ.get("HOLO_CKPT", "")
 NAME = os.environ.get("HOLO_NAME", "Holo-3.1-4B")
+SCALEDOWN = int(os.environ.get("HOLO_SCALEDOWN", "300"))  # idle seconds before scaling to zero
 
 models = modal.Volume.from_name("holo-models", create_if_missing=True)
 cache = modal.Volume.from_name("holo-vllm-cache", create_if_missing=True)
@@ -86,7 +88,7 @@ def toolchain():
     gpu="H100",
     max_containers=1,
     min_containers=0,
-    scaledown_window=300,
+    scaledown_window=SCALEDOWN,
     timeout=900,
     volumes={"/models": models, "/cache": cache},
     secrets=[modal.Secret.from_name("holo-vllm-key")],
