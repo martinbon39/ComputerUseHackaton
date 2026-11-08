@@ -1,6 +1,6 @@
 """Three timed requests against the Modal endpoint (modal_vllm.py): a T=0 text prompt, a text prompt with thinking,
 then the harness call of probe_answer_rate.py (holo_agent schema, thinking, T=0.8) on the last recorded step of a task.
-Usage: PYTHONPATH=. ~/osw/venv/bin/python osworld/modal_probe.py <base_url> <task_dir> [--model Holo-3.1-4B]
+Usage: PYTHONPATH=. ~/osw/venv/bin/python osworld/modal_probe.py <base_url> <task_dir> [--model Holo-3.1-4B] [--out smoke.json]
 The key is read from ~/.holo_modal_key and never printed.
 astra-free's checkpoints (served names containing "free_", and modal-orig, its baseline) get NO generative smoke: their
 frozen pilot is the control and every request counts in its budget. Use /health, /version, /v1/models for them.
@@ -12,14 +12,25 @@ from openai import OpenAI
 from probe_answer_rate import SCHEMA, check_traj, load_task, rebuild, to_openai
 
 
+RECORD = []
+
+
 def timed(client, label, **kw):
     t = time.time()
     r = client.chat.completions.create(**kw)
     dt = time.time() - t
-    content = r.choices[0].message.content or ""
-    print(json.dumps({"req": label, "latency_s": round(dt, 2), "prompt_tokens": r.usage.prompt_tokens,
-                      "completion_tokens": r.usage.completion_tokens, "finish": r.choices[0].finish_reason,
-                      "content": content[:200]}, ensure_ascii=False))
+    msg = r.choices[0].message
+    content = msg.content or ""
+    row = {"req": label, "latency_s": round(dt, 2), "prompt_tokens": r.usage.prompt_tokens,
+           "completion_tokens": r.usage.completion_tokens, "finish": r.choices[0].finish_reason}
+    print(json.dumps({**row, "content": content[:200]}, ensure_ascii=False))
+    params = {k: v for k, v in kw.items() if k != "messages"}
+    if label.startswith("osworld"):
+        params["messages"] = "probe_answer_rate.rebuild(...) of the task, see 'task'"
+    else:
+        params["messages"] = kw["messages"]
+    RECORD.append({**row, "params": params, "content": content,
+                   "reasoning": getattr(msg, "reasoning_content", None) or getattr(msg, "reasoning", None)})
     return content
 
 
@@ -28,6 +39,7 @@ def main():
     ap.add_argument("url")
     ap.add_argument("task")
     ap.add_argument("--model", default="Holo-3.1-4B")
+    ap.add_argument("--out", help="write every request with its params and FULL outputs to this JSON file")
     a = ap.parse_args()
     if "free_" in a.model or a.model.endswith("modal-orig"):
         raise SystemExit(f"{a.model}: no generative smoke on astra-free checkpoints (read-only /health, /v1/models only)")
@@ -45,7 +57,11 @@ def main():
     out = timed(client, f"osworld_step{len(steps) - 1}", model=a.model, messages=msgs, temperature=0.8, top_p=0.9,
                 max_tokens=3072, reasoning_effort="medium",
                 extra_body={"structured_outputs": {"json": SCHEMA}, "chat_template_kwargs": {"enable_thinking": True}})
-    print(json.dumps({"recorded_tool": steps[-1]["tool_name"], "sampled_tool": json.loads(out)["tool_call"]["tool_name"]}))
+    verdict = {"recorded_tool": steps[-1]["tool_name"], "sampled_tool": json.loads(out)["tool_call"]["tool_name"]}
+    print(json.dumps(verdict))
+    if a.out:
+        Path(a.out).write_text(json.dumps({"model": a.model, "url": a.url, "task": str(d), "requests": RECORD,
+                                           **verdict}, indent=1, ensure_ascii=False))
 
 
 if __name__ == "__main__":
