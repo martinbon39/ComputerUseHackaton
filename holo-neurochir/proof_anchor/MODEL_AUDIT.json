@@ -1,0 +1,46 @@
+{
+  "audit": "MODEL_AUDIT",
+  "revision": "8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+  "snapshot": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+  "model": "Hcompany/Holo-3.1-4B",
+  "config": {
+    "path": "config.json",
+    "size": 2785,
+    "sha256": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1",
+    "model_type": "qwen3_5",
+    "architectures": [
+      "Qwen3_5ForConditionalGeneration"
+    ],
+    "transformers_version": "5.6.2"
+  },
+  "index": {
+    "path": "model.safetensors.index.json",
+    "size": 66258,
+    "sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7",
+    "weight_map_count": 724,
+    "total_size": 10349929472,
+    "shards": [
+      "model-00001-of-00002.safetensors",
+      "model-00002-of-00002.safetensors"
+    ]
+  },
+  "shards": [
+    {
+      "path": "model-00001-of-00002.safetensors",
+      "size": 6459246344,
+      "sha256": "f7f12ccce5c518a4039dbcd132077e9822639d580843c9cfa0610bf8812485bc",
+      "blob": "/workspace/hf/hub/blobs/f3/f393922b5486290b76eb310623aae7ea6c718ad4052e316651e5f6135ecb5f02"
+    },
+    {
+      "path": "model-00002-of-00002.safetensors",
+      "size": 3890831224,
+      "sha256": "0490ba7c9b4f6b16b9de8cc2fe50e44657af031c27fec49cb0b87571c0a7cab4",
+      "blob": "/workspace/hf/hub/blobs/c1/c16d26971b6917f29f765faada416b17ec258ba91e3754bacf81190df560e5a0"
+    }
+  ],
+  "blob_comparison": "snapshot and resolved blob hashes, sizes, and inodes matched for config, index, and both shards",
+  "limitations": [
+    "Hashes are integrity checks of files and resolved blobs; no model was loaded or executed.",
+    "This audit does not prove runtime loader compatibility or task-level provenance."
+  ]
+}

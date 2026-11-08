@@ -1,0 +1,9 @@
+{
+  "verified_at_utc": "2026-11-08T08:06:52.930782+00:00",
+  "source": "orbit holo-neurochir/proof_anchor",
+  "destination": "/workspace/astra/proof-anchor",
+  "manifest_sha256": "829d191ed6da4c2ccc97a7b10ac6fc66bb5f7bcd10a4c9438df6f0c8d6e9a928",
+  "file_count": 81,
+  "failures": [],
+  "passed": true
+}

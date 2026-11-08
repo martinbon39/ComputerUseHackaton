@@ -1,0 +1,9 @@
+# Optimization sensitivity — declared 2026-11-08 before this additional pass
+
+The pre-specified analysis is complete and remains immutable in RESULT_CORE.json: 72 configurations, best L12 prompt-end cosine kNN3, 1000 permutations. All 702 MLP folds reached the fixed 300-iteration L-BFGS cap. An independent diagnostic on fold0 of the best initial MLP (L20 prompt end) found that extending the cap to3000 lowered training loss by5.81%, changed its held-out probability from0.74234 to0.73107, and stopped at2696 by the optimizer's relative function tolerance, not a small gradient.
+
+We therefore run one descriptive optimization sensitivity across all18 MLP layer-position cells, the same39 leave-one-task-out folds, same preprocessing, seed, architecture, alpha, tolerance and max_fun. Only max_iter increases from300 to3000. No setting is selected or changed based on the new predictions. We record every fold's loss, iteration count, warning, and probability; all18 AUROCs and paired changes from the original fits are retained.
+
+This adds18 exploratory estimates, not replacements for the original72. The original winner's permutation test stays attached to the original pre-specified family. No significance claim or selected-winner test is made for this post-result optimization sensitivity, and the original72-test correction is not applied to a maximum over90 results. A higher sensitivity AUROC must be reported explicitly without inheriting the original winner's p-value.
+
+Bound: one pass of702 fits, maximum3000 iterations per fit, two CPU threads, no GPU, no hyperparameter search, maximum20 minutes, and no restart after two execution failures without progress. Completion means all18 score vectors and all702 diagnostics, or an explicit incomplete result at the cap. This is a quality check prompted by convergence warnings, not a search for a desired result.

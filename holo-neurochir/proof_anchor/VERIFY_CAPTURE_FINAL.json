@@ -1,0 +1,20 @@
+{
+  "verdict": "RAN/PASSED/CORRECT",
+  "not_run": ["model rerun", "generation", "probe refit", "statistical analysis"],
+  "forwards": 156,
+  "started": 156,
+  "unique_context_condition_pairs": 156,
+  "missing_context_condition_pairs": 0,
+  "preflight_hash_and_length_match": true,
+  "original_capture_count": 39,
+  "residual_shape": [6, 3, 2560],
+  "residuals_finite": true,
+  "layers_zero_based": [8, 12, 16, 20, 24, 28],
+  "layers_match": true,
+  "positions_match_preflight": true,
+  "capture_hashes_match_forward_rows": true,
+  "model_snapshot": "8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+  "dtype": "torch.bfloat16",
+  "device": "cuda:0",
+  "scope": "frozen replay and capture artifact verification"
+}

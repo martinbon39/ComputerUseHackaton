@@ -1,0 +1,8 @@
+__pycache__/
+compile_cache/
+sources/
+*.log
+ANALYSIS_PROGRESS.json
+ANALYSIS_PREPERM.json
+MLP_SENSITIVITY_PROGRESS.json
+PREFLIGHT_before_json_roundtrip_fix.json

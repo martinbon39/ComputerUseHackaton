@@ -1,0 +1,74 @@
+{
+  "audit_kind": "independent read-only draft report review",
+  "checker": "/root/stats_check",
+  "reviewed_at_utc": "2026-11-08 07:56:08 UTC",
+  "source_host": "RunPod /workspace/astra/proof-anchor",
+  "hashes": {
+    "REPORT.md": "472deca721bc725b1321496a49309d420c16f056d53da1d117a0673c3a7ca8e2",
+    "RESULT.json": "f1f4e961aa56a533f3d32b8147c8f2b65950efb4f6b2e4f79d4e0c49c9d0ca68",
+    "RESULT_CORE.json": "80ab8c7ec4b031ea82c339f53294752d84351a3c82673f62c6d7d127023f4398",
+    "finalize.py": "93cb126c67b2ffca56a9817a08be2827ff737aa697c5c053c71c3b8e625215b0"
+  },
+  "verdict": {
+    "RAN": "Read REPORT.md and selected complete result sections; reviewed finalize.py and checked all 216 numbers in the 72-probe table against RESULT.json.",
+    "PASSED": "No numerical mismatch or statistical interpretation blocker found in the reviewed draft. Original result fields are unchanged; artifact_hashes only received additions.",
+    "CORRECT": "Draft conclusions respect the exploratory selection, pooled LOO calibration bias, descriptive interval scope, MLP optimization limits, and unattainable adjusted significance threshold.",
+    "NOT_RUN": [
+      "Supplemental MLP results, still running",
+      "Final independent numerical audit of stored scores and permutation outputs",
+      "New fits or optimizer runs",
+      "GPU execution"
+    ]
+  },
+  "checks": {
+    "probe_table": {
+      "cells": 72,
+      "numbers": 216,
+      "absolute_rounding_tolerance": 0.00050000001,
+      "passed": true
+    },
+    "original_core_preserved": {
+      "all_existing_result_fields_equal_except_added_artifact_hashes": true,
+      "original_sha256": "80ab8c7ec4b031ea82c339f53294752d84351a3c82673f62c6d7d127023f4398"
+    },
+    "raw_metadata_comparisons": {
+      "same_seed_and_stratified_draw_sequence_as_core": true,
+      "source_review_only": true
+    },
+    "reported_key_values": {
+      "best_auc": 0.6394736842105263,
+      "best_probe": "L12_prompt_end_knn3_cosine",
+      "p_unadjusted": 0.04195804195804196,
+      "p_adjusted": 1,
+      "mlp_convergence_warnings": 702,
+      "anchor_false_a_minus_b": 14.032894736842104,
+      "anchor_true_a_minus_b": 14.49375,
+      "interaction_p": 0.645035496450355
+    },
+    "application_confounding": {
+      "present": true,
+      "domains_only_among_true_finishes": [
+        "libreoffice_writer",
+        "os",
+        "gimp"
+      ],
+      "report_acknowledges": true
+    },
+    "report_numeric_and_interpretation_sections_reviewed": [
+      "cohort counts",
+      "anchoring means and contrasts",
+      "ratios and null note sensitivity",
+      "baselines",
+      "all probe cells",
+      "best-versus-metadata comparisons",
+      "permutation description",
+      "power table",
+      "limitations and conclusion"
+    ]
+  },
+  "remaining_publication_requirement": "REPORT.md refers to VERIFY_FINAL.md in the present tense, but that final verdict did not yet exist. Create and review it before treating this draft as final.",
+  "files_modified_by_checker": [
+    "VERIFY_REPORT_DRAFT.json",
+    "VERIFY_REPORT_DRAFT.md"
+  ]
+}

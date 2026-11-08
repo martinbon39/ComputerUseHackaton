@@ -1,0 +1,306 @@
+{
+  "manifest_sha256": "2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0",
+  "rows": [
+    {
+      "context_id": "power_000",
+      "task_id": "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",
+      "evaluator_sha256_verified": "a974293524335d36d0505f7fc8b3a97f90beba8e675bda3452ba0fc9923d43b9",
+      "evaluator_func": [
+        "compare_pptx_files",
+        "compare_pptx_files"
+      ],
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_001",
+      "task_id": "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487",
+      "evaluator_sha256_verified": "1973f54cab5f1e995c3a1bbf2a7234e4cdf1799710c2c8107d7fb3aa9848b01f",
+      "evaluator_func": "check_brightness_decrease_and_structure_sim",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_002",
+      "task_id": "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f",
+      "evaluator_sha256_verified": "8215efae489cc24ed4d0e362088aa9e7dc9da961f6d42f9c51194c85d7940219",
+      "evaluator_func": "compare_table",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_003",
+      "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+      "evaluator_sha256_verified": "bfd3866b66b7af539e41baa7c9d3eeb274f29d1f55bc68e22ce407cd6957cf91",
+      "evaluator_func": [
+        "is_expected_url_pattern_match",
+        "check_direct_json_object",
+        "check_direct_json_object"
+      ],
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_004",
+      "task_id": "chrome/fc6d8143-9452-4171-9459-7f515143419a",
+      "evaluator_sha256_verified": "88bf44e5adadb8e2d27d54d6db1a742f70660ad1af24add3835a671202e417de",
+      "evaluator_func": "check_direct_json_object",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_005",
+      "task_id": "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0",
+      "evaluator_sha256_verified": "a4e86817711f44f83a807abb7b40ddef67bb938f1b781895cc48225cfca41cb6",
+      "evaluator_func": "is_shortcut_on_desktop",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_006",
+      "task_id": "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197",
+      "evaluator_sha256_verified": "446b8dd35f32962f137351bc556cbd6c3f04ab6c54d826f124fe0c5327a1e2ee",
+      "evaluator_func": "compare_table",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_007",
+      "task_id": "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6",
+      "evaluator_sha256_verified": "32b5f1f4ab24eea8563f60f72acbd7a26ae777d2c3b9cdb210a1520e24e65efb",
+      "evaluator_func": "compare_pptx_files",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_008",
+      "task_id": "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f",
+      "evaluator_sha256_verified": "752c4de6c3ef9b8837d5470fe38fcab30f508941cbec323834da758be6de8ebd",
+      "evaluator_func": "compare_pptx_files",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_009",
+      "task_id": "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68",
+      "evaluator_sha256_verified": "2012d11aee2849a97dcd39d56aa231e8cd3e81462ffa8705e6a26d58d82e88b6",
+      "evaluator_func": "compare_pptx_files",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_010",
+      "task_id": "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38",
+      "evaluator_sha256_verified": "1fbbd9e5084cac5a83441e7407755c757f48aa1372fe545e5390483eb764b251",
+      "evaluator_func": "is_in_vm_clickboard",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_011",
+      "task_id": "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850",
+      "evaluator_sha256_verified": "6d0906f314d0245bec218b97c01ae39b073cbc8f3bcd2941cc1112a1fe533a8a",
+      "evaluator_func": "compare_table",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_012",
+      "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+      "evaluator_sha256_verified": "350bb1d562ef3a5226d4cd4da34e60dcb10ceb322444ac5bc7740a0ecebecf23",
+      "evaluator_func": "compare_table",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_013",
+      "task_id": "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8",
+      "evaluator_sha256_verified": "4fdf1d384383d641fe9b3f81fb9be5752c82d842b29cd94e50eb752efea5f615",
+      "evaluator_func": "compare_pptx_files",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_014",
+      "task_id": "multi_apps/74d5859f-ed66-4d3e-aa0e-93d7a592ce41",
+      "evaluator_sha256_verified": "452eed028d487007b831bd7e60ab1f5f3c9e82e520edaff9adaf6eec8e58fe8e",
+      "evaluator_func": [
+        "check_json",
+        "diff_text_file",
+        "diff_text_file",
+        "diff_text_file",
+        "diff_text_file"
+      ],
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_015",
+      "task_id": "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805",
+      "evaluator_sha256_verified": "11e21d0f3589e258853b0876f6914a7f6b196f3a9cd68c51234e8da4151c1f1a",
+      "evaluator_func": "check_direct_json_object",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_016",
+      "task_id": "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762",
+      "evaluator_sha256_verified": "3bf1922ba60bef01461c5a5efe06ae918d9b1f3772944f72a75a110022269915",
+      "evaluator_func": "literal_match",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_017",
+      "task_id": "multi_apps/5df7b33a-9f77-4101-823e-02f863e1c1ae",
+      "evaluator_sha256_verified": "0f7240b14418a71e36f08a8423762c54381f558b0c358561110a57386d484d3c",
+      "evaluator_func": "compare_archive",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_018",
+      "task_id": "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6",
+      "evaluator_sha256_verified": "19d13dacf281b7a06b79eecdbe7e0eada306234a4b7c302639ef877258a568e1",
+      "evaluator_func": "check_structure_sim",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_019",
+      "task_id": "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d",
+      "evaluator_sha256_verified": "e0f67b3c0dfdfff58a311fb78e9371dff848643a04ad489ea35f050e08bc7d2c",
+      "evaluator_func": "compare_table",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_020",
+      "task_id": "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82",
+      "evaluator_sha256_verified": "947232c27d3c8ed3068826932e9a51d957d97304a4470dc9d61c05c993a94019",
+      "evaluator_func": "compare_zip_files",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_021",
+      "task_id": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+      "evaluator_sha256_verified": "a0edec172f263e9018483551c2c70d8c8dd3e5b4061ca557fa52c465cc929231",
+      "evaluator_func": [
+        "is_expected_active_tab",
+        "is_expected_active_tab"
+      ],
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_022",
+      "task_id": "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9",
+      "evaluator_sha256_verified": "2c7a0804af650196c71036b6d7f9137230b08d0dd7efa6e084f3f98289c7ad00",
+      "evaluator_func": "compare_docx_tables",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_023",
+      "task_id": "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302",
+      "evaluator_sha256_verified": "ed01cef07e1c1a000326b245f8aba48cf6f02918c648e78aaeafb223e1e307c2",
+      "evaluator_func": [
+        "compare_pptx_files",
+        "compare_pptx_files"
+      ],
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_024",
+      "task_id": "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb",
+      "evaluator_sha256_verified": "227b0aa19cb5001b2fa5bfbd1cd25f078b3309da43fee11d1f52def842b06054",
+      "evaluator_func": "compare_docx_images",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_025",
+      "task_id": "os/13584542-872b-42d8-b299-866967b5c3ef",
+      "evaluator_sha256_verified": "63d6e47fb82e2ee4f77face4223664c6e20e264f947903b51b619233edb4fcfe",
+      "evaluator_func": "check_include_exclude",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_026",
+      "task_id": "chrome/3299584d-8f11-4457-bf4c-ce98f7600250",
+      "evaluator_sha256_verified": "9519b2303dccbce6d33be4c21893d1d51c2a5acb06107503a36caa6bfabfed6d",
+      "evaluator_func": "exact_match",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_027",
+      "task_id": "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57",
+      "evaluator_sha256_verified": "4235cb5cf42f47c15c28a4c601592ded5f99bba7ffa89666b2c583adfbeea97a",
+      "evaluator_func": "exact_match",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_028",
+      "task_id": "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4",
+      "evaluator_sha256_verified": "92785dcbee2be4c1c54b8d5362642226b8c36c809eecb6f6d4e14674840fc455",
+      "evaluator_func": "compare_images",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_029",
+      "task_id": "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224",
+      "evaluator_sha256_verified": "4e39170594bf42539c8d98c7b7172bebded1f411565f99720184dc79cba1ef22",
+      "evaluator_func": "compare_pptx_files",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_030",
+      "task_id": "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74",
+      "evaluator_sha256_verified": "36f63b205a16e2889c287738c6c0e5dfefcf1ddf00e17e750c5bc903d86c1b71",
+      "evaluator_func": [
+        "compare_pptx_files",
+        "compare_pptx_files"
+      ],
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_031",
+      "task_id": "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78",
+      "evaluator_sha256_verified": "4339f8f3beeddc6763983b6cc5b4122692aa2b9f312ee56420e00a27ff7b4817",
+      "evaluator_func": "compare_table",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_032",
+      "task_id": "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf",
+      "evaluator_sha256_verified": "4f3699c92303b83da81e1ad44753fb333d7934f5e2f881f574db4d976254ac51",
+      "evaluator_func": "check_auto_saving_time",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_033",
+      "task_id": "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5",
+      "evaluator_sha256_verified": "96eb618c2a49f3e27fdf952a0f775f082351b0565d0564add92c19613044daed",
+      "evaluator_func": "check_include_exclude",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_034",
+      "task_id": "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568",
+      "evaluator_sha256_verified": "8d45710ddce352624a634ab8e650f746cdb11ace0df7fc555f387e54a6cbbffa",
+      "evaluator_func": "check_brightness_decrease_and_structure_sim",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_035",
+      "task_id": "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c",
+      "evaluator_sha256_verified": "9944326b8ede5a54876b61a3c1ade03c2d3a8370b2aa6a124f27704a9eb90797",
+      "evaluator_func": "compare_table",
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_036",
+      "task_id": "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d",
+      "evaluator_sha256_verified": "8e44ef59de314fad8f0e68fb68eae1ebd23c16633c55e946511e52cce64a4063",
+      "evaluator_func": [
+        "file_contains",
+        "check_line_number"
+      ],
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_037",
+      "task_id": "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f",
+      "evaluator_sha256_verified": "31a7eea1d9b457dc478b5c43d15cd294cfe7e6dcedd64d0d7aa41bcdbcaad53e",
+      "evaluator_func": [
+        "compare_docx_tables",
+        "compare_docx_tables"
+      ],
+      "source_files_verified": 7
+    },
+    {
+      "context_id": "power_038",
+      "task_id": "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c",
+      "evaluator_sha256_verified": "5764462f0976e873e8d794ec96fdc7fd60cfc03545ac15f4b192138da0b6a4e3",
+      "evaluator_func": "compare_pptx_files",
+      "source_files_verified": 7
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "audit_kind": "independent statistical methods review before cohort analysis",
+  "checker": "/root/stats_check",
+  "verified_at_utc": "2026-11-08T07:43:05.437033+00:00",
+  "analyze_sha256": "4c2d5cc7e2ef24c1a5bc11245a9faaea665c2b9f34f31b8b94a3f16e0061a77d",
+  "protocol_sha256": "c9fcfc025c016080208bbc6166161f163c5982b2f0e76a8a09fbb7b7c6cabf0d",
+  "checks": {
+    "bootstrap_weighted_vs_explicit": {
+      "passed": true,
+      "max_error": 1.1102230246251565e-16,
+      "replicates": 12
+    },
+    "permutation_exact_ties": {
+      "passed": true,
+      "reproduction": {
+        "statistic_2u": 369,
+        "sklearn_float_variants": [
+          0.4855263157894737,
+          0.48552631578947364
+        ],
+        "canonical_auc": 0.4855263157894737
+      },
+      "selection_and_permutation_use_integer_2u": "verified by source review"
+    },
+    "undefined_ratio_serialization": {
+      "passed": true,
+      "cases": {
+        "zero_stratum_means": {
+          "false_finish": {
+            "value": null,
+            "ci95": [
+              -14.82,
+              2.6209821428571427
+            ],
+            "status": "undefined",
+            "finite_bootstrap_replicates": 12,
+            "zero_bootstrap_denominator_count": 0,
+            "nonpositive_bootstrap_denominator_count": 8
+          },
+          "true_finish": {
+            "value": null,
+            "ci95": [
+              -10,
+              10
+            ],
+            "status": "undefined",
+            "finite_bootstrap_replicates": 11,
+            "zero_bootstrap_denominator_count": 1,
+            "nonpositive_bootstrap_denominator_count": 5
+          }
+        },
+        "all_baselines_zero": {
+          "false_finish": {
+            "value": null,
+            "ci95": null,
+            "status": "undefined",
+            "finite_bootstrap_replicates": 0,
+            "zero_bootstrap_denominator_count": 12,
+            "nonpositive_bootstrap_denominator_count": 12
+          },
+          "true_finish": {
+            "value": null,
+            "ci95": null,
+            "status": "undefined",
+            "finite_bootstrap_replicates": 0,
+            "zero_bootstrap_denominator_count": 12,
+            "nonpositive_bootstrap_denominator_count": 12
+          }
+        }
+      }
+    },
+    "training_only_svd_logistic": {
+      "passed": true,
+      "tested_folds": [
+        0,
+        19,
+        38
+      ],
+      "max_prediction_error": 7.857048345272233e-13,
+      "retained_dimensions": [
+        37
+      ]
+    },
+    "intercept_loo_artifact": {
+      "passed": true,
+      "auroc": 0
+    },
+    "oracle_power": {
+      "passed": true,
+      "seconds": 1.4441956719965674,
+      "critical_U": {
+        "one_sided_05": 250,
+        "two_sided_05": 261,
+        "familywise_72": 301
+      },
+      "scipy_exact_null_rejection": {
+        "one_sided_05": 0.047417359551614996,
+        "two_sided_05": 0.0467608128777544,
+        "familywise_72": 0.0006897428090057581
+      },
+      "power_at_null": {
+        "population_auroc": 0.5,
+        "one_sided_05": 0.04575,
+        "two_sided_05": 0.04595,
+        "familywise_72": 0.0004
+      },
+      "minimum_auroc_for_80_percent_power": {
+        "one_sided_05": 0.725,
+        "two_sided_05": 0.755,
+        "familywise_72": 0.845
+      },
+      "mc_se_at_power_80": 0.0028284271247461905,
+      "actual_1000_permutation_bonferroni_power_at_05": 0
+    }
+  },
+  "environment": {
+    "host": "RunPod via SSH",
+    "python": "/workspace/venv/bin/python -B",
+    "cpu_threads": 2,
+    "gpu_used": false,
+    "remote_files_written": false
+  },
+  "verdict": {
+    "RAN": "Source review and six lightweight synthetic/check groups on deployed analyze.py; process exit code 0.",
+    "PASSED": "All checks passed, including the two reported regressions.",
+    "CORRECT": "The reviewed statistical implementation is consistent with the amended exploratory protocol. No remaining blocker found for launching the cohort CPU analysis; this verdict is limited to methods and the checked cases.",
+    "NOT_RUN": [
+      "Cohort 156-forward integrity and 39 residual-file audit",
+      "Complete 72-probe cohort fit and baseline result verification",
+      "Completed 1000-permutation output audit",
+      "Final REPORT.md interpretation and RESULT.json consistency audit",
+      "GPU or model execution"
+    ]
+  },
+  "corrected_findings": [
+    {
+      "finding": "Zero stratum mean or all-zero bootstrap denominators caused nonfinite JSON output.",
+      "status": "Resolved and reproduced as passing: undefined values are null, denominator counts retained, JSON serialization rejects no value."
+    },
+    {
+      "finding": "Floating-point AUROC equality could exclude exact permutation ties.",
+      "status": "Resolved: exact integer 2U drives candidate selection and permutation comparisons; same-statistic floating variants reproduced."
+    },
+    {
+      "finding": "The bilateral power curve previously omitted its lower rejection tail.",
+      "status": "Resolved: both tails counted; exact rejection probability independently matched with scipy.stats.mannwhitneyu."
+    }
+  ],
+  "interpretation_limits": [
+    "Fixed-OOF bootstrap intervals are descriptive and do not establish future-performance coverage.",
+    "The selected winner is exploratory; the minimum Bonferroni-adjusted p-value with 1000 permutations is 72/1001.",
+    "Pooled leave-one-out AUROC can be biased by fold prevalence; no orientation flips or absence-of-signal conclusion.",
+    "SVD equivalence was numerically checked for logistic regression. MLP initialization in the reduced basis is the amended estimator, not a claim of identical training trajectories to an unreduced MLP.",
+    "Ratios remain unbounded summaries of raw logit margins, not variance shares or fractions of probability."
+  ]
+}

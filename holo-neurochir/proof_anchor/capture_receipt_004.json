@@ -1,0 +1,18 @@
+{
+  "completed": 4,
+  "started": 4,
+  "model": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+  "dtype": "torch.bfloat16",
+  "device": "cuda:0",
+  "torch": "2.11.0+cu128",
+  "max_memory_allocated": 11030990848,
+  "layers_zero_based": [
+    8,
+    12,
+    16,
+    20,
+    24,
+    28
+  ],
+  "utc": "2026-11-08T07:40:52.893926+00:00"
+}

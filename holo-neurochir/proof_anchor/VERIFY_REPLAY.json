@@ -1,0 +1,21 @@
+{
+  "verdict": "PASS",
+  "scope": "read-only replay and preflight verification",
+  "preflight_records": 39,
+  "unique_contexts": 39,
+  "variants_per_context": 4,
+  "null_note_contexts": 1,
+  "all_variant_total_lengths_equal": true,
+  "all_contexts_have_distinct_variant_hashes": true,
+  "positions_ordered": true,
+  "pilot_forwards": 4,
+  "pilot_contexts": 1,
+  "pilot_conditions": ["a", "b", "c", "d"],
+  "pilot_hash_and_length_match_preflight": true,
+  "pilot_tool_logits_finite": true,
+  "teacher_forced_only": true,
+  "generation_used": false,
+  "use_cache": false,
+  "layers_zero_based": [8, 12, 16, 20, 24, 28],
+  "limitation": "Does not verify full-run residual tensors or generated behavior."
+}
