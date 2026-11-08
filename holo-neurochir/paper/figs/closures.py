@@ -96,6 +96,22 @@ m.add("tsConsAuc", f"{bc['auroc_1_minus_rate']:.2f}", TS + " B_sampling_consiste
 m.add("tsConsCi", "--".join(f"{x:.2f}" for x in bc["ci95_task_boot"]), TS + " B_sampling_consistency.ci95_task_boot")
 m.add("tsConsRateFs", f"{bc['mean_answer_rate_fs']:.2f}", TS + " B_sampling_consistency.mean_answer_rate_fs")
 m.add("tsConsRateTrue", f"{bc['mean_answer_rate_true']:.2f}", TS + " B_sampling_consistency.mean_answer_rate_true")
+ml = load("pod_astra/moonleak/attribution_summary.json")
+ML = "data/pod_astra/moonleak/attribution_summary.json"
+nt = ml["neutral"]
+assert len(nt) == 1 and nt[0]["layer"] is None and ml["contexts"] == {"fs+": 19, "fs-": 20}
+assert all(c["mean_fs_drop"] == 0 and c["mean_true_drop"] == 0 for c in ml["mask_controls"])
+nt = nt[0]
+m.add("mlFs", ml["contexts"]["fs+"], ML + " contexts.fs+")
+m.add("mlTrue", ml["contexts"]["fs-"], ML + " contexts.fs-")
+m.add("mlBaseFs", f"{ml['baseline_descriptives']['fs+']['answer_margin']:.1f}", ML + " baseline_descriptives.fs+.answer_margin (mean, logits)")
+m.add("mlBaseTrue", f"{ml['baseline_descriptives']['fs-']['answer_margin']:.1f}", ML + " baseline_descriptives.fs-.answer_margin")
+m.add("mlNeutralFs", f"{nt['mean_fs_drop']:.2f}", ML + " neutral[0].mean_fs_drop (note+thought neutralised, logits)")
+m.add("mlNeutralTrue", f"{nt['mean_true_drop']:.2f}", ML + " neutral[0].mean_true_drop")
+m.add("mlNeutralFsPos", nt["fs_positive"], ML + " neutral[0].fs_positive")
+m.add("mlNeutralTruePos", nt["true_positive"], ML + " neutral[0].true_positive")
+m.add("mlHeads", len(ml["heads"]), ML + " heads (full-attention heads screened)")
+m.add("mlBestHead", f"{max(h['selectivity'] for h in ml['heads']):.2f}", ML + " max heads[].selectivity (fs drop minus true drop, logits)")
 m.add("rmFspInfeasible", len(rm_inf), "data/local/osworld_tasks/<id>.json evaluator.func == infeasible over regmean/manifest.json fs+ tasks; agrees with data/pod_astra/power/BUILD_AUDIT.json shortfall")
 for pos, P in [("prefill", "Pre"), ("endthink_before_note", "End")]:
     g = og[pos]

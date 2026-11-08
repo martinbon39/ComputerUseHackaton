@@ -46,6 +46,16 @@
 \newcommand{\tsConsCi}{0.53--0.80} % source: data/local/text_signal/RESULT.json B_sampling_consistency.ci95_task_boot
 \newcommand{\tsConsRateFs}{0.72} % source: data/local/text_signal/RESULT.json B_sampling_consistency.mean_answer_rate_fs
 \newcommand{\tsConsRateTrue}{0.94} % source: data/local/text_signal/RESULT.json B_sampling_consistency.mean_answer_rate_true
+\newcommand{\mlFs}{19} % source: data/pod_astra/moonleak/attribution_summary.json contexts.fs+
+\newcommand{\mlTrue}{20} % source: data/pod_astra/moonleak/attribution_summary.json contexts.fs-
+\newcommand{\mlBaseFs}{17.3} % source: data/pod_astra/moonleak/attribution_summary.json baseline_descriptives.fs+.answer_margin (mean, logits)
+\newcommand{\mlBaseTrue}{18.1} % source: data/pod_astra/moonleak/attribution_summary.json baseline_descriptives.fs-.answer_margin
+\newcommand{\mlNeutralFs}{7.55} % source: data/pod_astra/moonleak/attribution_summary.json neutral[0].mean_fs_drop (note+thought neutralised, logits)
+\newcommand{\mlNeutralTrue}{8.18} % source: data/pod_astra/moonleak/attribution_summary.json neutral[0].mean_true_drop
+\newcommand{\mlNeutralFsPos}{19} % source: data/pod_astra/moonleak/attribution_summary.json neutral[0].fs_positive
+\newcommand{\mlNeutralTruePos}{20} % source: data/pod_astra/moonleak/attribution_summary.json neutral[0].true_positive
+\newcommand{\mlHeads}{128} % source: data/pod_astra/moonleak/attribution_summary.json heads (full-attention heads screened)
+\newcommand{\mlBestHead}{0.05} % source: data/pod_astra/moonleak/attribution_summary.json max heads[].selectivity (fs drop minus true drop, logits)
 \newcommand{\rmFspInfeasible}{5} % source: data/local/osworld_tasks/<id>.json evaluator.func == infeasible over regmean/manifest.json fs+ tasks; agrees with data/pod_astra/power/BUILD_AUDIT.json shortfall
 \newcommand{\rmPreAuc}{0.704} % source: data/pod_astra/regmean/overlap_summary.json prefill.auroc_ridge_median (over writers)
 \newcommand{\rmPreAngle}{67} % source: data/pod_astra/regmean/overlap_summary.json prefill.median_principal_angle (degrees)
