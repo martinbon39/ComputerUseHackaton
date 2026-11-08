@@ -98,6 +98,11 @@ ar = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(ar)
 d12 = [sum(v["guard"]) / len(v["guard"]) - sum(v["nog"]) / len(v["nog"]) for v in rp["per_episode"].values()]
 assert len(d12) == rp["episodes_total"]
+d9 = [sum(v["guard"]) / len(v["guard"]) - sum(v["nog"]) / len(v["nog"]) for v in rp["per_episode"].values() if not v["excluded"]]
+assert ar.boot(d9) == rp["paired_diff_ci95"]
+ups = [ar.boot(d9, seed=sd)[1] for sd in range(20)]
+m.add("fgRepDiffHiMin", f"{100 * min(ups):+.0f}", "analyze_repair.boot on the kept episodes, upper bound over seeds 0-19 (min)")
+m.add("fgRepDiffHiMax", f"{100 * max(ups):+.0f}", "analyze_repair.boot on the kept episodes, upper bound over seeds 0-19 (max)")
 m.add("fgRepDiffAll", f"{100 * sum(d12) / len(d12):+.1f}", RP + " per_episode, all episodes incl. replay-invalid (points)")
 m.add("fgRepDiffAllCi", " to ".join(f"{100 * x:+.0f}".replace("+0", "0") for x in ar.boot(d12)), "analyze_repair.boot over all episodes (seed 0, 10,000)")
 m.add("fgRepEpisodesAll", rp["episodes_total"], RP + " episodes_total")
