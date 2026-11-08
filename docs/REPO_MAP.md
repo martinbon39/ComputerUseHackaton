@@ -54,7 +54,7 @@ Start with the Guard (solution), then the diagnosis, then the weight-edit experi
 | `holo/` | partial | Harness: agent, model loading, diagnostic, directions, rollouts, surgery | TOOLING | module docstrings |
 | `scripts/` | partial | Checkpoint builders (patched, ExPO) and checks | TOOLING | script docstrings |
 | `runs/` | partial | Raw rollout outputs (acceptance, diagnostic, smoke) | DATA | `diagnostic.md` |
-| `report/` | 3 files | Coordination notes; committed: online Guard pre-registration, ExPO report, sprints | DATA | `report/PREREG_ONLINE_GUARD.md` |
+| `report/` | partial | Online Guard test: pre-registration, analysis code, result (false "done" 22.5 % → 10.8 %, −11.7 pts [−19.2, −4.2]; no score gain); ExPO report, sprints | RESULT | `report/ONLINE_GUARD_RESULT.md`, `PREREG_ONLINE_GUARD.md` |
 | `dashboard/` | partial | Local "MRI" dashboard of the model's internals | TOOLING | |
 | `team_dash/`, `alerts/` | not committed | Agent-team tooling (team status page, phone alerts) | TOOLING | |
 

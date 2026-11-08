@@ -10,13 +10,15 @@ which claims are **measured** versus **only predicted or still running**. Human-
    beat the step number. About 15 weight/activation edits move the stopping decision but cannot target it. Online
    result: no detectable gain.
 3. **Solution**: Feci Guard is an external verifier (Claude Sonnet). It checks each task requirement on the screen, refuses a
-   false "done" with a reason, and the agent repairs or escalates to Holo4-27B.
+   false "done" with a reason, and the agent repairs or escalates to Holo4-27B. Online, on 120 pre-registered
+   OSWorld tasks, it halves the false "done" rate (22.5 % → 10.8 %, significant) with no measurable score change.
 4. **Honesty rule**: a gain is claimed only when the lower bound of the paired 95 % CI is > 0. That rule was fixed before the data was read.
 
 ## Verify everything that can be verified offline (≈ 1 s each, Python ≥ 3.9 stdlib only)
 ```bash
 python3 jury_kit/verify_results.py        # exit 0; prints "+1.94 pt CI95 [-4.3; +8.0] ... NO DETECTABLE GAIN"
 python3 jury_kit/recount_judges.py        # exit 0; the 3 judges recounted from raw responses (35/66, 31/66, 45/66)
+python3 jury_kit/verify_online_guard.py   # exit 0; online test: false done -11.7 pts [-19.2, -4.2], score +1.6 [-4.4, +7.7]
 python3 jury_kit/replay_guard.py --show 2 # exit 0; prints "45/66 = 68 % [56-78]", "21/202 = 10 % [7-15]", gap "+58 [+41, +74]"
 bash jury_kit/quickstart.sh               # all of the above + checks the 2 demo pages; ends with "QUICKSTART OK"
 ```
@@ -42,7 +44,7 @@ refusal → repair on `libreoffice_calc/1de60575` (one episode, not an average e
 | Merged checkpoint rebuilt bit-for-bit from 3 pinned public models | measured (on an independent machine) | `jury_kit/expected_sha256.json`, `jury_kit/README.md` | `python3 jury_kit/rebuild_merge.py --check 2 --merged DIR` |
 | Guard repair: 5/18 vs 2/18 branches, +16.7 [0, +44] | measured, **not distinguishable from 0** | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/repair/results.json` | read |
 | Guard + escalation to Holo4 vs Holo4 alone, replay of 9 recorded false successes × 2 branches: 11/18 vs 2/18 scored 1, +50 pts [+22, +78] (episode-cluster bootstrap) | measured in replay, significant; pre-registered (`PREREG.md`); not an online score gain | `holo-neurochir/rescue_bench/REPORT.md`, `RESULT.json`, `PREREG.md`, `MEASURED_REPAIRS_REVIEW.md` | read |
-| Holo + Guard on the 120-task test split | **running** (first launch lost to a pod outage with 0 tasks, amendment 2; relaunched with the agent on Modal and the VMs on GitHub runners, runs 42468308809 + 42468884640 of holo-osworld-runner), pre-registered, no result yet | `holo-neurochir/report/PREREG_ONLINE_GUARD.md` | read |
+| Holo + Guard online on the 120-task test split: false "done" 22.5 % → 10.8 %, −11.7 pts [−19.2, −4.2]; score +1.6 [−4.4, +7.7] → no score gain claimed; B=8 repaired, C=4 lost | measured online, pre-registered (`report/PREREG_ONLINE_GUARD.md`, analysis committed before results) | `jury_kit/results/online_guard_tasks.csv`, `holo-neurochir/report/ONLINE_GUARD_RESULT.md`, `.json` | `python3 jury_kit/verify_online_guard.py` |
 | Guard v2 (Opus + history) vs v1 on the held-out half, used once: detection +13.8 pts [+2.9, +30] (20/29 vs 16/29); false rejection +4.3 [−5, +15] (15/116 vs 10/116) | measured offline, not run online; target ≥ 80 % / ≤ 10 % not met | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/v2/PROTOCOL.md`, `v2/runs/` | read |
 | "A verifier can be added to any agent with one call" | design property, measured on Holo only | `feci_guard.py` docstring | read 61 lines |
 | End-to-end plumbing: refusal → escalation → re-check → official score | measured on 1 task (no efficacy claim) | `holo-neurochir/feci_guard/smoke/impress_550ce7e7_rescue_guard.md` | read |

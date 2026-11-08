@@ -6,6 +6,8 @@ on:
     paths:
       - "jury_kit/**"
       - "holo-neurochir/feci_guard/*.py"
+      - "holo-neurochir/report/online_guard_analysis.py"
+      - "holo-neurochir/report/ONLINE_GUARD_RESULT.json"
       - "holo-neurochir/verif_study/manifest.json"
       - "holo-neurochir/verif_study/images/**"
       - "holo-neurochir/judge_bench/claude_responses.jsonl"
