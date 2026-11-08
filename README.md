@@ -203,6 +203,9 @@ on GitHub runners. A judge cannot run them in 5 minutes.
 
 ## How we worked
 
+Full account, with every number sourced to `path:line` (agent team, compute, OSWorld VMs, statistics, the night's
+incidents, how to reproduce each level): **[docs/RESEARCH_SYSTEM.md](docs/RESEARCH_SYSTEM.md)**.
+
 The research was run by a team of AI agents (Claude Code sessions on one server, linked on a supervision canvas) that
 one human supervised:
 - **An orchestrator** (`ares`) set the questions, kept the budget (GPU, Modal dollars), froze the task splits and owned

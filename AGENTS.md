@@ -54,6 +54,7 @@ infeasible tasks).
 ## Repository map
 - `README.md`: overview, results table, criteria → evidence. `docs/REPO_MAP.md`: one line per folder of
   `holo-neurochir/` with status (RESULT / NEGATIVE / ABANDONED / IN PROGRESS / TOOLING / DEMO) and its source-of-truth file.
+- `docs/RESEARCH_SYSTEM.md`: how the research was done (agent team, compute, VMs, statistics), each number sourced to `path:line`.
 - `jury_kit/`: everything a judge can run (levels 1–3), with `results/scores.csv` and frozen `contexts/`.
 - `holo-neurochir/feci_guard/`: the Guard (verifier, decision rule, agent loop copy, repair and rescue runners, prereg, results).
 - `holo-neurochir/judge_bench/`, `verif_study/`: offline comparison of judges on 268 labelled final screens.

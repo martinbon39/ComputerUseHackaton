@@ -8,6 +8,7 @@ Everything below can be checked offline in seconds with Python >= 3.9 standard l
 - [AGENTS.md](AGENTS.md): guide for AI reviewers: verify commands, claim → evidence map, measured vs running
 - [README.md](README.md): overview, architecture, results table with CIs, criteria → evidence
 - [docs/QUICKSTART_PROOF.md](docs/QUICKSTART_PROOF.md): outputs of every quickstart command from a fresh clone
+- [docs/RESEARCH_SYSTEM.md](docs/RESEARCH_SYSTEM.md): how the research was done: agent team, compute, VMs, statistics
 - [docs/REPO_MAP.md](docs/REPO_MAP.md): every experiment folder, its status and source-of-truth file
 
 ## Verify
