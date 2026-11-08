@@ -1,0 +1,36 @@
+{
+  "domain": "chrome",
+  "example_id": "2ad9387a-65d8-4e33-ad5b-7580065a27ca",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_bookmarks",
+  "finished_by_agent": true,
+  "steps": 10,
+  "answer": "Successfully created a new folder named 'Favorites' in the bookmarks bar. The folder is now visible in the Bookmark Manager under the 'Bookmarks bar' section and is ready to store bookmarks.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      5.4
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

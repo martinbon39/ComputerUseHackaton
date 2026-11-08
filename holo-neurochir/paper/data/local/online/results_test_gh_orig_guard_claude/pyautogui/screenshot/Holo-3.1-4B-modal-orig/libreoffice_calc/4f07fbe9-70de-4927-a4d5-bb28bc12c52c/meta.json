@@ -1,0 +1,36 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "4f07fbe9-70de-4927-a4d5-bb28bc12c52c",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 8,
+  "answer": "Successfully formatted the numerical value in the text to show 2 decimal places. Cell D1 now displays 'The price is 19.50 euros.' using the TEXT function: =\"The price is \"&TEXT(C1,\"0.00\")&\" euros.\" The file has been saved.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      6.5
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

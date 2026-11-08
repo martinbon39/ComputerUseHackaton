@@ -1,0 +1,36 @@
+{
+  "domain": "libreoffice_writer",
+  "example_id": "b21acd93-60fd-4127-8a43-2f5178f4a830",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_line_spacing",
+  "finished_by_agent": true,
+  "steps": 15,
+  "answer": "The essay has been successfully formatted according to your requirements:\n\n1. **Introduction paragraph** (first paragraph starting with 'Seeing is believing'): Single spacing (Line Spacing: 1)\n2. **Body paragraph** (second paragraph starting with 'If our perception can be influenced'): Double spacing (Line Spacing: 2)\n3. **Conclusion paragraph** (third paragraph starting with 'Beauty is in the eye of the beholder'): One-and-a-half spacing (Line Spacing: 1.5)\n4. **Font size**: 12pt throughout the document\n\nAll formatting changes have been saved to the file 'CCHU9045_Course_Outline_2019-20.docx' in LibreOffice Writer.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      8.6
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "domain": "multi_apps",
+  "example_id": "ce2b64a2-ddc1-4f91-8c7d-a88be7121aac",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_direct_json_object",
+  "finished_by_agent": true,
+  "steps": 36,
+  "answer": "Successfully renamed all three mountain pictures in the Pictures directory to their actual mountain names:\n\n1. **Mount Everest.jpg** - Snow-capped peak with glacier valleys in the Himalayas\n2. **Mount Huangshan.jpg** - Famous Cliff Walk with wooden planks on the cliff face in China\n3. **Mount Kilimanjaro.jpg** - African mountain with snow-capped peak and moon/sun behind it\n\nAll filenames now accurately reflect the real mountains shown in each image, preserving spaces (not replacing them with underscores) as requested.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 2,
+    "refusals": 1,
+    "decisions": [
+      "refused",
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      7.0,
+      7.1
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

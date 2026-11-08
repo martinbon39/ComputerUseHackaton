@@ -1,0 +1,36 @@
+{
+  "domain": "vs_code",
+  "example_id": "5e2d93d8-8ad0-4435-b150-1692aacaa994",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_extension_installed",
+  "finished_by_agent": true,
+  "steps": 3,
+  "answer": "The project has been successfully saved as workspace \"project\" at \"/home/user/project/\". The workspace file \"project.code-workspace\" is now visible in the Explorer panel and the window title confirms the workspace is active.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      10.8
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "5d901039-a89c-4bfb-967b-bf66f4df075e",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_image_stretch_and_center",
+  "finished_by_agent": false,
+  "steps": 50,
+  "answer": null,
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 2,
+    "refusals": 2,
+    "decisions": [
+      "refused",
+      "refused"
+    ],
+    "verifier_latency_s": [
+      9.0,
+      9.9
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

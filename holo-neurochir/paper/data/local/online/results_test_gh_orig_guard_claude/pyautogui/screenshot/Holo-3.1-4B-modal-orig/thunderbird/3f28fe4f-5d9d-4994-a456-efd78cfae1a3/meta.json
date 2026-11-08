@@ -1,0 +1,36 @@
+{
+  "domain": "thunderbird",
+  "example_id": "3f28fe4f-5d9d-4994-a456-efd78cfae1a3",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_thunderbird_prefs",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "Successfully set up a plain text email signature in Thunderbird with 'Anonym' on the first line and 'XYZ Lab' on the second line. The signature has been verified working correctly in a new email composition window.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      7.3
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

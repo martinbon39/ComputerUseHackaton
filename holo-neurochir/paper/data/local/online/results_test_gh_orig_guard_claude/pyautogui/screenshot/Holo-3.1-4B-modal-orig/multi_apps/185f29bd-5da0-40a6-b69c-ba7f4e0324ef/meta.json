@@ -1,0 +1,32 @@
+{
+  "domain": "multi_apps",
+  "example_id": "185f29bd-5da0-40a6-b69c-ba7f4e0324ef",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pdfs",
+  "finished_by_agent": false,
+  "steps": 50,
+  "answer": null,
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": null,
+    "answers": 0,
+    "refusals": 0,
+    "decisions": [],
+    "verifier_latency_s": [],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

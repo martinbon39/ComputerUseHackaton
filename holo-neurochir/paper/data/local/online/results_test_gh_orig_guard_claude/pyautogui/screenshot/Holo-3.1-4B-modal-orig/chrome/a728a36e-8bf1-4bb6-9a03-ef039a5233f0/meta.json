@@ -1,0 +1,36 @@
+{
+  "domain": "chrome",
+  "example_id": "a728a36e-8bf1-4bb6-9a03-ef039a5233f0",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_url_pattern_match",
+  "finished_by_agent": true,
+  "steps": 3,
+  "answer": "I have found the Driver License Eligibility Requirements on the Virginia DMV website. The page is located at dmv.virginia.gov/licenses-ids/license/applying/eligibility and contains comprehensive eligibility information organized by applicant categories including:\n\n- New Residents\n- Military Personnel\n- Out-of-State Students\n- Non-residents\n- Identification and Residency Requirements\n\nThe page also includes a First Time Drivers section and references to a document guide and DMV 141 form for determining which documents are needed when applying for a driver's license.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      5.7
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

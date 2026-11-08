@@ -1,0 +1,32 @@
+{
+  "domain": "multi_apps",
+  "example_id": "881deb30-9549-4583-a841-8270c65f2a17",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": false,
+  "steps": 50,
+  "answer": null,
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": null,
+    "answers": 0,
+    "refusals": 0,
+    "decisions": [],
+    "verifier_latency_s": [],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

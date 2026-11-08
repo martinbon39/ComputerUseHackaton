@@ -1,0 +1,42 @@
+{
+  "domain": "os",
+  "example_id": "b3d4a89c-53f2-4d6b-8b6a-541fb5d205fa",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 11,
+  "answer": "Bluetooth cannot be switched on on this system. After extensive investigation, I confirmed through multiple methods that this computer has no Bluetooth hardware:\n\n**Evidence:**\n- Settings > Bluetooth shows \"No Bluetooth Found\" with message \"Plug in a dongle to use Bluetooth\"\n- Terminal command `rfkill list` returned no output (no Bluetooth devices)\n- Terminal command `hciconfig -a` returned no output (no Bluetooth adapters)\n- Terminal command `lspci | grep -i bluetooth` returned no output (no Bluetooth PCI devices)\n\n**Solution:**\nTo enable Bluetooth, you need to purchase and plug in a USB Bluetooth dongle/adapter. Once connected, return to Settings > Bluetooth and use the toggle switch to enable it.\n\nThe Bluetooth toggle in the Settings window is present but cannot be activated without the physical hardware adapter.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 3,
+    "refusals": 2,
+    "decisions": [
+      "refused",
+      "refused",
+      "passed_cap"
+    ],
+    "verifier_latency_s": [
+      6.9,
+      5.9
+    ],
+    "verifier_errors": []
+  },
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

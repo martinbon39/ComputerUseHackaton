@@ -1,0 +1,36 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "1e8df695-bd1b-45b3-b557-e7d599cf7597",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 18,
+  "answer": "Successfully added a 'Profit' column in column D (right next to COGS column) and calculated profit for each week by subtracting COGS from Sales. All 10 weeks now have profit values:\n- Week 1: 11577.2\n- Week 2: 7073.5\n- Week 3: 82267.6\n- Week 4: 4763.33\n- Week 5: 50481.3\n- Week 6: 62432.3\n- Week 7: 40804.2\n- Week 8: 20648.4\n- Week 9: 97994.7\n- Week 10: 28668.9\n\nThe formula =B-C (Sales - COGS) was applied to all rows. File has been saved.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      6.8
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

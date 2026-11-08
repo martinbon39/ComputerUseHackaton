@@ -1,0 +1,38 @@
+{
+  "domain": "vs_code",
+  "example_id": "ec71221e-ac43-46f9-89b8-ee7d80f7e1c5",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_text_file",
+  "finished_by_agent": true,
+  "steps": 9,
+  "answer": "Successfully increased the indent of lines 2-10 by one tab (4 spaces). The file has been saved. Lines 2 through 10 in test.py are now indented one level deeper than line 1, creating a proper code block structure for the bubble_sort function body.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 2,
+    "refusals": 1,
+    "decisions": [
+      "refused",
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      9.5,
+      9.7
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

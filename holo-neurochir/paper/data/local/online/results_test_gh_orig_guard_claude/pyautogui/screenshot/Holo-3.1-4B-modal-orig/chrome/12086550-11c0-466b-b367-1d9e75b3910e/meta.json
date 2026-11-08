@@ -1,0 +1,36 @@
+{
+  "domain": "chrome",
+  "example_id": "12086550-11c0-466b-b367-1d9e75b3910e",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_active_tab_approximate",
+  "finished_by_agent": true,
+  "steps": 6,
+  "answer": "I have successfully navigated to the Google Password Manager in your Chrome browser and searched for Etsy login credentials. The search results show that there are **no Etsy passwords currently saved** in this browser's password manager. The page displays the message \"Saved passwords will appear here\" which confirms that no matching entries were found for \"Etsy\".\n\nTo summarize what I accomplished:\n1. Opened the Chrome menu (three vertical dots)\n2. Selected \"Passwords and autofill\" from the dropdown\n3. Clicked on \"Google Password Manager\"\n4. Used the search bar to look for \"Etsy\" credentials\n5. Confirmed that no Etsy passwords are stored in this browser\n\nIf you have Etsy credentials saved elsewhere (such as in a different browser, password manager, or synced to a different Google account), they would not appear in this search result.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      7.2
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

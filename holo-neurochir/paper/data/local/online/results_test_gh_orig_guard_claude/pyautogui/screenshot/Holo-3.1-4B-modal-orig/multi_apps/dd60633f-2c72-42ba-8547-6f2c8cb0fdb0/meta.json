@@ -1,0 +1,36 @@
+{
+  "domain": "multi_apps",
+  "example_id": "dd60633f-2c72-42ba-8547-6f2c8cb0fdb0",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_python_pure_text",
+  "finished_by_agent": true,
+  "steps": 26,
+  "answer": "Successfully extracted all Python code and comments from Karpathy's GPT Colab notebook into `gpt_dev_pure_code.py` in the Home directory.\n\n**File details:**\n- Location: ~/gpt_dev_pure_code.py\n- Line count: 484 lines (reduced from 505 original)\n- Content: Pure Python code and # comments only\n- Excluded: File header (encoding, Colab generation note, original URL) and all markdown docstrings (triple-quoted strings)\n\n**Verification:**\n- File begins with Python code: `# We always start with a dataset to train on...`\n- File ends with complete GPT training loop and model generation code\n- No markdown docstrings remain (grep for `\"\"\"` returned no results)\n\nThe processing script correctly identified and removed the file header and markdown content while preserving all Python code and inline comments.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      8.2
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

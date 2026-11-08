@@ -1,0 +1,36 @@
+{
+  "domain": "libreoffice_writer",
+  "example_id": "e246f6d8-78d7-44ac-b668-fcf47946cb50",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_italic_font_size_14",
+  "finished_by_agent": true,
+  "steps": 12,
+  "answer": "Successfully changed all italicized text from 12pt to 14pt font size in the document. Used Find & Replace with formatting options to search for italic text and replace with 14pt font size. A total of 21 instances were replaced. The italicized words (preorder, postorder, average case analysis, successful, etc.) are now visibly larger and more discernible from the regular 12pt text. The document has been saved.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      8.9
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

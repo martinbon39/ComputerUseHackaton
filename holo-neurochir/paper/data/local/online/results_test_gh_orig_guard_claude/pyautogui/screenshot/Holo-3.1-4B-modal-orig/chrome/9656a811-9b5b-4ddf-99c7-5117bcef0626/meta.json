@@ -1,0 +1,36 @@
+{
+  "domain": "chrome",
+  "example_id": "9656a811-9b5b-4ddf-99c7-5117bcef0626",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "exact_match",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "Successfully enabled Chrome's Safe Browsing feature. Standard protection has been activated, which will warn you about potentially harmful or unsafe websites. This protection level safeguards against known dangerous sites, downloads, and extensions while sending suspicious URLs to Google for verification. You will now receive warnings when visiting sites that Chrome deems potentially harmful.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      5.6
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

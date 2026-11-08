@@ -1,0 +1,36 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "2b94c692-6abb-48ae-ab0b-b3e8a19cb340",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 4,
+  "answer": "The image has been successfully moved to the right side of Slide 2. The gray striped rectangular image was dragged from its original position on the left side to the right side of the slide, while maintaining the same vertical position. The presentation has been saved to preserve the changes.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      9.2
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

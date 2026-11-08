@@ -1,0 +1,36 @@
+{
+  "domain": "multi_apps",
+  "example_id": "48c46dc7-fe04-4505-ade7-723cba1aa6f6",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_list,is_expected_tabs",
+  "finished_by_agent": true,
+  "steps": 21,
+  "answer": "Workspace setup completed successfully. All four requirements have been fulfilled:\n\n1. **OSWorld project directory in Terminal**: Navigated to /home/user/Documents/Projects/OSWorld using the terminal\n\n2. **OSWorld project directory in File Manager**: Opened the file manager and navigated to the OSWorld folder, which contains a 'codes' folder, 'meeting_notes.md' file, and 'osworld.ics' file\n\n3. **GitHub homepage in Chrome**: Loaded github.com in the first Chrome tab\n\n4. **Python documentation in Chrome**: Loaded docs.python.org/3/ (Python 3.15.2 documentation) in the second Chrome tab\n\nThe workspace is now fully configured with all requested resources accessible.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      7.3
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

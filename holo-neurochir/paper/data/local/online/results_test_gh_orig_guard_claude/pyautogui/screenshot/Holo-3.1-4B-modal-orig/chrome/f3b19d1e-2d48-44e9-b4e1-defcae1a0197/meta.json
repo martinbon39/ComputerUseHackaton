@@ -1,0 +1,38 @@
+{
+  "domain": "chrome",
+  "example_id": "f3b19d1e-2d48-44e9-b4e1-defcae1a0197",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_url_pattern_match",
+  "finished_by_agent": true,
+  "steps": 24,
+  "answer": "Successfully found the official Ticketek FAQ page about ticket delivery.\n\n**Page URL:** help.ticketek.com.au/hc/en-us/articles/360001877308-Ticket-Delivery-Information-FAQs\n\n**Page Title:** Ticket Delivery Information & FAQs\n\n**Content includes:**\n\n1. **Delivery Options** - Information about available delivery methods for ticket orders, which vary by event, venue, and ticket type\n\n2. **App/Mobile Ticket** - Details about ticket delivery via the Ticketek App, with tickets typically released 48 hours before events\n\n3. **Undoing a shared ticket** - Instructions for cancelling or recalling shared tickets\n\n4. **Undoing a ticket you've accepted** - How to return accepted shared tickets\n\n5. **Arriving at the Event** - Helpful tips for arriving at the event including:\n   - Opening the Ticketek App or confirmation email links before arriving\n   - Selecting Tickets in the App to reveal mobile tickets\n   - Holding phone for barcode display at turnstiles\n   - Presenting mobile tickets to staff at hand-held scanners\n   - Box office assistance if mobile ticket cannot be accessed\n\n6. **Related articles** - Links to additional help articles including Live Updates, Contact Ticketek, and Refundable Tickets Information\n\nThe page was accessed through Google search after encountering security blocks on the main Ticketek Australia site.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 2,
+    "refusals": 1,
+    "decisions": [
+      "refused",
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      6.7,
+      5.1
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

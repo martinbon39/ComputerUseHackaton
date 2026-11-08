@@ -1,0 +1,36 @@
+{
+  "domain": "multi_apps",
+  "example_id": "f7dfbef3-7697-431c-883a-db8583a4e4f9",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_include_exclude,compare_archive",
+  "finished_by_agent": true,
+  "steps": 8,
+  "answer": "Successfully converted all .doc files to PDF using the command line. Used LibreOffice in headless mode with a for loop: `for file in *.doc; do libreoffice --headless --convert-to pdf \"$file\" --outdir .; done`. All 12 .doc files were converted to PDF format, creating matching PDF files in the same directory.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      7.3
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

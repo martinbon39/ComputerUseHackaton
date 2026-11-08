@@ -1,0 +1,38 @@
+{
+  "domain": "vlc",
+  "example_id": "efcf0d81-0835-4880-b2fd-d866e8bc2294",
+  "score": 0.5814807005301378,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_images",
+  "finished_by_agent": true,
+  "steps": 38,
+  "answer": "The Interstellar movie frame has been successfully set as the desktop background. The wallpaper now displays the dark space scene from the Interstellar trailer with stars and cosmic elements visible across the entire desktop. The process involved: taking a snapshot of the video frame using VLC's Video > Take Snapshot feature, navigating to the Pictures folder where the snapshot was saved, right-clicking on the image file, and selecting 'Set As Wallpaper' from the context menu.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 2,
+    "refusals": 1,
+    "decisions": [
+      "refused",
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      12.1,
+      7.3
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

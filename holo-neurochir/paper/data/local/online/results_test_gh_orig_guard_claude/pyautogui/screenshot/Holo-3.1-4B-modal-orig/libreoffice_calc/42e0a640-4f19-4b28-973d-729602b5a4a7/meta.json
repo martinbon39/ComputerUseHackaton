@@ -1,0 +1,36 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "42e0a640-4f19-4b28-973d-729602b5a4a7",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 11,
+  "answer": "Task completed successfully. Sheet2 has been created with column headers 'Total Revenue' (A1) and 'Total Expenses' (B1). The SUM formulas have calculated and displayed: Total Revenue = 867786 (in A2) and Total Expenses = 411686 (in B2). The file has been saved.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      6.5
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

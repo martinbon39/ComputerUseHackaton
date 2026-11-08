@@ -98,3 +98,31 @@
 \newcommand{\rbMaxNew}{20} % source: data/local/rescue_bench/PREREG.md max_new
 \newcommand{\rbPredLo}{+6} % source: data/local/rescue_bench/RESULT.json prediction.scenarios.test120_modal_original loss=1 (points, predicted, not measured)
 \newcommand{\rbPredHi}{+12} % source: data/local/rescue_bench/RESULT.json prediction.scenarios.test120_modal_original loss=0 (points, predicted, not measured)
+\newcommand{\OgN}{120} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) primary_vs_modal.n_tasks
+\newcommand{\OgFdBase}{22.5} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) primary_vs_modal.false_done_base (%)
+\newcommand{\OgFdGuard}{10.8} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) primary_vs_modal.false_done_guard (%)
+\newcommand{\OgFdDiff}{$-$11.7} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) primary_vs_modal.false_done_diff (points)
+\newcommand{\OgFdDiffCi}{$-$19.2 to $-$4.2} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) primary_vs_modal.false_done_diff_ci95
+\newcommand{\OgScoreBase}{58.6} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) primary_vs_modal.score_base
+\newcommand{\OgScoreGuard}{60.2} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) primary_vs_modal.score_guard
+\newcommand{\OgScoreDiff}{+1.6} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) primary_vs_modal.score_diff (points)
+\newcommand{\OgScoreDiffCi}{$-$4.4 to +7.7} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) primary_vs_modal.score_diff_ci95
+\newcommand{\OgB}{8} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) primary_vs_modal.B_repaired
+\newcommand{\OgC}{4} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) primary_vs_modal.C_true_lost
+\newcommand{\OgE}{19} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) primary_vs_modal.E_false_done_avoided
+\newcommand{\OgFds}{13/120} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) guard arm false-done count
+\newcommand{\OgpodN}{120} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.n_tasks
+\newcommand{\OgpodFdBase}{24.2} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.false_done_base (%)
+\newcommand{\OgpodFdGuard}{10.8} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.false_done_guard (%)
+\newcommand{\OgpodFdDiff}{$-$13.3} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.false_done_diff (points)
+\newcommand{\OgpodFdDiffCi}{$-$20.8 to $-$5.8} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.false_done_diff_ci95
+\newcommand{\OgpodScoreBase}{60.1} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.score_base
+\newcommand{\OgpodScoreGuard}{60.2} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.score_guard
+\newcommand{\OgpodScoreDiff}{+0.1} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.score_diff (points)
+\newcommand{\OgpodScoreDiffCi}{$-$6.5 to +6.6} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.score_diff_ci95
+\newcommand{\OgpodB}{8} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.B_repaired
+\newcommand{\OgpodC}{8} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.C_true_lost
+\newcommand{\OgpodE}{20} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.E_false_done_avoided
+\newcommand{\OgpodFds}{13/120} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) guard arm false-done count
+\newcommand{\ogNoiseDown}{9} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) noise_orig_pod_vs_modal.flips_1_to_0
+\newcommand{\ogNoiseUp}{5} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) noise_orig_pod_vs_modal.flips_0_to_1

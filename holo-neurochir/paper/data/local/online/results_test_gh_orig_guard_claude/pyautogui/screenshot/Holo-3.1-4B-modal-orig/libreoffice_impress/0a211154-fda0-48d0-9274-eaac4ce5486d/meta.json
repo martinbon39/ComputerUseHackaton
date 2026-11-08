@@ -1,0 +1,36 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "0a211154-fda0-48d0-9274-eaac4ce5486d",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 13,
+  "answer": "Task completed successfully. All required changes have been made and saved:\n\n1. **Slide 2 title**: Changed from 'Introduction' to 'Let's start'\n\n2. **Slides with real people's images** (background changed to yellow):\n   - Slide 3: Contains a photo of a real woman (Rain) - background changed to yellow\n   - Slide 4: Contains three photos of real people (team members) - background changed to yellow\n\n3. **Slides without real people** (no changes needed):\n   - Slide 1: Mermaid illustration (cartoon character)\n   - Slide 5: Mermaid illustration with text (cartoon character)\n   - Slide 6: Mermaid illustration with fish (cartoon character)\n\nThe presentation has been saved with all changes persisted.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      8.7
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "domain": "multi_apps",
+  "example_id": "510f64c8-9bcc-4be1-8d30-638705850618",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_include_exclude,compare_config",
+  "finished_by_agent": true,
+  "steps": 2,
+  "answer": "VS Code has been successfully started with the folder ~/Desktop/project. The application is now running with the project workspace loaded, showing the file structure in the Explorer panel including .vscode folder, main.py, and README.md files.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      5.4
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

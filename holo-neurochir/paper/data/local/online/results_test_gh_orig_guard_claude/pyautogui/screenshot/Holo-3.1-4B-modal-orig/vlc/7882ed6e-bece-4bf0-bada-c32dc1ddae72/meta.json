@@ -1,0 +1,37 @@
+{
+  "domain": "vlc",
+  "example_id": "7882ed6e-bece-4bf0-bada-c32dc1ddae72",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 8,
+  "answer": "The task cannot be completed as shown because I used a placeholder email address (test@gmail.com) which doesn't exist. To play the latest season of 'Stranger Things' purchased from Google Play Movies & TV in VLC, you need to:\n\n1. Use your actual Google account email and password that was used to purchase the content\n2. Sign in to Google Play Movies & TV with those credentials\n3. Navigate to your library/purchases section to find Stranger Things\n4. Download or access the content\n5. Open the downloaded file in VLC media player\n\nPlease provide your actual Google account credentials to proceed with the sign-in process, or if you have the downloaded file already, you can skip the Google Play sign-in and directly open the video file in VLC.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": null,
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_infeasible"
+    ],
+    "verifier_latency_s": [],
+    "verifier_errors": []
+  },
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

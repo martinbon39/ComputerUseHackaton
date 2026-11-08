@@ -1,0 +1,36 @@
+{
+  "domain": "multi_apps",
+  "example_id": "da52d699-e8d2-4dc5-9191-a2199e0b6a9b",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_docx_files",
+  "finished_by_agent": true,
+  "steps": 8,
+  "answer": "Task completed successfully. The document 'book_list_result.docx' has been saved on the Desktop containing 'The Shining', which is the book with the slowest reading pace (6 words per day) from the spreadsheet analysis.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      6.4
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

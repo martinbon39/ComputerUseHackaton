@@ -1,0 +1,36 @@
+{
+  "domain": "chrome",
+  "example_id": "f0b971a1-6831-4b9b-a50e-22a6e47f45ba",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_active_tab",
+  "finished_by_agent": false,
+  "steps": 50,
+  "answer": null,
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 1,
+    "decisions": [
+      "refused"
+    ],
+    "verifier_latency_s": [
+      6.6
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -207,6 +207,45 @@ sc = RB["prediction"]["scenarios"]["test120_modal_original"]["loss_scenarios"]
 pr_ = sorted(100 * z["predicted_score_change"] for z in sc)
 m.add("rbPredLo", f"{pr_[0]:+.0f}", RBS + " prediction.scenarios.test120_modal_original loss=1 (points, predicted, not measured)")
 m.add("rbPredHi", f"{pr_[-1]:+.0f}", RBS + " prediction.scenarios.test120_modal_original loss=0 (points, predicted, not measured)")
+OG = json.loads((DATA / "local/online/ONLINE_GUARD_RESULT.json").read_text())
+OGS = "data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py)"
+spec2 = importlib.util.spec_from_file_location("oga", DATA / "local/online/online_guard_analysis.py")
+oga = importlib.util.module_from_spec(spec2)
+spec2.loader.exec_module(oga)
+
+
+def arm(run):
+    rows = [json.loads(x) for x in (DATA / f"local/online/{run}/last_steps.jsonl").read_text().splitlines()]
+    return {r["task"]: {"score": r["score"], "steps": r["steps"], "false_done": r["last_tool"] == "answer" and r["score"] == 0} for r in rows}
+
+
+G = arm("results_test_gh_orig_guard_claude")
+for base, key, tag in [("results_test_gh_orig_modal_test", "primary_vs_modal", "Og"), ("results_test_gh_orig", "secondary_vs_pod", "Ogpod")]:
+    c = oga.compare(G, arm(base))
+    ref_ = OG[key]
+    for f in ("n_tasks", "B_repaired", "C_true_lost", "E_false_done_avoided"):
+        assert c[f] == ref_[f], (key, f, c[f], ref_[f])
+    for f in ("score_diff", "false_done_diff", "false_done_guard", "false_done_base", "score_guard", "score_base"):
+        assert abs(c[f] - ref_[f]) < 1e-9, (key, f)
+    for f in ("score_diff_ci95", "false_done_diff_ci95"):
+        assert all(abs(x - y) < 1e-9 for x, y in zip(c[f], ref_[f])), (key, f)
+    pts = lambda v: f"{100 * v:+.1f}".replace("-", "$-$")
+    m.add(f"{tag}N", c["n_tasks"], OGS + f" {key}.n_tasks")
+    m.add(f"{tag}FdBase", f"{100 * c['false_done_base']:.1f}", OGS + f" {key}.false_done_base (%)")
+    m.add(f"{tag}FdGuard", f"{100 * c['false_done_guard']:.1f}", OGS + f" {key}.false_done_guard (%)")
+    m.add(f"{tag}FdDiff", pts(c["false_done_diff"]), OGS + f" {key}.false_done_diff (points)")
+    m.add(f"{tag}FdDiffCi", " to ".join(pts(x) for x in c["false_done_diff_ci95"]), OGS + f" {key}.false_done_diff_ci95")
+    m.add(f"{tag}ScoreBase", f"{100 * c['score_base']:.1f}", OGS + f" {key}.score_base")
+    m.add(f"{tag}ScoreGuard", f"{100 * c['score_guard']:.1f}", OGS + f" {key}.score_guard")
+    m.add(f"{tag}ScoreDiff", pts(c["score_diff"]), OGS + f" {key}.score_diff (points)")
+    m.add(f"{tag}ScoreDiffCi", " to ".join(pts(x) for x in c["score_diff_ci95"]), OGS + f" {key}.score_diff_ci95")
+    m.add(f"{tag}B", c["B_repaired"], OGS + f" {key}.B_repaired")
+    m.add(f"{tag}C", c["C_true_lost"], OGS + f" {key}.C_true_lost")
+    m.add(f"{tag}E", c["E_false_done_avoided"], OGS + f" {key}.E_false_done_avoided")
+    m.add(f"{tag}Fds", f"{sum(v['false_done'] for v in G.values())}/{len(G)}", OGS + " guard arm false-done count")
+nz = OG["noise_orig_pod_vs_modal"]
+m.add("ogNoiseDown", nz["flips_1_to_0"], OGS + " noise_orig_pod_vs_modal.flips_1_to_0")
+m.add("ogNoiseUp", nz["flips_0_to_1"], OGS + " noise_orig_pod_vs_modal.flips_0_to_1")
 write_table("guard", "\\begin{tabular}{lcccc}\n\\toprule\nJudge & false successes detected & true successes rejected & gap, points [95\\% CI] & no verdict \\\\\n\\midrule\n"
             + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n", "guard")
 m.write()

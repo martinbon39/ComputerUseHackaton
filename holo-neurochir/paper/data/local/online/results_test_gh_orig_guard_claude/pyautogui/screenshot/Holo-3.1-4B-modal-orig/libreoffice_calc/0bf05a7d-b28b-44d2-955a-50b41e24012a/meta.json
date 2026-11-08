@@ -1,0 +1,36 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "0bf05a7d-b28b-44d2-955a-50b41e24012a",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 9,
+  "answer": "All Old ID values from column C (rows 2-30) have been successfully copied to the 'New 7 Digit ID' column (D2:D30) with zero-padding to 7 digits. The TEXT formula =TEXT(Cx,\"0000000\") was applied to all rows, converting values like 76 to 0000076, 112 to 0000112, 3604 to 0003604, and so on. The file has been saved.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      8.5
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

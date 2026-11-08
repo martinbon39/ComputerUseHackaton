@@ -1,0 +1,37 @@
+{
+  "domain": "gimp",
+  "example_id": "62f7fd55-0687-4a43-b6e1-3eda16fc6252",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 16,
+  "answer": "The task cannot be completed using GIMP. GIMP does not support SVG export format - it only supports raster (bitmap) image formats like PNG, JPEG, BMP, etc. GIMP is a raster graphics editor, not a vector graphics editor.\n\nTo convert /home/user/logo.png to SVG format, you would need to use a vector graphics editor like:\n\n1. **Inkscape** (free, open-source) - Can import PNG and export to SVG\n2. **Online converters** - Various web-based PNG to SVG converters\n3. **Command-line tools** - Such as potrace (bitmap to vector trace) combined with appropriate tools\n\nWould you like help with using Inkscape or another alternative tool to perform this conversion?",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": null,
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_infeasible"
+    ],
+    "verifier_latency_s": [],
+    "verifier_errors": []
+  },
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

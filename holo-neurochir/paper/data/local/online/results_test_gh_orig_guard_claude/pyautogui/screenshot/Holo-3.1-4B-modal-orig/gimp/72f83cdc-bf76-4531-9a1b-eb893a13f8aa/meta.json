@@ -1,0 +1,36 @@
+{
+  "domain": "gimp",
+  "example_id": "72f83cdc-bf76-4531-9a1b-eb893a13f8aa",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_image_mirror",
+  "finished_by_agent": true,
+  "steps": 6,
+  "answer": "The figure has been successfully mirrored horizontally. The image was flipped using GIMP's Image > Transform > Flip Horizontally option, and the changes have been saved as berry.xcf on the Desktop.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      8.0
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

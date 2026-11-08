@@ -1,0 +1,36 @@
+{
+  "domain": "thunderbird",
+  "example_id": "10a730d5-d414-4b40-b479-684bed1ae522",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_thunderbird_prefs",
+  "finished_by_agent": true,
+  "steps": 4,
+  "answer": "Dark mode has been successfully enabled in Thunderbird. The entire interface now uses a dark color scheme, which will be easier on your eyes during late-night work sessions. The Dark theme is currently active, as confirmed by its position in the 'Enabled' section and the 'Disable' button next to it.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      8.0
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

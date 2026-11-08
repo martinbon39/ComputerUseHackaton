@@ -1,0 +1,36 @@
+{
+  "domain": "chrome",
+  "example_id": "e1e75309-3ddb-4d09-92ec-de869c928143",
+  "score": 0.9595896582796146,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pdfs",
+  "finished_by_agent": true,
+  "steps": 7,
+  "answer": "Successfully converted the webpage to PDF with margins set to none and saved to Desktop with the default filename 'LLM Powered Autonomous Agents _ Lil'Log.pdf'.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      7.1
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "domain": "vs_code",
+  "example_id": "53ad5833-3455-407b-bbc6-45b4c79ab8fb",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_config",
+  "finished_by_agent": true,
+  "steps": 3,
+  "answer": "The 'project' folder in the 'user' folder under 'home' has been successfully opened in Visual Studio Code. The folder is now loaded and visible in the EXPLORER panel, showing its contents including .vscode folder, main.py file, and README.md file.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      5.7
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

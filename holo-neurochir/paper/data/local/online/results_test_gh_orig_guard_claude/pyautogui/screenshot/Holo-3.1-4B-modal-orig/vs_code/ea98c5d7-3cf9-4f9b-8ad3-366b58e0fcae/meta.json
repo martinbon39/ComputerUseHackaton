@@ -1,0 +1,36 @@
+{
+  "domain": "vs_code",
+  "example_id": "ea98c5d7-3cf9-4f9b-8ad3-366b58e0fcae",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_json_keybindings",
+  "finished_by_agent": true,
+  "steps": 12,
+  "answer": "Successfully removed the Ctrl+F shortcut for Tree view Find (Explorer search) in VS Code. The keybinding was located in the Keyboard Shortcuts editor under the 'list.find' command and removed using the context menu's 'Remove Keybinding' option. The Ctrl+F binding is no longer associated with the Explorer search functionality.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      8.8
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

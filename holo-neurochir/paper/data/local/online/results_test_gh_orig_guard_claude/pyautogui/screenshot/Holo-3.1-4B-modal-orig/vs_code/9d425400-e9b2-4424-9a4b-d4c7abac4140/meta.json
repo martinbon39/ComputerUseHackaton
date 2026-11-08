@@ -1,0 +1,36 @@
+{
+  "domain": "vs_code",
+  "example_id": "9d425400-e9b2-4424-9a4b-d4c7abac4140",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_json_settings",
+  "finished_by_agent": true,
+  "steps": 4,
+  "answer": "Successfully enabled the 'Workbench › Editor: Wrap Tabs' setting in VS Code. This setting controls whether tabs should be wrapped over multiple lines when exceeding available space, rather than showing a scrollbar. The checkbox is now checked and the setting is active.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      6.4
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

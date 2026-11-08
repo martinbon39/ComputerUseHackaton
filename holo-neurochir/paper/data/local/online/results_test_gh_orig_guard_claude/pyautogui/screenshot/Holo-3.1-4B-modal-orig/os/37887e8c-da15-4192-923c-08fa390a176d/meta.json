@@ -1,0 +1,36 @@
+{
+  "domain": "os",
+  "example_id": "37887e8c-da15-4192-923c-08fa390a176d",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_include_exclude",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "Task completed successfully. Files modified 30+ days ago (old_file1.txt and old_file2.txt dated Oct 9) have been compressed with gzip and stored in /tmp/test_files/old_files/ as old_file1.txt.gz and old_file2.txt.gz. Newer files (new_file1.txt and new_file2.txt dated Nov 8) remain uncompressed in /tmp/test_files/new_files/.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      9.6
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

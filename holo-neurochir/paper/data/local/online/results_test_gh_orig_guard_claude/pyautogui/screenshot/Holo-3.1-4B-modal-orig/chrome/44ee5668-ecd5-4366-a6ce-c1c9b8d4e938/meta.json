@@ -1,0 +1,36 @@
+{
+  "domain": "chrome",
+  "example_id": "44ee5668-ecd5-4366-a6ce-c1c9b8d4e938",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_history_deleted",
+  "finished_by_agent": true,
+  "steps": 9,
+  "answer": "Successfully removed all YouTube browsing history from Chrome. A total of 27 YouTube entries were deleted from your browsing history. The history page now shows 'No search results' when searching for 'youtube', confirming all YouTube-related entries have been cleared. You can now search your browsing history without YouTube entries interrupting your search for the website you accessed a month ago.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      5.4
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

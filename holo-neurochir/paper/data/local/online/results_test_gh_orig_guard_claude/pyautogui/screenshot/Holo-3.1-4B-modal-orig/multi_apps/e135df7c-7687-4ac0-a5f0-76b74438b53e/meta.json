@@ -1,0 +1,36 @@
+{
+  "domain": "multi_apps",
+  "example_id": "e135df7c-7687-4ac0-a5f0-76b74438b53e",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_tabs,compare_htmls",
+  "finished_by_agent": true,
+  "steps": 9,
+  "answer": "The task has been completed successfully. The .xlsx file (annual-enterprise-survey-2021-financial-year-provisional.xlsx) was converted to .html format using LibreOffice Calc's Save As feature with the HTML Document (Calc) format. The HTML file was saved to the Desktop and is now being viewed in Google Chrome, displaying the spreadsheet data with all columns properly formatted including Year, Industry aggregation, Industry code, Industry name, Units, Variable code, Variable name, Variable category, Value, and Industry code_ANZSIC06.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      6.3
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

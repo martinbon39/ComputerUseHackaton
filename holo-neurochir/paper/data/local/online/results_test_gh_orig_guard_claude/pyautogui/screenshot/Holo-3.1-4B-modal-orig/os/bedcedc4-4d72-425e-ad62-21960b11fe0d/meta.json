@@ -1,0 +1,36 @@
+{
+  "domain": "os",
+  "example_id": "bedcedc4-4d72-425e-ad62-21960b11fe0d",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "exact_match,exact_match",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "Successfully disabled 'Dim screen when inactive' by setting the Screen Blank option to 'Never' in the Power settings. The screen will no longer automatically dim or turn off during periods of inactivity.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      9.9
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

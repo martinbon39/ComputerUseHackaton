@@ -1,0 +1,36 @@
+{
+  "domain": "vs_code",
+  "example_id": "70745df8-f2f5-42bd-8074-fbc10334fcc5",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_json_settings",
+  "finished_by_agent": true,
+  "steps": 11,
+  "answer": "Successfully configured VS Code autosave settings:\n\n1. **Files: Auto Save**: Set to 'afterDelay' - enables automatic saving after a specified delay\n2. **Files: Auto Save Delay**: Set to 500 milliseconds - configures the delay duration for auto-save operations\n\nBoth settings are now active and will automatically save files 500ms after changes are made to the editor.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      5.9
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

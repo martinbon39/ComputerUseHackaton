@@ -1,0 +1,36 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "ecb0df7a-4e8d-4a03-b162-053391d3afaf",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 19,
+  "answer": "Data validation has been successfully enabled for the Pass/Fail/Held column (D2:D29). The cells now have a dropdown list with the three options: Pass, Fail, and Held. The validation was configured through Data > Validity, set to List type with the entries Pass, Fail, Held. The dropdown was verified to display all three options correctly, and the file has been saved.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      8.4
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

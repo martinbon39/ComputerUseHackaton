@@ -1,0 +1,36 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "d681960f-7bc3-4286-9913-a8812ba3261a",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 15,
+  "answer": "All 14 students have been graded according to the scale table:\n\n- Benedict (42 marks) = Pass\n- Blake (94 marks) = Excellent\n- Bey (33 marks) = Pass\n- Arnold (6 marks) = Fail\n- Clint (86 marks) = Above average\n- Olivia (67 marks) = Average\n- Parah (59 marks) = Pass\n- Elijah (60 marks) = Average\n- Tom (10 marks) = Fail\n- John (85 marks) = Above average\n- Kanye (5 marks) = Fail\n- Reese (73 marks) = Average\n- Swan (100 marks) = Exceptional!\n- Dollar (32 marks) = Pass\n\nThe file has been saved successfully.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      6.9
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

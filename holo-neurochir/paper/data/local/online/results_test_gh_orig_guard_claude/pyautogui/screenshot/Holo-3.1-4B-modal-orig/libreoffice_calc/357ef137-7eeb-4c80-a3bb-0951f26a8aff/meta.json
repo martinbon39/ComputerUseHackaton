@@ -1,0 +1,36 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "357ef137-7eeb-4c80-a3bb-0951f26a8aff",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 3,
+  "answer": "The task is complete. Cell E3 now contains the correct calculation: 191.666667, which represents the total earnings calculated by multiplying the total hours (07:40) by the hourly rate (25). The formula =D3*24*F3 correctly converts the time format to decimal hours before multiplying by the rate. In spreadsheets, time values are stored as fractions of a day, so multiplying by 24 converts them to decimal hours (07:40 = 7.6667 hours), allowing proper multiplication with the hourly rate.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      6.3
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

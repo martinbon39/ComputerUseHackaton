@@ -1,0 +1,36 @@
+{
+  "domain": "thunderbird",
+  "example_id": "dfac9ee8-9bc4-4cdc-b465-4a4bfcd2f397",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_csv",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "The account anonym-x2024@outlook.com has been successfully removed from Thunderbird. The Account Settings page now only shows Local Folders, confirming the removal was completed.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      6.1
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

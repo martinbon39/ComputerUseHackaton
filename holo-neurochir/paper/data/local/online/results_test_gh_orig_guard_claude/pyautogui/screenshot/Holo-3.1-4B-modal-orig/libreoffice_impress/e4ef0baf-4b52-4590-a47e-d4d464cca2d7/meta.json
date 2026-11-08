@@ -1,0 +1,36 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "e4ef0baf-4b52-4590-a47e-d4d464cca2d7",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files,compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 20,
+  "answer": "Task completed successfully:\n\n1. **Slide 3 - Picture Height**: The picture was selected and its height was changed from 14.08 cm to **20.00 cm** in the Position and Size section of the Properties panel.\n\n2. **Slide 6 - Textbox Font Sizes**: All 12 drawing objects (textboxes) on slide 6 were selected using Ctrl+A, and their font size was changed from 18 pt to **40 pt** in the Character section of the Properties panel.\n\nThe presentation has been saved to persist all changes.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      8.1
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "domain": "os",
+  "example_id": "5ced85fc-fa1a-4217-95fd-0fb530545ce2",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_include_exclude",
+  "finished_by_agent": true,
+  "steps": 2,
+  "answer": "Task completed successfully. Created output.txt with content where each line from \"1\\n2\\n3\" has \"<br/>\" appended. File contains:\n- 1<br/>\n- 2<br/>\n- 3<br/>\n\nVerification via cat command confirmed the file was created correctly.",
+  "feci_guard": {
+    "guard": true,
+    "guard_model": "claude-sonnet",
+    "guard_mode": "passive",
+    "verifier_sha": "0af76fdbacc72317",
+    "backend": "openai",
+    "answers": 1,
+    "refusals": 0,
+    "decisions": [
+      "passed_complete"
+    ],
+    "verifier_latency_s": [
+      6.9
+    ],
+    "verifier_errors": []
+  },
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}
