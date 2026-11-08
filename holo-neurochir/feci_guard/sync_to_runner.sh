@@ -4,6 +4,6 @@
 set -euo pipefail
 SRC="$(cd "$(dirname "$0")" && pwd)"; DST="${1:-$HOME/projects/holo-osworld-runner}/feci_guard"
 mkdir -p "$DST"
-cp "$SRC"/{run_holo_guard.py,verifier.py,feci_guard.py} "$DST"/
+cp "$SRC"/{run_holo_guard.py,run_holo_guard_rescue.py,verifier.py,feci_guard.py} "$DST"/
 printf 'Synced from ComputerUseHackaton/holo-neurochir/feci_guard (do not edit here). See its README.md.\n' > "$DST/README.md"
-(cd "$DST" && sha256sum run_holo_guard.py verifier.py feci_guard.py)
+(cd "$DST" && sha256sum run_holo_guard.py run_holo_guard_rescue.py verifier.py feci_guard.py)
