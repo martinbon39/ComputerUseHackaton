@@ -23,5 +23,7 @@ Prix H100 Modal : ~3,95 $/h (0,001097 $/s), plus le CPU et la mémoire du conten
 | 07:40-07:59 | 2 | Holo4-27B : téléchargement HF → Volume (CPU), app `holo-judge` déployée, prête en 170 s, smoke 2 requêtes ; juge de verif-study, redescend à zéro après 5 min sans requête | à la demande | 15,32 $ (07:38) |
 | 08:16 | 2 | judge-bench fini : `holo-judge` (Holo4-27B) ARRÊTÉ sur ordre d'ares ; zéro conteneur sur les deux comptes (reste `holo-jury-probe`, CPU, porte fermée, 0 tâche) ; garde : compte 1 20/24 $, compte 2 27/29,5 $ | 0 | **16,80 $ et 16,61 $** (facturation en léger retard) |
 | 08:24-08:35 | 2 | `holo-judge` relancé pour la 2e passe de judge-bench (prompt Feci), prêt en 165 s, ARRÊTÉ à 08:35 sur ordre d'ares ; zéro conteneur sur les deux comptes | ~11 min | **16,80 $ et 17,32 $** (facturation en léger retard) |
+| 09:01-10:42 | 2 | `holo-judge` (Holo4-27B) en AGENT pour rescue-bench (5 images, scaledown 10 min), smoke agent 15,9 s ; ARRÊTÉ à 10:42 sur ordre d'ares (48/48 fini) | ~1 h 40 | **24,12 $** (plafond compte 2 relevé à 29,5 $ par Martin) |
+| 09:37- | 1 | pod Runpod tombé : modal-orig redéployé (même config et sha256 que 03:21) pour le test 120 de gh-runner2, puis duels de 11:00 et live de 13:30 ; plafond relevé à 28 $ par Martin | à la demande | 20,55 $ (10:42) |
 
 Rythme : une H100 allumée en continu coûte ~4 $/h, soit une alerte à ~20 $ par compte environ 4 h 30 après le point de 00:49.
