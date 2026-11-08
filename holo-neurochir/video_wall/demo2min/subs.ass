@@ -1,0 +1,26 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Inter,40,&H00171717,&H00171717,&H10FAFAFA,&H00000000,0,0,0,0,100,100,0,0,3,14,0,2,160,160,36,1
+Style: Mark,Inter,36,&H00FFFFFF,&H00FFFFFF,&H000F57E4,&H00000000,1,0,0,0,100,100,1,0,3,12,0,9,60,60,60,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.40,0:00:05.06,Sub,,0,0,0,,Computer-use agents have a bad habit. They say “done”. And it's not done.
+Dialogue: 0,0:00:05.11,0:00:10.65,Sub,,0,0,0,,For Holo-3.1, that's 29 of its 51 failures.
+Dialogue: 0,0:00:10.65,0:00:20.54,Sub,,0,0,0,,So we built Feci Guard: an outside judge that checks the screen before the agent is allowed to stop. Let's watch the duel.
+Dialogue: 0,0:00:20.54,0:00:29.28,Sub,,0,0,0,,Same task, two real virtual machines. Left: Holo alone. Right: Holo + Feci Guard.
+Dialogue: 0,0:00:29.28,0:00:34.45,Sub,,0,0,0,,Left says “done”. Official score: 0.
+Dialogue: 0,0:00:34.50,0:00:49.76,Sub,,0,0,0,,Right says “done” too. Claude checks every requirement on the screen: wrong sheet name, promotions in rows, not columns. Refused. The agent fixes both. Score: 1.
+Dialogue: 0,0:00:50.50,0:00:59.53,Sub,,0,0,0,,And it's not one lucky run. 16 real sessions. Orange = a false “done”. The Guard refuses, with the reason, in ~6 s.
+Dialogue: 0,0:01:00.96,0:01:08.30,Sub,,0,0,0,,Or the refused task is handed to the bigger Holo4. Green = repaired.
+Dialogue: 0,0:01:14.80,0:01:24.71,Sub,,0,0,0,,The numbers, preregistered. Online, 120 tasks: false “done” 22.5 % → 10.8 %. Significant.
+Dialogue: 0,0:01:24.76,0:01:31.51,Sub,,0,0,0,,With Holo4 as the repairer (replay): 11 of 18 solved, vs 2 without the Guard.
+Dialogue: 0,0:01:31.58,0:01:36.77,Sub,,0,0,0,,Feci Guard. The agent says “done”. Now, someone checks.
+Dialogue: 1,0:00:20.00,0:00:26.00,Mark,,0,0,0,,≥×8 · REPLAY
+Dialogue: 1,0:00:26.00,0:00:50.00,Mark,,0,0,0,,≥×4 · REPLAY
