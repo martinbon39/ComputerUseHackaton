@@ -13,5 +13,6 @@ Prix H100 Modal : ~3,95 $/h (0,001097 $/s), plus le CPU et la mémoire du conten
 | 00:43, 00:45 | 1 | 2 jobs de test du créneau `holo-slot` (2e GPU du compte, FORCE) | ~3 min | |
 | 00:49 | 1 | point de situation | | **2,08 $** (H100 1,91 $) |
 | 00:49 | 2 | point de situation | | **0,80 $** (H100 0,67 $) |
+| 00:55 | 1 et 2 | mesures en pause (ares) : zéro conteneur sur les deux comptes | 0 | 2,12 $ et 0,83 $ (à 00:50) |
 
 Rythme : une H100 allumée en continu coûte ~4 $/h, soit une alerte à ~20 $ par compte environ 4 h 30 après le point de 00:49.
