@@ -1,0 +1,12 @@
+/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54
+/home/orbit/osw/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6
+/home/orbit/osw/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/37608790-6147-45d0-9f20-1137bb35703d
+/home/orbit/osw/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8
+/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38
+/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f
+/home/orbit/osw/results_diag2/pyautogui/screenshot/Holo-3.1-4B/multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6
+/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/vlc/386dbd0e-0241-4a0a-b6a2-6704fba26b1c
+/home/orbit/osw/results_diag2/pyautogui/screenshot/Holo-3.1-4B/multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91
+/home/orbit/osw/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8
+/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197
+/home/orbit/osw/results_val_orig_eager_m40/pyautogui/screenshot/Holo-3.1-4B/vlc/aa4b5023-aef6-4ed9-bdc9-705f59ab9ad6
