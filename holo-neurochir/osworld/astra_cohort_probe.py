@@ -7,7 +7,7 @@ finish_reason, stop_reason) plus server/model. Context rebuilt with holo.osw_rep
 Usage: PYTHONPATH=. ~/osw/venv/bin/python osworld/astra_cohort_probe.py <cohort.json> <results_root> <out_dir>
        --server URL=NAME[=ENVVAR] [--k 8] [--label <checkpoint>]
 """
-import argparse, json, sys
+import argparse, json, sys, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -48,6 +48,27 @@ def call(url, model, auth, messages, seed, structured):
     return out
 
 
+REQUEST_SETTINGS = {"temperature": 0.8, "top_p": 0.9, "top_k": 20, "max_tokens": 3072, "reasoning_effort": "medium",
+                    "enable_thinking": True, "structured_outputs": "holo_agent step schema (build_schema(make_step_model(TOOLS)))",
+                    "seed": "per request", "text_prompts": {"temperature": 0.0, "max_tokens": 256, "enable_thinking": False}}
+
+
+def server_info(url, model, auth):
+    """vLLM version (/version, no auth) and the served model's root (/v1/models)."""
+    info = {"url": url, "model": model}
+    base = url[: -len("/v1")] if url.endswith("/v1") else url
+    try:
+        with urllib.request.urlopen(f"{base}/version", timeout=60) as r:
+            info["vllm_version"] = json.load(r).get("version")
+    except Exception as e:  # noqa: BLE001 - recorded, the measurement goes on
+        info["vllm_version_error"] = repr(e)[:200]
+    try:
+        info["models"] = [{"id": m.id, "root": getattr(m, "root", None)} for m in client_for(url, auth).models.list().data]
+    except Exception as e:  # noqa: BLE001
+        info["models_error"] = repr(e)[:200]
+    return info
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("cohort"); ap.add_argument("results_root"); ap.add_argument("out_dir")
@@ -84,8 +105,8 @@ def main():
                 s = summary.setdefault(key, {"answer": 0, "valid_nonanswer": 0, "invalid": 0, "error": 0, "n": 0})
                 s["n"] += 1
                 s["error" if r.get("error") else "answer" if r["answer"] else "valid_nonanswer" if r["valid_nonanswer"] else "invalid"] += 1
-    (out / "summary.json").write_text(json.dumps({"label": a.label, "seeds": seeds, "servers": [s[:2] for s in servers],
-                                                  "per_row": summary}, indent=1))
+    (out / "summary.json").write_text(json.dumps({"label": a.label, "seeds": seeds, "request_settings": REQUEST_SETTINGS,
+                                                  "servers": [server_info(*s) for s in servers], "per_row": summary}, indent=1))
     for k, v in summary.items():
         print(k, v)
 
