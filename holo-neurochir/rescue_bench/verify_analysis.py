@@ -87,22 +87,18 @@ def prepare_fixture(root, analysis):
 
 def check_mixed_fixture(analysis, root, tasks):
     rows = [
-        # Complete K=2 episode: an official score1 without a new action gets zero repair credit.
         branch(tasks[0], "guard", 0, 1.0, ["answer"], escalated=True),
         branch(tasks[0], "guard", 1, 0.0, ["<unparsable>"], escalated=True),
         branch(tasks[0], "control", 0, 0.0, ["answer"]),
         branch(tasks[0], "control", 1, 0.0, ["answer"]),
-        # Complete K=2 episode: acted full and partial scores retain their repair credit.
         branch(tasks[1], "guard", 0, 1.0, ["click", "answer"], escalated=True),
         branch(tasks[1], "guard", 1, 0.5, ["click"], escalated=True),
         branch(tasks[1], "control", 0, 0.0, ["click"]),
         branch(tasks[1], "control", 1, 0.25, ["click"]),
-        # Complete K=2 episode with no refusal: paired primary only, never conditional repair.
         branch(tasks[2], "guard", 0, 0.5, ["click"]),
         branch(tasks[2], "guard", 1, 0.0, ["answer"]),
         branch(tasks[2], "control", 0, 0.5, ["click"]),
         branch(tasks[2], "control", 1, 0.0, ["answer"]),
-        # Incomplete episode: descriptive only.
         branch(tasks[3], "control", 0, 1.0, ["click"]),
     ]
     source = root / "branches-fixture.jsonl"

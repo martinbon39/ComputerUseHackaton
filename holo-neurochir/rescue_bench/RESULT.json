@@ -1,15 +1,11 @@
 {
-  "generated_utc": "2026-11-08T09:37:20.137828+00:00",
+  "generated_utc": "2026-11-08T09:54:54.865280+00:00",
   "status": "partial",
   "expected_episodes": 12,
   "expected_branches": 48,
-  "completed_branches": 10,
+  "completed_branches": 21,
   "infrastructure_error_attempts": [],
   "excluded": {
-    "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6": "incomplete",
-    "libreoffice_calc/37608790-6147-45d0-9f20-1137bb35703d": "incomplete",
-    "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8": "incomplete",
-    "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38": "incomplete",
     "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": "incomplete",
     "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6": "incomplete",
     "vlc/386dbd0e-0241-4a0a-b6a2-6704fba26b1c": "incomplete",
@@ -19,29 +15,29 @@
     "vlc/aa4b5023-aef6-4ed9-bdc9-705f59ab9ad6": "incomplete"
   },
   "primary": {
-    "episodes": 1,
+    "episodes": 5,
     "arms": {
       "guard": {
-        "branches": 2,
-        "full_successes": 0,
+        "branches": 10,
+        "full_successes": 4,
         "full_success_without_new_action": 0,
-        "full_success_after_new_action": 0,
-        "partial_or_full_progress": 0,
-        "mean_official_score": 0.0,
-        "episodes_with_any_full_success": 0,
+        "full_success_after_new_action": 4,
+        "partial_or_full_progress": 4,
+        "mean_official_score": 0.4,
+        "episodes_with_any_full_success": 2,
         "episode_any_full_success_wilson95": [
-          0,
-          0.7934506856227626
+          0.11762077423264783,
+          0.769275718723987
         ],
-        "model_calls": 28,
+        "model_calls": 94,
         "model_call_errors": 0,
         "mean_score_episode_cluster_bootstrap95": [
           0.0,
-          0.0
+          0.8
         ]
       },
       "control": {
-        "branches": 2,
+        "branches": 10,
         "full_successes": 0,
         "full_success_without_new_action": 0,
         "full_success_after_new_action": 0,
@@ -50,9 +46,9 @@
         "episodes_with_any_full_success": 0,
         "episode_any_full_success_wilson95": [
           0,
-          0.7934506856227626
+          0.43448246478317476
         ],
-        "model_calls": 2,
+        "model_calls": 11,
         "model_call_errors": 0,
         "mean_score_episode_cluster_bootstrap95": [
           0.0,
@@ -61,69 +57,69 @@
       }
     },
     "conditional_repair": {
-      "refused_branches": 2,
-      "refused_episodes": 1,
-      "full_successes": 0,
-      "full_repairs_after_action": 0,
+      "refused_branches": 6,
+      "refused_episodes": 3,
+      "full_successes": 4,
+      "full_repairs_after_action": 4,
       "full_success_without_new_action": 0,
-      "full_repair_rate": 0.0,
-      "mean_official_score": 0.0,
-      "mean_action_qualified_repair_credit": 0.0,
+      "full_repair_rate": 0.6666666666666666,
+      "mean_official_score": 0.6666666666666666,
+      "mean_action_qualified_repair_credit": 0.6666666666666666,
       "credit_definition": "Official score after at least one new non-answer tool; zero otherwise. A no-action success remains in official scores and the refusal denominator but receives zero repair credit. Actions alone do not establish that replay state was initially failing.",
-      "episodes_with_any_full_repair": 0,
+      "episodes_with_any_full_repair": 2,
       "episode_any_full_repair_wilson95": [
-        0,
-        0.7934506856227626
+        0.2076596008020477,
+        0.9385080552796037
       ],
       "score_episode_cluster_bootstrap95": [
         0.0,
-        0.0
+        1.0
       ],
       "repair_credit_episode_cluster_bootstrap95": [
         0.0,
-        0.0
+        1.0
       ],
       "full_rate_episode_cluster_bootstrap95": [
         0.0,
-        0.0
+        1.0
       ],
-      "bootstrap_draws_with_no_refusal": 0
+      "bootstrap_draws_with_no_refusal": 201
     },
     "paired_difference": {
-      "mean": 0.0,
-      "episodes_guard_better": 0,
+      "mean": 0.4,
+      "episodes_guard_better": 2,
       "episodes_guard_worse": 0,
       "episode_cluster_bootstrap95": [
         0.0,
-        0.0
+        0.8
       ]
     },
     "uncertainty_note": "20,000 episode-cluster bootstrap draws, fixed seed 1701. Degenerate intervals at all-zero/all-one outcomes do not establish certainty; episode-any Wilson intervals estimate a different, K=2 estimand."
   },
   "strict_boundary_sensitivity": {
-    "episodes": 1,
+    "episodes": 5,
     "arms": {
       "guard": {
-        "branches": 2,
-        "full_successes": 0,
+        "branches": 10,
+        "full_successes": 4,
         "full_success_without_new_action": 0,
-        "full_success_after_new_action": 0,
-        "partial_or_full_progress": 0,
-        "mean_official_score": 0.0,
-        "episodes_with_any_full_success": 0,
+        "full_success_after_new_action": 4,
+        "partial_or_full_progress": 4,
+        "mean_official_score": 0.4,
+        "episodes_with_any_full_success": 2,
         "episode_any_full_success_wilson95": [
-          0,
-          0.7934506856227626
+          0.11762077423264783,
+          0.769275718723987
         ],
-        "model_calls": 28,
+        "model_calls": 94,
         "model_call_errors": 0,
         "mean_score_episode_cluster_bootstrap95": [
           0.0,
-          0.0
+          0.8
         ]
       },
       "control": {
-        "branches": 2,
+        "branches": 10,
         "full_successes": 0,
         "full_success_without_new_action": 0,
         "full_success_after_new_action": 0,
@@ -132,9 +128,9 @@
         "episodes_with_any_full_success": 0,
         "episode_any_full_success_wilson95": [
           0,
-          0.7934506856227626
+          0.43448246478317476
         ],
-        "model_calls": 2,
+        "model_calls": 11,
         "model_call_errors": 0,
         "mean_score_episode_cluster_bootstrap95": [
           0.0,
@@ -143,69 +139,69 @@
       }
     },
     "conditional_repair": {
-      "refused_branches": 2,
-      "refused_episodes": 1,
-      "full_successes": 0,
-      "full_repairs_after_action": 0,
+      "refused_branches": 6,
+      "refused_episodes": 3,
+      "full_successes": 4,
+      "full_repairs_after_action": 4,
       "full_success_without_new_action": 0,
-      "full_repair_rate": 0.0,
-      "mean_official_score": 0.0,
-      "mean_action_qualified_repair_credit": 0.0,
+      "full_repair_rate": 0.6666666666666666,
+      "mean_official_score": 0.6666666666666666,
+      "mean_action_qualified_repair_credit": 0.6666666666666666,
       "credit_definition": "Official score after at least one new non-answer tool; zero otherwise. A no-action success remains in official scores and the refusal denominator but receives zero repair credit. Actions alone do not establish that replay state was initially failing.",
-      "episodes_with_any_full_repair": 0,
+      "episodes_with_any_full_repair": 2,
       "episode_any_full_repair_wilson95": [
-        0,
-        0.7934506856227626
+        0.2076596008020477,
+        0.9385080552796037
       ],
       "score_episode_cluster_bootstrap95": [
         0.0,
-        0.0
+        1.0
       ],
       "repair_credit_episode_cluster_bootstrap95": [
         0.0,
-        0.0
+        1.0
       ],
       "full_rate_episode_cluster_bootstrap95": [
         0.0,
-        0.0
+        1.0
       ],
-      "bootstrap_draws_with_no_refusal": 0
+      "bootstrap_draws_with_no_refusal": 201
     },
     "paired_difference": {
-      "mean": 0.0,
-      "episodes_guard_better": 0,
+      "mean": 0.4,
+      "episodes_guard_better": 2,
       "episodes_guard_worse": 0,
       "episode_cluster_bootstrap95": [
         0.0,
-        0.0
+        0.8
       ]
     },
     "uncertainty_note": "20,000 episode-cluster bootstrap draws, fixed seed 1701. Degenerate intervals at all-zero/all-one outcomes do not establish certainty; episode-any Wilson intervals estimate a different, K=2 estimand."
   },
   "all_complete_sensitivity": {
-    "episodes": 1,
+    "episodes": 5,
     "arms": {
       "guard": {
-        "branches": 2,
-        "full_successes": 0,
+        "branches": 10,
+        "full_successes": 4,
         "full_success_without_new_action": 0,
-        "full_success_after_new_action": 0,
-        "partial_or_full_progress": 0,
-        "mean_official_score": 0.0,
-        "episodes_with_any_full_success": 0,
+        "full_success_after_new_action": 4,
+        "partial_or_full_progress": 4,
+        "mean_official_score": 0.4,
+        "episodes_with_any_full_success": 2,
         "episode_any_full_success_wilson95": [
-          0,
-          0.7934506856227626
+          0.11762077423264783,
+          0.769275718723987
         ],
-        "model_calls": 28,
+        "model_calls": 94,
         "model_call_errors": 0,
         "mean_score_episode_cluster_bootstrap95": [
           0.0,
-          0.0
+          0.8
         ]
       },
       "control": {
-        "branches": 2,
+        "branches": 10,
         "full_successes": 0,
         "full_success_without_new_action": 0,
         "full_success_after_new_action": 0,
@@ -214,9 +210,9 @@
         "episodes_with_any_full_success": 0,
         "episode_any_full_success_wilson95": [
           0,
-          0.7934506856227626
+          0.43448246478317476
         ],
-        "model_calls": 2,
+        "model_calls": 11,
         "model_call_errors": 0,
         "mean_score_episode_cluster_bootstrap95": [
           0.0,
@@ -225,41 +221,41 @@
       }
     },
     "conditional_repair": {
-      "refused_branches": 2,
-      "refused_episodes": 1,
-      "full_successes": 0,
-      "full_repairs_after_action": 0,
+      "refused_branches": 6,
+      "refused_episodes": 3,
+      "full_successes": 4,
+      "full_repairs_after_action": 4,
       "full_success_without_new_action": 0,
-      "full_repair_rate": 0.0,
-      "mean_official_score": 0.0,
-      "mean_action_qualified_repair_credit": 0.0,
+      "full_repair_rate": 0.6666666666666666,
+      "mean_official_score": 0.6666666666666666,
+      "mean_action_qualified_repair_credit": 0.6666666666666666,
       "credit_definition": "Official score after at least one new non-answer tool; zero otherwise. A no-action success remains in official scores and the refusal denominator but receives zero repair credit. Actions alone do not establish that replay state was initially failing.",
-      "episodes_with_any_full_repair": 0,
+      "episodes_with_any_full_repair": 2,
       "episode_any_full_repair_wilson95": [
-        0,
-        0.7934506856227626
+        0.2076596008020477,
+        0.9385080552796037
       ],
       "score_episode_cluster_bootstrap95": [
         0.0,
-        0.0
+        1.0
       ],
       "repair_credit_episode_cluster_bootstrap95": [
         0.0,
-        0.0
+        1.0
       ],
       "full_rate_episode_cluster_bootstrap95": [
         0.0,
-        0.0
+        1.0
       ],
-      "bootstrap_draws_with_no_refusal": 0
+      "bootstrap_draws_with_no_refusal": 201
     },
     "paired_difference": {
-      "mean": 0.0,
-      "episodes_guard_better": 0,
+      "mean": 0.4,
+      "episodes_guard_better": 2,
       "episodes_guard_worse": 0,
       "episode_cluster_bootstrap95": [
         0.0,
-        0.0
+        0.8
       ]
     },
     "uncertainty_note": "20,000 episode-cluster bootstrap draws, fixed seed 1701. Degenerate intervals at all-zero/all-one outcomes do not establish certainty; episode-any Wilson intervals estimate a different, K=2 estimand."
@@ -381,6 +377,34 @@
             "hotkey",
             "answer"
           ]
+        },
+        {
+          "k": 1,
+          "score": 1.0,
+          "escalated": true,
+          "replay_diff_max": 0.0019294460614522298,
+          "boundary_diff": 1.994069190878494e-05,
+          "replay_valid": true,
+          "strict_replay_valid": true,
+          "valid_model_calls": 16,
+          "tools": [
+            "click",
+            "hotkey",
+            "click",
+            "click",
+            "click",
+            "click",
+            "click",
+            "press_key",
+            "click",
+            "click",
+            "click",
+            "hotkey",
+            "write",
+            "click",
+            "hotkey",
+            "answer"
+          ]
         }
       ],
       "control": [
@@ -411,7 +435,7 @@
           ]
         }
       ],
-      "exclusion": "incomplete"
+      "exclusion": null
     },
     "libreoffice_calc/37608790-6147-45d0-9f20-1137bb35703d": {
       "guard": [
@@ -436,6 +460,33 @@
             "click",
             "click",
             "write",
+            "hotkey",
+            "click",
+            "write",
+            "hotkey",
+            "hotkey",
+            "answer"
+          ]
+        },
+        {
+          "k": 1,
+          "score": 1.0,
+          "escalated": true,
+          "replay_diff_max": 0.002073085541818656,
+          "boundary_diff": 2.205882440595066e-05,
+          "replay_valid": true,
+          "strict_replay_valid": true,
+          "valid_model_calls": 15,
+          "tools": [
+            "hotkey",
+            "click",
+            "write",
+            "click",
+            "write",
+            "click",
+            "write",
+            "click",
+            "drag",
             "hotkey",
             "click",
             "write",
@@ -473,20 +524,143 @@
           ]
         }
       ],
-      "exclusion": "incomplete"
+      "exclusion": null
     },
     "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8": {
-      "guard": [],
-      "control": [],
-      "exclusion": "incomplete"
+      "guard": [
+        {
+          "k": 0,
+          "score": 0.0,
+          "escalated": false,
+          "replay_diff_max": 0.0019518377734165566,
+          "boundary_diff": 2.1493988221182544e-05,
+          "replay_valid": true,
+          "strict_replay_valid": true,
+          "valid_model_calls": 0,
+          "tools": [
+            "answer"
+          ]
+        },
+        {
+          "k": 1,
+          "score": 0.0,
+          "escalated": false,
+          "replay_diff_max": 0.0019525740660873113,
+          "boundary_diff": 2.2280723879150317e-05,
+          "replay_valid": true,
+          "strict_replay_valid": true,
+          "valid_model_calls": 0,
+          "tools": [
+            "answer"
+          ]
+        }
+      ],
+      "control": [
+        {
+          "k": 0,
+          "score": 0.0,
+          "escalated": false,
+          "replay_diff_max": 0.0019507786806891947,
+          "boundary_diff": 1.8488259657340893e-05,
+          "replay_valid": true,
+          "strict_replay_valid": true,
+          "valid_model_calls": 1,
+          "tools": [
+            "answer"
+          ]
+        },
+        {
+          "k": 1,
+          "score": 0.0,
+          "escalated": false,
+          "replay_diff_max": 0.001952140354642681,
+          "boundary_diff": 2.0969498391244926e-05,
+          "replay_valid": true,
+          "strict_replay_valid": true,
+          "valid_model_calls": 1,
+          "tools": [
+            "answer"
+          ]
+        }
+      ],
+      "exclusion": null
     },
     "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38": {
-      "guard": [],
-      "control": [],
-      "exclusion": "incomplete"
+      "guard": [
+        {
+          "k": 0,
+          "score": 0.0,
+          "escalated": false,
+          "replay_diff_max": 0.013920308094398648,
+          "boundary_diff": 0.0001422678138695511,
+          "replay_valid": true,
+          "strict_replay_valid": true,
+          "valid_model_calls": 0,
+          "tools": [
+            "answer"
+          ]
+        },
+        {
+          "k": 1,
+          "score": 0.0,
+          "escalated": false,
+          "replay_diff_max": 0.014025417963663737,
+          "boundary_diff": 0.00015112361779399947,
+          "replay_valid": true,
+          "strict_replay_valid": true,
+          "valid_model_calls": 0,
+          "tools": [
+            "answer"
+          ]
+        }
+      ],
+      "control": [
+        {
+          "k": 0,
+          "score": 0.0,
+          "escalated": false,
+          "replay_diff_max": 0.013920892453661153,
+          "boundary_diff": 0.00013297829850047243,
+          "replay_valid": true,
+          "strict_replay_valid": true,
+          "valid_model_calls": 2,
+          "tools": [
+            "click",
+            "answer"
+          ]
+        },
+        {
+          "k": 1,
+          "score": 0.0,
+          "escalated": false,
+          "replay_diff_max": 0.013921185100779814,
+          "boundary_diff": 0.00014352859819636625,
+          "replay_valid": true,
+          "strict_replay_valid": true,
+          "valid_model_calls": 1,
+          "tools": [
+            "answer"
+          ]
+        }
+      ],
+      "exclusion": null
     },
     "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": {
-      "guard": [],
+      "guard": [
+        {
+          "k": 0,
+          "score": 1.0,
+          "escalated": false,
+          "replay_diff_max": 0.0019460784453971714,
+          "boundary_diff": 3.025901741256901e-05,
+          "replay_valid": true,
+          "strict_replay_valid": true,
+          "valid_model_calls": 0,
+          "tools": [
+            "answer"
+          ]
+        }
+      ],
       "control": [],
       "exclusion": "incomplete"
     },
@@ -549,8 +723,8 @@
   "provenance": {
     "branches_sha256": {
       "/home/orbit/osw/rescue_bench/branches.jsonl": "0d923702879d8c8212da4d4e0d263510b47c8822578c77b12d2022b0345b68e6",
-      "/home/orbit/osw/rescue_bench/branches.s0-of-2.jsonl": "2acbebd010dddb0802bd61f865bd2ac3eb6267fb659e382f6f8b5a0809181925",
-      "/home/orbit/osw/rescue_bench/branches.s1-of-2.jsonl": "e683a2478ca1312b2a5bd2e5cbc618f3ada6bf67818f092f20d62d39acef070f"
+      "/home/orbit/osw/rescue_bench/branches.s0-of-2.jsonl": "d83af68b0ff7649befbdfeeb0349bfe8a98d703fe5b3c8781a7ca0ab3f3530fb",
+      "/home/orbit/osw/rescue_bench/branches.s1-of-2.jsonl": "f90b1c84bb4a3e5f4c649cebdb7c1cc3f43d80d03117825d9f3bf3cd8e8bf1c4"
     },
     "runner_sha256": "f559fa0f2c7684ed4feb9c750bc3b14331f9c1444373310787710b6c20ece502"
   },
@@ -558,7 +732,7 @@
     "label": "prediction, not measured online gain",
     "formula": "Delta = p_FS_feasible * d_FS * r_action_qualified_repair_credit - p_TS_exposed * fpr_TS * loss_after_false_reject",
     "repair_credit_definition": "Official score after at least one new non-answer tool; zero otherwise. A no-action success remains in official scores and the refusal denominator but receives zero repair credit. Actions alone do not establish that replay state was initially failing.",
-    "repair_estimate": 0.0,
+    "repair_estimate": 0.6666666666666666,
     "status": "scenario prediction; not an observed online gain",
     "scenarios": {
       "reserve45_modal_original": {
@@ -581,26 +755,26 @@
         "loss_scenarios": [
           {
             "loss": 0,
-            "predicted_score_change": 0.0,
+            "predicted_score_change": 0.0505050505050505,
             "repair_only_bootstrap95": [
               0.0,
-              0.0
+              0.07575757575757575
             ]
           },
           {
             "loss": 0.5,
-            "predicted_score_change": -0.017326732673267325,
+            "predicted_score_change": 0.03317831783178317,
             "repair_only_bootstrap95": [
               -0.017326732673267325,
-              -0.017326732673267325
+              0.05843084308430842
             ]
           },
           {
             "loss": 1,
-            "predicted_score_change": -0.03465346534653465,
+            "predicted_score_change": 0.015851585158515848,
             "repair_only_bootstrap95": [
               -0.03465346534653465,
-              -0.03465346534653465
+              0.041104110411041096
             ]
           }
         ]
@@ -621,26 +795,26 @@
         "loss_scenarios": [
           {
             "loss": 0,
-            "predicted_score_change": 0.0,
+            "predicted_score_change": 0.09469696969696968,
             "repair_only_bootstrap95": [
               0.0,
-              0.0
+              0.14204545454545453
             ]
           },
           {
             "loss": 0.5,
-            "predicted_score_change": -0.02599009900990099,
+            "predicted_score_change": 0.0687068706870687,
             "repair_only_bootstrap95": [
               -0.02599009900990099,
-              -0.02599009900990099
+              0.11605535553555354
             ]
           },
           {
             "loss": 1,
-            "predicted_score_change": -0.05198019801980198,
+            "predicted_score_change": 0.042716771677167704,
             "repair_only_bootstrap95": [
               -0.05198019801980198,
-              -0.05198019801980198
+              0.09006525652565256
             ]
           }
         ]
@@ -660,19 +834,19 @@
   "independent_review": "VERIFY_RUNNER.md; final numerical review pending",
   "all_available_descriptive": {
     "guard": {
-      "branches": 4,
-      "score1": 2,
-      "score1_after_action": 2
+      "branches": 11,
+      "score1": 5,
+      "score1_after_action": 4
     },
     "control": {
-      "branches": 6,
+      "branches": 10,
       "score1": 0,
       "score1_after_action": 0
     }
   },
   "observed_guard": {
-    "initial_checks": 4,
-    "refused": 4,
+    "initial_checks": 11,
+    "refused": 6,
     "verifier_errors": 0
   },
   "contemporary_holo31": {

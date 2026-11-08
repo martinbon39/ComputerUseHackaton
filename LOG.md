@@ -489,3 +489,9 @@ Timestamp correction for the preceding astra-free entry: the GO message was deli
 - Why: immediate-answer positives reveal replay-state drift and must not inflate predicted repair.
 - Verified: independent stats review provisional PASS; verify_analysis.py exit0; independent Calc k0 audit confirms official Guard1/control0 with strict-valid replay; frozen runner unchanged.
 - Result: collection ongoing in two shards, no final cohort or online-gain claim.
+
+## 2026-11-08 09:55 UTC — first replicated Holo4 repairs
+- What: completed K2 on Calc376 and Impress70bca: each Guard+Holo4 [1,1] versus Holo4-only [0,0]. Published independent raw-evaluator audit.
+- Why: distinguish actual GUI corrections and official evaluations from claimed completion.
+- Verified: all eight paired replays and boundaries valid; real edits/saves; no setup, model, getter or evaluator failures; independent MEASURED_REPAIRS_REVIEW.md.
+- Result: five complete episodes currently yield Guard4/10/control0/10, cluster95 [0,.80] for difference .40. Collection remains partial; no online-gain claim.
