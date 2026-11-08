@@ -12,9 +12,19 @@ claimed (+1.6 [−4.4, +7.7]).** The online arm is Holo-3.1 plus the Guard's ref
 Our GPU and Modal budget monitoring runs on code built through the Devin API (Devin's cloud agent):
 [`gpu_ctl.py`](holo-neurochir/infra/gpu_ctl.py), live on our server since 11:47 UTC.
 
+> **Paper:** [`holo-neurochir/paper/main.pdf`](holo-neurochir/paper/main.pdf) (29 pages, with authors) ·
+> [NeurIPS-format, anonymous](holo-neurochir/paper/neurips.pdf).
+>
+> **Try it live, 1 click:** [profession-april-suzuki-seed.trycloudflare.com/try](https://profession-april-suzuki-seed.trycloudflare.com/try)
+> (the real Guard verifies 6 recorded OSWorld screens live and reveals the official score) ·
+> [duel page](https://profession-april-suzuki-seed.trycloudflare.com/) (pick a task, ▶ Run: two real Ubuntu VMs, recorded runs
+> played back with their real timings). Live server, available during the hackathon.
+>
 > **Demo video, 2 min:** [`holo-neurochir/video_demo/feci-guard-demo-2min.mp4`](holo-neurochir/video_demo/feci-guard-demo-2min.mp4)
-> (file in this repo, 1:38; generator in [`holo-neurochir/video_wall/demo2min/`](holo-neurochir/video_wall/demo2min/)). Hosted copy,
-> link expires 2026-12-08: [video](https://argos.martinbonan.com/artifacts/feci-guard-demo-2min.mp4?t=mxenkc8g.o4bkDyQC_vucYCP8zMnMbJ-jDlEs-zhh).
+> (1:57, English subtitles) · same video narrated by Martin:
+> [`feci-guard-demo-2min-martin.mp4`](holo-neurochir/video_demo/feci-guard-demo-2min-martin.mp4). Hosted copies, links expire 2026-12-08:
+> [video](https://argos.martinbonan.com/artifacts/feci-guard-demo-2min.mp4?t=mxeo98l1.hUt5zJJPcaF9ltPV6LbXpk_cvu4DytlL) ·
+> [Martin's voice](https://argos.martinbonan.com/artifacts/feci-guard-demo-2min-martin.mp4?t=mxeoroh9.EFSAebmQUH7HRtcZ-NGT64plRX584L4p).
 >
 > **Extended video:** [`holo-neurochir/video_demo/feci-guard-wall.mp4`](holo-neurochir/video_demo/feci-guard-wall.mp4)
 > (file in this repo, 2:54; generator in [`holo-neurochir/video_wall/`](holo-neurochir/video_wall/)). Hosted copy, link expires
@@ -22,10 +32,6 @@ Our GPU and Modal budget monitoring runs on code built through the Devin API (De
 >
 > **Guard repair replay:** [`holo-neurochir/demo_live/repair_calc.html`](holo-neurochir/demo_live/repair_calc.html): the Guard refuses a
 > false "done" and the agent repairs it, step by step ([hosted copy](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxelxklo.a9rcuMpAex2GppIQuTZdr5GyIPal9zYu), link expires).
->
-> **Try it live, 1 click:** [profession-april-suzuki-seed.trycloudflare.com/try](https://profession-april-suzuki-seed.trycloudflare.com/try)
-> (the real Guard verifies 6 recorded OSWorld screens live and reveals the official score; live server, available
-> during the hackathon).
 >
 > **Judges in a hurry:** run the one-command [quickstart](#quickstart-under-5-minutes-no-gpu-no-key-no-vm) (no GPU, no
 > key, no VM). It recomputes our headline numbers and replays the Guard on 268 recorded episodes. Then read the
@@ -225,7 +231,7 @@ Files in this repository come first. Hosted copies are signed links that expire 
   with the filled reproducibility checklist). Every number is regenerated from `paper/data/` by `paper/build.sh`.
   Hosted copies, link expires: [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxendzty.YtNRzC2XZbOfsCPfKb43m0vI_OuDRaJs) · [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxendzvz.7zzezsDOwwrahm95moLSz3Efcg3-IAzE).
 - **Demo video, 2 min** (submission): [`holo-neurochir/video_demo/feci-guard-demo-2min.mp4`](holo-neurochir/video_demo/feci-guard-demo-2min.mp4),
-  generator in [`holo-neurochir/video_wall/demo2min/`](holo-neurochir/video_wall/demo2min/). Hosted copy, link expires: [video](https://argos.martinbonan.com/artifacts/feci-guard-demo-2min.mp4?t=mxenkc8g.o4bkDyQC_vucYCP8zMnMbJ-jDlEs-zhh).
+  generator in [`holo-neurochir/video_wall/demo2min/`](holo-neurochir/video_wall/demo2min/). Hosted copy, link expires: [video](https://argos.martinbonan.com/artifacts/feci-guard-demo-2min.mp4?t=mxeo98l1.hUt5zJJPcaF9ltPV6LbXpk_cvu4DytlL).
 - **Extended video, 2:54**: [`holo-neurochir/video_demo/feci-guard-wall.mp4`](holo-neurochir/video_demo/feci-guard-wall.mp4),
   generator in [`holo-neurochir/video_wall/`](holo-neurochir/video_wall/). Hosted copies, links expire: [video](https://argos.martinbonan.com/artifacts/feci-guard-wall-video.mp4?t=mxemmn8w.RZNeZKw_tnK0Nezq6OvZ6exYV6aMCSOx) ·
   [interactive page](https://argos.martinbonan.com/artifacts/feci-guard-wall.html?t=mxemmnav.usCClc-xmdZJ2WZb3TM3Rqyt64iSkwJL).
