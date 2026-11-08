@@ -12,4 +12,16 @@
 2. **Secondaire, score OSWorld** : moyenne du score officiel. Gain déclaré seulement si la borne basse IC95 appariée est > 0. Sinon, rapporter l'estimation ponctuelle et son IC, sans parler de gain.
 3. Garde-fou : nombre de vrais succès de l'original perdus avec le Guard (tâches 1 → 0), rapporté tel quel.
 
+## Amendement (09:28 UTC, avant tout lancement des bras complets ; seuls deux pilotes d'1 tâche existent)
+Demande de Martin : on ne compte pas une baisse des faux fini sans la mettre en regard des vrais fini perdus.
+4. **Bilan bénéfice / coût**, sur le test, par tâche appariée :
+   - B = tâches réparées : 0 chez l'original → 1 avec le Guard ;
+   - C = vrais succès perdus : 1 chez l'original → 0 avec le Guard ;
+   - E = faux fini évités : faux fini chez l'original, et pas de faux fini avec le Guard ;
+   - on rapporte B, C, E, le gain net B − C (soit l'écart de score) et le ratio E / max(C, 1).
+5. **Règle de décision** : le Guard n'est déclaré utile que si (a) le gain net B − C ≥ 0, et (b) le taux de faux fini baisse (critère 1).
+   - Une baisse des faux fini accompagnée d'un gain net négatif est rapportée comme un **échec du compromis**, pas comme un succès.
+   - Le gain de score n'est déclaré que selon le critère 2.
+   - Le bruit attendu pour C est calculé à part : les basculements 1 → 0 de l'original contre lui-même, entre ses deux runs servis par le pod et par Modal sur les mêmes tâches. Il est rapporté à côté.
+
 Bootstrap apparié par tâche, 10 000 tirages, graine 0. Tâches invalides (job mort, 0 pas) exclues des deux bras, avec la liste publiée. Le bruit d'un run à l'autre de l'original (43,2 / 46,7 / 42,2 sur la réserve) est rappelé à côté de chaque écart.
