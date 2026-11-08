@@ -57,7 +57,7 @@ class Handler(BaseHTTPRequestHandler):
             assert images, "no image"
         except Exception as e:  # noqa: BLE001
             return self._send(400, {"error": {"message": f"bad request: {type(e).__name__}: {str(e)[:200]}"}})
-        rec.update(task=meta["instruction"][:120], images=len(images))
+        rec.update(task=meta["instruction"][:120], images=len(images), unblock=bool(meta.get("unblock")))
         with SLOTS:
             rec["queued_s"] = round(time.time() - t0, 1)
             with tempfile.TemporaryDirectory(prefix="feci2_relay_") as d:
@@ -67,7 +67,8 @@ class Handler(BaseHTTPRequestHandler):
                     with open(paths[-1], "wb") as f:
                         f.write(img)
                 v = verifier_v2.verify_v2(meta["instruction"], paths[-1], paths[:-1], meta.get("actions", []),
-                                          model=feci_guard_v2.MODEL, timeout=feci_guard_v2.SERVER_TIMEOUT_S)
+                                          model=feci_guard_v2.MODEL, timeout=feci_guard_v2.SERVER_TIMEOUT_S,
+                                          unblock=bool(meta.get("unblock")))
         rec.update(verdict=v.get("verdict"), error=v.get("error"), latency_s=round(time.time() - t0, 1))
         with LOG_LOCK, open(self.server.log_path, "a", encoding="utf-8") as f:
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
