@@ -79,3 +79,22 @@
 \newcommand{\gvRejDiffCi}{$-$5 to +15} % source: task-cluster bootstrap, 10,000, seed 0 (figs/guard.py)
 \newcommand{\gvStrictDet}{35/37} % source: data/local/feci_guard/v2/PROTOCOL.md dev results, variant c (strict prompt) detection
 \newcommand{\gvStrictRej}{33/86} % source: data/local/feci_guard/v2/PROTOCOL.md dev results, variant c false rejection
+\newcommand{\rbPrimEpisodes}{9} % source: data/local/rescue_bench/RESULT.json primary.episodes
+\newcommand{\rbPrimDiff}{+50} % source: data/local/rescue_bench/RESULT.json primary.paired_difference.mean (points)
+\newcommand{\rbPrimDiffCi}{+22 to +78} % source: data/local/rescue_bench/RESULT.json primary.paired_difference.episode_cluster_bootstrap95
+\newcommand{\rbStrictEpisodes}{8} % source: data/local/rescue_bench/RESULT.json strict_boundary_sensitivity.episodes
+\newcommand{\rbStrictDiff}{+50} % source: data/local/rescue_bench/RESULT.json strict_boundary_sensitivity.paired_difference.mean (points)
+\newcommand{\rbStrictDiffCi}{+12 to +88} % source: data/local/rescue_bench/RESULT.json strict_boundary_sensitivity.paired_difference.episode_cluster_bootstrap95
+\newcommand{\rbAllEpisodes}{12} % source: data/local/rescue_bench/RESULT.json all_complete_sensitivity.episodes
+\newcommand{\rbAllDiff}{+33} % source: data/local/rescue_bench/RESULT.json all_complete_sensitivity.paired_difference.mean (points)
+\newcommand{\rbAllDiffCi}{+4 to +62} % source: data/local/rescue_bench/RESULT.json all_complete_sensitivity.paired_difference.episode_cluster_bootstrap95
+\newcommand{\rbGuardSucc}{11/18} % source: data/local/rescue_bench/RESULT.json primary.arms.guard full_successes/branches
+\newcommand{\rbCtrlSucc}{2/18} % source: data/local/rescue_bench/RESULT.json primary.arms.control full_successes/branches
+\newcommand{\rbGuardAfterAction}{9} % source: data/local/rescue_bench/RESULT.json primary.arms.guard.full_success_after_new_action
+\newcommand{\rbCtrlAfterAction}{0} % source: data/local/rescue_bench/RESULT.json primary.arms.control.full_success_after_new_action
+\newcommand{\rbBetter}{5} % source: data/local/rescue_bench/RESULT.json primary.paired_difference.episodes_guard_better
+\newcommand{\rbWorse}{0} % source: data/local/rescue_bench/RESULT.json primary.paired_difference.episodes_guard_worse
+\newcommand{\rbRefRepaired}{9/11} % source: data/local/rescue_bench/RESULT.json primary.conditional_repair full_repairs_after_action/refused_branches
+\newcommand{\rbMaxNew}{20} % source: data/local/rescue_bench/PREREG.md max_new
+\newcommand{\rbPredLo}{+6} % source: data/local/rescue_bench/RESULT.json prediction.scenarios.test120_modal_original loss=1 (points, predicted, not measured)
+\newcommand{\rbPredHi}{+12} % source: data/local/rescue_bench/RESULT.json prediction.scenarios.test120_modal_original loss=0 (points, predicted, not measured)

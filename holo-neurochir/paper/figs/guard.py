@@ -184,6 +184,29 @@ pr = (V2 / "PROTOCOL.md").read_text()
 cm = __import__("re").search(r"c (\d+)/(\d+), (\d+)/(\d+)\.", pr)
 m.add("gvStrictDet", f"{cm.group(1)}/{cm.group(2)}", V2S + "PROTOCOL.md dev results, variant c (strict prompt) detection")
 m.add("gvStrictRej", f"{cm.group(3)}/{cm.group(4)}", V2S + "PROTOCOL.md dev results, variant c false rejection")
+RB = load("local/rescue_bench/RESULT.json")
+RBS = "data/local/rescue_bench/RESULT.json"
+assert RB["status"] == "complete" and RB["completed_branches"] == RB["expected_branches"]
+for key, tag in [("primary", "Prim"), ("strict_boundary_sensitivity", "Strict"), ("all_complete_sensitivity", "All")]:
+    x = RB[key]
+    pdiff = x["paired_difference"]
+    m.add(f"rb{tag}Episodes", x["episodes"], RBS + f" {key}.episodes")
+    m.add(f"rb{tag}Diff", f"{100 * pdiff['mean']:+.0f}", RBS + f" {key}.paired_difference.mean (points)")
+    m.add(f"rb{tag}DiffCi", " to ".join(f"{100 * v:+.0f}" for v in pdiff["episode_cluster_bootstrap95"]), RBS + f" {key}.paired_difference.episode_cluster_bootstrap95")
+pa = RB["primary"]["arms"]
+m.add("rbGuardSucc", f"{pa['guard']['full_successes']}/{pa['guard']['branches']}", RBS + " primary.arms.guard full_successes/branches")
+m.add("rbCtrlSucc", f"{pa['control']['full_successes']}/{pa['control']['branches']}", RBS + " primary.arms.control full_successes/branches")
+m.add("rbGuardAfterAction", pa["guard"]["full_success_after_new_action"], RBS + " primary.arms.guard.full_success_after_new_action")
+m.add("rbCtrlAfterAction", pa["control"]["full_success_after_new_action"], RBS + " primary.arms.control.full_success_after_new_action")
+m.add("rbBetter", RB["primary"]["paired_difference"]["episodes_guard_better"], RBS + " primary.paired_difference.episodes_guard_better")
+m.add("rbWorse", RB["primary"]["paired_difference"]["episodes_guard_worse"], RBS + " primary.paired_difference.episodes_guard_worse")
+cr = RB["primary"]["conditional_repair"]
+m.add("rbRefRepaired", f"{cr['full_repairs_after_action']}/{cr['refused_branches']}", RBS + " primary.conditional_repair full_repairs_after_action/refused_branches")
+m.add("rbMaxNew", __import__("re").search(r"max_new=(\d+)", (DATA / "local/rescue_bench/PREREG.md").read_text()).group(1), "data/local/rescue_bench/PREREG.md max_new")
+sc = RB["prediction"]["scenarios"]["test120_modal_original"]["loss_scenarios"]
+pr_ = sorted(100 * z["predicted_score_change"] for z in sc)
+m.add("rbPredLo", f"{pr_[0]:+.0f}", RBS + " prediction.scenarios.test120_modal_original loss=1 (points, predicted, not measured)")
+m.add("rbPredHi", f"{pr_[-1]:+.0f}", RBS + " prediction.scenarios.test120_modal_original loss=0 (points, predicted, not measured)")
 write_table("guard", "\\begin{tabular}{lcccc}\n\\toprule\nJudge & false successes detected & true successes rejected & gap, points [95\\% CI] & no verdict \\\\\n\\midrule\n"
             + "\n".join(rows) + "\n\\bottomrule\n\\end{tabular}\n", "guard")
 m.write()
