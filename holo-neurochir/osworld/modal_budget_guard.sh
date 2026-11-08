@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # On orbit: every 10 min, read each Modal account's spend of the day (modal billing report); at WARN $ tell ares once,
-# at STOP $ stop holo-vllm and holo-slot on that account, close the jury gate, and tell ares. Hard budget 25 $ per
+# at STOP $ stop holo-vllm, holo-slot and holo-judge on that account, close the jury gate, and tell ares. Hard budget 25 $ per
 # account. Spend = full days since START (UTC) + today so far (the report omits the current partial interval). Ends after 14 h.
 # Usage: nohup bash osworld/modal_budget_guard.sh [WARN=20] [STOP=24] [START=2026-11-01] >> ~/modal_budget_guard.log 2>&1 &
 set -uo pipefail
@@ -21,9 +21,9 @@ while [ "$(date +%s)" -lt "$END" ]; do
     fails[$p]=0
     echo "$(date -u +%T) $p $cost"
     if python3 -c "import sys; sys.exit(0 if $cost >= $STOP else 1)" && [ -z "${stopped[$p]:-}" ]; then
-      MODAL_PROFILE=$p modal app stop holo-vllm -y >/dev/null 2>&1; MODAL_PROFILE=$p modal app stop holo-slot -y >/dev/null 2>&1
+      MODAL_PROFILE=$p modal app stop holo-vllm -y >/dev/null 2>&1; MODAL_PROFILE=$p modal app stop holo-slot -y >/dev/null 2>&1; MODAL_PROFILE=$p modal app stop holo-judge -y >/dev/null 2>&1
       bash "$(dirname "$0")/modal_jury_gate.sh" close >/dev/null 2>&1
-      stopped[$p]=1; argos send ares "modal-serve (garde-budget): compte $p à $cost \$ ≥ $STOP \$ : holo-vllm et holo-slot ARRÊTÉS sur ce compte, porte du jury fermée."
+      stopped[$p]=1; argos send ares "modal-serve (garde-budget): compte $p à $cost \$ ≥ $STOP \$ : holo-vllm, holo-slot et holo-judge ARRÊTÉS sur ce compte, porte du jury fermée."
     elif python3 -c "import sys; sys.exit(0 if $cost >= $WARN else 1)" && [ -z "${warned[$p]:-}" ]; then
       warned[$p]=1; argos send ares "modal-serve (garde-budget): compte $p à $cost \$ (seuil $WARN \$). Arrêt automatique à $STOP \$."
     fi
