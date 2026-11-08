@@ -33,9 +33,13 @@ for s, T in S.items():
         dd = x["deltas"][f"a_minus_{c}"]
         m.add(f"pa{name}{T}", f"{dd['mean']:.1f}", SRC + f" anchoring.strata.{s}.deltas.a_minus_{c}.mean")
         m.add(f"pa{name}{T}Ci", ci(dd["ci95"]), SRC + f" anchoring.strata.{s}.deltas.a_minus_{c}.ci95")
+    for c, name in [("a", "Orig"), ("b", "Neutral"), ("c", "Counter")]:
+        m.add(f"pa{name}Pos{T}", x["conditions"][c]["positive_margin_count"], SRC + f" anchoring.strata.{s}.conditions.{c}.positive_margin_count (answer still preferred)")
     fr = x["fraction_note_and_thought"]["mean_of_ratios"]
     m.add(f"paFrac{T}", f"{100 * fr['mean']:.0f}", SRC + f" anchoring.strata.{s}.fraction_note_and_thought.mean_of_ratios.mean (%)")
     m.add(f"paFrac{T}Ci", "--".join(f"{100 * v:.0f}" for v in fr["ci95"]), SRC + f" ...fraction_note_and_thought.mean_of_ratios.ci95 (%)")
+m.add("paNeutralPosAll", sum(A["strata"][s]["conditions"]["b"]["positive_margin_count"] for s in S), SRC + " sum of conditions.b.positive_margin_count")
+m.add("paN", sum(A["strata"][s]["n_tasks"] for s in S), SRC + " sum of n_tasks")
 it = A["interaction"]
 m.add("paInter", f"{it['false_minus_true_delta']:+.2f}".replace("-", "$-$"), SRC + " anchoring.interaction.false_minus_true_delta")
 m.add("paInterCi", " to ".join(f"{v:+.2f}".replace("-", "$-$") for v in it["ci95"]), SRC + " anchoring.interaction.ci95")
