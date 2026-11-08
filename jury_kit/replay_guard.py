@@ -11,6 +11,7 @@ OSWorld labels (`verif_study/manifest.json`: 66 false successes, 202 true succes
     python jury_kit/replay_guard.py --show 3   # also print 3 refusals the agent would receive
 """
 import argparse, hashlib, json, math, pathlib, random, sys
+sys.dont_write_bytecode = True  # keep a judge's clone clean
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent / "holo-neurochir"
 sys.path.insert(0, str(ROOT / "feci_guard"))

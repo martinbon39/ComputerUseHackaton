@@ -10,6 +10,7 @@ Options: --episode <episode_id> (default: a false success the recorded verdict r
 About $0.03 and 5-15 s per call. A live verdict can differ from the recorded one: the model is sampled.
 """
 import argparse, json, os, pathlib, shutil, sys
+sys.dont_write_bytecode = True  # keep a judge's clone clean
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent / "holo-neurochir"
 
