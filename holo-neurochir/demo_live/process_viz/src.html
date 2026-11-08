@@ -61,6 +61,11 @@ canvas{position:fixed;inset:0;width:100%;height:100%;display:block;cursor:grab}c
 #explore.on{color:#0b0d10;background:#e8ecf2}
 #panel.show{opacity:1}
 #bar{display:none!important}
+#arch{position:fixed;left:19vw;right:2.5vw;top:9vh;bottom:28vh;pointer-events:none;opacity:0;transition:opacity .8s}
+#arch.on{opacity:1}
+#arch svg{width:100%;height:100%;display:block;overflow:visible}
+#arch text{font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace}
+#arch .ag{opacity:0;transition:opacity .8s}#arch .ag.on{opacity:1}
 </style>
 </head>
 <body>
@@ -73,6 +78,7 @@ canvas{position:fixed;inset:0;width:100%;height:100%;display:block;cursor:grab}c
 <div id="scroller"></div>
 <div id="panel"><div id="chap"></div><div id="title"></div><div id="lines"></div></div>
 <div id="big"></div>
+<div id="arch"><svg viewBox="0 0 1600 720" preserveAspectRatio="xMidYMid meet"><defs><marker id="ah9aa4b2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9aa4b2"/></marker><marker id="ahffd75e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#ffd75e"/></marker><marker id="ahff4fd8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#ff4fd8"/></marker><marker id="ah7dffb0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7dffb0"/></marker></defs><g class="ag" data-t="0.5"><rect x="10" y="40" width="280" height="70" rx="3" fill="rgba(11,13,16,.88)" stroke="#c3ccd8" stroke-width="1.6"/><text x="24" y="72" fill="#c3ccd8" font-size="21" font-weight="500">OSWorld tasks</text><text x="24" y="102" fill="#a9b3c1" font-size="16">369 real desktop tasks</text></g><g class="ag" data-t="1.5"><rect x="350" y="40" width="430" height="96" rx="3" fill="rgba(11,13,16,.88)" stroke="#c3ccd8" stroke-width="1.6"/><text x="364" y="72" fill="#c3ccd8" font-size="21" font-weight="500">Ubuntu VMs</text><text x="364" y="102" fill="#a9b3c1" font-size="16">Docker + KVM on our server</text><text x="364" y="128" fill="#a9b3c1" font-size="16">up to 20 GitHub Actions runners with KVM</text></g><g class="ag" data-t="2.5"><rect x="920" y="40" width="360" height="96" rx="3" fill="rgba(11,13,16,.88)" stroke="#ffd75e" stroke-width="1.6"/><text x="934" y="72" fill="#ffd75e" font-size="21" font-weight="500">Holo-3.1-4B agent</text><text x="934" y="102" fill="#a9b3c1" font-size="16">served by vLLM on GPUs</text><text x="934" y="128" fill="#a9b3c1" font-size="16">H200 (Runpod) → H100 (Modal)</text></g><g class="ag" data-t="1.2"><path d="M290,82 L346,82" fill="none" stroke="#9aa4b2" stroke-width="1.6" marker-end="url(#ah9aa4b2)"/></g><g class="ag" data-t="3.2"><path d="M782,78 L916,78" fill="none" stroke="#9aa4b2" stroke-width="1.6" marker-end="url(#ah9aa4b2)"/><text x="849" y="68" fill="#9aa4b2" font-size="15" text-anchor="middle">screenshot</text></g><g class="ag" data-t="3.6"><path d="M916,112 L782,112" fill="none" stroke="#9aa4b2" stroke-width="1.6" marker-end="url(#ah9aa4b2)"/><text x="849" y="134" fill="#9aa4b2" font-size="15" text-anchor="middle">action</text></g><g class="ag" data-t="9"><rect x="920" y="280" width="360" height="96" rx="3" fill="rgba(11,13,16,.88)" stroke="#e8ecf2" stroke-width="1.6"/><text x="934" y="312" fill="#e8ecf2" font-size="21" font-weight="500">Feci Guard</text><text x="934" y="342" fill="#a9b3c1" font-size="16">checker: Claude Sonnet</text><text x="934" y="368" fill="#a9b3c1" font-size="16">via a secure relay</text></g><g class="ag" data-t="8.5"><path d="M1100,146 L1100,276" fill="none" stroke="#ffd75e" stroke-width="1.6" marker-end="url(#ahffd75e)"/><text x="1112" y="216" fill="#ffd75e" font-size="15" text-anchor="start">says “done”</text></g><g class="ag" data-t="11"><rect x="350" y="280" width="430" height="96" rx="3" fill="rgba(11,13,16,.88)" stroke="#ff4fd8" stroke-width="1.6"/><text x="364" y="312" fill="#ff4fd8" font-size="21" font-weight="500">repair</text><text x="364" y="342" fill="#a9b3c1" font-size="16">the agent again (live runs), or</text><text x="364" y="368" fill="#a9b3c1" font-size="16">Holo4-27B on H100 (replay only)</text></g><g class="ag" data-t="10.5"><path d="M916,333 L784,333" fill="none" stroke="#ff4fd8" stroke-width="1.6" marker-end="url(#ahff4fd8)"/><text x="850" y="322" fill="#ff4fd8" font-size="15" text-anchor="middle">refused</text></g><g class="ag" data-t="12"><path d="M565,280 L565,150" fill="none" stroke="#ff4fd8" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#ahff4fd8)"/><text x="577" y="222" fill="#ff4fd8" font-size="15" text-anchor="start">back to the desktop</text></g><g class="ag" data-t="16"><rect x="920" y="520" width="360" height="70" rx="3" fill="rgba(11,13,16,.88)" stroke="#7dffb0" stroke-width="1.6"/><text x="934" y="552" fill="#7dffb0" font-size="21" font-weight="500">official OSWorld evaluator</text><text x="934" y="582" fill="#a9b3c1" font-size="16">score 0 or 1</text></g><g class="ag" data-t="15.5"><path d="M1100,386 L1100,516" fill="none" stroke="#7dffb0" stroke-width="1.6" marker-end="url(#ah7dffb0)"/><text x="1112" y="456" fill="#7dffb0" font-size="15" text-anchor="start">accepted</text></g><g class="ag" data-t="17"><rect x="350" y="520" width="430" height="96" rx="3" fill="rgba(11,13,16,.88)" stroke="#c3ccd8" stroke-width="1.6"/><text x="364" y="552" fill="#c3ccd8" font-size="21" font-weight="500">stats</text><text x="364" y="582" fill="#a9b3c1" font-size="16">paired bootstrap</text><text x="364" y="608" fill="#a9b3c1" font-size="16">rules written before results</text></g><g class="ag" data-t="16.8"><path d="M916,560 L784,560" fill="none" stroke="#9aa4b2" stroke-width="1.6" marker-end="url(#ah9aa4b2)"/></g><g class="ag" data-t="18"><rect x="10" y="520" width="280" height="70" rx="3" fill="rgba(11,13,16,.88)" stroke="#c3ccd8" stroke-width="1.6"/><text x="24" y="552" fill="#c3ccd8" font-size="21" font-weight="500">paper</text><text x="24" y="582" fill="#a9b3c1" font-size="16">+ one-command checks</text></g><g class="ag" data-t="17.8"><path d="M346,560 L294,560" fill="none" stroke="#9aa4b2" stroke-width="1.6" marker-end="url(#ah9aa4b2)"/></g><g class="ag" data-t="5"><rect x="1320" y="40" width="270" height="122" rx="3" fill="rgba(11,13,16,.88)" stroke="#9aa4b2" stroke-width="1.6"/><text x="1334" y="72" fill="#9aa4b2" font-size="21" font-weight="500">GPU budget monitor</text><text x="1334" y="102" fill="#a9b3c1" font-size="16">built with the Devin API</text><text x="1334" y="128" fill="#a9b3c1" font-size="16">watches both Modal</text><text x="1334" y="154" fill="#a9b3c1" font-size="16">accounts every 5 min</text></g><g class="ag" data-t="5.5"><path d="M1316,100 L1284,100" fill="none" stroke="#9aa4b2" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#ah9aa4b2)"/></g><g class="ag" data-t="19"><rect x="1320" y="470" width="270" height="122" rx="3" fill="rgba(11,13,16,.88)" stroke="#6fd3ff" stroke-width="1.6"/><text x="1334" y="502" fill="#6fd3ff" font-size="21" font-weight="500">research team</text><text x="1334" y="532" fill="#a9b3c1" font-size="16">~25 AI research agents</text><text x="1334" y="558" fill="#a9b3c1" font-size="16">+ 3 humans</text><text x="1334" y="584" fill="#a9b3c1" font-size="16">run every step</text></g><g class="ag" data-t="19.5"><path d="M1300,210 L1300,600 M1300,140 L1300,150" stroke="#6fd3ff" stroke-width="1.2" stroke-dasharray="3 6" fill="none"/><path d="M1300,170 L1286,170" stroke="#6fd3ff" stroke-width="1.2" fill="none"/><path d="M1300,333 L1286,333" stroke="#6fd3ff" stroke-width="1.2" fill="none"/><path d="M1300,560 L1286,560" stroke="#6fd3ff" stroke-width="1.2" fill="none"/><path d="M1316,530 L1300,530" stroke="#6fd3ff" stroke-width="1.2" fill="none"/></g><g class="ag" data-t="20.5"><text x="800" y="700" fill="#7a8494" font-size="17" text-anchor="middle">1,271 scored episodes · ~30,700 agent steps</text></g></svg></div>
 <svg id="ci" viewBox="0 0 1120 250"></svg>
 <div id="src"></div>
 <div id="paused">free camera · scroll or R to return</div>
@@ -301,7 +307,14 @@ function camAt(keys,t){if(t<=keys[0][0])return[keys[0][1],keys[0][2]];for(let i=
 
 // ---------- chapters ----------
 const VMc=V(VM_X,0,0);
+const archG=[...document.querySelectorAll('#arch .ag')];
 const CH=[
+{num:'00 · System',title:'The system',dur:26,
+ src:'jury_kit/README.md · holo-neurochir/osworld/ · holo-neurochir/feci_guard/ · holo-neurochir/infra/DEVIN_SESSION.md · docs/RESEARCH_SYSTEM.md',
+ cam:[[0,V(VM_X-23,0,0),VMc],[26,V(VM_X-23,0,0),VMc]],
+ beats:[[0,8,'The system: 369 OSWorld tasks in Ubuntu VMs, Holo-3.1-4B served on rented GPUs.'],[8,16,'In the Guard arm, when the agent calls <span class="y">answer</span>, Feci Guard checks the final screen; a refusal sends it back to repair (Holo4-27B: replay only).'],[16,22,'The official evaluator scores every episode; the statistics follow rules written before the results.'],[22,26,'Now one task, then inside the model.']],lines:[],
+ enter(){setLayerVis(0);streamOp=0;vm.op=0;gs.op=0},
+ update(t){$('arch').classList.toggle('on',t<25);archG.forEach(g=>g.classList.toggle('on',t>=+g.dataset.t));setLayerVis(0);show([])}},
 {num:'00 · OSWorld',title:'A false “done”',dur:24,
  src:'~/osw/results_test_gh_orig · gimp/77b8ab4d-994f-43ac-8930-8ca087d7c4b4 · arm orig_pod · jury_kit/results/online_guard_tasks.csv',
  cam:[[0,V(VM_X-23,0,0),VMc],[13,V(VM_X-21,0,0),VMc],[16.5,V(VM_X-7.5,-4.6,-1.9),V(VM_X,-4.95,-1.9)],[20.5,V(VM_X-6.8,-4.6,-1.7),V(VM_X,-4.95,-2.0)],[24,V(VM_X-9,-.5,0),VMc]],
@@ -369,7 +382,7 @@ const CH=[
  update(t,T){gs.op=0;guardShape.material.opacity=.5;guardShape.rotation.y=T*.5;lkAnsGuard.op=.4;lkScreenGuard.op=0;lkRepair.op=0;lkH4.op=.3;h4N.op=.5;setLayerVis(.2);show([])}}
 ];
 // chapter 5 point colour mix uses a per-chapter field
-CH[5]._mix=0;
+CH[6]._mix=0;
 
 // ---------- bar ----------
 $('bar').innerHTML=CH.map(()=>'<i><b></b></i>').join('');const barB=[...document.querySelectorAll('#bar b')];
@@ -409,19 +422,19 @@ let ci=-1,ct=0,last=performance.now(),T=0,blendU=1,explore=false,altDown=false;
 const SEG=()=>innerHeight*2.4;
 function sizeScroller(){$('scroller').style.height=(CH.length*SEG()+innerHeight)+'px'}
 addEventListener('resize',sizeScroller);sizeScroller();
-const NAMES=['VM', 'Inside the model', 'Localize', 'Remove', 'Add', 'Diagnosis', 'External verifier', 'Results'];
+const NAMES=['System', 'VM', 'Inside the model', 'Localize', 'Remove', 'Add', 'Diagnosis', 'External verifier', 'Results'];
 $('tl').insertAdjacentHTML('beforeend',NAMES.map((n,i)=>'<a data-i="'+i+'"><b>'+String(i+1).padStart(2,'0')+'</b>'+n+'</a>').join(''));const tlA=[...document.querySelectorAll('#tl a')];
 tlA.forEach(a=>a.addEventListener('click',()=>goto(+a.dataset.i)));
 function goto(i){i=clamp(i,0,CH.length-1);scrollTo({top:i*SEG()+2,behavior:'smooth'})}
 function enter(i){ci=i;
   for(const u of units){u.n.op=0;u.n.m.color.set(u.kind==='head'?C.white:C.push)}unitLinks.forEach(k=>{k.op=0});for(const k in BR)BR[k].op=0;for(const k in INJ)INJ[k].op=0;
-  for(const k of [lkAnsGuard,lkScreenGuard,lkRepair,lkH4])k.op=0;h4N.op=0;guardN.op=0;guardShape.material.opacity=0;cTrue.op=0;cFalse.op=0;vm.op=0;gs.op=0;vmBox.op=vmBox2.op=gdBox.op=0;arcM.opacity=0;layerReset();streamSpeed=4;
+  for(const k of [lkAnsGuard,lkScreenGuard,lkRepair,lkH4])k.op=0;h4N.op=0;guardN.op=0;guardShape.material.opacity=0;cTrue.op=0;cFalse.op=0;vm.op=0;gs.op=0;vmBox.op=vmBox2.op=gdBox.op=0;$('arch').classList.remove('on');arcM.opacity=0;layerReset();streamSpeed=4;
   CH[ci].enter();setPanel(CH[ci]);tlA.forEach((a,k)=>{a.classList.toggle('on',k===ci);a.classList.toggle('done',k<ci)})}
 function setControls(){controls.enabled=explore||altDown;$('explore').classList.toggle('on',explore)}
 $('explore').addEventListener('click',()=>{explore=!explore;setControls();if(!explore)backToStory()});
 function backToStory(){if(!user&&!detailOn)return;user=false;fly=null;detailOn=false;$('panel').classList.remove('show');blendFrom=[camera.position.clone(),controls.target.clone()];blendU=0;$('paused').style.opacity=0}
 addEventListener('scroll',()=>{if((user||detailOn)&&!explore&&!altDown)backToStory()},{passive:true});
-addEventListener('keydown',e=>{if(e.key==='Alt'){altDown=true;setControls();e.preventDefault()}else if(e.code==='KeyR'){explore=false;setControls();backToStory()}else if(e.code==='ArrowRight'){e.preventDefault();goto(ci+1)}else if(e.code==='ArrowLeft'){e.preventDefault();goto(ct>2?ci:ci-1)}else if(/^Digit[1-8]$/.test(e.code)){goto(+e.code.slice(5)-1)}});
+addEventListener('keydown',e=>{if(e.key==='Alt'){altDown=true;setControls();e.preventDefault()}else if(e.code==='KeyR'){explore=false;setControls();backToStory()}else if(e.code==='ArrowRight'){e.preventDefault();goto(ci+1)}else if(e.code==='ArrowLeft'){e.preventDefault();goto(ct>2?ci:ci-1)}else if(/^Digit[1-9]$/.test(e.code)){goto(+e.code.slice(5)-1)}});
 addEventListener('keyup',e=>{if(e.key==='Alt'){altDown=false;setControls()}});
 addEventListener('blur',()=>{altDown=false;setControls()});
 let vs=scrollY;
@@ -435,7 +448,7 @@ function frame(now){requestAnimationFrame(frame);const dt=Math.min(.05,(now-last
   else{const [p,l]=camAt(ch.cam,ct);
   if(blendFrom){blendU+=dt/1.2;const u=sm(blendU);camPos.copy(blendFrom[0]).lerp(p,u);camLook.copy(blendFrom[1]).lerp(l,u);if(blendU>=1)blendFrom=null}else{camPos.copy(p);camLook.copy(l)}
   camera.position.copy(camPos);camera.position.y+=Math.sin(T*.35)*.12;camera.position.z+=Math.cos(T*.27)*.12;camera.lookAt(camLook)}
-  updateLayers(dt);updateStream(dt);updateNodes(dt,T);updateLinks(dt);updateBr(dt);updateInj(dt);updateClouds(dt,T,CH[5]._mix||0);updateScreens(dt);
+  updateLayers(dt);updateStream(dt);updateNodes(dt,T);updateLinks(dt);updateBr(dt);updateInj(dt);updateClouds(dt,T,CH[6]._mix||0);updateScreens(dt);
   updatePanel(ch,ct);updateLabels(dt);
   $('tlfill').style.height=(100*clamp(gp/CH.length,0,1))+'%';
   composer.render()}

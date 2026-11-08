@@ -15,6 +15,12 @@ Entry format (keep it to 3–8 lines):
 
 ---
 
+## 2026-11-08 · viz-simple · feat · process_viz: plain-English version + chapter 00 "The system"
+- What: holo-neurochir/demo_live/process_viz/src_simple.html + build_simple.py -> holo-process-viz-simple.html (same 3D/animation, only displayed texts rewritten in plain English: floors, urge, checker, big brother; all numbers kept). New first chapter "00 · System" (inline SVG architecture diagram) added to both src.html and src_simple.html; consequences: CH[5]->CH[6] for the diagnosis cloud mix, Digit[1-9], NAMES.
+- Why: Martin (via ares) asked for a non-specialist version and an architecture overview before the brain.
+- Verified: Playwright + swiftshader screenshots of every chapter and of the details panels, no page errors; two fresh-context reviews (numbers, code integrity, overclaims); their fixes applied (Holo4 = replay only, Guard arm only, signed urge labels). Diagram facts (369 tasks, 1,271 episodes, ~30,700 steps, runners, GPUs, Devin monitor) taken as given by ares, not re-derived.
+- Result: kept · published as argos artifacts holo-process-viz-simple.html and holo-process-viz.html
+
 ## 2026-11-03 — Recherche + vidéo computer use
 - Deep research (5 axes) → reports/Computer use agents état de l art.md
 - Vidéo narrée (voix Martin, 7,6 min) → video/computer-use-agents.html, publiée via argos artifact
