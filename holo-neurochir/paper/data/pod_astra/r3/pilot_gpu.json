@@ -1,0 +1,152 @@
+{
+  "repeat": 1.0,
+  "health": 0.75,
+  "n_loop": 4,
+  "n_healthy": 4,
+  "results": [
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 6,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6955
+      },
+      "rep": 0,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow icon on the right side of Kazakhstan dropdown field\n</parameter>\n<parameter=x>\n863\n</parameter>\n<parameter=y>\n314\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 39.86190056800842
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 6,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6955
+      },
+      "rep": 1,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nRight arrow icon on the right side of Kazakhstan input field\n</parameter>\n<parameter=x>\n875\n</parameter>\n<parameter=y>\n310\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 2.6863698959350586
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 6,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6955
+      },
+      "rep": 2,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDropdown arrow on the far right of the Kazakhstan text input field\n</parameter>\n<parameter=x>\n855\n</parameter>\n<parameter=y>\n308\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 2.961381435394287
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 6,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6955
+      },
+      "rep": 3,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow icon at the end of Kazakhstan text in the dropdown field\n</parameter>\n<parameter=x>\n864\n</parameter>\n<parameter=y>\n314\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 3.2224738597869873
+    },
+    {
+      "row": {
+        "run": "enter-date__s2",
+        "path": "/workspace/astra/data/train/enter-date__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 0,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nInput field labeled 'mm/dd/yyyy'\n</parameter>\n<parameter=x>\n400\n</parameter>\n<parameter=y>\n350\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 29.982954025268555
+    },
+    {
+      "row": {
+        "run": "enter-date__s2",
+        "path": "/workspace/astra/data/train/enter-date__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 1,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "I need to enter the date 01/12/2012 in a date input field. The field shows a placeholder of \"mm/dd/yyyy\" which means it expects month/day/year format.\n\nLet me type the date into the input field. I'll start by entering the month portion.\n\n<tool_call>\n<function=type_text>\n<mm>01\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 18.90388798713684
+    },
+    {
+      "row": {
+        "run": "enter-date__s2",
+        "path": "/workspace/astra/data/train/enter-date__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 2,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "I need to enter \"01/12/2012\" as the date in a date input field with format mm/dd/yyyy. The field shows placeholder text \"mm/dd/yyyy\" and has a submit button below it.\n\nLet me start by entering the month code \"01\" in the current input field.\n\n<tool_call>\n<function=click>\n<parameter=element>\nInput field for date entry with placeholder text \"mm/dd/yyyy\"\n</parameter>\n<parameter=x>\n425\n</parameter>\n<parameter=y>\n347\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 23.456502199172974
+    },
+    {
+      "row": {
+        "run": "enter-date__s2",
+        "path": "/workspace/astra/data/train/enter-date__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 3,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "I need to enter \"01/12/2012\" as a date in a field with mm/dd/yyy format. The current input field shows \"mm / dd / yyyy\" which indicates it expects month, day, year separators. I'll click on this field and enter the date.\n\n<tool_call>\n<function=click>\n<parameter=element>\nInput field with placeholder \"mm / dd / yyyy\"\n</parameter>\n<parameter=x>\n400\n</parameter>\n<parameter=y>\n350\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 4.546266555786133
+    }
+  ]
+}

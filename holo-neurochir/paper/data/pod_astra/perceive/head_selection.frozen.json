@@ -1,0 +1,30 @@
+{
+  "layers": [
+    15,
+    19,
+    23,
+    27,
+    31
+  ],
+  "query_for_selection": 0,
+  "descriptive_queries": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "image": "newest",
+  "roi_weighting": "fractional pixel overlap with each merged patch",
+  "normalization": "ROI attention / newest-image attention / ROI image area fraction",
+  "minimum_image_mass": 1e-12,
+  "requirement": "positive fs_minus minus fs_plus enrichment in both tasks; successful enrichment>1 in both tasks",
+  "rank": "minimum paired enrichment improvement across tasks descending",
+  "maximum_heads": 2,
+  "tie_break": [
+    "layer",
+    "head"
+  ],
+  "random_control_seed": 20261107,
+  "random_control": "same count and same layers; exclude chosen heads"
+}

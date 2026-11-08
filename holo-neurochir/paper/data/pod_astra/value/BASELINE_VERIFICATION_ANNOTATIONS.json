@@ -1,0 +1,242 @@
+[
+  {
+    "task": "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381",
+    "t": 4,
+    "sample": 0,
+    "label": "fs+",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task has been completed successfully",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381",
+    "t": 4,
+    "sample": 1,
+    "label": "fs+",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task has been completed successfully",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381",
+    "t": 4,
+    "sample": 2,
+    "label": "fs+",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task has been completed successfully",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381",
+    "t": 4,
+    "sample": 3,
+    "label": "fs+",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task has been completed successfully",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+    "t": 13,
+    "sample": 0,
+    "label": "fs+",
+    "strict": false,
+    "secondary": true,
+    "short evidence quotation": "Let me verify all the requirements",
+    "reason": "Explicit checklist re-evaluation appears in reflection; final answer is not a valid non-answer verification action."
+  },
+  {
+    "task": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+    "t": 13,
+    "sample": 1,
+    "label": "fs+",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task has been completed successfully",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+    "t": 13,
+    "sample": 2,
+    "label": "fs+",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task has been completed successfully",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+    "t": 13,
+    "sample": 3,
+    "label": "fs+",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task has been completed successfully",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "t": 3,
+    "sample": 0,
+    "label": "fs-",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task is now complete",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "t": 3,
+    "sample": 1,
+    "label": "fs-",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task is now complete",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "t": 3,
+    "sample": 2,
+    "label": "fs-",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task is now complete",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "t": 3,
+    "sample": 3,
+    "label": "fs-",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task is now complete",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3",
+    "t": 3,
+    "sample": 0,
+    "label": "fs-",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task is now complete",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3",
+    "t": 3,
+    "sample": 1,
+    "label": "fs-",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task is now complete",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3",
+    "t": 3,
+    "sample": 2,
+    "label": "fs-",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task is now complete",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3",
+    "t": 3,
+    "sample": 3,
+    "label": "fs-",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "The task is now complete",
+    "reason": "Generated output is an answer reporting completion; no non-answer verification action."
+  },
+  {
+    "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "t": 0,
+    "sample": 0,
+    "label": "healthy",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "I need to dismiss the consent dialog",
+    "reason": "Consent click is task progress, not verification or rechecking a previously achieved result."
+  },
+  {
+    "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "t": 0,
+    "sample": 1,
+    "label": "healthy",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "I need to dismiss the consent dialog",
+    "reason": "Consent click is task progress, not verification or rechecking a previously achieved result."
+  },
+  {
+    "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "t": 0,
+    "sample": 2,
+    "label": "healthy",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "I need to dismiss the consent dialog",
+    "reason": "Consent click is task progress, not verification or rechecking a previously achieved result."
+  },
+  {
+    "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "t": 0,
+    "sample": 3,
+    "label": "healthy",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "I need to dismiss the consent dialog",
+    "reason": "Consent click is task progress, not verification or rechecking a previously achieved result."
+  },
+  {
+    "task": "chrome/b070486d-e161-459b-aa2b-ef442d973b92",
+    "t": 0,
+    "sample": 0,
+    "label": "healthy",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "I need to dismiss the consent dialog",
+    "reason": "Consent click is task progress, not verification or rechecking a previously achieved result."
+  },
+  {
+    "task": "chrome/b070486d-e161-459b-aa2b-ef442d973b92",
+    "t": 0,
+    "sample": 1,
+    "label": "healthy",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "I need to dismiss the consent dialog",
+    "reason": "Consent click is task progress, not verification or rechecking a previously achieved result."
+  },
+  {
+    "task": "chrome/b070486d-e161-459b-aa2b-ef442d973b92",
+    "t": 0,
+    "sample": 2,
+    "label": "healthy",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "I need to dismiss the consent dialog",
+    "reason": "Consent click is task progress, not verification or rechecking a previously achieved result."
+  },
+  {
+    "task": "chrome/b070486d-e161-459b-aa2b-ef442d973b92",
+    "t": 0,
+    "sample": 3,
+    "label": "healthy",
+    "strict": false,
+    "secondary": false,
+    "short evidence quotation": "I need to dismiss the consent dialog",
+    "reason": "Consent click is task progress, not verification or rechecking a previously achieved result."
+  }
+]

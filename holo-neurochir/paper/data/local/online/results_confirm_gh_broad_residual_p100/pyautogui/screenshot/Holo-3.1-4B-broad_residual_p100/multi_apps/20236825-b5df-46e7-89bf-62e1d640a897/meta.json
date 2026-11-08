@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "20236825-b5df-46e7-89bf-62e1d640a897",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_text_file",
+  "finished_by_agent": true,
+  "steps": 26,
+  "answer": "Successfully completed the bubbleSort function in bubbleSort.py and saved the output as res.txt on the Desktop. The sorted array is: 11 12 22 25 34 64 90.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

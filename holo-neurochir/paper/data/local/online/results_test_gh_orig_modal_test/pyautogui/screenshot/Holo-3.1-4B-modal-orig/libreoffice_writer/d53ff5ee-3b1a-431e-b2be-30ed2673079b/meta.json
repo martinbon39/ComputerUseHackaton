@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_writer",
+  "example_id": "d53ff5ee-3b1a-431e-b2be-30ed2673079b",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_docx_files",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "All uppercase text in the document has been successfully converted to lowercase. The transformation was applied to all 207 words (1,162 characters) in the document, including the title, course code, and all body text. The document has been saved to preserve these changes.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

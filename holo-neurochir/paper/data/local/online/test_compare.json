@@ -1,0 +1,147 @@
+{
+ "arms": {
+  "expo125": [
+   "/home/orbit/osw/results_test_gh_expo125"
+  ],
+  "prompt": [
+   "/home/orbit/osw/results_test_gh_prompt"
+  ],
+  "orig": [
+   "/home/orbit/osw/results_test_gh_orig"
+  ]
+ },
+ "strata": [
+  "all"
+ ],
+ "origin": "other",
+ "n_scored": {
+  "expo125": 120,
+  "prompt": 0,
+  "orig": 120
+ },
+ "confirm_scope": "all 45",
+ "pairs": {
+  "expo125-prompt": {
+   "confirm": {
+    "n_tasks": 45,
+    "n_pairs": 0
+   },
+   "confirm:fs": {
+    "n_tasks": 14,
+    "n_pairs": 0
+   },
+   "confirm:ok": {
+    "n_tasks": 13,
+    "n_pairs": 0
+   },
+   "confirm:other": {
+    "n_tasks": 18,
+    "n_pairs": 0
+   },
+   "insample": {
+    "n_tasks": 30,
+    "n_pairs": 0
+   },
+   "all": {
+    "n_tasks": 120,
+    "n_pairs": 0
+   }
+  },
+  "expo125-orig": {
+   "confirm": {
+    "n_tasks": 45,
+    "n_pairs": 0
+   },
+   "confirm:fs": {
+    "n_tasks": 14,
+    "n_pairs": 0
+   },
+   "confirm:ok": {
+    "n_tasks": 13,
+    "n_pairs": 0
+   },
+   "confirm:other": {
+    "n_tasks": 18,
+    "n_pairs": 0
+   },
+   "insample": {
+    "n_tasks": 30,
+    "n_pairs": 0
+   },
+   "all": {
+    "n_tasks": 120,
+    "n_pairs": 120,
+    "success": {
+     "a": 0.5916666666666667,
+     "b": 0.6083333333333333,
+     "delta": -0.016666666666666666,
+     "ic95": [
+      -0.09166666666666666,
+      0.058333333333333334
+     ],
+     "a_higher": 9,
+     "b_higher": 11
+    },
+    "false_success": {
+     "a": 0.225,
+     "b": 0.24166666666666667,
+     "delta": -0.016666666666666666,
+     "ic95": [
+      -0.09166666666666666,
+      0.058333333333333334
+     ],
+     "a_higher": 9,
+     "b_higher": 11
+    },
+    "step_limit": {
+     "a": 0.2,
+     "b": 0.16666666666666666,
+     "delta": 0.03333333333333333,
+     "ic95": [
+      -0.025,
+      0.09166666666666666
+     ],
+     "a_higher": 8,
+     "b_higher": 4
+    },
+    "n_steps": {
+     "a": 21.3,
+     "b": 20.325,
+     "delta": 0.975,
+     "ic95": [
+      -0.9085416666666665,
+      2.8752083333333305
+     ],
+     "a_higher": 36,
+     "b_higher": 34
+    }
+   }
+  },
+  "prompt-orig": {
+   "confirm": {
+    "n_tasks": 45,
+    "n_pairs": 0
+   },
+   "confirm:fs": {
+    "n_tasks": 14,
+    "n_pairs": 0
+   },
+   "confirm:ok": {
+    "n_tasks": 13,
+    "n_pairs": 0
+   },
+   "confirm:other": {
+    "n_tasks": 18,
+    "n_pairs": 0
+   },
+   "insample": {
+    "n_tasks": 30,
+    "n_pairs": 0
+   },
+   "all": {
+    "n_tasks": 120,
+    "n_pairs": 0
+   }
+  }
+ }
+}

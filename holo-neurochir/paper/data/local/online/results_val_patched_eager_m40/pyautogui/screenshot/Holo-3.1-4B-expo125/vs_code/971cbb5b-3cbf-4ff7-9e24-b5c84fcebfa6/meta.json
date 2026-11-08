@@ -1,0 +1,23 @@
+{
+  "domain": "vs_code",
+  "example_id": "971cbb5b-3cbf-4ff7-9e24-b5c84fcebfa6",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 19,
+  "answer": "After thoroughly searching through Visual Studio Code's native settings, I must inform you that **VS Code does not have a built-in setting to automatically create a specifically named file (like 'test.py') on startup**.\n\n## What I Found\n\nI configured the following native setting, which is the closest VS Code can get without extensions:\n\n**Workbench: Startup Editor** = `newUntitledFile`\n\nThis setting makes VS Code create a new **untitled** file every time you open it. However, the file remains unnamed until you manually save it.\n\n## Why This Is Limitation\nnVS Code's settings system does not include any option to:\n- Automatically assign a specific filename to new files\n- Create files with predefined names on startup\n- Execute file-creation scripts on VS Code launch\n\n## Alternative Solutions (Outside VS Code Settings)\n\nTo achieve your goal, you would need one of the following approaches:\n\n1. **Extensions** (which you excluded): There are extensions like \"Auto Save\" or custom scripts that can help, but you specified not to use extensions.\n\n2. **External Automation**: You could use:\n   - A shell script or batch file that runs VS Code and then creates/test.py\n   - Task runner (like npm tasks, Make, or Bash) that launches VS Code and creates the file\n   - Windows Task Scheduler or cron job that runs after system startup\n\n3. **Manual Workflow**: Open VS Code → New File → Save As \"test.py\"\n\n## Current Configuration Applied\n\nI have set **Workbench: Startup Editor** to `newUntitledFile` in your VS Code settings. Every time you open VS Code, it will now create a new untitled file, but you'll still need to manually save it as \"test.py\".",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "astra-neurons",
+  "state": "STOPPED_NO_PROGRESS_VERIFIED",
+  "utc": 1794080958.8145592,
+  "budget_cap": 20,
+  "lots_used": 4,
+  "weights_persistently_modified": 0,
+  "own_python_processes": [],
+  "no_progress_rounds": 2,
+  "reason": "two consecutive prespecified neuron scaling settings retain answer4/4 on the first unseen fs+ task and exceed final admission ceiling3/8",
+  "baseline": {
+    "fs_plus_answer": "6/8",
+    "fs_minus_answer": "5/8",
+    "healthy_valid_nonanswer": "8/8",
+    "invalid": "0/24"
+  },
+  "candidate_results": [
+    {
+      "top_k": 16,
+      "scale": 0,
+      "observed_answer": "4/4",
+      "planned_fs_plus_generations": 8,
+      "maximum_admissible_final_answers": 3,
+      "verdict": "REJECTED_EFFICACY_BOUND",
+      "protected_strata": "NOT_RUN"
+    },
+    {
+      "top_k": 64,
+      "scale": 0,
+      "observed_answer": "4/4",
+      "planned_fs_plus_generations": 8,
+      "maximum_admissible_final_answers": 3,
+      "verdict": "REJECTED_EFFICACY_BOUND",
+      "protected_strata": "NOT_RUN"
+    }
+  ],
+  "max_reserved_gb": 11.758731264,
+  "next": "no further GPU work; no admitted candidate; ares notified of negative exploratory outcome",
+  "verification": "PASS",
+  "verification_file": "verification_final.json"
+}

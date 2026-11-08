@@ -1,0 +1,8 @@
+.venv/
+figs/__pycache__/
+*.aux
+*.log
+*.blg
+*.out
+*.bbl
+*.synctex.gz

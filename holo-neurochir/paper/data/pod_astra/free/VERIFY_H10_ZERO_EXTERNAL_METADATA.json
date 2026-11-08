@@ -1,0 +1,37 @@
+{
+  "attempts": {
+    "present": true,
+    "rows": 51
+  },
+  "checkpoint": "free_h10_zero",
+  "complete_comparison": true,
+  "expected_rows": 51,
+  "hashes": {
+    "candidate_generations_sha256": "dcc7b8dda290d95e2e20acc4f4fef59f440f12449524d0107061f6e378ca92d5",
+    "cohort_sha256": "8a3e65b6e6fa3e11ad04e196693e19460cca860b52bc1b2ee723c879c07b4fb1",
+    "reference_generations_sha256": "429d2f3abe0a6032875ab53c3c22996d916a091b7e91dc1eb324371a46e8e9c3",
+    "stream_probe_sha256": "5609a0bfe87751d35f01a6b47677c83b1498c7f4796a6631202b56d869c22f32",
+    "stream_wrapper_sha256": "c51fa24c862c7b70d735a9336c9e5b5f38e307c138dd1f71cc52c5f27484b4f9"
+  },
+  "lot": 22,
+  "metadata_errors": [],
+  "observations": {
+    "errors": [],
+    "token_id_incomplete": [],
+    "truncations": [
+      "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217@t3/seed4003",
+      "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217@t0/seed4006",
+      "chrome/b070486d-e161-459b-aa2b-ef442d973b92@t0/seed4002"
+    ]
+  },
+  "reference": "orig_modal",
+  "route": {
+    "amended": false,
+    "effective_sha256": "f80cb204894d955e9e30aabf153eddcfdd51d715bf5e47cd7e41db92ca0fc24c",
+    "original_sha256": "f80cb204894d955e9e30aabf153eddcfdd51d715bf5e47cd7e41db92ca0fc24c",
+    "server_descriptor": "https://martinbon39--holo-vllm-serve.us-east.modal.run/v1=Holo-3.1-4B-free_h10_zero=MODAL_HDR"
+  },
+  "rows": 51,
+  "semantics": "NOT GRADED HERE",
+  "status": "PASS"
+}

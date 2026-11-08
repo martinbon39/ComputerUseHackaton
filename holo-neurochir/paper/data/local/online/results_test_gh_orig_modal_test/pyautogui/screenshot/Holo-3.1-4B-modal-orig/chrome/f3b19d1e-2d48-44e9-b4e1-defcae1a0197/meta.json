@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "f3b19d1e-2d48-44e9-b4e1-defcae1a0197",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_url_pattern_match",
+  "finished_by_agent": true,
+  "steps": 10,
+  "answer": "Successfully found the FAQ page about ticket delivery at help.ticketek.com.au/hc/en-us/articles/360001877308-Ticket-Delivery-Information-FAQs. The page contains detailed information about:\n\n- Delivery options available for ticket orders\n- App/Mobile Ticket delivery method\n- How to undo shared tickets (Cancel or Recall from Your Tickets)\n- How to undo accepted tickets (Return from Your Tickets in the App)\n- Helpful tips for arriving at events (opening tickets early, preparing for scanning, venue-specific instructions)\n- Related articles including Live Updates, Contact information, and Refundable Tickets Information\n\nThe page was accessed after passing Cloudflare human verification.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

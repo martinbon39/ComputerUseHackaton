@@ -1,0 +1,23 @@
+{
+  "domain": "vs_code",
+  "example_id": "7c4cc09e-7a92-40dd-8338-b2286535c4ed",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 18,
+  "answer": "The task of changing VS Code's display language to Arabic without using extensions is **not possible**.\n\n**Reason:** Arabic (العربية) is not available as a built-in display language in Visual Studio Code. The complete list of native display languages in VS Code includes:\n\n- English (en)\n- Chinese (Simplified) (zh-cn)\n- Japanese (ja)\n- Spanish (es)\n- Portuguese (Brazil) (pt-br)\n- Russian (ru)\n- Korean (ko)\n- French (fr)\n- German (de)\n- Chinese (Traditional) (zh-tw)\n- Italian (it)\n- Polish (pl)\n- Czech (cs)\n- Hungarian (hu)\n- Bulgarian (bg)\n- Turkish (tr)\n\n**To use Arabic in VS Code, you would need to install the \"Arabic Language Pack\" extension** from the VS Code Extensions marketplace. The task constraint of \"without using any extensions\" makes this goal unachievable.\n\nIf you'd like to proceed with installing the Arabic Language Pack extension, I can help with that instead.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "total_pairs": 97,
+  "cross_feasibility_pairs": 24,
+  "cross_feasibility_tasks": [
+    "enter-date",
+    "enter-password",
+    "login-user"
+  ],
+  "retained_pairs": 73,
+  "retained_tasks": [
+    "choose-list",
+    "click-option",
+    "enter-date",
+    "enter-password",
+    "enter-text",
+    "form-sequence",
+    "login-user",
+    "login-user-popup",
+    "multi-layouts",
+    "search-engine"
+  ],
+  "cross_pairs": [
+    {
+      "positive": "enter-date__s0__imp",
+      "control": "enter-date__s1",
+      "task": "enter-date",
+      "t": 8,
+      "positive_impossible": true,
+      "control_impossible": false
+    },
+    {
+      "positive": "enter-date__s0__imp",
+      "control": "enter-date__s2",
+      "task": "enter-date",
+      "t": 8,
+      "positive_impossible": true,
+      "control_impossible": false
+    },
+    {
+      "positive": "enter-date__s0__imp",
+      "control": "enter-date__s1",
+      "task": "enter-date",
+      "t": 9,
+      "positive_impossible": true,
+      "control_impossible": false
+    },
+    {
+      "positive": "enter-date__s0__imp",
+      "control": "enter-date__s2",
+      "task": "enter-date",
+      "t": 9,
+      "positive_impossible": true,
+      "control_impossible": false
+    },
+    {
+      "positive": "enter-date__s0__imp",
+      "control": "enter-date__s3",
+      "task": "enter-date",
+      "t": 9,
+      "positive_impossible": true,
+      "control_impossible": false
+    },
+    {
+      "positive": "enter-password__s0",
+      "control": "enter-password__s1__imp",
+      "task": "enter-password",
+      "t": 3,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s0",
+      "control": "enter-password__s2__imp",
+      "task": "enter-password",
+      "t": 3,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s0",
+      "control": "enter-password__s1__imp",
+      "task": "enter-password",
+      "t": 4,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s0",
+      "control": "enter-password__s2__imp",
+      "task": "enter-password",
+      "t": 4,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s0",
+      "control": "enter-password__s1__imp",
+      "task": "enter-password",
+      "t": 8,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s0",
+      "control": "enter-password__s2__imp",
+      "task": "enter-password",
+      "t": 8,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s2",
+      "control": "enter-password__s0__imp",
+      "task": "enter-password",
+      "t": 3,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s2",
+      "control": "enter-password__s1__imp",
+      "task": "enter-password",
+      "t": 3,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s2",
+      "control": "enter-password__s0__imp",
+      "task": "enter-password",
+      "t": 4,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s2",
+      "control": "enter-password__s1__imp",
+      "task": "enter-password",
+      "t": 4,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s2",
+      "control": "enter-password__s0__imp",
+      "task": "enter-password",
+      "t": 11,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s3",
+      "control": "enter-password__s0__imp",
+      "task": "enter-password",
+      "t": 5,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s3",
+      "control": "enter-password__s1__imp",
+      "task": "enter-password",
+      "t": 5,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s3",
+      "control": "enter-password__s2__imp",
+      "task": "enter-password",
+      "t": 5,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s3",
+      "control": "enter-password__s0__imp",
+      "task": "enter-password",
+      "t": 6,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s3",
+      "control": "enter-password__s1__imp",
+      "task": "enter-password",
+      "t": 6,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "enter-password__s3",
+      "control": "enter-password__s2__imp",
+      "task": "enter-password",
+      "t": 6,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "login-user__s3",
+      "control": "login-user__s1__imp",
+      "task": "login-user",
+      "t": 10,
+      "positive_impossible": false,
+      "control_impossible": true
+    },
+    {
+      "positive": "login-user__s3",
+      "control": "login-user__s2__imp",
+      "task": "login-user",
+      "t": 10,
+      "positive_impossible": false,
+      "control_impossible": true
+    }
+  ]
+}

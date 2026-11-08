@@ -1,0 +1,20 @@
+{
+  "domain": "vlc",
+  "example_id": "9195653c-f4aa-453d-aa95-787f6ccfaae9",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_qt_max_volume",
+  "finished_by_agent": true,
+  "steps": 14,
+  "answer": "The maximum volume limit in VLC has been successfully increased from 125% to 200%. This was accomplished by:\n\n1. Opening VLC preferences (Tools > Preferences)\n2. Switching to Advanced settings (All radio button)\n3. Navigating to Interface > Main interfaces > Qt\n4. Finding the \"Maximum Volume displayed\" setting\n5. Changing the value from 125 to 200\n6. Saving the changes\n\nYou can now enjoy movies with up to 200% volume in VLC, which should provide significantly louder audio than the previous 125% maximum limit.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

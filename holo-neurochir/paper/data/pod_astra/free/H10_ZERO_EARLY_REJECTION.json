@@ -1,0 +1,40 @@
+{
+  "utc": "2026-11-08T05:01:00.708938+00:00",
+  "source_sha256": "dcc7b8dda290d95e2e20acc4f4fef59f440f12449524d0107061f6e378ca92d5",
+  "metadata_verifier_sha256": "2f1e7d93995c3ecdc001138346740887e1eb9edf098883a7fd9f8e47da5ca3a6",
+  "rows": 51,
+  "bad_rows": [
+    {
+      "task_id": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+      "t": 3,
+      "seed": 4003,
+      "label": "fs-",
+      "error": null,
+      "truncated": true
+    },
+    {
+      "task_id": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+      "t": 0,
+      "seed": 4006,
+      "label": "healthy",
+      "error": null,
+      "truncated": true
+    },
+    {
+      "task_id": "chrome/b070486d-e161-459b-aa2b-ef442d973b92",
+      "t": 0,
+      "seed": 4002,
+      "label": "healthy",
+      "error": null,
+      "truncated": true
+    }
+  ],
+  "healthy_total": 16,
+  "healthy_unusable_from_raw_metadata": 2,
+  "maximum_candidate_healthy_successes": 14,
+  "paired_original_healthy_successes": 16,
+  "minimum_healthy_loss_percentage_points": 12.5,
+  "allowed_loss_percentage_points": 10,
+  "candidate_rejected_independently_of_remaining_semantics": true,
+  "semantic_audit": "still running; this is only a raw-metadata upper bound"
+}

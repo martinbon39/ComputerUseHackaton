@@ -1,0 +1,38 @@
+{
+  "registered_at": "2026-11-08T02:09:13.540783+00:00",
+  "arms": [
+    "original",
+    "broad_residual_p100",
+    "broad_residual_random100",
+    "broad_residual_p050",
+    "broad_residual_random050",
+    "broad_residual_p025",
+    "broad_residual_random025"
+  ],
+  "planned_calls_per_arm": 51,
+  "total_planned_calls": 357,
+  "seeds": [
+    7100,
+    7101,
+    7102,
+    7103,
+    7104,
+    7105,
+    7106,
+    7107
+  ],
+  "gui_settings": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "top_k": 20,
+    "thinking": true,
+    "reasoning_effort": "medium",
+    "max_tokens": 3072
+  },
+  "text_temperature": 0,
+  "production_harness_changed": false,
+  "iteration_cap": "one six-candidate dose family, at most one second mechanism; stop after two mechanisms without protected improvement",
+  "original_port": 8000,
+  "candidate_port": 8020,
+  "resource_difference": "kv cache 30G vs4G and gpuutil.40 vs.15; numerical sampling and model architecture options same"
+}

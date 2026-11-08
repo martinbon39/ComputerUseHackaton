@@ -1,0 +1,20 @@
+{
+  "domain": "thunderbird",
+  "example_id": "9bc3cc16-074a-45ac-9bdc-b2a362e1daf3",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_list",
+  "finished_by_agent": true,
+  "steps": 16,
+  "answer": "Both email files have been successfully backed up to ~/emails.bak:\n\n1. \"A Test E-mail - Anonym...\" (from Anonym Tester)\n2. \"歡迎使用新的 Outlook.com 帳戶...\" (from Outlook 小組)\n\nThe files are saved in .eml format as individual files in the backup directory.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

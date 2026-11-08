@@ -1,0 +1,23 @@
+{
+  "domain": "vs_code",
+  "example_id": "7c4cc09e-7a92-40dd-8338-b2286535c4ed",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 48,
+  "answer": "The task cannot be completed as specified. Arabic language support in Visual Studio Code requires installing the Arabic Language Pack extension, which contradicts the constraint of not using extensions.\n\nAfter exhaustive exploration of VS Code's built-in language options through:\n1. Settings UI search for 'display language' and 'locale'\n2. Direct editing of settings.json with \"locale\": \"ar\"\n3. Using the 'Configure Display Language' command from Command Palette\n4. Scrolling through the complete language selection dropdown\n\nThe available built-in display languages are: English, French, Chinese (Simplified/Traditional), Japanese, Spanish, Portuguese (Brazil), Russian, Korean, German, Italian, Polish, Czech, Hungarian, Bulgarian, and Turkish.\n\nArabic (العربية) is not included in VS Code's built-in language options. To use Arabic as the display language, the Arabic Language Pack extension must be installed from the VS Code Extensions marketplace, which violates the task constraint of not using extensions.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

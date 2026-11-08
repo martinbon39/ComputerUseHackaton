@@ -1,0 +1,20 @@
+{
+  "domain": "vlc",
+  "example_id": "8d9fd4e2-6fdb-46b0-b9b9-02f06495c62f",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_vlc_fullscreen",
+  "finished_by_agent": true,
+  "steps": 1,
+  "answer": "Fullscreen mode has been enabled in VLC. The video now fills the entire screen.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

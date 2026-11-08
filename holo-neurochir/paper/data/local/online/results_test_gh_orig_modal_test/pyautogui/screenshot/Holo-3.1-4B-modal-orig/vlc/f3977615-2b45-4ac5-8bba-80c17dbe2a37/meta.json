@@ -1,0 +1,20 @@
+{
+  "domain": "vlc",
+  "example_id": "f3977615-2b45-4ac5-8bba-80c17dbe2a37",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_one_instance_when_started_from_file",
+  "finished_by_agent": true,
+  "steps": 7,
+  "answer": "The problem has been solved! I disabled the 'Use only one instance when started from file manager' option in VLC's preferences (Tools > Preferences > Interface Settings > Playlist and Instances section). After saving this setting, you can now launch multiple independent VLC instances that can play videos simultaneously. To open additional instances, right-click the VLC icon in your dock and select 'New Window'. You'll notice two VLC cone icons in the top bar when multiple instances are running.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

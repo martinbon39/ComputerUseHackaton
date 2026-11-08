@@ -1,0 +1,23 @@
+{
+  "domain": "vs_code",
+  "example_id": "7c4cc09e-7a92-40dd-8338-b2286535c4ed",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 48,
+  "answer": "## Task Status: Infeasible as Specified\n\nI have thoroughly investigated VS Code's display language configuration options, but **changing the display language to Arabic without using extensions is not possible**.\n\n### Investigation Summary\n\n1. **Settings.json Configuration**: I added the locale property to settings.json with values \"ar\" and \"ar-SA\" (Arabic - Saudi Arabia), but neither value activated the Arabic interface after reloading the window.\n\n2. **Configure Display Language Command**: I accessed the official \"Configure Display Language\" command through the Command Palette, which opens an official language selection dropdown.\n\n3. **Complete Language List Verification**: I scrolled through the entire list of available built-in languages in VS Code. The complete list includes:\n   - English (currently installed)\n   - Chinese Simplified (Available)\n   - Japanese\n   - Spanish\n   - Portuguese (Brasil)\n   - Russian\n   - Korean\n   - French\n   - German\n   - Chinese Traditional\n   - Italian\n   - Polish\n   - Czech\n   - Hungarian\n   - Bulgarian\n   - Turkish\n\n**Arabic is NOT in this list.**\n\n### Why This Task Cannot Be Completed\n\nVS Code's Arabic language support is **not built-in**. It requires the **Arabic Language Pack extension** to be installed from the VS Code Marketplace. This is a fundamental limitation of VS Code's architecture - Arabic is only available through extensions, not as a native display language option.\n\n### Alternative Solution\n\nIf you're willing to use an extension, you can:\n1. Open the Extensions view (Ctrl+Shift+X)\n2. Search for \"Arabic Language Pack\"\n3. Install the official Microsoft Arabic Language Pack\n4. Reload VS Code when prompted\n\nHowever, this contradicts your stated constraint of \"without using any extensions.\"\n\n**Conclusion**: The task as specified cannot be completed because Arabic is not available as a built-in display language in VS Code.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

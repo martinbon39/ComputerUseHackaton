@@ -1,0 +1,23 @@
+{
+  "domain": "chrome",
+  "example_id": "ae78f875-5b98-4907-bbb5-9c737fc68c03",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 22,
+  "answer": "I've investigated the Google Search settings thoroughly, but I need to inform you that **Google has permanently removed the option to customize the number of search results per page**.\n\nAccording to the search results, Google has:\n- Permanently removed the option to customize search results per page\n- Defaults now strictly to **10 results per page**\n- Disabled legacy URL parameters (like &num=100) that previously allowed customization\n- This change affects all standard desktop and mobile views\n\nThe setting you're looking for no longer exists in Google's Search Settings interface. Unfortunately, this means I cannot complete your request to change the number of search results to 50, as this customization option has been permanently removed by Google.\n\nIf you need more results visible at once, your alternatives would be:\n1. Using Google's \"More results\" pagination feature\n2. Adjusting your browser settings to open more windows/tabs\n3. Using a different search engine that still offers this customization option\n4. Using advanced search operators to limit results more effectively",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

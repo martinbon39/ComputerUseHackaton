@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "59155008-fe71-45ec-8a8f-dc35497b6aa8",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_active_tab",
+  "finished_by_agent": true,
+  "steps": 22,
+  "answer": "The similar names to Carl listed on BabyCenter are: Henry, Charles, Jack, Mason, Owen, Theodore, Calvin, Arthur, Lee, Daniel, James, and Noah.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

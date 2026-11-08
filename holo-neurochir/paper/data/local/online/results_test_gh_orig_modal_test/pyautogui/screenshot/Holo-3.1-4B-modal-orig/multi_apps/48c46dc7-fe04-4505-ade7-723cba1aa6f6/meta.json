@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "48c46dc7-fe04-4505-ade7-723cba1aa6f6",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_list,is_expected_tabs",
+  "finished_by_agent": true,
+  "steps": 14,
+  "answer": "Workspace setup completed successfully. All components are ready:\n\n1. **Terminal**: Opened and navigated to `/home/user/Documents/Projects/OSWorld`\n2. **File Manager**: Opened and displaying OSWorld directory with contents (codes folder, meeting_notes.md, osworld.ics)\n3. **Chrome Browser - Tab 1**: GitHub homepage (github.com) loaded\n4. **Chrome Browser - Tab 2**: Python 3.15.2 documentation (docs.python.org) loaded\n\nAll four workspace elements are now open and accessible.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "verdict": "PASS",
+  "tensors": 724,
+  "language_formula_verified": 426,
+  "physically_changed": 338,
+  "preserved_policy_verified": 298,
+  "shards": 2,
+  "aux": 11,
+  "config_class": "Qwen3_5Config",
+  "processor_class": "Qwen3VLProcessor",
+  "artifact": "/dev/shm/merge_cua_b050",
+  "build_report": "/workspace/astra/astra-merge/cua_b050_build.json"
+}

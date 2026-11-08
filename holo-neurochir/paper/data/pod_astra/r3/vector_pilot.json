@@ -1,0 +1,166 @@
+{
+  "job": {
+    "name": "vector_pilot",
+    "rows": "pilot"
+  },
+  "repeat": 1.0,
+  "health": 0.75,
+  "parse": 1.0,
+  "n_loop": 4,
+  "n_healthy": 4,
+  "peak_reserved_gib": 4.220703125,
+  "results": [
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 6,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6955
+      },
+      "rep": 0,
+      "rng": 3226511984,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow indicator on the right side of the Kazakhstan text field\n</parameter>\n<parameter=x>\n855\n</parameter>\n<parameter=y>\n315\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 9.732235491275787
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 6,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6955
+      },
+      "rep": 1,
+      "rng": 3226511984,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow icon at the top of the dropdown list\n</parameter>\n<parameter=x>\n855\n</parameter>\n<parameter=y>\n290\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 9.732235491275787
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 6,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6955
+      },
+      "rep": 2,
+      "rng": 3226511984,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSmall downward chevron arrow on the right side of the Kazakhstan input field\n</parameter>\n<parameter=x>\n868\n</parameter>\n<parameter=y>\n315\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 9.732235491275787
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 6,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6955
+      },
+      "rep": 3,
+      "rng": 3226511984,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow icon on the right side of the Kazakhstan input field\n</parameter>\n<parameter=x>\n858\n</parameter>\n<parameter=y>\n308\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 9.732235491275787
+    },
+    {
+      "row": {
+        "run": "enter-date__s2",
+        "path": "/workspace/astra/data/train/enter-date__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 0,
+      "rng": 2515474560,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "I can see a date input field with placeholders \"mm/dd/yyyy\" and a \"Submit\" button. I need to enter \"01/12/2012\" into this field and submit it.\n\nFirst, I'll type the date \"01/12/2012\" into the date field. The field appears to be ready for input.\n\n<tool_call>\n<function=type_text>\n<parameter=text>\n01/12/2012\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 17.71389549970627
+    },
+    {
+      "row": {
+        "run": "enter-date__s2",
+        "path": "/workspace/astra/data/train/enter-date__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 1,
+      "rng": 2515474560,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nInput field with mm/dd/yyyy placeholder\n</parameter>\n<parameter=x>\n430\n</parameter>\n<parameter=y>\n356\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 17.71389549970627
+    },
+    {
+      "row": {
+        "run": "enter-date__s2",
+        "path": "/workspace/astra/data/train/enter-date__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 2,
+      "rng": 2515474560,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "The current view shows a date input field with format \"mm/dd/yyyy\" and a \"Submit\" button. This is the input interface we need to enter the date 01/12/2012. I'll proceed by typing the date into the field first, then clicking submit.\n\n<tool_call>\n<function=click>\n<parameter=element>\nDate input field with placeholder \"mm/dd/yyyy\"\n</parameter>\n<parameter=x>\n420\n</parameter>\n<parameter=y>\n350\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 17.71389549970627
+    },
+    {
+      "row": {
+        "run": "enter-date__s2",
+        "path": "/workspace/astra/data/train/enter-date__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 3,
+      "rng": 2515474560,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "I need to enter the date 01/12/2012 in a date input field with a \"Submit\" button. The current screenshot shows a date input field with placeholders \"mm/dd/yyyy\" and a \"Submit\" button below it.\n\nLet me start by entering the month code \"01\" into the first field.\n\n<tool_call>\n<function=click>\n<parameter=element>\nInput field with mm/dd/yyyy placeholder\n</parameter>\n<parameter=x>\n400\n</parameter>\n<parameter=y>\n350\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 17.71389549970627
+    }
+  ]
+}

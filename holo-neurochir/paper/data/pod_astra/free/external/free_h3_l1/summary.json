@@ -1,0 +1,156 @@
+{
+ "label": "free_h3_l1",
+ "seeds": [
+  4000,
+  4001,
+  4002,
+  4003,
+  4004,
+  4005,
+  4006,
+  4007
+ ],
+ "request_settings": {
+  "temperature": 0.8,
+  "top_p": 0.9,
+  "top_k": 20,
+  "max_tokens": 3072,
+  "reasoning_effort": "medium",
+  "enable_thinking": true,
+  "structured_outputs": "holo_agent step schema (build_schema(make_step_model(TOOLS)))",
+  "seed": "per request",
+  "text_prompts": {
+   "temperature": 0.0,
+   "max_tokens": 512,
+   "enable_thinking": true,
+   "top_p": 1.0,
+   "top_k": -1,
+   "seed": 0
+  }
+ },
+ "provenance": {
+  "utc": "2026-11-08T01:15:38.215741+00:00",
+  "cohort_sha256": "8a3e65b6e6fa3e11ad04e196693e19460cca860b52bc1b2ee723c879c07b4fb1",
+  "source_sha256": {
+   "/tmp/astra-free-work/external_probe.py": "ff3568556f27da6edd2f924bb2ac3c19be58d00472932436c5f8245238505861",
+   "/tmp/astra-free-work/probe_answer_rate.py": "5a1d7683fc0ced3fd936831f978597ddaba80b77d4c7266d389a3545fcebf806",
+   "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/holo/osw_replay.py": "459b9a4ebcedaffdb8c4b3c12854993805cf6cfb9c3b8441ce749a8cf6487cba",
+   "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/holo/osw_taxonomy.py": "73471881652ea5729c4bb628f0b307aa73b3359e67d118cf4a9f8ec329c11a85",
+   "/home/orbit/osw/rtg/Agent/holo_agent/tools.py": "cfc19d67ee03222ecf8dbfbba9d7c0829018dae4092b6caa6b57db0868871141"
+  },
+  "schema_sha256": "16409e28c825ef787ae55ab13fdcb49f4b4f91c5274b98d2f36ae6cdff551304",
+  "client_versions": {
+   "openai": "3.46.0",
+   "pydantic": "2.14.3",
+   "transformers": "4.35.2"
+  },
+  "request_settings": {
+   "temperature": 0.8,
+   "top_p": 0.9,
+   "top_k": 20,
+   "max_tokens": 3072,
+   "reasoning_effort": "medium",
+   "enable_thinking": true,
+   "structured_outputs": "holo_agent step schema (build_schema(make_step_model(TOOLS)))",
+   "seed": "per request",
+   "text_prompts": {
+    "temperature": 0.0,
+    "max_tokens": 512,
+    "enable_thinking": true,
+    "top_p": 1.0,
+    "top_k": -1,
+    "seed": 0
+   }
+  },
+  "jobs": 51,
+  "heldout_allowed": false,
+  "servers": [
+   {
+    "url": "https://martinbon39--holo-vllm-serve.us-east.modal.run/v1",
+    "model": "Holo-3.1-4B-free_h3_l1",
+    "vllm_version": "0.23.0",
+    "models": [
+     {
+      "id": "Holo-3.1-4B-free_h3_l1",
+      "root": "/models/ckpt/free_h3_l1"
+     }
+    ]
+   }
+  ]
+ },
+ "servers": [
+  {
+   "url": "https://martinbon39--holo-vllm-serve.us-east.modal.run/v1",
+   "model": "Holo-3.1-4B-free_h3_l1",
+   "vllm_version": "0.23.0",
+   "models": [
+    {
+     "id": "Holo-3.1-4B-free_h3_l1",
+     "root": "/models/ckpt/free_h3_l1"
+    }
+   ]
+  }
+ ],
+ "per_row": {
+  "Holo-3.1-4B-free_h3_l1 | fs+ | chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381@4": {
+   "answer": 3,
+   "valid_nonanswer": 0,
+   "invalid": 5,
+   "error": 0,
+   "n": 8
+  },
+  "Holo-3.1-4B-free_h3_l1 | fs+ | chrome/47543840-672a-467d-80df-8f7c3b9788c9@13": {
+   "answer": 0,
+   "valid_nonanswer": 0,
+   "invalid": 8,
+   "error": 0,
+   "n": 8
+  },
+  "Holo-3.1-4B-free_h3_l1 | fs- | chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217@3": {
+   "answer": 2,
+   "valid_nonanswer": 0,
+   "invalid": 6,
+   "error": 0,
+   "n": 8
+  },
+  "Holo-3.1-4B-free_h3_l1 | fs- | chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3@3": {
+   "answer": 1,
+   "valid_nonanswer": 0,
+   "invalid": 7,
+   "error": 0,
+   "n": 8
+  },
+  "Holo-3.1-4B-free_h3_l1 | healthy | chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217@0": {
+   "answer": 0,
+   "valid_nonanswer": 5,
+   "invalid": 3,
+   "error": 0,
+   "n": 8
+  },
+  "Holo-3.1-4B-free_h3_l1 | healthy | chrome/b070486d-e161-459b-aa2b-ef442d973b92@0": {
+   "answer": 0,
+   "valid_nonanswer": 3,
+   "invalid": 5,
+   "error": 0,
+   "n": 8
+  }
+ },
+ "text_controls": [
+  {
+   "prompt": "Say hi.",
+   "error": null,
+   "truncated": true
+  },
+  {
+   "prompt": "What is 2 + 2?",
+   "error": null,
+   "truncated": true
+  },
+  {
+   "prompt": "What is the capital of France?",
+   "error": null,
+   "truncated": false
+  }
+ ],
+ "source_unchanged": true
+}

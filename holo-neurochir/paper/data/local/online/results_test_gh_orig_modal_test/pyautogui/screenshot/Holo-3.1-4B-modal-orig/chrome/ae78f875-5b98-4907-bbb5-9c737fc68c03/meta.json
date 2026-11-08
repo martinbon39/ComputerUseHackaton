@@ -1,0 +1,23 @@
+{
+  "domain": "chrome",
+  "example_id": "ae78f875-5b98-4907-bbb5-9c737fc68c03",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 49,
+  "answer": "After extensive exploration of Google Search settings, I was unable to find an option to change the number of search results displayed per page to 50. \n\nI searched through the following locations:\n1. **Privacy & Safety section** - Contains Search customization and SafeSearch options, but no results per page setting\n2. **Other settings section** - Contains Language & region and Desktop settings (Dark theme, Results in a new window, Spoken answers, Autocomplete with trending searches), but no results per page setting\n3. **Language & region sub-section** - Contains Display language and Results language & region options only\n4. **Google Search Help documentation** - Searched for \"results per page\" and \"Google search settings 50 results per page\" but no relevant articles were found\n\nIt appears that Google has removed or relocated this setting from the standard user interface. The number of search results per page setting is not currently available in the Google Search settings page (google.com/preferences).\n\n**Alternative approaches that might work:**\n- Some browsers allow modifying search result counts through advanced search parameters (e.g., adding `&num=50` to search URLs)\n- Browser extensions can sometimes modify search result displays\n- Google may have temporarily removed this setting from the user interface\n\nIf you need to search with 50 results per page, you may need to use search engines that still support this parameter or consider using browser extensions designed to modify search result displays.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

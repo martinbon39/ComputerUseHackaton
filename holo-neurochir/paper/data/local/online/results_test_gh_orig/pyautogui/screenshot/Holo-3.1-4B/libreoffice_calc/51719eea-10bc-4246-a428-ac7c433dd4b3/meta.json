@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "51719eea-10bc-4246-a428-ac7c433dd4b3",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 35,
+  "answer": "Task completed successfully. \n\n**Sheet1 - Revenue Column:**\n- Added Revenue column (G) with header \"Revenue\"\n- Formula used: `=VLOOKUP(C2,'Retail Price'.A:B,2,0)*E2*(1-F2)`\n- This calculates: Price (from Retail Price sheet) × Quantity × (1 - Discount)\n- Revenue calculated for all 35 data rows\n\n**Pivot Table (Sheet: Pivot Table_Sheet1_1):**\n- Configured with Product in Row Fields and Sum - Revenue in Data Fields\n- Shows total revenue for each of 14 products:\n  - Quad: 3233.713\n  - Aspen: 2262.913\n  - Fire Aspen: 1344.75\n  - Crested Beaut: 651.585\n  - Bellen: 173.575\n  - Sunshine: 565.08\n  - Sunspot: 560\n  - Manu LD: 1000\n  - Manu MTA: 117.72\n  - Bower Aussie Round: 258\n  - Yanaki: 590.3675\n  - GelFast: 24\n  - Fun Fly: 508.215\n  - Carlota Doublers: 258 (combined with Carlota D)\n- **Total Revenue: 12985.17**\n\nFile saved as BoomerangSales.xlsx",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

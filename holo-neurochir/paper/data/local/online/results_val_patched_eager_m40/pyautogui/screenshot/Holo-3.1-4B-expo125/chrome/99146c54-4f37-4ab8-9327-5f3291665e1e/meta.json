@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "99146c54-4f37-4ab8-9327-5f3291665e1e",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "exact_match",
+  "finished_by_agent": true,
+  "steps": 15,
+  "answer": "Successfully configured Chrome to automatically delete browsing data when closing the browser.\n\n**Setting Applied:** On-device site data → Default behaviour → \"Delete data sites that have been saved to your device when you close all windows\"\n\n**What this does:**\n- Automatically clears cookies, site data, and browsing data when all Chrome windows are closed\n- Sites will work normally during browsing sessions\n- You will be signed out of most websites when you close Chrome (except Google Account if you're signed in)\n- This setting applies to all sites by default\n\nThe configuration is now active and will take effect the next time you close all Chrome windows.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

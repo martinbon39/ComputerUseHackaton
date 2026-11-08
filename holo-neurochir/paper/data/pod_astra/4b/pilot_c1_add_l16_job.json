@@ -1,0 +1,26 @@
+{
+  "name": "pilot_c1_add_l16",
+  "kind": "generation",
+  "manifest": "/workspace/astra/4b/manifest_v2.json",
+  "indices": [
+    1,
+    50,
+    0,
+    36,
+    30,
+    29
+  ],
+  "seed": 4000,
+  "cooldown_seconds": 30,
+  "tooling_only": true,
+  "early_reject_protection": true,
+  "phase": "screen",
+  "intervention": {
+    "mode": "addition",
+    "directions": "/workspace/astra/4b/pilot_prepared_v1/resid_matched_fold-1.npz",
+    "layers": [
+      16
+    ],
+    "alpha": -1.2008471488952637
+  }
+}

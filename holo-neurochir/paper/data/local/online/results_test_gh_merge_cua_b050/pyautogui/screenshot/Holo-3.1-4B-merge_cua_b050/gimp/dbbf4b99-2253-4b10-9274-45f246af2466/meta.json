@@ -1,0 +1,23 @@
+{
+  "domain": "gimp",
+  "example_id": "dbbf4b99-2253-4b10-9274-45f246af2466",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 7,
+  "answer": "The task is infeasible. GIMP cannot convert the RAW image to JPEG because GIMP lacks built-in RAW loader functionality. Opening the RAW file '/home/user/Desktop/yicun.raw' in GIMP produces the error: 'There is no RAW loader installed to open Raw Pentax PEF files.' GIMP requires either darktable (≥1.7) or RawTherapee (≥5.2) to load RAW files. Since the task requires using GIMP only, and GIMP cannot open or process RAW files without these external dependencies, the conversion cannot be performed within GIMP alone.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

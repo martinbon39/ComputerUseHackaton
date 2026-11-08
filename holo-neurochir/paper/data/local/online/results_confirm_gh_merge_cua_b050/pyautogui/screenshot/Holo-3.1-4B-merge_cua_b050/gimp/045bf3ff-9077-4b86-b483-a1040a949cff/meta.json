@@ -1,0 +1,23 @@
+{
+  "domain": "gimp",
+  "example_id": "045bf3ff-9077-4b86-b483-a1040a949cff",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 17,
+  "answer": "GIMP cannot convert images to CMYK mode. GIMP is fundamentally an RGB-based image editor and does not have native CMYK color mode support. After exploring the Image menu options (Mode, Color Management, and Image Properties), no CMYK conversion capability was found.\n\nTo convert your image to CMYK mode, you would need to use alternative software such as:\n- Adobe Photoshop\n- Affinity Photo\n- GIMP with the Separate+ plugin (if installed)\n- Online CMYK conversion tools\n- Inkscape with appropriate color management settings\n\nWould you like me to help you with any other image editing tasks that GIMP can perform?",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

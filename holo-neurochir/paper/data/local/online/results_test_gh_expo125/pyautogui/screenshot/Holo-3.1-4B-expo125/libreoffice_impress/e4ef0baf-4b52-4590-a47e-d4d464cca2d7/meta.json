@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "e4ef0baf-4b52-4590-a47e-d4d464cca2d7",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files,compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 22,
+  "answer": "Task completed successfully. Both requirements have been fulfilled:\n\n1. **Slide 3 - Picture Height**: The picture of three people has been resized to exactly 20.00 cm height (verified in Position and Size section of Properties panel).\n\n2. **Slide 6 - Textbox Font Sizes**: All textboxes on slide 6 have been changed to 40pt font size (verified by selecting all 12 drawing objects and changing the Font Size field in the Character section from 18pt to 40pt).\n\nThe presentation has been saved with Ctrl+S to persist all changes.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

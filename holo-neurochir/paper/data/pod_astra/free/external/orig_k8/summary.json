@@ -1,0 +1,63 @@
+{
+ "label": "orig",
+ "seeds": [
+  4000,
+  4001,
+  4002,
+  4003,
+  4004,
+  4005,
+  4006,
+  4007
+ ],
+ "servers": [
+  [
+   "http://127.0.0.1:8000/v1",
+   "Holo-3.1-4B"
+  ]
+ ],
+ "per_row": {
+  "Holo-3.1-4B | fs+ | chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381@4": {
+   "answer": 8,
+   "valid_nonanswer": 0,
+   "invalid": 0,
+   "error": 0,
+   "n": 8
+  },
+  "Holo-3.1-4B | fs+ | chrome/47543840-672a-467d-80df-8f7c3b9788c9@13": {
+   "answer": 8,
+   "valid_nonanswer": 0,
+   "invalid": 0,
+   "error": 0,
+   "n": 8
+  },
+  "Holo-3.1-4B | fs- | chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217@3": {
+   "answer": 8,
+   "valid_nonanswer": 0,
+   "invalid": 0,
+   "error": 0,
+   "n": 8
+  },
+  "Holo-3.1-4B | fs- | chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3@3": {
+   "answer": 7,
+   "valid_nonanswer": 1,
+   "invalid": 0,
+   "error": 0,
+   "n": 8
+  },
+  "Holo-3.1-4B | healthy | chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217@0": {
+   "answer": 0,
+   "valid_nonanswer": 8,
+   "invalid": 0,
+   "error": 0,
+   "n": 8
+  },
+  "Holo-3.1-4B | healthy | chrome/b070486d-e161-459b-aa2b-ef442d973b92@0": {
+   "answer": 0,
+   "valid_nonanswer": 8,
+   "invalid": 0,
+   "error": 0,
+   "n": 8
+  }
+ }
+}

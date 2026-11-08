@@ -1,0 +1,23 @@
+{
+  "domain": "chrome",
+  "example_id": "3720f614-37fd-4d04-8a6b-76f54f8c222d",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 8,
+  "answer": "The task is infeasible. Xenothian is not available as a built-in language option in Google Chrome. After navigating to Chrome Settings > Languages > Add languages and searching for 'Xenothian', no results were returned. Chrome only supports real-world languages that have actual language packs in its built-in settings. Xenothian (being a fictional language from Atlantis) is not among the supported interface languages. To change Chrome's interface language, you would need to select from the available real languages in the Add languages dialog, or install a custom language pack (which would require steps beyond Chrome's built-in settings as specified in the task).",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

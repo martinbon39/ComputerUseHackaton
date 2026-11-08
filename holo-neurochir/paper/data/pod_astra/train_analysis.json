@@ -1,0 +1,1176 @@
+{
+  "runs": [
+    {
+      "run": "choose-list__s0",
+      "seed": 0,
+      "task": "choose-list",
+      "success": true,
+      "steps": 7
+    },
+    {
+      "run": "choose-list__s1",
+      "seed": 1,
+      "task": "choose-list",
+      "success": false,
+      "steps": 8
+    },
+    {
+      "run": "choose-list__s2",
+      "seed": 2,
+      "task": "choose-list",
+      "success": false,
+      "steps": 8
+    },
+    {
+      "run": "choose-list__s3",
+      "seed": 3,
+      "task": "choose-list",
+      "success": true,
+      "steps": 5
+    },
+    {
+      "run": "choose-list__s4",
+      "seed": 4,
+      "task": "choose-list",
+      "success": false,
+      "steps": 8
+    },
+    {
+      "run": "click-button-sequence__s0",
+      "seed": 0,
+      "task": "click-button-sequence",
+      "success": false,
+      "steps": 3
+    },
+    {
+      "run": "click-button-sequence__s1",
+      "seed": 1,
+      "task": "click-button-sequence",
+      "success": false,
+      "steps": 2
+    },
+    {
+      "run": "click-button-sequence__s2",
+      "seed": 2,
+      "task": "click-button-sequence",
+      "success": false,
+      "steps": 3
+    },
+    {
+      "run": "click-button-sequence__s3",
+      "seed": 3,
+      "task": "click-button-sequence",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "click-button-sequence__s4",
+      "seed": 4,
+      "task": "click-button-sequence",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "click-button__s0__imp",
+      "seed": 0,
+      "task": "click-button",
+      "success": false,
+      "steps": 6
+    },
+    {
+      "run": "click-button__s1__imp",
+      "seed": 1,
+      "task": "click-button",
+      "success": false,
+      "steps": 6
+    },
+    {
+      "run": "click-button__s2__imp",
+      "seed": 2,
+      "task": "click-button",
+      "success": false,
+      "steps": 6
+    },
+    {
+      "run": "click-checkboxes-soft__s0",
+      "seed": 0,
+      "task": "click-checkboxes-soft",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "click-checkboxes-soft__s1",
+      "seed": 1,
+      "task": "click-checkboxes-soft",
+      "success": false,
+      "steps": 6
+    },
+    {
+      "run": "click-checkboxes-soft__s2",
+      "seed": 2,
+      "task": "click-checkboxes-soft",
+      "success": true,
+      "steps": 4
+    },
+    {
+      "run": "click-checkboxes-soft__s3",
+      "seed": 3,
+      "task": "click-checkboxes-soft",
+      "success": true,
+      "steps": 3
+    },
+    {
+      "run": "click-checkboxes__s0",
+      "seed": 0,
+      "task": "click-checkboxes",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "click-checkboxes__s0__imp",
+      "seed": 0,
+      "task": "click-checkboxes",
+      "success": false,
+      "steps": 10
+    },
+    {
+      "run": "click-checkboxes__s1",
+      "seed": 1,
+      "task": "click-checkboxes",
+      "success": false,
+      "steps": 10
+    },
+    {
+      "run": "click-checkboxes__s1__imp",
+      "seed": 1,
+      "task": "click-checkboxes",
+      "success": false,
+      "steps": 6
+    },
+    {
+      "run": "click-checkboxes__s2",
+      "seed": 2,
+      "task": "click-checkboxes",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "click-checkboxes__s2__imp",
+      "seed": 2,
+      "task": "click-checkboxes",
+      "success": false,
+      "steps": 3
+    },
+    {
+      "run": "click-checkboxes__s3",
+      "seed": 3,
+      "task": "click-checkboxes",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "click-checkboxes__s4",
+      "seed": 4,
+      "task": "click-checkboxes",
+      "success": true,
+      "steps": 4
+    },
+    {
+      "run": "click-checkboxes__s5",
+      "seed": 5,
+      "task": "click-checkboxes",
+      "success": true,
+      "steps": 3
+    },
+    {
+      "run": "click-collapsible__s0",
+      "seed": 0,
+      "task": "click-collapsible",
+      "success": false,
+      "steps": 1
+    },
+    {
+      "run": "click-collapsible__s1",
+      "seed": 1,
+      "task": "click-collapsible",
+      "success": false,
+      "steps": 1
+    },
+    {
+      "run": "click-collapsible__s2",
+      "seed": 2,
+      "task": "click-collapsible",
+      "success": false,
+      "steps": 1
+    },
+    {
+      "run": "click-collapsible__s3",
+      "seed": 3,
+      "task": "click-collapsible",
+      "success": false,
+      "steps": 1
+    },
+    {
+      "run": "click-collapsible__s4",
+      "seed": 4,
+      "task": "click-collapsible",
+      "success": false,
+      "steps": 1
+    },
+    {
+      "run": "click-dialog-2__s0",
+      "seed": 0,
+      "task": "click-dialog-2",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-dialog-2__s1",
+      "seed": 1,
+      "task": "click-dialog-2",
+      "success": false,
+      "steps": 1
+    },
+    {
+      "run": "click-dialog-2__s2",
+      "seed": 2,
+      "task": "click-dialog-2",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-dialog-2__s3",
+      "seed": 3,
+      "task": "click-dialog-2",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-dialog-2__s4",
+      "seed": 4,
+      "task": "click-dialog-2",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-dialog-2__s5",
+      "seed": 5,
+      "task": "click-dialog-2",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-link__s0__imp",
+      "seed": 0,
+      "task": "click-link",
+      "success": false,
+      "steps": 2
+    },
+    {
+      "run": "click-link__s1__imp",
+      "seed": 1,
+      "task": "click-link",
+      "success": false,
+      "steps": 6
+    },
+    {
+      "run": "click-link__s2__imp",
+      "seed": 2,
+      "task": "click-link",
+      "success": false,
+      "steps": 1
+    },
+    {
+      "run": "click-menu__s0",
+      "seed": 0,
+      "task": "click-menu",
+      "success": false,
+      "steps": 1
+    },
+    {
+      "run": "click-menu__s1",
+      "seed": 1,
+      "task": "click-menu",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-menu__s2",
+      "seed": 2,
+      "task": "click-menu",
+      "success": false,
+      "steps": 1
+    },
+    {
+      "run": "click-menu__s3",
+      "seed": 3,
+      "task": "click-menu",
+      "success": false,
+      "steps": 1
+    },
+    {
+      "run": "click-menu__s4",
+      "seed": 4,
+      "task": "click-menu",
+      "success": false,
+      "steps": 1
+    },
+    {
+      "run": "click-option__s0",
+      "seed": 0,
+      "task": "click-option",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "click-option__s0__imp",
+      "seed": 0,
+      "task": "click-option",
+      "success": false,
+      "steps": 8
+    },
+    {
+      "run": "click-option__s1",
+      "seed": 1,
+      "task": "click-option",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "click-option__s1__imp",
+      "seed": 1,
+      "task": "click-option",
+      "success": false,
+      "steps": 3
+    },
+    {
+      "run": "click-option__s2",
+      "seed": 2,
+      "task": "click-option",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "click-option__s2__imp",
+      "seed": 2,
+      "task": "click-option",
+      "success": false,
+      "steps": 8
+    },
+    {
+      "run": "click-option__s3",
+      "seed": 3,
+      "task": "click-option",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "click-option__s4",
+      "seed": 4,
+      "task": "click-option",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "click-tab-2__s0",
+      "seed": 0,
+      "task": "click-tab-2",
+      "success": false,
+      "steps": 10
+    },
+    {
+      "run": "click-tab-2__s1",
+      "seed": 1,
+      "task": "click-tab-2",
+      "success": false,
+      "steps": 10
+    },
+    {
+      "run": "click-tab-2__s2",
+      "seed": 2,
+      "task": "click-tab-2",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "click-tab-2__s3",
+      "seed": 3,
+      "task": "click-tab-2",
+      "success": false,
+      "steps": 5
+    },
+    {
+      "run": "click-tab-2__s4",
+      "seed": 4,
+      "task": "click-tab-2",
+      "success": false,
+      "steps": 3
+    },
+    {
+      "run": "click-tab__s0",
+      "seed": 0,
+      "task": "click-tab",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-tab__s1",
+      "seed": 1,
+      "task": "click-tab",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-tab__s2",
+      "seed": 2,
+      "task": "click-tab",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-tab__s3",
+      "seed": 3,
+      "task": "click-tab",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-tab__s4",
+      "seed": 4,
+      "task": "click-tab",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-tab__s5",
+      "seed": 5,
+      "task": "click-tab",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-widget__s0",
+      "seed": 0,
+      "task": "click-widget",
+      "success": false,
+      "steps": 1
+    },
+    {
+      "run": "click-widget__s1",
+      "seed": 1,
+      "task": "click-widget",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-widget__s2",
+      "seed": 2,
+      "task": "click-widget",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-widget__s3",
+      "seed": 3,
+      "task": "click-widget",
+      "success": true,
+      "steps": 3
+    },
+    {
+      "run": "click-widget__s4",
+      "seed": 4,
+      "task": "click-widget",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "click-widget__s5",
+      "seed": 5,
+      "task": "click-widget",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "email-inbox-delete__s0",
+      "seed": 0,
+      "task": "email-inbox-delete",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "email-inbox-delete__s1",
+      "seed": 1,
+      "task": "email-inbox-delete",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "email-inbox-delete__s2",
+      "seed": 2,
+      "task": "email-inbox-delete",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "email-inbox-delete__s3",
+      "seed": 3,
+      "task": "email-inbox-delete",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "email-inbox-delete__s4",
+      "seed": 4,
+      "task": "email-inbox-delete",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "enter-date__s0",
+      "seed": 0,
+      "task": "enter-date",
+      "success": false,
+      "steps": 6
+    },
+    {
+      "run": "enter-date__s0__imp",
+      "seed": 0,
+      "task": "enter-date",
+      "success": false,
+      "steps": 10
+    },
+    {
+      "run": "enter-date__s1",
+      "seed": 1,
+      "task": "enter-date",
+      "success": false,
+      "steps": 10
+    },
+    {
+      "run": "enter-date__s1__imp",
+      "seed": 1,
+      "task": "enter-date",
+      "success": false,
+      "steps": 10
+    },
+    {
+      "run": "enter-date__s2",
+      "seed": 2,
+      "task": "enter-date",
+      "success": false,
+      "steps": 10
+    },
+    {
+      "run": "enter-date__s3",
+      "seed": 3,
+      "task": "enter-date",
+      "success": false,
+      "steps": 10
+    },
+    {
+      "run": "enter-date__s4",
+      "seed": 4,
+      "task": "enter-date",
+      "success": false,
+      "steps": 2
+    },
+    {
+      "run": "enter-password__s0",
+      "seed": 0,
+      "task": "enter-password",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "enter-password__s0__imp",
+      "seed": 0,
+      "task": "enter-password",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "enter-password__s1",
+      "seed": 1,
+      "task": "enter-password",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "enter-password__s1__imp",
+      "seed": 1,
+      "task": "enter-password",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "enter-password__s2",
+      "seed": 2,
+      "task": "enter-password",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "enter-password__s2__imp",
+      "seed": 2,
+      "task": "enter-password",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "enter-password__s3",
+      "seed": 3,
+      "task": "enter-password",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "enter-password__s4",
+      "seed": 4,
+      "task": "enter-password",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "enter-text-2__s0",
+      "seed": 0,
+      "task": "enter-text-2",
+      "success": false,
+      "steps": 3
+    },
+    {
+      "run": "enter-text-2__s0__imp",
+      "seed": 0,
+      "task": "enter-text-2",
+      "success": false,
+      "steps": 4
+    },
+    {
+      "run": "enter-text-2__s1",
+      "seed": 1,
+      "task": "enter-text-2",
+      "success": false,
+      "steps": 4
+    },
+    {
+      "run": "enter-text-2__s1__imp",
+      "seed": 1,
+      "task": "enter-text-2",
+      "success": false,
+      "steps": 4
+    },
+    {
+      "run": "enter-text-2__s2",
+      "seed": 2,
+      "task": "enter-text-2",
+      "success": false,
+      "steps": 3
+    },
+    {
+      "run": "enter-text-2__s2__imp",
+      "seed": 2,
+      "task": "enter-text-2",
+      "success": false,
+      "steps": 4
+    },
+    {
+      "run": "enter-text-2__s3",
+      "seed": 3,
+      "task": "enter-text-2",
+      "success": false,
+      "steps": 8
+    },
+    {
+      "run": "enter-text-2__s4",
+      "seed": 4,
+      "task": "enter-text-2",
+      "success": true,
+      "steps": 4
+    },
+    {
+      "run": "enter-text-2__s5",
+      "seed": 5,
+      "task": "enter-text-2",
+      "success": true,
+      "steps": 5
+    },
+    {
+      "run": "enter-text__s0__imp",
+      "seed": 0,
+      "task": "enter-text",
+      "success": false,
+      "steps": 8
+    },
+    {
+      "run": "enter-text__s1__imp",
+      "seed": 1,
+      "task": "enter-text",
+      "success": false,
+      "steps": 8
+    },
+    {
+      "run": "enter-text__s2__imp",
+      "seed": 2,
+      "task": "enter-text",
+      "success": false,
+      "steps": 4
+    },
+    {
+      "run": "focus-text-2__s0",
+      "seed": 0,
+      "task": "focus-text-2",
+      "success": false,
+      "steps": 2
+    },
+    {
+      "run": "focus-text-2__s1",
+      "seed": 1,
+      "task": "focus-text-2",
+      "success": false,
+      "steps": 6
+    },
+    {
+      "run": "focus-text-2__s2",
+      "seed": 2,
+      "task": "focus-text-2",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "focus-text-2__s3",
+      "seed": 3,
+      "task": "focus-text-2",
+      "success": true,
+      "steps": 3
+    },
+    {
+      "run": "focus-text-2__s4",
+      "seed": 4,
+      "task": "focus-text-2",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "form-sequence__s0",
+      "seed": 0,
+      "task": "form-sequence",
+      "success": false,
+      "steps": 10
+    },
+    {
+      "run": "form-sequence__s1",
+      "seed": 1,
+      "task": "form-sequence",
+      "success": false,
+      "steps": 3
+    },
+    {
+      "run": "form-sequence__s2",
+      "seed": 2,
+      "task": "form-sequence",
+      "success": false,
+      "steps": 5
+    },
+    {
+      "run": "form-sequence__s3",
+      "seed": 3,
+      "task": "form-sequence",
+      "success": true,
+      "steps": 8
+    },
+    {
+      "run": "form-sequence__s4",
+      "seed": 4,
+      "task": "form-sequence",
+      "success": false,
+      "steps": 8
+    },
+    {
+      "run": "login-user-popup__s0",
+      "seed": 0,
+      "task": "login-user-popup",
+      "success": false,
+      "steps": 14
+    },
+    {
+      "run": "login-user-popup__s1",
+      "seed": 1,
+      "task": "login-user-popup",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "login-user-popup__s2",
+      "seed": 2,
+      "task": "login-user-popup",
+      "success": false,
+      "steps": 14
+    },
+    {
+      "run": "login-user-popup__s3",
+      "seed": 3,
+      "task": "login-user-popup",
+      "success": false,
+      "steps": 5
+    },
+    {
+      "run": "login-user-popup__s4",
+      "seed": 4,
+      "task": "login-user-popup",
+      "success": false,
+      "steps": 14
+    },
+    {
+      "run": "login-user__s0",
+      "seed": 0,
+      "task": "login-user",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "login-user__s0__imp",
+      "seed": 0,
+      "task": "login-user",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "login-user__s1",
+      "seed": 1,
+      "task": "login-user",
+      "success": false,
+      "steps": 5
+    },
+    {
+      "run": "login-user__s1__imp",
+      "seed": 1,
+      "task": "login-user",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "login-user__s2",
+      "seed": 2,
+      "task": "login-user",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "login-user__s2__imp",
+      "seed": 2,
+      "task": "login-user",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "login-user__s3",
+      "seed": 3,
+      "task": "login-user",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "login-user__s4",
+      "seed": 4,
+      "task": "login-user",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "multi-layouts__s0",
+      "seed": 0,
+      "task": "multi-layouts",
+      "success": false,
+      "steps": 14
+    },
+    {
+      "run": "multi-layouts__s1",
+      "seed": 1,
+      "task": "multi-layouts",
+      "success": false,
+      "steps": 7
+    },
+    {
+      "run": "multi-layouts__s2",
+      "seed": 2,
+      "task": "multi-layouts",
+      "success": true,
+      "steps": 7
+    },
+    {
+      "run": "multi-layouts__s3",
+      "seed": 3,
+      "task": "multi-layouts",
+      "success": false,
+      "steps": 14
+    },
+    {
+      "run": "multi-layouts__s4",
+      "seed": 4,
+      "task": "multi-layouts",
+      "success": false,
+      "steps": 14
+    },
+    {
+      "run": "navigate-tree__s0",
+      "seed": 0,
+      "task": "navigate-tree",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "navigate-tree__s1",
+      "seed": 1,
+      "task": "navigate-tree",
+      "success": false,
+      "steps": 3
+    },
+    {
+      "run": "navigate-tree__s2",
+      "seed": 2,
+      "task": "navigate-tree",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "navigate-tree__s3",
+      "seed": 3,
+      "task": "navigate-tree",
+      "success": true,
+      "steps": 1
+    },
+    {
+      "run": "navigate-tree__s4",
+      "seed": 4,
+      "task": "navigate-tree",
+      "success": true,
+      "steps": 2
+    },
+    {
+      "run": "search-engine__s0",
+      "seed": 0,
+      "task": "search-engine",
+      "success": false,
+      "steps": 4
+    },
+    {
+      "run": "search-engine__s1",
+      "seed": 1,
+      "task": "search-engine",
+      "success": false,
+      "steps": 8
+    },
+    {
+      "run": "search-engine__s2",
+      "seed": 2,
+      "task": "search-engine",
+      "success": false,
+      "steps": 14
+    },
+    {
+      "run": "search-engine__s3",
+      "seed": 3,
+      "task": "search-engine",
+      "success": false,
+      "steps": 14
+    },
+    {
+      "run": "search-engine__s4",
+      "seed": 4,
+      "task": "search-engine",
+      "success": false,
+      "steps": 14
+    },
+    {
+      "run": "social-media__s0",
+      "seed": 0,
+      "task": "social-media",
+      "success": false,
+      "steps": 10
+    },
+    {
+      "run": "social-media__s1",
+      "seed": 1,
+      "task": "social-media",
+      "success": false,
+      "steps": 3
+    },
+    {
+      "run": "social-media__s2",
+      "seed": 2,
+      "task": "social-media",
+      "success": false,
+      "steps": 10
+    },
+    {
+      "run": "social-media__s3",
+      "seed": 3,
+      "task": "social-media",
+      "success": false,
+      "steps": 2
+    },
+    {
+      "run": "social-media__s4",
+      "seed": 4,
+      "task": "social-media",
+      "success": false,
+      "steps": 1
+    },
+    {
+      "run": "use-autocomplete__s0",
+      "seed": 0,
+      "task": "use-autocomplete",
+      "success": true,
+      "steps": 3
+    },
+    {
+      "run": "use-autocomplete__s0__imp",
+      "seed": 0,
+      "task": "use-autocomplete",
+      "success": false,
+      "steps": 3
+    },
+    {
+      "run": "use-autocomplete__s1",
+      "seed": 1,
+      "task": "use-autocomplete",
+      "success": false,
+      "steps": 8
+    },
+    {
+      "run": "use-autocomplete__s1__imp",
+      "seed": 1,
+      "task": "use-autocomplete",
+      "success": false,
+      "steps": 3
+    },
+    {
+      "run": "use-autocomplete__s2",
+      "seed": 2,
+      "task": "use-autocomplete",
+      "success": false,
+      "steps": 12
+    },
+    {
+      "run": "use-autocomplete__s3",
+      "seed": 3,
+      "task": "use-autocomplete",
+      "success": true,
+      "steps": 6
+    },
+    {
+      "run": "use-autocomplete__s4",
+      "seed": 4,
+      "task": "use-autocomplete",
+      "success": false,
+      "steps": 12
+    }
+  ],
+  "fit_n": 228,
+  "fit_positive": 72,
+  "auc_cv_by_task": [
+    0.5395299145299146,
+    0.7141203703703702,
+    0.7237357549857549,
+    0.817218660968661,
+    0.7759081196581197,
+    0.7273860398860399,
+    0.8124109686609687,
+    0.822738603988604,
+    0.8152599715099715,
+    0.8674323361823362,
+    0.9042022792022791,
+    0.8429487179487181,
+    0.8768696581196582,
+    0.885505698005698,
+    0.8825676638176638,
+    0.8907585470085471,
+    0.8668091168091168,
+    0.8526531339031339,
+    0.8472222222222223,
+    0.8475783475783476,
+    0.8491809116809117,
+    0.8377849002849003,
+    0.8414351851851851,
+    0.8293269230769231
+  ],
+  "position_auc": 0.6860754985754987,
+  "context_auc": 0.7071314102564102,
+  "reference_layer": 10,
+  "residual_gap": [
+    7.773935794830322e-05,
+    0.0006866231560707092,
+    0.0012474022805690765,
+    0.005388617515563965,
+    0.004897736012935638,
+    0.009531758725643158,
+    0.010097622871398926,
+    0.015776842832565308,
+    0.024431228637695312,
+    0.055691853165626526,
+    0.1722879260778427,
+    0.11452151834964752,
+    0.10538642853498459,
+    0.14526763558387756,
+    0.12966857850551605,
+    0.1753106266260147,
+    0.1736670732498169,
+    0.19751374423503876,
+    0.2165525108575821,
+    0.22574016451835632,
+    0.2365243285894394,
+    0.2052394449710846,
+    0.2139441967010498,
+    0.18474364280700684
+  ],
+  "mlp_gap": [
+    0.00010310113430023193,
+    -4.7633424401283264e-05,
+    -0.0008457601070404053,
+    0.0017971694469451904,
+    -0.0037111900746822357,
+    0.0021249111741781235,
+    -0.00039850175380706787,
+    0.0013401173055171967,
+    0.0035902541130781174,
+    0.016451630741357803,
+    0.053856365382671356,
+    -0.04344090074300766,
+    -0.035748522728681564,
+    -0.0026251450181007385,
+    -0.030128419399261475,
+    0.0003998875617980957,
+    -0.02461961656808853,
+    -0.001424204558134079,
+    0.003295809030532837,
+    -0.007134668529033661,
+    0.00717606395483017,
+    -0.025333477184176445,
+    0.0022079646587371826,
+    0.039898693561553955
+  ],
+  "attention_gap_layers1_23": [
+    0.0006564892828464508,
+    0.0014065727591514587,
+    0.0023440197110176086,
+    0.0032203285954892635,
+    0.0025090649724006653,
+    0.0009643584489822388,
+    0.004339125007390976,
+    0.005064141005277634,
+    0.01480897143483162,
+    0.06273967772722244,
+    -0.014325478114187717,
+    0.026613421738147736,
+    0.04250630736351013,
+    0.014529364183545113,
+    0.04524216428399086,
+    0.022976122796535492,
+    0.025270843878388405,
+    0.015742864459753036,
+    0.016322430223226547,
+    0.0036080628633499146,
+    -0.005951393395662308,
+    0.006496787071228027,
+    -0.06909899413585663
+  ]
+}

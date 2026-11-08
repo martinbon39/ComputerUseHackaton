@@ -1,0 +1,53 @@
+{
+  "effects": [
+    {
+      "id": "fs_0",
+      "intervention": "original",
+      "margin": 16.875,
+      "change_from_original": 0.0
+    },
+    {
+      "id": "fs_0",
+      "intervention": "reason_only",
+      "margin": 7.625,
+      "change_from_original": -9.25
+    },
+    {
+      "id": "fs_0",
+      "intervention": "json_only",
+      "margin": 1.125,
+      "change_from_original": -15.75
+    },
+    {
+      "id": "fs_0",
+      "intervention": "reason_and_json",
+      "margin": -7.375,
+      "change_from_original": -24.25
+    },
+    {
+      "id": "fs_1",
+      "intervention": "original",
+      "margin": 18.375,
+      "change_from_original": 0.0
+    },
+    {
+      "id": "fs_1",
+      "intervention": "reason_only",
+      "margin": 11.125,
+      "change_from_original": -7.25
+    },
+    {
+      "id": "fs_1",
+      "intervention": "json_only",
+      "margin": -3.125,
+      "change_from_original": -21.5
+    },
+    {
+      "id": "fs_1",
+      "intervention": "reason_and_json",
+      "margin": -7.625,
+      "change_from_original": -26.0
+    }
+  ],
+  "scope": "Teacher-forced diagnostic only; observation/history fixed. Reasoning and serialized JSON prefix varied separately. A small effect is not evidence of no causal path."
+}

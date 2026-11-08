@@ -1,0 +1,1840 @@
+{
+  "job": {
+    "name": "random_all",
+    "direction": "random"
+  },
+  "complete": true,
+  "health_upper": 0.7291666666666666,
+  "repeat": 0.9583333333333334,
+  "health": 0.7291666666666666,
+  "parse": 1.0,
+  "n_loop": 48,
+  "n_healthy": 48,
+  "peak_reserved_gib": 6.017578125,
+  "results": [
+    {
+      "row": {
+        "run": "enter-date__s2",
+        "path": "/workspace/astra/data/train/enter-date__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 0,
+      "rng": 2515474560,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "I can see a date input field with mm/dd/yyyy format and a Submit button. I need to enter 01/12/2012 as the date. The most efficient approach is to first enter the month value 01, then the day 12, and finally the year 2012.\n\n<tool_call>\n<function=click>\n<parameter=element>\nMonth input field in the date entry box\n</parameter>\n<parameter=x>\n200\n</parameter>\n<parameter=y>\n356\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.8906054496765137
+    },
+    {
+      "row": {
+        "run": "enter-date__s2",
+        "path": "/workspace/astra/data/train/enter-date__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 1,
+      "rng": 2515474560,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nInput field with mm/dd/yyyy placeholder\n</parameter>\n<parameter=x>\n430\n</parameter>\n<parameter=y>\n356\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.8906054496765137
+    },
+    {
+      "row": {
+        "run": "enter-date__s2",
+        "path": "/workspace/astra/data/train/enter-date__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 2,
+      "rng": 2515474560,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "The current page shows a date input field with format mm/dd/yyy and a Submit button. This appears to be a date entry interface. To enter 01/12/2012 as the date, I need to first type the date into the input field, then click Submit. The input field is located at the top of the form. I will start by entering the date.\n\n<tool_call>\n<function=click>\n<parameter=element>\nDate input field with format mm/dd/yyyy\n</parameter>\n<parameter=x>\n400\n</parameter>\n<parameter=y>\n350\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.8906054496765137
+    },
+    {
+      "row": {
+        "run": "enter-date__s2",
+        "path": "/workspace/astra/data/train/enter-date__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 3,
+      "rng": 2515474560,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nInput field with placeholder text mm/dd/yyyy\n</parameter>\n<parameter=x>\n430\n</parameter>\n<parameter=y>\n350\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.8906054496765137
+    },
+    {
+      "row": {
+        "run": "search-engine__s3",
+        "path": "/workspace/astra/data/train/search-engine__s3",
+        "t": 6,
+        "seed": 3,
+        "task": "search-engine",
+        "label": "loop-",
+        "success": false,
+        "n_in": 7037
+      },
+      "rep": 0,
+      "rng": 3724201114,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nPage number 8 in pagination, located between 3 and the end of pagination\n</parameter>\n<parameter=x>\n390\n</parameter>\n<parameter=y>\n970\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4756568670272827
+    },
+    {
+      "row": {
+        "run": "search-engine__s3",
+        "path": "/workspace/astra/data/train/search-engine__s3",
+        "t": 6,
+        "seed": 3,
+        "task": "search-engine",
+        "label": "loop-",
+        "success": false,
+        "n_in": 7037
+      },
+      "rep": 1,
+      "rng": 3724201114,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nPage number 8 in pagination at the bottom showing '< 1 2 3 >'\n</parameter>\n<parameter=x>\n370\n</parameter>\n<parameter=y>\n965\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4756568670272827
+    },
+    {
+      "row": {
+        "run": "search-engine__s3",
+        "path": "/workspace/astra/data/train/search-engine__s3",
+        "t": 6,
+        "seed": 3,
+        "task": "search-engine",
+        "label": "loop-",
+        "success": false,
+        "n_in": 7037
+      },
+      "rep": 2,
+      "rng": 3724201114,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nPage number 8 at the bottom of the pagination controls '< 1 2 3 >'\n</parameter>\n<parameter=x>\n375\n</parameter>\n<parameter=y>\n970\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4756568670272827
+    },
+    {
+      "row": {
+        "run": "search-engine__s3",
+        "path": "/workspace/astra/data/train/search-engine__s3",
+        "t": 6,
+        "seed": 3,
+        "task": "search-engine",
+        "label": "loop-",
+        "success": false,
+        "n_in": 7037
+      },
+      "rep": 3,
+      "rng": 3724201114,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nPage number 8 in pagination at the bottom, between 3 and the end\n</parameter>\n<parameter=x>\n410\n</parameter>\n<parameter=y>\n970\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4756568670272827
+    },
+    {
+      "row": {
+        "run": "choose-list__s0",
+        "path": "/workspace/astra/data/train/choose-list__s0",
+        "t": 4,
+        "seed": 0,
+        "task": "choose-list",
+        "label": null,
+        "success": true,
+        "n_in": 6745
+      },
+      "rep": 0,
+      "rng": 2914136910,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nErtha text in the dropdown input field\n</parameter>\n<parameter=x>\n150\n</parameter>\n<parameter=y>\n325\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.40023624897003174
+    },
+    {
+      "row": {
+        "run": "choose-list__s0",
+        "path": "/workspace/astra/data/train/choose-list__s0",
+        "t": 4,
+        "seed": 0,
+        "task": "choose-list",
+        "label": null,
+        "success": true,
+        "n_in": 6745
+      },
+      "rep": 1,
+      "rng": 2914136910,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nErtha text inside the dropdown input field\n</parameter>\n<parameter=x>\n150\n</parameter>\n<parameter=y>\n320\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.40023624897003174
+    },
+    {
+      "row": {
+        "run": "choose-list__s0",
+        "path": "/workspace/astra/data/train/choose-list__s0",
+        "t": 4,
+        "seed": 0,
+        "task": "choose-list",
+        "label": null,
+        "success": true,
+        "n_in": 6745
+      },
+      "rep": 2,
+      "rng": 2914136910,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nErtha option in the expanded dropdown list\n</parameter>\n<parameter=x>\n150\n</parameter>\n<parameter=y>\n295\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.40023624897003174
+    },
+    {
+      "row": {
+        "run": "choose-list__s0",
+        "path": "/workspace/astra/data/train/choose-list__s0",
+        "t": 4,
+        "seed": 0,
+        "task": "choose-list",
+        "label": null,
+        "success": true,
+        "n_in": 6745
+      },
+      "rep": 3,
+      "rng": 2914136910,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below Ertha dropdown\n</parameter>\n<parameter=x>\n280\n</parameter>\n<parameter=y>\n450\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.40023624897003174
+    },
+    {
+      "row": {
+        "run": "enter-text__s2__imp",
+        "path": "/workspace/astra/data/train/enter-text__s2__imp",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-text",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2664
+      },
+      "rep": 0,
+      "rng": 925085725,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "The text field is visible and ready for input. I will type \"Cristin\" into the field using the type_text function.\n\n<tool_call>\n<function=type_text>\n<parameter=text>\nCristin\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5480353236198425
+    },
+    {
+      "row": {
+        "run": "enter-text__s2__imp",
+        "path": "/workspace/astra/data/train/enter-text__s2__imp",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-text",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2664
+      },
+      "rep": 1,
+      "rng": 925085725,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "The text field is visible and empty. I will type \"Cristin\" into it.\n\n<tool_call>\n<function=type_text>\ntext: \"Cristin\"\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5480353236198425
+    },
+    {
+      "row": {
+        "run": "enter-text__s2__imp",
+        "path": "/workspace/astra/data/train/enter-text__s2__imp",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-text",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2664
+      },
+      "rep": 2,
+      "rng": 925085725,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "The text field is visible and ready for input. I will type \"Cristin\" into the field and then submit.\n\n<tool_call>\n<function=click>\n<parameter=element>\nText input field in the center of the screen\n</parameter>\n<parameter=x>\n500\n</parameter>\n<parameter=y>\n350\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5480353236198425
+    },
+    {
+      "row": {
+        "run": "enter-text__s2__imp",
+        "path": "/workspace/astra/data/train/enter-text__s2__imp",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-text",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2664
+      },
+      "rep": 3,
+      "rng": 925085725,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nText input field in the center of the page\n</parameter>\n<parameter=x>\n500\n</parameter>\n<parameter=y>\n350\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5480353236198425
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s5",
+        "path": "/workspace/astra/data/train/enter-text-2__s5",
+        "t": 3,
+        "seed": 5,
+        "task": "enter-text-2",
+        "label": null,
+        "success": true,
+        "n_in": 6666
+      },
+      "rep": 0,
+      "rng": 4049274175,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=type_text>\n<parameter=text>\nashlea\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.2042563557624817
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s5",
+        "path": "/workspace/astra/data/train/enter-text-2__s5",
+        "t": 3,
+        "seed": 5,
+        "task": "enter-text-2",
+        "label": null,
+        "success": true,
+        "n_in": 6666
+      },
+      "rep": 1,
+      "rng": 4049274175,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=type_text>\n<parameter=text>\nashlea\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.2042563557624817
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s5",
+        "path": "/workspace/astra/data/train/enter-text-2__s5",
+        "t": 3,
+        "seed": 5,
+        "task": "enter-text-2",
+        "label": null,
+        "success": true,
+        "n_in": 6666
+      },
+      "rep": 2,
+      "rng": 4049274175,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "<tool_call>\n<function=press_key>\n<parameter=key>\nenter\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.2042563557624817
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s5",
+        "path": "/workspace/astra/data/train/enter-text-2__s5",
+        "t": 3,
+        "seed": 5,
+        "task": "enter-text-2",
+        "label": null,
+        "success": true,
+        "n_in": 6666
+      },
+      "rep": 3,
+      "rng": 4049274175,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=type_text>\n<parameter=text>\nashlea\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.2042563557624817
+    },
+    {
+      "row": {
+        "run": "login-user__s4",
+        "path": "/workspace/astra/data/train/login-user__s4",
+        "t": 2,
+        "seed": 4,
+        "task": "login-user",
+        "label": "loop-",
+        "success": false,
+        "n_in": 6607
+      },
+      "rep": 0,
+      "rng": 2331897855,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nPassword input field\n</parameter>\n<parameter=x>\n400\n</parameter>\n<parameter=y>\n580\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.37870144844055176
+    },
+    {
+      "row": {
+        "run": "login-user__s4",
+        "path": "/workspace/astra/data/train/login-user__s4",
+        "t": 2,
+        "seed": 4,
+        "task": "login-user",
+        "label": "loop-",
+        "success": false,
+        "n_in": 6607
+      },
+      "rep": 1,
+      "rng": 2331897855,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nPassword input field\n</parameter>\n<parameter=x>\n400\n</parameter>\n<parameter=y>\n580\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.37870144844055176
+    },
+    {
+      "row": {
+        "run": "login-user__s4",
+        "path": "/workspace/astra/data/train/login-user__s4",
+        "t": 2,
+        "seed": 4,
+        "task": "login-user",
+        "label": "loop-",
+        "success": false,
+        "n_in": 6607
+      },
+      "rep": 2,
+      "rng": 2331897855,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nPassword input field\n</parameter>\n<parameter=x>\n400\n</parameter>\n<parameter=y>\n580\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.37870144844055176
+    },
+    {
+      "row": {
+        "run": "login-user__s4",
+        "path": "/workspace/astra/data/train/login-user__s4",
+        "t": 2,
+        "seed": 4,
+        "task": "login-user",
+        "label": "loop-",
+        "success": false,
+        "n_in": 6607
+      },
+      "rep": 3,
+      "rng": 2331897855,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nPassword input field\n</parameter>\n<parameter=x>\n400\n</parameter>\n<parameter=y>\n580\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.37870144844055176
+    },
+    {
+      "row": {
+        "run": "form-sequence__s1",
+        "path": "/workspace/astra/data/train/form-sequence__s1",
+        "t": 2,
+        "seed": 1,
+        "task": "form-sequence",
+        "label": "loop-",
+        "success": false,
+        "n_in": 6574
+      },
+      "rep": 0,
+      "rng": 67224561,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the checkboxes\n</parameter>\n<parameter=x>\n250\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4728431701660156
+    },
+    {
+      "row": {
+        "run": "form-sequence__s1",
+        "path": "/workspace/astra/data/train/form-sequence__s1",
+        "t": 2,
+        "seed": 1,
+        "task": "form-sequence",
+        "label": "loop-",
+        "success": false,
+        "n_in": 6574
+      },
+      "rep": 1,
+      "rng": 67224561,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the checkboxes\n</parameter>\n<parameter=x>\n250\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4728431701660156
+    },
+    {
+      "row": {
+        "run": "form-sequence__s1",
+        "path": "/workspace/astra/data/train/form-sequence__s1",
+        "t": 2,
+        "seed": 1,
+        "task": "form-sequence",
+        "label": "loop-",
+        "success": false,
+        "n_in": 6574
+      },
+      "rep": 2,
+      "rng": 67224561,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button at the bottom of the form\n</parameter>\n<parameter=x>\n250\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4728431701660156
+    },
+    {
+      "row": {
+        "run": "form-sequence__s1",
+        "path": "/workspace/astra/data/train/form-sequence__s1",
+        "t": 2,
+        "seed": 1,
+        "task": "form-sequence",
+        "label": "loop-",
+        "success": false,
+        "n_in": 6574
+      },
+      "rep": 3,
+      "rng": 67224561,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the checkboxes\n</parameter>\n<parameter=x>\n250\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4728431701660156
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s1__imp",
+        "path": "/workspace/astra/data/train/enter-text-2__s1__imp",
+        "t": 0,
+        "seed": 1,
+        "task": "enter-text-2",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 0,
+      "rng": 2669357177,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "The text input field is visible and empty. I will click on the input field to focus it, then type \"kanesha\" in all lower case letters.\n\n<tool_call>\n<function=click>\n<parameter=element>\ntext input field\n</parameter>\n<parameter=x>\n500\n</parameter>\n<parameter=y>\n280\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5532956123352051
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s1__imp",
+        "path": "/workspace/astra/data/train/enter-text-2__s1__imp",
+        "t": 0,
+        "seed": 1,
+        "task": "enter-text-2",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 1,
+      "rng": 2669357177,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\ntext input field\n</parameter>\n<parameter=x>\n500\n</parameter>\n<parameter=y>\n280\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5532956123352051
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s1__imp",
+        "path": "/workspace/astra/data/train/enter-text-2__s1__imp",
+        "t": 0,
+        "seed": 1,
+        "task": "enter-text-2",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 2,
+      "rng": 2669357177,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nText input field\n</parameter>\n<parameter=x>\n500\n</parameter>\n<parameter=y>\n280\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5532956123352051
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s1__imp",
+        "path": "/workspace/astra/data/train/enter-text-2__s1__imp",
+        "t": 0,
+        "seed": 1,
+        "task": "enter-text-2",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 3,
+      "rng": 2669357177,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\ntext input field\n</parameter>\n<parameter=x>\n500\n</parameter>\n<parameter=y>\n300\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5532956123352051
+    },
+    {
+      "row": {
+        "run": "enter-date__s0",
+        "path": "/workspace/astra/data/train/enter-date__s0",
+        "t": 5,
+        "seed": 0,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 6778
+      },
+      "rep": 0,
+      "rng": 200714535,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the date input field\n</parameter>\n<parameter=x>\n280\n</parameter>\n<parameter=y>\n550\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.42058587074279785
+    },
+    {
+      "row": {
+        "run": "enter-date__s0",
+        "path": "/workspace/astra/data/train/enter-date__s0",
+        "t": 5,
+        "seed": 0,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 6778
+      },
+      "rep": 1,
+      "rng": 200714535,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the date input field\n</parameter>\n<parameter=x>\n300\n</parameter>\n<parameter=y>\n500\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.42058587074279785
+    },
+    {
+      "row": {
+        "run": "enter-date__s0",
+        "path": "/workspace/astra/data/train/enter-date__s0",
+        "t": 5,
+        "seed": 0,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 6778
+      },
+      "rep": 2,
+      "rng": 200714535,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the date input field\n</parameter>\n<parameter=x>\n280\n</parameter>\n<parameter=y>\n520\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.42058587074279785
+    },
+    {
+      "row": {
+        "run": "enter-date__s0",
+        "path": "/workspace/astra/data/train/enter-date__s0",
+        "t": 5,
+        "seed": 0,
+        "task": "enter-date",
+        "label": "loop-",
+        "success": false,
+        "n_in": 6778
+      },
+      "rep": 3,
+      "rng": 200714535,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the date input field\n</parameter>\n<parameter=x>\n300\n</parameter>\n<parameter=y>\n500\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.42058587074279785
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s2",
+        "path": "/workspace/astra/data/train/enter-text-2__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-text-2",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 0,
+      "rng": 4240500928,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nEmpty text input field\n</parameter>\n<parameter=x>\n500\n</parameter>\n<parameter=y>\n320\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5343487858772278
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s2",
+        "path": "/workspace/astra/data/train/enter-text-2__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-text-2",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 1,
+      "rng": 4240500928,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "I'll type \"Cristin\" in the text input field and submit. First, I need to focus the input field and enter the text.\n\n<tool_call>\n<function=click>\n<parameter=element>\ntext input field\n</parameter>\n<parameter=x>\n400\n</parameter>\n<parameter=y>\n350\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5343487858772278
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s2",
+        "path": "/workspace/astra/data/train/enter-text-2__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-text-2",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 2,
+      "rng": 4240500928,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nInput field below the yellow header bar\n</parameter>\n<parameter=x>\n150\n</parameter>\n<parameter=y>\n320\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5343487858772278
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s2",
+        "path": "/workspace/astra/data/train/enter-text-2__s2",
+        "t": 0,
+        "seed": 2,
+        "task": "enter-text-2",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2669
+      },
+      "rep": 3,
+      "rng": 4240500928,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "I'll type \"Cristin\" in the input field in all caps and submit the form.\n\n<tool_call>\n<function=click>\n<parameter=element>\ntext input field\n</parameter>\n<parameter=x>\n350\n</parameter>\n<parameter=y>\n300\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5343487858772278
+    },
+    {
+      "row": {
+        "run": "use-autocomplete__s1",
+        "path": "/workspace/astra/data/train/use-autocomplete__s1",
+        "t": 0,
+        "seed": 1,
+        "task": "use-autocomplete",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2665
+      },
+      "rep": 0,
+      "rng": 1229608735,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nTags input field\n</parameter>\n<parameter=x>\n450\n</parameter>\n<parameter=y>\n380\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5810319781303406
+    },
+    {
+      "row": {
+        "run": "use-autocomplete__s1",
+        "path": "/workspace/astra/data/train/use-autocomplete__s1",
+        "t": 0,
+        "seed": 1,
+        "task": "use-autocomplete",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2665
+      },
+      "rep": 1,
+      "rng": 1229608735,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nTags input field\n</parameter>\n<parameter=x>\n500\n</parameter>\n<parameter=y>\n370\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5810319781303406
+    },
+    {
+      "row": {
+        "run": "use-autocomplete__s1",
+        "path": "/workspace/astra/data/train/use-autocomplete__s1",
+        "t": 0,
+        "seed": 1,
+        "task": "use-autocomplete",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2665
+      },
+      "rep": 2,
+      "rng": 1229608735,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "The Tags input field is located in the upper portion of the screen, directly below the \"Tags:\" label. It is a long rectangular input box where users can enter tag identifiers.\n\n<tool_call>\n<function=click>\n<parameter=element>\nTags input field\n</parameter>\n<parameter=x>\n450\n</parameter>\n<parameter=y>\n380\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5810319781303406
+    },
+    {
+      "row": {
+        "run": "use-autocomplete__s1",
+        "path": "/workspace/astra/data/train/use-autocomplete__s1",
+        "t": 0,
+        "seed": 1,
+        "task": "use-autocomplete",
+        "label": "loop-",
+        "success": false,
+        "n_in": 2665
+      },
+      "rep": 3,
+      "rng": 1229608735,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nInput field for Tags\n</parameter>\n<parameter=x>\n500\n</parameter>\n<parameter=y>\n380\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5810319781303406
+    },
+    {
+      "row": {
+        "run": "click-checkboxes-soft__s2",
+        "path": "/workspace/astra/data/train/click-checkboxes-soft__s2",
+        "t": 3,
+        "seed": 2,
+        "task": "click-checkboxes-soft",
+        "label": "loop-",
+        "success": true,
+        "n_in": 6655
+      },
+      "rep": 0,
+      "rng": 3077346224,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button\n</parameter>\n<parameter=x>\n250\n</parameter>\n<parameter=y>\n600\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.3637896776199341
+    },
+    {
+      "row": {
+        "run": "click-checkboxes-soft__s2",
+        "path": "/workspace/astra/data/train/click-checkboxes-soft__s2",
+        "t": 3,
+        "seed": 2,
+        "task": "click-checkboxes-soft",
+        "label": "loop-",
+        "success": true,
+        "n_in": 6655
+      },
+      "rep": 1,
+      "rng": 3077346224,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button\n</parameter>\n<parameter=x>\n300\n</parameter>\n<parameter=y>\n600\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.3637896776199341
+    },
+    {
+      "row": {
+        "run": "click-checkboxes-soft__s2",
+        "path": "/workspace/astra/data/train/click-checkboxes-soft__s2",
+        "t": 3,
+        "seed": 2,
+        "task": "click-checkboxes-soft",
+        "label": "loop-",
+        "success": true,
+        "n_in": 6655
+      },
+      "rep": 2,
+      "rng": 3077346224,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button\n</parameter>\n<parameter=x>\n300\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.3637896776199341
+    },
+    {
+      "row": {
+        "run": "click-checkboxes-soft__s2",
+        "path": "/workspace/astra/data/train/click-checkboxes-soft__s2",
+        "t": 3,
+        "seed": 2,
+        "task": "click-checkboxes-soft",
+        "label": "loop-",
+        "success": true,
+        "n_in": 6655
+      },
+      "rep": 3,
+      "rng": 3077346224,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button\n</parameter>\n<parameter=x>\n250\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.3637896776199341
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 6,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6955
+      },
+      "rep": 0,
+      "rng": 3226511984,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow icon on the right edge of the Kazakhstan text field\n</parameter>\n<parameter=x>\n865\n</parameter>\n<parameter=y>\n315\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4255029559135437
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 6,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6955
+      },
+      "rep": 1,
+      "rng": 3226511984,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow icon at the top of the Kazakhstan dropdown list\n</parameter>\n<parameter=x>\n855\n</parameter>\n<parameter=y>\n305\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4255029559135437
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 6,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6955
+      },
+      "rep": 2,
+      "rng": 3226511984,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow icon on the right side of the Kazakhstan text field\n</parameter>\n<parameter=x>\n858\n</parameter>\n<parameter=y>\n310\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4255029559135437
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 6,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6955
+      },
+      "rep": 3,
+      "rng": 3226511984,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow icon on the right side of the Kazakhstan input field\n</parameter>\n<parameter=x>\n858\n</parameter>\n<parameter=y>\n308\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4255029559135437
+    },
+    {
+      "row": {
+        "run": "search-engine__s2",
+        "path": "/workspace/astra/data/train/search-engine__s2",
+        "t": 10,
+        "seed": 2,
+        "task": "search-engine",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7352
+      },
+      "rep": 0,
+      "rng": 2533386895,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nPage number 8 at the bottom of pagination bar\n</parameter>\n<parameter=x>\n600\n</parameter>\n<parameter=y>\n965\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4280325770378113
+    },
+    {
+      "row": {
+        "run": "search-engine__s2",
+        "path": "/workspace/astra/data/train/search-engine__s2",
+        "t": 10,
+        "seed": 2,
+        "task": "search-engine",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7352
+      },
+      "rep": 1,
+      "rng": 2533386895,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nThe number 8 at the bottom of the pagination bar\n</parameter>\n<parameter=x>\n640\n</parameter>\n<parameter=y>\n962\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4280325770378113
+    },
+    {
+      "row": {
+        "run": "search-engine__s2",
+        "path": "/workspace/astra/data/train/search-engine__s2",
+        "t": 10,
+        "seed": 2,
+        "task": "search-engine",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7352
+      },
+      "rep": 2,
+      "rng": 2533386895,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nThe number 8 in the pagination bar at bottom of page\n</parameter>\n<parameter=x>\n640\n</parameter>\n<parameter=y>\n965\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4280325770378113
+    },
+    {
+      "row": {
+        "run": "search-engine__s2",
+        "path": "/workspace/astra/data/train/search-engine__s2",
+        "t": 10,
+        "seed": 2,
+        "task": "search-engine",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7352
+      },
+      "rep": 3,
+      "rng": 2533386895,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nThe number 8 at the bottom of the pagination bar\n</parameter>\n<parameter=x>\n645\n</parameter>\n<parameter=y>\n958\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4280325770378113
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s3",
+        "path": "/workspace/astra/data/train/enter-text-2__s3",
+        "t": 7,
+        "seed": 3,
+        "task": "enter-text-2",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7041
+      },
+      "rep": 0,
+      "rng": 4150334323,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the text input field\n</parameter>\n<parameter=x>\n220\n</parameter>\n<parameter=y>\n635\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.404903769493103
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s3",
+        "path": "/workspace/astra/data/train/enter-text-2__s3",
+        "t": 7,
+        "seed": 3,
+        "task": "enter-text-2",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7041
+      },
+      "rep": 1,
+      "rng": 4150334323,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the text input field\n</parameter>\n<parameter=x>\n250\n</parameter>\n<parameter=y>\n615\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.404903769493103
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s3",
+        "path": "/workspace/astra/data/train/enter-text-2__s3",
+        "t": 7,
+        "seed": 3,
+        "task": "enter-text-2",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7041
+      },
+      "rep": 2,
+      "rng": 4150334323,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the text input field\n</parameter>\n<parameter=x>\n250\n</parameter>\n<parameter=y>\n625\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.404903769493103
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s3",
+        "path": "/workspace/astra/data/train/enter-text-2__s3",
+        "t": 7,
+        "seed": 3,
+        "task": "enter-text-2",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7041
+      },
+      "rep": 3,
+      "rng": 4150334323,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the text input field\n</parameter>\n<parameter=x>\n240\n</parameter>\n<parameter=y>\n615\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.404903769493103
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s3",
+        "path": "/workspace/astra/data/train/enter-text-2__s3",
+        "t": 6,
+        "seed": 3,
+        "task": "enter-text-2",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6949
+      },
+      "rep": 0,
+      "rng": 1734585352,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the text input field\n</parameter>\n<parameter=x>\n240\n</parameter>\n<parameter=y>\n620\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4688383936882019
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s3",
+        "path": "/workspace/astra/data/train/enter-text-2__s3",
+        "t": 6,
+        "seed": 3,
+        "task": "enter-text-2",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6949
+      },
+      "rep": 1,
+      "rng": 1734585352,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the text input field\n</parameter>\n<parameter=x>\n240\n</parameter>\n<parameter=y>\n640\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4688383936882019
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s3",
+        "path": "/workspace/astra/data/train/enter-text-2__s3",
+        "t": 6,
+        "seed": 3,
+        "task": "enter-text-2",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6949
+      },
+      "rep": 2,
+      "rng": 1734585352,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the text input field\n</parameter>\n<parameter=x>\n220\n</parameter>\n<parameter=y>\n635\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4688383936882019
+    },
+    {
+      "row": {
+        "run": "enter-text-2__s3",
+        "path": "/workspace/astra/data/train/enter-text-2__s3",
+        "t": 6,
+        "seed": 3,
+        "task": "enter-text-2",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6949
+      },
+      "rep": 3,
+      "rng": 1734585352,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button below the text input field\n</parameter>\n<parameter=x>\n240\n</parameter>\n<parameter=y>\n640\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4688383936882019
+    },
+    {
+      "row": {
+        "run": "click-checkboxes-soft__s0",
+        "path": "/workspace/astra/data/train/click-checkboxes-soft__s0",
+        "t": 8,
+        "seed": 0,
+        "task": "click-checkboxes-soft",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7120
+      },
+      "rep": 0,
+      "rng": 2307222892,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nEmpty checkbox next to word 'response'\n</parameter>\n<parameter=x>\n85\n</parameter>\n<parameter=y>\n655\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4302859902381897
+    },
+    {
+      "row": {
+        "run": "click-checkboxes-soft__s0",
+        "path": "/workspace/astra/data/train/click-checkboxes-soft__s0",
+        "t": 8,
+        "seed": 0,
+        "task": "click-checkboxes-soft",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7120
+      },
+      "rep": 1,
+      "rng": 2307222892,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nEmpty checkbox next to word 'response'\n</parameter>\n<parameter=x>\n85\n</parameter>\n<parameter=y>\n655\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4302859902381897
+    },
+    {
+      "row": {
+        "run": "click-checkboxes-soft__s0",
+        "path": "/workspace/astra/data/train/click-checkboxes-soft__s0",
+        "t": 8,
+        "seed": 0,
+        "task": "click-checkboxes-soft",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7120
+      },
+      "rep": 2,
+      "rng": 2307222892,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nEmpty checkbox next to word 'response'\n</parameter>\n<parameter=x>\n80\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4302859902381897
+    },
+    {
+      "row": {
+        "run": "click-checkboxes-soft__s0",
+        "path": "/workspace/astra/data/train/click-checkboxes-soft__s0",
+        "t": 8,
+        "seed": 0,
+        "task": "click-checkboxes-soft",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7120
+      },
+      "rep": 3,
+      "rng": 2307222892,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nEmpty checkbox to the left of 'response' word\n</parameter>\n<parameter=x>\n60\n</parameter>\n<parameter=y>\n655\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4302859902381897
+    },
+    {
+      "row": {
+        "run": "enter-text__s1__imp",
+        "path": "/workspace/astra/data/train/enter-text__s1__imp",
+        "t": 6,
+        "seed": 1,
+        "task": "enter-text",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6852
+      },
+      "rep": 0,
+      "rng": 2505856365,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button\n</parameter>\n<parameter=x>\n430\n</parameter>\n<parameter=y>\n70\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4309280514717102
+    },
+    {
+      "row": {
+        "run": "enter-text__s1__imp",
+        "path": "/workspace/astra/data/train/enter-text__s1__imp",
+        "t": 6,
+        "seed": 1,
+        "task": "enter-text",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6852
+      },
+      "rep": 1,
+      "rng": 2505856365,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button located at top right of the yellow background area\n</parameter>\n<parameter=x>\n950\n</parameter>\n<parameter=y>\n50\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4309280514717102
+    },
+    {
+      "row": {
+        "run": "enter-text__s1__imp",
+        "path": "/workspace/astra/data/train/enter-text__s1__imp",
+        "t": 6,
+        "seed": 1,
+        "task": "enter-text",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6852
+      },
+      "rep": 2,
+      "rng": 2505856365,
+      "valid": true,
+      "repeat": false,
+      "healthy_match": false,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button at top right of yellow box\n</parameter>\n<parameter=x>\n950\n</parameter>\n<parameter=y>\n50\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4309280514717102
+    },
+    {
+      "row": {
+        "run": "enter-text__s1__imp",
+        "path": "/workspace/astra/data/train/enter-text__s1__imp",
+        "t": 6,
+        "seed": 1,
+        "task": "enter-text",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6852
+      },
+      "rep": 3,
+      "rng": 2505856365,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button\n</parameter>\n<parameter=x>\n380\n</parameter>\n<parameter=y>\n100\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.4309280514717102
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 7,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7053
+      },
+      "rep": 0,
+      "rng": 3657770848,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow triangle on the right side of Kazakhstan field\n</parameter>\n<parameter=x>\n870\n</parameter>\n<parameter=y>\n305\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5243641138076782
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 7,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7053
+      },
+      "rep": 1,
+      "rng": 3657770848,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow button on the right side of the Kazakhstan input field\n</parameter>\n<parameter=x>\n870\n</parameter>\n<parameter=y>\n305\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5243641138076782
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 7,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7053
+      },
+      "rep": 2,
+      "rng": 3657770848,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nRight-side dropdown arrow on the Kazakhstan field\n</parameter>\n<parameter=x>\n855\n</parameter>\n<parameter=y>\n305\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5243641138076782
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 7,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7053
+      },
+      "rep": 3,
+      "rng": 3657770848,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSmall downward arrow button located on the right edge of the Kazakhstan text field\n</parameter>\n<parameter=x>\n870\n</parameter>\n<parameter=y>\n305\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5243641138076782
+    },
+    {
+      "row": {
+        "run": "form-sequence__s4",
+        "path": "/workspace/astra/data/train/form-sequence__s4",
+        "t": 5,
+        "seed": 4,
+        "task": "form-sequence",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6897
+      },
+      "rep": 0,
+      "rng": 4215647549,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSlider handle to drag left from current position to -8\n</parameter>\n<parameter=x>\n240\n</parameter>\n<parameter=y>\n320\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5187344551086426
+    },
+    {
+      "row": {
+        "run": "form-sequence__s4",
+        "path": "/workspace/astra/data/train/form-sequence__s4",
+        "t": 5,
+        "seed": 4,
+        "task": "form-sequence",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6897
+      },
+      "rep": 1,
+      "rng": 4215647549,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSlider handle to drag left from current position to -8\n</parameter>\n<parameter=x>\n250\n</parameter>\n<parameter=y>\n320\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5187344551086426
+    },
+    {
+      "row": {
+        "run": "form-sequence__s4",
+        "path": "/workspace/astra/data/train/form-sequence__s4",
+        "t": 5,
+        "seed": 4,
+        "task": "form-sequence",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6897
+      },
+      "rep": 2,
+      "rng": 4215647549,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSlider handle to drag left from current position to -8\n</parameter>\n<parameter=x>\n240\n</parameter>\n<parameter=y>\n320\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5187344551086426
+    },
+    {
+      "row": {
+        "run": "form-sequence__s4",
+        "path": "/workspace/astra/data/train/form-sequence__s4",
+        "t": 5,
+        "seed": 4,
+        "task": "form-sequence",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6897
+      },
+      "rep": 3,
+      "rng": 4215647549,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSlider handle to drag left from current position to -8\n</parameter>\n<parameter=x>\n240\n</parameter>\n<parameter=y>\n320\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.5187344551086426
+    },
+    {
+      "row": {
+        "run": "click-checkboxes__s1",
+        "path": "/workspace/astra/data/train/click-checkboxes__s1",
+        "t": 8,
+        "seed": 1,
+        "task": "click-checkboxes",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7174
+      },
+      "rep": 0,
+      "rng": 641602420,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button at the bottom of the form\n</parameter>\n<parameter=x>\n200\n</parameter>\n<parameter=y>\n810\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.6860271692276001
+    },
+    {
+      "row": {
+        "run": "click-checkboxes__s1",
+        "path": "/workspace/astra/data/train/click-checkboxes__s1",
+        "t": 8,
+        "seed": 1,
+        "task": "click-checkboxes",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7174
+      },
+      "rep": 1,
+      "rng": 641602420,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button at the bottom of the form, centered horizontally\n</parameter>\n<parameter=x>\n240\n</parameter>\n<parameter=y>\n815\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.6860271692276001
+    },
+    {
+      "row": {
+        "run": "click-checkboxes__s1",
+        "path": "/workspace/astra/data/train/click-checkboxes__s1",
+        "t": 8,
+        "seed": 1,
+        "task": "click-checkboxes",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7174
+      },
+      "rep": 2,
+      "rng": 641602420,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": false,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button at the bottom of the form\n</parameter>\n<parameter=x>\n250\n</parameter>\n<parameter=y>\n830\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.6860271692276001
+    },
+    {
+      "row": {
+        "run": "click-checkboxes__s1",
+        "path": "/workspace/astra/data/train/click-checkboxes__s1",
+        "t": 8,
+        "seed": 1,
+        "task": "click-checkboxes",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7174
+      },
+      "rep": 3,
+      "rng": 641602420,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": false,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nSubmit button at the bottom of the form\n</parameter>\n<parameter=x>\n270\n</parameter>\n<parameter=y>\n810\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.6860271692276001
+    },
+    {
+      "row": {
+        "run": "click-checkboxes-soft__s0",
+        "path": "/workspace/astra/data/train/click-checkboxes-soft__s0",
+        "t": 11,
+        "seed": 0,
+        "task": "click-checkboxes-soft",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7396
+      },
+      "rep": 0,
+      "rng": 1060377528,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nEmpty checkbox next to word 'response'\n</parameter>\n<parameter=x>\n80\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.48095619678497314
+    },
+    {
+      "row": {
+        "run": "click-checkboxes-soft__s0",
+        "path": "/workspace/astra/data/train/click-checkboxes-soft__s0",
+        "t": 11,
+        "seed": 0,
+        "task": "click-checkboxes-soft",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7396
+      },
+      "rep": 1,
+      "rng": 1060377528,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nEmpty checkbox next to word 'response'\n</parameter>\n<parameter=x>\n80\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.48095619678497314
+    },
+    {
+      "row": {
+        "run": "click-checkboxes-soft__s0",
+        "path": "/workspace/astra/data/train/click-checkboxes-soft__s0",
+        "t": 11,
+        "seed": 0,
+        "task": "click-checkboxes-soft",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7396
+      },
+      "rep": 2,
+      "rng": 1060377528,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nEmpty checkbox next to word 'response'\n</parameter>\n<parameter=x>\n80\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.48095619678497314
+    },
+    {
+      "row": {
+        "run": "click-checkboxes-soft__s0",
+        "path": "/workspace/astra/data/train/click-checkboxes-soft__s0",
+        "t": 11,
+        "seed": 0,
+        "task": "click-checkboxes-soft",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7396
+      },
+      "rep": 3,
+      "rng": 1060377528,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nEmpty checkbox next to word 'response'\n</parameter>\n<parameter=x>\n78\n</parameter>\n<parameter=y>\n652\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.48095619678497314
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 3,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6661
+      },
+      "rep": 0,
+      "rng": 4187907405,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow on the right edge of the Kazakhstan text field\n</parameter>\n<parameter=x>\n865\n</parameter>\n<parameter=y>\n310\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.44078218936920166
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 3,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6661
+      },
+      "rep": 1,
+      "rng": 4187907405,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow button on the right side of Kazakhstan dropdown field\n</parameter>\n<parameter=x>\n855\n</parameter>\n<parameter=y>\n310\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.44078218936920166
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 3,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6661
+      },
+      "rep": 2,
+      "rng": 4187907405,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow icon at the end of Kazakhstan text in the dropdown field\n</parameter>\n<parameter=x>\n865\n</parameter>\n<parameter=y>\n310\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.44078218936920166
+    },
+    {
+      "row": {
+        "run": "choose-list__s1",
+        "path": "/workspace/astra/data/train/choose-list__s1",
+        "t": 3,
+        "seed": 1,
+        "task": "choose-list",
+        "label": "loop+",
+        "success": false,
+        "n_in": 6661
+      },
+      "rep": 3,
+      "rng": 4187907405,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nDown arrow button on the right side of Kazakhstan dropdown field\n</parameter>\n<parameter=x>\n855\n</parameter>\n<parameter=y>\n310\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.44078218936920166
+    },
+    {
+      "row": {
+        "run": "multi-layouts__s3",
+        "path": "/workspace/astra/data/train/multi-layouts__s3",
+        "t": 12,
+        "seed": 3,
+        "task": "multi-layouts",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7413
+      },
+      "rep": 0,
+      "rng": 141483172,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nGenre input field\n</parameter>\n<parameter=x>\n500\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.40575289726257324
+    },
+    {
+      "row": {
+        "run": "multi-layouts__s3",
+        "path": "/workspace/astra/data/train/multi-layouts__s3",
+        "t": 12,
+        "seed": 3,
+        "task": "multi-layouts",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7413
+      },
+      "rep": 1,
+      "rng": 141483172,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nGenre input field\n</parameter>\n<parameter=x>\n500\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.40575289726257324
+    },
+    {
+      "row": {
+        "run": "multi-layouts__s3",
+        "path": "/workspace/astra/data/train/multi-layouts__s3",
+        "t": 12,
+        "seed": 3,
+        "task": "multi-layouts",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7413
+      },
+      "rep": 2,
+      "rng": 141483172,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nGenre input field\n</parameter>\n<parameter=x>\n500\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.40575289726257324
+    },
+    {
+      "row": {
+        "run": "multi-layouts__s3",
+        "path": "/workspace/astra/data/train/multi-layouts__s3",
+        "t": 12,
+        "seed": 3,
+        "task": "multi-layouts",
+        "label": "loop+",
+        "success": false,
+        "n_in": 7413
+      },
+      "rep": 3,
+      "rng": 141483172,
+      "valid": true,
+      "repeat": true,
+      "healthy_match": true,
+      "text": "<tool_call>\n<function=click>\n<parameter=element>\nGenre input field with border\n</parameter>\n<parameter=x>\n500\n</parameter>\n<parameter=y>\n650\n</parameter>\n</function>\n</tool_call>",
+      "gen_s": 0.40575289726257324
+    }
+  ]
+}

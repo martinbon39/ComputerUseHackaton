@@ -1,0 +1,6 @@
+\begin{table}[t]
+\centering\small
+\resizebox{\linewidth}{!}{\input{generated/tab_attractor.tex}}
+\caption{\textbf{Mechanism-level weight edits change the tokens, not the outcome.} vLLM 0.23 on separate hardware, same 6 contexts and 8 seeds per arm; the original is re-served on the same backend. The blind audit reads each false-completion output and counts claims of success and useful GUI actions, whatever tool is called. ``Identical to original'' counts the 48 GUI and 3 text outputs equal to the paired original, in full or up to the end of reasoning. One of the two \fsp{} contexts is an infeasible task, where \texttt{answer} explaining the impossibility is the correct action (Appendix Table~\ref{tab:infeasible}). $^{\dagger}$Moving the tool is not a correction: every non-\texttt{answer} call falls on the infeasible context and is an unhelpful action justified by an incorrect prediction that it will restore the old interface (H6: \attHsixTheme{} theme clicks; H10, $s=0$: \attHtenzeroInfClick{} theme clicks and \attHtenzeroInfWait{} wait), none admitting the impossibility; none is useful. H10 at $s=0$ is also rejected for truncated outputs on healthy steps, a loss of at least \attHtenzeroHealthyLoss{} points against a 10-point limit. Development pilot.}
+\label{tab:attractor}
+\end{table}

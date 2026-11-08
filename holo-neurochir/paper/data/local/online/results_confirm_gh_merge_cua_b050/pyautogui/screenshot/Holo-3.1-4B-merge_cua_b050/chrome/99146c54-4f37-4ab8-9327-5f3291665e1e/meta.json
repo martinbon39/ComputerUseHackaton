@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "99146c54-4f37-4ab8-9327-5f3291665e1e",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "exact_match",
+  "finished_by_agent": true,
+  "steps": 34,
+  "answer": "The feature to automatically delete browsing data when closing Chrome is no longer available in the current version of Chrome. This feature was removed in Chrome version 87 and subsequent versions. Chrome no longer provides an option to automatically clear history, cookies, and cache when you close all browser windows. You would need to manually delete browsing data through the \"Delete browsing data\" dialog in Chrome's Privacy and security settings each time you want to clear your data.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

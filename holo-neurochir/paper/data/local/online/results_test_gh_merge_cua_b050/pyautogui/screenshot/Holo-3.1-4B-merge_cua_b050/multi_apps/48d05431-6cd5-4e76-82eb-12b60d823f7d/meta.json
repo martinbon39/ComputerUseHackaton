@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "48d05431-6cd5-4e76-82eb-12b60d823f7d",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "exact_match",
+  "finished_by_agent": true,
+  "steps": 8,
+  "answer": "Done. Miniconda3 has been installed to ~/miniconda3 and initialized for bash. Conda is now active in your terminal (prompt shows '(base)'). You can run conda commands immediately, including 'conda install datasets'.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

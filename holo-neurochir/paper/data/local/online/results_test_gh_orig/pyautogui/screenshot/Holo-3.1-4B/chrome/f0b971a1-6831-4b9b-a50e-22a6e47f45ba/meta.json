@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "f0b971a1-6831-4b9b-a50e-22a6e47f45ba",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_active_tab",
+  "finished_by_agent": true,
+  "steps": 15,
+  "answer": "The Super Bowl LIV (2019 NFL season, played February 2, 2020) score record is:\n\n**Kansas City Chiefs 31, San Francisco 49ers 20**\n\nScore by Quarter:\n- Kansas City Chiefs: 7 | 3 | 0 | 21 (Total: 31)\n- San Francisco 49ers: 3 | 7 | 10 | 0 (Total: 20)\n\nThe Chiefs won their first Super Bowl since Super Bowl IV. MVP was Patrick Mahomes (Quarterback, Kansas City Chiefs).",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

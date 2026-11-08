@@ -1,0 +1,18 @@
+{
+  "batch": 5,
+  "reason_code": "STOP_GPU",
+  "reason": "external STOP_GPU requested during generation",
+  "candidate_rejected": false,
+  "complete_outputs": 8,
+  "planned_outputs": 24,
+  "in_flight_discarded": {
+    "task_id": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "pass": "results_diag",
+    "t": 3,
+    "sample": 0
+  },
+  "finalized_utc": "2026-11-07T19:05:16.729935+00:00",
+  "finalization": "manual after process exit and traceback audit",
+  "output_sha256": "a3e258824ead475a1a59df08a3c46c81d8546dc1bd01df5a53767a1841a8be38",
+  "log_sha256": "fc7696c5fb6d136bb5da49948d7ee29e6621967cb7c4e268a507a64f7972ddd2"
+}

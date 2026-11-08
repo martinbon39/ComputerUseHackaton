@@ -1,0 +1,20 @@
+{
+  "domain": "vs_code",
+  "example_id": "70745df8-f2f5-42bd-8074-fbc10334fcc5",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_json_settings",
+  "finished_by_agent": true,
+  "steps": 15,
+  "answer": "Done. VS Code AutoSave is enabled with 'afterDelay' mode and the Auto Save Delay is set to 500 milliseconds. Settings have been saved.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

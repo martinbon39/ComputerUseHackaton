@@ -1,0 +1,20 @@
+{
+  "domain": "thunderbird",
+  "example_id": "10a730d5-d414-4b40-b479-684bed1ae522",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_thunderbird_prefs",
+  "finished_by_agent": true,
+  "steps": 4,
+  "answer": "Dark mode has been successfully enabled in Thunderbird. The application interface now displays a complete dark color scheme with dark backgrounds and light text, which will be easier on your eyes during late-night work sessions. The Dark theme is currently active as confirmed by the 'Disable' button next to it in the Themes management page.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

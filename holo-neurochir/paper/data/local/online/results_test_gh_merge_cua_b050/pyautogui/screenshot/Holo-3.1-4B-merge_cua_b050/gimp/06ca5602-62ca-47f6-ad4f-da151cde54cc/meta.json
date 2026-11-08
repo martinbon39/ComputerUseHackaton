@@ -1,0 +1,20 @@
+{
+  "domain": "gimp",
+  "example_id": "06ca5602-62ca-47f6-ad4f-da151cde54cc",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_palette_and_structure_sim",
+  "finished_by_agent": true,
+  "steps": 7,
+  "answer": "The image has been successfully converted to palette-based (indexed color) mode. This is confirmed by the window title which now shows \"Indexed color 8-bit gamma integer\" instead of the previous RGB color mode.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

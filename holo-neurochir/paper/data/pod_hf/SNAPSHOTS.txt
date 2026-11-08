@@ -1,0 +1,2 @@
+/workspace/hf/hub/models--Hcompany--Holo-3.1-0.8B/snapshots/72da4c53b351eb60e10a7022279019633c479292
+/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e

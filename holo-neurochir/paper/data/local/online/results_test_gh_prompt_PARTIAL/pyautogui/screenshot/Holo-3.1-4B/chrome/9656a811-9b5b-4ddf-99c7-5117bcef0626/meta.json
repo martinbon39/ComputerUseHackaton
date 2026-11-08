@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "9656a811-9b5b-4ddf-99c7-5117bcef0626",
+  "score": 1.0,
+  "prompt_variant": "v2_verify",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "exact_match",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "Successfully enabled Chrome's Safe Browsing protection with Enhanced protection level. This feature will now warn you about dangerous sites, downloads, and extensions in real-time. Enhanced protection provides the highest level of safety by analyzing more data from sites than standard protection and includes additional features like in-depth scans for suspicious downloads and cross-service protection when signed into a Google Account.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

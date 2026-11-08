@@ -1,0 +1,714 @@
+{
+  "baseline": {
+    "fs+": {
+      "n": 8,
+      "answer": 8,
+      "valid_nonanswer": 0,
+      "invalid": 0
+    },
+    "fs-": {
+      "n": 8,
+      "answer": 8,
+      "valid_nonanswer": 0,
+      "invalid": 0
+    },
+    "healthy": {
+      "n": 8,
+      "answer": 0,
+      "valid_nonanswer": 8,
+      "invalid": 0
+    }
+  },
+  "lots": [
+    {
+      "lot": 1,
+      "job": {
+        "name": "r1_value_L24_a05_prefill",
+        "axis": "value",
+        "layer": 24,
+        "alpha": 0.5,
+        "scope": "prefill",
+        "random": false,
+        "axis_sha256": "4fafd6c4ebc9ef0b64a65861cb2b3dfae4a26f843d34f089ed51392b1fff0f04",
+        "random_sha256": null,
+        "pilot_sha256": "80cd8828d1d870cd88580219b1bc1503b85b45a286b9e56d083ceb896c1162ba",
+        "sampling": {
+          "top_k": 20,
+          "top_p": 0.9,
+          "temperature": 0.8,
+          "max_new_tokens": 3072,
+          "do_sample": true
+        }
+      },
+      "state": "complet",
+      "comparison": {
+        "complete": true,
+        "strata": {
+          "fs+": {
+            "n": 8,
+            "n_tasks": 2,
+            "original": {
+              "answer": {
+                "count": 8,
+                "rate": 1.0
+              },
+              "valid_nonanswer": {
+                "count": 0,
+                "rate": 0.0
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "candidate": {
+              "answer": {
+                "count": 8,
+                "rate": 1.0
+              },
+              "valid_nonanswer": {
+                "count": 0,
+                "rate": 0.0
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "delta_ci95": {
+              "answer": [
+                0.0,
+                0.0
+              ],
+              "valid_nonanswer": [
+                0.0,
+                0.0
+              ],
+              "invalid": [
+                0.0,
+                0.0
+              ]
+            },
+            "ci_caveat": "descriptive task bootstrap; very few tasks give unstable or degenerate intervals"
+          },
+          "fs-": {
+            "n": 8,
+            "n_tasks": 2,
+            "original": {
+              "answer": {
+                "count": 8,
+                "rate": 1.0
+              },
+              "valid_nonanswer": {
+                "count": 0,
+                "rate": 0.0
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "candidate": {
+              "answer": {
+                "count": 8,
+                "rate": 1.0
+              },
+              "valid_nonanswer": {
+                "count": 0,
+                "rate": 0.0
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "delta_ci95": {
+              "answer": [
+                0.0,
+                0.0
+              ],
+              "valid_nonanswer": [
+                0.0,
+                0.0
+              ],
+              "invalid": [
+                0.0,
+                0.0
+              ]
+            },
+            "ci_caveat": "descriptive task bootstrap; very few tasks give unstable or degenerate intervals"
+          },
+          "healthy": {
+            "n": 8,
+            "n_tasks": 2,
+            "original": {
+              "answer": {
+                "count": 0,
+                "rate": 0.0
+              },
+              "valid_nonanswer": {
+                "count": 8,
+                "rate": 1.0
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "candidate": {
+              "answer": {
+                "count": 0,
+                "rate": 0.0
+              },
+              "valid_nonanswer": {
+                "count": 8,
+                "rate": 1.0
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "delta_ci95": {
+              "answer": [
+                0.0,
+                0.0
+              ],
+              "valid_nonanswer": [
+                0.0,
+                0.0
+              ],
+              "invalid": [
+                0.0,
+                0.0
+              ]
+            },
+            "ci_caveat": "descriptive task bootstrap; very few tasks give unstable or degenerate intervals"
+          },
+          "all": {
+            "n": 24,
+            "n_tasks": 5,
+            "original": {
+              "answer": {
+                "count": 16,
+                "rate": 0.6666666666666666
+              },
+              "valid_nonanswer": {
+                "count": 8,
+                "rate": 0.3333333333333333
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "candidate": {
+              "answer": {
+                "count": 16,
+                "rate": 0.6666666666666666
+              },
+              "valid_nonanswer": {
+                "count": 8,
+                "rate": 0.3333333333333333
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "delta_ci95": {
+              "answer": [
+                0.0,
+                0.0
+              ],
+              "valid_nonanswer": [
+                0.0,
+                0.0
+              ],
+              "invalid": [
+                0.0,
+                0.0
+              ]
+            },
+            "ci_caveat": "descriptive task bootstrap; very few tasks give unstable or degenerate intervals"
+          }
+        },
+        "bootstrap_draws": 10000,
+        "bootstrap_unit": "task_id (all passes and seeds together)",
+        "bootstrap_seed": 1729,
+        "official_auc": "NOT_RUN",
+        "weight_edit_authorized": false,
+        "checks": {
+          "fs_plus_absolute_drop_at_least_25pp": false,
+          "fs_plus_relative_drop_at_least_half": false,
+          "original_fs_minus_at_least_80pct": true,
+          "fs_minus_drop_at_most_5pp": true,
+          "healthy_valid_nonanswer_drop_at_most_5pp": true,
+          "fs+_invalid_increase_at_most_5pp": true,
+          "fs-_invalid_increase_at_most_5pp": true,
+          "healthy_invalid_increase_at_most_5pp": true,
+          "all_invalid_increase_at_most_5pp": true
+        },
+        "behavioral_thresholds_pass": false,
+        "causal_admission": "REJECT"
+      },
+      "stats": {
+        "fs+": {
+          "n": 8,
+          "answer": 8,
+          "valid_nonanswer": 0,
+          "invalid": 0
+        },
+        "fs-": {
+          "n": 8,
+          "answer": 8,
+          "valid_nonanswer": 0,
+          "invalid": 0
+        },
+        "healthy": {
+          "n": 8,
+          "answer": 0,
+          "valid_nonanswer": 8,
+          "invalid": 0
+        }
+      },
+      "instances": [
+        {
+          "task": "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381",
+          "t": 4,
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "complete": true
+        },
+        {
+          "task": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "t": 13,
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "complete": true
+        },
+        {
+          "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+          "t": 3,
+          "label": "fs-",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "complete": true
+        },
+        {
+          "task": "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3",
+          "t": 3,
+          "label": "fs-",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "complete": true
+        },
+        {
+          "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+          "t": 0,
+          "label": "healthy",
+          "n": 4,
+          "answer": 0,
+          "valid_nonanswer": 4,
+          "complete": true
+        },
+        {
+          "task": "chrome/b070486d-e161-459b-aa2b-ef442d973b92",
+          "t": 0,
+          "label": "healthy",
+          "n": 4,
+          "answer": 0,
+          "valid_nonanswer": 4,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "lot": 2,
+      "job": {
+        "name": "r1_commitment_L24_a05_prefill",
+        "axis": "commitment",
+        "layer": 24,
+        "alpha": 0.5,
+        "scope": "prefill",
+        "random": false,
+        "axis_sha256": "f5cded7ce68578f1560db2ec4958884e224856c9997b520fad6b08639f998099",
+        "random_sha256": null,
+        "pilot_sha256": "80cd8828d1d870cd88580219b1bc1503b85b45a286b9e56d083ceb896c1162ba",
+        "sampling": {
+          "top_k": 20,
+          "top_p": 0.9,
+          "temperature": 0.8,
+          "max_new_tokens": 3072,
+          "do_sample": true
+        }
+      },
+      "state": "complet",
+      "comparison": {
+        "complete": true,
+        "strata": {
+          "fs+": {
+            "n": 8,
+            "n_tasks": 2,
+            "original": {
+              "answer": {
+                "count": 8,
+                "rate": 1.0
+              },
+              "valid_nonanswer": {
+                "count": 0,
+                "rate": 0.0
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "candidate": {
+              "answer": {
+                "count": 8,
+                "rate": 1.0
+              },
+              "valid_nonanswer": {
+                "count": 0,
+                "rate": 0.0
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "delta_ci95": {
+              "answer": [
+                0.0,
+                0.0
+              ],
+              "valid_nonanswer": [
+                0.0,
+                0.0
+              ],
+              "invalid": [
+                0.0,
+                0.0
+              ]
+            },
+            "ci_caveat": "descriptive task bootstrap; very few tasks give unstable or degenerate intervals"
+          },
+          "fs-": {
+            "n": 8,
+            "n_tasks": 2,
+            "original": {
+              "answer": {
+                "count": 8,
+                "rate": 1.0
+              },
+              "valid_nonanswer": {
+                "count": 0,
+                "rate": 0.0
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "candidate": {
+              "answer": {
+                "count": 8,
+                "rate": 1.0
+              },
+              "valid_nonanswer": {
+                "count": 0,
+                "rate": 0.0
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "delta_ci95": {
+              "answer": [
+                0.0,
+                0.0
+              ],
+              "valid_nonanswer": [
+                0.0,
+                0.0
+              ],
+              "invalid": [
+                0.0,
+                0.0
+              ]
+            },
+            "ci_caveat": "descriptive task bootstrap; very few tasks give unstable or degenerate intervals"
+          },
+          "healthy": {
+            "n": 8,
+            "n_tasks": 2,
+            "original": {
+              "answer": {
+                "count": 0,
+                "rate": 0.0
+              },
+              "valid_nonanswer": {
+                "count": 8,
+                "rate": 1.0
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "candidate": {
+              "answer": {
+                "count": 0,
+                "rate": 0.0
+              },
+              "valid_nonanswer": {
+                "count": 8,
+                "rate": 1.0
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "delta_ci95": {
+              "answer": [
+                0.0,
+                0.0
+              ],
+              "valid_nonanswer": [
+                0.0,
+                0.0
+              ],
+              "invalid": [
+                0.0,
+                0.0
+              ]
+            },
+            "ci_caveat": "descriptive task bootstrap; very few tasks give unstable or degenerate intervals"
+          },
+          "all": {
+            "n": 24,
+            "n_tasks": 5,
+            "original": {
+              "answer": {
+                "count": 16,
+                "rate": 0.6666666666666666
+              },
+              "valid_nonanswer": {
+                "count": 8,
+                "rate": 0.3333333333333333
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "candidate": {
+              "answer": {
+                "count": 16,
+                "rate": 0.6666666666666666
+              },
+              "valid_nonanswer": {
+                "count": 8,
+                "rate": 0.3333333333333333
+              },
+              "invalid": {
+                "count": 0,
+                "rate": 0.0
+              }
+            },
+            "delta_ci95": {
+              "answer": [
+                0.0,
+                0.0
+              ],
+              "valid_nonanswer": [
+                0.0,
+                0.0
+              ],
+              "invalid": [
+                0.0,
+                0.0
+              ]
+            },
+            "ci_caveat": "descriptive task bootstrap; very few tasks give unstable or degenerate intervals"
+          }
+        },
+        "bootstrap_draws": 10000,
+        "bootstrap_unit": "task_id (all passes and seeds together)",
+        "bootstrap_seed": 1729,
+        "official_auc": "NOT_RUN",
+        "weight_edit_authorized": false,
+        "checks": {
+          "fs_plus_absolute_drop_at_least_25pp": false,
+          "fs_plus_relative_drop_at_least_half": false,
+          "original_fs_minus_at_least_80pct": true,
+          "fs_minus_drop_at_most_5pp": true,
+          "healthy_valid_nonanswer_drop_at_most_5pp": true,
+          "fs+_invalid_increase_at_most_5pp": true,
+          "fs-_invalid_increase_at_most_5pp": true,
+          "healthy_invalid_increase_at_most_5pp": true,
+          "all_invalid_increase_at_most_5pp": true
+        },
+        "behavioral_thresholds_pass": false,
+        "causal_admission": "REJECT"
+      },
+      "stats": {
+        "fs+": {
+          "n": 8,
+          "answer": 8,
+          "valid_nonanswer": 0,
+          "invalid": 0
+        },
+        "fs-": {
+          "n": 8,
+          "answer": 8,
+          "valid_nonanswer": 0,
+          "invalid": 0
+        },
+        "healthy": {
+          "n": 8,
+          "answer": 0,
+          "valid_nonanswer": 8,
+          "invalid": 0
+        }
+      },
+      "instances": [
+        {
+          "task": "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381",
+          "t": 4,
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "complete": true
+        },
+        {
+          "task": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "t": 13,
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "complete": true
+        },
+        {
+          "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+          "t": 3,
+          "label": "fs-",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "complete": true
+        },
+        {
+          "task": "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3",
+          "t": 3,
+          "label": "fs-",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "complete": true
+        },
+        {
+          "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+          "t": 0,
+          "label": "healthy",
+          "n": 4,
+          "answer": 0,
+          "valid_nonanswer": 4,
+          "complete": true
+        },
+        {
+          "task": "chrome/b070486d-e161-459b-aa2b-ef442d973b92",
+          "t": 0,
+          "label": "healthy",
+          "n": 4,
+          "answer": 0,
+          "valid_nonanswer": 4,
+          "complete": true
+        }
+      ]
+    },
+    {
+      "lot": 3,
+      "job": {
+        "name": "r1_value_L18_a05_prefill",
+        "axis": "value",
+        "layer": 18,
+        "alpha": 0.5,
+        "scope": "prefill",
+        "random": false,
+        "axis_sha256": "4fafd6c4ebc9ef0b64a65861cb2b3dfae4a26f843d34f089ed51392b1fff0f04",
+        "random_sha256": null,
+        "pilot_sha256": "80cd8828d1d870cd88580219b1bc1503b85b45a286b9e56d083ceb896c1162ba",
+        "sampling": {
+          "top_k": 20,
+          "top_p": 0.9,
+          "temperature": 0.8,
+          "max_new_tokens": 3072,
+          "do_sample": true
+        }
+      },
+      "state": "en cours",
+      "comparison": null,
+      "stats": {
+        "fs+": {
+          "n": 8,
+          "answer": 8,
+          "valid_nonanswer": 0,
+          "invalid": 0
+        },
+        "fs-": {
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid": 0
+        },
+        "healthy": {
+          "n": 0,
+          "answer": 0,
+          "valid_nonanswer": 0,
+          "invalid": 0
+        }
+      },
+      "instances": [
+        {
+          "task": "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381",
+          "t": 4,
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "complete": true
+        },
+        {
+          "task": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "t": 13,
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "complete": true
+        },
+        {
+          "task": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+          "t": 3,
+          "label": "fs-",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "complete": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "domain": "vlc",
+  "example_id": "efcf0d81-0835-4880-b2fd-d866e8bc2294",
+  "score": 0.8949354689860572,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_images",
+  "finished_by_agent": true,
+  "steps": 8,
+  "answer": "Successfully set the video frame as desktop background. The space station image from the Interstellar movie trailer is now the desktop wallpaper. The process involved: taking a snapshot in VLC (saved to /home/user/Pictures/vlcsnap-2026-11-08-09h37m35s023.png), navigating to the Pictures folder, right-clicking the snapshot file, selecting 'Set As Wallpaper', and verifying by closing all windows to reveal the new desktop background.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

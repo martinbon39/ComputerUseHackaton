@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "d681960f-7bc3-4286-9913-a8812ba3261a",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 28,
+  "answer": "All students have been graded according to the scale table:\n\n1. Benedict (42 marks): Pass\n2. Blake (94 marks): Excellent\n3. Bey (33 marks): Pass\n4. Arnold (6 marks): Fail\n5. Clint (86 marks): Above average\n6. Olivia (67 marks): Average\n7. Parah (59 marks): Pass\n8. Elijah (60 marks): Average\n9. Tom (10 marks): Fail\n10. John (85 marks): Above average\n11. Kanye (5 marks): Fail\n12. Reese (73 marks): Average\n13. Swan (100 marks): Exceptional!\n14. Dollar (32 marks): Pass\n\nThe file has been saved successfully.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

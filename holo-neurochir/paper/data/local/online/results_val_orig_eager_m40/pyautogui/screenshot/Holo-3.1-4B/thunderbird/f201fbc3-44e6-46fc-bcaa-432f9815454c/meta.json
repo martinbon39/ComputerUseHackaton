@@ -1,0 +1,20 @@
+{
+  "domain": "thunderbird",
+  "example_id": "f201fbc3-44e6-46fc-bcaa-432f9815454c",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_thunderbird_prefs",
+  "finished_by_agent": true,
+  "steps": 4,
+  "answer": "Successfully disabled automatic quoting in Thunderbird. The 'Automatically quote the original message when replying' setting has been unchecked in Account Settings > Composition & Addressing. From now on, when you reply to emails, your replies will start with a clean slate without the original message text, indentation, and '>' characters.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

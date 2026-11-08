@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "f3b19d1e-2d48-44e9-b4e1-defcae1a0197",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_url_pattern_match",
+  "finished_by_agent": true,
+  "steps": 7,
+  "answer": "Found the Ticketek FAQ page about ticket delivery at help.ticketek.com.au/hc/en-us/articles/360001877308-Ticket-Delivery-Information-FAQs. The page is titled 'Ticket Delivery Information & FAQs' and contains sections on delivery options, app/mobile ticket delivery, and other ticket delivery FAQs.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "9f935cce-0a9f-435f-8007-817732bfc0a5",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_url_pattern_match",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "Successfully browsed the list of Civil Division forms. The filtered results show 11 forms from the Civil Division, including SF 95 (Claim for Damage, Injury or Death), FMS 196 (Judgment Fund Award Data Sheet), FMS 194 (Judgment Fund Transmittal), FMS 197 (Judgment Fund Voucher for Payment), and Pending or Threatened Litigation form.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

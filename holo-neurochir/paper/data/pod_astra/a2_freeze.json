@@ -1,0 +1,59 @@
+{
+  "time": 1794069251.8965728,
+  "utc": "2026-11-07T16:34:11Z",
+  "selected": {
+    "name": "a2_r3_a3",
+    "deltas": {
+      "loop+": 0.009305053623393178,
+      "healthy": -0.0010669618980803837,
+      "loop-": 0.0022304730489850046,
+      "success": -0.0063211227866954035
+    },
+    "qualifies": true,
+    "weights": 1966080,
+    "spec": {
+      "direction_file": "/workspace/astra/train_direction.npz",
+      "layers": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "alpha": 3.0,
+      "topk": 64,
+      "writers": [
+        "mlp",
+        "attn"
+      ]
+    }
+  },
+  "random_seed": 2026110702,
+  "files": {
+    "patch_spec.json": "7a92595d0dd228eac5aa4f27188090aa4b719d876dbeebb3767da9b1d16df312",
+    "a2_random_spec.json": "ecf4303688da116266749faa3da4a3d2a0ea78180cfea0088c0be25fad351b40",
+    "train_direction.npz": "dbc683780cc2a24b2411551b0f54f677aa963856e5b092de5c9e626c5612d745",
+    "a2_random_direction.npz": "706c893cc8016927009a9dbeec1ed4202bb249eb400736650003d622e258a856",
+    "experiment_round2.py": "05cd8894e89008ba799c1b8894f0bfa5e6969fdeb6dae6fe07fa3b962efd4d5b",
+    "code/holo/replay.py": "26f1dfa1989eb06bd0e3fd958a19d724b4f21af0fb194f9e0d0ac0b9fd3d8e42",
+    "code/holo/surgery.py": "013ed9ac28f62045ca00fa8b2df195a79b9a915e38f74b2617362f852690e8a4",
+    "ROUND2_PROTOCOL.md": "e48e59fc1a30cbaee73c7ced282ff2292fbd1898bc6257eecab3612ad0400819",
+    "a2_ranking.json": "792b492d4882988fea7d556bc7b0bd7652977c812a895cddd75a2879240617f2",
+    "a2_dev_rows.json": "223c6af269b44d269b0a50debc05c8a742f142ae93dcf9900f35e1b09cc762e7",
+    "analyze_round2.py": "bb16ca2c85c9166dd02b92247cf7948171b2b4bf52f0d548a08049a1ccdb58b7",
+    "prepare_heldout_round2.py": "914a880ead9f475c93ae55202e28f55f0540a1ad25659a6b19c84033cf33cb0b",
+    "export_round2.py": "0f175123aa4aa1ae05fa65a2f34488e65c3a814a6446ef7c363e8712094334d8",
+    "freeze_round2.py": "bf5ec5a2a90c0f7a694915c5e6a396d98307d17a22ec932bfe77d9480c7c9c30"
+  },
+  "heldout_access": "No round2 heldout contents accessed before this record; round1 empty heldout manifest read on resumption."
+}

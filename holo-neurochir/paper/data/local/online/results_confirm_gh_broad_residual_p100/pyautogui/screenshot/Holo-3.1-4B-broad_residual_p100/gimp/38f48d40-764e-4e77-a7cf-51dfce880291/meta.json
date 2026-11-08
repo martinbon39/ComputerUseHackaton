@@ -1,0 +1,23 @@
+{
+  "domain": "gimp",
+  "example_id": "38f48d40-764e-4e77-a7cf-51dfce880291",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 12,
+  "answer": "I apologize, but this task cannot be completed in GIMP. GIMP is an image manipulation program (GNU Image Manipulation Program) designed for editing static images, not video files.\n\nWhen I attempted to open the fullvideo.mp4 file in GIMP, the application displayed an error message stating: \"Opening '/home/user/fullvideo.mp4' failed: Unknown file type\"\n\nGIMP does not have the capability to:\n- Open MP4 video files\n- Edit or trim video content\n- Work with video timelines or frames\n\nFor trimming video from second 2 to second 4, you would need to use a dedicated video editing tool such as:\n- VLC Media Player (has basic trimming capabilities)\n- FFmpeg (command-line video processing)\n- A proper video editor like Shotcut, OpenShot, Kdenlive, or Adobe Premiere\n\nWould you like me to help you with video trimming using one of these alternative applications instead?",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

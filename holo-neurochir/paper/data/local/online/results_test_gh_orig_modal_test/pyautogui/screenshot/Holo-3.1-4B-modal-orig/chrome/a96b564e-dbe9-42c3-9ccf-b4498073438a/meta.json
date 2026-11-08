@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "a96b564e-dbe9-42c3-9ccf-b4498073438a",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_active_tab",
+  "finished_by_agent": true,
+  "steps": 4,
+  "answer": "Successfully navigated to the FlightAware Discussions forum (Community category) and opened the topic with the most replies: 'Welcome to the new and improved Discourse!' with 56 replies. This topic is categorized under FlightAware > Announcements.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

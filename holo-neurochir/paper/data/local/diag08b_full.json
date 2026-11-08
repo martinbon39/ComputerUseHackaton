@@ -1,0 +1,58 @@
+{
+"normal": 172,
+"imp": 40,
+"success": 0.407,
+"cats": {
+"success": 70,
+"loop": 25,
+"abandon_or_budget": 10,
+"false_success": 37,
+"wrong_final_action": 9,
+"grounding": 21
+},
+"loop_fail_share": 0.255,
+"fs_fail_share": 0.363,
+"fs_answer": 18,
+"fs_submit": 29,
+"loop_pos": 106,
+"loop_neg": 398,
+"fs_pos": 47,
+"done_correct": 27,
+"imp_cats": {
+"grounding": 10,
+"wrong_final_action": 2,
+"false_success": 10,
+"loop": 8,
+"abandon_or_budget": 10
+},
+"per_task": {
+"choose-list": "2/7",
+"click-button-sequence": "2/7",
+"click-checkboxes-soft": "2/6",
+"click-checkboxes": "7/8",
+"click-collapsible": "0/7",
+"click-dialog-2": "6/8",
+"click-menu": "2/7",
+"click-option": "7/7",
+"click-tab-2": "1/7",
+"click-tab": "8/8",
+"click-widget": "7/8",
+"email-inbox-delete": "7/7",
+"enter-date": "0/7",
+"enter-password": "0/7",
+"enter-text-2": "3/8",
+"focus-text-2": "3/7",
+"form-sequence": "1/7",
+"login-user-popup": "1/7",
+"login-user": "1/7",
+"multi-layouts": "1/7",
+"navigate-tree": "6/7",
+"search-engine": "0/7",
+"social-media": "1/7",
+"use-autocomplete": "2/7"
+},
+"verdict": [
+"GO boucle (25 % des \u00e9checs, 106 positifs)",
+"GO faux succ\u00e8s (36 % des \u00e9checs, 47 positifs)"
+]
+}

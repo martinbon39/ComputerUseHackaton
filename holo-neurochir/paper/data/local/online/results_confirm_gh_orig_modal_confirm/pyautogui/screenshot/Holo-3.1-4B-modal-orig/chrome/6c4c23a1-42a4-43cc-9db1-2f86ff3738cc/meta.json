@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "6c4c23a1-42a4-43cc-9db1-2f86ff3738cc",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_direct_json_object",
+  "finished_by_agent": true,
+  "steps": 19,
+  "answer": "Successfully found flights from Seattle (SEA) to New York (NYC) on December 5th, 2026 (next month from current date Nov 8) that can be purchased with miles.\n\n**Search Results:**\n- **Route:** SEA (Seattle, WA) → NYC (New York City Area)\n- **Trip Type:** Round Trip\n- **Departure Date:** Saturday, December 5, 2026\n- **Return Date:** Saturday, December 12, 2026\n- **Passengers:** 1\n- **Miles Required:** 29,200 miles + $12 fee\n- **Flight Type:** 1 Stop\n\n**Additional Options:**\nThe flexible dates calendar shows alternative departure dates with mile prices ranging from 29,200 to 32,500 miles. The \"Miles\" pricing option is active (shown by blue underline under \"Show Price In\"), confirming all displayed prices are in Delta SkyMiles.\n\nThe search was configured with \"Shop with Miles\" enabled, ensuring only flights redeemable with miles are displayed.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

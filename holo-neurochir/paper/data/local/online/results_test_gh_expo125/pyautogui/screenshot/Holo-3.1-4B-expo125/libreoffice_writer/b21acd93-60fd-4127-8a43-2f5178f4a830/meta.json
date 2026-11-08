@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_writer",
+  "example_id": "b21acd93-60fd-4127-8a43-2f5178f4a830",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_line_spacing",
+  "finished_by_agent": true,
+  "steps": 21,
+  "answer": "The essay has been successfully formatted according to your requirements:\n\n1. **Introduction paragraph** (starting with \"Seeing is believing\"): Single line spacing applied\n2. **Body paragraph** (starting with \"If our perception can be influenced\"): Double line spacing applied\n3. **Conclusion paragraph** (starting with \"Beauty is in the eye of the beholder\"): One-and-a-half line spacing applied\n\nThe font size is set to 12pt throughout the document. All formatting changes have been saved to the file \"CCHU9045_Course_Outline_2019-20.docx\".\n\nThe document contains 375 words across the three paragraphs with the specified line spacing for each section.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

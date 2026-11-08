@@ -1,0 +1,196 @@
+{
+  "final_outcome": {
+    "name": "astra-neurons",
+    "state": "STOPPED_NO_PROGRESS_VERIFIED",
+    "utc": 1794080958.8145592,
+    "budget_cap": 20,
+    "lots_used": 4,
+    "weights_persistently_modified": 0,
+    "own_python_processes": [],
+    "no_progress_rounds": 2,
+    "reason": "two consecutive prespecified neuron scaling settings retain answer4/4 on the first unseen fs+ task and exceed final admission ceiling3/8",
+    "baseline": {
+      "fs_plus_answer": "6/8",
+      "fs_minus_answer": "5/8",
+      "healthy_valid_nonanswer": "8/8",
+      "invalid": "0/24"
+    },
+    "candidate_results": [
+      {
+        "top_k": 16,
+        "scale": 0,
+        "observed_answer": "4/4",
+        "planned_fs_plus_generations": 8,
+        "maximum_admissible_final_answers": 3,
+        "verdict": "REJECTED_EFFICACY_BOUND",
+        "protected_strata": "NOT_RUN"
+      },
+      {
+        "top_k": 64,
+        "scale": 0,
+        "observed_answer": "4/4",
+        "planned_fs_plus_generations": 8,
+        "maximum_admissible_final_answers": 3,
+        "verdict": "REJECTED_EFFICACY_BOUND",
+        "protected_strata": "NOT_RUN"
+      }
+    ],
+    "max_reserved_gb": 11.758731264,
+    "next": "no further GPU work; no admitted candidate; ares notified of negative exploratory outcome",
+    "verification": "PASS",
+    "verification_file": "verification_final.json"
+  },
+  "status": "EXPLORATORY",
+  "budget_used": 4,
+  "budget_cap": 20,
+  "baseline": {
+    "name": "lot02_baseline",
+    "rejection": null,
+    "complete": true,
+    "n": 24,
+    "stats": {
+      "fs+": {
+        "n": 8,
+        "answer": 6,
+        "valid_nonanswer": 2,
+        "invalid_or_truncated": 0
+      },
+      "fs-": {
+        "n": 8,
+        "answer": 5,
+        "valid_nonanswer": 3,
+        "invalid_or_truncated": 0
+      },
+      "healthy": {
+        "n": 8,
+        "answer": 0,
+        "valid_nonanswer": 8,
+        "invalid_or_truncated": 0
+      }
+    },
+    "invalid": 0,
+    "peak_reserved_gb": 11.758731264,
+    "sha256": "3f2bb8154a0eb35d7d18a4e8960aea6599533e41c01dd0912d4ca92cb265f646"
+  },
+  "arms": [
+    {
+      "name": "candidate_03_k16_s0p0",
+      "rejection": {
+        "complete": false,
+        "rejected": true,
+        "bound": {
+          "criterion": "fs_plus",
+          "observed_answers": 4,
+          "maximum_admissible_final_answers": 3.0,
+          "planned_denominator": 8
+        },
+        "outputs": 4,
+        "planned_outputs": 24
+      },
+      "complete": false,
+      "n": 4,
+      "stats": {
+        "fs+": {
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_or_truncated": 0
+        },
+        "fs-": {
+          "n": 0,
+          "answer": 0,
+          "valid_nonanswer": 0,
+          "invalid_or_truncated": 0
+        },
+        "healthy": {
+          "n": 0,
+          "answer": 0,
+          "valid_nonanswer": 0,
+          "invalid_or_truncated": 0
+        }
+      },
+      "invalid": 0,
+      "peak_reserved_gb": 11.758731264,
+      "sha256": "8722ccb38de443b2f63ea9a1d07a4ebdb59b0fa1faf20fa1aba72bcfe0d5cc56",
+      "comparison": {
+        "assessed": true,
+        "numerical_thresholds_pass": false,
+        "admitted": false,
+        "reason": "final criterion mathematically impossible",
+        "bound": {
+          "criterion": "fs_plus",
+          "observed_answers": 4,
+          "maximum_admissible_final_answers": 3.0,
+          "planned_denominator": 8
+        }
+      }
+    },
+    {
+      "name": "candidate_04_k64_s0p0",
+      "rejection": {
+        "complete": false,
+        "rejected": true,
+        "bound": {
+          "criterion": "fs_plus",
+          "observed_answers": 4,
+          "maximum_admissible_final_answers": 3.0,
+          "planned_denominator": 8
+        },
+        "outputs": 4,
+        "planned_outputs": 24
+      },
+      "complete": false,
+      "n": 4,
+      "stats": {
+        "fs+": {
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_or_truncated": 0
+        },
+        "fs-": {
+          "n": 0,
+          "answer": 0,
+          "valid_nonanswer": 0,
+          "invalid_or_truncated": 0
+        },
+        "healthy": {
+          "n": 0,
+          "answer": 0,
+          "valid_nonanswer": 0,
+          "invalid_or_truncated": 0
+        }
+      },
+      "invalid": 0,
+      "peak_reserved_gb": 11.758731264,
+      "sha256": "acb3b22e66d6afbe0f3ce054b450ca58bf959cd92c9d6ff09e52af55aa3fde53",
+      "comparison": {
+        "assessed": true,
+        "numerical_thresholds_pass": false,
+        "admitted": false,
+        "reason": "final criterion mathematically impossible",
+        "bound": {
+          "criterion": "fs_plus",
+          "observed_answers": 4,
+          "maximum_admissible_final_answers": 3.0,
+          "planned_denominator": 8
+        }
+      }
+    }
+  ],
+  "weights_persistently_modified": 0,
+  "construction_tasks": [
+    "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+    "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381",
+    "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3"
+  ],
+  "eval_tasks": [
+    "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",
+    "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38",
+    "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb",
+    "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf",
+    "chrome/b070486d-e161-459b-aa2b-ef442d973b92",
+    "chrome/c1fa57f3-c3db-4596-8f09-020701085416"
+  ]
+}

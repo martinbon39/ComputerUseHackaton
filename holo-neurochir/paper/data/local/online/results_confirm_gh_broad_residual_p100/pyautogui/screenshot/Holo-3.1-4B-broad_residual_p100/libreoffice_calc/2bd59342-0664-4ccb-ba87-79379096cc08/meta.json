@@ -1,0 +1,23 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "2bd59342-0664-4ccb-ba87-79379096cc08",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 34,
+  "answer": "The task is infeasible because LibreOffice Calc does not have native sparkline support. I explored all available options:\n\n1. **Insert menu**: No sparkline option available\n2. **Chart wizard**: Only creates full-sized charts, not mini-charts within cells\n3. **Conditional formatting (Data Bars)**: Only uses the cell's own value, not a reference range like C2:E2\n4. **Extension Manager**: No sparkline extensions installed or available\n\nLibreOffice Calc lacks the sparkline functionality that Excel provides. To complete this task, you would need to either:\n- Use Microsoft Excel which has native sparkline support\n- Install a third-party add-in for LibreOffice Calc that provides sparkline functionality\n- Use an alternative visualization method (like small embedded charts, though these require manual placement and resizing)\"\n}}</tool_response>",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "domain": "vs_code",
+  "example_id": "971cbb5b-3cbf-4ff7-9e24-b5c84fcebfa6",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 12,
+  "answer": "I have configured VS Code settings to get as close as possible to your request, but I need to clarify an important limitation: **VS Code cannot automatically create a file with a specific name (like \"test.py\") on startup without using extensions.**\n\nHere's what I've configured:\n\n1. **Workbench: Startup Editor** = \"newUntitledFile\"\n   - This setting causes VS Code to create a new untitled file when it starts up\n\n2. **Files: Default Language** = \"python\"\n   - This sets Python as the default language mode for all new files\n\n**What this accomplishes:**\n- Every time you open VS Code, it will create a new untitled file with Python language mode\n\n**What you still need to do manually:**\n- After VS Code opens with the new file, you'll need to manually save it with the filename \"test.py\"\n\n**Why this limitation exists:**\nVS Code's native settings are designed for configuration, not for automation of file creation with specific names. Automated file creation with specific naming would require scripting or extensions.\n\nIf you want true automation (creating \"test.py\" automatically on startup without extensions), you would need to use:\n- A startup script (bash/zsh) that creates the file\n- Or install a VS Code extension that provides this functionality\n\nThe settings I've configured represent the closest native solution available in VS Code without extensions.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "domain": "chrome",
+  "example_id": "ae78f875-5b98-4907-bbb5-9c737fc68c03",
+  "score": 1,
+  "prompt_variant": "v2_verify",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 42,
+  "answer": "I've completed an extensive investigation to change the number of Google search results displayed per page to 50. Unfortunately, I must inform you that **this task cannot be completed** because Google has permanently removed this feature.\n\n**Key findings from my investigation:**\n\n1. **Native Settings Removed**: I accessed Google's Search settings page (google.com/preferences) and thoroughly explored both the \"Privacy & Safety\" and \"Other settings\" sections. The option to customize the number of search results per page no longer exists in the interface.\n\n2. **URL Parameter Workaround Failed**: I tested the workaround suggested by the Google Help Community forum - adding `&num=50` to the search URL (e.g., `https://www.google.com/search?q=test&num=50`). However, Google ignores this parameter and still displays the default 10 results per page.\n\n3. **Official Confirmation**: Google's AI Overview on search results pages explicitly states that the ability to customize search results per page has been permanently removed.\n\n**Current Status:**\n- Google Search results page displays 10 results per page by default\n- No settings menu option exists to change this\n- URL parameters are ignored for this setting\n- The feature has been disabled by Google and cannot be restored through user settings\n\n**Recommendation:**\nIf you need to view more results at once, your options are:\n- Manually scroll through multiple pages of results\n- Use browser extensions that modify Google's interface (though these may not work with current Google policies)\n- Consider alternative search engines that still offer customizable results per page\n\nI apologize that I cannot fulfill your request as the feature you're looking for no longer exists in Google's search interface.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "0a211154-fda0-48d0-9274-eaac4ce5486d",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 11,
+  "answer": "Task completed successfully. All slides containing real people images (slides 3 and 4) have been set to yellow background color, and slide 2's title has been changed to 'Let's start'. The presentation has been saved.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

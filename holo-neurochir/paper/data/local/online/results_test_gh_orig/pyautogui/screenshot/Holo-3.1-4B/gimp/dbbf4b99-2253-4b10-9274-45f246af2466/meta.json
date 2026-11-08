@@ -1,0 +1,23 @@
+{
+  "domain": "gimp",
+  "example_id": "dbbf4b99-2253-4b10-9274-45f246af2466",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 13,
+  "answer": "The task cannot be completed as specified. GIMP does not have native RAW file support and requires external RAW loaders (darktable or RawTherapee) to open RAW files. The task explicitly requires using GIMP only, but GIMP cannot open the RAW file '/home/user/Desktop/yicun.raw' without these external dependencies. This is a fundamental limitation of GIMP itself, not something that can be worked around within the application. To convert the RAW image to JPEG, you would need to either install darktable or RawTherapee alongside GIMP, or use an alternative image editor that supports RAW files natively.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

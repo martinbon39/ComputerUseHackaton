@@ -1,0 +1,20 @@
+{
+  "domain": "vs_code",
+  "example_id": "9439a27b-18ae-42d8-9778-5f68f891805e",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_json_settings",
+  "finished_by_agent": true,
+  "steps": 4,
+  "answer": "Successfully modified VS Code settings to keep cursor focused on debug console during debugging.\n\n**Setting Changed:**\n- **Debug: Focus Editor On Break** - Disabled (unchecked)\n\nThis setting controls whether the editor should be focused when the debugger breaks. By disabling it, VS Code will no longer automatically shift focus back to the editor during debugging sessions, allowing your cursor to remain focused on the debug console.\n\n**Additional Context:**\n- The setting 'Debug: Focus Window On Break' remains enabled, which controls whether the entire workbench window gets focus when the debugger breaks\n- With 'Focus Editor On Break' disabled, focus will stay on whichever panel/view was active before the breakpoint (typically the debug console if that was your active focus)",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "domain": "os",
+  "example_id": "c288e301-e626-4b98-a1ab-159dcb162af5",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 3,
+  "answer": "The task to set the default Python version to Python 4 cannot be completed because **Python 4 does not exist**.\n\nWhen I checked the system with `python4 --version`, the terminal returned: \"Command 'python4' not found\". The system only has:\n- Python 3 (version 3.10.6-1~22.04)\n- Python 2 (version 2.7.18-3)\n- Python 0 (from snap)\n\n**Python 4 has not been released yet.** As of 2024, the Python Software Foundation has not announced Python 4. The current stable version is Python 3.x.\n\nTo set the default Python version on Ubuntu, you would typically use `update-alternatives` to manage Python versions, but this requires actual installed versions. For example:\n```\nupdate-alternatives --set python /usr/bin/python3\n```\n\nHowever, since Python 4 doesn't exist, this task is infeasible. If you need to use a different Python version (like Python 3.11 or 3.12), you would need to install it first using `apt` or `pyenv`.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

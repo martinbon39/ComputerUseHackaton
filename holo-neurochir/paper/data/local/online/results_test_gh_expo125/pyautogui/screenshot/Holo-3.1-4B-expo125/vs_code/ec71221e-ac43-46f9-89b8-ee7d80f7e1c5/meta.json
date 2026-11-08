@@ -1,0 +1,20 @@
+{
+  "domain": "vs_code",
+  "example_id": "ec71221e-ac43-46f9-89b8-ee7d80f7e1c5",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_text_file",
+  "finished_by_agent": true,
+  "steps": 4,
+  "answer": "Successfully indented lines 2-10 by one tab level and saved the file. The indentation was applied by selecting lines 2-10 and pressing Tab, then saving with Ctrl+S.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

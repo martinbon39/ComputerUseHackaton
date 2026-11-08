@@ -1,0 +1,23 @@
+{
+  "domain": "os",
+  "example_id": "c288e301-e626-4b98-a1ab-159dcb162af5",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 3,
+  "answer": "The task to set the default Python version to Python 4 is **infeasible** because Python 4 does not exist.\n\n**Verification results from your Ubuntu system:**\n- `python4 --version` → Command not found\n- `python3 --version` → Python 3.10.12\n\n**Available Python versions on your system:**\n- Python 0 (snap 0.9.1)\n- Python 2 (deb 2.7.18-3)\n- Python 3 (deb 3.10.6-1~22.04)\n\n**Explanation:** Python 4 has not been released by the Python Software Foundation. The latest stable Python version as of 2024 is Python 3.12.x. You cannot set a non-existent version as the default.\n\nIf you need to use the latest Python version available, you could install Python 3.12 from the Python.org repositories or use `pyenv` to manage multiple Python 3 versions. Would you like assistance with installing Python 3.12 or configuring an alternate Python 3 version?",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

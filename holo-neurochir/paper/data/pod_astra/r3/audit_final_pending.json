@@ -1,0 +1,193 @@
+{
+  "budget_used": 23,
+  "budget_limit": 40,
+  "plan_jobs": 20,
+  "pilots": 3,
+  "expected_total": 23,
+  "pending": [
+    "u10_add025"
+  ],
+  "audited_samples": 1216,
+  "results": {
+    "baseline": {
+      "complete": true,
+      "samples": 96,
+      "repeat_hits": 46,
+      "repeat_n": 48,
+      "health_hits": 36,
+      "health_n": 48,
+      "health_upper": null
+    },
+    "u10_L10": {
+      "complete": true,
+      "samples": 96,
+      "repeat_hits": 45,
+      "repeat_n": 48,
+      "health_hits": 32,
+      "health_n": 48,
+      "health_upper": null
+    },
+    "u10_L9_13": {
+      "complete": true,
+      "samples": 96,
+      "repeat_hits": 43,
+      "repeat_n": 48,
+      "health_hits": 29,
+      "health_n": 48,
+      "health_upper": null
+    },
+    "u10_all": {
+      "complete": true,
+      "samples": 96,
+      "repeat_hits": 45,
+      "repeat_n": 48,
+      "health_hits": 31,
+      "health_n": 48,
+      "health_upper": null
+    },
+    "native_all": {
+      "complete": true,
+      "samples": 96,
+      "repeat_hits": 39,
+      "repeat_n": 48,
+      "health_hits": 28,
+      "health_n": 48,
+      "health_upper": null
+    },
+    "identity": {
+      "complete": true,
+      "samples": 96,
+      "repeat_hits": 46,
+      "repeat_n": 48,
+      "health_hits": 35,
+      "health_n": 48,
+      "health_upper": null
+    },
+    "u10_all_a2": {
+      "complete": true,
+      "samples": 96,
+      "repeat_hits": 45,
+      "repeat_n": 48,
+      "health_hits": 27,
+      "health_n": 48,
+      "health_upper": null
+    },
+    "paired_all": {
+      "complete": false,
+      "samples": 36,
+      "repeat_hits": 0,
+      "repeat_n": 0,
+      "health_hits": 20,
+      "health_n": 36,
+      "health_upper": 0.6666666666666666
+    },
+    "paired_pca_all": {
+      "complete": false,
+      "samples": 36,
+      "repeat_hits": 0,
+      "repeat_n": 0,
+      "health_hits": 18,
+      "health_n": 36,
+      "health_upper": 0.625
+    },
+    "mlp_all": {
+      "complete": false,
+      "samples": 36,
+      "repeat_hits": 0,
+      "repeat_n": 0,
+      "health_hits": 20,
+      "health_n": 36,
+      "health_upper": 0.6666666666666666
+    },
+    "mlp_pca_all": {
+      "complete": false,
+      "samples": 40,
+      "repeat_hits": 0,
+      "repeat_n": 0,
+      "health_hits": 22,
+      "health_n": 40,
+      "health_upper": 0.625
+    },
+    "mean_all": {
+      "complete": false,
+      "samples": 40,
+      "repeat_hits": 0,
+      "repeat_n": 0,
+      "health_hits": 23,
+      "health_n": 40,
+      "health_upper": 0.6458333333333334
+    },
+    "random_all": {
+      "complete": true,
+      "samples": 96,
+      "repeat_hits": 46,
+      "repeat_n": 48,
+      "health_hits": 35,
+      "health_n": 48,
+      "health_upper": 0.7291666666666666
+    },
+    "baseline_repeat": {
+      "complete": true,
+      "samples": 96,
+      "repeat_hits": 46,
+      "repeat_n": 48,
+      "health_hits": 34,
+      "health_n": 48,
+      "health_upper": 0.7083333333333334
+    },
+    "strict_paired": {
+      "complete": false,
+      "samples": 36,
+      "repeat_hits": 0,
+      "repeat_n": 0,
+      "health_hits": 18,
+      "health_n": 36,
+      "health_upper": 0.625
+    },
+    "strict_paired_pca": {
+      "complete": false,
+      "samples": 40,
+      "repeat_hits": 0,
+      "repeat_n": 0,
+      "health_hits": 23,
+      "health_n": 40,
+      "health_upper": 0.6458333333333334
+    },
+    "strict_mlp": {
+      "complete": false,
+      "samples": 36,
+      "repeat_hits": 0,
+      "repeat_n": 0,
+      "health_hits": 21,
+      "health_n": 36,
+      "health_upper": 0.6875
+    },
+    "strict_mlp_pca": {
+      "complete": false,
+      "samples": 36,
+      "repeat_hits": 0,
+      "repeat_n": 0,
+      "health_hits": 20,
+      "health_n": 36,
+      "health_upper": 0.6666666666666666
+    },
+    "pilot_gpu": {
+      "complete": true,
+      "samples": 8,
+      "repeat_hits": 4,
+      "repeat_n": 4,
+      "health_hits": 3,
+      "health_n": 4,
+      "health_upper": null
+    },
+    "vector_pilot": {
+      "complete": true,
+      "samples": 8,
+      "repeat_hits": 4,
+      "repeat_n": 4,
+      "health_hits": 3,
+      "health_n": 4,
+      "health_upper": null
+    }
+  }
+}

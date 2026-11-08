@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "a728a36e-8bf1-4bb6-9a03-ef039a5233f0",
+  "score": 1.0,
+  "prompt_variant": "v2_verify",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_url_pattern_match",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "Successfully found the Driver License Eligibility Requirements on the Virginia DMV website (dmv.virginia.gov/licenses-ids/license/applying/eligibility). The page contains eligibility requirements for:\n\n1. **New Residents** - Information for those moving to Virginia\n2. **Military Personnel** - Special provisions for military members\n3. **Out-of-State Students** - Requirements for students from other states\n4. **Non-residents** - Eligibility for non-Virginia residents\n5. **Identification and Residency Requirements** - Documentation needed\n\nAdditional resources include:\n- Interactive document guide to determine required documents\n- DMV 141 form (Acceptable Documents for Obtaining a Driver's License or Photo ID Card)\n- Español language version available\n- First Time Drivers section\n- Links to apply for various license types\n\nThe page also notes that you may hold either a driver's license or a CDL, but not both, and if you hold any license, you are not eligible for an ID card.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

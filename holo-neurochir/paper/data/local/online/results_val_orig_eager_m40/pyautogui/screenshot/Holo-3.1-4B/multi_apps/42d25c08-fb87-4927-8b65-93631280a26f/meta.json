@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "42d25c08-fb87-4927-8b65-93631280a26f",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_epub,compare_epub,compare_epub",
+  "finished_by_agent": false,
+  "steps": 50,
+  "answer": null,
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

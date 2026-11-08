@@ -1,0 +1,20 @@
+{
+  "domain": "vs_code",
+  "example_id": "6ed0a554-cbee-4b44-84ea-fd6c042f4fe1",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_json_settings",
+  "finished_by_agent": true,
+  "steps": 32,
+  "answer": "Done.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

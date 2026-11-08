@@ -1,0 +1,20 @@
+{
+  "domain": "os",
+  "example_id": "37887e8c-da15-4192-923c-08fa390a176d",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_include_exclude",
+  "finished_by_agent": true,
+  "steps": 18,
+  "answer": "Task completed successfully. All files in /tmp/test_files have been organized according to their modification dates:\n\n**Compressed files in /tmp/test_files/old_files:**\n- old_file1.txt.gz (originally dated Oct 9, ~30 days old)\n- old_file2.txt.gz (originally dated Oct 9, ~30 days old)\n\n**Uncompressed files in /tmp/test_files/new_files:**\n- new_file1.txt (dated Nov 8, today)\n- new_file2.txt (dated Nov 8, today)\n\nThe old files (modified approximately 30 days ago) have been compressed using gzip and placed in the old_files directory. The newer files remain uncompressed in the new_files directory.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "domain": "gimp",
+  "example_id": "38f48d40-764e-4e77-a7cf-51dfce880291",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 20,
+  "answer": "GIMP cannot trim the video file. GIMP is an image manipulation program, not a video editor, and it cannot open or process MP4 video files. To trim the video from the 2nd to 4th second, you'll need to use a video editing tool such as:\n\n1. **VLC Media Player** - Can convert/trim video segments using the command-line interface or conversion features\n2. **FFmpeg** - A powerful command-line video processing tool (e.g., `ffmpeg -i fullvideo.mp4 -ss 00:00:02 -to 00:00:04 -c copy trimmed.mp4`)\n3. **Shotcut** - A free video editor with a GUI\n4. **OpenShot** - Another free video editor\n5. **Descript** or **VidMate** - Online video trimming tools\n\nWould you like help with any of these alternative tools instead?",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

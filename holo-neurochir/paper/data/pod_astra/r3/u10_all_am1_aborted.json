@@ -1,0 +1,6 @@
+{
+  "status": "aborted_not_evaluable",
+  "reason": "First four saved generations invalid, ~92 seconds/context; stopped own PID78008 during next context. No HEALTH observation; no full score claimed.",
+  "saved_generations": 4,
+  "time": 1794072963.180437
+}

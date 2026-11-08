@@ -1,0 +1,23 @@
+{
+  "domain": "gimp",
+  "example_id": "62f7fd55-0687-4a43-b6e1-3eda16fc6252",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 16,
+  "answer": "I was unable to convert /home/user/logo.png to SVG format using GIMP. \n\n**Reason:** GIMP is a raster (pixel-based) graphics editor and does not support exporting to SVG format, which is a vector format. When I attempted to export with the .svg extension, GIMP displayed an error message: \"The given filename does not have any known file extension.\"\n\n**Available export formats in GIMP include:** PNG, BMP, TIFF, XCF (GIMP's native format), PDF, and various other raster/pixel-based formats - but NO vector formats like SVG.\n\n**Alternative solutions:** To convert PNG to SVG, you would need to use:\n- **Inkscape** (free, open-source vector graphics editor that can trace bitmap images to vectors)\n- **Online PNG to SVG converters**\n- **Specialized vectorization software**\n\nWould you like me to help you convert the image using Inkscape or another tool instead?",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

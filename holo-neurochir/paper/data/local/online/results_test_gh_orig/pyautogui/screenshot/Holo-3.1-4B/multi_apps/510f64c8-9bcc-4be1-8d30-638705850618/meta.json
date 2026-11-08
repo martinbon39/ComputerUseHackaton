@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "510f64c8-9bcc-4be1-8d30-638705850618",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_include_exclude,compare_config",
+  "finished_by_agent": true,
+  "steps": 2,
+  "answer": "VS Code has been successfully started in the ~/Desktop/project folder from the terminal. The application is now running with the project folder loaded, as confirmed by the window title 'Welcome - project - Visual Studio Code' and the visible project files in the Explorer panel (.vscode folder, main.py, and README.md).",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

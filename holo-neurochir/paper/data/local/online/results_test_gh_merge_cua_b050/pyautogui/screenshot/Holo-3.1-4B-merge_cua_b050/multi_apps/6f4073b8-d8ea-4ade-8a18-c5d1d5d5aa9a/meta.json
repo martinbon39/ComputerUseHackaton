@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "6f4073b8-d8ea-4ade-8a18-c5d1d5d5aa9a",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_conference_city_in_order",
+  "finished_by_agent": true,
+  "steps": 23,
+  "answer": "Completed filling in all 21 vacant city locations for ICLR, ICML, and Neurips conferences from 2013-2019. The spreadsheet has been saved with the complete data.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

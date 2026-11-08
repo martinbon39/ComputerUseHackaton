@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "dd60633f-2c72-42ba-8547-6f2c8cb0fdb0",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_python_pure_text",
+  "finished_by_agent": false,
+  "steps": 50,
+  "answer": null,
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

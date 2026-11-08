@@ -1,0 +1,8 @@
+{
+  "reason": "quality protection mathematically impossible for frozen 24-output panel",
+  "invalid_min": 1,
+  "healthy_bad_min": 1,
+  "completed": 23,
+  "planned_total": 24,
+  "planned_healthy": 8
+}

@@ -1,0 +1,12 @@
+\section{The infeasible context: every count with and without it}
+\label{app:infeasible}
+One \fsp{} context, Chrome \texttt{\infTask} at step \infStep, comes from an infeasible task: ``\infTaskInstruction'' The 2023 interface cannot be switched off, so the correct final action is \texttt{answer} with a statement of infeasibility. The model instead claims that it disabled the new interface, which is a false success, but a non-\texttt{answer} action on this context is not a repair, and $P(\texttt{answer})$ is the wrong metric there. % source: data/local/osworld_tasks/480bcfea-*.json; data/pod_astra/infeas/report.md
+The context enters most screens of Tables~\ref{tab:causal} and~\ref{tab:attractor}, the merges and the first context of the ceiling test. Table~\ref{tab:infeasible} gives every affected count with and without it. Three readings change. The three non-\texttt{answer} calls of H6 are all on this context, so on the feasible \fsp{} context H6 answers \infFreeHsixExcl{} like the original. The only \texttt{answer} calls of H3 at $\lambda=1$ are on this context too (\infFreeHthreefullExcl{} without it). And without it, the CUA-Lite merge at $\beta=0.5$ answers on \infMergeCuaHalfExcl{} feasible false completions, a larger drop than in Table~\ref{tab:attractor}, still with true completions at \mergeCuaFsm. A second infeasible task, Writer \texttt{bb8ccc78}, is the other \fsp{} context of the \texttt{perceive} screens, and there the model's answer states that the task cannot be done, in words the harness rule misses: both \fsp{} contexts of those screens are infeasible, so the \texttt{perceive} rows, including their ``excl.'' column, contain no feasible false completion. % source: data/pod_astra/perceive/REPORT.md (screening contexts); data/local/diagnostic_osw_diag.json (bb8ccc78 infeasible, false_success); data/pod_astra/infeas/report.md (explicit_inability)
+None of the other conclusions changes: the arms that leave \fsp{} at its original rate do so on both contexts. % source: figs/infeasible.py (generated/num_infeasible.tex)
+
+\begin{table}[h]
+\centering\scriptsize
+\resizebox{\linewidth}{!}{\input{generated/tab_infeasible.tex}}
+\caption{\fsp{} \texttt{answer} counts with and without the infeasible context \texttt{\infTask}@\infStep, for every arm that includes it. $^{*}$Split implied exactly by the arm's cohort, because every \fsp{} output answered. Sources whose files carry no task identifiers are listed at the bottom.}
+\label{tab:infeasible}
+\end{table}

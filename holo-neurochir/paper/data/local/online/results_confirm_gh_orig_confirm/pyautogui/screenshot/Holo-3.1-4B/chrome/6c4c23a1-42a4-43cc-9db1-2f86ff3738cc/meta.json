@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "6c4c23a1-42a4-43cc-9db1-2f86ff3738cc",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_direct_json_object",
+  "finished_by_agent": true,
+  "steps": 15,
+  "answer": "Flights from Seattle (SEA) to New York City Area (NYC) on December 5th, 2026 (5th of next month) that can be purchased with miles have been found.\n\n**Search Parameters:**\n- Origin: Seattle, WA (SEA)\n- Destination: New York City Area Airports, NY (NYC)\n- Departure Date: December 5, 2026 (Saturday)\n- Return Date: December 12, 2026 (Saturday)\n- Trip Type: Round Trip\n- Passengers: 1\n- Shop with Miles: Enabled\n\n**Flight Result:**\n- **Route:** SEA → NYC (Round Trip)\n- **Departure:** Saturday, December 5\n- **Return:** Saturday, December 12\n- **Mile Price:** 29,200 miles + $12\n- **Flight Type:** With 1 stop\n\nThe results are displayed in the flexible dates calendar view, showing various date combinations around December 5-12. The lowest mileage price for December 5th departure is 29,200 miles for the round trip to New York City Area.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

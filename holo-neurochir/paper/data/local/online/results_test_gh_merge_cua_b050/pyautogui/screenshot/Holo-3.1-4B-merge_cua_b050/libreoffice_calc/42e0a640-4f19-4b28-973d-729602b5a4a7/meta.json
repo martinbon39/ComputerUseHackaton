@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "42e0a640-4f19-4b28-973d-729602b5a4a7",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 7,
+  "answer": "Done.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

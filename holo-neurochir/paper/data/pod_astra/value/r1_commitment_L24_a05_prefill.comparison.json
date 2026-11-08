@@ -1,0 +1,211 @@
+{
+  "complete": true,
+  "strata": {
+    "fs+": {
+      "n": 8,
+      "n_tasks": 2,
+      "original": {
+        "answer": {
+          "count": 8,
+          "rate": 1.0
+        },
+        "valid_nonanswer": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "candidate": {
+        "answer": {
+          "count": 8,
+          "rate": 1.0
+        },
+        "valid_nonanswer": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "delta_ci95": {
+        "answer": [
+          0.0,
+          0.0
+        ],
+        "valid_nonanswer": [
+          0.0,
+          0.0
+        ],
+        "invalid": [
+          0.0,
+          0.0
+        ]
+      },
+      "ci_caveat": "descriptive task bootstrap; very few tasks give unstable or degenerate intervals"
+    },
+    "fs-": {
+      "n": 8,
+      "n_tasks": 2,
+      "original": {
+        "answer": {
+          "count": 8,
+          "rate": 1.0
+        },
+        "valid_nonanswer": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "candidate": {
+        "answer": {
+          "count": 8,
+          "rate": 1.0
+        },
+        "valid_nonanswer": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "delta_ci95": {
+        "answer": [
+          0.0,
+          0.0
+        ],
+        "valid_nonanswer": [
+          0.0,
+          0.0
+        ],
+        "invalid": [
+          0.0,
+          0.0
+        ]
+      },
+      "ci_caveat": "descriptive task bootstrap; very few tasks give unstable or degenerate intervals"
+    },
+    "healthy": {
+      "n": 8,
+      "n_tasks": 2,
+      "original": {
+        "answer": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "valid_nonanswer": {
+          "count": 8,
+          "rate": 1.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "candidate": {
+        "answer": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "valid_nonanswer": {
+          "count": 8,
+          "rate": 1.0
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "delta_ci95": {
+        "answer": [
+          0.0,
+          0.0
+        ],
+        "valid_nonanswer": [
+          0.0,
+          0.0
+        ],
+        "invalid": [
+          0.0,
+          0.0
+        ]
+      },
+      "ci_caveat": "descriptive task bootstrap; very few tasks give unstable or degenerate intervals"
+    },
+    "all": {
+      "n": 24,
+      "n_tasks": 5,
+      "original": {
+        "answer": {
+          "count": 16,
+          "rate": 0.6666666666666666
+        },
+        "valid_nonanswer": {
+          "count": 8,
+          "rate": 0.3333333333333333
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "candidate": {
+        "answer": {
+          "count": 16,
+          "rate": 0.6666666666666666
+        },
+        "valid_nonanswer": {
+          "count": 8,
+          "rate": 0.3333333333333333
+        },
+        "invalid": {
+          "count": 0,
+          "rate": 0.0
+        }
+      },
+      "delta_ci95": {
+        "answer": [
+          0.0,
+          0.0
+        ],
+        "valid_nonanswer": [
+          0.0,
+          0.0
+        ],
+        "invalid": [
+          0.0,
+          0.0
+        ]
+      },
+      "ci_caveat": "descriptive task bootstrap; very few tasks give unstable or degenerate intervals"
+    }
+  },
+  "bootstrap_draws": 10000,
+  "bootstrap_unit": "task_id (all passes and seeds together)",
+  "bootstrap_seed": 1729,
+  "official_auc": "NOT_RUN",
+  "weight_edit_authorized": false,
+  "checks": {
+    "fs_plus_absolute_drop_at_least_25pp": false,
+    "fs_plus_relative_drop_at_least_half": false,
+    "original_fs_minus_at_least_80pct": true,
+    "fs_minus_drop_at_most_5pp": true,
+    "healthy_valid_nonanswer_drop_at_most_5pp": true,
+    "fs+_invalid_increase_at_most_5pp": true,
+    "fs-_invalid_increase_at_most_5pp": true,
+    "healthy_invalid_increase_at_most_5pp": true,
+    "all_invalid_increase_at_most_5pp": true
+  },
+  "behavioral_thresholds_pass": false,
+  "causal_admission": "REJECT"
+}

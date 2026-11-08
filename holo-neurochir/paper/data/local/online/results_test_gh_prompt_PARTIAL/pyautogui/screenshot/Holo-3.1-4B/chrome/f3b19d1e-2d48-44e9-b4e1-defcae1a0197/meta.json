@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "f3b19d1e-2d48-44e9-b4e1-defcae1a0197",
+  "score": 1.0,
+  "prompt_variant": "v2_verify",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_url_pattern_match",
+  "finished_by_agent": true,
+  "steps": 8,
+  "answer": "Successfully found the Ticketek FAQ page about ticket delivery. The page is located at ticketeksingapore.zendesk.com/hc/en-au/articles/14615207450777-Ticket-Delivery-FAQs and is titled 'Ticket Delivery FAQs'. The page contains information about various ticket delivery methods including SMS and print-at-home tickets, and provides guidance on what to do if tickets haven't been received. Related FAQ articles are also available in the left sidebar covering topics like changing names on SMS tickets, mobile tickets, and ezyTicket FAQs.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

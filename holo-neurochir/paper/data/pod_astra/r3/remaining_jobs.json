@@ -1,0 +1,49 @@
+[
+  {
+    "name": "baseline_repeat"
+  },
+  {
+    "name": "paired_all",
+    "direction": "paired"
+  },
+  {
+    "name": "paired_pca_all",
+    "direction": "paired_pca"
+  },
+  {
+    "name": "mlp_all",
+    "direction": "mlp"
+  },
+  {
+    "name": "mlp_pca_all",
+    "direction": "mlp_pca"
+  },
+  {
+    "name": "mean_all",
+    "direction": "mean"
+  },
+  {
+    "name": "random_all",
+    "direction": "random"
+  },
+  {
+    "name": "strict_paired",
+    "direction": "paired",
+    "direction_file": "strict/directions.npz"
+  },
+  {
+    "name": "strict_paired_pca",
+    "direction": "paired_pca",
+    "direction_file": "strict/directions.npz"
+  },
+  {
+    "name": "strict_mlp",
+    "direction": "mlp",
+    "direction_file": "strict/directions.npz"
+  },
+  {
+    "name": "strict_mlp_pca",
+    "direction": "mlp_pca",
+    "direction_file": "strict/directions.npz"
+  }
+]

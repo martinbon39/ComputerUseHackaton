@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "1e8df695-bd1b-45b3-b557-e7d599cf7597",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 9,
+  "answer": "Task completed successfully. I have added a new 'Profit' column in column D (right next to the COGS column) and calculated the profit for each week by subtracting COGS from Sales. The profit values for all 10 weeks are:\n\n- Week 1: 11,577.2\n- Week 2: 70,773.5\n- Week 3: 82,267.6\n- Week 4: 4,763.33\n- Week 5: 50,481.3\n- Week 6: 62,432.3\n- Week 7: 40,804.2\n- Week 8: 20,648.4\n- Week 9: 97,994.7\n- Week 10: 28,668.9\n\nThe formula =B2-C2 (Sales - COGS) was applied to all rows and the file has been saved.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

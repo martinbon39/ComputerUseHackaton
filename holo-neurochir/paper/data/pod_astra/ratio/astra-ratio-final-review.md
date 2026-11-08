@@ -1,0 +1,11 @@
+# Final independent review — astra-ratio
+
+**Verdict: faithful final negative result.** The local and remote `REPORT.md` files have the same SHA256 (`5a1fb3aaa027872ccd22683c225d16d60a67c148e891e8b5cb502dd4a4c64236`). I found no material contradiction between the report and the final evidence.
+
+The artifact controls pass: candidate, engine, and runtime freeze hashes are 24/24, 14/14, and 4/4; the ledger has 10 lots and 19 reserved MIT requests; seven arms each have 32 valid, non-truncated records; 12/12 realized BF16 tensor hashes match; and blind/raw/audit coherence is 137/137 unique IDs across 224 observations. Recorded peak process memory is 13,002,342,400 bytes for each arm. `PROCESS_CLEANUP.json` reports zero owned GPU PIDs and both locks released.
+
+The report’s behavioral accounting is faithful. Every arm has 0/8 useful fs+ actions and four false Calc success claims; the two alpha6 arms each have one unknown terminal shortcut output. The 137 distinct audited proposals therefore support rejection of every learned edit under the fixed utility criterion. The alpha6 shortcut is not credited because its availability and effect were not verified. No learned edit was admitted or sent as a candidate; random arms remain controls.
+
+The text result has two deliberately separate verdicts. Automatic exact comparison is **FAILED** for `v_random6` and passed for the other six arms; `FINAL_VERIFY.json` remains `RAN=true`, `PASSED=false`, `CORRECT=null`, `NOT_RUN=[]`. The explicit independent model-agent review covers four blinded texts: 3 exact, 1 non-exact, 4 correct, 4 semantically equivalent, 0 truncated. The only difference replaces “0°C (32°F)” with “0 degrees Celsius”. Thus the user’s “identical or equivalent” criterion is satisfied by the explicit review, while the strict machine failure remains visible and unmodified.
+
+Limits are correctly retained: proposals were not executed in the VM, no online OSWorld score or checkpoint upload was performed, hidden vLLM forwards were not independently instrumented, and the result is limited to this adaptation and corpus. This is sufficient for the stated rejection decision and does not establish a universal impossibility result.

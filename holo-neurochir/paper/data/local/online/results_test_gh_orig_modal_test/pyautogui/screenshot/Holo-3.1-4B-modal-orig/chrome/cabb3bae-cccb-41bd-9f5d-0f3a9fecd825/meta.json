@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "cabb3bae-cccb-41bd-9f5d-0f3a9fecd825",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_direct_json_object",
+  "finished_by_agent": true,
+  "steps": 8,
+  "answer": "Successfully browsed Spider-Man toys for kids and sorted by lowest price on Google Shopping. Products are now displayed from lowest to highest price, starting at $1.50 for an Ooshies Marvel Super Heroes Adventure Mini figure, with various Spider-Man action figures, plush toys, and accessories available at increasing prices.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

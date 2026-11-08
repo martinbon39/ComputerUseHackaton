@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "3b27600c-3668-4abd-8f84-7bcdebbccbdb",
+  "score": 0.028626288575876013,
+  "prompt_variant": "v2_verify",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "evaluate_presentation_fill_to_rgb_distance",
+  "finished_by_agent": true,
+  "steps": 14,
+  "answer": "Successfully changed the background to blue on all slides. The blue background (Light Blue 2 color) was applied through the Master Slide, ensuring all 19 slides in the presentation now have a consistent blue background. The changes have been saved.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

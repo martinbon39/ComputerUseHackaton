@@ -1,0 +1,233 @@
+{
+  "limitation": "Static stopping and format probes only; not an OSWorld success estimate. Text coherence is assessed in the independent behavioral audits.",
+  "results": [
+    {
+      "name": "Holo-3.1-4B",
+      "generations_sha256": "ea40ed683178ff1b8036f7d2220c3f5e2fbebbb7f1e2b4911cfa6ef4e6c71535",
+      "n": 51,
+      "errors": 0,
+      "truncated": 0,
+      "settings": {
+        "temperature": 0.8,
+        "top_p": 0.9,
+        "top_k": 20,
+        "max_tokens": 3072,
+        "reasoning_effort": "medium",
+        "enable_thinking": true,
+        "structured_outputs": "holo_agent step schema (build_schema(make_step_model(TOOLS)))",
+        "seed": "per request",
+        "text_prompts": {
+          "temperature": 0.0,
+          "max_tokens": 256,
+          "enable_thinking": false
+        }
+      },
+      "servers": [
+        {
+          "url": "https://emilejouannet--holo-vllm-serve.us-east.modal.run/v1",
+          "model": "Holo-3.1-4B-modal-orig",
+          "vllm_version": "0.23.0",
+          "models": [
+            {
+              "id": "Holo-3.1-4B-modal-orig",
+              "root": "Hcompany/Holo-3.1-4B"
+            }
+          ]
+        }
+      ],
+      "groups": {
+        "fs+": {
+          "n": 16,
+          "answer": 16,
+          "valid_nonanswer": 0,
+          "invalid": 0
+        },
+        "fs-": {
+          "n": 16,
+          "answer": 16,
+          "valid_nonanswer": 0,
+          "invalid": 0
+        },
+        "healthy": {
+          "n": 16,
+          "answer": 0,
+          "valid_nonanswer": 16,
+          "invalid": 0
+        }
+      },
+      "text_complete": 3,
+      "text_n": 3
+    },
+    {
+      "name": "merge_cua_b025",
+      "generations_sha256": "de76a5a47f0e1f4146e3192fac828e2ffd51aa18c368e42623ba53a7a6686b8f",
+      "n": 51,
+      "errors": 0,
+      "truncated": 0,
+      "settings": {
+        "temperature": 0.8,
+        "top_p": 0.9,
+        "top_k": 20,
+        "max_tokens": 3072,
+        "reasoning_effort": "medium",
+        "enable_thinking": true,
+        "structured_outputs": "holo_agent step schema (build_schema(make_step_model(TOOLS)))",
+        "seed": "per request",
+        "text_prompts": {
+          "temperature": 0.0,
+          "max_tokens": 256,
+          "enable_thinking": false
+        }
+      },
+      "servers": [
+        {
+          "url": "https://emilejouannet--holo-vllm-serve.us-east.modal.run/v1",
+          "model": "Holo-3.1-4B-merge_cua_b025",
+          "vllm_version": "0.23.0",
+          "models": [
+            {
+              "id": "Holo-3.1-4B-merge_cua_b025",
+              "root": "/models/ckpt/merge_cua_b025"
+            }
+          ]
+        }
+      ],
+      "groups": {
+        "fs+": {
+          "n": 16,
+          "answer": 15,
+          "valid_nonanswer": 1,
+          "invalid": 0
+        },
+        "fs-": {
+          "n": 16,
+          "answer": 11,
+          "valid_nonanswer": 5,
+          "invalid": 0
+        },
+        "healthy": {
+          "n": 16,
+          "answer": 0,
+          "valid_nonanswer": 16,
+          "invalid": 0
+        }
+      },
+      "text_complete": 3,
+      "text_n": 3
+    },
+    {
+      "name": "merge_cua_b050",
+      "generations_sha256": "c92fe2483934c5d477cc408b7eda378d90d17e2ce7f5dd549bd2a9e5fb895c12",
+      "n": 51,
+      "errors": 0,
+      "truncated": 0,
+      "settings": {
+        "temperature": 0.8,
+        "top_p": 0.9,
+        "top_k": 20,
+        "max_tokens": 3072,
+        "reasoning_effort": "medium",
+        "enable_thinking": true,
+        "structured_outputs": "holo_agent step schema (build_schema(make_step_model(TOOLS)))",
+        "seed": "per request",
+        "text_prompts": {
+          "temperature": 0.0,
+          "max_tokens": 256,
+          "enable_thinking": false
+        }
+      },
+      "servers": [
+        {
+          "url": "https://martinbon39--holo-vllm-serve.us-east.modal.run/v1",
+          "model": "Holo-3.1-4B-merge_cua_b050",
+          "vllm_version": "0.23.0",
+          "models": [
+            {
+              "id": "Holo-3.1-4B-merge_cua_b050",
+              "root": "/models/ckpt/merge_cua_b050"
+            }
+          ]
+        }
+      ],
+      "groups": {
+        "fs+": {
+          "n": 16,
+          "answer": 11,
+          "valid_nonanswer": 5,
+          "invalid": 0
+        },
+        "fs-": {
+          "n": 16,
+          "answer": 2,
+          "valid_nonanswer": 14,
+          "invalid": 0
+        },
+        "healthy": {
+          "n": 16,
+          "answer": 0,
+          "valid_nonanswer": 16,
+          "invalid": 0
+        }
+      },
+      "text_complete": 3,
+      "text_n": 3
+    },
+    {
+      "name": "merge_fara_b050",
+      "generations_sha256": "e7c40f30138dff44c8e86fd1bcd3e98e7b2c135f422ad26f646d9fcbcb19edf9",
+      "n": 51,
+      "errors": 0,
+      "truncated": 0,
+      "settings": {
+        "temperature": 0.8,
+        "top_p": 0.9,
+        "top_k": 20,
+        "max_tokens": 3072,
+        "reasoning_effort": "medium",
+        "enable_thinking": true,
+        "structured_outputs": "holo_agent step schema (build_schema(make_step_model(TOOLS)))",
+        "seed": "per request",
+        "text_prompts": {
+          "temperature": 0.0,
+          "max_tokens": 256,
+          "enable_thinking": false
+        }
+      },
+      "servers": [
+        {
+          "url": "https://emilejouannet--holo-vllm-serve.us-east.modal.run/v1",
+          "model": "Holo-3.1-4B-merge_fara_b050",
+          "vllm_version": "0.23.0",
+          "models": [
+            {
+              "id": "Holo-3.1-4B-merge_fara_b050",
+              "root": "/models/ckpt/merge_fara_b050"
+            }
+          ]
+        }
+      ],
+      "groups": {
+        "fs+": {
+          "n": 16,
+          "answer": 16,
+          "valid_nonanswer": 0,
+          "invalid": 0
+        },
+        "fs-": {
+          "n": 16,
+          "answer": 14,
+          "valid_nonanswer": 2,
+          "invalid": 0
+        },
+        "healthy": {
+          "n": 16,
+          "answer": 0,
+          "valid_nonanswer": 16,
+          "invalid": 0
+        }
+      },
+      "text_complete": 3,
+      "text_n": 3
+    }
+  ]
+}

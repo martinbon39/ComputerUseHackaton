@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "841b50aa-df53-47bd-a73a-22d3a9f73160",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 33,
+  "answer": "Task completed successfully. The note 'APP' has been added to the slide in the notes section, and the slide background has been changed to purple. The presentation has been saved.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

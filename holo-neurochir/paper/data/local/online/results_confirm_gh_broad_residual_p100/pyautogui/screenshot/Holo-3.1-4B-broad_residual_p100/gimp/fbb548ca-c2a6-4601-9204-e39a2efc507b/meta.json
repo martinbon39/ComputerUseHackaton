@@ -1,0 +1,23 @@
+{
+  "domain": "gimp",
+  "example_id": "fbb548ca-c2a6-4601-9204-e39a2efc507b",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 9,
+  "answer": "I was unable to change GIMP's color theme to Blue because this theme is not available in the current GIMP installation. After navigating to Edit > Preferences > Interface > Theme, I confirmed that GIMP only includes four built-in themes:\n\n1. Dark\n2. Gray\n3. Light\n4. System\n\nThe Blue theme does not exist in GIMP's standard theme options. To get a Blue-themed interface, you would need to either:\n- Install a custom Blue theme from the GIMP community (available at gimp.org or GitHub)\n- Create a custom theme by modifying the theme files\n- Use one of the existing themes and customize colors through other means\n\nFor now, you can use the Dark theme which provides a comfortable viewing experience for image editing work.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "interventions": [
+    "original",
+    "reason_only",
+    "json_only",
+    "reason_and_json"
+  ],
+  "construction_pairs": 2,
+  "forwards": 14,
+  "evaluation_captures": 6,
+  "weights": "original only",
+  "weight_updates": false,
+  "generation": false,
+  "deadline_seconds": 1800,
+  "decision": "report margin changes; no inference of zero causal role from small changes",
+  "output": "anchoring_summary.json and eval_captures.pt"
+}

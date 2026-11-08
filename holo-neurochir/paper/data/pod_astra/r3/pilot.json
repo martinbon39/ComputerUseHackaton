@@ -1,0 +1,22 @@
+[
+  {
+    "run": "choose-list__s1",
+    "path": "/workspace/astra/data/train/choose-list__s1",
+    "t": 6,
+    "seed": 1,
+    "task": "choose-list",
+    "label": "loop+",
+    "success": false,
+    "n_in": 6955
+  },
+  {
+    "run": "enter-date__s2",
+    "path": "/workspace/astra/data/train/enter-date__s2",
+    "t": 0,
+    "seed": 2,
+    "task": "enter-date",
+    "label": "loop-",
+    "success": false,
+    "n_in": 2669
+  }
+]

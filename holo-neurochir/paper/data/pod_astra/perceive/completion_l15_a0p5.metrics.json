@@ -1,0 +1,202 @@
+{
+  "stats": {
+    "fs+": {
+      "n": 8,
+      "tasks": 2,
+      "metric": "answer",
+      "baseline": 0.75,
+      "candidate": 0.625,
+      "delta": -0.125,
+      "task_bootstrap_delta_ci95": [
+        -0.25,
+        0.0
+      ],
+      "invalid_baseline": 0.0,
+      "invalid_candidate": 0.0,
+      "invalid_delta": 0.0
+    },
+    "fs-": {
+      "n": 8,
+      "tasks": 2,
+      "metric": "answer",
+      "baseline": 1.0,
+      "candidate": 1.0,
+      "delta": 0.0,
+      "task_bootstrap_delta_ci95": [
+        0.0,
+        0.0
+      ],
+      "invalid_baseline": 0.0,
+      "invalid_candidate": 0.0,
+      "invalid_delta": 0.0
+    },
+    "healthy": {
+      "n": 8,
+      "tasks": 2,
+      "metric": "valid_nonanswer",
+      "baseline": 0.75,
+      "candidate": 0.875,
+      "delta": 0.125,
+      "task_bootstrap_delta_ci95": [
+        0.0,
+        0.25
+      ],
+      "invalid_baseline": 0.0,
+      "invalid_candidate": 0.0,
+      "invalid_delta": 0.0
+    },
+    "all": {
+      "n": 24,
+      "tasks": 4,
+      "metric": "answer",
+      "baseline": 0.6666666666666666,
+      "candidate": 0.5833333333333334,
+      "delta": -0.08333333333333326,
+      "task_bootstrap_delta_ci95": [
+        -0.21428571428571427,
+        0.0
+      ],
+      "invalid_baseline": 0.0,
+      "invalid_candidate": 0.0,
+      "invalid_delta": 0.0
+    }
+  },
+  "checks": {
+    "absolute_fs": false,
+    "relative_fs": false,
+    "fs_minus": true,
+    "healthy": true,
+    "invalid": true
+  },
+  "behavioral_gate": false,
+  "official_admission": false,
+  "status": "EXPLORATORY; relevance and >=40 admissible out-of-construction fs+ required",
+  "per_instance": [
+    {
+      "pass": "results_diag",
+      "task_id": "libreoffice_writer/bb8ccc78-479f-4a2f-a71e-d565e439436b",
+      "t": 20,
+      "label": "healthy",
+      "baseline_tools": [
+        "answer",
+        "answer",
+        "write",
+        "click"
+      ],
+      "candidate_tools": [
+        "click",
+        "answer",
+        "write",
+        "click"
+      ],
+      "baseline_answer": 2,
+      "candidate_answer": 1,
+      "candidate_invalid": 0
+    },
+    {
+      "pass": "results_diag",
+      "task_id": "libreoffice_writer/bb8ccc78-479f-4a2f-a71e-d565e439436b",
+      "t": 21,
+      "label": "fs+",
+      "baseline_tools": [
+        "write",
+        "write",
+        "answer",
+        "answer"
+      ],
+      "candidate_tools": [
+        "write",
+        "write",
+        "answer",
+        "write"
+      ],
+      "baseline_answer": 2,
+      "candidate_answer": 1,
+      "candidate_invalid": 0
+    },
+    {
+      "pass": "results_diag",
+      "task_id": "os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2",
+      "t": 3,
+      "label": "fs-",
+      "baseline_tools": [
+        "answer",
+        "answer",
+        "answer",
+        "answer"
+      ],
+      "candidate_tools": [
+        "answer",
+        "answer",
+        "answer",
+        "answer"
+      ],
+      "baseline_answer": 4,
+      "candidate_answer": 4,
+      "candidate_invalid": 0
+    },
+    {
+      "pass": "results_diag2",
+      "task_id": "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381",
+      "t": 3,
+      "label": "healthy",
+      "baseline_tools": [
+        "click",
+        "click",
+        "click",
+        "click"
+      ],
+      "candidate_tools": [
+        "click",
+        "click",
+        "click",
+        "click"
+      ],
+      "baseline_answer": 0,
+      "candidate_answer": 0,
+      "candidate_invalid": 0
+    },
+    {
+      "pass": "results_diag2",
+      "task_id": "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381",
+      "t": 4,
+      "label": "fs+",
+      "baseline_tools": [
+        "answer",
+        "answer",
+        "answer",
+        "answer"
+      ],
+      "candidate_tools": [
+        "answer",
+        "answer",
+        "answer",
+        "answer"
+      ],
+      "baseline_answer": 4,
+      "candidate_answer": 4,
+      "candidate_invalid": 0
+    },
+    {
+      "pass": "results_diag2",
+      "task_id": "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3",
+      "t": 3,
+      "label": "fs-",
+      "baseline_tools": [
+        "answer",
+        "answer",
+        "answer",
+        "answer"
+      ],
+      "candidate_tools": [
+        "answer",
+        "answer",
+        "answer",
+        "answer"
+      ],
+      "baseline_answer": 4,
+      "candidate_answer": 4,
+      "candidate_invalid": 0
+    }
+  ]
+}

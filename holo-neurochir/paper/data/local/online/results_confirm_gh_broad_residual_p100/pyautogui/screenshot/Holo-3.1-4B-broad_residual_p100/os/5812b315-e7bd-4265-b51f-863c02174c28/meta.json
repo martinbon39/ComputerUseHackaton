@@ -1,0 +1,20 @@
+{
+  "domain": "os",
+  "example_id": "5812b315-e7bd-4265-b51f-863c02174c28",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_include_exclude",
+  "finished_by_agent": true,
+  "steps": 20,
+  "answer": "Successfully created SSH user 'charles' with password 'Ex@mpleP@55w0rd!' who is only allowed to access /home/test1. The setup includes:\n\n1. User creation: charles (uid=1001, gid=1001) with home directory /home/test1\n2. SSH chroot jail configuration in /etc/ssh/sshd_config:\n   - ChrootDirectory /home/test1\n   - ForceCommand internal-sftp\n   - AllowTcpForwarding no\n   - X11Forwarding no\n3. Directory structure:\n   - /home/test1 (owned by charles:charles, 755 permissions)\n   - /home/test1/files (owned by charles:charles, for writable files)\n4. SSH service is active and running on port 22\n\nThe user can now only access the /home/test1 directory through SSH, with SFTP access restricted to the files subdirectory.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

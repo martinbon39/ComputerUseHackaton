@@ -1,0 +1,16 @@
+{
+  "status": "POSTHOC_CONSTRUCTION_DIAGNOSTIC_ONLY",
+  "feature": "fraction of samples with first marker successfully rather than another completion word",
+  "task_values": {
+    "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54": 0.5,
+    "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": 0.0,
+    "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38": 1.0,
+    "multi_apps/937087b6-f668-4ba6-9110-60682ee33441": 0.25
+  },
+  "paired_cv_auc": [
+    1.0,
+    1.0
+  ],
+  "mean_auc": 1.0,
+  "used_for_direction_or_layer_selection": false
+}

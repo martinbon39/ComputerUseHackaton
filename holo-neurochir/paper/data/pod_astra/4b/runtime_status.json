@@ -1,0 +1,58 @@
+{
+  "utc": "2026-11-07T20:00:10.197616+00:00",
+  "budget_reserved": 7,
+  "pilot_complete": true,
+  "generated_outputs": 24,
+  "strata": {
+    "fs+": {
+      "n": 8,
+      "answer": 8,
+      "valid_nonanswer": 0,
+      "invalid_or_truncated": 0
+    },
+    "fs-": {
+      "n": 8,
+      "answer": 8,
+      "valid_nonanswer": 0,
+      "invalid_or_truncated": 0
+    },
+    "healthy": {
+      "n": 8,
+      "answer": 0,
+      "valid_nonanswer": 8,
+      "invalid_or_truncated": 0
+    }
+  },
+  "stop_gpu": false,
+  "causal_test": "RUNNING",
+  "patch_saved": false,
+  "causal_candidate": "3bab6e3783c3833b46eb62bae8d228eb0f7c24d87ec4d0c7e2f279eeaa3705d8",
+  "causal_complete_outputs": 8,
+  "causal_planned_outputs": 24,
+  "causal_efficacy": "PENDING_COMPLETE_COHORT_AND_INDEPENDENT_AUDIT",
+  "pending": "remaining samples or manual scheduling after interruption",
+  "causal_active_job": "pilot_c1_add_l24",
+  "causal_strata": {
+    "healthy": {
+      "complete": 8,
+      "planned": 8,
+      "answer": 0,
+      "valid_nonanswer": 8,
+      "invalid": 0
+    },
+    "fs-": {
+      "complete": 0,
+      "planned": 8,
+      "answer": 0,
+      "valid_nonanswer": 0,
+      "invalid": 0
+    },
+    "fs+": {
+      "complete": 0,
+      "planned": 8,
+      "answer": 0,
+      "valid_nonanswer": 0,
+      "invalid": 0
+    }
+  }
+}

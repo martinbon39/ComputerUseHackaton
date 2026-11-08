@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "0f84bef9-9790-432e-92b7-eece357603fb",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_presenter_console_disable",
+  "finished_by_agent": true,
+  "steps": 7,
+  "answer": "I have successfully disabled the dual-screen presenter console in LibreOffice Impress. Here's what was done:\n\n1. Opened **Tools > Options** from the menu bar\n2. Navigated to **LibreOffice Impress > General** in the left tree\n3. Unchecked the **Enable Presenter Console** checkbox in the Presentation section\n4. Clicked **OK** to save the settings\n\n**Result:** When you now launch a presentation in LibreOffice Impress, it will use only one monitor showing the actual presentation slides. The presenter console (which shows current slide, next slide, notes, etc.) has been disabled. The second monitor can now be used for other purposes during your presentation.\n\nThis setting is saved permanently and will apply to all future presentations in LibreOffice Impress.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

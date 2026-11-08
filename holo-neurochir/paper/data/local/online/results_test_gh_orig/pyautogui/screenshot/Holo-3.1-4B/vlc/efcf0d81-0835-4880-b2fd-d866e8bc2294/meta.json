@@ -1,0 +1,20 @@
+{
+  "domain": "vlc",
+  "example_id": "efcf0d81-0835-4880-b2fd-d866e8bc2294",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_images",
+  "finished_by_agent": true,
+  "steps": 20,
+  "answer": "Successfully set the video frame as the desktop background. The spacecraft image from the Interstellar video is now the computer's wallpaper. The process involved: taking a snapshot of the video frame in VLC, opening System Settings > Background, adding the snapshot image, and selecting it as the active wallpaper.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "da52d699-e8d2-4dc5-9191-a2199e0b6a9b",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_docx_files",
+  "finished_by_agent": true,
+  "steps": 4,
+  "answer": "Task completed. The book with the slowest reading pace, 'Out of the Silent Planet', has been recorded in the document 'book_list_result.docx'.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

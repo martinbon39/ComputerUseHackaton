@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "9f935cce-0a9f-435f-8007-817732bfc0a5",
+  "score": 0.0,
+  "prompt_variant": "v2_verify",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_url_pattern_match",
+  "finished_by_agent": true,
+  "steps": 6,
+  "answer": "Successfully browsed all 11 Civil Division forms. The complete list includes: SF 95 (Claim for Damage, Injury or Death), FMS 196 (Judgment Fund Award Data Sheet), FMS 194 (Judgment Fund Transmittal), FMS 197 (Judgment Fund Voucher for Payment), Pending or Threatened Litigation, Radiation Exposure Compensation Program Downwinder Claim Form, Radiation Exposure Compensation Program Onsite Participant Claim Form, Radiation Exposure Compensation Program Uranium Mill Employee Claim Form, Radiation Exposure Compensation Program Uranium Mine Employee Claim Form, Radiation Exposure Compensation Program Uranium Ore Transporters Claim Form, and Unasserted Claims and Assessments. All forms are from the Civil Division agency.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "domain": "vs_code",
+  "example_id": "7c4cc09e-7a92-40dd-8338-b2286535c4ed",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 43,
+  "answer": "The task cannot be completed as specified. VS Code does not have built-in Arabic language support. \n\n**What I tried:**\n1. Searched Settings for \"display language\", \"locale\", and \"application language\" - no direct option found\n2. Used Command Palette → \"Configure Display Language\" - opened the language selector\n3. Manually edited settings.json to add `\"locale\": \"ar\"` and `\"locale\": \"ar-SA\"` - VS Code reloaded but interface remained in English\n4. Scrolled through the complete language list in the dropdown - Arabic is not present\n\n**Available built-in languages in VS Code:**\nEnglish, Chinese (Simplified & Traditional), Japanese, Spanish, Portuguese (Brasil), Russian, Korean, French, German, Italian, Polish, Czech, Hungarian, Bulgarian, and Turkish.\n\n**Why this task is impossible:**\nArabic language support in VS Code requires the \"Arabic Language Pack\" extension. Without extensions, VS Code only supports the built-in languages listed above. The task requirement of changing the display language to Arabic \"without using any extensions\" cannot be fulfilled because Arabic is not a built-in language option in VS Code.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

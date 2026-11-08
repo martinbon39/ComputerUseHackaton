@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "cabb3bae-cccb-41bd-9f5d-0f3a9fecd825",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_direct_json_object",
+  "finished_by_agent": true,
+  "steps": 7,
+  "answer": "Successfully completed the task of browsing spider-man toys for kids and sorting by lowest price. The Google Shopping results are now displayed with spider-man toys sorted from lowest to highest price, with the cheapest items starting at $2.99 (Marvel Spider-Man Thwip Life) and visible results ranging up to $5.97. The sorting is confirmed by the 'Sort by: Price low to high' dropdown at the top of the results.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

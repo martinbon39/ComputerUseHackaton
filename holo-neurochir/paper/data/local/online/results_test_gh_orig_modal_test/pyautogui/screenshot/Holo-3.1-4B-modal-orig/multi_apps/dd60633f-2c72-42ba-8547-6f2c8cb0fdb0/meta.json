@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "dd60633f-2c72-42ba-8547-6f2c8cb0fdb0",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_python_pure_text",
+  "finished_by_agent": true,
+  "steps": 27,
+  "answer": "Successfully extracted all Python code and # comments from Karpathy's GPT Colab notebook.\n\n**File created:** `/home/user/gpt_dev_pure_code.py`\n\n**Verification:**\n- 443 lines of Python code\n- 12,940 bytes\n- Contains data loading, encoding, vocabulary creation, training/validation splits, optimizer setup, training loop, and text generation code\n- All code includes original # comments from the notebook\n- Markdown docstrings excluded\n- File headers excluded\n- No standalone Python code from markdown cells included\n\nThe extraction script parsed the downloaded gpt_dev.ipynb notebook JSON structure, identified code cells (cell_type: \"code\"), and extracted only Python code and # comments while excluding markdown content.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

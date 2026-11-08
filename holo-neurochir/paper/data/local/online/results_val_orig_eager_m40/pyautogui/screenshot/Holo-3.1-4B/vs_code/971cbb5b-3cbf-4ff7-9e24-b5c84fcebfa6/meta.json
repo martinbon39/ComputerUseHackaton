@@ -1,0 +1,23 @@
+{
+  "domain": "vs_code",
+  "example_id": "971cbb5b-3cbf-4ff7-9e24-b5c84fcebfa6",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 17,
+  "answer": "After thoroughly exploring VS Code's built-in settings, I must inform you that **this task cannot be completed using only VS Code's native settings without extensions**.\n\n## What I Found:\n\nVS Code's built-in startup options (via `Workbench: Startup Editor` setting) include:\n- **none** - Shows nothing on startup\n- **welcomePage** - Shows the welcome screen (default)\n- **readme** - Opens the README file if one exists\n- **newUntitledFile** - Creates a new untitled file (no filename specified)\n- **welcomePageInEmptyWorkbench** - Shows welcome in empty workbench\n\n## Limitation:\n\nNone of these options allow you to:\n1. Automatically create a file with a **specific name** (like 'test.py')\n2. Set a **specific language** for that file on creation (though `Files: Default Language` can set Python as default for new files)\n\n## Why This Is Impossible with Built-in Settings:\n\nVS Code's settings system is designed for configuring behavior, not for executing file creation commands. There is no setting that combines \"create new file\" + \"specific filename\" + \"on startup\".\n\n## Alternative Solutions (Outside Built-in Settings):\n\nTo achieve this functionality, you would need:\n1. **A VS Code extension** - Search for \"startup file creator\" or similar extensions\n2. **External automation** - Use a shell script or task runner (like Task.js) that creates the file and then launches VS Code\n3. **Post-launch script** - Create test.py manually after VS Code opens using command line or a script\n\n**Conclusion:** This requirement cannot be fulfilled using VS Code's native settings alone. Extensions or external automation would be necessary.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

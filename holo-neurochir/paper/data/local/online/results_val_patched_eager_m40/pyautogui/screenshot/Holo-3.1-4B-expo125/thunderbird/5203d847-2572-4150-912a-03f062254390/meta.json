@@ -1,0 +1,20 @@
+{
+  "domain": "thunderbird",
+  "example_id": "5203d847-2572-4150-912a-03f062254390",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_thunderbird_filter",
+  "finished_by_agent": true,
+  "steps": 13,
+  "answer": "Successfully completed the task. Created a local folder called 'Promotions' under Local Folders in Thunderbird, and configured a message filter to automatically move inbox emails whose subject contains 'discount' to the Promotions folder. The filter is enabled and active, ready to process incoming emails.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

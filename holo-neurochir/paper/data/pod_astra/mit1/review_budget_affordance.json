@@ -1,0 +1,197 @@
+{
+  "actions_reclassified": [
+    {
+      "confirmed_actual_useful_gui_action": false,
+      "effect_status": "unverified_not_credited",
+      "lot": 11,
+      "normalized": [
+        135,
+        326
+      ],
+      "pixels": [
+        259.2,
+        352.08
+      ],
+      "reason": "The coordinate lands on plain date summary text on the results page; no executed transition or historical example proves that this summary opens the editor.",
+      "seed": 4000,
+      "target": "pickup summary",
+      "task_relevant_intention": true
+    },
+    {
+      "confirmed_actual_useful_gui_action": false,
+      "effect_status": "unverified_not_credited",
+      "lot": 11,
+      "normalized": [
+        157,
+        331
+      ],
+      "pixels": [
+        301.44,
+        357.48
+      ],
+      "reason": "The coordinate lands on plain date summary text on the results page; no executed transition or historical example proves that this summary opens the editor.",
+      "seed": 4002,
+      "target": "pickup summary",
+      "task_relevant_intention": true
+    },
+    {
+      "confirmed_actual_useful_gui_action": false,
+      "effect_status": "unverified_not_credited",
+      "lot": 14,
+      "normalized": [
+        145,
+        326
+      ],
+      "pixels": [
+        278.4,
+        352.08
+      ],
+      "reason": "The coordinate lands on plain date summary text on the results page; no executed transition or historical example proves that this summary opens the editor.",
+      "seed": 4003,
+      "target": "pickup summary",
+      "task_relevant_intention": true
+    },
+    {
+      "confirmed_actual_useful_gui_action": false,
+      "effect_status": "unverified_not_credited",
+      "lot": 17,
+      "normalized": [
+        125,
+        326
+      ],
+      "pixels": [
+        240.0,
+        352.08
+      ],
+      "reason": "The coordinate lands on plain date summary text on the results page; no executed transition or historical example proves that this summary opens the editor.",
+      "seed": 4003,
+      "target": "pickup summary",
+      "task_relevant_intention": true
+    },
+    {
+      "confirmed_actual_useful_gui_action": false,
+      "effect_status": "unverified_not_credited",
+      "lot": 16,
+      "normalized": [
+        420,
+        312
+      ],
+      "pixels": [
+        806.4,
+        336.96
+      ],
+      "reason": "The coordinate lands on plain date summary text on the results page; no executed transition or historical example proves that this summary opens the editor.",
+      "seed": 4000,
+      "target": "return summary",
+      "task_relevant_intention": true
+    },
+    {
+      "confirmed_actual_useful_gui_action": false,
+      "effect_status": "unverified_not_credited",
+      "lot": 16,
+      "normalized": [
+        428,
+        316
+      ],
+      "pixels": [
+        821.76,
+        341.28
+      ],
+      "reason": "The coordinate lands on plain date summary text on the results page; no executed transition or historical example proves that this summary opens the editor.",
+      "seed": 4001,
+      "target": "return summary",
+      "task_relevant_intention": true
+    },
+    {
+      "confirmed_actual_useful_gui_action": false,
+      "effect_status": "unverified_not_credited",
+      "lot": 16,
+      "normalized": [
+        416,
+        312
+      ],
+      "pixels": [
+        798.72,
+        336.96
+      ],
+      "reason": "The coordinate lands on plain date summary text on the results page; no executed transition or historical example proves that this summary opens the editor.",
+      "seed": 4003,
+      "target": "return summary",
+      "task_relevant_intention": true
+    }
+  ],
+  "artifact": "independent_budget_results_summary_affordance_review",
+  "confirmed_utility_count_revisions": {
+    "lot11_original_weights_altered_input_diagnostic": {
+      "confirmed_after_review": "0/8 confirmed useful; 2/8 task-relevant intentions with unverified GUI effect",
+      "previous": "2/8 overall useful (2/4 Budget)"
+    },
+    "lot14_h4_v1": {
+      "confirmed_after_review": "0/8 confirmed useful; 1/8 task-relevant intention with unverified GUI effect",
+      "previous": "1/8 fs+ useful"
+    },
+    "lot16_original_weights_altered_input_diagnostic": {
+      "confirmed_after_review": "0/8 confirmed useful; 3/8 task-relevant intentions with unverified GUI effect",
+      "previous": "3/8 useful (3/4 Budget)"
+    },
+    "lot17_h4_scale150": {
+      "confirmed_after_review": "0/8 confirmed useful; 1/8 task-relevant intention with unverified GUI effect",
+      "previous": "1/8 fs+ useful"
+    }
+  },
+  "coordinate_check": {
+    "conclusion": "The clicks do land in their intended pickup/return summary regions; no positive is rejected for spatial miss.",
+    "image_size_pixels": [
+      1920,
+      1080
+    ],
+    "rule": "Coordinates are integers in [0,1000], normalized to the screenshot (origin top-left)."
+  },
+  "implications": [
+    "H4 v1 and scale150 no longer have a confirmed useful GUI action under an effect-evidence standard; their correct December repair intention remains observable.",
+    "The lot16 H5 diagnostic does not satisfy its former >2/8 confirmed-useful premise; it produced three correctly aimed but unexecuted summary clicks.",
+    "No conclusion should be drawn that the site summary is definitely noninteractive without an executed transition or equivalent objective evidence."
+  ],
+  "scope": "Previously credited Budget positive clicks in lots 11, 14, 16, and 17 only; CPU/read-only; no replay, GPU, heldout, or reserve access.",
+  "sources": {
+    "home_form_screenshot_file": "/workspace/astra/astra-mit1/data/results_diag/chrome/47543840-672a-467d-80df-8f7c3b9788c9/step_6_20261107@170248417713.png",
+    "home_form_screenshot_sha256": "f25d300dc025918784325a241e3df080e75e7aa64bfb07ec3fdecaf1e3b1e04c",
+    "raw_sha256": {
+      "lot11": "d2c791689d6bce74e760bbc74adbe0404a80c14adfe3c6d2a586df0736182217",
+      "lot14": "a793ed103e118cde92dea7af3967de4fc4962e5e04f31cb5eabbb61fb03fa2df",
+      "lot16": "490317ee1af77b036f3f5c9daced884634ecbc96812e6e893dadfabfeebb83d6",
+      "lot17": "99b9393d1f8733aa1b0aeb2c43bc701d77dcc3a32e7a210e02710cb50fd1d130"
+    },
+    "results_screenshot_file": "/workspace/astra/astra-mit1/data/results_diag/chrome/47543840-672a-467d-80df-8f7c3b9788c9/step_14_20261107@170327390844.png",
+    "results_screenshot_sha256": "c4c0cfb237884789f8625a84708285bff93c1ee22ceff2434e30196787753b08",
+    "semantic_audits_sha256": {
+      "lot11": "fbf258278236f750ed6d8108b1e563e3ca391feeb9f5a352509a823c2406a520",
+      "lot14": "e0bd6ee5b2f63e75cc2b4e01f4fb8f48b34e53dd27a50bb1a824d54d4c8e9168",
+      "lot16": "9ec787d60e44deda528cea9445386f594357fbf633f3d0403a0422d2f0e95612",
+      "lot17": "d9c985c04a04afae8aa4a0d95251aeaa3f66011cf3b8677b65709f419066bc9f"
+    },
+    "system_prompt_file": "/workspace/astra/astra-mit1/data/results_diag/chrome/47543840-672a-467d-80df-8f7c3b9788c9/system_prompt.txt",
+    "system_prompt_sha256": "6029d17dddfe586743ab3914918d286f0402ee11f82859647f65998e3cf8a246",
+    "trajectory_file": "/workspace/astra/astra-mit1/data/results_diag/chrome/47543840-672a-467d-80df-8f7c3b9788c9/traj.jsonl",
+    "trajectory_sha256": "19dfff2f7106dad779703d6720fa5e65229c4ca4e4c3550465a4aeec250a6f2d"
+  },
+  "verdict": {
+    "affordance_proved": false,
+    "classification": "TASK_RELEVANT_INTENTION_BUT_GUI_EFFECT_UNVERIFIED_NOT_CREDITED",
+    "do_not_claim": "This evidence does not prove the summary is a no-op; it proves only that useful effect has not been demonstrated.",
+    "reason": "All seven proposed clicks land on plain pickup/return summary text on the Select a Car results page. The visible page supplies a distinct pencil-marked Modify Rental Details link as the explicit editing affordance. The original trajectory proves calendar behavior only for bordered date fields with calendar icons on the home search form, not for the later summary text. Because generated tool calls were not executed, no before/after transition establishes that a summary click opens any editor."
+  },
+  "visual_affordance_evidence": {
+    "historical_home_form": {
+      "actual_date_fields": "Pickup and Return are separate bordered controls with orange calendar icons.",
+      "proved_transition": "Trajectory step 6 clicks the pickup field at normalized (495,270), pixel (950,291); step 7 records that the date picker calendar is open.",
+      "relevance_limit": "This proves the home-form field is interactive, but it is a different page/control from the results summary targeted by the seven generated clicks."
+    },
+    "results_page": {
+      "calendar_icon_or_field_border_on_summary": false,
+      "explicit_edit_control": "Orange pencil icon plus Modify Rental Details at approximately x1650..1815, y405.",
+      "pickup_summary": "Plain text at approximately x160..385, y319..365: Pick-Up, Boston Logan Intl Airport, BOS, Tue, Nov 10, 12:00 PM.",
+      "return_summary": "Plain text at approximately x723..960, y319..365: Return, Boston Logan Intl Airport, BOS, Wed, Nov 11, 12:00 PM."
+    }
+  }
+}

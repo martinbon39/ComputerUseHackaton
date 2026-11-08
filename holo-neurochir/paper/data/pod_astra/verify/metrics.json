@@ -1,0 +1,300 @@
+{
+  "utc": "2026-11-07T21:56:18.759569+00:00",
+  "lots": 4,
+  "capture_pairs": 48,
+  "metrics": {
+    "baseline_calibration": {
+      "fs+": {
+        "n": 4,
+        "answer": 4,
+        "valid_nonanswer": 0,
+        "invalid_truncated": 0
+      },
+      "fs-": {
+        "n": 0,
+        "answer": 0,
+        "valid_nonanswer": 0,
+        "invalid_truncated": 0
+      },
+      "healthy": {
+        "n": 0,
+        "answer": 0,
+        "valid_nonanswer": 0,
+        "invalid_truncated": 0
+      },
+      "complete": true,
+      "n": 4,
+      "rejected": null,
+      "per_instance": {
+        "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381:4": {
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        }
+      }
+    },
+    "random_a1": {
+      "fs+": {
+        "n": 8,
+        "answer": 8,
+        "valid_nonanswer": 0,
+        "invalid_truncated": 0
+      },
+      "fs-": {
+        "n": 8,
+        "answer": 8,
+        "valid_nonanswer": 0,
+        "invalid_truncated": 0
+      },
+      "healthy": {
+        "n": 8,
+        "answer": 0,
+        "valid_nonanswer": 8,
+        "invalid_truncated": 0
+      },
+      "complete": true,
+      "n": 24,
+      "rejected": null,
+      "per_instance": {
+        "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381:4": {
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217:3": {
+          "label": "fs-",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217:0": {
+          "label": "healthy",
+          "n": 4,
+          "answer": 0,
+          "valid_nonanswer": 4,
+          "invalid_truncated": 0
+        },
+        "chrome/47543840-672a-467d-80df-8f7c3b9788c9:13": {
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3:3": {
+          "label": "fs-",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/b070486d-e161-459b-aa2b-ef442d973b92:0": {
+          "label": "healthy",
+          "n": 4,
+          "answer": 0,
+          "valid_nonanswer": 4,
+          "invalid_truncated": 0
+        }
+      }
+    },
+    "random_a2": {
+      "fs+": {
+        "n": 8,
+        "answer": 8,
+        "valid_nonanswer": 0,
+        "invalid_truncated": 0
+      },
+      "fs-": {
+        "n": 8,
+        "answer": 7,
+        "valid_nonanswer": 1,
+        "invalid_truncated": 0
+      },
+      "healthy": {
+        "n": 4,
+        "answer": 0,
+        "valid_nonanswer": 4,
+        "invalid_truncated": 0
+      },
+      "complete": false,
+      "n": 20,
+      "rejected": null,
+      "per_instance": {
+        "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381:4": {
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217:3": {
+          "label": "fs-",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217:0": {
+          "label": "healthy",
+          "n": 4,
+          "answer": 0,
+          "valid_nonanswer": 4,
+          "invalid_truncated": 0
+        },
+        "chrome/47543840-672a-467d-80df-8f7c3b9788c9:13": {
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3:3": {
+          "label": "fs-",
+          "n": 4,
+          "answer": 3,
+          "valid_nonanswer": 1,
+          "invalid_truncated": 0
+        }
+      }
+    },
+    "verify_a1": {
+      "fs+": {
+        "n": 8,
+        "answer": 8,
+        "valid_nonanswer": 0,
+        "invalid_truncated": 0
+      },
+      "fs-": {
+        "n": 8,
+        "answer": 8,
+        "valid_nonanswer": 0,
+        "invalid_truncated": 0
+      },
+      "healthy": {
+        "n": 8,
+        "answer": 0,
+        "valid_nonanswer": 8,
+        "invalid_truncated": 0
+      },
+      "complete": true,
+      "n": 24,
+      "rejected": null,
+      "per_instance": {
+        "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381:4": {
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217:3": {
+          "label": "fs-",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217:0": {
+          "label": "healthy",
+          "n": 4,
+          "answer": 0,
+          "valid_nonanswer": 4,
+          "invalid_truncated": 0
+        },
+        "chrome/47543840-672a-467d-80df-8f7c3b9788c9:13": {
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3:3": {
+          "label": "fs-",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/b070486d-e161-459b-aa2b-ef442d973b92:0": {
+          "label": "healthy",
+          "n": 4,
+          "answer": 0,
+          "valid_nonanswer": 4,
+          "invalid_truncated": 0
+        }
+      }
+    },
+    "verify_a2": {
+      "fs+": {
+        "n": 8,
+        "answer": 8,
+        "valid_nonanswer": 0,
+        "invalid_truncated": 0
+      },
+      "fs-": {
+        "n": 8,
+        "answer": 8,
+        "valid_nonanswer": 0,
+        "invalid_truncated": 0
+      },
+      "healthy": {
+        "n": 6,
+        "answer": 0,
+        "valid_nonanswer": 6,
+        "invalid_truncated": 0
+      },
+      "complete": false,
+      "n": 22,
+      "rejected": null,
+      "per_instance": {
+        "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381:4": {
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217:3": {
+          "label": "fs-",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217:0": {
+          "label": "healthy",
+          "n": 4,
+          "answer": 0,
+          "valid_nonanswer": 4,
+          "invalid_truncated": 0
+        },
+        "chrome/47543840-672a-467d-80df-8f7c3b9788c9:13": {
+          "label": "fs+",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3:3": {
+          "label": "fs-",
+          "n": 4,
+          "answer": 4,
+          "valid_nonanswer": 0,
+          "invalid_truncated": 0
+        },
+        "chrome/b070486d-e161-459b-aa2b-ef442d973b92:0": {
+          "label": "healthy",
+          "n": 2,
+          "answer": 0,
+          "valid_nonanswer": 2,
+          "invalid_truncated": 0
+        }
+      }
+    }
+  }
+}

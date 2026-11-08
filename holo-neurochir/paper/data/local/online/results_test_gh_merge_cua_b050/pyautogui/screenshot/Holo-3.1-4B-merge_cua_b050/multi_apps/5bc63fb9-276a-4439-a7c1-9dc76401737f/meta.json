@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "5bc63fb9-276a-4439-a7c1-9dc76401737f",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_docx_files_and_ignore_new_lines",
+  "finished_by_agent": true,
+  "steps": 20,
+  "answer": "Task completed. The Gemini response has been copied from the JSON file into 'gemini_results.docx' on the Desktop. All three occurrences of 'Iliad' in the response have been highlighted in yellow.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "domain": "os",
+  "example_id": "5ced85fc-fa1a-4217-95fd-0fb530545ce2",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_include_exclude",
+  "finished_by_agent": true,
+  "steps": 3,
+  "answer": "Done.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

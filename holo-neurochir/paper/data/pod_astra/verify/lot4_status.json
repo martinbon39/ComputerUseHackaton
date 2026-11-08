@@ -1,0 +1,25 @@
+{
+  "outcome": "complete",
+  "finished_utc_epoch": 1794088962.593775,
+  "job": {
+    "kind": "generation",
+    "name": "dose_2",
+    "planned_sequences": 48,
+    "max_new_tokens_per_sequence": 3072,
+    "arms": [
+      {
+        "name": "verify_a2",
+        "mode": "verify",
+        "alpha": 2
+      },
+      {
+        "name": "random_a2",
+        "mode": "random",
+        "alpha": 2
+      }
+    ],
+    "lot": 4
+  },
+  "peak_reserved_gb": 11.630804992,
+  "process_peak_observed_gb": 12.51999744
+}

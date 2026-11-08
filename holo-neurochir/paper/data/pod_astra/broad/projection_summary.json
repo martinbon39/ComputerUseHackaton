@@ -1,0 +1,72 @@
+{
+  "singular_values": [
+    22.94306396495318,
+    7.448574038952846
+  ],
+  "energy_fractions": [
+    0.9046493373464457,
+    0.09535066265355426
+  ],
+  "outcomes": [
+    {
+      "rank": 0,
+      "dose": 0.0,
+      "margins": {
+        "fs_0": 16.875,
+        "fs_1": 18.375,
+        "preserve_0": 16.375,
+        "preserve_1": 14.75
+      },
+      "teacher_forced_gate": false
+    },
+    {
+      "rank": 1,
+      "dose": 0.5,
+      "margins": {
+        "fs_0": 10.875,
+        "fs_1": 10.875,
+        "preserve_0": 11.0,
+        "preserve_1": 10.625
+      },
+      "teacher_forced_gate": false
+    },
+    {
+      "rank": 2,
+      "dose": 0.5,
+      "margins": {
+        "fs_0": 11.25,
+        "fs_1": 11.0,
+        "preserve_0": 10.875,
+        "preserve_1": 10.625
+      },
+      "teacher_forced_gate": false
+    },
+    {
+      "rank": 1,
+      "dose": 1.0,
+      "margins": {
+        "fs_0": 1.375,
+        "fs_1": 1.625,
+        "preserve_0": 4.75,
+        "preserve_1": 2.75
+      },
+      "teacher_forced_gate": false
+    },
+    {
+      "rank": 2,
+      "dose": 1.0,
+      "margins": {
+        "fs_0": 1.75,
+        "fs_1": 1.625,
+        "preserve_0": 4.875,
+        "preserve_1": 2.625
+      },
+      "teacher_forced_gate": false
+    }
+  ],
+  "selected": null,
+  "no_generation": true,
+  "no_general_selectivity_bound": true,
+  "maximum_empirical_rank": 2,
+  "numerical_rank": 2
+}

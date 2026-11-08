@@ -1,0 +1,10 @@
+{
+  "status": "no_validated_causal_intervention",
+  "patch_spec": null,
+  "modified_weights": 0,
+  "pct_modified": 0,
+  "online_run": false,
+  "heldout_run": false,
+  "budget_used": 23,
+  "budget_limit": 40
+}

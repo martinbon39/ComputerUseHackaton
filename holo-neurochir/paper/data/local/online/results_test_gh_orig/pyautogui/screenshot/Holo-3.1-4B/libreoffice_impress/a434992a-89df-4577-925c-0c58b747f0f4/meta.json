@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "a434992a-89df-4577-925c-0c58b747f0f4",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 17,
+  "answer": "All formatting changes have been successfully applied and saved: the content text is now at 12 pt font size with orange color, and the slide background has been changed to red.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

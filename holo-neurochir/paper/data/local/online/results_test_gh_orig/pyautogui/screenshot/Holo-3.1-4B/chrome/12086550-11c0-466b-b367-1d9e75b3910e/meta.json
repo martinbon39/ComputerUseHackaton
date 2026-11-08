@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "12086550-11c0-466b-b367-1d9e75b3910e",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_active_tab_approximate",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "I've navigated to the Google Password Manager in Chrome and searched for your Etsy login credentials. The search results show that there are currently no Etsy passwords saved in your Google Password Manager. The page displays 'Saved passwords will appear here' which confirms no Etsy credentials are stored. You can access your passwords anytime by going to Chrome menu > Passwords and autofill > Google Password Manager, then using the search bar to look for specific websites.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

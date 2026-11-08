@@ -1,0 +1,31 @@
+[
+  {
+    "name": "baseline"
+  },
+  {
+    "name": "u10_L10",
+    "direction": "shared10",
+    "layers": [
+      10
+    ]
+  },
+  {
+    "name": "u10_L9_13",
+    "direction": "shared10",
+    "layers": [
+      9,
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  {
+    "name": "u10_all",
+    "direction": "shared10"
+  },
+  {
+    "name": "native_all",
+    "direction": "native"
+  }
+]

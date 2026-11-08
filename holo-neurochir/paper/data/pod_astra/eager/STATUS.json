@@ -1,0 +1,13 @@
+{
+  "state": "preflight independent review",
+  "lots_used": 0,
+  "maximum_lots": 15,
+  "candidate": null,
+  "tied_embeddings": true,
+  "answer_token_id": 8944,
+  "wait_token_id": 11158,
+  "pilot_contexts": 3,
+  "seeds_per_context": 4,
+  "engagement_matched_pairs": 60,
+  "engagement_train_tasks": 62
+}

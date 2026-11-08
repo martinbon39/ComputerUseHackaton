@@ -1,0 +1,23 @@
+{
+  "domain": "gimp",
+  "example_id": "38f48d40-764e-4e77-a7cf-51dfce880291",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 15,
+  "answer": "I cannot complete the video trimming task in GIMP. After thorough testing, GIMP (GNU Image Manipulation Program) is an **image editor**, not a video editor, and it cannot open or process MP4 video files.\n\n**Testing performed:**\n1. Tried File > Open with fullvideo.mp4 - Result: \"Unknown file type\" error\n2. Tried File > Open as Layers with fullvideo.mp4 - Result: \"Unknown file type\" error\n\n**Why GIMP cannot do this:**\n- GIMP is designed for static image editing, not video processing\n- It does not have built-in video decoding or timeline functionality\n- It cannot import video frames as editable layers\n\n**Recommended alternatives for trimming video:**\n\n1. **FFmpeg** (command line) - Most efficient:\n   ```bash\n   ffmpeg -i /home/user/fullvideo.mp4 -ss 00:00:02 -to 00:00:04 -c copy /home/user/trimmed.mp4\n   ```\n\n2. **VLC Media Player** (GUI) - Right-click on video → Convert/Save\n\n3. **Shotcut** - Free video editor with drag-and-drop timeline\n\n4. **OpenShot** - Open-source video editor with timeline\n\n5. **Kdenlive** - Professional-grade video editor for Linux\n\nWould you like me to help you trim the video using one of these alternative tools instead?",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

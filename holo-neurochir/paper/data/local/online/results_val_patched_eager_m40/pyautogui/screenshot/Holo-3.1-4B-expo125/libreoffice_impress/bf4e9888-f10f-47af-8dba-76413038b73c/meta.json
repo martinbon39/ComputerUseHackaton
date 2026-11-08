@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "bf4e9888-f10f-47af-8dba-76413038b73c",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 33,
+  "answer": "Successfully created a presentation with 6 blank slides, each containing one image in numerical order:\n\n- Slide 1: pic1.png (USAID photo cover)\n- Slide 2: pic2.png (Red cover option)\n- Slide 3: pic3.png (Red divider slide)\n- Slide 4: pic4.png (Market/shop scene)\n- Slide 5: pic5.png (Two women with containers)\n- Slide 6: pic6.png (Woman with headscarf, contact info slide)\n\nThe presentation has been saved and is ready for continuous playback in a kiosk or multimedia show.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

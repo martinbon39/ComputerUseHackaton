@@ -1,0 +1,51 @@
+% Shared by main.tex (arXiv) and neurips.tex.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{array}
+\setlist{nosep,leftmargin=1.4em}
+\captionsetup{font=small,labelfont=bf}
+
+\definecolor{fsred}{HTML}{D55E00}
+\definecolor{fsgreen}{HTML}{009E73}
+\definecolor{linkblue}{HTML}{0B4F8A}
+\hypersetup{colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue,
+  pdftitle={Cogito, Ergo Feci: False Success and the Limits of Weight Surgery in a Computer-Use Agent},
+  pdfsubject={Interpretability, computer-use agents, weight editing},
+  pdfkeywords={computer-use agents, interpretability, activation steering, weight editing, OSWorld, false success}}
+
+% Marker for results not yet measured. Grep "tofill" to list them.
+\newcommand{\tofill}[1][]{\textcolor{red}{\textbf{[À REMPLIR#1]}}}
+\newtheorem{proposition}{Proposition}
+\newcommand{\fsp}{\textsc{fs+}}
+\newcommand{\fsm}{\textsc{fs$-$}}
+\newcommand{\done}{``done''}
+
+% Every number in this paper comes from a generated macro (generated/num_*.tex, each line commented
+% with its source file under data/) or carries an inline "% source:" comment.
+\input{generated/num_osw_diag.tex}
+\input{generated/num_miniwob.tex}
+\input{generated/num_b4.tex}
+\input{generated/num_teaser.tex}
+\input{generated/num_traps.tex}
+\input{generated/num_causal.tex}
+\input{generated/num_perceive.tex}
+\input{generated/num_expo.tex}
+\input{generated/num_attractor.tex}
+\input{generated/num_broad.tex}
+\input{generated/num_closures.tex}
+\input{generated/num_infeasible.tex}
+\input{generated/num_online.tex}
+
+% Mode switch: the NeurIPS wrapper sets \neuripstrue after \input{shared/preamble}.
+\newif\ifneurips
+% Each figure or table lives in fig/<key>.tex and is placed once, wherever \placefig{<key>} first occurs.
+\newcommand{\placefig}[1]{\ifcsname placed@#1\endcsname\else\expandafter\gdef\csname placed@#1\endcsname{}\input{fig/#1}\fi}

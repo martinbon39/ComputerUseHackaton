@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_writer",
+  "example_id": "b21acd93-60fd-4127-8a43-2f5178f4a830",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_line_spacing",
+  "finished_by_agent": true,
+  "steps": 15,
+  "answer": "The essay has been successfully formatted with the following specifications:\n\n1. **Introduction paragraph** (first paragraph): Single line spacing applied\n2. **Body paragraph** (second paragraph): Double line spacing applied\n3. **Conclusion paragraph** (third paragraph): 1.5 line spacing applied\n4. **Font size**: 12pt throughout all paragraphs\n\nThe document has been saved to preserve all formatting changes. The three-paragraph essay now meets all the professional writing formatting requirements specified.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

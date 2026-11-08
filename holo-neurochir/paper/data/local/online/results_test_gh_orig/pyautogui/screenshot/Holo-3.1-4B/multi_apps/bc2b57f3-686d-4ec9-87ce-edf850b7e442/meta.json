@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "bc2b57f3-686d-4ec9-87ce-edf850b7e442",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 43,
+  "answer": "Successfully completed the assignment. The LibreOffice Calc spreadsheet has been reorganized with all 10 sheets in the correct order as specified in reminder.docx:\n\n1. ReadMe\n2. Raw_data\n3. Beans\n4. Millet\n5. Sorghum\n6. Mkt Gotheye\n7. Mkt Mangaize\n8. Mkt Ouallam\n9. Mkt Tera\n10. Millet spatial integration\n\nThe file has been saved with all changes preserved.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

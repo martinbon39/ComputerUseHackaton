@@ -1,0 +1,20 @@
+{
+  "domain": "thunderbird",
+  "example_id": "08c73485-7c6d-4681-999d-919f5c32dcfa",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_thunderbird_prefs",
+  "finished_by_agent": true,
+  "steps": 14,
+  "answer": "Successfully applied automatic message filter to subfolders. Created 'Subfolder Auto Filter' that runs automatically when getting new mail, matching messages by sender and moving them to the Inbox subfolder. The filter is now enabled and active in Thunderbird.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

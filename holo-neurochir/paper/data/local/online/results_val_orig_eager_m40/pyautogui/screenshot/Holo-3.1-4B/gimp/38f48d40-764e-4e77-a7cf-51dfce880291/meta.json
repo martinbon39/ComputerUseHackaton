@@ -1,0 +1,23 @@
+{
+  "domain": "gimp",
+  "example_id": "38f48d40-764e-4e77-a7cf-51dfce880291",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 13,
+  "answer": "The task cannot be completed using GIMP. GIMP is an image manipulation program that does not support video file formats like MP4. When attempting to open fullvideo.mp4, GIMP displayed an error: \"Opening '/home/user/fullvideo.mp4' failed: Unknown file type\".\n\n**Why GIMP cannot trim videos:**\n- GIMP only supports static image formats (PNG, JPEG, TIFF, etc.)\n- GIMP has no video timeline, playback, or video export capabilities\n- GIMP cannot open, edit, or export video files\n\n**Recommended alternative tools for video trimming:**\n1. **FFmpeg** (command line) - Most efficient: `ffmpeg -i fullvideo.mp4 -ss 00:00:02 -to 00:00:04 -c copy trimmed.mp4`\n2. **VLC Media Player** - GUI-based, can convert/trim video segments\n3. **Shotcut** or **OpenShot** - Free video editors with timeline interfaces\n4. **Blender** - Professional video editor with non-linear editing capabilities\n\nTo trim your video from seconds 2-4, I recommend using FFmpeg or one of the dedicated video editing tools listed above instead of GIMP.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

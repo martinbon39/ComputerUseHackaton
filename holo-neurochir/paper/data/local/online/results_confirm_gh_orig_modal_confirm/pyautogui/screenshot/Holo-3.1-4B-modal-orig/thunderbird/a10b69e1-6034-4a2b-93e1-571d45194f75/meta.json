@@ -1,0 +1,20 @@
+{
+  "domain": "thunderbird",
+  "example_id": "a10b69e1-6034-4a2b-93e1-571d45194f75",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_list",
+  "finished_by_agent": true,
+  "steps": 8,
+  "answer": "Successfully created two local folders in Thunderbird:\n\n1. **COMPANY** - Created under Local Folders\n2. **UNIVERSITY** - Created under Local Folders\n\nBoth folders are now visible in the left sidebar folder tree under the Local Folders section, alongside the existing folders (Trash, Outbox, and Bills).",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

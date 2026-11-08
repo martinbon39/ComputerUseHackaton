@@ -1,0 +1,842 @@
+[
+  {
+    "run": "choose-list__s2",
+    "t": 6,
+    "layer": 0,
+    "cos": 0.9999855160713196,
+    "relative_error": 0.005384454037994146
+  },
+  {
+    "run": "choose-list__s2",
+    "t": 6,
+    "layer": 10,
+    "cos": 0.9997310638427734,
+    "relative_error": 0.023217884823679924
+  },
+  {
+    "run": "choose-list__s2",
+    "t": 6,
+    "layer": 23,
+    "cos": 0.9991275668144226,
+    "relative_error": 0.041973091661930084
+  },
+  {
+    "run": "search-engine__s2",
+    "t": 7,
+    "layer": 0,
+    "cos": 0.999960720539093,
+    "relative_error": 0.009046598337590694
+  },
+  {
+    "run": "search-engine__s2",
+    "t": 7,
+    "layer": 10,
+    "cos": 0.9997880458831787,
+    "relative_error": 0.02067977376282215
+  },
+  {
+    "run": "search-engine__s2",
+    "t": 7,
+    "layer": 23,
+    "cos": 0.9992254376411438,
+    "relative_error": 0.03940534219145775
+  },
+  {
+    "run": "click-checkboxes__s1",
+    "t": 8,
+    "layer": 0,
+    "cos": 0.9999806880950928,
+    "relative_error": 0.006386640947312117
+  },
+  {
+    "run": "click-checkboxes__s1",
+    "t": 8,
+    "layer": 10,
+    "cos": 0.999769389629364,
+    "relative_error": 0.02147028036415577
+  },
+  {
+    "run": "click-checkboxes__s1",
+    "t": 8,
+    "layer": 23,
+    "cos": 0.9994646906852722,
+    "relative_error": 0.0328102670609951
+  },
+  {
+    "run": "choose-list__s4",
+    "t": 3,
+    "layer": 0,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "choose-list__s4",
+    "t": 3,
+    "layer": 10,
+    "cos": 0.9999999403953552,
+    "relative_error": 0.0
+  },
+  {
+    "run": "choose-list__s4",
+    "t": 3,
+    "layer": 23,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "choose-list__s4",
+    "t": 6,
+    "layer": 0,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "choose-list__s4",
+    "t": 6,
+    "layer": 10,
+    "cos": 1.0000001192092896,
+    "relative_error": 0.0
+  },
+  {
+    "run": "choose-list__s4",
+    "t": 6,
+    "layer": 23,
+    "cos": 1.0000001192092896,
+    "relative_error": 0.0
+  },
+  {
+    "run": "choose-list__s2",
+    "t": 4,
+    "layer": 0,
+    "cos": 0.9999801516532898,
+    "relative_error": 0.006580522283911705
+  },
+  {
+    "run": "choose-list__s2",
+    "t": 4,
+    "layer": 10,
+    "cos": 0.9997191429138184,
+    "relative_error": 0.023856788873672485
+  },
+  {
+    "run": "choose-list__s2",
+    "t": 4,
+    "layer": 23,
+    "cos": 0.9991503357887268,
+    "relative_error": 0.04147963970899582
+  },
+  {
+    "run": "enter-text-2__s3",
+    "t": 7,
+    "layer": 0,
+    "cos": 0.99997478723526,
+    "relative_error": 0.007121746893972158
+  },
+  {
+    "run": "enter-text-2__s3",
+    "t": 7,
+    "layer": 10,
+    "cos": 0.999790608882904,
+    "relative_error": 0.020479613915085793
+  },
+  {
+    "run": "enter-text-2__s3",
+    "t": 7,
+    "layer": 23,
+    "cos": 0.999289870262146,
+    "relative_error": 0.037683725357055664
+  },
+  {
+    "run": "use-autocomplete__s2",
+    "t": 11,
+    "layer": 0,
+    "cos": 0.999979555606842,
+    "relative_error": 0.006817792076617479
+  },
+  {
+    "run": "use-autocomplete__s2",
+    "t": 11,
+    "layer": 10,
+    "cos": 0.9997773170471191,
+    "relative_error": 0.02112492360174656
+  },
+  {
+    "run": "use-autocomplete__s2",
+    "t": 11,
+    "layer": 23,
+    "cos": 0.9990922808647156,
+    "relative_error": 0.04277437925338745
+  },
+  {
+    "run": "form-sequence__s4",
+    "t": 5,
+    "layer": 0,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "form-sequence__s4",
+    "t": 5,
+    "layer": 10,
+    "cos": 1.0000001192092896,
+    "relative_error": 0.0
+  },
+  {
+    "run": "form-sequence__s4",
+    "t": 5,
+    "layer": 23,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "click-checkboxes__s1",
+    "t": 6,
+    "layer": 0,
+    "cos": 0.9999756813049316,
+    "relative_error": 0.006972161121666431
+  },
+  {
+    "run": "click-checkboxes__s1",
+    "t": 6,
+    "layer": 10,
+    "cos": 0.9998180866241455,
+    "relative_error": 0.019114766269922256
+  },
+  {
+    "run": "click-checkboxes__s1",
+    "t": 6,
+    "layer": 23,
+    "cos": 0.9993556141853333,
+    "relative_error": 0.03589387238025665
+  },
+  {
+    "run": "multi-layouts__s3",
+    "t": 12,
+    "layer": 0,
+    "cos": 1.0000001192092896,
+    "relative_error": 0.0
+  },
+  {
+    "run": "multi-layouts__s3",
+    "t": 12,
+    "layer": 10,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "multi-layouts__s3",
+    "t": 12,
+    "layer": 23,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "login-user__s3",
+    "t": 10,
+    "layer": 0,
+    "cos": 0.9999796152114868,
+    "relative_error": 0.006415586918592453
+  },
+  {
+    "run": "login-user__s3",
+    "t": 10,
+    "layer": 10,
+    "cos": 0.9997857809066772,
+    "relative_error": 0.020811427384614944
+  },
+  {
+    "run": "login-user__s3",
+    "t": 10,
+    "layer": 23,
+    "cos": 0.9994888305664062,
+    "relative_error": 0.03263387829065323
+  },
+  {
+    "run": "multi-layouts__s3",
+    "t": 8,
+    "layer": 0,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "multi-layouts__s3",
+    "t": 8,
+    "layer": 10,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "multi-layouts__s3",
+    "t": 8,
+    "layer": 23,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "enter-password__s0",
+    "t": 4,
+    "layer": 0,
+    "cos": 0.9999518394470215,
+    "relative_error": 0.01042173057794571
+  },
+  {
+    "run": "enter-password__s0",
+    "t": 4,
+    "layer": 10,
+    "cos": 0.999744713306427,
+    "relative_error": 0.02286410517990589
+  },
+  {
+    "run": "enter-password__s0",
+    "t": 4,
+    "layer": 23,
+    "cos": 0.9986906051635742,
+    "relative_error": 0.05130540952086449
+  },
+  {
+    "run": "enter-date__s0__imp",
+    "t": 9,
+    "layer": 0,
+    "cos": 1.0000001192092896,
+    "relative_error": 0.0
+  },
+  {
+    "run": "enter-date__s0__imp",
+    "t": 9,
+    "layer": 10,
+    "cos": 0.9999999403953552,
+    "relative_error": 0.0
+  },
+  {
+    "run": "enter-date__s0__imp",
+    "t": 9,
+    "layer": 23,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "enter-password__s2",
+    "t": 11,
+    "layer": 0,
+    "cos": 0.9999805092811584,
+    "relative_error": 0.006368653383105993
+  },
+  {
+    "run": "enter-password__s2",
+    "t": 11,
+    "layer": 10,
+    "cos": 0.9997742176055908,
+    "relative_error": 0.021315667778253555
+  },
+  {
+    "run": "enter-password__s2",
+    "t": 11,
+    "layer": 23,
+    "cos": 0.9990582466125488,
+    "relative_error": 0.04454627260565758
+  },
+  {
+    "run": "enter-password__s2",
+    "t": 5,
+    "layer": 0,
+    "cos": 0.9999783039093018,
+    "relative_error": 0.006770980078727007
+  },
+  {
+    "run": "enter-password__s2",
+    "t": 5,
+    "layer": 10,
+    "cos": 0.9997954964637756,
+    "relative_error": 0.02078082598745823
+  },
+  {
+    "run": "enter-password__s2",
+    "t": 5,
+    "layer": 23,
+    "cos": 0.9990535974502563,
+    "relative_error": 0.04420557990670204
+  },
+  {
+    "run": "enter-password__s4",
+    "t": 5,
+    "layer": 0,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "enter-password__s4",
+    "t": 5,
+    "layer": 10,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "enter-password__s4",
+    "t": 5,
+    "layer": 23,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "enter-text-2__s0__imp",
+    "t": 2,
+    "layer": 0,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "enter-text-2__s0__imp",
+    "t": 2,
+    "layer": 10,
+    "cos": 1.0000001192092896,
+    "relative_error": 0.0
+  },
+  {
+    "run": "enter-text-2__s0__imp",
+    "t": 2,
+    "layer": 23,
+    "cos": 0.9999998807907104,
+    "relative_error": 0.0
+  },
+  {
+    "run": "enter-password__s0__imp",
+    "t": 3,
+    "layer": 0,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "enter-password__s0__imp",
+    "t": 3,
+    "layer": 10,
+    "cos": 0.9999999403953552,
+    "relative_error": 0.0
+  },
+  {
+    "run": "enter-password__s0__imp",
+    "t": 3,
+    "layer": 23,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "login-user__s2__imp",
+    "t": 2,
+    "layer": 0,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "login-user__s2__imp",
+    "t": 2,
+    "layer": 10,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "login-user__s2__imp",
+    "t": 2,
+    "layer": 23,
+    "cos": 0.9999999403953552,
+    "relative_error": 0.0
+  },
+  {
+    "run": "multi-layouts__s2",
+    "t": 6,
+    "layer": 0,
+    "cos": 0.9999808669090271,
+    "relative_error": 0.006342058070003986
+  },
+  {
+    "run": "multi-layouts__s2",
+    "t": 6,
+    "layer": 10,
+    "cos": 0.9997591376304626,
+    "relative_error": 0.02195584587752819
+  },
+  {
+    "run": "multi-layouts__s2",
+    "t": 6,
+    "layer": 23,
+    "cos": 0.9992179870605469,
+    "relative_error": 0.040428146719932556
+  },
+  {
+    "run": "use-autocomplete__s2",
+    "t": 8,
+    "layer": 0,
+    "cos": 0.9999698400497437,
+    "relative_error": 0.0080344183370471
+  },
+  {
+    "run": "use-autocomplete__s2",
+    "t": 8,
+    "layer": 10,
+    "cos": 0.9997288584709167,
+    "relative_error": 0.02328484319150448
+  },
+  {
+    "run": "use-autocomplete__s2",
+    "t": 8,
+    "layer": 23,
+    "cos": 0.9991095662117004,
+    "relative_error": 0.042366329580545425
+  },
+  {
+    "run": "form-sequence__s3",
+    "t": 7,
+    "layer": 0,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "form-sequence__s3",
+    "t": 7,
+    "layer": 10,
+    "cos": 0.9999999403953552,
+    "relative_error": 0.0
+  },
+  {
+    "run": "form-sequence__s3",
+    "t": 7,
+    "layer": 23,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "multi-layouts__s4",
+    "t": 8,
+    "layer": 0,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "multi-layouts__s4",
+    "t": 8,
+    "layer": 10,
+    "cos": 1.0000001192092896,
+    "relative_error": 0.0
+  },
+  {
+    "run": "multi-layouts__s4",
+    "t": 8,
+    "layer": 23,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "login-user-popup__s0",
+    "t": 2,
+    "layer": 0,
+    "cos": 0.9999751448631287,
+    "relative_error": 0.007105545606464148
+  },
+  {
+    "run": "login-user-popup__s0",
+    "t": 2,
+    "layer": 10,
+    "cos": 0.9997390508651733,
+    "relative_error": 0.022867588326334953
+  },
+  {
+    "run": "login-user-popup__s0",
+    "t": 2,
+    "layer": 23,
+    "cos": 0.9983600974082947,
+    "relative_error": 0.0573379248380661
+  },
+  {
+    "run": "enter-text-2__s1",
+    "t": 3,
+    "layer": 0,
+    "cos": 0.9999828338623047,
+    "relative_error": 0.006003617309033871
+  },
+  {
+    "run": "enter-text-2__s1",
+    "t": 3,
+    "layer": 10,
+    "cos": 0.9997794032096863,
+    "relative_error": 0.021044638007879257
+  },
+  {
+    "run": "enter-text-2__s1",
+    "t": 3,
+    "layer": 23,
+    "cos": 0.9989525675773621,
+    "relative_error": 0.04625710844993591
+  },
+  {
+    "run": "login-user__s2",
+    "t": 5,
+    "layer": 0,
+    "cos": 0.9999799728393555,
+    "relative_error": 0.006427616812288761
+  },
+  {
+    "run": "login-user__s2",
+    "t": 5,
+    "layer": 10,
+    "cos": 0.9996914863586426,
+    "relative_error": 0.024903150275349617
+  },
+  {
+    "run": "login-user__s2",
+    "t": 5,
+    "layer": 23,
+    "cos": 0.9990723729133606,
+    "relative_error": 0.04310448467731476
+  },
+  {
+    "run": "click-dialog-2__s0",
+    "t": 0,
+    "layer": 0,
+    "cos": 0.9999756217002869,
+    "relative_error": 0.007914099842309952
+  },
+  {
+    "run": "click-dialog-2__s0",
+    "t": 0,
+    "layer": 10,
+    "cos": 0.9996549487113953,
+    "relative_error": 0.026265596970915794
+  },
+  {
+    "run": "click-dialog-2__s0",
+    "t": 0,
+    "layer": 23,
+    "cos": 0.9970059394836426,
+    "relative_error": 0.07733151316642761
+  },
+  {
+    "run": "click-option__s1",
+    "t": 1,
+    "layer": 0,
+    "cos": 0.9999841451644897,
+    "relative_error": 0.005635648034512997
+  },
+  {
+    "run": "click-option__s1",
+    "t": 1,
+    "layer": 10,
+    "cos": 0.9996566772460938,
+    "relative_error": 0.026256628334522247
+  },
+  {
+    "run": "click-option__s1",
+    "t": 1,
+    "layer": 23,
+    "cos": 0.9982286095619202,
+    "relative_error": 0.05958183854818344
+  },
+  {
+    "run": "use-autocomplete__s3",
+    "t": 2,
+    "layer": 0,
+    "cos": 0.9999791383743286,
+    "relative_error": 0.006508559454232454
+  },
+  {
+    "run": "use-autocomplete__s3",
+    "t": 2,
+    "layer": 10,
+    "cos": 0.9997332692146301,
+    "relative_error": 0.023271683603525162
+  },
+  {
+    "run": "use-autocomplete__s3",
+    "t": 2,
+    "layer": 23,
+    "cos": 0.9990798234939575,
+    "relative_error": 0.0433586984872818
+  },
+  {
+    "run": "choose-list__s3",
+    "t": 0,
+    "layer": 0,
+    "cos": 0.9999823570251465,
+    "relative_error": 0.005949776619672775
+  },
+  {
+    "run": "choose-list__s3",
+    "t": 0,
+    "layer": 10,
+    "cos": 0.9997012615203857,
+    "relative_error": 0.024460334330797195
+  },
+  {
+    "run": "choose-list__s3",
+    "t": 0,
+    "layer": 23,
+    "cos": 0.9969931840896606,
+    "relative_error": 0.07748923450708389
+  },
+  {
+    "run": "click-checkboxes-soft__s2",
+    "t": 0,
+    "layer": 0,
+    "cos": 0.9999812841415405,
+    "relative_error": 0.006213824730366468
+  },
+  {
+    "run": "click-checkboxes-soft__s2",
+    "t": 0,
+    "layer": 10,
+    "cos": 0.9996211528778076,
+    "relative_error": 0.02769840881228447
+  },
+  {
+    "run": "click-checkboxes-soft__s2",
+    "t": 0,
+    "layer": 23,
+    "cos": 0.997131884098053,
+    "relative_error": 0.07643595337867737
+  },
+  {
+    "run": "focus-text-2__s3",
+    "t": 1,
+    "layer": 0,
+    "cos": 0.999983012676239,
+    "relative_error": 0.005857979878783226
+  },
+  {
+    "run": "focus-text-2__s3",
+    "t": 1,
+    "layer": 10,
+    "cos": 0.9995476603507996,
+    "relative_error": 0.03009331226348877
+  },
+  {
+    "run": "focus-text-2__s3",
+    "t": 1,
+    "layer": 23,
+    "cos": 0.996986985206604,
+    "relative_error": 0.07757879793643951
+  },
+  {
+    "run": "click-checkboxes-soft__s2",
+    "t": 1,
+    "layer": 0,
+    "cos": 0.9999809861183167,
+    "relative_error": 0.006173499394208193
+  },
+  {
+    "run": "click-checkboxes-soft__s2",
+    "t": 1,
+    "layer": 10,
+    "cos": 0.9995986819267273,
+    "relative_error": 0.02866927534341812
+  },
+  {
+    "run": "click-checkboxes-soft__s2",
+    "t": 1,
+    "layer": 23,
+    "cos": 0.9986175894737244,
+    "relative_error": 0.052700966596603394
+  },
+  {
+    "run": "click-checkboxes__s4",
+    "t": 2,
+    "layer": 0,
+    "cos": 1.0,
+    "relative_error": 0.0
+  },
+  {
+    "run": "click-checkboxes__s4",
+    "t": 2,
+    "layer": 10,
+    "cos": 1.0000001192092896,
+    "relative_error": 0.0
+  },
+  {
+    "run": "click-checkboxes__s4",
+    "t": 2,
+    "layer": 23,
+    "cos": 0.9999999403953552,
+    "relative_error": 0.0
+  },
+  {
+    "run": "use-autocomplete__s0",
+    "t": 0,
+    "layer": 0,
+    "cos": 0.9999814033508301,
+    "relative_error": 0.00625595124438405
+  },
+  {
+    "run": "use-autocomplete__s0",
+    "t": 0,
+    "layer": 10,
+    "cos": 0.9995076060295105,
+    "relative_error": 0.03143748641014099
+  },
+  {
+    "run": "use-autocomplete__s0",
+    "t": 0,
+    "layer": 23,
+    "cos": 0.9973261952400208,
+    "relative_error": 0.07309596240520477
+  },
+  {
+    "run": "click-widget__s1",
+    "t": 0,
+    "layer": 0,
+    "cos": 0.9999691843986511,
+    "relative_error": 0.00792310293763876
+  },
+  {
+    "run": "click-widget__s1",
+    "t": 0,
+    "layer": 10,
+    "cos": 0.9995439052581787,
+    "relative_error": 0.030225664377212524
+  },
+  {
+    "run": "click-widget__s1",
+    "t": 0,
+    "layer": 23,
+    "cos": 0.9977812767028809,
+    "relative_error": 0.06665875017642975
+  },
+  {
+    "run": "click-dialog-2__s3",
+    "t": 0,
+    "layer": 0,
+    "cos": 0.99996417760849,
+    "relative_error": 0.00876210443675518
+  },
+  {
+    "run": "click-dialog-2__s3",
+    "t": 0,
+    "layer": 10,
+    "cos": 0.9995807409286499,
+    "relative_error": 0.029151003807783127
+  },
+  {
+    "run": "click-dialog-2__s3",
+    "t": 0,
+    "layer": 23,
+    "cos": 0.9975954294204712,
+    "relative_error": 0.06932063400745392
+  },
+  {
+    "run": "choose-list__s0",
+    "t": 0,
+    "layer": 0,
+    "cos": 0.9999762773513794,
+    "relative_error": 0.006906983442604542
+  },
+  {
+    "run": "choose-list__s0",
+    "t": 0,
+    "layer": 10,
+    "cos": 0.9995701909065247,
+    "relative_error": 0.02952905371785164
+  },
+  {
+    "run": "choose-list__s0",
+    "t": 0,
+    "layer": 23,
+    "cos": 0.9969356656074524,
+    "relative_error": 0.07870891690254211
+  }
+]

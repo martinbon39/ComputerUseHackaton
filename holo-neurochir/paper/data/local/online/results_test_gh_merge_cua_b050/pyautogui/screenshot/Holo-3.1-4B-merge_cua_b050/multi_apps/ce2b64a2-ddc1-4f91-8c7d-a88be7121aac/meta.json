@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "ce2b64a2-ddc1-4f91-8c7d-a88be7121aac",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_direct_json_object",
+  "finished_by_agent": true,
+  "steps": 26,
+  "answer": "Successfully identified and renamed all three mountain images in the Pictures directory:\n\n1. picture1.jpg → Mount Kilimanjaro.jpg (snow-capped volcano with rising moon)\n2. picture2.jpg → Mount Everest.jpg (dramatic snow-capped mountain range with sharp peaks)\n3. picture3.jpg → Mount Hua.jpg (cliff-side mountain with padlocks)\n\nAll filenames preserve spaces as requested and use the .jpg extension.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

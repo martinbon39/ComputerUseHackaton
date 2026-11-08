@@ -1,0 +1,242 @@
+[
+  {
+    "run": "choose-list__s1",
+    "path": "/workspace/astra/data/train/choose-list__s1",
+    "t": 6,
+    "seed": 1,
+    "task": "choose-list",
+    "label": "loop+",
+    "success": false,
+    "n_in": 6955
+  },
+  {
+    "run": "search-engine__s2",
+    "path": "/workspace/astra/data/train/search-engine__s2",
+    "t": 10,
+    "seed": 2,
+    "task": "search-engine",
+    "label": "loop+",
+    "success": false,
+    "n_in": 7352
+  },
+  {
+    "run": "enter-text-2__s3",
+    "path": "/workspace/astra/data/train/enter-text-2__s3",
+    "t": 7,
+    "seed": 3,
+    "task": "enter-text-2",
+    "label": "loop+",
+    "success": false,
+    "n_in": 7041
+  },
+  {
+    "run": "enter-text-2__s3",
+    "path": "/workspace/astra/data/train/enter-text-2__s3",
+    "t": 6,
+    "seed": 3,
+    "task": "enter-text-2",
+    "label": "loop+",
+    "success": false,
+    "n_in": 6949
+  },
+  {
+    "run": "click-checkboxes-soft__s0",
+    "path": "/workspace/astra/data/train/click-checkboxes-soft__s0",
+    "t": 8,
+    "seed": 0,
+    "task": "click-checkboxes-soft",
+    "label": "loop+",
+    "success": false,
+    "n_in": 7120
+  },
+  {
+    "run": "enter-text__s1__imp",
+    "path": "/workspace/astra/data/train/enter-text__s1__imp",
+    "t": 6,
+    "seed": 1,
+    "task": "enter-text",
+    "label": "loop+",
+    "success": false,
+    "n_in": 6852
+  },
+  {
+    "run": "choose-list__s1",
+    "path": "/workspace/astra/data/train/choose-list__s1",
+    "t": 7,
+    "seed": 1,
+    "task": "choose-list",
+    "label": "loop+",
+    "success": false,
+    "n_in": 7053
+  },
+  {
+    "run": "form-sequence__s4",
+    "path": "/workspace/astra/data/train/form-sequence__s4",
+    "t": 5,
+    "seed": 4,
+    "task": "form-sequence",
+    "label": "loop+",
+    "success": false,
+    "n_in": 6897
+  },
+  {
+    "run": "click-checkboxes__s1",
+    "path": "/workspace/astra/data/train/click-checkboxes__s1",
+    "t": 8,
+    "seed": 1,
+    "task": "click-checkboxes",
+    "label": "loop+",
+    "success": false,
+    "n_in": 7174
+  },
+  {
+    "run": "click-checkboxes-soft__s0",
+    "path": "/workspace/astra/data/train/click-checkboxes-soft__s0",
+    "t": 11,
+    "seed": 0,
+    "task": "click-checkboxes-soft",
+    "label": "loop+",
+    "success": false,
+    "n_in": 7396
+  },
+  {
+    "run": "choose-list__s1",
+    "path": "/workspace/astra/data/train/choose-list__s1",
+    "t": 3,
+    "seed": 1,
+    "task": "choose-list",
+    "label": "loop+",
+    "success": false,
+    "n_in": 6661
+  },
+  {
+    "run": "multi-layouts__s3",
+    "path": "/workspace/astra/data/train/multi-layouts__s3",
+    "t": 12,
+    "seed": 3,
+    "task": "multi-layouts",
+    "label": "loop+",
+    "success": false,
+    "n_in": 7413
+  },
+  {
+    "run": "enter-date__s2",
+    "path": "/workspace/astra/data/train/enter-date__s2",
+    "t": 0,
+    "seed": 2,
+    "task": "enter-date",
+    "label": "loop-",
+    "success": false,
+    "n_in": 2669
+  },
+  {
+    "run": "search-engine__s3",
+    "path": "/workspace/astra/data/train/search-engine__s3",
+    "t": 6,
+    "seed": 3,
+    "task": "search-engine",
+    "label": "loop-",
+    "success": false,
+    "n_in": 7037
+  },
+  {
+    "run": "choose-list__s0",
+    "path": "/workspace/astra/data/train/choose-list__s0",
+    "t": 4,
+    "seed": 0,
+    "task": "choose-list",
+    "label": null,
+    "success": true,
+    "n_in": 6745
+  },
+  {
+    "run": "enter-text__s2__imp",
+    "path": "/workspace/astra/data/train/enter-text__s2__imp",
+    "t": 0,
+    "seed": 2,
+    "task": "enter-text",
+    "label": "loop-",
+    "success": false,
+    "n_in": 2664
+  },
+  {
+    "run": "enter-text-2__s5",
+    "path": "/workspace/astra/data/train/enter-text-2__s5",
+    "t": 3,
+    "seed": 5,
+    "task": "enter-text-2",
+    "label": null,
+    "success": true,
+    "n_in": 6666
+  },
+  {
+    "run": "login-user__s4",
+    "path": "/workspace/astra/data/train/login-user__s4",
+    "t": 2,
+    "seed": 4,
+    "task": "login-user",
+    "label": "loop-",
+    "success": false,
+    "n_in": 6607
+  },
+  {
+    "run": "form-sequence__s1",
+    "path": "/workspace/astra/data/train/form-sequence__s1",
+    "t": 2,
+    "seed": 1,
+    "task": "form-sequence",
+    "label": "loop-",
+    "success": false,
+    "n_in": 6574
+  },
+  {
+    "run": "enter-text-2__s1__imp",
+    "path": "/workspace/astra/data/train/enter-text-2__s1__imp",
+    "t": 0,
+    "seed": 1,
+    "task": "enter-text-2",
+    "label": "loop-",
+    "success": false,
+    "n_in": 2669
+  },
+  {
+    "run": "enter-date__s0",
+    "path": "/workspace/astra/data/train/enter-date__s0",
+    "t": 5,
+    "seed": 0,
+    "task": "enter-date",
+    "label": "loop-",
+    "success": false,
+    "n_in": 6778
+  },
+  {
+    "run": "enter-text-2__s2",
+    "path": "/workspace/astra/data/train/enter-text-2__s2",
+    "t": 0,
+    "seed": 2,
+    "task": "enter-text-2",
+    "label": "loop-",
+    "success": false,
+    "n_in": 2669
+  },
+  {
+    "run": "use-autocomplete__s1",
+    "path": "/workspace/astra/data/train/use-autocomplete__s1",
+    "t": 0,
+    "seed": 1,
+    "task": "use-autocomplete",
+    "label": "loop-",
+    "success": false,
+    "n_in": 2665
+  },
+  {
+    "run": "click-checkboxes-soft__s2",
+    "path": "/workspace/astra/data/train/click-checkboxes-soft__s2",
+    "t": 3,
+    "seed": 2,
+    "task": "click-checkboxes-soft",
+    "label": "loop-",
+    "success": true,
+    "n_in": 6655
+  }
+]

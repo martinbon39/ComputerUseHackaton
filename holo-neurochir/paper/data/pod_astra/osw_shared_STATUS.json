@@ -1,0 +1,155 @@
+{
+ "updated_utc": "2026-11-07 21:56:45",
+ "passes": {
+  "diag": {
+   "trajectories": "/workspace/osw_analysis/results_diag",
+   "acts": "/workspace/osw_analysis/acts_results_diag/<domain>/<example_id>/acts.npz (all steps) or acts_tail.npz (last 3 steps, key t = step index)",
+   "labels": "/workspace/osw_analysis/diagnostic_osw_diag.json",
+   "rules_sha1": "1e5079afb500",
+   "n_scored": 119,
+   "n_replayed_full": 67,
+   "n_replayed_tail_only": 52,
+   "n_oom_skipped": 11,
+   "labels_all_scored": {
+    "loop+": 13,
+    "loop-": 1474,
+    "fs+": 27,
+    "fs-": 65
+   },
+   "labels_admissible": {
+    "fs+": 27,
+    "fs-": 65,
+    "loop+": 7,
+    "loop-": 760
+   },
+   "harness_events": {
+    "env_step_failed": 0,
+    "parse_failed_3x": 6
+   },
+   "categories": {
+    "success": 66,
+    "infeasible_correct": 2,
+    "false_success": 29,
+    "loop": 5,
+    "step_limit": 16,
+    "other": 1,
+    "unscored": 1
+   },
+   "share_of_failures": {
+    "false_success": 0.569,
+    "loop": 0.118,
+    "step_limit": 0.412
+   }
+  },
+  "diag2": {
+   "trajectories": "/workspace/osw_analysis/results_diag2",
+   "acts": "/workspace/osw_analysis/acts_results_diag2/<domain>/<example_id>/acts.npz (all steps) or acts_tail.npz (last 3 steps, key t = step index)",
+   "labels": "/workspace/osw_analysis/diagnostic_osw_diag2.json",
+   "rules_sha1": "1e5079afb500",
+   "n_scored": 80,
+   "n_replayed_full": 4,
+   "n_replayed_tail_only": 61,
+   "n_oom_skipped": 15,
+   "labels_all_scored": {
+    "loop+": 11,
+    "loop-": 951,
+    "fs+": 20,
+    "fs-": 44
+   },
+   "labels_admissible": {
+    "fs+": 14,
+    "fs-": 44,
+    "loop+": 0,
+    "loop-": 108
+   },
+   "harness_events": {
+    "env_step_failed": 0,
+    "parse_failed_3x": 3
+   },
+   "categories": {
+    "success": 44,
+    "infeasible_correct": 1,
+    "false_success": 24,
+    "loop": 3,
+    "step_limit": 8,
+    "other": 0,
+    "unscored": 2
+   },
+   "share_of_failures": {
+    "false_success": 0.686,
+    "loop": 0.114,
+    "step_limit": 0.314
+   }
+  }
+ },
+ "admissible_total": {
+  "fs+": 41,
+  "fs-": 109,
+  "loop+": 7,
+  "loop-": 868
+ },
+ "go_fs": true,
+ "go_loop": false,
+ "notes": {
+  "acts_keys": "resid, mlp (last prefill token), resid_post, mlp_post (before the action JSON): [steps, 32, 2560] float16; n_in [steps]",
+  "labels": "labels file -> tasks[i].fs_labels / .labels, step index aligned with acts; admissible = scored task, replayed, label after rule f6ffd521765d",
+  "cv_group": "tasks[i].task = domain/example_id, shared across passes",
+  "context_rebuild": "/workspace/projet: holo.osw_replay.rebuild()",
+  "direction_auc": "see auc field once computed",
+  "harness_events": "env_step_failed > 0 would make later steps of that episode diverge (unrecorded assistant message); parse_failed_3x does not (tested, see JOURNAL)"
+ },
+ "auc": {
+  "fs": {
+   "resid_post": {
+    "n": 150,
+    "pos": 41,
+    "neg": 109,
+    "n_tasks": 95,
+    "best_layer": 3,
+    "auc_dom_best": 0.701,
+    "auc_lr_at_best": 0.672,
+    "auc_lr_max": 0.697,
+    "baseline_step_index": 0.724,
+    "baseline_context_len": 0.735,
+    "passes": [
+     "diag",
+     "diag2"
+    ],
+    "directions_npz": "/workspace/osw_analysis/directions_osw_explo_fs_resid_post.npz",
+    "per_layer_json": "/workspace/osw_analysis/directions_osw_explo_fs_resid_post.json"
+   },
+   "resid": {
+    "n": 150,
+    "pos": 41,
+    "neg": 109,
+    "n_tasks": 95,
+    "best_layer": 14,
+    "auc_dom_best": 0.76,
+    "auc_lr_at_best": 0.713,
+    "auc_lr_max": 0.75,
+    "baseline_step_index": 0.724,
+    "baseline_context_len": 0.735,
+    "passes": [
+     "diag",
+     "diag2"
+    ],
+    "directions_npz": "/workspace/osw_analysis/directions_osw_explo_fs_resid.npz",
+    "per_layer_json": "/workspace/osw_analysis/directions_osw_explo_fs_resid.json"
+   },
+   "EXPLORATOIRE": true,
+   "note": "Replay paused 2026-11-07 ~22:00 UTC (GPU to prod vLLM); pass 2 stopped at 80 tasks. fs+ 41 / fs- 109 admissible, 95 tasks, CV GroupKFold(5) by task. Directions do NOT beat position: baseline step_index 0.724 / context_len 0.735. Position-controlled check (LR on [t, log n_in] vs + dom projection, CV by task): position-only 0.722; resid best +0.04 (L15, chosen post hoc); resid_post <= 0 at every layer.",
+   "position_controlled": {
+    "position_only_cv_auc": 0.722,
+    "resid_best": {
+     "layer": 15,
+     "auc": 0.762
+    },
+    "resid_post_best": {
+     "layer": 22,
+     "auc": 0.717
+    }
+   }
+  }
+ },
+ "replay_paused": true
+}

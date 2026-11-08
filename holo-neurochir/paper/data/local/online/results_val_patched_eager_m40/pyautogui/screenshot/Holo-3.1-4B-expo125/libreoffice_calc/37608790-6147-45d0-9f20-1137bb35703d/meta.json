@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "37608790-6147-45d0-9f20-1137bb35703d",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 45,
+  "answer": "Task completed successfully. The mixed data from column A has been split into three separate columns:\n\n**First Name (Column B):** All 21 employee first names extracted using the formula =LEFT(A2,FIND(\" \",A2)-1)\n\n**Last Name (Column C):** All 21 employee last names extracted using the formula =MID(A2,FIND(\" \",A2)+1,FIND(\" \",A2,FIND(\" \",A2)+1)-FIND(\" \",A2)-1)\n\n**Rank (Column D):** All 21 employee ranks extracted using the formula =TRIM(RIGHT(SUBSTITUTE(A2,\" \",REPT(\" \",100)),100))\n\nThe original data in column A remains completely untouched as requested. The file has been saved.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

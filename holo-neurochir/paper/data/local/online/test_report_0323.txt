@@ -1,0 +1,48 @@
+== TEST split (3 arms, pairs expo125-prompt, expo125-orig, prompt-orig)
+scored: expo125 120, prompt 0, orig 120; origin other: confirm = all 45
+[expo125-prompt] [all] pairs 0/120
+[expo125-orig] [all] pairs 120/120
+  success       expo125  0.592  orig  0.608  delta  -0.017  IC95 [-0.092, +0.058]  expo125 higher 9 / lower 11
+  false_success expo125  0.225  orig  0.242  delta  -0.017  IC95 [-0.092, +0.058]  expo125 higher 9 / lower 11
+  step_limit    expo125  0.200  orig  0.167  delta  +0.033  IC95 [-0.025, +0.092]  expo125 higher 8 / lower 4
+  n_steps       expo125 21.300  orig 20.325  delta  +0.975  IC95 [-0.909, +2.875]  expo125 higher 36 / lower 34
+[prompt-orig] [all] pairs 0/120
+== POOLED confirm + test (stratified by split)
+scored: expo125 165, prompt 20, orig 164; origin other: confirm = all 45
+[expo125-prompt] [split:confirm] pairs 20/45
+  success       expo125  0.250  prompt  0.250  delta  +0.000  IC95 [-0.250, +0.250]  expo125 higher 3 / lower 3
+  false_success expo125  0.150  prompt  0.250  delta  -0.100  IC95 [-0.350, +0.200]  expo125 higher 3 / lower 5
+  step_limit    expo125  0.600  prompt  0.550  delta  +0.050  IC95 [-0.150, +0.250]  expo125 higher 3 / lower 2
+  n_steps       expo125 39.900  prompt 34.750  delta  +5.150  IC95 [-1.100, +11.750]  expo125 higher 8 / lower 2
+[expo125-prompt] [split:test] pairs 0/120
+[expo125-prompt] [pooled] pairs 20/165
+  success       expo125  0.250  prompt  0.250  delta  +0.000  IC95 [-0.250, +0.250]  expo125 higher 3 / lower 3
+  false_success expo125  0.150  prompt  0.250  delta  -0.100  IC95 [-0.350, +0.200]  expo125 higher 3 / lower 5
+  step_limit    expo125  0.600  prompt  0.550  delta  +0.050  IC95 [-0.150, +0.250]  expo125 higher 3 / lower 2
+  n_steps       expo125 39.900  prompt 34.750  delta  +5.150  IC95 [-0.950, +11.700]  expo125 higher 8 / lower 2
+[expo125-orig] [split:confirm] pairs 44/45
+  success       expo125  0.409  orig  0.432  delta  -0.023  IC95 [-0.136, +0.091]  expo125 higher 3 / lower 4
+  false_success expo125  0.205  orig  0.159  delta  +0.045  IC95 [-0.091, +0.182]  expo125 higher 5 / lower 3
+  step_limit    expo125  0.386  orig  0.432  delta  -0.045  IC95 [-0.159, +0.068]  expo125 higher 3 / lower 5
+  n_steps       expo125 31.364  orig 30.886  delta  +0.477  IC95 [-2.751, +3.614]  expo125 higher 14 / lower 10
+[expo125-orig] [split:test] pairs 120/120
+  success       expo125  0.592  orig  0.608  delta  -0.017  IC95 [-0.092, +0.058]  expo125 higher 9 / lower 11
+  false_success expo125  0.225  orig  0.242  delta  -0.017  IC95 [-0.092, +0.058]  expo125 higher 9 / lower 11
+  step_limit    expo125  0.200  orig  0.167  delta  +0.033  IC95 [-0.025, +0.092]  expo125 higher 8 / lower 4
+  n_steps       expo125 21.300  orig 20.325  delta  +0.975  IC95 [-0.917, +2.908]  expo125 higher 36 / lower 34
+[expo125-orig] [pooled] pairs 164/165
+  success       expo125  0.543  orig  0.561  delta  -0.018  IC95 [-0.079, +0.043]  expo125 higher 12 / lower 15
+  false_success expo125  0.220  orig  0.220  delta  +0.000  IC95 [-0.061, +0.061]  expo125 higher 14 / lower 14
+  step_limit    expo125  0.250  orig  0.238  delta  +0.012  IC95 [-0.043, +0.067]  expo125 higher 11 / lower 9
+  n_steps       expo125 24.000  orig 23.159  delta  +0.841  IC95 [-0.787, +2.494]  expo125 higher 50 / lower 44
+[prompt-orig] [split:confirm] pairs 20/45
+  success       prompt  0.250  orig  0.300  delta  -0.050  IC95 [-0.200, +0.100]  prompt higher 1 / lower 2
+  false_success prompt  0.250  orig  0.100  delta  +0.150  IC95 [+0.000, +0.300]  prompt higher 3 / lower 0
+  step_limit    prompt  0.550  orig  0.650  delta  -0.100  IC95 [-0.250, +0.000]  prompt higher 0 / lower 2
+  n_steps       prompt 34.750  orig 41.250  delta  -6.500  IC95 [-12.550, -1.500]  prompt higher 2 / lower 7
+[prompt-orig] [split:test] pairs 0/120
+[prompt-orig] [pooled] pairs 20/165
+  success       prompt  0.250  orig  0.300  delta  -0.050  IC95 [-0.200, +0.100]  prompt higher 1 / lower 2
+  false_success prompt  0.250  orig  0.100  delta  +0.150  IC95 [+0.000, +0.300]  prompt higher 3 / lower 0
+  step_limit    prompt  0.550  orig  0.650  delta  -0.100  IC95 [-0.250, +0.000]  prompt higher 0 / lower 2
+  n_steps       prompt 34.750  orig 41.250  delta  -6.500  IC95 [-12.700, -1.449]  prompt higher 2 / lower 7

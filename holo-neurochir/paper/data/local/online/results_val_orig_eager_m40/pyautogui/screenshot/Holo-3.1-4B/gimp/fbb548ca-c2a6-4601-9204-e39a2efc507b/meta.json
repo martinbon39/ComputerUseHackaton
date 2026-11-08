@@ -1,0 +1,23 @@
+{
+  "domain": "gimp",
+  "example_id": "fbb548ca-c2a6-4601-9204-e39a2efc507b",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 10,
+  "answer": "I've searched through GIMP's theme preferences and found that only four standard themes are available: Dark, Gray, Light, and System. Unfortunately, there is no Blue theme included in GIMP's standard installation. The theme list does not scroll to reveal additional themes, indicating that these are all the built-in options.\n\nTo get a Blue theme, you would need to either:\n1. Download and install a custom Blue theme from the GIMP website or theme repositories\n2. Create your own custom theme by modifying GIMP's theme files\n3. Use third-party theme installers that add additional themes to GIMP\n\nThe Blue theme you're looking for is not natively available in GIMP's current installation.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

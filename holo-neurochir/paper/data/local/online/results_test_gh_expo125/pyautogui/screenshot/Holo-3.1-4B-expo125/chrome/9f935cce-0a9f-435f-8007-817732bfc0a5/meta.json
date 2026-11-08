@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "9f935cce-0a9f-435f-8007-817732bfc0a5",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_url_pattern_match",
+  "finished_by_agent": true,
+  "steps": 15,
+  "answer": "I have successfully browsed the complete list of Civil Division forms. I navigated through all four main form categories available on the Civil Division Documents and Forms page:\n\n1. **Commercial Litigation Documents & Forms** - Includes Fraud Section, Corporate/Financial Litigation Section, Intellectual Property Section, National Courts Section, and Office of Foreign Litigation\n\n2. **Enforcement & Affirmative Litigation Branch Documents & Forms** - Includes Office of Immigration Litigation Documents and Forms, Torts Branch Documents and Forms (Aviation/Space/Admiralty, Constitutional & Specialized Tort Litigation, Radiation Exposure Compensation Act)\n\n3. **Office of Immigration Litigation Documents & Forms** - Contains Torts Branch Documents and Forms with subsections for various litigation areas\n\n4. **Torts Branch Documents & Forms** - Includes Aviation Space and Admiralty Litigation Section, Constitutional & Specialized Tort Litigation Section, and RECA Docs & Forms with multiple claim form options (Onsite Participant Claim Form, Downwinder Claim Form, etc.)\n\nAdditionally, Standard Form 95 is available for presenting claims under the Federal Tort Claims Act.\n\nAll form categories have been thoroughly explored by scrolling through their respective pages to view all available documents and forms.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

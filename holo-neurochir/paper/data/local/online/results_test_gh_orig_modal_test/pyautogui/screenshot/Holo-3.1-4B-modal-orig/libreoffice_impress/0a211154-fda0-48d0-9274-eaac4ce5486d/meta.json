@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "0a211154-fda0-48d0-9274-eaac4ce5486d",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 14,
+  "answer": "Task completed successfully:\n\n1. **Yellow background for slides with real person photos:**\n   - Slide 3: Background changed to yellow (contains photo of a person)\n   - Slide 4: Background changed to yellow (contains photos of three people)\n\n2. **Slide 2 title changed:**\n   - Title changed from \"Introduction\" to \"Let's start\"\n\n3. **Verification:**\n   - Slides 1, 2, 5, and 6 contain only illustrations (mermaids, underwater scenes) and retain their original backgrounds\n   - Only slides 3 and 4 contain photos of real people\n\n4. **Presentation saved:** All changes have been persisted to disk",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

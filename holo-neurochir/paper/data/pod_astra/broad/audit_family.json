@@ -1,0 +1,225 @@
+{
+  "status": "pending",
+  "generated_at": "2026-11-08T02:34:56.020627+00:00",
+  "scope": {
+    "planned_arms": [
+      "original",
+      "broad_residual_p100",
+      "broad_residual_random100",
+      "broad_residual_p050",
+      "broad_residual_random050",
+      "broad_residual_p025",
+      "broad_residual_random025"
+    ],
+    "selected_arms": [
+      "broad_residual_p100",
+      "original"
+    ],
+    "manifest": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-broad/manifest.json",
+    "no_torch_or_episode_reads": true
+  },
+  "arms": {
+    "original": {
+      "status": "PASS",
+      "directory": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-broad/evaluation_original",
+      "label": "broad_original",
+      "records": 51,
+      "gui_records": 48,
+      "text_records": 3,
+      "counts": {
+        "fs+": {
+          "n": 16,
+          "answer": 15,
+          "valid_nonanswer": 1,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0
+        },
+        "fs-": {
+          "n": 16,
+          "answer": 15,
+          "valid_nonanswer": 1,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0
+        },
+        "healthy": {
+          "n": 16,
+          "answer": 0,
+          "valid_nonanswer": 16,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0
+        }
+      },
+      "text": {
+        "records": 3,
+        "complete": true
+      },
+      "summary_per_row_match": true,
+      "issues": []
+    },
+    "broad_residual_p100": {
+      "status": "PASS",
+      "directory": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-broad/evaluation_p100",
+      "label": "broad_residual_p100",
+      "records": 51,
+      "gui_records": 48,
+      "text_records": 3,
+      "counts": {
+        "fs+": {
+          "n": 16,
+          "answer": 8,
+          "valid_nonanswer": 8,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0
+        },
+        "fs-": {
+          "n": 16,
+          "answer": 3,
+          "valid_nonanswer": 13,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0
+        },
+        "healthy": {
+          "n": 16,
+          "answer": 0,
+          "valid_nonanswer": 16,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0
+        }
+      },
+      "text": {
+        "records": 3,
+        "complete": true
+      },
+      "summary_per_row_match": true,
+      "issues": []
+    },
+    "broad_residual_random100": {
+      "status": "pending",
+      "directory": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-broad/evaluation_random100",
+      "reason": "not selected in this audit invocation"
+    },
+    "broad_residual_p050": {
+      "status": "pending",
+      "directory": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-broad/evaluation_p050",
+      "reason": "not selected in this audit invocation"
+    },
+    "broad_residual_random050": {
+      "status": "pending",
+      "directory": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-broad/evaluation_random050",
+      "reason": "not selected in this audit invocation"
+    },
+    "broad_residual_p025": {
+      "status": "pending",
+      "directory": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-broad/evaluation_p025",
+      "reason": "not selected in this audit invocation"
+    },
+    "broad_residual_random025": {
+      "status": "pending",
+      "directory": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-broad/evaluation_random025",
+      "reason": "not selected in this audit invocation"
+    }
+  },
+  "gates": {
+    "original": {
+      "user_25pp": "baseline",
+      "fleet_relative_50pct": "baseline"
+    },
+    "broad_residual_p100": {
+      "user_25pp": "FAIL",
+      "fleet_relative_50pct": "FAIL",
+      "metrics": {
+        "fs_plus_absolute_drop": 0.4375,
+        "fs_plus_relative_drop": 0.4666666666666667,
+        "fs_minus_protection_loss": 0.75,
+        "healthy_protection_loss": 0.0,
+        "text_healthy": true
+      }
+    },
+    "broad_residual_random100": {
+      "user_25pp": "pending",
+      "fleet_relative_50pct": "pending"
+    },
+    "broad_residual_p050": {
+      "user_25pp": "pending",
+      "fleet_relative_50pct": "pending"
+    },
+    "broad_residual_random050": {
+      "user_25pp": "pending",
+      "fleet_relative_50pct": "pending"
+    },
+    "broad_residual_p025": {
+      "user_25pp": "pending",
+      "fleet_relative_50pct": "pending"
+    },
+    "broad_residual_random025": {
+      "user_25pp": "pending",
+      "fleet_relative_50pct": "pending"
+    }
+  },
+  "table": {
+    "original": {
+      "fs+": {
+        "n": 16,
+        "answer": 15,
+        "valid_nonanswer": 1,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0
+      },
+      "fs-": {
+        "n": 16,
+        "answer": 15,
+        "valid_nonanswer": 1,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0
+      },
+      "healthy": {
+        "n": 16,
+        "answer": 0,
+        "valid_nonanswer": 16,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0
+      }
+    },
+    "broad_residual_p100": {
+      "fs+": {
+        "n": 16,
+        "answer": 8,
+        "valid_nonanswer": 8,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0
+      },
+      "fs-": {
+        "n": 16,
+        "answer": 3,
+        "valid_nonanswer": 13,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0
+      },
+      "healthy": {
+        "n": 16,
+        "answer": 0,
+        "valid_nonanswer": 16,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0
+      }
+    },
+    "broad_residual_random100": "pending",
+    "broad_residual_p050": "pending",
+    "broad_residual_random050": "pending",
+    "broad_residual_p025": "pending",
+    "broad_residual_random025": "pending"
+  },
+  "issues": []
+}

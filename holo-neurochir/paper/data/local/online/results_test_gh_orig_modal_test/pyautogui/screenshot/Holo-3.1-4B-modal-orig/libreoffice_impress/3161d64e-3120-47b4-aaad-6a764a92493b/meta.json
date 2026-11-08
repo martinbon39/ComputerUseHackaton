@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "3161d64e-3120-47b4-aaad-6a764a92493b",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 13,
+  "answer": "Successfully completed the task. On slide 14:\n- First textbox ('Target audience' title): Font size changed to 60 pt\n- Second textbox ('Elaborate on what you want to discuss.'): Font size changed to 28 pt\n\nBoth font size changes have been applied and confirmed in the Character properties panel.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

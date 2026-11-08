@@ -1,0 +1,23 @@
+{
+  "domain": "gimp",
+  "example_id": "dbbf4b99-2253-4b10-9274-45f246af2466",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 10,
+  "answer": "The task is **infeasible** as specified. GIMP cannot convert RAW images to JPEG using GIMP alone because:\n\n1. **GIMP has no native RAW file support** - GIMP does not include built-in RAW decoders\n\n2. **External dependencies are required** - GIMP explicitly requires either darktable (>=1.7) or RawTherapee (>=5.2) to be installed to open RAW files, as confirmed by the error message: \"There is no RAW loader installed to open Raw Pentax PEF files\"\n\n3. **No alternative file types exist** - I thoroughly examined GIMP's file type selector and found no RAW-specific format options that would work without external software\n\n4. **Task constraint prevents solution** - The requirement to use \"GIMP only\" prevents installing or using the required external RAW loaders (darktable/RawTherapee)\n\n**To complete this task, you would need to either:**\n- Install darktable or RawTherapee alongside GIMP, OR\n- Use a different application that has native RAW support (such as Adobe Lightroom, Capture One, or the command-line tools from darktable/RawTherapee)\n\nGIMP alone cannot accomplish RAW to JPEG conversion.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

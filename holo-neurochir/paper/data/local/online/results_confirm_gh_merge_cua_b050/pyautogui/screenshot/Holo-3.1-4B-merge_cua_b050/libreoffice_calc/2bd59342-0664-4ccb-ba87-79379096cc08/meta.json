@@ -1,0 +1,23 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "2bd59342-0664-4ccb-ba87-79379096cc08",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 24,
+  "answer": "The task is infeasible in LibreOffice Calc. LibreOffice Calc does not support sparkline charts:\n\n1. **Native SPARKLINE function**: Returns #NAME? error - not supported\n2. **Chart wizard**: Creates full-sized charts in a separate area, not inline sparklines in cells\n3. **Conditional Formatting (Data Bar)**: Only creates single-cell bar visualizations, not multi-period trend sparklines\n4. **Extensions**: No sparkline extensions are installed in LibreOffice Calc\n\nTo create sparkline charts, you would need to use Microsoft Excel (which has native SPARKLINE support), Google Sheets (which has conditional formatting mini-charts or chart objects), or another spreadsheet application with sparkline functionality. Alternatively, you could create very small embedded chart objects in each cell, but these would not be true sparklines and would require manual resizing for each cell.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

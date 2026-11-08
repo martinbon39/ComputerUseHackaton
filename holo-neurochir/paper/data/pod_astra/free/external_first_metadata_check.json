@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "arm": "orig_modal",
+      "rows": 51,
+      "errors": 0,
+      "truncated": 0,
+      "server": [
+        {
+          "url": "https://martinbon39--holo-vllm-serve.us-east.modal.run/v1",
+          "model": "Holo-3.1-4B-modal-orig",
+          "vllm_version": "0.23.0",
+          "models": [
+            {
+              "id": "Holo-3.1-4B-modal-orig",
+              "root": "Hcompany/Holo-3.1-4B"
+            }
+          ]
+        }
+      ],
+      "source_unchanged": true,
+      "generations_sha256": "429d2f3abe0a6032875ab53c3c22996d916a091b7e91dc1eb324371a46e8e9c3"
+    },
+    {
+      "arm": "free_h2",
+      "rows": 51,
+      "errors": 0,
+      "truncated": 0,
+      "server": [
+        {
+          "url": "https://martinbon39--holo-vllm-serve.us-east.modal.run/v1",
+          "model": "Holo-3.1-4B-free_h2",
+          "vllm_version": "0.23.0",
+          "models": [
+            {
+              "id": "Holo-3.1-4B-free_h2",
+              "root": "/models/ckpt/free_h2"
+            }
+          ]
+        }
+      ],
+      "source_unchanged": true,
+      "generations_sha256": "40bfa317c9bc21bf2ba4b6cf76f4bc71acb0f8ef714844de45ef396a73a71aa9"
+    },
+    {
+      "arm": "free_h3_l05",
+      "rows": 51,
+      "errors": 0,
+      "truncated": 0,
+      "server": [
+        {
+          "url": "https://emilejouannet--holo-vllm-serve.us-east.modal.run/v1",
+          "model": "Holo-3.1-4B-free_h3_l05",
+          "vllm_version": "0.23.0",
+          "models": [
+            {
+              "id": "Holo-3.1-4B-free_h3_l05",
+              "root": "/models/ckpt/free_h3_l05"
+            }
+          ]
+        }
+      ],
+      "source_unchanged": true,
+      "generations_sha256": "6f79db33fa71c92e57fd3713e0f3f8465e3c9949765e5f007b9a197b47f5c47d"
+    }
+  ]
+}

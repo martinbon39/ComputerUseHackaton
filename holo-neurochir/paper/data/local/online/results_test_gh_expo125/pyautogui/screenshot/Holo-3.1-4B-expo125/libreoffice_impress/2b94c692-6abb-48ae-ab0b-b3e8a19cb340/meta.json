@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "2b94c692-6abb-48ae-ab0b-b3e8a19cb340",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 4,
+  "answer": "The image on Slide 2 has been successfully moved to the right side. The gray striped rectangular image was dragged from its original position on the left to the right side of the slide, allowing the NFC text and bullet points to be fully visible on the left. The presentation has been saved to persist the changes.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

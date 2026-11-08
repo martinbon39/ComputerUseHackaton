@@ -1,0 +1,20 @@
+{
+  "domain": "thunderbird",
+  "example_id": "9bc3cc16-074a-45ac-9bdc-b2a362e1daf3",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_list",
+  "finished_by_agent": true,
+  "steps": 13,
+  "answer": "Done. Both inbox emails have been backed up to ~/emails.bak as separate .eml files.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

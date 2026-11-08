@@ -1,0 +1,20 @@
+{
+  "domain": "os",
+  "example_id": "a4d98375-215b-4a4d-aee9-3d4370fccc41",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "exact_match",
+  "finished_by_agent": true,
+  "steps": 7,
+  "answer": "Done. Your computer is now configured to automatically lock after 5 minutes of inactivity. Settings applied: Automatic Screen Lock enabled, Blank Screen Delay set to 5 minutes, and lock triggers immediately when the screen turns off.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

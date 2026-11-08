@@ -1,0 +1,28 @@
+{
+  "mechanism": "common residual-writer left projection",
+  "construction_ids": [
+    "fs_0",
+    "donor_0",
+    "fs_1",
+    "donor_1"
+  ],
+  "D": "sum layers12..23 donor minus fs MLP plus mixer outputs at last decision token; two columns only",
+  "ranks": [
+    1,
+    2
+  ],
+  "doses": [
+    0.5,
+    1.0
+  ],
+  "forwards": 20,
+  "deadline_seconds": 1800,
+  "gate": "both construction fs answer margins negative; both true-finish preservation answer margins nonnegative; if several pass choose lowest dose then lowest rank",
+  "checkpoint_budget": "At most one learned plus same-norm random, only after HF gate; total<=8 candidates. No more mechanism search if none passes.",
+  "limitations": [
+    "Rank cannot exceed two from two columns; cannot infer high-dimensional code if this subspace fails.",
+    "Teacher-forced training/preservation panel is not held-out behavior.",
+    "Projection is subtraction of a subspace, not addition of the donor displacement; 80-percent swap recovery is an empirical hypothesis, not implied by SVD."
+  ],
+  "rank_policy": "Use k=1,2 only up to numerical rank at relative singular tolerance1e-6; if rank1, skip undefined rank2 and run12 forwards."
+}

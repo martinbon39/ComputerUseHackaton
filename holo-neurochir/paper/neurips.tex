@@ -1,0 +1,45 @@
+\documentclass{article}
+% NeurIPS 2026 submission (anonymous). Same source as main.tex (arXiv): shared/, sec/, fig/, generated/.
+\PassOptionsToPackage{numbers,sort&compress}{natbib}
+\usepackage{neurips_2026}
+\input{shared/preamble}
+\neuripstrue
+\input{shared/teaser_caption}
+\input{shared/title}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{shared/abstract}\end{abstract}
+
+\input{neurips/body}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\clearpage
+\appendix
+\section{About the appendices}
+The main text condenses the analyses below. Appendices \ref{sec:setting}--\ref{sec:repro} give each of them in full, with every number, the remaining figures and tables, the compilation of interventions into weights (Proposition~\ref{prop:equiv}) and the 0.8B study; figures and tables already shown in the main text are referenced rather than repeated. Figure~\ref{fig:pipeline} summarises the pipeline and where it stands.
+
+\placefig{fig-pipeline}
+
+\input{sec/setting}
+\input{sec/diag}
+\input{sec/replay}
+\input{sec/traps}
+\input{sec/interventions}
+\input{sec/mw}
+\input{sec/discussion}
+\input{sec/related}
+\input{sec/limits}
+\input{sec/repro}
+\input{sec/app_infeasible}
+\input{sec/app_osw}
+\input{sec/app_value}
+\input{sec/app_mw}
+
+\clearpage
+\input{neurips/checklist}
+\end{document}

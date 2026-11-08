@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "02ce9a50-7af2-47ed-8596-af0c230501f8",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_image_text,compare_image_text,compare_image_text",
+  "finished_by_agent": true,
+  "steps": 12,
+  "answer": "Task completed successfully. The 'ls' command was executed in the terminal, displaying the directory contents of /home/user. A screenshot was captured using the gnome-screenshot command and saved as 'ls.png' on the Desktop. The file has been verified to exist in the Desktop folder.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

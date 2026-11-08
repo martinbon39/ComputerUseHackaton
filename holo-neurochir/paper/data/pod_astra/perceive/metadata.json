@@ -1,0 +1,3804 @@
+{
+  "construction_pairs": [
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217/acts.npz",
+      "fold": 1,
+      "n_in_answer": 9042,
+      "n_in_nonanswer": 8861,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217/step_4_20261107@165118252372.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217/step_3_20261107@165114959402.png",
+      "role": "construction",
+      "t_answer": 3,
+      "t_nonanswer": 2,
+      "task_id": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/chrome/3299584d-8f11-4457-bf4c-ce98f7600250/acts.npz",
+      "fold": 2,
+      "n_in_answer": 9449,
+      "n_in_nonanswer": 9229,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/3299584d-8f11-4457-bf4c-ce98f7600250/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/3299584d-8f11-4457-bf4c-ce98f7600250/step_6_20261107@165626966871.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/3299584d-8f11-4457-bf4c-ce98f7600250/step_5_20261107@165623055574.png",
+      "role": "construction",
+      "t_answer": 5,
+      "t_nonanswer": 4,
+      "task_id": "chrome/3299584d-8f11-4457-bf4c-ce98f7600250",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/3299584d-8f11-4457-bf4c-ce98f7600250/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/chrome/35253b65-1c19-4304-8aa4-6884b8218fc0/acts.npz",
+      "fold": 3,
+      "n_in_answer": 9748,
+      "n_in_nonanswer": 9586,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/35253b65-1c19-4304-8aa4-6884b8218fc0/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/35253b65-1c19-4304-8aa4-6884b8218fc0/step_8_20261107@170047490059.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/35253b65-1c19-4304-8aa4-6884b8218fc0/step_7_20261107@170045063111.png",
+      "role": "construction",
+      "t_answer": 7,
+      "t_nonanswer": 6,
+      "task_id": "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/35253b65-1c19-4304-8aa4-6884b8218fc0/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63/acts.npz",
+      "fold": 3,
+      "n_in_answer": 10155,
+      "n_in_nonanswer": 9985,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63/step_11_20261107@165659815034.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63/step_10_20261107@165657358163.png",
+      "role": "construction",
+      "t_answer": 10,
+      "t_nonanswer": 9,
+      "task_id": "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63",
+      "tool_nonanswer": "wait",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/chrome/b070486d-e161-459b-aa2b-ef442d973b92/acts.npz",
+      "fold": 1,
+      "n_in_answer": 9160,
+      "n_in_nonanswer": 8991,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/b070486d-e161-459b-aa2b-ef442d973b92/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/b070486d-e161-459b-aa2b-ef442d973b92/step_5_20261107@165132300767.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/b070486d-e161-459b-aa2b-ef442d973b92/step_4_20261107@165128137958.png",
+      "role": "construction",
+      "t_answer": 4,
+      "t_nonanswer": 3,
+      "task_id": "chrome/b070486d-e161-459b-aa2b-ef442d973b92",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/b070486d-e161-459b-aa2b-ef442d973b92/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/chrome/c1fa57f3-c3db-4596-8f09-020701085416/acts.npz",
+      "fold": 2,
+      "n_in_answer": 9435,
+      "n_in_nonanswer": 9304,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/c1fa57f3-c3db-4596-8f09-020701085416/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/c1fa57f3-c3db-4596-8f09-020701085416/step_7_20261107@170319815646.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/c1fa57f3-c3db-4596-8f09-020701085416/step_6_20261107@170313745078.png",
+      "role": "construction",
+      "t_answer": 6,
+      "t_nonanswer": 5,
+      "task_id": "chrome/c1fa57f3-c3db-4596-8f09-020701085416",
+      "tool_nonanswer": "wait",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/c1fa57f3-c3db-4596-8f09-020701085416/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d/acts.npz",
+      "fold": 2,
+      "n_in_answer": 9441,
+      "n_in_nonanswer": 9294,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d/step_7_20261107@170311186150.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d/step_6_20261107@170308954723.png",
+      "role": "construction",
+      "t_answer": 6,
+      "t_nonanswer": 5,
+      "task_id": "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15/acts.npz",
+      "fold": 2,
+      "n_in_answer": 9943,
+      "n_in_nonanswer": 9769,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15/step_9_20261107@170826221193.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15/step_8_20261107@170823689085.png",
+      "role": "construction",
+      "t_answer": 8,
+      "t_nonanswer": 7,
+      "task_id": "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/acts.npz",
+      "fold": 1,
+      "n_in_answer": 11421,
+      "n_in_nonanswer": 11255,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/step_17_20261107@172049531651.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/step_16_20261107@172046087532.png",
+      "role": "construction",
+      "t_answer": 16,
+      "t_nonanswer": 15,
+      "task_id": "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/acts.npz",
+      "fold": 2,
+      "n_in_answer": 9502,
+      "n_in_nonanswer": 9348,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/step_7_20261107@172722731276.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/step_6_20261107@172715477319.png",
+      "role": "construction",
+      "t_answer": 6,
+      "t_nonanswer": 5,
+      "task_id": "libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17/acts.npz",
+      "fold": 3,
+      "n_in_answer": 10068,
+      "n_in_nonanswer": 9872,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17/step_9_20261107@171402425606.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17/step_8_20261107@171357836482.png",
+      "role": "construction",
+      "t_answer": 8,
+      "t_nonanswer": 7,
+      "task_id": "libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/acts.npz",
+      "fold": 2,
+      "n_in_answer": 11156,
+      "n_in_nonanswer": 10968,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/step_15_20261107@172045524903.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/step_14_20261107@172042317962.png",
+      "role": "construction",
+      "t_answer": 14,
+      "t_nonanswer": 13,
+      "task_id": "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/acts.npz",
+      "fold": 1,
+      "n_in_answer": 14419,
+      "n_in_nonanswer": 14206,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/step_33_20261107@172958405233.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/step_32_20261107@172953918203.png",
+      "role": "construction",
+      "t_answer": 32,
+      "t_nonanswer": 31,
+      "task_id": "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78/acts.npz",
+      "fold": 4,
+      "n_in_answer": 9830,
+      "n_in_nonanswer": 9642,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78/step_9_20261107@172700861683.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78/step_8_20261107@172652712915.png",
+      "role": "construction",
+      "t_answer": 8,
+      "t_nonanswer": 7,
+      "task_id": "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/acts.npz",
+      "fold": 3,
+      "n_in_answer": 11050,
+      "n_in_nonanswer": 10877,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/step_15_20261107@171752422835.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/step_14_20261107@171748672007.png",
+      "role": "construction",
+      "t_answer": 14,
+      "t_nonanswer": 13,
+      "task_id": "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74/acts.npz",
+      "fold": 1,
+      "n_in_answer": 11096,
+      "n_in_nonanswer": 10934,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74/step_16_20261107@173251500635.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74/step_15_20261107@173246659274.png",
+      "role": "construction",
+      "t_answer": 15,
+      "t_nonanswer": 14,
+      "task_id": "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302/acts.npz",
+      "fold": 1,
+      "n_in_answer": 9426,
+      "n_in_nonanswer": 9252,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302/step_6_20261107@173730413491.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302/step_5_20261107@173727984645.png",
+      "role": "construction",
+      "t_answer": 5,
+      "t_nonanswer": 4,
+      "task_id": "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf/acts.npz",
+      "fold": 1,
+      "n_in_answer": 10202,
+      "n_in_nonanswer": 10019,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf/step_11_20261107@173255609084.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf/step_10_20261107@173252601656.png",
+      "role": "construction",
+      "t_answer": 10,
+      "t_nonanswer": 9,
+      "task_id": "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6/acts.npz",
+      "fold": 1,
+      "n_in_answer": 10001,
+      "n_in_nonanswer": 9829,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6/step_9_20261107@173523750422.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6/step_8_20261107@173519097542.png",
+      "role": "construction",
+      "t_answer": 8,
+      "t_nonanswer": 7,
+      "task_id": "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8/acts.npz",
+      "fold": 4,
+      "n_in_answer": 10201,
+      "n_in_nonanswer": 9991,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8/step_10_20261107@173808517771.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8/step_9_20261107@173805863712.png",
+      "role": "construction",
+      "t_answer": 9,
+      "t_nonanswer": 8,
+      "task_id": "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c/acts.npz",
+      "fold": 2,
+      "n_in_answer": 11580,
+      "n_in_nonanswer": 11408,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c/step_19_20261107@173027448109.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c/step_18_20261107@173023644074.png",
+      "role": "construction",
+      "t_answer": 18,
+      "t_nonanswer": 17,
+      "task_id": "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68/acts.npz",
+      "fold": 1,
+      "n_in_answer": 11050,
+      "n_in_nonanswer": 10883,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68/step_18_20261107@173549659722.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68/step_17_20261107@173546971363.png",
+      "role": "construction",
+      "t_answer": 17,
+      "t_nonanswer": 16,
+      "task_id": "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf/acts.npz",
+      "fold": 4,
+      "n_in_answer": 8868,
+      "n_in_nonanswer": 6659,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf/step_3_20261107@173822967548.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf/step_2_20261107@173819528417.png",
+      "role": "construction",
+      "t_answer": 2,
+      "t_nonanswer": 1,
+      "task_id": "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8/acts.npz",
+      "fold": 3,
+      "n_in_answer": 9294,
+      "n_in_nonanswer": 9120,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8/step_5_20261107@174708846451.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8/step_4_20261107@174706445558.png",
+      "role": "construction",
+      "t_answer": 4,
+      "t_nonanswer": 3,
+      "task_id": "libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb/acts_tail.npz",
+      "fold": 4,
+      "n_in_answer": 8861,
+      "n_in_nonanswer": 6687,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb/step_3_20261107@174002612850.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb/step_2_20261107@173959521793.png",
+      "role": "construction",
+      "t_answer": 2,
+      "t_nonanswer": 1,
+      "task_id": "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d/acts_tail.npz",
+      "fold": 1,
+      "n_in_answer": 10720,
+      "n_in_nonanswer": 10573,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d/step_16_20261107@175040232015.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d/step_15_20261107@175022735696.png",
+      "role": "construction",
+      "t_answer": 15,
+      "t_nonanswer": 14,
+      "task_id": "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d",
+      "tool_nonanswer": "press_key",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38/acts_tail.npz",
+      "fold": 1,
+      "n_in_answer": 10455,
+      "n_in_nonanswer": 10309,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38/step_12_20261107@175026256821.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38/step_11_20261107@175020598576.png",
+      "role": "construction",
+      "t_answer": 11,
+      "t_nonanswer": 10,
+      "task_id": "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38",
+      "tool_nonanswer": "write",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5/acts_tail.npz",
+      "fold": 0,
+      "n_in_answer": 9292,
+      "n_in_nonanswer": 9107,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5/step_6_20261107@181536110468.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5/step_5_20261107@181532963130.png",
+      "role": "construction",
+      "t_answer": 5,
+      "t_nonanswer": 4,
+      "task_id": "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5",
+      "tool_nonanswer": "wait",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82/acts_tail.npz",
+      "fold": 0,
+      "n_in_answer": 13754,
+      "n_in_nonanswer": 13587,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82/step_30_20261107@181757549877.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82/step_29_20261107@181754103406.png",
+      "role": "construction",
+      "t_answer": 29,
+      "t_nonanswer": 28,
+      "task_id": "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82",
+      "tool_nonanswer": "write",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/937087b6-f668-4ba6-9110-60682ee33441/acts_tail.npz",
+      "fold": 3,
+      "n_in_answer": 9916,
+      "n_in_nonanswer": 9731,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/937087b6-f668-4ba6-9110-60682ee33441/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/937087b6-f668-4ba6-9110-60682ee33441/step_9_20261107@175247626710.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/937087b6-f668-4ba6-9110-60682ee33441/step_8_20261107@175243526927.png",
+      "role": "construction",
+      "t_answer": 8,
+      "t_nonanswer": 7,
+      "task_id": "multi_apps/937087b6-f668-4ba6-9110-60682ee33441",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/937087b6-f668-4ba6-9110-60682ee33441/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a/acts_tail.npz",
+      "fold": 0,
+      "n_in_answer": 10121,
+      "n_in_nonanswer": 9946,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a/step_10_20261107@174940467821.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a/step_9_20261107@174934487356.png",
+      "role": "construction",
+      "t_answer": 9,
+      "t_nonanswer": 8,
+      "task_id": "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4/acts_tail.npz",
+      "fold": 2,
+      "n_in_answer": 13436,
+      "n_in_nonanswer": 13277,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4/step_28_20261107@175527925258.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4/step_27_20261107@175521624774.png",
+      "role": "construction",
+      "t_answer": 27,
+      "t_nonanswer": 26,
+      "task_id": "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618/acts_tail.npz",
+      "fold": 1,
+      "n_in_answer": 11593,
+      "n_in_nonanswer": 11380,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618/step_18_20261107@180326467725.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618/step_17_20261107@180323257605.png",
+      "role": "construction",
+      "t_answer": 17,
+      "t_nonanswer": 16,
+      "task_id": "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6/acts_tail.npz",
+      "fold": 1,
+      "n_in_answer": 10684,
+      "n_in_nonanswer": 10393,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6/step_13_20261107@175411921360.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6/step_12_20261107@175304232632.png",
+      "role": "construction",
+      "t_answer": 12,
+      "t_nonanswer": 11,
+      "task_id": "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6",
+      "tool_nonanswer": "write",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91/acts_tail.npz",
+      "fold": 0,
+      "n_in_answer": 10367,
+      "n_in_nonanswer": 10136,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91/step_10_20261107@180545305196.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91/step_9_20261107@180538558950.png",
+      "role": "construction",
+      "t_answer": 9,
+      "t_nonanswer": 8,
+      "task_id": "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/os/b6781586-6346-41cd-935a-a6b1487918fc/acts_tail.npz",
+      "fold": 2,
+      "n_in_answer": 12244,
+      "n_in_nonanswer": 12036,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/b6781586-6346-41cd-935a-a6b1487918fc/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/b6781586-6346-41cd-935a-a6b1487918fc/step_21_20261107@183104559640.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/b6781586-6346-41cd-935a-a6b1487918fc/step_20_20261107@183058656242.png",
+      "role": "construction",
+      "t_answer": 20,
+      "t_nonanswer": 19,
+      "task_id": "os/b6781586-6346-41cd-935a-a6b1487918fc",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/b6781586-6346-41cd-935a-a6b1487918fc/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217/acts.npz",
+      "fold": 1,
+      "n_in_answer": 12875,
+      "n_in_nonanswer": 12690,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217/step_26_20261107@185226563162.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217/step_25_20261107@185223979917.png",
+      "role": "construction",
+      "t_answer": 25,
+      "t_nonanswer": 24,
+      "task_id": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/chrome/3299584d-8f11-4457-bf4c-ce98f7600250/acts.npz",
+      "fold": 2,
+      "n_in_answer": 9338,
+      "n_in_nonanswer": 9045,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/3299584d-8f11-4457-bf4c-ce98f7600250/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/3299584d-8f11-4457-bf4c-ce98f7600250/step_5_20261107@185425569025.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/3299584d-8f11-4457-bf4c-ce98f7600250/step_4_20261107@185423759804.png",
+      "role": "construction",
+      "t_answer": 4,
+      "t_nonanswer": 3,
+      "task_id": "chrome/3299584d-8f11-4457-bf4c-ce98f7600250",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/3299584d-8f11-4457-bf4c-ce98f7600250/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/chrome/35253b65-1c19-4304-8aa4-6884b8218fc0/acts.npz",
+      "fold": 3,
+      "n_in_answer": 9643,
+      "n_in_nonanswer": 9477,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/35253b65-1c19-4304-8aa4-6884b8218fc0/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/35253b65-1c19-4304-8aa4-6884b8218fc0/step_7_20261107@190210360993.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/35253b65-1c19-4304-8aa4-6884b8218fc0/step_6_20261107@190140816838.png",
+      "role": "construction",
+      "t_answer": 6,
+      "t_nonanswer": 5,
+      "task_id": "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/35253b65-1c19-4304-8aa4-6884b8218fc0/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63/acts.npz",
+      "fold": 3,
+      "n_in_answer": 9719,
+      "n_in_nonanswer": 9573,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63/step_9_20261107@185714836066.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63/step_8_20261107@185708464607.png",
+      "role": "construction",
+      "t_answer": 8,
+      "t_nonanswer": 7,
+      "task_id": "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63",
+      "tool_nonanswer": "wait",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/chrome/47543840-672a-467d-80df-8f7c3b9788c9/acts_tail.npz",
+      "fold": 4,
+      "n_in_answer": 11138,
+      "n_in_nonanswer": 10948,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/47543840-672a-467d-80df-8f7c3b9788c9/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/47543840-672a-467d-80df-8f7c3b9788c9/step_14_20261107@190306076196.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/47543840-672a-467d-80df-8f7c3b9788c9/step_13_20261107@190303324850.png",
+      "role": "construction",
+      "t_answer": 13,
+      "t_nonanswer": 12,
+      "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/47543840-672a-467d-80df-8f7c3b9788c9/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/chrome/b070486d-e161-459b-aa2b-ef442d973b92/acts_tail.npz",
+      "fold": 1,
+      "n_in_answer": 11497,
+      "n_in_nonanswer": 11289,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/b070486d-e161-459b-aa2b-ef442d973b92/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/b070486d-e161-459b-aa2b-ef442d973b92/step_15_20261107@185249399925.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/b070486d-e161-459b-aa2b-ef442d973b92/step_14_20261107@185244528899.png",
+      "role": "construction",
+      "t_answer": 14,
+      "t_nonanswer": 13,
+      "task_id": "chrome/b070486d-e161-459b-aa2b-ef442d973b92",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/b070486d-e161-459b-aa2b-ef442d973b92/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/chrome/c1fa57f3-c3db-4596-8f09-020701085416/acts_tail.npz",
+      "fold": 2,
+      "n_in_answer": 9044,
+      "n_in_nonanswer": 8853,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/c1fa57f3-c3db-4596-8f09-020701085416/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/c1fa57f3-c3db-4596-8f09-020701085416/step_4_20261107@190343469013.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/c1fa57f3-c3db-4596-8f09-020701085416/step_3_20261107@190340907568.png",
+      "role": "construction",
+      "t_answer": 3,
+      "t_nonanswer": 2,
+      "task_id": "chrome/c1fa57f3-c3db-4596-8f09-020701085416",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/c1fa57f3-c3db-4596-8f09-020701085416/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d/acts_tail.npz",
+      "fold": 2,
+      "n_in_answer": 9536,
+      "n_in_nonanswer": 9367,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d/step_7_20261107@190412429206.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d/step_6_20261107@190410548256.png",
+      "role": "construction",
+      "t_answer": 6,
+      "t_nonanswer": 5,
+      "task_id": "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15/acts_tail.npz",
+      "fold": 2,
+      "n_in_answer": 9795,
+      "n_in_nonanswer": 9609,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15/step_8_20261107@190846859821.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15/step_7_20261107@190843123829.png",
+      "role": "construction",
+      "t_answer": 7,
+      "t_nonanswer": 6,
+      "task_id": "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/acts_tail.npz",
+      "fold": 1,
+      "n_in_answer": 11574,
+      "n_in_nonanswer": 11406,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/step_17_20261107@192045054871.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/step_16_20261107@192037449362.png",
+      "role": "construction",
+      "t_answer": 16,
+      "t_nonanswer": 15,
+      "task_id": "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/acts_tail.npz",
+      "fold": 2,
+      "n_in_answer": 9418,
+      "n_in_nonanswer": 9246,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/step_6_20261107@192248762655.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/step_5_20261107@192240896286.png",
+      "role": "construction",
+      "t_answer": 5,
+      "t_nonanswer": 4,
+      "task_id": "libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17/acts_tail.npz",
+      "fold": 3,
+      "n_in_answer": 9305,
+      "n_in_nonanswer": 9130,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17/step_6_20261107@191438878745.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17/step_5_20261107@191436505575.png",
+      "role": "construction",
+      "t_answer": 5,
+      "t_nonanswer": 4,
+      "task_id": "libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/acts_tail.npz",
+      "fold": 2,
+      "n_in_answer": 10522,
+      "n_in_nonanswer": 10327,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/step_12_20261107@192028150984.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/step_11_20261107@192021640617.png",
+      "role": "construction",
+      "t_answer": 11,
+      "t_nonanswer": 10,
+      "task_id": "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197/acts_tail.npz",
+      "fold": 0,
+      "n_in_answer": 10700,
+      "n_in_nonanswer": 10525,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197/step_12_20261107@192117891246.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197/step_11_20261107@192109867507.png",
+      "role": "construction",
+      "t_answer": 11,
+      "t_nonanswer": 10,
+      "task_id": "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73/acts_tail.npz",
+      "fold": 1,
+      "n_in_answer": 12775,
+      "n_in_nonanswer": 12575,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73/step_25_20261107@192506205982.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73/step_24_20261107@192502061451.png",
+      "role": "construction",
+      "t_answer": 24,
+      "t_nonanswer": 23,
+      "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b/acts_tail.npz",
+      "fold": 1,
+      "n_in_answer": 12744,
+      "n_in_nonanswer": 12474,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b/step_22_20261107@191756901002.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b/step_21_20261107@191751783975.png",
+      "role": "construction",
+      "t_answer": 21,
+      "t_nonanswer": 20,
+      "task_id": "libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/acts_tail.npz",
+      "fold": 1,
+      "n_in_answer": 9820,
+      "n_in_nonanswer": 9608,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/step_8_20261107@192519291232.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/step_7_20261107@192517076854.png",
+      "role": "construction",
+      "t_answer": 7,
+      "t_nonanswer": 6,
+      "task_id": "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78/acts_tail.npz",
+      "fold": 4,
+      "n_in_answer": 9062,
+      "n_in_nonanswer": 8886,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78/step_4_20261107@192253604861.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78/step_3_20261107@192248077155.png",
+      "role": "construction",
+      "t_answer": 3,
+      "t_nonanswer": 2,
+      "task_id": "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/acts_tail.npz",
+      "fold": 3,
+      "n_in_answer": 10407,
+      "n_in_nonanswer": 10233,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/step_11_20261107@191708356150.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/step_10_20261107@191702832215.png",
+      "role": "construction",
+      "t_answer": 10,
+      "t_nonanswer": 9,
+      "task_id": "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74/acts_tail.npz",
+      "fold": 1,
+      "n_in_answer": 11538,
+      "n_in_nonanswer": 11371,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74/step_19_20261107@192904826957.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74/step_18_20261107@192901567245.png",
+      "role": "construction",
+      "t_answer": 18,
+      "t_nonanswer": 17,
+      "task_id": "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf/acts_tail.npz",
+      "fold": 1,
+      "n_in_answer": 10234,
+      "n_in_nonanswer": 10071,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf/step_11_20261107@192841848941.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf/step_10_20261107@192838750701.png",
+      "role": "construction",
+      "t_answer": 10,
+      "t_nonanswer": 9,
+      "task_id": "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c/acts_tail.npz",
+      "fold": 2,
+      "n_in_answer": 9826,
+      "n_in_nonanswer": 9659,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c/step_9_20261107@192548541146.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c/step_8_20261107@192546388256.png",
+      "role": "construction",
+      "t_answer": 8,
+      "t_nonanswer": 7,
+      "task_id": "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c/traj.jsonl"
+    }
+  ],
+  "counts": {
+    "by_key": {
+      "results_diag2|causal-screen|fs+": 1,
+      "results_diag2|causal-screen|fs-": 8,
+      "results_diag2|causal-screen|pair": 8,
+      "results_diag2|construction|fs+": 3,
+      "results_diag2|construction|fs-": 22,
+      "results_diag2|construction|pair": 22,
+      "results_diag2|healthy": 30,
+      "results_diag2|missing_acts": 2,
+      "results_diag2|reserved": 8,
+      "results_diag|causal-screen|fs+": 4,
+      "results_diag|causal-screen|fs-": 17,
+      "results_diag|causal-screen|pair": 17,
+      "results_diag|construction|fs+": 18,
+      "results_diag|construction|fs-": 36,
+      "results_diag|construction|pair": 36,
+      "results_diag|healthy": 53,
+      "results_diag|reserved": 45
+    },
+    "construction_designated_tasks": 54,
+    "construction_fs_minus": 58,
+    "construction_fs_plus": 21,
+    "direction_pairs": 58,
+    "direction_unique_tasks": 40,
+    "missing_acts_nonreserve": 2,
+    "screen_manifest_healthy_rows": 5,
+    "screen_manifest_rows": 35,
+    "screen_pairs": 25,
+    "screen_pilot_rows": 6,
+    "screen_unique_tasks": 18,
+    "strict_fs_matches": 14
+  },
+  "created_utc": "2026-11-07T20:02:28.607240+00:00",
+  "cv": {
+    "baselines": {
+      "n_in": {
+        "cv_auc": 0.5546967895362663,
+        "mean_margin": 0.19403860195549874,
+        "pair_concordance": 1.0
+      },
+      "t": {
+        "cv_auc": 0.5521700356718192,
+        "mean_margin": 0.14999814771088157,
+        "pair_concordance": 1.0
+      }
+    },
+    "folds": [
+      {
+        "fold": 0,
+        "train_pairs": 53,
+        "validation_pairs": 5,
+        "validation_tasks": [
+          "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197",
+          "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5",
+          "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82",
+          "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a",
+          "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91"
+        ]
+      },
+      {
+        "fold": 1,
+        "train_pairs": 37,
+        "validation_pairs": 21,
+        "validation_tasks": [
+          "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+          "chrome/b070486d-e161-459b-aa2b-ef442d973b92",
+          "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6",
+          "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b",
+          "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3",
+          "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74",
+          "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302",
+          "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf",
+          "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6",
+          "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68",
+          "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d",
+          "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38",
+          "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618",
+          "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6"
+        ]
+      },
+      {
+        "fold": 2,
+        "train_pairs": 42,
+        "validation_pairs": 16,
+        "validation_tasks": [
+          "chrome/3299584d-8f11-4457-bf4c-ce98f7600250",
+          "chrome/c1fa57f3-c3db-4596-8f09-020701085416",
+          "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d",
+          "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15",
+          "libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606",
+          "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c",
+          "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c",
+          "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4",
+          "os/b6781586-6346-41cd-935a-a6b1487918fc"
+        ]
+      },
+      {
+        "fold": 3,
+        "train_pairs": 48,
+        "validation_pairs": 10,
+        "validation_tasks": [
+          "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0",
+          "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63",
+          "libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17",
+          "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b",
+          "libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8",
+          "multi_apps/937087b6-f668-4ba6-9110-60682ee33441"
+        ]
+      },
+      {
+        "fold": 4,
+        "train_pairs": 52,
+        "validation_pairs": 6,
+        "validation_tasks": [
+          "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78",
+          "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8",
+          "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf",
+          "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb"
+        ]
+      }
+    ],
+    "layer_ranking": [
+      {
+        "cv_auc": 0.9096313912009513,
+        "cv_mean_margin": 1.3845225049755816,
+        "delta_norm": 1.3988322019577026,
+        "delta_to_gap_ratio": 0.5677934885025024,
+        "layer": 15,
+        "mean_pair_gap_norm": 2.4636285305023193,
+        "mean_residual_norm": 8.198763847351074,
+        "pair_concordance": 0.9827586206896551,
+        "rank": 1
+      },
+      {
+        "cv_auc": 0.9063614744351962,
+        "cv_mean_margin": 1.39031503152038,
+        "delta_norm": 1.717590093612671,
+        "delta_to_gap_ratio": 0.5537674427032471,
+        "layer": 16,
+        "mean_pair_gap_norm": 3.101644992828369,
+        "mean_residual_norm": 8.928428649902344,
+        "pair_concordance": 0.9827586206896551,
+        "rank": 2
+      },
+      {
+        "cv_auc": 0.906064209274673,
+        "cv_mean_margin": 1.3761846498778925,
+        "delta_norm": 0.9088183045387268,
+        "delta_to_gap_ratio": 0.6088518500328064,
+        "layer": 14,
+        "mean_pair_gap_norm": 1.492675542831421,
+        "mean_residual_norm": 6.691341400146484,
+        "pair_concordance": 0.9655172413793104,
+        "rank": 3
+      },
+      {
+        "cv_auc": 0.8962544589774079,
+        "cv_mean_margin": 1.369471072379885,
+        "delta_norm": 1.8273497819900513,
+        "delta_to_gap_ratio": 0.5111104249954224,
+        "layer": 17,
+        "mean_pair_gap_norm": 3.575254440307617,
+        "mean_residual_norm": 9.65209674835205,
+        "pair_concordance": 0.9827586206896551,
+        "rank": 4
+      },
+      {
+        "cv_auc": 0.8897146254458977,
+        "cv_mean_margin": 1.350252523311767,
+        "delta_norm": 2.3060500621795654,
+        "delta_to_gap_ratio": 0.5154591202735901,
+        "layer": 18,
+        "mean_pair_gap_norm": 4.47377872467041,
+        "mean_residual_norm": 11.383681297302246,
+        "pair_concordance": 0.9827586206896551,
+        "rank": 5
+      },
+      {
+        "cv_auc": 0.8870392390011891,
+        "cv_mean_margin": 1.2397312038289061,
+        "delta_norm": 11.974536895751953,
+        "delta_to_gap_ratio": 0.384535551071167,
+        "layer": 31,
+        "mean_pair_gap_norm": 31.1402587890625,
+        "mean_residual_norm": 47.351722717285156,
+        "pair_concordance": 0.9655172413793104,
+        "rank": 6
+      },
+      {
+        "cv_auc": 0.8861474435196195,
+        "cv_mean_margin": 1.2431835804249016,
+        "delta_norm": 11.250219345092773,
+        "delta_to_gap_ratio": 0.3924604654312134,
+        "layer": 30,
+        "mean_pair_gap_norm": 28.66586685180664,
+        "mean_residual_norm": 44.26500701904297,
+        "pair_concordance": 0.9655172413793104,
+        "rank": 7
+      },
+      {
+        "cv_auc": 0.8852556480380499,
+        "cv_mean_margin": 1.3023672031302904,
+        "delta_norm": 0.6960538029670715,
+        "delta_to_gap_ratio": 0.5652525424957275,
+        "layer": 13,
+        "mean_pair_gap_norm": 1.2314032316207886,
+        "mean_residual_norm": 6.654158592224121,
+        "pair_concordance": 0.9482758620689655,
+        "rank": 8
+      },
+      {
+        "cv_auc": 0.8775267538644471,
+        "cv_mean_margin": 1.297219532060212,
+        "delta_norm": 3.706145763397217,
+        "delta_to_gap_ratio": 0.4853534400463104,
+        "layer": 20,
+        "mean_pair_gap_norm": 7.63597297668457,
+        "mean_residual_norm": 16.993139266967773,
+        "pair_concordance": 0.9655172413793104,
+        "rank": 9
+      },
+      {
+        "cv_auc": 0.8727705112960761,
+        "cv_mean_margin": 1.2109086943111895,
+        "delta_norm": 8.742096900939941,
+        "delta_to_gap_ratio": 0.3834996223449707,
+        "layer": 29,
+        "mean_pair_gap_norm": 22.795581817626953,
+        "mean_residual_norm": 37.48052215576172,
+        "pair_concordance": 0.9655172413793104,
+        "rank": 10
+      },
+      {
+        "cv_auc": 0.8721759809750297,
+        "cv_mean_margin": 1.2760548641712501,
+        "delta_norm": 4.342790126800537,
+        "delta_to_gap_ratio": 0.4831365942955017,
+        "layer": 21,
+        "mean_pair_gap_norm": 8.988741874694824,
+        "mean_residual_norm": 18.960350036621094,
+        "pair_concordance": 0.9482758620689655,
+        "rank": 11
+      },
+      {
+        "cv_auc": 0.8715814506539834,
+        "cv_mean_margin": 1.2750814382492661,
+        "delta_norm": 3.1453206539154053,
+        "delta_to_gap_ratio": 0.47356024384498596,
+        "layer": 19,
+        "mean_pair_gap_norm": 6.641859531402588,
+        "mean_residual_norm": 15.30998706817627,
+        "pair_concordance": 0.9655172413793104,
+        "rank": 12
+      },
+      {
+        "cv_auc": 0.8656361474435196,
+        "cv_mean_margin": 1.188814742811795,
+        "delta_norm": 7.398855209350586,
+        "delta_to_gap_ratio": 0.3845968246459961,
+        "layer": 28,
+        "mean_pair_gap_norm": 19.237951278686523,
+        "mean_residual_norm": 34.0308952331543,
+        "pair_concordance": 0.9655172413793104,
+        "rank": 13
+      },
+      {
+        "cv_auc": 0.8593935790725327,
+        "cv_mean_margin": 1.2363485966905439,
+        "delta_norm": 4.696586608886719,
+        "delta_to_gap_ratio": 0.4614150822162628,
+        "layer": 22,
+        "mean_pair_gap_norm": 10.178658485412598,
+        "mean_residual_norm": 21.274877548217773,
+        "pair_concordance": 0.9310344827586207,
+        "rank": 14
+      },
+      {
+        "cv_auc": 0.8549346016646849,
+        "cv_mean_margin": 1.1552058131723055,
+        "delta_norm": 6.3305206298828125,
+        "delta_to_gap_ratio": 0.38715386390686035,
+        "layer": 27,
+        "mean_pair_gap_norm": 16.35143280029297,
+        "mean_residual_norm": 29.70901107788086,
+        "pair_concordance": 0.9655172413793104,
+        "rank": 15
+      },
+      {
+        "cv_auc": 0.8543400713436385,
+        "cv_mean_margin": 1.1957332563008471,
+        "delta_norm": 5.199014186859131,
+        "delta_to_gap_ratio": 0.4338058531284332,
+        "layer": 23,
+        "mean_pair_gap_norm": 11.98465633392334,
+        "mean_residual_norm": 23.09928321838379,
+        "pair_concordance": 0.9482758620689655,
+        "rank": 16
+      },
+      {
+        "cv_auc": 0.8498810939357907,
+        "cv_mean_margin": 1.1620350374743855,
+        "delta_norm": 5.568709850311279,
+        "delta_to_gap_ratio": 0.41112828254699707,
+        "layer": 25,
+        "mean_pair_gap_norm": 13.544944763183594,
+        "mean_residual_norm": 25.40873146057129,
+        "pair_concordance": 0.9482758620689655,
+        "rank": 17
+      },
+      {
+        "cv_auc": 0.8483947681331748,
+        "cv_mean_margin": 1.1649722075410958,
+        "delta_norm": 5.3989434242248535,
+        "delta_to_gap_ratio": 0.41938021779060364,
+        "layer": 24,
+        "mean_pair_gap_norm": 12.873624801635742,
+        "mean_residual_norm": 24.612056732177734,
+        "pair_concordance": 0.9482758620689655,
+        "rank": 18
+      },
+      {
+        "cv_auc": 0.8466111771700356,
+        "cv_mean_margin": 1.1405272506948174,
+        "delta_norm": 5.841458797454834,
+        "delta_to_gap_ratio": 0.403702050447464,
+        "layer": 26,
+        "mean_pair_gap_norm": 14.469727516174316,
+        "mean_residual_norm": 27.812915802001953,
+        "pair_concordance": 0.9310344827586207,
+        "rank": 19
+      },
+      {
+        "cv_auc": 0.8213436385255648,
+        "cv_mean_margin": 1.129953419291896,
+        "delta_norm": 0.515046238899231,
+        "delta_to_gap_ratio": 0.5194847583770752,
+        "layer": 12,
+        "mean_pair_gap_norm": 0.9914559125900269,
+        "mean_residual_norm": 6.468113899230957,
+        "pair_concordance": 0.9482758620689655,
+        "rank": 20
+      },
+      {
+        "cv_auc": 0.7812128418549346,
+        "cv_mean_margin": 1.0039220852054784,
+        "delta_norm": 0.3836981952190399,
+        "delta_to_gap_ratio": 0.4797447919845581,
+        "layer": 11,
+        "mean_pair_gap_norm": 0.799796462059021,
+        "mean_residual_norm": 6.287046432495117,
+        "pair_concordance": 0.9655172413793104,
+        "rank": 21
+      },
+      {
+        "cv_auc": 0.7731866825208086,
+        "cv_mean_margin": 0.9665371549058834,
+        "delta_norm": 0.3205530643463135,
+        "delta_to_gap_ratio": 0.4647325575351715,
+        "layer": 10,
+        "mean_pair_gap_norm": 0.6897581219673157,
+        "mean_residual_norm": 5.862168312072754,
+        "pair_concordance": 0.9827586206896551,
+        "rank": 22
+      },
+      {
+        "cv_auc": 0.7122473246135553,
+        "cv_mean_margin": 0.76127001435239,
+        "delta_norm": 0.2564968168735504,
+        "delta_to_gap_ratio": 0.42326053977012634,
+        "layer": 9,
+        "mean_pair_gap_norm": 0.6060022115707397,
+        "mean_residual_norm": 6.055942535400391,
+        "pair_concordance": 0.9655172413793104,
+        "rank": 23
+      },
+      {
+        "cv_auc": 0.6884661117717004,
+        "cv_mean_margin": 0.6399171770518196,
+        "delta_norm": 0.21228152513504028,
+        "delta_to_gap_ratio": 0.40358296036720276,
+        "layer": 8,
+        "mean_pair_gap_norm": 0.5259922742843628,
+        "mean_residual_norm": 5.866887092590332,
+        "pair_concordance": 0.9655172413793104,
+        "rank": 24
+      },
+      {
+        "cv_auc": 0.6727110582639715,
+        "cv_mean_margin": 0.5923656118523876,
+        "delta_norm": 0.17424596846103668,
+        "delta_to_gap_ratio": 0.3964828550815582,
+        "layer": 7,
+        "mean_pair_gap_norm": 0.43947920203208923,
+        "mean_residual_norm": 5.558330059051514,
+        "pair_concordance": 0.9827586206896551,
+        "rank": 25
+      },
+      {
+        "cv_auc": 0.6620095124851367,
+        "cv_mean_margin": 0.5883551672550624,
+        "delta_norm": 0.12013774365186691,
+        "delta_to_gap_ratio": 0.36252182722091675,
+        "layer": 6,
+        "mean_pair_gap_norm": 0.3313945233821869,
+        "mean_residual_norm": 5.114889621734619,
+        "pair_concordance": 0.9482758620689655,
+        "rank": 26
+      },
+      {
+        "cv_auc": 0.6483353151010701,
+        "cv_mean_margin": 0.5392996115802691,
+        "delta_norm": 0.09814874827861786,
+        "delta_to_gap_ratio": 0.34137946367263794,
+        "layer": 5,
+        "mean_pair_gap_norm": 0.2875063121318817,
+        "mean_residual_norm": 5.238209247589111,
+        "pair_concordance": 0.9482758620689655,
+        "rank": 27
+      },
+      {
+        "cv_auc": 0.6361474435196195,
+        "cv_mean_margin": 0.43695730011075223,
+        "delta_norm": 0.006113736424595118,
+        "delta_to_gap_ratio": 0.2626069188117981,
+        "layer": 0,
+        "mean_pair_gap_norm": 0.02328094281256199,
+        "mean_residual_norm": 2.2462310791015625,
+        "pair_concordance": 0.7068965517241379,
+        "rank": 28
+      },
+      {
+        "cv_auc": 0.6212841854934602,
+        "cv_mean_margin": 0.45827432069927454,
+        "delta_norm": 0.06113974750041962,
+        "delta_to_gap_ratio": 0.30702853202819824,
+        "layer": 3,
+        "mean_pair_gap_norm": 0.1991337686777115,
+        "mean_residual_norm": 3.850301504135132,
+        "pair_concordance": 0.9137931034482759,
+        "rank": 29
+      },
+      {
+        "cv_auc": 0.620986920332937,
+        "cv_mean_margin": 0.4449178809952392,
+        "delta_norm": 0.08148587495088577,
+        "delta_to_gap_ratio": 0.31257542967796326,
+        "layer": 4,
+        "mean_pair_gap_norm": 0.26069188117980957,
+        "mean_residual_norm": 4.348206520080566,
+        "pair_concordance": 0.9310344827586207,
+        "rank": 30
+      },
+      {
+        "cv_auc": 0.6046373365041617,
+        "cv_mean_margin": 0.35223091156061354,
+        "delta_norm": 0.0290688369423151,
+        "delta_to_gap_ratio": 0.29222097992897034,
+        "layer": 2,
+        "mean_pair_gap_norm": 0.09947552531957626,
+        "mean_residual_norm": 3.10836124420166,
+        "pair_concordance": 0.9310344827586207,
+        "rank": 31
+      },
+      {
+        "cv_auc": 0.597205707491082,
+        "cv_mean_margin": 0.3467024097636599,
+        "delta_norm": 0.02072018012404442,
+        "delta_to_gap_ratio": 0.30854323506355286,
+        "layer": 1,
+        "mean_pair_gap_norm": 0.06715486943721771,
+        "mean_residual_norm": 2.7369766235351562,
+        "pair_concordance": 0.8448275862068966,
+        "rank": 32
+      }
+    ],
+    "screen_metrics_not_used_for_selection": [
+      {
+        "auc": 0.6448,
+        "layer": 0,
+        "mean_margin": 0.004614308010786772,
+        "pair_concordance": 0.8
+      },
+      {
+        "auc": 0.6352,
+        "layer": 1,
+        "mean_margin": 0.02011003904044628,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.6256,
+        "layer": 2,
+        "mean_margin": 0.02547549270093441,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.6496,
+        "layer": 3,
+        "mean_margin": 0.05614478886127472,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.6608,
+        "layer": 4,
+        "mean_margin": 0.08365459740161896,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.7024,
+        "layer": 5,
+        "mean_margin": 0.10846280306577682,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.736,
+        "layer": 6,
+        "mean_margin": 0.1364912986755371,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.72,
+        "layer": 7,
+        "mean_margin": 0.2026936113834381,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.728,
+        "layer": 8,
+        "mean_margin": 0.2398994415998459,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.7616,
+        "layer": 9,
+        "mean_margin": 0.2936168611049652,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.8768,
+        "layer": 10,
+        "mean_margin": 0.38061535358428955,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.9088,
+        "layer": 11,
+        "mean_margin": 0.4571315050125122,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.9552,
+        "layer": 12,
+        "mean_margin": 0.6227330565452576,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.9744,
+        "layer": 13,
+        "mean_margin": 0.8521873354911804,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.9616,
+        "layer": 14,
+        "mean_margin": 1.0782451629638672,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.952,
+        "layer": 15,
+        "mean_margin": 1.6213473081588745,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.9552,
+        "layer": 16,
+        "mean_margin": 1.9881380796432495,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.9584,
+        "layer": 17,
+        "mean_margin": 2.0659470558166504,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.9584,
+        "layer": 18,
+        "mean_margin": 2.5119435787200928,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.952,
+        "layer": 19,
+        "mean_margin": 3.4478683471679688,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.9504,
+        "layer": 20,
+        "mean_margin": 4.016775608062744,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.9424,
+        "layer": 21,
+        "mean_margin": 4.654610633850098,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.936,
+        "layer": 22,
+        "mean_margin": 5.042403697967529,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.9264,
+        "layer": 23,
+        "mean_margin": 5.334053993225098,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.928,
+        "layer": 24,
+        "mean_margin": 5.6160454750061035,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.9376,
+        "layer": 25,
+        "mean_margin": 5.769315719604492,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.9344,
+        "layer": 26,
+        "mean_margin": 6.002111434936523,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.9408,
+        "layer": 27,
+        "mean_margin": 6.36081600189209,
+        "pair_concordance": 0.96
+      },
+      {
+        "auc": 0.9408,
+        "layer": 28,
+        "mean_margin": 7.276245594024658,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.9472,
+        "layer": 29,
+        "mean_margin": 8.484748840332031,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.9392,
+        "layer": 30,
+        "mean_margin": 10.651942253112793,
+        "pair_concordance": 1.0
+      },
+      {
+        "auc": 0.9376,
+        "layer": 31,
+        "mean_margin": 11.341099739074707,
+        "pair_concordance": 1.0
+      }
+    ]
+  },
+  "direction_train_tasks": [
+    "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "chrome/3299584d-8f11-4457-bf4c-ce98f7600250",
+    "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0",
+    "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63",
+    "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+    "chrome/b070486d-e161-459b-aa2b-ef442d973b92",
+    "chrome/c1fa57f3-c3db-4596-8f09-020701085416",
+    "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d",
+    "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15",
+    "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6",
+    "libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606",
+    "libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17",
+    "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c",
+    "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197",
+    "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+    "libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b",
+    "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3",
+    "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78",
+    "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b",
+    "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74",
+    "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302",
+    "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf",
+    "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6",
+    "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8",
+    "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c",
+    "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68",
+    "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf",
+    "libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8",
+    "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb",
+    "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d",
+    "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38",
+    "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5",
+    "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82",
+    "multi_apps/937087b6-f668-4ba6-9110-60682ee33441",
+    "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a",
+    "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4",
+    "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618",
+    "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6",
+    "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91",
+    "os/b6781586-6346-41cd-935a-a6b1487918fc"
+  ],
+  "fs_strict_matching": {
+    "matches": [
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/acts.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 11421,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/step_17_20261107@172049531651.png",
+          "t": 16,
+          "task_id": "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73/acts.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 11774,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73/step_17_20261107@172752292366.png",
+          "t": 16,
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.029981314761338543,
+        "relative_t_gap": 0.0
+      },
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/acts.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 9502,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/step_7_20261107@172722731276.png",
+          "t": 6,
+          "task_id": "libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54/acts.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 9680,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54/step_7_20261107@173948410894.png",
+          "t": 6,
+          "task_id": "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.018388429752066116,
+        "relative_t_gap": 0.0
+      },
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/acts.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 11156,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/step_15_20261107@172045524903.png",
+          "t": 14,
+          "task_id": "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/chrome/47543840-672a-467d-80df-8f7c3b9788c9/acts.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 10938,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/47543840-672a-467d-80df-8f7c3b9788c9/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/47543840-672a-467d-80df-8f7c3b9788c9/step_14_20261107@170327390844.png",
+          "t": 13,
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/47543840-672a-467d-80df-8f7c3b9788c9/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.019541054141269273,
+        "relative_t_gap": 0.07142857142857142
+      },
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/acts.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 14419,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/step_33_20261107@172958405233.png",
+          "t": 32,
+          "task_id": "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/gimp/e19bd559-633b-4b02-940f-d946248f088e/acts.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 13545,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/e19bd559-633b-4b02-940f-d946248f088e/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/e19bd559-633b-4b02-940f-d946248f088e/step_30_20261107@170659809558.png",
+          "t": 29,
+          "task_id": "gimp/e19bd559-633b-4b02-940f-d946248f088e",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/e19bd559-633b-4b02-940f-d946248f088e/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.06061446702267841,
+        "relative_t_gap": 0.09375
+      },
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/acts.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 11050,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/step_15_20261107@171752422835.png",
+          "t": 14,
+          "task_id": "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/chrome/fc6d8143-9452-4171-9459-7f515143419a/acts.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 11024,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/fc6d8143-9452-4171-9459-7f515143419a/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/fc6d8143-9452-4171-9459-7f515143419a/step_14_20261107@165650346047.png",
+          "t": 13,
+          "task_id": "chrome/fc6d8143-9452-4171-9459-7f515143419a",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/fc6d8143-9452-4171-9459-7f515143419a/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.002352941176470588,
+        "relative_t_gap": 0.07142857142857142
+      },
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6/acts.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 10001,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6/step_9_20261107@173523750422.png",
+          "t": 8,
+          "task_id": "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38/acts_tail.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 10013,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38/step_9_20261107@181349036893.png",
+          "t": 8,
+          "task_id": "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.0011984420253670228,
+        "relative_t_gap": 0.0
+      },
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38/acts_tail.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 10455,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38/step_12_20261107@175026256821.png",
+          "t": 11,
+          "task_id": "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197/acts.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 10704,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197/step_12_20261107@172041753929.png",
+          "t": 11,
+          "task_id": "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.023262331838565024,
+        "relative_t_gap": 0.0
+      },
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82/acts_tail.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 13754,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82/step_30_20261107@181757549877.png",
+          "t": 29,
+          "task_id": "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/5990457f-2adb-467b-a4af-5c857c92d762/acts_tail.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 13477,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/5990457f-2adb-467b-a4af-5c857c92d762/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/5990457f-2adb-467b-a4af-5c857c92d762/step_29_20261107@181913074801.png",
+          "t": 28,
+          "task_id": "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/5990457f-2adb-467b-a4af-5c857c92d762/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.020139595753962482,
+        "relative_t_gap": 0.034482758620689655
+      },
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a/acts_tail.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 10121,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a/step_10_20261107@174940467821.png",
+          "t": 9,
+          "task_id": "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f/acts.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 10125,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f/step_10_20261107@174128274289.png",
+          "t": 9,
+          "task_id": "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.0003950617283950617,
+        "relative_t_gap": 0.0
+      },
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4/acts_tail.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 13436,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4/step_28_20261107@175527925258.png",
+          "t": 27,
+          "task_id": "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805/acts.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 13458,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805/step_27_20261107@170054870638.png",
+          "t": 26,
+          "task_id": "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.00163471541090801,
+        "relative_t_gap": 0.037037037037037035
+      },
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618/acts_tail.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 11593,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618/step_18_20261107@180326467725.png",
+          "t": 17,
+          "task_id": "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/os/fe41f596-a71b-4c2f-9b2f-9dcd40b568c3/acts_tail.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 11397,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/fe41f596-a71b-4c2f-9b2f-9dcd40b568c3/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/fe41f596-a71b-4c2f-9b2f-9dcd40b568c3/step_18_20261107@183046855922.png",
+          "t": 17,
+          "task_id": "os/fe41f596-a71b-4c2f-9b2f-9dcd40b568c3",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/fe41f596-a71b-4c2f-9b2f-9dcd40b568c3/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.01690675407573536,
+        "relative_t_gap": 0.0
+      },
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6/acts_tail.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 10684,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6/step_13_20261107@175411921360.png",
+          "t": 12,
+          "task_id": "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487/acts_tail.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 10735,
+          "pass": "results_diag",
+          "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487/step_14_20261107@181311062129.png",
+          "t": 13,
+          "task_id": "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487",
+          "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.004750815090824406,
+        "relative_t_gap": 0.07692307692307693
+      },
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/acts_tail.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 11574,
+          "pass": "results_diag2",
+          "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/step_17_20261107@192045054871.png",
+          "t": 16,
+          "task_id": "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6",
+          "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag2/chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805/acts_tail.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 12055,
+          "pass": "results_diag2",
+          "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805/step_17_20261107@185840945604.png",
+          "t": 16,
+          "task_id": "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805",
+          "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.039900456242223145,
+        "relative_t_gap": 0.0
+      },
+      {
+        "fs_minus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73/acts_tail.npz",
+          "category": "success",
+          "label": "fs-",
+          "n_in": 12775,
+          "pass": "results_diag2",
+          "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73/step_25_20261107@192506205982.png",
+          "t": 24,
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73/traj.jsonl"
+        },
+        "fs_plus": {
+          "acts_path": "/workspace/osw_analysis/acts_results_diag2/gimp/8ea73f6f-9689-42ad-8c60-195bbf06a7ba/acts_tail.npz",
+          "category": "false_success",
+          "label": "fs+",
+          "n_in": 12707,
+          "pass": "results_diag2",
+          "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/8ea73f6f-9689-42ad-8c60-195bbf06a7ba/traj.jsonl",
+          "role": "construction",
+          "screenshot_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/8ea73f6f-9689-42ad-8c60-195bbf06a7ba/step_25_20261107@191137016105.png",
+          "t": 24,
+          "task_id": "gimp/8ea73f6f-9689-42ad-8c60-195bbf06a7ba",
+          "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/8ea73f6f-9689-42ad-8c60-195bbf06a7ba/traj.jsonl"
+        },
+        "relative_n_in_gap": 0.005322896281800392,
+        "relative_t_gap": 0.0
+      }
+    ],
+    "rule": "same pass, relative t <=10%, relative n_in <=10%, one-to-one",
+    "top_layer_summary": [
+      {
+        "layer": 15,
+        "mean_fs_plus_minus_fs_minus": -0.12560109474829265,
+        "n_matches": 14,
+        "pairwise_fs_plus_gt_fs_minus": 0.42857142857142855
+      },
+      {
+        "layer": 16,
+        "mean_fs_plus_minus_fs_minus": -0.22104753819959505,
+        "n_matches": 14,
+        "pairwise_fs_plus_gt_fs_minus": 0.42857142857142855
+      },
+      {
+        "layer": 14,
+        "mean_fs_plus_minus_fs_minus": -0.0690896287560463,
+        "n_matches": 14,
+        "pairwise_fs_plus_gt_fs_minus": 0.42857142857142855
+      },
+      {
+        "layer": 17,
+        "mean_fs_plus_minus_fs_minus": -0.23449709053550447,
+        "n_matches": 14,
+        "pairwise_fs_plus_gt_fs_minus": 0.42857142857142855
+      },
+      {
+        "layer": 18,
+        "mean_fs_plus_minus_fs_minus": -0.27724209427833557,
+        "n_matches": 14,
+        "pairwise_fs_plus_gt_fs_minus": 0.42857142857142855
+      }
+    ]
+  },
+  "manifest_contract": {
+    "container": "dict with rows list",
+    "healthy_label": "healthy",
+    "path": "trajectory directory containing system_prompt.txt and traj.jsonl",
+    "traj_path": "exact traj.jsonl file"
+  },
+  "missing_acts": [
+    {
+      "pass": "results_diag2",
+      "task_id": "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850"
+    },
+    {
+      "pass": "results_diag2",
+      "task_id": "libreoffice_impress/7ae48c60-f143-4119-b659-15b8f485eb9a"
+    }
+  ],
+  "norms": {
+    "mean_residual_norm_by_layer": [
+      2.2462310791015625,
+      2.7369766235351562,
+      3.10836124420166,
+      3.850301504135132,
+      4.348206520080566,
+      5.238209247589111,
+      5.114889621734619,
+      5.558330059051514,
+      5.866887092590332,
+      6.055942535400391,
+      5.862168312072754,
+      6.287046432495117,
+      6.468113899230957,
+      6.654158592224121,
+      6.691341400146484,
+      8.198763847351074,
+      8.928428649902344,
+      9.65209674835205,
+      11.383681297302246,
+      15.30998706817627,
+      16.993139266967773,
+      18.960350036621094,
+      21.274877548217773,
+      23.09928321838379,
+      24.612056732177734,
+      25.40873146057129,
+      27.812915802001953,
+      29.70901107788086,
+      34.0308952331543,
+      37.48052215576172,
+      44.26500701904297,
+      47.351722717285156
+    ]
+  },
+  "provenance": {
+    "analysis_source.py_sha256": "871a7b8efeeedee749c3e941b7bc8e38a16add3cc2e08979804e5daf8a648e7d",
+    "attention_manifest.json_sha256": "ce02b2b9bbc0a93e177e48ccd4cd5ded5e64c339ee1d3f4d98ec3c37ebcb1c0b",
+    "direction.npz_sha256": "e8b7f39f4c30306ab39c503c5bf1802c2997dbd62e07eb303302d5b751de3786",
+    "reserve_n": 45,
+    "reserve_rule": "split_diag (120) minus pilot_prepared_v1 folds[-1].train_tasks (70) minus the 5 evaluated pilot tasks (pilot_manifest rows 0,1,29,30,36,50); frozen by ares 2026-11-07T19:15Z. Construction forbidden on these tasks (all passes); evaluation only. Exception: astra-stuck may construct on the half with even first byte of sha1(task_id).",
+    "reserve_sha256_tasks": "03726f07b411869a7a4004b0f3c89ba37d89e948f34ac19cb70e4bb0c3cb5bb7",
+    "screen_manifest.json_sha256": "39d1e8a392b3999d60253f37ea1e0a12ff976e933fc6e06d25c3976165b20329",
+    "screen_pilot_manifest.json_sha256": "3f68b5631d8cd06d63b131594f9e9cc1db4593c86b7a84786611dd7dd40bd505",
+    "source_sha256": {
+      "/workspace/osw_analysis/diagnostic_osw_diag.json": "cd12c4db382f09cb7ed1b1344861b14955331ade365ebe2364d4d7a7db1adf0e",
+      "/workspace/osw_analysis/diagnostic_osw_diag2.json": "353f9ea80916d003340882f64a52610fc1e05c542c614efe9d5d55578ee4d916"
+    },
+    "split_diag_sha256": "0ac8286991cf9e09cc9ba4c11435b84a22b974a0edde8b03d5404981ee118610"
+  },
+  "role_membership": [
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/3299584d-8f11-4457-bf4c-ce98f7600250"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381"
+    },
+    {
+      "category": "loop",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "chrome/6c4c23a1-42a4-43cc-9db1-2f86ff3738cc"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "causal-screen",
+      "task_id": "chrome/99146c54-4f37-4ab8-9327-5f3291665e1e"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/b070486d-e161-459b-aa2b-ef442d973b92"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/c1fa57f3-c3db-4596-8f09-020701085416"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/fc6d8143-9452-4171-9459-7f515143419a"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "gimp/045bf3ff-9077-4b86-b483-a1040a949cff"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "gimp/2e6f678f-472d-4c55-99cc-8e7c5c402a71"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "gimp/38f48d40-764e-4e77-a7cf-51dfce880291"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "gimp/8ea73f6f-9689-42ad-8c60-195bbf06a7ba"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "gimp/e19bd559-633b-4b02-940f-d946248f088e"
+    },
+    {
+      "category": "infeasible_correct",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "gimp/fbb548ca-c2a6-4601-9204-e39a2efc507b"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b"
+    },
+    {
+      "category": "loop",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "libreoffice_calc/2bd59342-0664-4ccb-ba87-79379096cc08"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "libreoffice_calc/37608790-6147-45d0-9f20-1137bb35703d"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54"
+    },
+    {
+      "category": "loop",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "libreoffice_impress/57667013-ea97-417c-9dce-2713091e6e2a"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_impress/7ae48c60-f143-4119-b659-15b8f485eb9a"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "libreoffice_impress/bf4e9888-f10f-47af-8dba-76413038b73c"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "libreoffice_writer/0e47de2a-32e0-456c-a366-8c607ef7a9d2"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9"
+    },
+    {
+      "category": "loop",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "libreoffice_writer/6f81754e-285d-4ce0-b59e-af7edb02d108"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_writer/bb8ccc78-479f-4a2f-a71e-d565e439436b"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "causal-screen",
+      "task_id": "multi_apps/20236825-b5df-46e7-89bf-62e1d640a897"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "multi_apps/236833a3-5704-47fc-888c-4f298f09f799"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "multi_apps/36037439-2044-4b50-b9d1-875b5a332143"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "multi_apps/42d25c08-fb87-4927-8b65-93631280a26f"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/5df7b33a-9f77-4101-823e-02f863e1c1ae"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "multi_apps/67890eb6-6ce5-4c00-9e3d-fb4972699b06"
+    },
+    {
+      "category": "unscored",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "causal-screen",
+      "task_id": "multi_apps/69acbb55-d945-4927-a87b-8480e1a5bb7e"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/74d5859f-ed66-4d3e-aa0e-93d7a592ce41"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "causal-screen",
+      "task_id": "multi_apps/7e287123-70ca-47b9-8521-47db09b69b14"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "multi_apps/81c425f5-78f3-4771-afd6-3d2973825947"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "multi_apps/8e116af7-7db7-4e35-a68b-b0939c066c78"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "multi_apps/9219480b-3aed-47fc-8bac-d2cffc5849f7"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/937087b6-f668-4ba6-9110-60682ee33441"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "multi_apps/aad10cd7-9337-4b62-b704-a857848cedf2"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "multi_apps/b5062e3e-641c-4e3a-907b-ac864d2e7652"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "causal-screen",
+      "task_id": "multi_apps/deec51c9-3b1e-4b9e-993c-4776f20e8bb2"
+    },
+    {
+      "category": "other",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "causal-screen",
+      "task_id": "multi_apps/e1fc0df3-c8b9-4ee7-864c-d0b590d3aa56"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "os/13584542-872b-42d8-b299-866967b5c3ef"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "causal-screen",
+      "task_id": "os/23393935-50c7-4a86-aeea-2b78fd089c5c"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "os/5812b315-e7bd-4265-b51f-863c02174c28"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "os/5c1075ca-bb34-46a3-a7a0-029bd7463e79"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "os/b6781586-6346-41cd-935a-a6b1487918fc"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "os/fe41f596-a71b-4c2f-9b2f-9dcd40b568c3"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "thunderbird/5203d847-2572-4150-912a-03f062254390"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "thunderbird/9bc3cc16-074a-45ac-9bdc-b2a362e1daf3"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "thunderbird/a10b69e1-6034-4a2b-93e1-571d45194f75"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "thunderbird/dd84e895-72fd-4023-a336-97689ded257c"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "thunderbird/f201fbc3-44e6-46fc-bcaa-432f9815454c"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "vlc/386dbd0e-0241-4a0a-b6a2-6704fba26b1c"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "vlc/5ac2891a-eacd-4954-b339-98abba077adb"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "causal-screen",
+      "task_id": "vlc/8f080098-ddb1-424c-b438-4e96e5e4786e"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "causal-screen",
+      "task_id": "vlc/9195653c-f4aa-453d-aa95-787f6ccfaae9"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "causal-screen",
+      "task_id": "vlc/aa4b5023-aef6-4ed9-bdc9-705f59ab9ad6"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "causal-screen",
+      "task_id": "vlc/cb130f0d-d36f-4302-9838-b3baf46139b6"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "vs_code/0512bb38-d531-4acf-9e7e-0add90816068"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "causal-screen",
+      "task_id": "vs_code/4e60007a-f5be-4bfc-9723-c39affa0a6d3"
+    },
+    {
+      "category": "loop",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "vs_code/6ed0a554-cbee-4b44-84ea-fd6c042f4fe1"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "vs_code/7c4cc09e-7a92-40dd-8338-b2286535c4ed"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "vs_code/9439a27b-18ae-42d8-9778-5f68f891805e"
+    },
+    {
+      "category": "infeasible_correct",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "vs_code/971cbb5b-3cbf-4ff7-9e24-b5c84fcebfa6"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "vs_code/982d12a5-beab-424f-8d38-d2a48429e511"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "vs_code/eabc805a-bfcf-4460-b250-ac92135819f6"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/3299584d-8f11-4457-bf4c-ce98f7600250"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag2",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "chrome/6c4c23a1-42a4-43cc-9db1-2f86ff3738cc"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": true,
+      "role": "causal-screen",
+      "task_id": "chrome/99146c54-4f37-4ab8-9327-5f3291665e1e"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/b070486d-e161-459b-aa2b-ef442d973b92"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/c1fa57f3-c3db-4596-8f09-020701085416"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "chrome/fc6d8143-9452-4171-9459-7f515143419a"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag2",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "gimp/045bf3ff-9077-4b86-b483-a1040a949cff"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "gimp/2e6f678f-472d-4c55-99cc-8e7c5c402a71"
+    },
+    {
+      "category": "infeasible_correct",
+      "pass": "results_diag2",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "gimp/38f48d40-764e-4e77-a7cf-51dfce880291"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "gimp/8ea73f6f-9689-42ad-8c60-195bbf06a7ba"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "gimp/e19bd559-633b-4b02-940f-d946248f088e"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag2",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "gimp/fbb548ca-c2a6-4601-9204-e39a2efc507b"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag2",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "libreoffice_calc/2bd59342-0664-4ccb-ba87-79379096cc08"
+    },
+    {
+      "category": "false_success",
+      "pass": "results_diag2",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "libreoffice_calc/37608790-6147-45d0-9f20-1137bb35703d"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d"
+    },
+    {
+      "category": "step_limit",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7"
+    },
+    {
+      "category": "unscored",
+      "pass": "results_diag2",
+      "reserved": true,
+      "role": "construction",
+      "task_id": "libreoffice_impress/57667013-ea97-417c-9dce-2713091e6e2a"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "causal-screen",
+      "task_id": "libreoffice_impress/7ae48c60-f143-4119-b659-15b8f485eb9a"
+    },
+    {
+      "category": "success",
+      "pass": "results_diag2",
+      "reserved": false,
+      "role": "construction",
+      "task_id": "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c"
+    }
+  ],
+  "schema": {
+    "activation_source": "resid last prefill, never resid_post",
+    "cv_group": "task_id across passes",
+    "direction_npz": {
+      "U": "float32 [32,2560] unit delta",
+      "delta": "float32 [32,2560] unnormalized final-minus-prev mean",
+      "scale": "float32 [32] mean paired gap norm"
+    }
+  },
+  "screen_pairs": [
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263/acts.npz",
+      "fold": 3,
+      "n_in_answer": 9263,
+      "n_in_nonanswer": 9105,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263/step_5_20261107@165253764594.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263/step_4_20261107@165251948143.png",
+      "role": "causal-screen",
+      "t_answer": 4,
+      "t_nonanswer": 3,
+      "task_id": "chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3/acts.npz",
+      "fold": 4,
+      "n_in_answer": 9112,
+      "n_in_nonanswer": 8917,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3/step_4_20261107@165830837121.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3/step_3_20261107@165826617733.png",
+      "role": "causal-screen",
+      "t_answer": 3,
+      "t_nonanswer": 2,
+      "task_id": "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9/acts.npz",
+      "fold": 2,
+      "n_in_answer": 9952,
+      "n_in_nonanswer": 9774,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9/step_8_20261107@165116489602.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9/step_7_20261107@165113998497.png",
+      "role": "causal-screen",
+      "t_answer": 7,
+      "t_nonanswer": 6,
+      "task_id": "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568/acts.npz",
+      "fold": 4,
+      "n_in_answer": 9601,
+      "n_in_nonanswer": 9376,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568/step_6_20261107@170554000437.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568/step_5_20261107@170549482790.png",
+      "role": "causal-screen",
+      "t_answer": 5,
+      "t_nonanswer": 4,
+      "task_id": "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d/acts.npz",
+      "fold": 4,
+      "n_in_answer": 10005,
+      "n_in_nonanswer": 9835,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d/step_9_20261107@171140063762.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d/step_8_20261107@171135579067.png",
+      "role": "causal-screen",
+      "t_answer": 8,
+      "t_nonanswer": 7,
+      "task_id": "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7/acts.npz",
+      "fold": 2,
+      "n_in_answer": 11342,
+      "n_in_nonanswer": 11023,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7/step_11_20261107@172943503260.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7/step_10_20261107@172938207293.png",
+      "role": "causal-screen",
+      "t_answer": 10,
+      "t_nonanswer": 9,
+      "task_id": "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224/acts.npz",
+      "fold": 0,
+      "n_in_answer": 9228,
+      "n_in_nonanswer": 9073,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224/step_5_20261107@173109837170.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224/step_4_20261107@173106552211.png",
+      "role": "causal-screen",
+      "t_answer": 4,
+      "t_nonanswer": 3,
+      "task_id": "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_impress/7ae48c60-f143-4119-b659-15b8f485eb9a/acts.npz",
+      "fold": 0,
+      "n_in_answer": 12195,
+      "n_in_nonanswer": 12013,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/7ae48c60-f143-4119-b659-15b8f485eb9a/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/7ae48c60-f143-4119-b659-15b8f485eb9a/step_22_20261107@173321389645.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/7ae48c60-f143-4119-b659-15b8f485eb9a/step_21_20261107@173318145663.png",
+      "role": "causal-screen",
+      "t_answer": 21,
+      "t_nonanswer": 20,
+      "task_id": "libreoffice_impress/7ae48c60-f143-4119-b659-15b8f485eb9a",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/7ae48c60-f143-4119-b659-15b8f485eb9a/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195/acts.npz",
+      "fold": 3,
+      "n_in_answer": 9290,
+      "n_in_nonanswer": 9140,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195/step_6_20261107@174244648900.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195/step_5_20261107@174242094708.png",
+      "role": "causal-screen",
+      "t_answer": 5,
+      "t_nonanswer": 4,
+      "task_id": "libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9/acts.npz",
+      "fold": 0,
+      "n_in_answer": 10023,
+      "n_in_nonanswer": 9863,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9/step_11_20261107@174508461178.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9/step_10_20261107@174503863970.png",
+      "role": "causal-screen",
+      "t_answer": 10,
+      "t_nonanswer": 9,
+      "task_id": "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f/acts_tail.npz",
+      "fold": 3,
+      "n_in_answer": 9936,
+      "n_in_nonanswer": 9765,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f/step_9_20261107@174239705921.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f/step_8_20261107@174235781276.png",
+      "role": "causal-screen",
+      "t_answer": 8,
+      "t_nonanswer": 7,
+      "task_id": "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb/acts_tail.npz",
+      "fold": 3,
+      "n_in_answer": 10610,
+      "n_in_nonanswer": 10425,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb/step_13_20261107@182212039834.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb/step_12_20261107@182209690071.png",
+      "role": "causal-screen",
+      "t_answer": 12,
+      "t_nonanswer": 11,
+      "task_id": "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/81c425f5-78f3-4771-afd6-3d2973825947/acts_tail.npz",
+      "fold": 1,
+      "n_in_answer": 11190,
+      "n_in_nonanswer": 10997,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/81c425f5-78f3-4771-afd6-3d2973825947/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/81c425f5-78f3-4771-afd6-3d2973825947/step_15_20261107@180939966520.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/81c425f5-78f3-4771-afd6-3d2973825947/step_14_20261107@180937222779.png",
+      "role": "causal-screen",
+      "t_answer": 14,
+      "t_nonanswer": 13,
+      "task_id": "multi_apps/81c425f5-78f3-4771-afd6-3d2973825947",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/81c425f5-78f3-4771-afd6-3d2973825947/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/multi_apps/aad10cd7-9337-4b62-b704-a857848cedf2/acts_tail.npz",
+      "fold": 0,
+      "n_in_answer": 13030,
+      "n_in_nonanswer": 12874,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/aad10cd7-9337-4b62-b704-a857848cedf2/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/aad10cd7-9337-4b62-b704-a857848cedf2/step_31_20261107@181517959113.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/aad10cd7-9337-4b62-b704-a857848cedf2/step_30_20261107@181512750120.png",
+      "role": "causal-screen",
+      "t_answer": 30,
+      "t_nonanswer": 29,
+      "task_id": "multi_apps/aad10cd7-9337-4b62-b704-a857848cedf2",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/aad10cd7-9337-4b62-b704-a857848cedf2/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/os/13584542-872b-42d8-b299-866967b5c3ef/acts_tail.npz",
+      "fold": 2,
+      "n_in_answer": 10852,
+      "n_in_nonanswer": 10675,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/13584542-872b-42d8-b299-866967b5c3ef/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/13584542-872b-42d8-b299-866967b5c3ef/step_16_20261107@182700700904.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/13584542-872b-42d8-b299-866967b5c3ef/step_15_20261107@182657119453.png",
+      "role": "causal-screen",
+      "t_answer": 15,
+      "t_nonanswer": 14,
+      "task_id": "os/13584542-872b-42d8-b299-866967b5c3ef",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/13584542-872b-42d8-b299-866967b5c3ef/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2/acts_tail.npz",
+      "fold": 3,
+      "n_in_answer": 9033,
+      "n_in_nonanswer": 8874,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2/step_4_20261107@183311973356.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2/step_3_20261107@183309320795.png",
+      "role": "causal-screen",
+      "t_answer": 3,
+      "t_nonanswer": 2,
+      "task_id": "os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag/os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57/acts_tail.npz",
+      "fold": 0,
+      "n_in_answer": 9117,
+      "n_in_nonanswer": 8936,
+      "pass": "results_diag",
+      "path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57/step_4_20261107@183124323414.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57/step_3_20261107@183120290081.png",
+      "role": "causal-screen",
+      "t_answer": 3,
+      "t_nonanswer": 2,
+      "task_id": "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag/pyautogui/screenshot/Holo-3.1-4B/os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263/acts_tail.npz",
+      "fold": 3,
+      "n_in_answer": 9276,
+      "n_in_nonanswer": 9103,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263/step_5_20261107@185331026560.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263/step_4_20261107@185329447617.png",
+      "role": "causal-screen",
+      "t_answer": 4,
+      "t_nonanswer": 3,
+      "task_id": "chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3/acts_tail.npz",
+      "fold": 4,
+      "n_in_answer": 9101,
+      "n_in_nonanswer": 8908,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3/step_4_20261107@185653931752.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3/step_3_20261107@185629100885.png",
+      "role": "causal-screen",
+      "t_answer": 3,
+      "t_nonanswer": 2,
+      "task_id": "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9/acts_tail.npz",
+      "fold": 2,
+      "n_in_answer": 10120,
+      "n_in_nonanswer": 9916,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9/step_9_20261107@185119552815.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9/step_8_20261107@185116826259.png",
+      "role": "causal-screen",
+      "t_answer": 8,
+      "t_nonanswer": 7,
+      "task_id": "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568/acts_tail.npz",
+      "fold": 4,
+      "n_in_answer": 9383,
+      "n_in_nonanswer": 9202,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568/step_6_20261107@190619557898.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568/step_5_20261107@190616953476.png",
+      "role": "causal-screen",
+      "t_answer": 5,
+      "t_nonanswer": 4,
+      "task_id": "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f/acts_tail.npz",
+      "fold": 1,
+      "n_in_answer": 13916,
+      "n_in_nonanswer": 13715,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f/step_30_20261107@191636068603.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f/step_29_20261107@191632574297.png",
+      "role": "causal-screen",
+      "t_answer": 29,
+      "t_nonanswer": 28,
+      "task_id": "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d/acts_tail.npz",
+      "fold": 4,
+      "n_in_answer": 10581,
+      "n_in_nonanswer": 10409,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d/step_14_20261107@191244228570.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d/step_13_20261107@191232506817.png",
+      "role": "causal-screen",
+      "t_answer": 13,
+      "t_nonanswer": 12,
+      "task_id": "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7/acts_tail.npz",
+      "fold": 2,
+      "n_in_answer": 9992,
+      "n_in_nonanswer": 9710,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7/step_8_20261107@192523594984.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7/step_7_20261107@192520845503.png",
+      "role": "causal-screen",
+      "t_answer": 7,
+      "t_nonanswer": 6,
+      "task_id": "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7",
+      "tool_nonanswer": "click",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7/traj.jsonl"
+    },
+    {
+      "acts_path": "/workspace/osw_analysis/acts_results_diag2/libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224/acts_tail.npz",
+      "fold": 0,
+      "n_in_answer": 9292,
+      "n_in_nonanswer": 9120,
+      "pass": "results_diag2",
+      "path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224/traj.jsonl",
+      "png_answer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224/step_5_20261107@192727249546.png",
+      "png_nonanswer": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224/step_4_20261107@192719123606.png",
+      "role": "causal-screen",
+      "t_answer": 4,
+      "t_nonanswer": 3,
+      "task_id": "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224",
+      "tool_nonanswer": "hotkey",
+      "traj_path": "/workspace/osw_analysis/results_diag2/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224/traj.jsonl"
+    }
+  ],
+  "split_rule": "sha256(task_id) first8 mod5==0 causal-screen else construction",
+  "spotify_password_empty_search": "No Spotify occurrence in permitted diagnostic trajectories/system prompts.",
+  "train_tasks": [
+    "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+    "chrome/3299584d-8f11-4457-bf4c-ce98f7600250",
+    "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0",
+    "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63",
+    "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+    "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805",
+    "chrome/b070486d-e161-459b-aa2b-ef442d973b92",
+    "chrome/c1fa57f3-c3db-4596-8f09-020701085416",
+    "chrome/fc6d8143-9452-4171-9459-7f515143419a",
+    "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d",
+    "gimp/8ea73f6f-9689-42ad-8c60-195bbf06a7ba",
+    "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15",
+    "gimp/e19bd559-633b-4b02-940f-d946248f088e",
+    "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6",
+    "libreoffice_calc/1273e544-688f-496b-8d89-3e0f40aa0606",
+    "libreoffice_calc/1334ca3e-f9e3-4db8-9ca7-b4c653be7d17",
+    "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c",
+    "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197",
+    "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+    "libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b",
+    "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3",
+    "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78",
+    "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b",
+    "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850",
+    "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74",
+    "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302",
+    "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf",
+    "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",
+    "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6",
+    "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8",
+    "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f",
+    "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c",
+    "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68",
+    "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf",
+    "libreoffice_writer/0b17a146-2934-46c7-8727-73ff6b6483e8",
+    "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb",
+    "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d",
+    "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38",
+    "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5",
+    "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487",
+    "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762",
+    "multi_apps/5df7b33a-9f77-4101-823e-02f863e1c1ae",
+    "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38",
+    "multi_apps/74d5859f-ed66-4d3e-aa0e-93d7a592ce41",
+    "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82",
+    "multi_apps/937087b6-f668-4ba6-9110-60682ee33441",
+    "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a",
+    "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b",
+    "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4",
+    "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618",
+    "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6",
+    "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91",
+    "os/b6781586-6346-41cd-935a-a6b1487918fc",
+    "os/fe41f596-a71b-4c2f-9b2f-9dcd40b568c3"
+  ]
+}

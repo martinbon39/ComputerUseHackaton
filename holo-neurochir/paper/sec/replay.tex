@@ -1,0 +1,10 @@
+\section{From a served agent to activations}
+\label{sec:replay}
+
+Rollouts are served by vLLM \citep{kwon2023vllm}, which does not expose activations. We therefore never record activations during rollouts. For each recorded step we \emph{rebuild} the exact chat the agent sent: system prompt, task, \texttt{<observation>} blocks, at most three screenshots with older ones replaced by \texttt{[screenshot evicted]}, parsed tool calls and tool outputs. We render it with the model's chat template and run one forward pass in \texttt{transformers}, hooking the residual stream and MLP output of every layer at two positions: the last prefill token, and the token before the action JSON.
+
+\paragraph{Fidelity is tested, not assumed.}
+(a)~\emph{Messages.} Running the real agent loop with a fake client and environment, the rebuilt messages are identical to those sent on 7/7 steps, also when three consecutive parse failures are injected before steps 1, 4 or 5, the harness's image-eviction edge case. % source: JOURNAL.md "Fidélité : (a)" and "Échecs de parsing répétés"
+(b)~\emph{Tokens.} The prefill length in \texttt{transformers} equals vLLM's \texttt{prompt\_tokens} on 12/12 steps of a real trajectory (4{,}459 to 10{,}432 tokens), and the replay loop repeats this check on the first and last step of every task. % source: JOURNAL.md "Premier pilote réel"
+(c)~\emph{Likelihood.} The replayed model gives its own recorded actions a mean log-probability of $-0.16$ per token, against $-1.10$ for synthetic actions. % source: JOURNAL.md "Premier pilote réel" lp_action
+One divergence is invisible in the files: an exception in \texttt{env.step} leaves an unrecorded assistant message in the live context. The diagnostic pass logged \bEnvFail{} such events and \bParseFail{} triple parse failures, which test~(a) shows to be harmless.

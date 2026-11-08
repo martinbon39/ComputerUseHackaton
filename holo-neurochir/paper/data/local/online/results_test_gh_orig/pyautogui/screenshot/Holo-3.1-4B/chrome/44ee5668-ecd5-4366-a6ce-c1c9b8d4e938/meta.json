@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "44ee5668-ecd5-4366-a6ce-c1c9b8d4e938",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_history_deleted",
+  "finished_by_agent": true,
+  "steps": 9,
+  "answer": "Successfully cleared all YouTube browsing history from Chrome. All 27 YouTube entries have been removed from the browser history, as confirmed by the 'No search results' message when searching for 'youtube.com'.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

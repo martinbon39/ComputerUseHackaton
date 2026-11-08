@@ -1,0 +1,23 @@
+{
+  "domain": "chrome",
+  "example_id": "ae78f875-5b98-4907-bbb5-9c737fc68c03",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 22,
+  "answer": "I've thoroughly searched through the Google Search settings interface to locate the option to change the number of search results displayed per page to 50. After examining both the 'Privacy & Safety' and 'Other settings' sections, I was unable to find a 'Results per page' setting.\n\n**Current Google Search Settings Available:**\n- Privacy & Safety: Search customization, SafeSearch, Parental controls\n- Other settings: Language & region, Dark theme, Results in a new window, Spoken answers, Autocomplete with trending searches\n\n**Status:** The 'Results per page' setting does not appear to be available in the current Google Search settings interface. This setting may have been:\n1. Removed by Google from the public interface\n2. Only accessible after signing in to a Google account\n3. relocated to a different section not currently visible\n\n**Recommendation:** To change the number of search results per page, you would need to:\n1. Sign in to your Google account and check if the setting becomes available after authentication, or\n2. Contact Google Support for assistance with this specific setting\n\nUnfortunately, without the ability to sign in and the setting not being visible in the current interface, I cannot complete this task as requested.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

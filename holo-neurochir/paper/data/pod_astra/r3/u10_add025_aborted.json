@@ -1,0 +1,6 @@
+{
+  "status": "aborted_not_evaluable",
+  "reason": "First four saved outputs invalid; first context generation 279.5 seconds. Interrupted only own PID79689 during next context; no full HEALTH or REPEAT score. Resource stop analogous to amplification, after first output arrived before ten-minute no-output bound.",
+  "saved_generations": 4,
+  "time": 1794074276.9370525
+}

@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "f0b971a1-6831-4b9b-a50e-22a6e47f45ba",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_active_tab",
+  "finished_by_agent": true,
+  "steps": 23,
+  "answer": "According to the official NFL website (NFL.com), the Super Bowl of the 2019 NFL season (Super Bowl LIV, played on February 2, 2020) ended with the Kansas City Chiefs defeating the San Francisco 49ers with a score of **31-20**.\n\nThis score is confirmed by multiple NFL.com sources including:\n- NFL.com news article: \"Chiefs rally once again to defeat 49ers, win SB LIV\" (Feb 2, 2020) - snippet states \"31-20 win in Super Bowl LIV\"\n- NFL.com The Wrap: \"Super Bowl LIV\" (Jan 31, 2020) - states \"31-20 win over the shell-shocked San Francisco 49ers\"\n- NFL.com news article: \"Super Bowl LIV was 10th-most watched in history\" (Feb 3, 2020) - confirms \"The Kansas City Chiefs beat the San Francisco 49ers 31-20\"",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

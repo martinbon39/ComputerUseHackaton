@@ -1,0 +1,20 @@
+{
+  "domain": "vs_code",
+  "example_id": "57242fad-77ca-454f-b71b-f187181a9f23",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_extension_installed",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "Successfully created and saved test.py at /home/user/Desktop in VS Code.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

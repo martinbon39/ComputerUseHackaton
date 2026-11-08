@@ -1,0 +1,20 @@
+{
+  "domain": "os",
+  "example_id": "5c1075ca-bb34-46a3-a7a0-029bd7463e79",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_include_exclude",
+  "finished_by_agent": true,
+  "steps": 3,
+  "answer": "Successfully copied all 3 files matching '*failed.ipynb' to ./fails preserving directory hierarchy:\n- ./fails/dir1/a_failed.ipynb\n- ./fails/dir2/subdir1/c_failed.ipynb\n- ./fails/dir3/e_failed.ipynb",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

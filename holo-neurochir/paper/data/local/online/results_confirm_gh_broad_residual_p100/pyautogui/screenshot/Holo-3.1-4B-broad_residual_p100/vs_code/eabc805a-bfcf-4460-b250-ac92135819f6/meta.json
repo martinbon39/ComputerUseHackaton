@@ -1,0 +1,20 @@
+{
+  "domain": "vs_code",
+  "example_id": "eabc805a-bfcf-4460-b250-ac92135819f6",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_extension_installed",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "The Python extension has been successfully installed in VS Code. The extension is now enabled globally and provides support for Python language including IntelliSense (Pylance), debugging (Python Debugger), linting, formatting, refactoring, unit tests, and more. The extension is version v2024.2.1 from Microsoft with over 244.4M downloads and 4 stars.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

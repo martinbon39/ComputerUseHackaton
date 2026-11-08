@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "9656a811-9b5b-4ddf-99c7-5117bcef0626",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "exact_match",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "Successfully enabled Chrome's Safe Browsing security feature. Enhanced protection has been activated, which provides real-time, proactive protection against dangerous sites, downloads, and extensions. This setting will now warn you about potentially harmful or unsafe websites, including ones that Google didn't know about before, by analyzing more data from sites than standard protection offers.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

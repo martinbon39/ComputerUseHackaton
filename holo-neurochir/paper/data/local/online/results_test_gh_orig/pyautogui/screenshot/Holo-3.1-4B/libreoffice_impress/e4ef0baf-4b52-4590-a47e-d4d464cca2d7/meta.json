@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "e4ef0baf-4b52-4590-a47e-d4d464cca2d7",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files,compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 17,
+  "answer": "Both tasks completed successfully:\n\n1. **Slide 3 - Picture height**: Set to 20.00 cm (verified in Properties panel under Position and Size section)\n\n2. **Slide 6 - Textbox font sizes**: All textboxes set to 40pt (verified in Properties panel Character section showing '40 pt' and visibly larger text throughout the slide)\n\nThe changes have been applied and are visible on the slides.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

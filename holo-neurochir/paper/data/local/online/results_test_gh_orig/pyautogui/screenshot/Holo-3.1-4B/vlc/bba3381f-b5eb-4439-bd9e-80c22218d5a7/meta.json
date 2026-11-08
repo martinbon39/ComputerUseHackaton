@@ -1,0 +1,20 @@
+{
+  "domain": "vlc",
+  "example_id": "bba3381f-b5eb-4439-bd9e-80c22218d5a7",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_vlc_playing",
+  "finished_by_agent": true,
+  "steps": 4,
+  "answer": "The video has been successfully started streaming from the provided URL (https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8). VLC media player is now playing the stream, as confirmed by the window title showing \"master.m3u8 - VLC media player\" and the playback controls indicating the video is actively streaming (currently at 00:00 of a 10:00 duration video).",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

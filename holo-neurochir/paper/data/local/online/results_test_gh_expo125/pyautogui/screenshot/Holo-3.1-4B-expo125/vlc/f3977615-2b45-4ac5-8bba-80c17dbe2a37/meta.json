@@ -1,0 +1,20 @@
+{
+  "domain": "vlc",
+  "example_id": "f3977615-2b45-4ac5-8bba-80c17dbe2a37",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_one_instance_when_started_from_file",
+  "finished_by_agent": true,
+  "steps": 25,
+  "answer": "## Solution: Enable Multiple Independent VLC Instances\n\nYour problem has been solved! Videos were redirecting to the first VLC instance because VLC was configured to use only one instance when started from the file manager.\n\n### What I Did:\n\n1. **Opened VLC Preferences**: Accessed via Tools → Preferences (or Ctrl+P)\n\n2. **Disabled Instance Restrictions**: In the Interface Settings tab, under \"Playlist and Instances\" section, I unchecked the option **\"Use only one instance when started from file manager\"**. This was the setting causing your videos to redirect to the first instance.\n\n3. **Saved Changes**: Clicked the Save button to apply the new settings\n\n4. **Verified the Solution**: Successfully launched a second VLC instance by right-clicking the VLC icon in the dock and selecting \"New Window\". Both instances are now running independently (confirmed by two VLC cone icons in the top bar).\n\n### How to Use Multiple Instances Now:\n\n- **Launch additional instances**: Right-click the VLC icon in the dock and select \"New Window\" to open more instances\n- **Play videos independently**: Each instance can now play different videos simultaneously without redirecting to the first instance\n- **Open files in any instance**: Videos opened from the file manager will now open in the instance you launched them in, not redirect to the first instance\n\nThe key setting to remember is: **\"Use only one instance when started from file manager\"** must remain unchecked for independent video playback in multiple VLC windows.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "updated_utc": "2026-11-07T19:16:40.845959+00:00",
+  "state": "ORIGINAL_SNAPSHOT_AUDITED_API_WORK_HANDED_OFF_TO_ACTIVE_SESSION",
+  "own_gpu_lots": 0,
+  "max_gpu_lots": 20,
+  "gpu_process_started": false,
+  "weights_changed": false,
+  "strict_matched_positive_tasks_all_diag": 4,
+  "required_matched_positive_tasks": 6,
+  "causal_claim": null,
+  "patch_spec": null,
+  "report": "REPORT_INVENTORY_API.md",
+  "independent_audit": "verification_inventory_api.json",
+  "concurrent_files_notice": "Other files appeared after resumption from an unidentified concurrent writer. Do not assume its manifest and this inventory are interchangeable. Preserve both; no authorization to train on common_confirmation_tasks.",
+  "initial_75_45_construction_positive_tasks": 0,
+  "reservation_update": "ares announced SHA1-even opening; old zero-positive count is historical, not a current eligibility claim",
+  "active_session_collision": "API exec parent codexPID2610 differs from terminal sessions started19:07; no new experimental work by this API session",
+  "verification": {
+    "frozen_inventory": "PASS",
+    "global_live_comparison": "FAIL_WITH_33_DOCUMENTED_ASSERTIONS",
+    "maximum_pairs": 8,
+    "maximum_positive_tasks": 4,
+    "independent_components": 2
+  },
+  "primary_report_status": "own prior report refreshed; identical unique copy retained"
+}

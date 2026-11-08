@@ -1,0 +1,20 @@
+{
+  "domain": "os",
+  "example_id": "5812b315-e7bd-4265-b51f-863c02174c28",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_include_exclude",
+  "finished_by_agent": true,
+  "steps": 37,
+  "answer": "SSH user 'charles' has been successfully created and configured with the following settings:\n\n**User Account:**\n- Username: charles\n- Password: Ex@mpleP@55w0rd!\n- Home Directory: /home/test1\n- UID/GID: 1001/1001\n\n**SSH Restrictions (via /etc/ssh/sshd_config):**\n- ChrootDirectory: /home/test1 (user can only access this directory)\n- ForceCommand: internal-sftp (restricts to SFTP only, no shell access)\n- AllowTcpForwarding: no\n- X11Forwarding: no\n- PermitTunnel: no\n\n**Configuration Steps Completed:**\n1. Created user 'charles' with home directory /home/test1 using `useradd -m -d /home/test1 -s /bin/bash charles`\n2. Set password 'Ex@mpleP@55w0rd!' using `passwd charles`\n3. Installed OpenSSH server (openssh-server package)\n4. Added Match block to /etc/ssh/sshd_config to restrict user charles to /home/test1\n5. Restarted SSH service with `systemctl restart sshd`\n\nThe user 'charles' will be chrooted to /home/test1 when connecting via SSH, meaning they cannot access any other directories on the system.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "domain": "os",
+  "example_id": "a4d98375-215b-4a4d-aee9-3d4370fccc41",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "exact_match",
+  "finished_by_agent": true,
+  "steps": 7,
+  "answer": "Your computer is now configured to automatically lock after you leave. The settings have been configured as follows:\n\n- **Blank Screen Delay**: 5 minutes (screen will turn off after 5 minutes of inactivity)\n- **Automatic Screen Lock**: Enabled\n- **Automatic Screen Lock Delay**: Screen Turns Off (locks immediately when screen blanks)\n- **Lock Screen on Suspend**: Enabled\n\nAfter 5 minutes of inactivity, your screen will automatically blank and lock, requiring your password to unlock it. This protects your computer from unauthorized access when you step away.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

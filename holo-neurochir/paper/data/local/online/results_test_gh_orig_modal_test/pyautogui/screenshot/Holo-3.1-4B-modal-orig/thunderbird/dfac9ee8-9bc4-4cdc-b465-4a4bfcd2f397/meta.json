@@ -1,0 +1,20 @@
+{
+  "domain": "thunderbird",
+  "example_id": "dfac9ee8-9bc4-4cdc-b465-4a4bfcd2f397",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_csv",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "The account 'anonym-x2024@outlook.com' has been successfully removed from Mozilla Thunderbird. The account is no longer visible in the account list, and only 'Local Folders' remains in the sidebar. The removal was confirmed with a success message.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

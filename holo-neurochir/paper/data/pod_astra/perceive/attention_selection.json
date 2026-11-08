@@ -1,0 +1,1778 @@
+{
+  "selected_heads": [],
+  "random_heads": [],
+  "ranked": [
+    {
+      "layer": 15,
+      "head": 11,
+      "score": 0.1454028616853329,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5703267576661198,
+          "fs_minus_enrichment": 0.7157296193514527,
+          "difference": 0.1454028616853329,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.8396454870060478,
+          "fs_minus_enrichment": 1.2236256239376142,
+          "difference": 0.3839801369315664,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 3,
+      "score": 0.12488749369291907,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.6473220695104546,
+          "fs_minus_enrichment": 0.7722095632033736,
+          "difference": 0.12488749369291907,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.22652855911267647,
+          "fs_minus_enrichment": 0.3596516851174102,
+          "difference": 0.13312312600473372,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 0,
+      "score": 0.12307865286172207,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 1.0048101640220188,
+          "fs_minus_enrichment": 1.2104195936951292,
+          "difference": 0.20560942967311036,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.14446696586294752,
+          "fs_minus_enrichment": 0.2675456187246696,
+          "difference": 0.12307865286172207,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 8,
+      "score": 0.08539811282450051,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.869908958668071,
+          "fs_minus_enrichment": 1.0994897672051407,
+          "difference": 0.22958080853706964,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.06233340026630617,
+          "fs_minus_enrichment": 0.14773151309080668,
+          "difference": 0.08539811282450051,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 5,
+      "score": 0.06141343135475538,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.7213756836407602,
+          "fs_minus_enrichment": 0.862132175610303,
+          "difference": 0.14075649196954276,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.12151176072856093,
+          "fs_minus_enrichment": 0.1829251920833163,
+          "difference": 0.06141343135475538,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 2,
+      "score": 0.05780749286315909,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.7420710727874273,
+          "fs_minus_enrichment": 0.9349743264708856,
+          "difference": 0.1929032536834583,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.14801995067392054,
+          "fs_minus_enrichment": 0.20582744353707963,
+          "difference": 0.05780749286315909,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 1,
+      "score": 0.05603530856655739,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 1.212348702160833,
+          "fs_minus_enrichment": 1.3594497177870144,
+          "difference": 0.1471010156261814,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.11520768450620844,
+          "fs_minus_enrichment": 0.17124299307276583,
+          "difference": 0.05603530856655739,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 13,
+      "score": 0.04987518687202251,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5210962159819916,
+          "fs_minus_enrichment": 0.6648831941005782,
+          "difference": 0.14378697811858654,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.04582073002069245,
+          "fs_minus_enrichment": 0.09569591689271496,
+          "difference": 0.04987518687202251,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 12,
+      "score": 0.04354023554958531,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5149423383805956,
+          "fs_minus_enrichment": 0.5922570614191561,
+          "difference": 0.07731472303856057,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.04720569342566957,
+          "fs_minus_enrichment": 0.09074592897525488,
+          "difference": 0.04354023554958531,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 14,
+      "score": 0.04008629871904351,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.8845286566248447,
+          "fs_minus_enrichment": 1.0691769975964989,
+          "difference": 0.18464834097165417,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.031166284471986466,
+          "fs_minus_enrichment": 0.07125258319102998,
+          "difference": 0.04008629871904351,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 10,
+      "score": 0.03742616407259629,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.6694553541699919,
+          "fs_minus_enrichment": 0.7773131984145492,
+          "difference": 0.10785784424455724,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.06530968970739477,
+          "fs_minus_enrichment": 0.10273585377999106,
+          "difference": 0.03742616407259629,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 3,
+      "score": 0.029467130043725975,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.9016095039715137,
+          "fs_minus_enrichment": 0.9762312052292319,
+          "difference": 0.07462170125771816,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.42831830749060495,
+          "fs_minus_enrichment": 0.45778543753433093,
+          "difference": 0.029467130043725975,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 0,
+      "score": 0.029145528180027053,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 1.2035812443937952,
+          "fs_minus_enrichment": 1.2913770805231186,
+          "difference": 0.0877958361293234,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.08033493772699796,
+          "fs_minus_enrichment": 0.10948046590702501,
+          "difference": 0.029145528180027053,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 15,
+      "score": 0.017938389783432707,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.4626153549348577,
+          "fs_minus_enrichment": 0.5048644161990149,
+          "difference": 0.04224906126415717,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.1321928110089038,
+          "fs_minus_enrichment": 0.1501312007923365,
+          "difference": 0.017938389783432707,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 4,
+      "score": 0.01373638541404959,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.7025614945789295,
+          "fs_minus_enrichment": 0.9286202561463401,
+          "difference": 0.22605876156741067,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.08862704182446716,
+          "fs_minus_enrichment": 0.10236342723851675,
+          "difference": 0.01373638541404959,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 10,
+      "score": 0.012743399765714147,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.8489893883240063,
+          "fs_minus_enrichment": 1.2524779733628462,
+          "difference": 0.4034885850388399,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.0559005174460431,
+          "fs_minus_enrichment": 0.06864391721175725,
+          "difference": 0.012743399765714147,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 1,
+      "score": 0.012716459790967097,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.6386933234945995,
+          "fs_minus_enrichment": 0.7789343258682638,
+          "difference": 0.14024100237366433,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.0781818195335284,
+          "fs_minus_enrichment": 0.0908982793244955,
+          "difference": 0.012716459790967097,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 9,
+      "score": 0.012249200150034556,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.7803765690167036,
+          "fs_minus_enrichment": 0.9928894722907987,
+          "difference": 0.2125129032740951,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.01643876658612718,
+          "fs_minus_enrichment": 0.028687966736161735,
+          "difference": 0.012249200150034556,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 15,
+      "score": 0.008899326799383073,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 2.229146122409407,
+          "fs_minus_enrichment": 2.8222054464373123,
+          "difference": 0.5930593240279052,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.025262090361728773,
+          "fs_minus_enrichment": 0.034161417161111846,
+          "difference": 0.008899326799383073,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 4,
+      "score": 0.008655059618383643,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5365877967669685,
+          "fs_minus_enrichment": 0.5452428563853522,
+          "difference": 0.008655059618383643,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.03975023941159654,
+          "fs_minus_enrichment": 0.05779566256404256,
+          "difference": 0.01804542315244602,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 9,
+      "score": 0.008273877674346064,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.8052780604251774,
+          "fs_minus_enrichment": 0.8850666199952743,
+          "difference": 0.0797885595700969,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.08653996693614846,
+          "fs_minus_enrichment": 0.09481384461049452,
+          "difference": 0.008273877674346064,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 6,
+      "score": 0.00691384586661654,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.8922792339074638,
+          "fs_minus_enrichment": 1.020632035371468,
+          "difference": 0.12835280146400418,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.007149119390928796,
+          "fs_minus_enrichment": 0.014062965257545336,
+          "difference": 0.00691384586661654,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 3,
+      "score": 0.0025385783088268457,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.8604417068579943,
+          "fs_minus_enrichment": 0.9574531372409348,
+          "difference": 0.09701143038294058,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.03412694309451841,
+          "fs_minus_enrichment": 0.03666552140334525,
+          "difference": 0.0025385783088268457,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 2,
+      "score": 0.002235874274053657,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 1.0752229603820314,
+          "fs_minus_enrichment": 1.2867009544423251,
+          "difference": 0.21147799406029377,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.01596374616539695,
+          "fs_minus_enrichment": 0.018199620439450608,
+          "difference": 0.002235874274053657,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 12,
+      "score": 0.0013673476624139957,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 1.8846895251535245,
+          "fs_minus_enrichment": 2.174933501637761,
+          "difference": 0.2902439764842364,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.005046110105708229,
+          "fs_minus_enrichment": 0.006413457768122225,
+          "difference": 0.0013673476624139957,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 7,
+      "score": 0.0012989411008100795,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.6776703530141185,
+          "fs_minus_enrichment": 1.0528514202574886,
+          "difference": 0.3751810672433701,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.0061626603385860085,
+          "fs_minus_enrichment": 0.007461601439396088,
+          "difference": 0.0012989411008100795,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 10,
+      "score": 0.0007870502494921675,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.8377856528847113,
+          "fs_minus_enrichment": 0.9553079294518821,
+          "difference": 0.11752227656717085,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.04265906963075248,
+          "fs_minus_enrichment": 0.043446119880244646,
+          "difference": 0.0007870502494921675,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 12,
+      "score": 0.0007616701735054,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.34309015447199065,
+          "fs_minus_enrichment": 0.3456999889137703,
+          "difference": 0.002609834441779646,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.009581157991543356,
+          "fs_minus_enrichment": 0.010342828165048756,
+          "difference": 0.0007616701735054,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 9,
+      "score": 0.0004407774879420512,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 1.2593096177424732,
+          "fs_minus_enrichment": 1.3742153197110936,
+          "difference": 0.11490570196862038,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.03488339577006006,
+          "fs_minus_enrichment": 0.03532417325800211,
+          "difference": 0.0004407774879420512,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 14,
+      "score": 0.0003835038810189942,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.6982319458989726,
+          "fs_minus_enrichment": 0.794500915607288,
+          "difference": 0.09626896970831533,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.04631414222334519,
+          "fs_minus_enrichment": 0.046697646104364186,
+          "difference": 0.0003835038810189942,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 15,
+      "score": -0.0013249693829988085,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 1.018284586486441,
+          "fs_minus_enrichment": 1.3075262315808767,
+          "difference": 0.28924164509443573,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.09360324953431477,
+          "fs_minus_enrichment": 0.09227828015131596,
+          "difference": -0.0013249693829988085,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 11,
+      "score": -0.0013796974626147304,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5826639003602829,
+          "fs_minus_enrichment": 0.66986450073446,
+          "difference": 0.0872006003741771,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.005987618233254319,
+          "fs_minus_enrichment": 0.004607920770639588,
+          "difference": -0.0013796974626147304,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 12,
+      "score": -0.0017242793947043148,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.636358610464368,
+          "fs_minus_enrichment": 0.646803240954132,
+          "difference": 0.010444630489763962,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.013236480245954247,
+          "fs_minus_enrichment": 0.011512200851249932,
+          "difference": -0.0017242793947043148,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 11,
+      "score": -0.002539052499168538,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5797124233959058,
+          "fs_minus_enrichment": 0.9048268223536771,
+          "difference": 0.3251143989577713,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.007343876181343227,
+          "fs_minus_enrichment": 0.004804823682174689,
+          "difference": -0.002539052499168538,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 1,
+      "score": -0.0032404204795535418,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 1.4405060134170449,
+          "fs_minus_enrichment": 1.5266653904563265,
+          "difference": 0.08615937703928167,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.010167640907322003,
+          "fs_minus_enrichment": 0.006927220427768461,
+          "difference": -0.0032404204795535418,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 15,
+      "score": -0.003411699486724179,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.7938447402000675,
+          "fs_minus_enrichment": 0.9776268141580534,
+          "difference": 0.18378207395798596,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.03665090920504458,
+          "fs_minus_enrichment": 0.0332392097183204,
+          "difference": -0.003411699486724179,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 10,
+      "score": -0.00394271130839626,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5021587071251479,
+          "fs_minus_enrichment": 0.7265543817676473,
+          "difference": 0.22439567464249943,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.013404298282046674,
+          "fs_minus_enrichment": 0.009461586973650415,
+          "difference": -0.00394271130839626,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 12,
+      "score": -0.0042246665701675115,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5920195646697617,
+          "fs_minus_enrichment": 0.8018864329230269,
+          "difference": 0.20986686825326517,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.01057375446525566,
+          "fs_minus_enrichment": 0.006349087895088148,
+          "difference": -0.0042246665701675115,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 3,
+      "score": -0.005345275706484748,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.6850372920536689,
+          "fs_minus_enrichment": 0.770770714846375,
+          "difference": 0.08573342279270613,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.008572447706327693,
+          "fs_minus_enrichment": 0.0032271719998429446,
+          "difference": -0.005345275706484748,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 8,
+      "score": -0.00618079691079523,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.7683682581574646,
+          "fs_minus_enrichment": 1.2265222540423122,
+          "difference": 0.4581539958848476,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.016371960948855305,
+          "fs_minus_enrichment": 0.010191164038060075,
+          "difference": -0.00618079691079523,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 7,
+      "score": -0.0065004225017382886,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.6074781447634386,
+          "fs_minus_enrichment": 0.8934737424057602,
+          "difference": 0.2859955976423215,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.022291976046188763,
+          "fs_minus_enrichment": 0.015791553544450474,
+          "difference": -0.0065004225017382886,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 7,
+      "score": -0.010593276743272206,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.3597168726649505,
+          "fs_minus_enrichment": 0.38520425490389676,
+          "difference": 0.025487382238946255,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.37158212153529685,
+          "fs_minus_enrichment": 0.36098884479202464,
+          "difference": -0.010593276743272206,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 7,
+      "score": -0.012247979208234117,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.6315388479233679,
+          "fs_minus_enrichment": 0.727452657400219,
+          "difference": 0.09591380947685113,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.20115957934488166,
+          "fs_minus_enrichment": 0.18891160013664754,
+          "difference": -0.012247979208234117,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 14,
+      "score": -0.015359521856666565,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.8658461556751027,
+          "fs_minus_enrichment": 1.056630301869392,
+          "difference": 0.1907841461942894,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.04283462966209362,
+          "fs_minus_enrichment": 0.027475107805427057,
+          "difference": -0.015359521856666565,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 5,
+      "score": -0.015519614971379693,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 1.4674504629361382,
+          "fs_minus_enrichment": 1.8768743002761923,
+          "difference": 0.40942383734005405,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.06005358843768292,
+          "fs_minus_enrichment": 0.04453397346630323,
+          "difference": -0.015519614971379693,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 2,
+      "score": -0.016797834976570947,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.6469600418676941,
+          "fs_minus_enrichment": 0.6301622068911231,
+          "difference": -0.016797834976570947,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.05437438687861738,
+          "fs_minus_enrichment": 0.04980058209435951,
+          "difference": -0.004573804784257868,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 1,
+      "score": -0.022877655636341913,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5425685911136627,
+          "fs_minus_enrichment": 0.5406854613162176,
+          "difference": -0.0018831297974450933,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.04434464091116547,
+          "fs_minus_enrichment": 0.021466985274823554,
+          "difference": -0.022877655636341913,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 11,
+      "score": -0.023493773965842207,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.6242379483287842,
+          "fs_minus_enrichment": 0.7781319296371864,
+          "difference": 0.15389398130840215,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.2482505204616133,
+          "fs_minus_enrichment": 0.2247567464957711,
+          "difference": -0.023493773965842207,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 4,
+      "score": -0.02585386715308592,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5820469441016229,
+          "fs_minus_enrichment": 0.6880786908685023,
+          "difference": 0.10603174676687932,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.055847027661001185,
+          "fs_minus_enrichment": 0.029993160507915263,
+          "difference": -0.02585386715308592,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 0,
+      "score": -0.030425094129390273,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.4621134505130543,
+          "fs_minus_enrichment": 0.5021606057948889,
+          "difference": 0.04004715528183456,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.05933741447638839,
+          "fs_minus_enrichment": 0.02891232034699812,
+          "difference": -0.030425094129390273,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 1,
+      "score": -0.031163868375677244,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5681593423971879,
+          "fs_minus_enrichment": 0.682035917348801,
+          "difference": 0.11387657495161307,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.07431537911752142,
+          "fs_minus_enrichment": 0.04315151074184418,
+          "difference": -0.031163868375677244,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 6,
+      "score": -0.03456380082305466,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.4611557813570711,
+          "fs_minus_enrichment": 0.4265919805340164,
+          "difference": -0.03456380082305466,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.012023048700547328,
+          "fs_minus_enrichment": 0.006605239556830807,
+          "difference": -0.005417809143716521,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 8,
+      "score": -0.036533290562348414,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.9321369108266042,
+          "fs_minus_enrichment": 1.09999680536182,
+          "difference": 0.16785989453521588,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.16188477505047796,
+          "fs_minus_enrichment": 0.12535148448812955,
+          "difference": -0.036533290562348414,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 2,
+      "score": -0.03718575719962927,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.3747054010516428,
+          "fs_minus_enrichment": 0.38174169487092213,
+          "difference": 0.007036293819279338,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.14454466053164516,
+          "fs_minus_enrichment": 0.10735890333201589,
+          "difference": -0.03718575719962927,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 14,
+      "score": -0.05165838344164479,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.3382029431384133,
+          "fs_minus_enrichment": 0.31081091490991647,
+          "difference": -0.027392028228496845,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.14253167131820557,
+          "fs_minus_enrichment": 0.09087328787656078,
+          "difference": -0.05165838344164479,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 4,
+      "score": -0.05842359600197988,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.9751821992949107,
+          "fs_minus_enrichment": 0.9167586032929308,
+          "difference": -0.05842359600197988,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.03291406400886095,
+          "fs_minus_enrichment": 0.026303324446505405,
+          "difference": -0.0066107395623555484,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 6,
+      "score": -0.06375547221176062,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.6460365409888272,
+          "fs_minus_enrichment": 0.8761948120830826,
+          "difference": 0.23015827109425535,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.23407929110442174,
+          "fs_minus_enrichment": 0.17032381889266113,
+          "difference": -0.06375547221176062,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 15,
+      "score": -0.07102846329285392,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.3801676344714504,
+          "fs_minus_enrichment": 0.36921768534446936,
+          "difference": -0.010949949126981051,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.1296802712445026,
+          "fs_minus_enrichment": 0.05865180795164868,
+          "difference": -0.07102846329285392,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 9,
+      "score": -0.07207026026704133,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.7055748415602963,
+          "fs_minus_enrichment": 0.6335045812932549,
+          "difference": -0.07207026026704133,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.4854411342736465,
+          "fs_minus_enrichment": 0.4280682145674055,
+          "difference": -0.05737291970624098,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 6,
+      "score": -0.08117362331981792,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 1.256434132252105,
+          "fs_minus_enrichment": 1.1752605089322872,
+          "difference": -0.08117362331981792,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.052751886116223716,
+          "fs_minus_enrichment": 0.07964711521164569,
+          "difference": 0.026895229095421976,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 13,
+      "score": -0.08183780395762008,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5920042171307532,
+          "fs_minus_enrichment": 0.5521724784403236,
+          "difference": -0.03983173869042966,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.6827512029099491,
+          "fs_minus_enrichment": 0.600913398952329,
+          "difference": -0.08183780395762008,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 13,
+      "score": -0.08207111410097806,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5609133515599163,
+          "fs_minus_enrichment": 0.5313996007025812,
+          "difference": -0.029513750857335097,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.1932983788563264,
+          "fs_minus_enrichment": 0.11122726475534833,
+          "difference": -0.08207111410097806,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 8,
+      "score": -0.08315650741138364,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.8635756040963347,
+          "fs_minus_enrichment": 0.9108859607668862,
+          "difference": 0.0473103566705515,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.33712727658403335,
+          "fs_minus_enrichment": 0.2539707691726497,
+          "difference": -0.08315650741138364,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 2,
+      "score": -0.08331091183895745,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.8612704552276739,
+          "fs_minus_enrichment": 0.8832830331871679,
+          "difference": 0.022012577959494073,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.7189147978800247,
+          "fs_minus_enrichment": 0.6356038860410672,
+          "difference": -0.08331091183895745,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 13,
+      "score": -0.10389996416843184,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 1.0018229837686012,
+          "fs_minus_enrichment": 0.8979230196001694,
+          "difference": -0.10389996416843184,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.03498596544077938,
+          "fs_minus_enrichment": 0.030185252290250323,
+          "difference": -0.004800713150529056,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 0,
+      "score": -0.10406575845997268,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 1.0040363298407313,
+          "fs_minus_enrichment": 0.8999705713807586,
+          "difference": -0.10406575845997268,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.025363062137684016,
+          "fs_minus_enrichment": 0.03030523523246217,
+          "difference": 0.004942173094778155,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 14,
+      "score": -0.1086041133104213,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5308578526561142,
+          "fs_minus_enrichment": 0.4222537393456929,
+          "difference": -0.1086041133104213,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.0012721055243114364,
+          "fs_minus_enrichment": 0.000803321175847845,
+          "difference": -0.0004687843484635914,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 4,
+      "score": -0.11511841400287093,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.7662863776158736,
+          "fs_minus_enrichment": 0.6511679636130027,
+          "difference": -0.11511841400287093,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.1758853345703958,
+          "fs_minus_enrichment": 0.12276104419061706,
+          "difference": -0.05312429037977873,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 15,
+      "head": 7,
+      "score": -0.12340277746982387,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.8073000503598363,
+          "fs_minus_enrichment": 0.6838972728900125,
+          "difference": -0.12340277746982387,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.05353287744146524,
+          "fs_minus_enrichment": 0.09773631317068264,
+          "difference": 0.0442034357292174,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 23,
+      "head": 5,
+      "score": -0.14241653103325613,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.8010479015296221,
+          "fs_minus_enrichment": 0.658631370496366,
+          "difference": -0.14241653103325613,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.0011704047397916367,
+          "fs_minus_enrichment": 0.0015482652614091576,
+          "difference": 0.0003778605216175209,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 11,
+      "score": -0.17457052514904448,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.6991832966330819,
+          "fs_minus_enrichment": 0.5246127714840374,
+          "difference": -0.17457052514904448,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.09490786841708994,
+          "fs_minus_enrichment": 0.050876245566406075,
+          "difference": -0.04403162285068386,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 5,
+      "score": -0.17469701288839734,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 1.6927327894200739,
+          "fs_minus_enrichment": 1.5180357765316765,
+          "difference": -0.17469701288839734,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.027306018666436022,
+          "fs_minus_enrichment": 0.019851459925424402,
+          "difference": -0.00745455874101162,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 5,
+      "score": -0.18631128098435484,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.5928495792997837,
+          "fs_minus_enrichment": 0.5446240705980243,
+          "difference": -0.048225508701759345,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.46143275166559744,
+          "fs_minus_enrichment": 0.2751214706812426,
+          "difference": -0.18631128098435484,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 19,
+      "head": 13,
+      "score": -0.18921294473733752,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.7398772742996901,
+          "fs_minus_enrichment": 0.9483674761991815,
+          "difference": 0.2084902018994914,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 1.0233244453080013,
+          "fs_minus_enrichment": 0.8341115005706637,
+          "difference": -0.18921294473733752,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 3,
+      "score": -0.20147337248666553,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.6987770302766289,
+          "fs_minus_enrichment": 0.4973036577899633,
+          "difference": -0.20147337248666553,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.09976750560032853,
+          "fs_minus_enrichment": 0.09616501573392235,
+          "difference": -0.0036024898664061833,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 27,
+      "head": 0,
+      "score": -0.21770127236129844,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.7562197346405716,
+          "fs_minus_enrichment": 0.5385184622792731,
+          "difference": -0.21770127236129844,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.00899782824587234,
+          "fs_minus_enrichment": 0.005980577586374871,
+          "difference": -0.003017250659497468,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 10,
+      "score": -0.2188081700894775,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.53894172045168,
+          "fs_minus_enrichment": 0.6861266217475654,
+          "difference": 0.14718490129588546,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.7658330177396534,
+          "fs_minus_enrichment": 0.5470248476501759,
+          "difference": -0.2188081700894775,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 8,
+      "score": -0.2866518379144553,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.42574067980859387,
+          "fs_minus_enrichment": 0.3552425982843566,
+          "difference": -0.07049808152423725,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.6012577881656029,
+          "fs_minus_enrichment": 0.3146059502511476,
+          "difference": -0.2866518379144553,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 9,
+      "score": -0.36486265127671236,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.45215035022796873,
+          "fs_minus_enrichment": 0.6045715911974612,
+          "difference": 0.15242124096949244,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 1.3551587501276647,
+          "fs_minus_enrichment": 0.9902960988509524,
+          "difference": -0.36486265127671236,
+          "valid": true
+        }
+      ]
+    },
+    {
+      "layer": 31,
+      "head": 6,
+      "score": -0.36650867785503155,
+      "eligible": false,
+      "pairs": [
+        {
+          "task_id": "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "fs_plus_enrichment": 0.9550269963719985,
+          "fs_minus_enrichment": 0.5889198412282212,
+          "difference": -0.36610715514377734,
+          "valid": true
+        },
+        {
+          "task_id": "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "fs_plus_enrichment": 0.7572633389679311,
+          "fs_minus_enrichment": 0.3907546611128995,
+          "difference": -0.36650867785503155,
+          "valid": true
+        }
+      ]
+    }
+  ],
+  "status": "correlational construction selection; no causal result",
+  "attention_npz_sha256": {
+    "/workspace/astra/astra-perceive/attention_pairs_retry/a73aef37d3db0769.npz": "77b7b808590815424b73360394d0b7ebcc97e2532fc97f616070b226123983e5",
+    "/workspace/astra/astra-perceive/attention_pairs_retry/becff6c4272eb925.npz": "facf80e105c014b7f9972ed055118d800146abbb0919b4540592b1651f4f61cc",
+    "/workspace/astra/astra-perceive/attention_pairs_retry/989f39c7283e7a72.npz": "1317e1c07cf0c6fe4bc1267323bc4e2afddba26e1eb678cde4a23ac972e2fd27",
+    "/workspace/astra/astra-perceive/attention_pairs_retry/62de7a9d9fd2d670.npz": "618728ba0cfd5d3c71e5e9800ae634d8c53ca83754b3f07ee18884393eb54679"
+  },
+  "source_sha256": {
+    "/workspace/astra/astra-perceive/attention_pairs.frozen.json": "4a686b518ad4a75f2e094b148e732a5faa3264b1e923bf7b9fb52e4dd838a513",
+    "/workspace/astra/astra-perceive/head_selection.frozen.json": "a3ef01b0f4ed0c761650ab4160603638e6d19fd97b528aab2f9f4a738213efe6",
+    "/workspace/astra/astra-perceive/attention_pairs_retry.jsonl": "4922eddd40487e46853f6f3e9b9ae969e6d2a58f91812f8af09c9cde47505628"
+  }
+}

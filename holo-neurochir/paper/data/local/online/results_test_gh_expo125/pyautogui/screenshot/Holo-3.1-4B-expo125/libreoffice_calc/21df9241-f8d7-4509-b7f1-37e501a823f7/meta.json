@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "21df9241-f8d7-4509-b7f1-37e501a823f7",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 19,
+  "answer": "Task completed successfully. Column B now displays Parameter values in millions format (M) and Column C displays values in billions format (B). All values are rounded to one decimal place with a space between the number and the unit. The formulas used are:\n\n- Column B: =TEXT(A2/1000000,\"0.0\")&\" M\"\n- Column C: =TEXT(A2/1000000000,\"0.0\")&\" B\"\n\nFinal results (rows 2-8):\n- Column B: 0.0 M, 0.0 M, 0.0 M, 0.0 M, 1.5 M, 150.0 M, 15000.0 M\n- Column C: 0.0 B, 0.0 B, 0.0 B, 0.0 B, 0.0 B, 0.2 B, 15.0 B\n\nThe file has been saved with all changes preserved.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

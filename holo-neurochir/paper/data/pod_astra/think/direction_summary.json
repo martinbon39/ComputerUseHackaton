@@ -1,0 +1,645 @@
+{
+  "status": "EXPLORATORY",
+  "n_train_tasks": 4,
+  "n_matched_pairs": 2,
+  "events": [
+    {
+      "task": "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",
+      "sample": 0,
+      "label": "fs+",
+      "answer": true,
+      "n_out": 275,
+      "event": {
+        "conclusion": "completed",
+        "character_start": 18,
+        "snippet": "The task has been completed successfully. I have:\n1. Applied strike-through formatting to the first bullet point \"Providing another perspective for the clubs and organizations.\"\n2. Applie",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 94
+      }
+    },
+    {
+      "task": "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",
+      "sample": 1,
+      "label": "fs+",
+      "answer": true,
+      "n_out": 255,
+      "event": {
+        "conclusion": "successfully",
+        "character_start": 28,
+        "snippet": "The document has been saved successfully. Both the first and second bullet points under \"Finance Meetings:\" now have strike-through formatting applied:\n1. \"Providing another perspective for the clubs ",
+        "token_index": 5,
+        "window": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 119
+      }
+    },
+    {
+      "task": "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",
+      "sample": 2,
+      "label": "fs+",
+      "answer": true,
+      "n_out": 230,
+      "event": {
+        "conclusion": "successfully",
+        "character_start": 28,
+        "snippet": "The document has been saved successfully. Both the first and second bullet points under \"Finance Meetings:\" now have strike-through formatting applied:\n1. \"Providing another perspective for the clubs ",
+        "token_index": 5,
+        "window": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 117
+      }
+    },
+    {
+      "task": "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",
+      "sample": 3,
+      "label": "fs+",
+      "answer": true,
+      "n_out": 246,
+      "event": {
+        "conclusion": "completed",
+        "character_start": 18,
+        "snippet": "The task has been completed successfully. I have:\n1. Applied strike-through formatting to the first bullet point \"Providing another perspective for the clubs and organizations.\"\n2. Applie",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 94
+      }
+    },
+    {
+      "task": "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302",
+      "sample": 0,
+      "label": "fs-",
+      "answer": true,
+      "n_out": 253,
+      "event": {
+        "conclusion": "completed",
+        "character_start": 18,
+        "snippet": "The task has been completed successfully. I have:\n1. Navigated to slide 2 (green background)\n2. Clicked on the title placeholder\n3. Typed \"Note\" as the title\n4. Applied right alignment us",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 116
+      }
+    },
+    {
+      "task": "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302",
+      "sample": 1,
+      "label": "fs-",
+      "answer": true,
+      "n_out": 237,
+      "event": {
+        "conclusion": "completed",
+        "character_start": 18,
+        "snippet": "The task has been completed successfully. I have:\n1. Navigated to slide 2\n2. Clicked on the title placeholder\n3. Typed \"Note\" as the title\n4. Applied right alignment to the title\n5. Saved",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 92
+      }
+    },
+    {
+      "task": "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302",
+      "sample": 2,
+      "label": "fs-",
+      "answer": true,
+      "n_out": 199,
+      "event": {
+        "conclusion": "completed",
+        "character_start": 18,
+        "snippet": "The task has been completed successfully. I have:\n1. Navigated to slide 2\n2. Clicked on the title placeholder\n3. Typed \"Note\" as the title\n4. Applied right alignment to the title text\n5. ",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 99
+      }
+    },
+    {
+      "task": "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302",
+      "sample": 3,
+      "label": "fs-",
+      "answer": true,
+      "n_out": 290,
+      "event": {
+        "conclusion": "completed",
+        "character_start": 18,
+        "snippet": "The task has been completed successfully. Looking at the current screenshot, I can confirm:\n\n1. Slide 2 is active with the green background\n2. The title \"Note\" has been typed into the tit",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 171
+      }
+    },
+    {
+      "task": "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38",
+      "sample": 0,
+      "label": "fs+",
+      "answer": true,
+      "n_out": 355,
+      "event": {
+        "conclusion": "successfully",
+        "character_start": 18,
+        "snippet": "The path has been successfully copied to the clipboard. The task is complete - I found the file \"secret.docx\" and copied its path \"/home/user/Data3/List3\" to the clipboard. Let me verify by ",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 118
+      }
+    },
+    {
+      "task": "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38",
+      "sample": 1,
+      "label": "fs+",
+      "answer": true,
+      "n_out": 272,
+      "event": {
+        "conclusion": "successfully",
+        "character_start": 18,
+        "snippet": "The path has been successfully copied to the clipboard. The task is complete - I found the file 'secret.docx' and copied its path '/home/user/Data3/List3' to the clipboard. Let me verify by ",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 119
+      }
+    },
+    {
+      "task": "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38",
+      "sample": 2,
+      "label": "fs+",
+      "answer": false,
+      "n_out": 166,
+      "event": {
+        "conclusion": "successfully",
+        "character_start": 18,
+        "snippet": "The path has been successfully copied to the clipboard. The task is complete - I found the file \"secret.docx\" and copied its full path \"/home/user/Data3/List3\" to the clipboard. I should now",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 55
+      }
+    },
+    {
+      "task": "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38",
+      "sample": 3,
+      "label": "fs+",
+      "answer": false,
+      "n_out": 189,
+      "event": {
+        "conclusion": "successfully",
+        "character_start": 18,
+        "snippet": "The path has been successfully copied to the clipboard. The task is complete - I found the file 'secret.docx' at '/home/user/Data3/List3' and copied the path to the clipboard. I should now c",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 56
+      }
+    },
+    {
+      "task": "multi_apps/937087b6-f668-4ba6-9110-60682ee33441",
+      "sample": 0,
+      "label": "fs-",
+      "answer": true,
+      "n_out": 247,
+      "event": {
+        "conclusion": "completed",
+        "character_start": 18,
+        "snippet": "The task has been completed successfully. Looking at the current screenshot, I can see that the Video field in the Default Applications settings now shows \"VLC media player\" instead of \"V",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 101
+      }
+    },
+    {
+      "task": "multi_apps/937087b6-f668-4ba6-9110-60682ee33441",
+      "sample": 1,
+      "label": "fs-",
+      "answer": true,
+      "n_out": 317,
+      "event": {
+        "conclusion": "completed",
+        "character_start": 18,
+        "snippet": "The task has been completed successfully. Looking at the current screenshot, I can see that the Video field in the Default Applications section now shows \"VLC media player\" instead of \"Vi",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 151
+      }
+    },
+    {
+      "task": "multi_apps/937087b6-f668-4ba6-9110-60682ee33441",
+      "sample": 2,
+      "label": "fs-",
+      "answer": true,
+      "n_out": 321,
+      "event": {
+        "conclusion": "completed",
+        "character_start": 18,
+        "snippet": "The task has been completed successfully. Looking at the current screenshot, I can see that the Video field in the Default Applications section now shows \"VLC media player\" instead of \"Vi",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 139
+      }
+    },
+    {
+      "task": "multi_apps/937087b6-f668-4ba6-9110-60682ee33441",
+      "sample": 3,
+      "label": "fs-",
+      "answer": true,
+      "n_out": 298,
+      "event": {
+        "conclusion": "successfully",
+        "character_start": 18,
+        "snippet": "The task has been successfully completed. Looking at the current screenshot, I can see that the Video field in the Default Applications section now shows \"VLC media player\" instead of \"Video",
+        "token_index": 4,
+        "window": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "verification_window": [],
+        "n_reflection_tokens": 151
+      }
+    }
+  ],
+  "cv_folds": [
+    {
+      "train_tasks": [
+        "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",
+        "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302"
+      ],
+      "held_tasks": [
+        "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38",
+        "multi_apps/937087b6-f668-4ba6-9110-60682ee33441"
+      ],
+      "auc": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "margin": [
+        0.13927027583122253,
+        0.3192897439002991,
+        0.6502561569213867,
+        0.7865806818008423,
+        0.9612503051757812,
+        1.467321515083313,
+        1.8629446029663086,
+        1.724748134613037,
+        1.8643145561218262,
+        1.8608320951461792,
+        1.9300719499588013,
+        2.001898765563965,
+        2.1211698055267334,
+        2.267876148223877,
+        2.41555118560791,
+        2.740290403366089,
+        2.8692245483398438,
+        3.4198226928710938,
+        3.8785953521728516,
+        4.394894599914551,
+        5.256852149963379,
+        6.340029716491699,
+        7.982439994812012,
+        8.658052444458008,
+        9.366495132446289,
+        9.74258041381836,
+        9.32577133178711,
+        9.692573547363281,
+        11.4093017578125,
+        11.514156341552734,
+        11.759514808654785,
+        10.948893547058105
+      ]
+    },
+    {
+      "train_tasks": [
+        "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38",
+        "multi_apps/937087b6-f668-4ba6-9110-60682ee33441"
+      ],
+      "held_tasks": [
+        "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",
+        "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302"
+      ],
+      "auc": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "margin": [
+        0.08544041216373444,
+        0.17866018414497375,
+        0.3196812570095062,
+        0.4273121953010559,
+        0.5323189496994019,
+        0.7249629497528076,
+        0.9189854860305786,
+        0.8810813426971436,
+        0.893703043460846,
+        0.9433407783508301,
+        0.9936949014663696,
+        1.1175014972686768,
+        1.1596522331237793,
+        1.2270863056182861,
+        1.247362732887268,
+        1.5087624788284302,
+        1.589841604232788,
+        1.788062572479248,
+        2.080482006072998,
+        2.211622714996338,
+        2.5888266563415527,
+        2.989004611968994,
+        3.78532075881958,
+        4.035466194152832,
+        4.312896251678467,
+        4.454292297363281,
+        4.360947132110596,
+        4.4066925048828125,
+        5.541714191436768,
+        5.611424446105957,
+        6.25498104095459,
+        5.841681480407715
+      ]
+    }
+  ],
+  "mean_cv_auc_by_layer": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "baselines": {
+    "t": {
+      "fold_auc": [
+        0.5,
+        0.5
+      ],
+      "mean_auc": 0.5
+    },
+    "n_in": {
+      "fold_auc": [
+        1.0,
+        1.0
+      ],
+      "mean_auc": 1.0
+    }
+  },
+  "layer_ranking": [
+    31,
+    30,
+    29,
+    28,
+    27,
+    26,
+    25,
+    24,
+    23,
+    22,
+    21,
+    20,
+    19,
+    18,
+    17,
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1,
+    0
+  ],
+  "scales": [
+    0.25687679648399353,
+    0.4783957898616791,
+    0.8066824674606323,
+    1.0337735414505005,
+    1.2233260869979858,
+    1.7109825611114502,
+    2.163921594619751,
+    2.2022900581359863,
+    2.3390817642211914,
+    2.3655149936676025,
+    2.4530398845672607,
+    2.7168121337890625,
+    2.838994264602661,
+    3.037236452102661,
+    3.2749524116516113,
+    3.894787311553955,
+    4.168933868408203,
+    4.810614585876465,
+    5.547130107879639,
+    7.221391201019287,
+    8.160717964172363,
+    9.484538078308105,
+    11.066594123840332,
+    12.660735130310059,
+    13.527222633361816,
+    14.100566864013672,
+    14.239275932312012,
+    16.223478317260742,
+    18.653432846069336,
+    20.59699249267578,
+    23.757299423217773,
+    24.51417350769043
+  ],
+  "direction_sha256": "791089598cb62680b9276a2733b916937a0fe29af88140f9352aa2f809d72ade",
+  "verification_tasks_qualifying": 0,
+  "verification_direction_created": false,
+  "limits": [
+    "two held pairs only; descriptive AUROC",
+    "no within-task positive/negative pair",
+    "construction domains differ from chrome-only causal pilot",
+    "word-window states include lexical identity",
+    "screening is not untouched confirmation"
+  ]
+}

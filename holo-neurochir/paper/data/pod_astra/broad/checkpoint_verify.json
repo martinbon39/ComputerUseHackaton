@@ -1,0 +1,23 @@
+{
+  "arm": "learned",
+  "changed_elements": 354868124,
+  "cohort": {
+    "cohort_sha256": "35499feb2f482f811814d2e88f62b9ca202e91e37e99b336f9969e770564d332",
+    "construction_count": 4,
+    "evaluation_count": 6,
+    "preservation_count": 4,
+    "reserve_count": 45
+  },
+  "dose": 1.0,
+  "edited_elements": 408944640,
+  "edited_tensors": 24,
+  "elements": 5174964736,
+  "shards": [
+    "model-00001-of-00002.safetensors",
+    "model-00002-of-00002.safetensors"
+  ],
+  "source": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+  "status": "PASSED",
+  "target": "/dev/shm/broad_residual_p100",
+  "tensors": 724
+}

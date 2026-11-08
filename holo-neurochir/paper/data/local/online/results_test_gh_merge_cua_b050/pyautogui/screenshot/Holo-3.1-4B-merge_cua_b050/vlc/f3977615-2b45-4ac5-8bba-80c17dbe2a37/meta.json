@@ -1,0 +1,20 @@
+{
+  "domain": "vlc",
+  "example_id": "f3977615-2b45-4ac5-8bba-80c17dbe2a37",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_one_instance_when_started_from_file",
+  "finished_by_agent": true,
+  "steps": 7,
+  "answer": "Done.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

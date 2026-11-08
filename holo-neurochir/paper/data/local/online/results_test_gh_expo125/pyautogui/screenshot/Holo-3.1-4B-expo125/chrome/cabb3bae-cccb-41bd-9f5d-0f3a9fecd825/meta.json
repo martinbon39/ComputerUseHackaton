@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "cabb3bae-cccb-41bd-9f5d-0f3a9fecd825",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_direct_json_object",
+  "finished_by_agent": true,
+  "steps": 22,
+  "answer": "Successfully browsed spider-man toys for kids and sorted by lowest price on Google Shopping. The results are now displayed with products sorted from lowest to highest price. The cheapest options visible include:\n\n1. Marvel Spider-Man Thwip Life - $2.99 (Target)\n2. Spiderman Movie Websooter Adt - $4.20 (CostumePlanet)\n3. Marvel Spider-Man Mystery Web Gear - $4.95 (Walmart)\n4. Disney Summer Spiderman Basic Plush - $5.00 (Target)\n5. Marvel Spider-Man Character Plush - $6.00 (Five Below)\n6. Spider-Man Marvel Super Hero Adventure - $6.98 (Ozone Toys)\n7. Marvel Spider-Man Mighty-Verse - $6.99 (ToyWiz.com)\n8. TY Beanie - $6.99 (comichub)\n9. Marvel Spider-Man Plush - $7.99 (ToyWiz.com)\n10. Miles Morales Plush - $7.99 (kentsgroce)\n\nThe sorting is confirmed active with 'Price low to high' displayed in the sort dropdown. Multiple retailers are represented including Target, Walmart, Five Below, ToyWiz.com, Ozone Toys, and comichub.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "domain": "vlc",
+  "example_id": "7882ed6e-bece-4bf0-bada-c32dc1ddae72",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 22,
+  "answer": "This task is infeasible for the following reasons:\n\n1. **Stranger Things is a Netflix Original**: The series is exclusively available on Netflix and is NOT sold through Google Play Movies & TV. Netflix exclusives cannot be purchased on third-party platforms like Google Play.\n\n2. **DRM Protection**: Even if content were purchased on Google Play, it would be protected by Widevine DRM (Digital Rights Management), which prevents playback in third-party media players like VLC. Google Play content can only be played through official Google Play apps or browsers.\n\n3. **No Purchase Option**: The Google Play page for Stranger Things only shows show information and ratings - there are no seasons, episodes, or purchase options available.\n\nTo watch Stranger Things, you would need to:\n- Have a Netflix subscription and watch it directly on Netflix\n- Or use the official Google Play Movies & TV app (but this still wouldn't work for Stranger Things as it's not available for purchase)\n\nVLC media player cannot play DRM-protected streaming content from Google Play, and Stranger Things is not available for purchase on Google Play in the first place.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

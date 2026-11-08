@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "da46d875-6b82-4681-9284-653b0c7ae241",
+  "score": 0,
+  "prompt_variant": "v2_verify",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_url_pattern_match,check_direct_json_object,check_direct_json_object",
+  "finished_by_agent": false,
+  "steps": 50,
+  "answer": null,
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "42e0a640-4f19-4b28-973d-729602b5a4a7",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 11,
+  "answer": "Task completed successfully. Sheet2 has been created with the following content:\n\n- **Total Revenue** (A1): Column header\n- **Total Expenses** (B1): Column header  \n- **867786** (A2): Sum of Revenue from Sheet1 (formula: =SUM(Sheet1.A2:A20))\n- **411686** (B2): Sum of Total Expenses from Sheet1 (formula: =SUM(Sheet1.B2:B20))\n\nThe file has been saved with all changes persisted.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

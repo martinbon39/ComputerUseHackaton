@@ -1,0 +1,151 @@
+{
+  "utc": "2026-11-08T01:13:09.618590+00:00",
+  "baseline": "orig_modal",
+  "records": [
+    {
+      "arm": "free_h2",
+      "group": "fs+",
+      "n": 16,
+      "full_ids_identical": 0,
+      "reasoning_ids_identical": 4,
+      "text_identical": 0,
+      "a_has_terminator": 16,
+      "b_has_terminator": 16,
+      "median_output_tokens": 401.5,
+      "baseline_median_output_tokens": 382.5
+    },
+    {
+      "arm": "free_h2",
+      "group": "fs-",
+      "n": 16,
+      "full_ids_identical": 0,
+      "reasoning_ids_identical": 6,
+      "text_identical": 0,
+      "a_has_terminator": 16,
+      "b_has_terminator": 16,
+      "median_output_tokens": 393.0,
+      "baseline_median_output_tokens": 369.5
+    },
+    {
+      "arm": "free_h2",
+      "group": "healthy",
+      "n": 16,
+      "full_ids_identical": 1,
+      "reasoning_ids_identical": 10,
+      "text_identical": 1,
+      "a_has_terminator": 16,
+      "b_has_terminator": 16,
+      "median_output_tokens": 200.0,
+      "baseline_median_output_tokens": 201.0
+    },
+    {
+      "arm": "free_h2",
+      "group": "text",
+      "n": 3,
+      "full_ids_identical": 1,
+      "reasoning_ids_identical": 1,
+      "text_identical": 1,
+      "a_has_terminator": 3,
+      "b_has_terminator": 3,
+      "median_output_tokens": 101,
+      "baseline_median_output_tokens": 114
+    },
+    {
+      "arm": "free_h3_l05",
+      "group": "fs+",
+      "n": 16,
+      "full_ids_identical": 0,
+      "reasoning_ids_identical": 0,
+      "text_identical": 0,
+      "a_has_terminator": 16,
+      "b_has_terminator": 16,
+      "median_output_tokens": 361.0,
+      "baseline_median_output_tokens": 382.5
+    },
+    {
+      "arm": "free_h3_l05",
+      "group": "fs-",
+      "n": 16,
+      "full_ids_identical": 0,
+      "reasoning_ids_identical": 1,
+      "text_identical": 0,
+      "a_has_terminator": 16,
+      "b_has_terminator": 16,
+      "median_output_tokens": 357.5,
+      "baseline_median_output_tokens": 369.5
+    },
+    {
+      "arm": "free_h3_l05",
+      "group": "healthy",
+      "n": 16,
+      "full_ids_identical": 0,
+      "reasoning_ids_identical": 0,
+      "text_identical": 0,
+      "a_has_terminator": 16,
+      "b_has_terminator": 16,
+      "median_output_tokens": 164.0,
+      "baseline_median_output_tokens": 201.0
+    },
+    {
+      "arm": "free_h3_l05",
+      "group": "text",
+      "n": 3,
+      "full_ids_identical": 0,
+      "reasoning_ids_identical": 0,
+      "text_identical": 0,
+      "a_has_terminator": 3,
+      "b_has_terminator": 3,
+      "median_output_tokens": 88,
+      "baseline_median_output_tokens": 114
+    },
+    {
+      "arm": "free_h5_l05",
+      "group": "fs+",
+      "n": 16,
+      "full_ids_identical": 1,
+      "reasoning_ids_identical": 12,
+      "text_identical": 1,
+      "a_has_terminator": 16,
+      "b_has_terminator": 16,
+      "median_output_tokens": 369.5,
+      "baseline_median_output_tokens": 382.5
+    },
+    {
+      "arm": "free_h5_l05",
+      "group": "fs-",
+      "n": 16,
+      "full_ids_identical": 1,
+      "reasoning_ids_identical": 11,
+      "text_identical": 1,
+      "a_has_terminator": 16,
+      "b_has_terminator": 16,
+      "median_output_tokens": 379.5,
+      "baseline_median_output_tokens": 369.5
+    },
+    {
+      "arm": "free_h5_l05",
+      "group": "healthy",
+      "n": 16,
+      "full_ids_identical": 1,
+      "reasoning_ids_identical": 13,
+      "text_identical": 1,
+      "a_has_terminator": 16,
+      "b_has_terminator": 16,
+      "median_output_tokens": 152.0,
+      "baseline_median_output_tokens": 201.0
+    },
+    {
+      "arm": "free_h5_l05",
+      "group": "text",
+      "n": 3,
+      "full_ids_identical": 1,
+      "reasoning_ids_identical": 3,
+      "text_identical": 1,
+      "a_has_terminator": 3,
+      "b_has_terminator": 3,
+      "median_output_tokens": 118,
+      "baseline_median_output_tokens": 114
+    }
+  ],
+  "note": "Reasoning prefix includes first248069; identical-prefix parameter invariance does not imply identical sampled paths under differing batched numerical execution."
+}

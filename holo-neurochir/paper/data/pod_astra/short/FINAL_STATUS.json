@@ -1,0 +1,112 @@
+{
+  "utc": "2026-11-08T01:45:24.140747+00:00",
+  "status": "closed_without_qualifying_candidate",
+  "lots_charged": 13,
+  "lot_cap": 25,
+  "persisted_action_outputs": 560,
+  "persisted_text_outputs": 30,
+  "planned_generation_requests": 795,
+  "per_lot": [
+    {
+      "lot": 1,
+      "name": "lot01_original_pilot",
+      "actions": 12,
+      "texts": 3,
+      "planned_requests": 15
+    },
+    {
+      "lot": 2,
+      "name": "lot02_endthink8_pilot",
+      "actions": 12,
+      "texts": 3,
+      "planned_requests": 15
+    },
+    {
+      "lot": 3,
+      "name": "lot03_original",
+      "actions": 112,
+      "texts": 3,
+      "planned_requests": 115
+    },
+    {
+      "lot": 4,
+      "name": "lot04_endthink12",
+      "actions": 112,
+      "texts": 3,
+      "planned_requests": 115
+    },
+    {
+      "lot": 5,
+      "name": "lot05_endthink16",
+      "actions": 20,
+      "texts": 0,
+      "planned_requests": 115
+    },
+    {
+      "lot": 6,
+      "name": "lot06_endthink20_sentinel",
+      "actions": 4,
+      "texts": 0,
+      "planned_requests": 15
+    },
+    {
+      "lot": 7,
+      "name": "lot07_scale2_pilot",
+      "actions": 12,
+      "texts": 3,
+      "planned_requests": 15
+    },
+    {
+      "lot": 8,
+      "name": "lot08_scale2",
+      "actions": 112,
+      "texts": 3,
+      "planned_requests": 115
+    },
+    {
+      "lot": 9,
+      "name": "lot09_phase12_pilot",
+      "actions": 12,
+      "texts": 3,
+      "planned_requests": 15
+    },
+    {
+      "lot": 10,
+      "name": "lot10_phase12",
+      "actions": 112,
+      "texts": 3,
+      "planned_requests": 115
+    },
+    {
+      "lot": 11,
+      "name": "lot11_scale3_pilot",
+      "actions": 12,
+      "texts": 3,
+      "planned_requests": 15
+    },
+    {
+      "lot": 12,
+      "name": "lot12_phase16_pilot",
+      "actions": 12,
+      "texts": 3,
+      "planned_requests": 15
+    },
+    {
+      "lot": 13,
+      "name": "lot13_phase16",
+      "actions": 16,
+      "texts": 0,
+      "planned_requests": 115
+    }
+  ],
+  "phase20_extension": "not_run_condition_failed_phase16_json",
+  "reserve_generation": "not_run",
+  "online_candidate_sent": false,
+  "gate_sha256": {
+    "lot04_endthink12": "5771f9be638d5ea6387eabaf6f34091cd1df579e9cebae2beb6813e0a7f68339",
+    "lot08_scale2": "ca7dfab275d70e458bb37225fc3670add475e7c6caeda0bfa72c672275fefe5c",
+    "lot10_phase12": "04c78c19b38b7020946d717f9a1ca7b834a92e73b283d09634be5ea83ddcb881"
+  },
+  "budget_sha256": "7ff92e09cc5b4bd67a48c030ece2b1e1b67c524d8e4ec630a59c01f21450bc48",
+  "limits": "Persisted output counts are not total forward-pass counts. Lot05 may have executed additional unpersisted requests before termination."
+}

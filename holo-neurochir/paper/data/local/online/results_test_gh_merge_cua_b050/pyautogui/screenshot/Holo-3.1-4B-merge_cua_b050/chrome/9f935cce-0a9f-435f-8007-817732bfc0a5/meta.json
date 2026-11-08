@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "9f935cce-0a9f-435f-8007-817732bfc0a5",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_url_pattern_match",
+  "finished_by_agent": true,
+  "steps": 6,
+  "answer": "Successfully browsed the Civil Division Documents and Forms page at justice.gov/civil/documents-and-forms-0. The page displays five main document/form categories: Civil Division Enforcement Priorities, Commercial Litigation Documents & Forms, Enforcement & Affirmative Litigation Branch Documents & Forms, Office of Immigration Litigation Documents & Forms, and Torts Branch Documents & Forms. Additionally, the page includes information about Standard Form 95 for Federal Tort Claims Act claims. The page was last updated July 10, 2026.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

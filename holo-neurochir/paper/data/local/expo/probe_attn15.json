@@ -1,0 +1,341 @@
+{
+ "model": "Holo-3.1-4B-attn15",
+ "url": "http://127.0.0.1:8003/v1",
+ "text": [
+  {
+   "prompt": "Explain in a short paragraph why the sky is blue.",
+   "answer": "The sky appears blue due to a phenomenon called Rayleigh scattering. This occurs when sunlight passes through the Earth's atmosphere and interacts with the molecules and particles in the air. The shorter wavelengths of light, such as blue and violet, are scattered more than the longer wavelengths, such as red and orange. This scattering causes the blue light to be spread out in all directions, making the sky appear blue to our eyes."
+  },
+  {
+   "prompt": "List the steps to rename a file in a Linux terminal.",
+   "answer": "Here are the steps to rename a file in a Linux terminal:\n\n1. Open a terminal.\n2. Use the `ls` command to list the files in the directory where the file you want to rename is located.\n3. Use the `mv` command to rename the file. The syntax is `mv [old filename] [new filename]`.\n4. Replace `[old filename]` with the current name of the file you want to rename and `[new filename]` with the new name you want to give the file.\n5. Press Enter to execute the command.\n6. Use the `ls` command again to verify that the file has been renamed.\n\nFor example, if you want to rename a file called `file.txt` to `newfile.txt`, you would type `mv file.txt newfile.txt` in the terminal and press Enter."
+  },
+  {
+   "prompt": "A shop sells pens at 3 euros each. How much do 7 pens cost? Answer with the computation.",
+   "answer": "To find the cost of 7 pens, we need to multiply the cost of one pen by the number of pens.\n\nCost of 7 pens = Cost of one pen * Number of pens\n= 3 euros * 7\n= 21 euros\n\nSo, 7 pens cost 21 euros."
+  }
+ ],
+ "tasks": {
+  "chrome/47543840-672a-467d-80df-8f7c3b9788c9": {
+   "score": 0.0,
+   "samples": [
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 499,
+     "reasoning_chars": 834,
+     "content_chars": 1103
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 333,
+     "reasoning_chars": 355,
+     "content_chars": 1031
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 559,
+     "reasoning_chars": 754,
+     "content_chars": 1444
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 595,
+     "reasoning_chars": 867,
+     "content_chars": 1453
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 487,
+     "reasoning_chars": 803,
+     "content_chars": 1151
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 482,
+     "reasoning_chars": 856,
+     "content_chars": 1142
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 578,
+     "reasoning_chars": 845,
+     "content_chars": 1334
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 397,
+     "reasoning_chars": 636,
+     "content_chars": 1044
+    }
+   ],
+   "summary": {
+    "answer": 8,
+    "invalid_json": 0,
+    "truncated": 0,
+    "n": 8,
+    "tools": {
+     "answer": 8
+    },
+    "mean_completion_tokens": 491.25,
+    "mean_reasoning_chars": 743.75
+   }
+  },
+  "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54": {
+   "score": 0.0,
+   "samples": [
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 278,
+     "reasoning_chars": 495,
+     "content_chars": 962
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 291,
+     "reasoning_chars": 495,
+     "content_chars": 1006
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 293,
+     "reasoning_chars": 492,
+     "content_chars": 1023
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 290,
+     "reasoning_chars": 497,
+     "content_chars": 1011
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 301,
+     "reasoning_chars": 495,
+     "content_chars": 1058
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 280,
+     "reasoning_chars": 455,
+     "content_chars": 1004
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 263,
+     "reasoning_chars": 495,
+     "content_chars": 899
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 268,
+     "reasoning_chars": 510,
+     "content_chars": 866
+    }
+   ],
+   "summary": {
+    "answer": 8,
+    "invalid_json": 0,
+    "truncated": 0,
+    "n": 8,
+    "tools": {
+     "answer": 8
+    },
+    "mean_completion_tokens": 283.0,
+    "mean_reasoning_chars": 491.75
+   }
+  },
+  "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618": {
+   "score": 1.0,
+   "samples": [
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 465,
+     "reasoning_chars": 787,
+     "content_chars": 1432
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 463,
+     "reasoning_chars": 664,
+     "content_chars": 1481
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 532,
+     "reasoning_chars": 776,
+     "content_chars": 1694
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 477,
+     "reasoning_chars": 758,
+     "content_chars": 1481
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 482,
+     "reasoning_chars": 631,
+     "content_chars": 1630
+    },
+    {
+     "tool": "hotkey",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 345,
+     "reasoning_chars": 974,
+     "content_chars": 728
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 506,
+     "reasoning_chars": 799,
+     "content_chars": 1600
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 486,
+     "reasoning_chars": 547,
+     "content_chars": 1621
+    }
+   ],
+   "summary": {
+    "answer": 7,
+    "invalid_json": 0,
+    "truncated": 0,
+    "n": 8,
+    "tools": {
+     "answer": 7,
+     "hotkey": 1
+    },
+    "mean_completion_tokens": 469.5,
+    "mean_reasoning_chars": 742.0
+   }
+  },
+  "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68": {
+   "score": 1.0,
+   "samples": [
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 284,
+     "reasoning_chars": 457,
+     "content_chars": 728
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 252,
+     "reasoning_chars": 470,
+     "content_chars": 581
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 249,
+     "reasoning_chars": 470,
+     "content_chars": 568
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 303,
+     "reasoning_chars": 469,
+     "content_chars": 818
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 216,
+     "reasoning_chars": 308,
+     "content_chars": 593
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 232,
+     "reasoning_chars": 378,
+     "content_chars": 600
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 313,
+     "reasoning_chars": 470,
+     "content_chars": 833
+    },
+    {
+     "tool": "answer",
+     "valid_json": true,
+     "finish": "stop",
+     "completion_tokens": 280,
+     "reasoning_chars": 457,
+     "content_chars": 715
+    }
+   ],
+   "summary": {
+    "answer": 8,
+    "invalid_json": 0,
+    "truncated": 0,
+    "n": 8,
+    "tools": {
+     "answer": 8
+    },
+    "mean_completion_tokens": 266.125,
+    "mean_reasoning_chars": 434.875
+   }
+  }
+ }
+}

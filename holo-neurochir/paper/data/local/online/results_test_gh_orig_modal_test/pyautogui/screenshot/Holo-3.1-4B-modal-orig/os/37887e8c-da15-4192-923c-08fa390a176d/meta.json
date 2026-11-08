@@ -1,0 +1,20 @@
+{
+  "domain": "os",
+  "example_id": "37887e8c-da15-4192-923c-08fa390a176d",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_include_exclude",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "Task completed successfully. All files modified 30 days ago (old_file1.txt and old_file2.txt, dated Oct 9) have been compressed to old_file1.txt.gz and old_file2.txt.gz in /tmp/test_files/old_files/. All other files (new_file1.txt and new_file2.txt, dated Nov 8) remain in /tmp/test_files/new_files/ as required.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

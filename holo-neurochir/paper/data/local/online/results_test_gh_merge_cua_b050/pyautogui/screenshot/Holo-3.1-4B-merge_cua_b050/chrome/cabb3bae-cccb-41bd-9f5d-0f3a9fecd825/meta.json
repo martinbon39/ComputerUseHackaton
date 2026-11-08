@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "cabb3bae-cccb-41bd-9f5d-0f3a9fecd825",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_direct_json_object",
+  "finished_by_agent": true,
+  "steps": 3,
+  "answer": "Done. Spider-Man toys for kids are displayed sorted by lowest price first, starting with a Marvel Spider-Man Thwhip Life at $2.99.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "domain": "vs_code",
+  "example_id": "982d12a5-beab-424f-8d38-d2a48429e511",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_config",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "The color theme has been successfully changed to Visual Studio Dark (displayed as \"Dark (Visual Studio)\" in the settings). The theme change is now active in VS Code.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

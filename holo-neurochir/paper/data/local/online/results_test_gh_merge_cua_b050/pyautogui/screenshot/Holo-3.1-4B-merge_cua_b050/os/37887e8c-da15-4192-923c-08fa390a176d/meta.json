@@ -1,0 +1,20 @@
+{
+  "domain": "os",
+  "example_id": "37887e8c-da15-4192-923c-08fa390a176d",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_include_exclude",
+  "finished_by_agent": true,
+  "steps": 4,
+  "answer": "Task completed successfully.\n\n**Compressed files (modified ~30 days ago) in /tmp/test_files/old_files/:**\n- old_file1.txt.gz\n- old_file2.txt.gz\n\n**New files in /tmp/test_files/new_files/:**\n- new_file1.txt\n- new_file2.txt",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

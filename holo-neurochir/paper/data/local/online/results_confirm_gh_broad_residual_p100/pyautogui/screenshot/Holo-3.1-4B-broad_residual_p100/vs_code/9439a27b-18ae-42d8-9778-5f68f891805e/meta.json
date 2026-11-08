@@ -1,0 +1,20 @@
+{
+  "domain": "vs_code",
+  "example_id": "9439a27b-18ae-42d8-9778-5f68f891805e",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_json_settings",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "Successfully modified the VS Code setting. The 'Debug: Focus Editor On Break' checkbox has been unchecked, which prevents VS Code from automatically focusing the editor when the debugger breaks. This allows the cursor to remain focused on the debug console during debugging sessions instead of automatically switching back to the editor.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

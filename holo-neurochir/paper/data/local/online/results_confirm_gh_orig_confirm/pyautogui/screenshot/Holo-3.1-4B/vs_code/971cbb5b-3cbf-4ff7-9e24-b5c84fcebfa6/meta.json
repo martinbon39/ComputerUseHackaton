@@ -1,0 +1,23 @@
+{
+  "domain": "vs_code",
+  "example_id": "971cbb5b-3cbf-4ff7-9e24-b5c84fcebfa6",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 13,
+  "answer": "I've thoroughly searched VS Code's built-in settings for options to automatically create a Python file called 'test.py' on startup. After searching for terms like 'startup', 'new file', 'restore windows', 'task', and 'launch', I found that **VS Code does not have a built-in setting to automatically create specific files on startup**.\n\nThis functionality requires either:\n1. **Extensions** (which you specifically excluded)\n2. **Custom scripts or task runners** (like shell scripts, PowerShell, or command-line operations)\n3. **Manual file creation** each time you open VS Code\n\nThe closest built-in option is the 'Workbench: Startup Editor' setting, but it only controls what editor view is shown (Welcome, New File, or Recent Files) - not what files are created.\n\n**Alternative approaches without extensions:**\n- Create a shell script or batch file that runs before VS Code and creates 'test.py', then launch VS Code from that script\n- Use VS Code's Command Palette (Ctrl+Shift+P) to run commands manually\n- Configure your development environment to automatically generate files through other means\n\nIs there another approach you'd like me to explore?",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

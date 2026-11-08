@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "c59742c0-4323-4b9d-8a02-723c251deaa0",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_audios",
+  "finished_by_agent": true,
+  "steps": 5,
+  "answer": "Successfully added the Baseball.mp3 audio file to your presentation! The audio has been inserted on the title slide and is visible as a music note icon. The Media Playback properties panel is available on the right side with full audio controls (play, pause, stop, seek, volume). The presentation has been saved to preserve your changes.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "screen_add_half",
+  "indices": [
+    1,
+    50,
+    0,
+    36,
+    30,
+    29
+  ],
+  "capture": false,
+  "early_reject": true,
+  "intervention": {
+    "mode": "addition",
+    "layers": [
+      31
+    ],
+    "alpha": -0.5,
+    "directions": "/workspace/astra/astra-think/conclusion_direction.npz",
+    "scales": {
+      "31": 24.51417350769043
+    }
+  },
+  "sample_cooldown_seconds": 1,
+  "amendment_sha256": "d8e1891ec9393f298457606ecc8e55e01e0e1b6e8602b1144402acddea5de719"
+}

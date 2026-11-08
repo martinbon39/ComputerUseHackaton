@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "788b3701-3ec9-4b67-b679-418bfa726c22",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "diff_text_file",
+  "finished_by_agent": true,
+  "steps": 48,
+  "answer": "Successfully downloaded and moved the missing chapter 'Early Buildings.tex' to the novel collection folder. The file is now located at Documents/Novels/4th Year in Tsinghua/Early Buildings.tex (5.0 KB). The collection folder now contains 8 chapter files: Classroom Building 2.tex, Early Buildings.tex, Gong Office.tex, main.tex, Moonlight over Lotus Pond.tex, Prelude.tex, The Phantom of the West Lake.tex, and Zero-Zero Pavilion.tex.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

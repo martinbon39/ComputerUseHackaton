@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "f0b971a1-6831-4b9b-a50e-22a6e47f45ba",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_active_tab",
+  "finished_by_agent": true,
+  "steps": 24,
+  "answer": "The Super Bowl for the 2019 NFL season (played on February 7, 2021) was Super Bowl LV. The final score was:\n\n**Tampa Bay Buccaneers 31, Kansas City Chiefs 9**\n\nThe Tampa Bay Buccaneers defeated the Kansas City Chiefs to win their second Super Bowl championship. The game was played at Raymond James Stadium in Tampa, Florida, marking the first time a team played a Super Bowl in its home stadium. Tom Brady was named the game's MVP with 3 completions for 3 yards, and the Chiefs failed to score a touchdown for the first time under quarterback Patrick Mahomes.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

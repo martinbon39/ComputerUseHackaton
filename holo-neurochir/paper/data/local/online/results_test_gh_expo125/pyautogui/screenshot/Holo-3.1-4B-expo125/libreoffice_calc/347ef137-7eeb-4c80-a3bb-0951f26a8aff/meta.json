@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "347ef137-7eeb-4c80-a3bb-0951f26a8aff",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 12,
+  "answer": "Successfully created two column bar charts reflecting per-month total costs:\n\n1. **2019 Column Chart**: Created from the 'Personal Costs - 2019' table (data range A3:I14). This chart displays monthly costs for all 7 cost categories (Gas & Electric, Internet Access, Mobile Bill, Council Tax, Car Insurance, Food Bill, TV Licence/Netflix) across all 12 months.\n\n2. **2020 Column Chart**: Created from the 'Personal Costs - 2020' table (data range A17:I32). This chart displays the same structure showing monthly costs for all 7 cost categories across all 12 months.\n\nBoth charts are now visible in the spreadsheet and the file has been saved. The column charts effectively visualize the per-month total costs for each year as requested.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

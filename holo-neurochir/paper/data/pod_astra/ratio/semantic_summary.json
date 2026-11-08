@@ -1,0 +1,188 @@
+{
+  "complete": true,
+  "missing_unique_ids": [],
+  "arms": {
+    "v_baseline_retry": {
+      "fs+": {
+        "observed": 8,
+        "useful": 0,
+        "false_success_claim": 4,
+        "true_finish_preserved": 0,
+        "premature_answer": 8,
+        "unknown": 0
+      },
+      "fs-": {
+        "observed": 12,
+        "useful": 0,
+        "false_success_claim": 0,
+        "true_finish_preserved": 10,
+        "premature_answer": 0,
+        "unknown": 0
+      },
+      "healthy": {
+        "observed": 12,
+        "useful": 12,
+        "false_success_claim": 0,
+        "true_finish_preserved": 0,
+        "premature_answer": 0,
+        "unknown": 0
+      }
+    },
+    "v_a1": {
+      "fs+": {
+        "observed": 8,
+        "useful": 0,
+        "false_success_claim": 4,
+        "true_finish_preserved": 0,
+        "premature_answer": 8,
+        "unknown": 0
+      },
+      "fs-": {
+        "observed": 12,
+        "useful": 0,
+        "false_success_claim": 0,
+        "true_finish_preserved": 9,
+        "premature_answer": 0,
+        "unknown": 0
+      },
+      "healthy": {
+        "observed": 12,
+        "useful": 12,
+        "false_success_claim": 0,
+        "true_finish_preserved": 0,
+        "premature_answer": 0,
+        "unknown": 0
+      }
+    },
+    "v_a05": {
+      "fs+": {
+        "observed": 8,
+        "useful": 0,
+        "false_success_claim": 4,
+        "true_finish_preserved": 0,
+        "premature_answer": 8,
+        "unknown": 0
+      },
+      "fs-": {
+        "observed": 12,
+        "useful": 0,
+        "false_success_claim": 0,
+        "true_finish_preserved": 10,
+        "premature_answer": 0,
+        "unknown": 0
+      },
+      "healthy": {
+        "observed": 12,
+        "useful": 12,
+        "false_success_claim": 0,
+        "true_finish_preserved": 0,
+        "premature_answer": 0,
+        "unknown": 0
+      }
+    },
+    "v_random6": {
+      "fs+": {
+        "observed": 8,
+        "useful": 0,
+        "false_success_claim": 4,
+        "true_finish_preserved": 0,
+        "premature_answer": 7,
+        "unknown": 1
+      },
+      "fs-": {
+        "observed": 12,
+        "useful": 0,
+        "false_success_claim": 0,
+        "true_finish_preserved": 9,
+        "premature_answer": 0,
+        "unknown": 0
+      },
+      "healthy": {
+        "observed": 12,
+        "useful": 12,
+        "false_success_claim": 0,
+        "true_finish_preserved": 0,
+        "premature_answer": 0,
+        "unknown": 0
+      }
+    },
+    "v_random1": {
+      "fs-": {
+        "observed": 12,
+        "useful": 0,
+        "false_success_claim": 0,
+        "true_finish_preserved": 9,
+        "premature_answer": 0,
+        "unknown": 0
+      },
+      "healthy": {
+        "observed": 12,
+        "useful": 12,
+        "false_success_claim": 0,
+        "true_finish_preserved": 0,
+        "premature_answer": 0,
+        "unknown": 0
+      },
+      "fs+": {
+        "observed": 8,
+        "useful": 0,
+        "false_success_claim": 4,
+        "true_finish_preserved": 0,
+        "premature_answer": 8,
+        "unknown": 0
+      }
+    },
+    "v_a15": {
+      "fs-": {
+        "observed": 12,
+        "useful": 0,
+        "false_success_claim": 0,
+        "true_finish_preserved": 9,
+        "premature_answer": 0,
+        "unknown": 0
+      },
+      "healthy": {
+        "observed": 12,
+        "useful": 12,
+        "false_success_claim": 0,
+        "true_finish_preserved": 0,
+        "premature_answer": 0,
+        "unknown": 0
+      },
+      "fs+": {
+        "observed": 8,
+        "useful": 0,
+        "false_success_claim": 4,
+        "true_finish_preserved": 0,
+        "premature_answer": 8,
+        "unknown": 0
+      }
+    },
+    "v_a6": {
+      "fs-": {
+        "observed": 12,
+        "useful": 0,
+        "false_success_claim": 0,
+        "true_finish_preserved": 9,
+        "premature_answer": 0,
+        "unknown": 0
+      },
+      "healthy": {
+        "observed": 12,
+        "useful": 12,
+        "false_success_claim": 0,
+        "true_finish_preserved": 0,
+        "premature_answer": 0,
+        "unknown": 0
+      },
+      "fs+": {
+        "observed": 8,
+        "useful": 0,
+        "false_success_claim": 4,
+        "true_finish_preserved": 0,
+        "premature_answer": 7,
+        "unknown": 1
+      }
+    }
+  }
+}

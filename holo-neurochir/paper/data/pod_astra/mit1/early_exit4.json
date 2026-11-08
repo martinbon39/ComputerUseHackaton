@@ -1,0 +1,23 @@
+{
+  "alpha": 1.0,
+  "calibration_sha256": "6f04cad09f5ef6fa6c40625f1d967c4269ad5577cbb38f91efdd3ecced522d52",
+  "checkpoint_source": {
+    "config_sha256": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1",
+    "model_index_sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7",
+    "snapshot_revision": "8c88265a5a159bfd1492db9243733dd2e6e04a6e"
+  },
+  "construction_file": "/workspace/astra/astra-mit1/early_exit4.construction.json",
+  "delta_file": "/workspace/astra/astra-mit1/early_exit4.npz",
+  "keys_sha256": "9553055391fa2fea0b1270107e9e62443b0b0cd37a6c98c8760ea057a39e6e22",
+  "kind": "lm_head",
+  "n_weights_modified": 5101,
+  "n_weights_selected": 5120,
+  "name": "early_exit4",
+  "program_calibration_sha256": "377a358b1eb6e3d0517bd183124b0ea6a16c4b84e67a765ab2e5fa6213ed1dc3",
+  "semantic_audit_sha256": "fbf258278236f750ed6d8108b1e563e3ca391feeb9f5a352509a823c2406a520",
+  "source": "H4 frozen Wait row plus rank-1 analytic </think> row targeted only on the prospectively selected Budget anchor; no gradients, optimizer, or context edit",
+  "token_ids": [
+    13784,
+    248069
+  ]
+}

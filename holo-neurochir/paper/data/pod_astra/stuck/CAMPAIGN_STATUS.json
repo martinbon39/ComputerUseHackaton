@@ -1,0 +1,77 @@
+{
+  "utc": 1794081597.0919523,
+  "status": "WAITING_OR_RUNNING",
+  "job": "r1_add_16_24_28",
+  "results": [
+    {
+      "name": "r1_add_16",
+      "generation_complete": false,
+      "verdict": "REJECTED_PROTECTION_UNREACHABLE",
+      "bound": {
+        "gate": "health",
+        "best_possible_rate": 0.9166666666666666,
+        "required_rate": 0.95,
+        "health_failures_observed": 1,
+        "planned_health_denominator": 12
+      },
+      "observed": 5,
+      "planned": 24,
+      "groups": {
+        "stuck+": {
+          "observed": 0,
+          "planned": 12,
+          "escape": 0,
+          "health": 0,
+          "invalid": 0,
+          "answer": 0
+        },
+        "stuck-": {
+          "observed": 5,
+          "planned": 12,
+          "escape": 5,
+          "health": 4,
+          "invalid": 0,
+          "answer": 0
+        }
+      },
+      "screen_pass": false,
+      "protection_compatible_progress": false,
+      "complete_efficacy": null
+    },
+    {
+      "name": "r1_add_24",
+      "generation_complete": false,
+      "verdict": "REJECTED_PROTECTION_UNREACHABLE",
+      "bound": {
+        "gate": "health",
+        "best_possible_rate": 0.9166666666666666,
+        "required_rate": 0.95,
+        "health_failures_observed": 1,
+        "planned_health_denominator": 12
+      },
+      "observed": 3,
+      "planned": 24,
+      "groups": {
+        "stuck+": {
+          "observed": 0,
+          "planned": 12,
+          "escape": 0,
+          "health": 0,
+          "invalid": 0,
+          "answer": 0
+        },
+        "stuck-": {
+          "observed": 3,
+          "planned": 12,
+          "escape": 2,
+          "health": 2,
+          "invalid": 0,
+          "answer": 1
+        }
+      },
+      "screen_pass": false,
+      "protection_compatible_progress": false,
+      "complete_efficacy": null
+    }
+  ]
+}

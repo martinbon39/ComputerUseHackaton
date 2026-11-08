@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "0bf05a7d-b28b-44d2-955a-50b41e24012a",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 19,
+  "answer": "All Old ID values from column C (rows 2-30) have been successfully copied to column D and padded with leading zeros to create 7-digit IDs. The TEXT formula =TEXT(C2,\"0000000\") was applied to all rows, converting values like 76→0000076, 112→0000112, 3604→0003604, etc. The file has been saved.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

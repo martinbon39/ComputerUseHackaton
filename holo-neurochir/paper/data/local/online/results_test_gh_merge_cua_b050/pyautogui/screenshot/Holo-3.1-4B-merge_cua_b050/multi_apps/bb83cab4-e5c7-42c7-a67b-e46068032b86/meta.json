@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "bb83cab4-e5c7-42c7-a67b-e46068032b86",
+  "score": 0.9384811200678829,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_docx_files",
+  "finished_by_agent": true,
+  "steps": 14,
+  "answer": "Successfully converted the Impress presentation to a Writer document. All text from the presentation has been extracted using Outline view, pasted into LibreOffice Writer, and saved as script.docx on the Desktop. The document contains 170 words and 1,067 characters across 5 pages. File verified in Desktop folder.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

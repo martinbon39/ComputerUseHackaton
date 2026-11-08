@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "6c4c23a1-42a4-43cc-9db1-2f86ff3738cc",
+  "score": 0.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_direct_json_object",
+  "finished_by_agent": true,
+  "steps": 31,
+  "answer": "Found flights from Seattle (SEA) to New York (NYC) on December 5th, 2026 that can be purchased with miles:\n\n**Nonstop Flight Options:**\n1. **DL429** - 7:15am to 3:39pm (5h 24m) to JFK\n   - Delta Main: 31,900 miles\n   - Delta Comfort Classic: 56,500 miles\n   - Delta First Classic: 281,600 miles\n\n2. **DL415** - 11:55am to 8:16pm (5h 21m) to JFK\n   - Delta Main: 31,900 miles\n   - Delta Comfort Classic: 56,500 miles\n   - Delta First Classic: 206,200 miles\n\n3. **DL849** - 3:48pm to 11:55pm (5h 7m) to JFK\n   - Delta Main: 31,900 miles\n   - Delta Comfort Classic: 56,500 miles\n   - Delta First Classic: 146,300 miles\n\nAll prices are in miles (round trip). The lowest mileage price is 31,900 miles for Delta Main class on any of the available flights. All flights are nonstop with Free Wi-Fi for SkyMiles Members.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

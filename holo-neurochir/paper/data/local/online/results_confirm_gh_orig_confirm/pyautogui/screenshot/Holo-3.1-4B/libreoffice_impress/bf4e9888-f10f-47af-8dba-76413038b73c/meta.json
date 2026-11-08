@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "bf4e9888-f10f-47af-8dba-76413038b73c",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 40,
+  "answer": "Successfully created a presentation with 6 blank slides, each containing one image in numerical order (pic1.png on slide 1, pic2.png on slide 2, pic3.png on slide 3, pic4.png on slide 4, pic5.png on slide 5, and pic6.png on slide 6). The presentation has been saved and is ready for continuous playback in a kiosk or multimedia show.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

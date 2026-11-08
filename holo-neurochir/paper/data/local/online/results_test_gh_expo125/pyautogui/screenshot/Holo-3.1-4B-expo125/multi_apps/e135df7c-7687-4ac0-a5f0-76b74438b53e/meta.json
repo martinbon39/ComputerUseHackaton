@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "e135df7c-7687-4ac0-a5f0-76b74438b53e",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_tabs,compare_htmls",
+  "finished_by_agent": true,
+  "steps": 10,
+  "answer": "The task has been completed successfully. The .xlsx file 'annual-enterprise-survey-2021-financial-year-provisional.xlsx' was converted to .html format using LibreOffice Calc's Save As function with the 'HTML Document (Calc) (.html)' format option. The converted HTML file is now being viewed in Google Chrome, displaying the spreadsheet data as an HTML table with all original columns (Year, Industry_aggregation_NZSIOC, Industry_code_NZSIOC, Industry_name_NZSIOC, Units, Variable_code, Variable_name, Variable_category, Value, Industry_code_ANZSIC06) and data rows showing financial metrics for 2021 Level 1, All industries.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

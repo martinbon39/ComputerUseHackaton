@@ -1,0 +1,23 @@
+{
+  "domain": "vlc",
+  "example_id": "cb130f0d-d36f-4302-9838-b3baf46139b6",
+  "score": 0,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 6,
+  "answer": "I have accessed VLC's video effects settings and enabled the image adjustment feature, which provides brightness and contrast sliders. However, I need to inform you that VLC media player does not have an automatic feature to detect or adjust brightness and contrast based on room lighting conditions. This capability does not exist in VLC.\n\nThe brightness and contrast adjustments in VLC are manual controls that require you to visually assess how the video looks in your room lighting and then adjust the sliders accordingly. To complete this task manually, you would need to:\n\n1. Open Tools > Effects and Filters > Video Effects > Essential tab\n2. Check the \"Image adjust\" box to enable the sliders\n3. Use the Brightness slider to adjust lightness/darkness to match your room lighting\n4. Use the Contrast slider to adjust the difference between light and dark areas to match your room lighting\n5. Click Save to apply the settings\n\nThe automatic adjustment feature you requested is not available in VLC media player.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "no"
+  }
+}

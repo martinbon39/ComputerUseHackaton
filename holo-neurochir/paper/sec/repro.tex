@@ -1,0 +1,4 @@
+\section{Reproducibility and how this work was done}
+\label{sec:repro}
+Models: \texttt{Hcompany/Holo-3.1-0.8B} at revision \texttt{72da4c53} and \texttt{Hcompany/Holo-3.1-4B} at \texttt{8c88265a}. % source: data/pod_hf/SNAPSHOTS.txt
+Every number, table and figure in this paper is produced by \texttt{paper/figs/*.py} from result files copied verbatim into \texttt{paper/data/}; each macro in \texttt{paper/generated/num\_*.tex} names its source file, and \texttt{build.sh} rebuilds the PDF from scratch. Every 4B arm is recorded with its raw outputs, job file, intervention hash and budget ledger, and each result was audited on CPU by an agent that did not run it. The experiments were planned, run and audited by AI agents (Claude Code sessions and GPT-6 Astra through the Codex CLI) under human supervision, following the protocol described here. % source: JOURNAL.md "Chirurgie 0.8B par Astra", CONTEXT_2026-11-07.md section 9

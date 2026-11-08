@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "e4ef0baf-4b52-4590-a47e-d4d464cca2d7",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files,compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 25,
+  "answer": "Task completed. Slide 3 picture height set to 20 cm. Slide 6 textbox font sizes set to 40 pt. Presentation saved and verified.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

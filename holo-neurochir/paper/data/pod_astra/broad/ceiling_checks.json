@@ -1,0 +1,18 @@
+{
+  "checks": [
+    {
+      "check": "self_swap_logits_exact",
+      "passed": true,
+      "maximum_difference": 0.0
+    },
+    {
+      "check": "resid31_donor_logits_exact",
+      "passed": true,
+      "maximum_difference": 0.0
+    }
+  ],
+  "forwards": 11,
+  "no_generation": true,
+  "scope": "infrastructure recovery plus second pair and true finish; cross-task donor for true finish",
+  "peak_reserved": 11920211968
+}

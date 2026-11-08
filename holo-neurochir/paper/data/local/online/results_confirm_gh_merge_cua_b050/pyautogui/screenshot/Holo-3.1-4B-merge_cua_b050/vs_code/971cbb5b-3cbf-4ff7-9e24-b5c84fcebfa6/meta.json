@@ -1,0 +1,23 @@
+{
+  "domain": "vs_code",
+  "example_id": "971cbb5b-3cbf-4ff7-9e24-b5c84fcebfa6",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": true,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": true,
+  "evaluator_func": "infeasible",
+  "finished_by_agent": true,
+  "steps": 14,
+  "answer": "This task is not possible with VS Code settings alone.\n\nAfter searching through all relevant VS Code settings, I found that there is no built-in setting that allows VS Code to automatically create a specific named file (like 'test.py') on startup. The available startup-related settings only control:\n\n1. **Workbench:Startup Editor** - Options include: welcomePage, none, readme, newUntitledFile, welcomePageInEmptyWorkbench. The 'newUntitledFile' option creates an untitled/new file, but it's not a saved file with a specific name.\n\n2. **Restore settings** - These control restoring previous session view state, undo stacks, and window states, but not creating new files.\n\n**Why this isn't possible with settings alone:**\n- VS Code settings are designed for user preferences and UI behaviors, not for executing file creation operations\n- Automatic file creation on startup would require running a command or script, which isn't supported by settings\n- The only way to achieve this behavior would be through extensions (which you explicitly excluded)\n\n**Workaround (still requires manual action):**\nIf you set the startup editor to 'newUntitledFile', VS Code will open a new untitled file each time you launch it. You would then need to manually save it as 'test.py' with the Python language mode.\n\nThis is a fundamental limitation of VS Code's settings system - it cannot automatically create and save a specific file on startup without extensions.",
+  "banner": {
+    "level": "warn",
+    "text": "官方标注：此任务不可行 (INFEASIBLE)。正确行为是模型声明无法完成；得分衡量的是模型是否正确拒绝，而非真的执行成功。"
+  },
+  "facts": {
+    "task": "INFEASIBLE (official)",
+    "model declined": "yes"
+  }
+}

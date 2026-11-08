@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_impress",
+  "example_id": "0a211154-fda0-48d0-9274-eaac4ce5486d",
+  "score": 1,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_pptx_files",
+  "finished_by_agent": true,
+  "steps": 13,
+  "answer": "Task completed successfully:\n\n1. **Slide 2 title changed to \"Let's start\"** - The title was edited from \"Introduction\" to \"Let's start\".\n\n2. **Yellow background applied to slides with real people photos**:\n   - Slide 3: Contains a photo of a woman with blonde hair - background changed to yellow ✓\n   - Slide 4: Contains three team member photos in circular frames - background changed to yellow ✓\n   - Slides 1, 5, and 6 contain only illustrations (mermaids, fish, coral, abstract graphics) - no real people photos, so original backgrounds retained ✓\n\n3. **Presentation saved** - All changes have been persisted using Ctrl+S.\n\nThe task requirements have been fully satisfied.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

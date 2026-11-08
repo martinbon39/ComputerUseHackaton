@@ -1,0 +1,99 @@
+[
+  {
+    "name": "baseline"
+  },
+  {
+    "name": "u10_L10",
+    "direction": "shared10",
+    "layers": [
+      10
+    ]
+  },
+  {
+    "name": "u10_L9_13",
+    "direction": "shared10",
+    "layers": [
+      9,
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  {
+    "name": "u10_all",
+    "direction": "shared10"
+  },
+  {
+    "name": "native_all",
+    "direction": "native"
+  },
+  {
+    "name": "identity",
+    "direction": "shared10",
+    "alpha": 0
+  },
+  {
+    "name": "u10_all_a2",
+    "direction": "shared10",
+    "alpha": 2
+  },
+  {
+    "name": "u10_all_am1",
+    "direction": "shared10",
+    "alpha": -1
+  },
+  {
+    "name": "u10_add025",
+    "direction": "shared10",
+    "mode": "add",
+    "alpha": 0.25
+  },
+  {
+    "name": "paired_all",
+    "direction": "paired"
+  },
+  {
+    "name": "paired_pca_all",
+    "direction": "paired_pca"
+  },
+  {
+    "name": "mlp_all",
+    "direction": "mlp"
+  },
+  {
+    "name": "mlp_pca_all",
+    "direction": "mlp_pca"
+  },
+  {
+    "name": "mean_all",
+    "direction": "mean"
+  },
+  {
+    "name": "random_all",
+    "direction": "random"
+  },
+  {
+    "name": "baseline_repeat"
+  },
+  {
+    "name": "strict_paired",
+    "direction": "paired",
+    "direction_file": "strict/directions.npz"
+  },
+  {
+    "name": "strict_paired_pca",
+    "direction": "paired_pca",
+    "direction_file": "strict/directions.npz"
+  },
+  {
+    "name": "strict_mlp",
+    "direction": "mlp",
+    "direction_file": "strict/directions.npz"
+  },
+  {
+    "name": "strict_mlp_pca",
+    "direction": "mlp_pca",
+    "direction_file": "strict/directions.npz"
+  }
+]

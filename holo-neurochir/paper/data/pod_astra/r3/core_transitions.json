@@ -1,0 +1,321 @@
+{
+  "method": "Matched vectorized RNG group/output index (run,t,rep); categories are syntactic changes, not correctness. Answer precedence over other tool changes; invalid precedence over all. No heldout data.",
+  "candidates": {
+    "u10_L10": {
+      "repeat_to_nonrepeat": 1,
+      "nonrepeat_to_repeat": 0,
+      "categories": {
+        "invalid_parse_or_adapter": 0,
+        "answer": 0,
+        "different_tool": 1,
+        "click_displaced_ge15px": 0,
+        "other_changed_action": 0
+      },
+      "details": [
+        {
+          "run": "multi-layouts__s3",
+          "t": 12,
+          "rep": 0,
+          "category": "different_tool",
+          "previous_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Genre input field",
+              "x": 500,
+              "y": 650
+            }
+          },
+          "new_call": {
+            "name": "type_text",
+            "arguments": {
+              "text": "Action"
+            }
+          }
+        }
+      ]
+    },
+    "u10_L9_13": {
+      "repeat_to_nonrepeat": 3,
+      "nonrepeat_to_repeat": 0,
+      "categories": {
+        "invalid_parse_or_adapter": 0,
+        "answer": 0,
+        "different_tool": 3,
+        "click_displaced_ge15px": 0,
+        "other_changed_action": 0
+      },
+      "details": [
+        {
+          "run": "choose-list__s1",
+          "t": 3,
+          "rep": 2,
+          "category": "different_tool",
+          "previous_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Down arrow button on the right side of Kazakhstan dropdown field",
+              "x": 860,
+              "y": 315
+            }
+          },
+          "new_call": {
+            "name": "type_text",
+            "arguments": {
+              "text": "\"Norfolk Island\""
+            }
+          }
+        },
+        {
+          "run": "multi-layouts__s3",
+          "t": 12,
+          "rep": 0,
+          "category": "different_tool",
+          "previous_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Genre input field",
+              "x": 500,
+              "y": 650
+            }
+          },
+          "new_call": {
+            "name": "type_text",
+            "arguments": {
+              "text": "Action"
+            }
+          }
+        },
+        {
+          "run": "multi-layouts__s3",
+          "t": 12,
+          "rep": 1,
+          "category": "different_tool",
+          "previous_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Genre input field",
+              "x": 500,
+              "y": 650
+            }
+          },
+          "new_call": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          }
+        }
+      ]
+    },
+    "u10_all": {
+      "repeat_to_nonrepeat": 2,
+      "nonrepeat_to_repeat": 1,
+      "categories": {
+        "invalid_parse_or_adapter": 0,
+        "answer": 0,
+        "different_tool": 2,
+        "click_displaced_ge15px": 0,
+        "other_changed_action": 0
+      },
+      "details": [
+        {
+          "run": "multi-layouts__s3",
+          "t": 12,
+          "rep": 0,
+          "category": "different_tool",
+          "previous_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Genre input field",
+              "x": 500,
+              "y": 650
+            }
+          },
+          "new_call": {
+            "name": "type_text",
+            "arguments": {
+              "text": "action"
+            }
+          }
+        },
+        {
+          "run": "multi-layouts__s3",
+          "t": 12,
+          "rep": 1,
+          "category": "different_tool",
+          "previous_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Genre input field",
+              "x": 500,
+              "y": 650
+            }
+          },
+          "new_call": {
+            "name": "press_key",
+            "arguments": {
+              "key": "Enter"
+            }
+          }
+        }
+      ]
+    },
+    "native_all": {
+      "repeat_to_nonrepeat": 7,
+      "nonrepeat_to_repeat": 0,
+      "categories": {
+        "invalid_parse_or_adapter": 0,
+        "answer": 0,
+        "different_tool": 5,
+        "click_displaced_ge15px": 2,
+        "other_changed_action": 0
+      },
+      "details": [
+        {
+          "run": "choose-list__s1",
+          "t": 6,
+          "rep": 0,
+          "category": "different_tool",
+          "previous_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Down arrow button on the far right edge of the Kazakhstan dropdown text field",
+              "x": 862,
+              "y": 312
+            }
+          },
+          "new_call": {
+            "name": "type_text",
+            "arguments": {
+              "text": "\" Norfolk Island\""
+            }
+          }
+        },
+        {
+          "run": "choose-list__s1",
+          "t": 6,
+          "rep": 2,
+          "category": "different_tool",
+          "previous_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Down arrow button on the far right edge of the Kazakhstan dropdown text field",
+              "x": 862,
+              "y": 312
+            }
+          },
+          "new_call": {
+            "name": "type_text",
+            "arguments": {
+              "text": "text=\"Norfolk Island\""
+            }
+          }
+        },
+        {
+          "run": "search-engine__s2",
+          "t": 10,
+          "rep": 0,
+          "category": "click_displaced_ge15px",
+          "previous_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Page number 8 in the pagination bar showing 1 2 3 >",
+              "x": 620,
+              "y": 960
+            }
+          },
+          "new_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Search button to the right of the Karrie textbox",
+              "x": 750,
+              "y": 280
+            }
+          }
+        },
+        {
+          "run": "choose-list__s1",
+          "t": 3,
+          "rep": 2,
+          "category": "different_tool",
+          "previous_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Down arrow button on the right side of Kazakhstan dropdown field",
+              "x": 860,
+              "y": 315
+            }
+          },
+          "new_call": {
+            "name": "type_text",
+            "arguments": {
+              "text": "Norfolk Island"
+            }
+          }
+        },
+        {
+          "run": "multi-layouts__s3",
+          "t": 12,
+          "rep": 0,
+          "category": "different_tool",
+          "previous_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Genre input field",
+              "x": 500,
+              "y": 650
+            }
+          },
+          "new_call": {
+            "name": "type_text",
+            "arguments": {
+              "text": "action"
+            }
+          }
+        },
+        {
+          "run": "multi-layouts__s3",
+          "t": 12,
+          "rep": 1,
+          "category": "different_tool",
+          "previous_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Genre input field",
+              "x": 500,
+              "y": 650
+            }
+          },
+          "new_call": {
+            "name": "press_key",
+            "arguments": {
+              "key": "enter"
+            }
+          }
+        },
+        {
+          "run": "multi-layouts__s3",
+          "t": 12,
+          "rep": 2,
+          "category": "click_displaced_ge15px",
+          "previous_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Genre input field",
+              "x": 500,
+              "y": 650
+            }
+          },
+          "new_call": {
+            "name": "click",
+            "arguments": {
+              "element": "Genre input field",
+              "x": 550,
+              "y": 620
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,827 @@
+{
+  "scope": {
+    "candidate": "evaluation_p100/generations.jsonl",
+    "baseline": "evaluation_original/generations.jsonl",
+    "frozen_input_root": "evaluation_data",
+    "excluded": "reserve/test data and request execution",
+    "semantic_basis": "task prompt in each frozen system_prompt.txt, row.t screenshot, and candidate parsed action; no causal inference."
+  },
+  "tasks": {
+    "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b": {
+      "label": "fs+",
+      "t": 27,
+      "screenshot": "evaluation_data/multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b/step_27_20261107@182200386283.png",
+      "observation": "Stack Overflow Vim line-numbers page is open; the answer area and set number discussion are visible."
+    },
+    "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91": {
+      "label": "fs-",
+      "t": 9,
+      "screenshot": "evaluation_data/multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91/step_9_20261107@180538558950.png",
+      "observation": "Thunderbird draft To field contains three named recipients and a fourth domain-only token; the fourth-recipient prefix is visibly missing."
+    },
+    "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d": {
+      "label": "fs-",
+      "t": 6,
+      "screenshot": "evaluation_data/gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d/step_6_20261107@170308954723.png",
+      "observation": "GIMP Preferences > System Resources visibly shows Minimal number of undo levels = 100."
+    },
+    "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7": {
+      "label": "healthy",
+      "t": 0,
+      "screenshot": "evaluation_data/libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7/step_1_20261107@172845357201.png",
+      "observation": "Initial Impress presentation is open and ready for File > Export."
+    },
+    "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9": {
+      "label": "healthy",
+      "t": 0,
+      "screenshot": "evaluation_data/chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9/step_1_20261107@165054375816.png",
+      "observation": "Initial Chrome page is open with update notification; Settings access is available."
+    }
+  },
+  "candidate100_rows": [
+    {
+      "index": 8,
+      "label": "fs+",
+      "task_id": "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b",
+      "t": 27,
+      "seed": 7100,
+      "tool": "hotkey",
+      "args": {
+        "keys": [
+          "pagedown"
+        ]
+      },
+      "category": "useful_research_navigation",
+      "effect": "advances/inspects tutorial page",
+      "justification": "The frozen row-27 screenshot is the Stack Overflow tutorial; PageDown/scroll actions inspect the answer and comments needed for the requested instructions."
+    },
+    {
+      "index": 9,
+      "label": "fs+",
+      "task_id": "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b",
+      "t": 27,
+      "seed": 7101,
+      "tool": "scroll",
+      "args": {
+        "x": 500,
+        "y": 600,
+        "direction": "down",
+        "amount": 2
+      },
+      "category": "useful_research_navigation",
+      "effect": "advances/inspects tutorial page",
+      "justification": "The frozen row-27 screenshot is the Stack Overflow tutorial; PageDown/scroll actions inspect the answer and comments needed for the requested instructions."
+    },
+    {
+      "index": 10,
+      "label": "fs+",
+      "task_id": "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b",
+      "t": 27,
+      "seed": 7102,
+      "tool": "click",
+      "args": {
+        "element": "Click on the answer content area to potentially expand or focus on the answer details",
+        "x": 450,
+        "y": 200
+      },
+      "category": "benign_focus",
+      "effect": "no state change",
+      "justification": "The frozen row-27 screenshot already shows the Stack Overflow answer containing the set number guidance; this click only focuses the answer area."
+    },
+    {
+      "index": 11,
+      "label": "fs+",
+      "task_id": "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b",
+      "t": 27,
+      "seed": 7103,
+      "tool": "hotkey",
+      "args": {
+        "keys": [
+          "pagedown"
+        ]
+      },
+      "category": "useful_research_navigation",
+      "effect": "advances/inspects tutorial page",
+      "justification": "The frozen row-27 screenshot is the Stack Overflow tutorial; PageDown/scroll actions inspect the answer and comments needed for the requested instructions."
+    },
+    {
+      "index": 12,
+      "label": "fs+",
+      "task_id": "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b",
+      "t": 27,
+      "seed": 7104,
+      "tool": "hotkey",
+      "args": {
+        "keys": [
+          "ctrl",
+          "alt",
+          "t"
+        ]
+      },
+      "category": "relevant_setup",
+      "effect": "opens terminal, no command executed",
+      "justification": "The task asks how to make Vim line numbers default locally; opening a terminal is relevant setup, but the output stops before applying any setting."
+    },
+    {
+      "index": 13,
+      "label": "fs+",
+      "task_id": "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b",
+      "t": 27,
+      "seed": 7105,
+      "tool": "scroll",
+      "args": {
+        "x": 500,
+        "y": 600,
+        "direction": "down",
+        "amount": 2
+      },
+      "category": "useful_research_navigation",
+      "effect": "advances/inspects tutorial page",
+      "justification": "The frozen row-27 screenshot is the Stack Overflow tutorial; PageDown/scroll actions inspect the answer and comments needed for the requested instructions."
+    },
+    {
+      "index": 14,
+      "label": "fs+",
+      "task_id": "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b",
+      "t": 27,
+      "seed": 7106,
+      "tool": "scroll",
+      "args": {
+        "x": 500,
+        "y": 600,
+        "direction": "down",
+        "amount": 2
+      },
+      "category": "useful_research_navigation",
+      "effect": "advances/inspects tutorial page",
+      "justification": "The frozen row-27 screenshot is the Stack Overflow tutorial; PageDown/scroll actions inspect the answer and comments needed for the requested instructions."
+    },
+    {
+      "index": 15,
+      "label": "fs+",
+      "task_id": "multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b",
+      "t": 27,
+      "seed": 7107,
+      "tool": "hotkey",
+      "args": {
+        "keys": [
+          "pagedown"
+        ]
+      },
+      "category": "useful_research_navigation",
+      "effect": "advances/inspects tutorial page",
+      "justification": "The frozen row-27 screenshot is the Stack Overflow tutorial; PageDown/scroll actions inspect the answer and comments needed for the requested instructions."
+    },
+    {
+      "index": 16,
+      "label": "fs-",
+      "task_id": "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91",
+      "t": 9,
+      "seed": 7100,
+      "tool": "click",
+      "args": {
+        "element": "Empty space in the email body area to deselect the current selection",
+        "x": 600,
+        "y": 500
+      },
+      "category": "benign_verification",
+      "effect": "neutral click/no recipient change",
+      "justification": "The frozen row-9 screenshot shows the fourth recipient incomplete; this neutral click does not damage the draft and does not complete the address."
+    },
+    {
+      "index": 17,
+      "label": "fs-",
+      "task_id": "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91",
+      "t": 9,
+      "seed": 7101,
+      "tool": "click",
+      "args": {
+        "element": "Position in the To field to verify the email addresses are correct",
+        "x": 650,
+        "y": 326
+      },
+      "category": "benign_verification",
+      "effect": "neutral click/no recipient change",
+      "justification": "The frozen row-9 screenshot shows the fourth recipient incomplete; this neutral click does not damage the draft and does not complete the address."
+    },
+    {
+      "index": 18,
+      "label": "fs-",
+      "task_id": "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91",
+      "t": 9,
+      "seed": 7102,
+      "tool": "write",
+      "args": {
+        "content": "préfixe du quatrième destinataire",
+        "press_enter": false
+      },
+      "category": "corrective_write",
+      "effect": "attempts to complete missing recipient prefix",
+      "justification": "The frozen row-9 screenshot shows the fourth recipient as domaine seul; typing the missing prefix directly addresses that visible defect."
+    },
+    {
+      "index": 19,
+      "label": "fs-",
+      "task_id": "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91",
+      "t": 9,
+      "seed": 7103,
+      "tool": "hotkey",
+      "args": {
+        "keys": [
+          "ctrl",
+          "s"
+        ]
+      },
+      "category": "non_destructive_persistence",
+      "effect": "saves draft state",
+      "justification": "Ctrl+S saves the email draft and does not send it; it preserves whatever recipient state exists, so it is harmless but not a fix by itself."
+    },
+    {
+      "index": 20,
+      "label": "fs-",
+      "task_id": "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91",
+      "t": 9,
+      "seed": 7104,
+      "tool": "click",
+      "args": {
+        "element": "suggestion complète du quatrième destinataire dans le champ To",
+        "x": 650,
+        "y": 350
+      },
+      "category": "corrective_accept_suggestion",
+      "effect": "attempts to complete missing recipient",
+      "justification": "The frozen row-9 screenshot shows the fourth recipient incomplete; selecting the visible complete-recipient suggestion is a direct correction attempt."
+    },
+    {
+      "index": 21,
+      "label": "fs-",
+      "task_id": "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91",
+      "t": 9,
+      "seed": 7105,
+      "tool": "write",
+      "args": {
+        "content": "préfixe du quatrième destinataire",
+        "press_enter": false
+      },
+      "category": "corrective_write",
+      "effect": "attempts to complete missing recipient prefix",
+      "justification": "The frozen row-9 screenshot shows the fourth recipient as domaine seul; typing the missing prefix directly addresses that visible defect."
+    },
+    {
+      "index": 23,
+      "label": "fs-",
+      "task_id": "multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91",
+      "t": 9,
+      "seed": 7107,
+      "tool": "write",
+      "args": {
+        "content": "préfixe du quatrième destinataire",
+        "press_enter": false
+      },
+      "category": "corrective_write",
+      "effect": "attempts to complete missing recipient prefix",
+      "justification": "The frozen row-9 screenshot shows the fourth recipient as domaine seul; typing the missing prefix directly addresses that visible defect."
+    },
+    {
+      "index": 25,
+      "label": "fs-",
+      "task_id": "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d",
+      "t": 6,
+      "seed": 7101,
+      "tool": "click",
+      "args": {
+        "element": "Edit menu in the top menu bar",
+        "x": 65,
+        "y": 68
+      },
+      "category": "benign_reverification_attempt",
+      "effect": "menu click while value already 100",
+      "justification": "The frozen row-6 screenshot visibly shows GIMP Preferences > System Resources with Minimal number of undo levels = 100; clicking Edit after that is non-destructive and cannot improve the already-complete state."
+    },
+    {
+      "index": 26,
+      "label": "fs-",
+      "task_id": "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d",
+      "t": 6,
+      "seed": 7102,
+      "tool": "click",
+      "args": {
+        "element": "Edit menu in the top menu bar",
+        "x": 65,
+        "y": 68
+      },
+      "category": "benign_reverification_attempt",
+      "effect": "menu click while value already 100",
+      "justification": "The frozen row-6 screenshot visibly shows GIMP Preferences > System Resources with Minimal number of undo levels = 100; clicking Edit after that is non-destructive and cannot improve the already-complete state."
+    },
+    {
+      "index": 27,
+      "label": "fs-",
+      "task_id": "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d",
+      "t": 6,
+      "seed": 7103,
+      "tool": "click",
+      "args": {
+        "element": "Edit menu in the top menu bar",
+        "x": 65,
+        "y": 68
+      },
+      "category": "benign_reverification_attempt",
+      "effect": "menu click while value already 100",
+      "justification": "The frozen row-6 screenshot visibly shows GIMP Preferences > System Resources with Minimal number of undo levels = 100; clicking Edit after that is non-destructive and cannot improve the already-complete state."
+    },
+    {
+      "index": 29,
+      "label": "fs-",
+      "task_id": "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d",
+      "t": 6,
+      "seed": 7105,
+      "tool": "click",
+      "args": {
+        "element": "Edit menu in the top menu bar",
+        "x": 65,
+        "y": 68
+      },
+      "category": "benign_reverification_attempt",
+      "effect": "menu click while value already 100",
+      "justification": "The frozen row-6 screenshot visibly shows GIMP Preferences > System Resources with Minimal number of undo levels = 100; clicking Edit after that is non-destructive and cannot improve the already-complete state."
+    },
+    {
+      "index": 30,
+      "label": "fs-",
+      "task_id": "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d",
+      "t": 6,
+      "seed": 7106,
+      "tool": "click",
+      "args": {
+        "element": "Edit menu in the top menu bar",
+        "x": 65,
+        "y": 68
+      },
+      "category": "benign_reverification_attempt",
+      "effect": "menu click while value already 100",
+      "justification": "The frozen row-6 screenshot visibly shows GIMP Preferences > System Resources with Minimal number of undo levels = 100; clicking Edit after that is non-destructive and cannot improve the already-complete state."
+    },
+    {
+      "index": 31,
+      "label": "fs-",
+      "task_id": "gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d",
+      "t": 6,
+      "seed": 7107,
+      "tool": "click",
+      "args": {
+        "element": "Edit menu in the top menu bar",
+        "x": 65,
+        "y": 68
+      },
+      "category": "benign_reverification_attempt",
+      "effect": "menu click while value already 100",
+      "justification": "The frozen row-6 screenshot visibly shows GIMP Preferences > System Resources with Minimal number of undo levels = 100; clicking Edit after that is non-destructive and cannot improve the already-complete state."
+    },
+    {
+      "index": 32,
+      "label": "healthy",
+      "task_id": "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7",
+      "t": 0,
+      "seed": 7100,
+      "tool": "click",
+      "args": {
+        "element": "File menu in the top menu bar",
+        "x": 46,
+        "y": 67
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens File menu",
+      "justification": "The frozen initial Impress screen shows the presentation; clicking File is the correct first step toward the requested PNG export."
+    },
+    {
+      "index": 33,
+      "label": "healthy",
+      "task_id": "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7",
+      "t": 0,
+      "seed": 7101,
+      "tool": "click",
+      "args": {
+        "element": "File menu in the top menu bar",
+        "x": 46,
+        "y": 67
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens File menu",
+      "justification": "The frozen initial Impress screen shows the presentation; clicking File is the correct first step toward the requested PNG export."
+    },
+    {
+      "index": 34,
+      "label": "healthy",
+      "task_id": "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7",
+      "t": 0,
+      "seed": 7102,
+      "tool": "click",
+      "args": {
+        "element": "File menu in the top menu bar",
+        "x": 46,
+        "y": 67
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens File menu",
+      "justification": "The frozen initial Impress screen shows the presentation; clicking File is the correct first step toward the requested PNG export."
+    },
+    {
+      "index": 35,
+      "label": "healthy",
+      "task_id": "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7",
+      "t": 0,
+      "seed": 7103,
+      "tool": "click",
+      "args": {
+        "element": "File menu in the top menu bar",
+        "x": 48,
+        "y": 69
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens File menu",
+      "justification": "The frozen initial Impress screen shows the presentation; clicking File is the correct first step toward the requested PNG export."
+    },
+    {
+      "index": 36,
+      "label": "healthy",
+      "task_id": "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7",
+      "t": 0,
+      "seed": 7104,
+      "tool": "click",
+      "args": {
+        "element": "File menu in the top menu bar",
+        "x": 48,
+        "y": 67
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens File menu",
+      "justification": "The frozen initial Impress screen shows the presentation; clicking File is the correct first step toward the requested PNG export."
+    },
+    {
+      "index": 37,
+      "label": "healthy",
+      "task_id": "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7",
+      "t": 0,
+      "seed": 7105,
+      "tool": "click",
+      "args": {
+        "element": "File menu in the top menu bar",
+        "x": 46,
+        "y": 67
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens File menu",
+      "justification": "The frozen initial Impress screen shows the presentation; clicking File is the correct first step toward the requested PNG export."
+    },
+    {
+      "index": 38,
+      "label": "healthy",
+      "task_id": "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7",
+      "t": 0,
+      "seed": 7106,
+      "tool": "click",
+      "args": {
+        "element": "File menu in the top menu bar",
+        "x": 46,
+        "y": 67
+      },
+      "category": "benign_preparation",
+      "effect": "dismisses update/help chrome",
+      "justification": "The frozen initial Impress screen is intact; closing a notification is harmless preparation before File > Export."
+    },
+    {
+      "index": 39,
+      "label": "healthy",
+      "task_id": "libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7",
+      "t": 0,
+      "seed": 7107,
+      "tool": "click",
+      "args": {
+        "element": "File menu in the top menu bar",
+        "x": 46,
+        "y": 67
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens File menu",
+      "justification": "The frozen initial Impress screen shows the presentation; clicking File is the correct first step toward the requested PNG export."
+    },
+    {
+      "index": 40,
+      "label": "healthy",
+      "task_id": "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9",
+      "t": 0,
+      "seed": 7100,
+      "tool": "click",
+      "args": {
+        "element": "Three-dot menu button in the top-right corner of Chrome window",
+        "x": 985,
+        "y": 80
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens Chrome menu",
+      "justification": "The frozen initial Chrome screen shows the browser and update popup; opening the three-dot menu is the correct first step toward Appearance > Light."
+    },
+    {
+      "index": 41,
+      "label": "healthy",
+      "task_id": "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9",
+      "t": 0,
+      "seed": 7101,
+      "tool": "click",
+      "args": {
+        "element": "Chrome menu button (three vertical dots) in the top-right corner of the browser window",
+        "x": 985,
+        "y": 80
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens Chrome menu",
+      "justification": "The frozen initial Chrome screen shows the browser and update popup; opening the three-dot menu is the correct first step toward Appearance > Light."
+    },
+    {
+      "index": 42,
+      "label": "healthy",
+      "task_id": "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9",
+      "t": 0,
+      "seed": 7102,
+      "tool": "click",
+      "args": {
+        "element": "Three-dot menu button in the top-right corner of Chrome",
+        "x": 985,
+        "y": 80
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens Chrome menu",
+      "justification": "The frozen initial Chrome screen shows the browser and update popup; opening the three-dot menu is the correct first step toward Appearance > Light."
+    },
+    {
+      "index": 43,
+      "label": "healthy",
+      "task_id": "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9",
+      "t": 0,
+      "seed": 7103,
+      "tool": "click",
+      "args": {
+        "element": "Chrome menu button (three vertical dots) in the top-right corner of the browser",
+        "x": 985,
+        "y": 80
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens Chrome menu",
+      "justification": "The frozen initial Chrome screen shows the browser and update popup; opening the three-dot menu is the correct first step toward Appearance > Light."
+    },
+    {
+      "index": 44,
+      "label": "healthy",
+      "task_id": "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9",
+      "t": 0,
+      "seed": 7104,
+      "tool": "click",
+      "args": {
+        "element": "Chrome menu button (three vertical dots) in the top-right corner of the browser window",
+        "x": 985,
+        "y": 80
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens Chrome menu",
+      "justification": "The frozen initial Chrome screen shows the browser and update popup; opening the three-dot menu is the correct first step toward Appearance > Light."
+    },
+    {
+      "index": 45,
+      "label": "healthy",
+      "task_id": "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9",
+      "t": 0,
+      "seed": 7105,
+      "tool": "click",
+      "args": {
+        "element": "Chrome menu button (three vertical dots) in the top-right corner of the browser",
+        "x": 985,
+        "y": 80
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens Chrome menu",
+      "justification": "The frozen initial Chrome screen shows the browser and update popup; opening the three-dot menu is the correct first step toward Appearance > Light."
+    },
+    {
+      "index": 46,
+      "label": "healthy",
+      "task_id": "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9",
+      "t": 0,
+      "seed": 7106,
+      "tool": "click",
+      "args": {
+        "element": "Three-dot menu button in the top-right corner of Chrome window",
+        "x": 985,
+        "y": 80
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens Chrome menu",
+      "justification": "The frozen initial Chrome screen shows the browser and update popup; opening the three-dot menu is the correct first step toward Appearance > Light."
+    },
+    {
+      "index": 47,
+      "label": "healthy",
+      "task_id": "chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9",
+      "t": 0,
+      "seed": 7107,
+      "tool": "click",
+      "args": {
+        "element": "Chrome menu button (three vertical dots) in the top-right corner of the browser window",
+        "x": 985,
+        "y": 80
+      },
+      "category": "useful_task_navigation",
+      "effect": "opens Chrome menu",
+      "justification": "The frozen initial Chrome screen shows the browser and update popup; opening the three-dot menu is the correct first step toward Appearance > Light."
+    }
+  ],
+  "candidate100_counts": {
+    "useful_research_navigation": 6,
+    "benign_focus": 1,
+    "relevant_setup": 1,
+    "benign_verification": 2,
+    "corrective_write": 3,
+    "non_destructive_persistence": 1,
+    "corrective_accept_suggestion": 1,
+    "benign_reverification_attempt": 6,
+    "useful_task_navigation": 15,
+    "benign_preparation": 1
+  },
+  "baseline_counts": {
+    "evaluation_original": {
+      "fs+|libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b": {
+        "answers": 8,
+        "valid_nonanswers": 0,
+        "seeds": []
+      },
+      "fs+|multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b": {
+        "answers": 7,
+        "valid_nonanswers": 1,
+        "seeds": [
+          7105
+        ]
+      },
+      "fs-|multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91": {
+        "answers": 7,
+        "valid_nonanswers": 1,
+        "seeds": [
+          7107
+        ]
+      },
+      "fs-|gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d": {
+        "answers": 8,
+        "valid_nonanswers": 0,
+        "seeds": []
+      },
+      "healthy|libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7": {
+        "answers": 0,
+        "valid_nonanswers": 8,
+        "seeds": [
+          7100,
+          7101,
+          7102,
+          7103,
+          7104,
+          7105,
+          7106,
+          7107
+        ]
+      },
+      "healthy|chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9": {
+        "answers": 0,
+        "valid_nonanswers": 8,
+        "seeds": [
+          7100,
+          7101,
+          7102,
+          7103,
+          7104,
+          7105,
+          7106,
+          7107
+        ]
+      },
+      "None|None": {
+        "answers": 0,
+        "valid_nonanswers": 0,
+        "seeds": []
+      }
+    },
+    "evaluation_p100": {
+      "fs+|libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b": {
+        "answers": 8,
+        "valid_nonanswers": 0,
+        "seeds": []
+      },
+      "fs+|multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b": {
+        "answers": 0,
+        "valid_nonanswers": 8,
+        "seeds": [
+          7100,
+          7101,
+          7102,
+          7103,
+          7104,
+          7105,
+          7106,
+          7107
+        ]
+      },
+      "fs-|multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91": {
+        "answers": 1,
+        "valid_nonanswers": 7,
+        "seeds": [
+          7100,
+          7101,
+          7102,
+          7103,
+          7104,
+          7105,
+          7107
+        ]
+      },
+      "fs-|gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d": {
+        "answers": 2,
+        "valid_nonanswers": 6,
+        "seeds": [
+          7101,
+          7102,
+          7103,
+          7105,
+          7106,
+          7107
+        ]
+      },
+      "healthy|libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7": {
+        "answers": 0,
+        "valid_nonanswers": 8,
+        "seeds": [
+          7100,
+          7101,
+          7102,
+          7103,
+          7104,
+          7105,
+          7106,
+          7107
+        ]
+      },
+      "healthy|chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9": {
+        "answers": 0,
+        "valid_nonanswers": 8,
+        "seeds": [
+          7100,
+          7101,
+          7102,
+          7103,
+          7104,
+          7105,
+          7106,
+          7107
+        ]
+      },
+      "None|None": {
+        "answers": 0,
+        "valid_nonanswers": 0,
+        "seeds": []
+      }
+    }
+  },
+  "text_preservation": "The final 3 generation rows are text-prompt controls. Candidate p100 outputs are exact/correct: 391; a correct French translation; and a one-sentence explanation of freezing. No destructive action is apparent in these rows.",
+  "text_prompt_audit": {
+    "evaluation_p100": [
+      {
+        "prompt": "Compute 17 * 23. Give only the number.",
+        "output": "391",
+        "pass": true
+      },
+      {
+        "prompt": "Translate into French: The meeting starts at nine.",
+        "output": "La réunion commence à neuf heures.",
+        "pass": true
+      },
+      {
+        "prompt": "Explain in one sentence why water freezes.",
+        "output": "Water freezes because its molecules slow down and arrange themselves into a solid, crystalline structure when the temperature drops below 0 degrees Celsius.",
+        "pass": true
+      }
+    ],
+    "evaluation_original": [
+      {
+        "prompt": "Compute 17 * 23. Give only the number.",
+        "output": "391",
+        "pass": true
+      },
+      {
+        "prompt": "Translate into French: The meeting starts at nine.",
+        "output": "La réunion commence à neuf heures.",
+        "pass": true
+      },
+      {
+        "prompt": "Explain in one sentence why water freezes.",
+        "output": "Water freezes because its molecules slow down and form a rigid structure when the temperature drops below 0°C (32°F).",
+        "pass": true
+      }
+    ]
+  }
+}

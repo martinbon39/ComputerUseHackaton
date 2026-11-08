@@ -1,0 +1,20 @@
+{
+  "domain": "vs_code",
+  "example_id": "53ad5833-3455-407b-bbc6-45b4c79ab8fb",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_config",
+  "finished_by_agent": true,
+  "steps": 3,
+  "answer": "Successfully opened the 'project' folder in VS Code. The folder is located at /home/user/project and contains the files: main.py and README.md, along with a .vscode configuration folder.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "paired_pairs": 97,
+  "paired_tasks": [
+    "choose-list",
+    "click-option",
+    "enter-date",
+    "enter-password",
+    "enter-text",
+    "form-sequence",
+    "login-user",
+    "login-user-popup",
+    "multi-layouts",
+    "search-engine"
+  ],
+  "screen_loop": 12,
+  "screen_healthy": 12,
+  "available_directions": [
+    "native",
+    "shared10",
+    "mean",
+    "paired",
+    "paired_pca",
+    "mlp",
+    "mlp_pca",
+    "random"
+  ]
+}

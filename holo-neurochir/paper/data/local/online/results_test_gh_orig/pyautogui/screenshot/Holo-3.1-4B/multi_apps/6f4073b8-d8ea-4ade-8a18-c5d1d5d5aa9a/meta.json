@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "6f4073b8-d8ea-4ade-8a18-c5d1d5d5aa9a",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_conference_city_in_order",
+  "finished_by_agent": true,
+  "steps": 24,
+  "answer": "Successfully filled in all 21 meeting cities for the three machine learning conferences (ICLR, ICML, NeurIPS) from 2013 to 2019. The cities are: 2013: Scottsdale (ICLR), Atlanta (ICML), Lake Tahoe (NeurIPS); 2014: Banff (ICLR), Beijing (ICML), Montreal (NeurIPS); 2015: San Diego (ICLR), Lille (ICML), Montreal (NeurIPS); 2016: San Juan (ICLR), New York (ICML), Barcelona (NeurIPS); 2017: Toulon (ICLR), Sydney (ICML), Long Beach (NeurIPS); 2018: Vancouver (ICLR), Stockholm (ICML), Montreal (NeurIPS); 2019: New Orleans (ICLR), Long Beach (ICML), Vancouver (NeurIPS). The file has been saved.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

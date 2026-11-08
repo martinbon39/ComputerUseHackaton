@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "357ef137-7eeb-4c80-a3bb-0951f26a8aff",
+  "score": 1.0,
+  "prompt_variant": "v2_verify",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 3,
+  "answer": "The correct formula to multiply time values by a number in spreadsheets is =D3*24*F3. This converts the time value (stored as fraction of day) to decimal hours by multiplying by 24, then multiplies by the hourly rate. Cell E3 now shows 191.666667, which is the correct total earned amount (7.667 hours × $25/hour).",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "domain": "multi_apps",
+  "example_id": "e135df7c-7687-4ac0-a5f0-76b74438b53e",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_tabs,compare_htmls",
+  "finished_by_agent": true,
+  "steps": 10,
+  "answer": "Successfully converted the .xlsx file to .html format and opened it in Chrome. The HTML file 'annual-enterprise-survey-2021-financial-year-provisional.html' is now displayed in Chrome, showing the spreadsheet data with all columns including Year, Industry codes, Variable names, Values, and ANZSIC06 industry classifications.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

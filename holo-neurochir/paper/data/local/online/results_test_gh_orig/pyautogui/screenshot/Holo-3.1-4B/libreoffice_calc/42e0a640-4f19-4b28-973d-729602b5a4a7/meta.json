@@ -1,0 +1,20 @@
+{
+  "domain": "libreoffice_calc",
+  "example_id": "42e0a640-4f19-4b28-973d-729602b5a4a7",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "compare_table",
+  "finished_by_agent": true,
+  "steps": 11,
+  "answer": "Task completed successfully. Sheet2 has been created with the following structure:\n\n- **Column A**: \"Total Revenue\" header in A1, sum value **867786** in A2 (calculated from Sheet1.A2:A20)\n- **Column B**: \"Total Expenses\" header in B1, sum value **411686** in B2 (calculated from Sheet1.B2:B20)\n\nBoth formulas are working correctly and the file has been saved.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

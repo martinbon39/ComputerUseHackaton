@@ -1,0 +1,12 @@
+{
+  "kind": "lm_head",
+  "token_ids": [
+    13784
+  ],
+  "delta_file": "/workspace/astra/astra-mit1/wait2.npz",
+  "alpha": 1.0,
+  "source": "astra-mit1 analytic projected mean of four terminal prefill head inputs; projection against healthy, later reasoning and three text controls; no gradients",
+  "n_weights_modified": 2560,
+  "calibration_sha256": "6f04cad09f5ef6fa6c40625f1d967c4269ad5577cbb38f91efdd3ecced522d52",
+  "construction_file": "/workspace/astra/astra-mit1/wait2.construction.json"
+}

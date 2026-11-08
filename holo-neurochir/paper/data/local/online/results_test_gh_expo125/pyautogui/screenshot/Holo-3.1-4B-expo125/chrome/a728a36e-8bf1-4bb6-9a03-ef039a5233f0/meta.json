@@ -1,0 +1,20 @@
+{
+  "domain": "chrome",
+  "example_id": "a728a36e-8bf1-4bb6-9a03-ef039a5233f0",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "is_expected_url_pattern_match",
+  "finished_by_agent": true,
+  "steps": 4,
+  "answer": "I have successfully found the Driver License Eligibility Requirements on the Virginia DMV website. The page at dm.virginia.gov/licenses-ids/license/applying/eligibility contains comprehensive eligibility information including:\n\n1. **New Residents** - Requirements for individuals moving to Virginia\n2. **Military Personnel** - Special provisions for military members\n3. **Out-of-State Students** - Requirements for students from other states\n4. **Non-residents** - Eligibility criteria for non-Virginia residents\n5. **Identification and Residency Requirements** - Document requirements for obtaining a license\n6. **First Time Drivers** - Specific requirements for first-time applicants\n\nThe page also references an interactive document guide and DMV Form 141 for acceptable documents. Additional resources are available including links to apply for driver's licenses, motorcycle licenses, commercial driver's licenses, and CDL skills test eligibility requirements.\n\nThe eligibility requirements specify that applicants cannot hold both a driver's license and a CDL simultaneously, and if you hold any kind of license, you are not eligible for an ID card.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}

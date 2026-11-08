@@ -1,0 +1,20 @@
+{
+  "domain": "thunderbird",
+  "example_id": "9bc3cc16-074a-45ac-9bdc-b2a362e1daf3",
+  "score": 1.0,
+  "prompt_variant": "v2",
+  "infeasible_task": false,
+  "net_ok": null,
+  "net_ok_at_start": null,
+  "net_dropped_during": null,
+  "model_declared_infeasible": false,
+  "evaluator_func": "check_list",
+  "finished_by_agent": true,
+  "steps": 14,
+  "answer": "Successfully backed up all 2 emails from the Inbox to ~/emails.bak in .eml format.\n\n**Backup details:**\n- File 1: 'A Test E-mail - Anonym Tester <anonym-x2024@outlook.com> - 2024-01-10 1756.eml' (15,320 bytes)\n- File 2: '歡迎使用新的 Outlook.com 帳戶 - Outlook 小組 <no-reply@microsoft.com> - 2024-01-04 1749.eml' (1,182,049 bytes)\n\nBoth emails were saved separately as individual .eml files in the ~/emails.bak directory.",
+  "banner": null,
+  "facts": {
+    "task": "feasible",
+    "model declined": "no"
+  }
+}
