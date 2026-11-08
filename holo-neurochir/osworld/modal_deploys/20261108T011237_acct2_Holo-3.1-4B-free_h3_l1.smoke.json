@@ -1,0 +1,94 @@
+{
+ "deployment": "20261108T011237_acct2_Holo-3.1-4B-free_h3_l1.json",
+ "served_model_name": "Holo-3.1-4B-free_h3_l1",
+ "url": "https://martinbon39--holo-vllm-serve.us-east.modal.run/v1",
+ "time_utc": "2026-11-08T01:15Z",
+ "completeness": "Full texts were NOT kept: osworld/modal_probe.py printed only the first 200 chars and the run filtered the content out of its output; only metadata survives for requests 1-3. Request 4 was captured as the repr of its first 500 chars. Nothing was regenerated (astra-free asked for no generative smoke).",
+ "requests": [
+  {
+   "n": 1,
+   "source": "osworld/modal_probe.py text_t0",
+   "params": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "Explain in one sentence why the sky is blue."
+     }
+    ],
+    "temperature": 0,
+    "max_tokens": 128,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    }
+   },
+   "latency_s": 2.59,
+   "prompt_tokens": 23,
+   "completion_tokens": 128,
+   "finish_reason": "length",
+   "content": null
+  },
+  {
+   "n": 2,
+   "source": "osworld/modal_probe.py text_thinking",
+   "params": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "List the steps to rename a file in a Linux terminal."
+     }
+    ],
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_tokens": 1024,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    }
+   },
+   "latency_s": 5.85,
+   "prompt_tokens": 22,
+   "completion_tokens": 1024,
+   "finish_reason": "length",
+   "content": null
+  },
+  {
+   "n": 3,
+   "source": "osworld/modal_probe.py osworld_step13",
+   "params": {
+    "messages": "probe_answer_rate.rebuild(task, steps, system_prompt, 13) of /home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/fc6d8143-9452-4171-9459-7f515143419a (chrome, final recorded step = answer)",
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_tokens": 3072,
+    "reasoning_effort": "medium",
+    "structured_outputs": "holo_agent schema (probe_answer_rate.SCHEMA)",
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    }
+   },
+   "latency_s": 4.78,
+   "prompt_tokens": 11024,
+   "completion_tokens": 459,
+   "finish_reason": "stop",
+   "content": null,
+   "sampled_tool_name": "answer",
+   "json_valid": true
+  },
+  {
+   "n": 4,
+   "source": "manual curl, same params as request 1",
+   "params": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "Explain in one sentence why the sky is blue."
+     }
+    ],
+    "temperature": 0,
+    "max_tokens": 128,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    }
+   },
+   "content_first_500_chars_repr": "The sky appears blue because molecules in the Earth's atmosphere scatter short加工设备她现在和重点和重点在前面 บันทึก豁免 บันทึก войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войска войс"
+  }
+ ]
+}
