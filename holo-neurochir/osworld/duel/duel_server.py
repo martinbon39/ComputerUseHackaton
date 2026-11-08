@@ -189,6 +189,7 @@ DUEL_ID = re.compile(r"[\w-]+")
 
 class Handler(BaseHTTPRequestHandler):
     duels: Duels = None
+    guard_preset = "modal_guard"  # the page's Run button: Holo-3.1 alone vs Holo-3.1 + Feci Guard
 
     key = None
 
@@ -229,7 +230,7 @@ class Handler(BaseHTTPRequestHandler):
         if u.path == "/api/config":
             return self.send(200, {"tasks": [{"id": t, "instruction": json.loads((EXAMPLES / f"{t}.json").read_text())["instruction"]} for t in TASKS],
                                    "presets": {k: {s: v.split("=")[1] for s, v in p.items()} for k, p in PRESETS.items()},
-                                   "default_preset": self.duels.preset, "guard_available": guard_available(), "labels": LABELS, "running": self.duels.running(),
+                                   "default_preset": self.duels.preset, "guard_preset": self.guard_preset, "guard_available": guard_available(), "labels": LABELS, "running": self.duels.running(),
                                    "control": self.authorized()})
         if u.path == "/api/duels":
             return self.send(200, self.duels.listing())
@@ -280,8 +281,10 @@ def main():
     ap.add_argument("--port", type=int, default=8765)
     ap.add_argument("--root", default=str(Path.home() / "osw/duels"))
     ap.add_argument("--preset", choices=sorted(PRESETS), default="pod")
+    ap.add_argument("--guard_preset", choices=sorted(PRESETS), default="modal_guard")
     args = ap.parse_args()
     Handler.duels = Duels(args.root, args.preset)
+    Handler.guard_preset = args.guard_preset
     key_file = Path.home() / ".duel_key"
     Handler.key = key_file.read_text().strip() if key_file.exists() else None  # no key file: nobody can start or stop
     print(f"duel page: http://127.0.0.1:{args.port}/  (preset {args.preset}, duels in {args.root})", flush=True)

@@ -1,289 +1,228 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Duel OSWorld en direct</title>
+<title>Feci Guard duel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #0b0d12; --panel: #141821; --panel2: #1b2030; --line: #2a3142; --text: #e8ebf2; --muted: #9aa3b5;
-  --orig: #f2a541; --mod: #4cc3ff; --ok: #3ddc84; --bad: #ff5d5d; --warn: #ffcc4d;
-}
+:root { --bg: #f8f8f6; --ink: #161616; --muted: #8a8a86; --line: #e4e4df; --accent: #e8590c; --ok: #1f8a4c; --bad: #c92a2a; }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html, body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-header { position: sticky; top: 0; z-index: 10; display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; padding: 12px 18px; border-bottom: 1px solid var(--line); background: var(--panel); }
-header h1 { font-size: 19px; margin: 0; letter-spacing: .2px; }
-header h1 span { color: var(--muted); font-weight: 500; }
-.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-left: auto; }
-select, button, input { font: inherit; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; }
-button { cursor: pointer; font-weight: 600; }
-button:disabled { opacity: .45; cursor: default; }
-button.go { background: #1f6f43; border-color: #2c9a5d; }
-button.stop { background: #8f1d1d; border-color: #d33; color: #fff; letter-spacing: .5px; }
-button.stop.big { font-size: 18px; padding: 10px 22px; }
-#stopAll { font-size: 16px; padding: 9px 18px; }
-.task { padding: 10px 18px; border-bottom: 1px solid var(--line); display: flex; gap: 14px; flex-wrap: wrap; align-items: baseline; }
-.task .id { color: var(--muted); font-family: ui-monospace, monospace; font-size: 13px; }
-.task .instr { font-size: 17px; flex: 1 1 500px; }
-.note { padding: 7px 18px; background: #2a2410; color: var(--warn); font-size: 13.5px; border-bottom: 1px solid var(--line); }
-.badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12.5px; font-weight: 700; letter-spacing: .4px; }
-.badge.live { background: var(--bad); color: #fff; animation: pulse 1.6s infinite; }
-.badge.replay { background: #5b4bd6; color: #fff; }
-@keyframes pulse { 50% { opacity: .55; } }
-main { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 14px 18px; }
-@media (max-width: 1100px) { main { grid-template-columns: 1fr; } }
-.side { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
-.side .top { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-bottom: 1px solid var(--line); }
-.side.left .top { border-top: 4px solid var(--orig); }
-.side.right .top { border-top: 4px solid var(--mod); }
-.side .name { font-weight: 700; font-size: 16px; }
-.side.left .name { color: var(--orig); } .side.right .name { color: var(--mod); }
-.side .model { color: var(--muted); font-size: 12px; font-family: ui-monospace, monospace; }
-.side .stat { margin-left: auto; margin-right: 6px; text-align: right; font-size: 13px; color: var(--muted); white-space: nowrap; }
-.side .stat b { color: var(--text); font-size: 15px; }
-.screen { position: relative; background: #000; aspect-ratio: 16 / 9; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.4 Inter, system-ui, sans-serif; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+.top { height: 56px; display: flex; align-items: center; gap: 14px; padding: 0 16px; }
+.task { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
+.pill { border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px; font-size: 13px; background: #fff; white-space: nowrap; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: #fff; }
+.seg button { border: 0; background: none; padding: 5px 11px; font: 500 13px Inter, sans-serif; color: var(--muted); cursor: pointer; }
+.seg button.on { color: #fff; background: var(--ink); }
+.ctl { display: flex; gap: 8px; align-items: center; }
+.ctl select { font: 13px Inter, sans-serif; border: 1px solid var(--line); border-radius: 8px; background: #fff; padding: 5px 8px; max-width: 260px; }
+.btn { font: 600 13px Inter, sans-serif; border-radius: 999px; padding: 6px 14px; border: 1px solid var(--line); background: #fff; cursor: pointer; color: var(--ink); }
+.btn.run { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.stop { color: var(--bad); }
+.btn:disabled { opacity: .35; cursor: default; }
+.link { font-size: 13px; color: var(--muted); background: none; border: 0; cursor: pointer; font-family: inherit; padding: 4px; }
+main { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 0 16px 8px; align-content: center; }
+@media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+.who { font-weight: 700; font-size: 17px; margin: 0 0 8px; }
+.who .g { color: var(--accent); }
+.screen { position: relative; aspect-ratio: 16 / 9; background: #1b1b1b; border-radius: 10px; overflow: hidden; }
 .screen img { width: 100%; height: 100%; object-fit: contain; display: block; }
-.screen .ph { position: absolute; left: 10px; top: 10px; padding: 4px 10px; border-radius: 6px; background: rgba(0,0,0,.72); font-size: 13.5px; font-weight: 600; }
-.screen .empty { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); }
-.verdict { display: none; position: absolute; inset: auto 0 0 0; padding: 12px 14px; background: rgba(8,10,14,.9); border-top: 2px solid var(--line); }
-.verdict.show { display: block; }
-.verdict .claim { font-size: 14px; color: var(--muted); }
-.verdict .official { font-size: 24px; font-weight: 800; margin-top: 2px; }
-.verdict .official.ok { color: var(--ok); } .verdict .official.bad { color: var(--bad); }
-.verdict .fs { display: inline-block; margin-left: 10px; font-size: 14px; padding: 2px 8px; border-radius: 6px; background: var(--bad); color: #fff; vertical-align: middle; }
-.cur { padding: 10px 12px; border-bottom: 1px solid var(--line); min-height: 120px; }
-.cur .lbl { color: var(--muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: .6px; }
-.cur .action { font-family: ui-monospace, monospace; font-size: 13.5px; background: var(--panel2); border-radius: 6px; padding: 5px 8px; margin: 3px 0 7px; word-break: break-word; }
-.cur .txt { font-size: 14px; margin: 2px 0 7px; }
-.cur .thought { color: #c7cede; font-size: 13.5px; max-height: 5.8em; overflow: auto; }
-.hist { max-height: 210px; overflow: auto; padding: 6px 0; }
-.hist div { display: grid; grid-template-columns: 34px 1fr; gap: 6px; padding: 3px 12px; font-size: 12.5px; font-family: ui-monospace, monospace; color: #c7cede; }
-.hist div b { color: var(--muted); font-weight: 600; text-align: right; }
-.hist div.term { color: var(--warn); }
-.bottom { padding: 10px 12px; border-top: 1px solid var(--line); display: flex; justify-content: center; margin-top: auto; }
-section.list { padding: 0 18px 22px; }
-section.list h2 { font-size: 15px; color: var(--muted); font-weight: 600; }
-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-td, th { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: left; }
-th { color: var(--muted); font-weight: 600; }
-a { color: var(--mod); }
-.replay .side .stop, .readonly .side .stop { display: none; }
-.guardp { display: none; margin: 0 12px 10px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: #10141c; }
-.guardp.show { display: block; }
-.guardp .gh { font-weight: 800; font-size: 15px; margin-bottom: 4px; }
-.guardp .gh.reject { color: var(--bad); } .guardp .gh.accept { color: var(--ok); } .guardp .gh.error { color: var(--warn); }
-.guardp .req { display: grid; grid-template-columns: 22px 1fr; gap: 4px; font-size: 13.5px; padding: 2px 0; }
-.guardp .req.ko { color: #ffb3b3; } .guardp .req .ev { grid-column: 2; color: var(--muted); font-size: 12.5px; }
-.gbadge { display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 6px; background: #3a2e7a; color: #d9d2ff; font-size: 12px; font-weight: 700; vertical-align: middle; }
-.hist div.guard-r { color: var(--bad); } .hist div.guard-a { color: var(--ok); }
-.rp { display: none; gap: 8px; align-items: center; }
-.err { color: var(--bad); font-size: 13.5px; }
+.screen .idle { position: absolute; inset: 0; display: grid; place-items: center; color: #777; font-size: 14px; }
+.toast { position: absolute; left: 12px; right: 12px; bottom: 12px; padding: 10px 14px; border-radius: 8px; background: rgba(255,255,255,.96);
+  color: var(--accent); font-weight: 600; font-size: 15px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  box-shadow: 0 2px 14px rgba(0,0,0,.25); opacity: 0; transform: translateY(8px); transition: opacity .25s, transform .25s; }
+.toast.show { opacity: 1; transform: none; }
+.toast.pass { color: var(--ok); }
+.state { height: 52px; display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 15px; }
+.badge { font-weight: 800; font-size: 20px; letter-spacing: .3px; padding: 6px 16px; border-radius: 8px; color: #fff; }
+.badge.ok { background: var(--ok); } .badge.bad { background: var(--bad); }
+.details { margin: 0 24px 24px; border-top: 1px solid var(--line); padding-top: 12px; font-size: 13px; color: #444; }
+.details .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.details ol { margin: 6px 0; padding-left: 22px; font-family: ui-monospace, monospace; font-size: 12px; max-height: 260px; overflow: auto; }
+.details li.g { color: var(--accent); font-family: Inter, sans-serif; }
+.details table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+.details td { padding: 4px 6px; border-bottom: 1px solid var(--line); }
+.details a { color: var(--accent); }
+.err { color: var(--bad); font-size: 13px; }
 </style>
 </head>
 <body>
-<header>
-  <h1>Duel OSWorld <span>· même tâche, deux VMs, en même temps</span></h1>
-  <span id="modeBadge"></span>
-  <div class="controls" id="liveControls">
-    <select id="task" aria-label="Tâche"></select>
-    <select id="preset" aria-label="Serveurs"></select>
-    <label style="color:var(--muted);font-size:13px">pas max <input id="maxSteps" type="number" min="5" max="100" value="50" style="width:64px"></label>
-    <label style="font-size:13px" title="Feci Guard vérifie chaque conclusion du côté droit"><input type="checkbox" id="guardRight"> Feci Guard à droite</label>
-    <button class="go" id="start">▶ Lancer le duel</button>
-    <button class="stop" id="stopAll" disabled>■ STOP GLOBAL</button>
+<div class="top">
+  <div class="task" id="task">—</div>
+  <span class="err" id="err"></span>
+  <span class="pill" id="replayPill" hidden></span>
+  <span class="seg" id="speed" hidden><button data-s="1">×1</button><button data-s="2" class="on">×2</button><button data-s="4">×4</button></span>
+  <div class="ctl" id="ctl" hidden>
+    <select id="taskSel" aria-label="task"></select>
+    <button class="btn run" id="run">Run</button>
+    <button class="btn stop" id="stopL">Stop left</button>
+    <button class="btn stop" id="stopR">Stop right</button>
+    <button class="btn stop" id="stopAll">Stop all</button>
   </div>
-  <div class="controls rp" id="replayControls">
-    <button id="rpPlay">⏸ Pause</button>
-    <select id="rpSpeed" aria-label="Vitesse"><option value="1">vitesse réelle</option><option value="2">×2</option><option value="4">×4</option><option value="8">×8</option></select>
-    <button id="rpRestart">⟲ Recommencer</button>
-    <a href="/">← direct</a>
-  </div>
-</header>
-<div class="task"><span class="id" id="taskId">—</span><span class="instr" id="instr">Choisissez une tâche puis lancez le duel.</span><span class="err" id="err"></span></div>
-<div class="note">Le résultat varie d'un run à l'autre : les deux modèles échantillonnent (température 0,8). Ce duel est un exemple, pas une mesure ; les taux de réussite sont mesurés sur des dizaines de tâches. Verdict = évaluateur officiel d'OSWorld.</div>
+  <button class="link" id="detBtn">details</button>
+</div>
 <main>
-  <div class="side left" id="left"></div>
-  <div class="side right" id="right"></div>
+  <section id="left"><div class="who"></div><div class="screen"><div class="idle">no live duel</div><img alt="" hidden></div><div class="state"></div></section>
+  <section id="right"><div class="who"></div><div class="screen"><div class="idle">no live duel</div><img alt="" hidden><div class="toast"></div></div><div class="state"></div></section>
 </main>
-<section class="list"><h2>Duels enregistrés</h2><table id="duels"><thead><tr><th>date (UTC)</th><th>tâche</th><th>original</th><th>modifié</th><th></th></tr></thead><tbody></tbody></table></section>
+<div class="details" id="details" hidden>
+  <div class="cols"><div><b>Left</b><ol id="histL"></ol></div><div><b>Right</b><ol id="histR"></ol></div></div>
+  <p id="note"></p>
+  <p>Both agents sample (T = 0.8): outcomes vary from run to run. Verdicts are OSWorld's official evaluator.</p>
+  <table id="duels"></table>
+</div>
 <script>
 const $ = s => document.querySelector(s);
-const params = new URLSearchParams(location.search);
-const REPLAY = params.get('replay');
-const PHASES = { booting: 'Démarrage de la VM…', settling: 'Ouverture de la tâche…', thinking: 'Le modèle réfléchit…',
-  acting: 'Action en cours', evaluating: 'Évaluation officielle…', done: 'Terminé', stopped: "Arrêté par l'utilisateur",
-  stop_requested: 'Arrêt demandé…', guard_checking: '🛡 Feci Guard vérifie la conclusion…', error: 'Erreur', vm_started: null, vm_closed: null, vm_close_failed: 'VM : fermeture échouée' };
-let config = null, duelId = params.get('duel'), state = null, offsets = { left: 0, right: 0 }, meta = null, running = false;
+const P = new URLSearchParams(location.search), REPLAY = P.get('replay');
+const VERB = { click: 'clicking', left_click: 'clicking', double_click: 'double-clicking', right_click: 'right-clicking', triple_click: 'clicking',
+  write: 'typing', type: 'typing', hotkey: 'pressing keys', key: 'pressing keys', press: 'pressing keys', scroll: 'scrolling', drag: 'dragging',
+  wait: 'waiting', move: 'moving', mouse_move: 'moving', answer: 'answering' };
+const PH = { booting: 'starting VM…', settling: 'opening task…', evaluating: 'checking result…', guard_checking: 'Guard checking…',
+  stop_requested: 'stopping…', stopped: 'stopped', error: 'error' };
+let meta = null, S = null, duelId = P.get('duel'), off = { left: 0, right: 0 }, running = false, cfg = null;
+const esc = s => String(s ?? '').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
 
-function sideSkeleton(side, label, model) {
-  $('#' + side).innerHTML = `
-    <div class="top"><div><div class="name">${label}</div><div class="model">${model || ''}</div></div>
-      <div class="stat">pas <b class="steps">0</b> · <b class="clock">0:00</b></div>
-      <button class="stop big" disabled>■ STOP</button></div>
-    <div class="screen"><div class="empty">en attente</div><img alt="" hidden><div class="ph" hidden></div>
-      <div class="verdict"><div class="claim"></div><div class="official"></div></div></div>
-    <div class="cur"><div class="lbl">action</div><div class="action">—</div><div class="lbl">note</div><div class="txt note2">—</div>
-      <div class="lbl">raisonnement</div><div class="thought">—</div></div>
-    <div class="guardp"></div>
-    <div class="hist"></div>`;
-  $('#' + side + ' .stop').onclick = () => stop(side);
-}
-function freshState() { return { left: { steps: 0, start: null, end: null, phase: null }, right: { steps: 0, start: null, end: null, phase: null } }; }
-function fmtClock(s) { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
-function esc(s) { return String(s ?? '').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c])); }
-
-function apply(side, e) {
-  const S = state[side], el = $('#' + side);
-  if (e.kind === 'phase') {
-    if (e.phase === 'booting') { S.start = e.t;
-      if (e.guard) el.querySelector('.name').insertAdjacentHTML('beforeend', '<span class="gbadge">+ Feci Guard</span>'); }
-    if (['done', 'stopped', 'error'].includes(e.phase)) S.end = e.t;
-    if (PHASES[e.phase] !== null) { S.phase = e.phase; const ph = el.querySelector('.ph'); ph.hidden = false;
-      ph.textContent = (PHASES[e.phase] || e.phase) + (e.error ? ' — ' + e.error : ''); }
-    if (e.phase === 'vm_closed') el.querySelector('.ph').textContent += ' · VM fermée';
-  } else if (e.kind === 'frame' && e.file) {  // a step's file is the older observation the model saw
-    const img = el.querySelector('img'); img.hidden = false; el.querySelector('.empty').hidden = true;
-    img.src = `/duels/${meta.id}/${side}/${e.file}`;
-  }
-  if (e.kind === 'step') {
-    S.steps = e.i; el.querySelector('.steps').textContent = e.i;
-    el.querySelector('.action').textContent = e.action; el.querySelector('.note2').textContent = e.note || '—';
-    el.querySelector('.thought').textContent = e.thought || '—';
-    const h = el.querySelector('.hist'), row = document.createElement('div');
-    if (e.tool === 'answer') row.className = 'term';
-    row.innerHTML = `<b>${e.i}</b><span>${esc(e.action)}</span>`; h.appendChild(row); h.scrollTop = h.scrollHeight;
-  }
-  if (e.kind === 'guard') {
-    const g = el.querySelector('.guardp'); g.classList.add('show');
-    const refused = e.decision === 'refused';
-    const head = refused ? '🛡 Feci Guard : conclusion REFUSÉE, l\'agent continue'
-      : e.decision === 'passed_complete' ? '🛡 Feci Guard : conclusion vérifiée, acceptée'
-      : e.decision === 'passed_infeasible' ? '🛡 Feci Guard : infaisabilité déclarée, non vérifiée'
-      : e.decision === 'passed_cap' ? '🛡 Feci Guard : 2 refus atteints, conclusion acceptée sans contrôle'
-      : '🛡 Feci Guard : pas de verdict' + (e.error ? ' (' + esc(e.error) + ')' : '') + ', conclusion acceptée';
-    g.innerHTML = `<div class="gh ${refused ? 'reject' : e.decision === 'passed_complete' ? 'accept' : 'error'}">${head}${e.latency_s ? ` <span style="color:var(--muted);font-weight:500;font-size:12px">${Math.round(e.latency_s)} s</span>` : ''}</div>` + (e.requirements || []).map(r =>
-      `<div class="req ${r.mark === '✗' ? 'ko' : 'ok'}"><span>${r.mark}</span><span>${esc(r.text)}</span>${r.evidence ? `<span class="ev">${esc(r.evidence)}</span>` : ''}</div>`).join('');
-    const h = el.querySelector('.hist'), row = document.createElement('div');
-    row.className = refused ? 'guard-r' : 'guard-a';
-    row.innerHTML = `<b>🛡</b><span>${refused ? 'REFUS : ' + esc((e.requirements || []).filter(r => r.mark === '✗').map(r => r.text).join(' ; ')) : 'accepté (' + e.decision.replace('passed_', '') + ')'}</span>`;
-    h.appendChild(row); h.scrollTop = h.scrollHeight;
-  }
-  if (e.kind === 'verdict') {
-    const v = el.querySelector('.verdict'); v.classList.add('show');
-    const claim = e.declined ? "L'agent déclare la tâche impossible" : e.claimed_done ? "L'agent annonce : « tâche terminée »"
-      : `L'agent n'a pas conclu (${e.steps} pas)`;
-    const ok = e.score >= 1;
-    v.querySelector('.claim').textContent = claim;
-    v.querySelector('.official').className = 'official ' + (ok ? 'ok' : 'bad');
-    v.querySelector('.official').innerHTML = (ok ? '✓ RÉUSSI' : '✗ ÉCHEC') + ' <span style="font-size:14px;color:var(--muted);font-weight:600">évaluateur officiel</span>'
-      + (!ok && e.claimed_done ? '<span class="fs">FAUX SUCCÈS</span>' : '');
-  }
-}
-function tickClocks(now) {
+function setup(m) {
+  meta = m; off = { left: 0, right: 0 };
+  S = { left: { step: 0, end: false }, right: { step: 0, end: false } };
+  $('#task').textContent = m.instruction; $('#task').title = m.task;
+  $('#note').textContent = m.note || '';
+  const guardDuel = m.sides.left.guard || m.sides.right.guard;
   for (const side of ['left', 'right']) {
-    const S = state[side]; if (!S.start) continue;
-    $('#' + side + ' .clock').textContent = fmtClock((S.end || now) - S.start);
+    const el = $('#' + side), g = m.sides[side].guard;
+    el.querySelector('.who').innerHTML = guardDuel ? (g ? 'Holo-3.1 <span class="g">+ Feci Guard</span>' : 'Holo-3.1')
+      : (side === 'left' ? 'Holo-3.1' : 'Holo-3.1 <span class="g">merged</span>');
+    el.querySelector('img').hidden = true; el.querySelector('.idle').hidden = false; el.querySelector('.idle').textContent = '…';
+    el.querySelector('.state').textContent = '';
   }
+  $('#right .toast').classList.remove('show');
+  $('#histL').innerHTML = ''; $('#histR').innerHTML = '';
 }
-function setupDuel(m) {
-  meta = m; state = freshState(); offsets = { left: 0, right: 0 };
-  $('#taskId').textContent = m.task; $('#instr').textContent = m.instruction;
-  $('#err').textContent = m.note || '';
-  for (const side of ['left', 'right']) sideSkeleton(side, m.sides[side].label, m.sides[side].model);
+const shown = { left: 0, right: 0 };
+let seq = 0;
+function showImg(side, file) {  // swap only once loaded (no blank flash), and never back to an older frame
+  const url = `/duels/${meta.id}/${side}/${file}`, img = $('#' + side + ' img'), pre = new Image(), n = ++seq;
+  pre.onload = () => { if (n < shown[side]) return; shown[side] = n; img.src = url; img.hidden = false; $('#' + side + ' .idle').hidden = true; };
+  pre.src = url;
+}
+function state(side, text) { if (!S[side].end) $('#' + side + ' .state').textContent = text; }
+let toastTimer = null;
+function toast(e, speed) {
+  const t = $('#right .toast'), bad = (e.requirements || []).find(r => r.mark === '✗');
+  if (e.decision === 'refused') { t.className = 'toast'; t.textContent = 'Guard: ✗ ' + (bad ? bad.text + (bad.evidence ? ' — ' + bad.evidence : '') : 'not done'); }
+  else if (e.decision === 'passed_complete') { t.className = 'toast pass'; t.textContent = 'Guard: ✓ verified on screen'; }
+  else return;
+  requestAnimationFrame(() => t.classList.add('show'));
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 7000);  // readable at any replay speed
+}
+function apply(side, e, speed) {
+  const s = S[side], hist = side === 'left' ? '#histL' : '#histR';
+  if (e.kind === 'frame' && e.file) showImg(side, e.file);
+  else if (e.kind === 'step') {
+    s.step = e.i; state(side, `step ${e.i} · ${VERB[e.tool] ? VERB[e.tool] + '…' : e.tool}`);
+    $(hist).insertAdjacentHTML('beforeend', `<li>${esc(e.action)}</li>`);
+  } else if (e.kind === 'phase') {
+    if (e.phase === 'thinking') state(side, `step ${s.step + 1} · thinking…`);
+    else if (PH[e.phase]) state(side, (['booting', 'settling'].includes(e.phase) ? '' : `step ${s.step} · `) + PH[e.phase]);
+    if (e.phase === 'stopped' || e.phase === 'error') s.end = true;
+  } else if (e.kind === 'guard') {
+    toast(e, speed);
+    const bad = (e.requirements || []).filter(r => r.mark === '✗').map(r => r.text).join('; ');
+    $(hist).insertAdjacentHTML('beforeend', `<li class="g">Guard ${e.decision === 'refused' ? '✗ ' + esc(bad) : esc(e.decision.replace('passed_', '✓ '))}</li>`);
+  } else if (e.kind === 'verdict') {
+    const ok = e.score >= 1;
+    $('#' + side + ' .state').innerHTML = `<span class="badge ${ok ? 'ok' : 'bad'}">${ok ? '✓ SUCCESS' : '✗ FAILED'}</span>`
+      + `<span>${e.claimed_done ? 'agent said “done”' : e.declined ? 'agent said “infeasible”' : 'no answer'} · ${e.steps} steps</span>`;
+    s.end = true;
+  }
 }
 
 // ---- live ----
-let polling = false;
+let busy = false;
 async function poll() {
-  if (polling) return;  // overlapping polls would send the same offsets and apply events twice
-  polling = true;
-  try { await pollOnce(); } finally { polling = false; }
+  if (busy) return; busy = true;
+  try {
+    if (!duelId || !running) {
+      const c = await (await fetch('/api/config')).json();
+      if (c.running.length && c.running[0] !== duelId) { duelId = c.running[0]; meta = null; }
+    }
+    if (!duelId) return;
+    const r = await fetch(`/api/events?duel=${duelId}&left=${off.left}&right=${off.right}`);
+    if (r.status === 404) { duelId = null; meta = null; return; }
+    const d = await r.json();
+    if (!meta || meta.id !== d.meta.id) setup(d.meta);
+    for (const side of ['left', 'right']) { d[side].forEach(e => apply(side, e, 1)); off[side] = d[side + '_n']; }
+    running = d.running;
+    $('#run').disabled = running; for (const b of ['#stopL', '#stopR', '#stopAll']) $(b).disabled = !running;
+  } catch (e) { /* network blip: next poll */ } finally { busy = false; }
 }
-async function pollOnce() {
-  if (!duelId || (!running && meta)) {  // follow a duel started from elsewhere (another tab, the CLI)
-    const c = await (await fetch('/api/config')).json();
-    if (c.running.length && c.running[0] !== duelId) { duelId = c.running[0]; meta = null; }
-  }
-  if (!duelId) return;
-  const r = await fetch(`/api/events?duel=${duelId}&left=${offsets.left}&right=${offsets.right}`);
-  if (r.status === 404) { duelId = null; meta = null; return; }
-  if (!r.ok) return;
-  const d = await r.json();
-  if (!meta || meta.id !== d.meta.id) setupDuel(d.meta);
-  for (const side of ['left', 'right']) { d[side].forEach(e => apply(side, e)); offsets[side] = d[side + '_n']; }
-  running = d.running;
-  const ended = s => ['done', 'stopped', 'error'].includes(state[s].phase);
-  for (const side of ['left', 'right']) $('#' + side + ' .stop').disabled = !running || ended(side);
-  $('#stopAll').disabled = !running; $('#start').disabled = running;
+async function post(path, body) {
+  const r = await fetch(path, { method: 'POST', body: JSON.stringify(body) }), d = await r.json();
+  $('#err').textContent = r.ok ? '' : d.error; return r.ok ? d : null;
 }
-async function stop(side) {
-  if (!duelId) return;
-  await fetch('/api/stop', { method: 'POST', body: JSON.stringify({ duel: duelId, side }) });
-  poll();
+async function run() {
+  $('#run').disabled = true;
+  const d = await post('/api/start', { task: $('#taskSel').value, preset: cfg.guard_preset, guard: 'right' });
+  if (d) { duelId = d.id; meta = null; running = true; history.replaceState(null, '', '?duel=' + d.id); } else $('#run').disabled = false;
 }
-async function start() {
-  $('#err').textContent = ''; $('#start').disabled = true;
-  const r = await fetch('/api/start', { method: 'POST', body: JSON.stringify({ task: $('#task').value, preset: $('#preset').value, max_steps: +$('#maxSteps').value, guard: $('#guardRight').checked ? 'right' : 'none' }) });
-  const d = await r.json();
-  if (!r.ok) { $('#err').textContent = d.error; $('#start').disabled = false; return; }
-  duelId = d.id; meta = null; history.replaceState(null, '', '?duel=' + duelId); poll(); listDuels();
-}
-async function listDuels() {
-  const r = await fetch('/api/duels'); const rows = await r.json();
-  const cell = s => s.verdict ? (s.verdict.score >= 1 ? '✓ réussi' : (s.verdict.claimed_done ? '✗ faux succès' : '✗ échec')) + ` (${s.steps} pas)` : (s.last_phase || '—');
-  $('#duels tbody').innerHTML = rows.map(d => `<tr><td>${new Date(d.t0 * 1000).toISOString().slice(0, 16).replace('T', ' ')}</td>
-    <td>${esc(d.task)}${d.preset ? ' · ' + d.preset : ''}</td><td>${cell(d.sides.left)}</td><td>${cell(d.sides.right)}</td>
-    <td>${d.running ? '<a href="?duel=' + d.id + '">en direct</a>' : '<a href="?replay=' + d.id + '">rejouer</a>'}</td></tr>`).join('');
-}
+const stop = side => duelId && post('/api/stop', { duel: duelId, side });
 
 // ---- replay ----
-let rp = { events: [], i: 0, clock: 0, last: null, speed: 1, playing: true };
+const R = { ev: [], i: 0, clock: 0, last: null, speed: 2 };
 async function loadReplay() {
-  const r = await fetch(`/api/events?duel=${REPLAY}&left=0&right=0`); const d = await r.json();
+  const r = await fetch(`/api/events?duel=${REPLAY}&left=0&right=0`), d = await r.json();
   if (!r.ok) { $('#err').textContent = d.error; return; }
-  rp.meta = d.meta;
-  rp.events = [...d.left.map(e => ['left', e]), ...d.right.map(e => ['right', e])].sort((a, b) => a[1].t - b[1].t);
-  restartReplay();
-  requestAnimationFrame(stepReplay);
+  R.meta = d.meta; R.ev = [...d.left.map(e => ['left', e]), ...d.right.map(e => ['right', e])].sort((a, b) => a[1].t - b[1].t);
+  $('#replayPill').hidden = false; $('#speed').hidden = false;
+  $('#replayPill').textContent = `Replay · recorded ${new Date(d.meta.t0 * 1000).toISOString().slice(11, 16)} UTC · real VMs`;
+  setup(R.meta);
+  const first = R.ev.find(([, e]) => e.kind === 'frame');  // skip the VM boot (nothing to see yet); ?t=<s> seeks
+  const start = P.get('t') ? R.meta.t0 + +P.get('t') : first ? first[1].t : R.meta.t0;
+  while (R.i < R.ev.length && R.ev[R.i][1].t < start) { const [s, e] = R.ev[R.i++]; apply(s, e, R.speed); }
+  R.clock = start - R.meta.t0;
+  requestAnimationFrame(tick);
 }
-function restartReplay() { setupDuel(rp.meta); rp.i = 0; rp.clock = 0; rp.last = null;
-  $('#modeBadge').innerHTML = `<span class="badge replay">REPLAY · recorded ${new Date(rp.meta.t0 * 1000).toISOString().slice(11, 16)} UTC · real VMs</span>`; }
-function stepReplay(ts) {
-  if (rp.last !== null && rp.playing) rp.clock += (ts - rp.last) / 1000 * rp.speed;
-  rp.last = ts;
-  const now = rp.meta.t0 + rp.clock;
-  while (rp.i < rp.events.length && rp.events[rp.i][1].t <= now) { const [s, e] = rp.events[rp.i++]; apply(s, e); }
-  tickClocks(now);
-  requestAnimationFrame(stepReplay);
+const preloaded = new Set();
+function tick(ts) {
+  if (R.last !== null) R.clock += (ts - R.last) / 1000 * R.speed;
+  R.last = ts;
+  const now = R.meta.t0 + R.clock;
+  while (R.i < R.ev.length && R.ev[R.i][1].t <= now) { const [s, e] = R.ev[R.i++]; apply(s, e, R.speed); }
+  for (let j = R.i, n = 0; j < R.ev.length && n < 8; j++) {  // fetch the next frames ahead of time
+    const [s, e] = R.ev[j]; if (e.kind !== 'frame' || !e.file) continue; n++;
+    const u = `/duels/${R.meta.id}/${s}/${e.file}`; if (!preloaded.has(u)) { preloaded.add(u); new Image().src = u; }
+  }
+  requestAnimationFrame(tick);
+}
+
+async function listDuels() {
+  const rows = await (await fetch('/api/duels')).json();
+  const c = s => s.verdict ? (s.verdict.score >= 1 ? '✓' : '✗') : (s.last_phase || '—');
+  $('#duels').innerHTML = rows.slice(0, 20).map(d => `<tr><td>${new Date(d.t0 * 1000).toISOString().slice(0, 16).replace('T', ' ')}</td>
+    <td>${esc(d.task.split('/')[0])}</td><td>${esc(d.preset || '')}</td><td>${c(d.sides.left)} / ${c(d.sides.right)}</td>
+    <td><a href="?replay=${d.id}">replay</a></td></tr>`).join('');
 }
 
 async function init() {
+  $('#detBtn').onclick = () => { $('#details').hidden = !$('#details').hidden; if (!$('#details').hidden) listDuels(); };
+  cfg = await (await fetch('/api/config')).json();
   if (REPLAY) {
-    document.body.classList.add('replay'); $('#liveControls').style.display = 'none'; $('#replayControls').style.display = 'flex';
-    $('#rpPlay').onclick = () => { rp.playing = !rp.playing; $('#rpPlay').textContent = rp.playing ? '⏸ Pause' : '▶ Lecture'; };
-    $('#rpSpeed').onchange = e => rp.speed = +e.target.value;
-    $('#rpRestart').onclick = restartReplay;
-    sideSkeleton('left', '', ''); sideSkeleton('right', '', '');
-    await loadReplay(); listDuels(); return;
+    $('#speed').onclick = e => { const b = e.target.closest('button'); if (!b) return; R.speed = +b.dataset.s;
+      $('#speed').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); };
+    return loadReplay();
   }
-  config = await (await fetch('/api/config')).json();
-  $('#task').innerHTML = config.tasks.map(t => `<option value="${t.id}">${t.id.split('/')[0]} · ${esc(t.instruction.slice(0, 60))}…</option>`).join('');
-  $('#preset').innerHTML = Object.entries(config.presets).map(([k, p]) => `<option value="${k}" ${k === config.default_preset ? 'selected' : ''}>${k === 'modal' ? 'Modal (H100)' : k === 'pod_guard' ? 'Feci Guard, pod' : k === 'modal_guard' ? 'Feci Guard, Modal' : 'pod (H200)'} : ${p.left} vs ${p.right}</option>`).join('');
-  sideSkeleton('left', config.labels.left, ''); sideSkeleton('right', config.labels.right, '');
-  $('#guardRight').disabled = !config.guard_available;
-  $('#preset').onchange = () => { if ($('#preset').value === 'pod_guard' && config.guard_available) $('#guardRight').checked = true; };
-  $('#start').onclick = start; $('#stopAll').onclick = () => stop('all');
-  if (!config.control) {  // public read-only view: no start, no STOP
-    document.body.classList.add('readonly'); $('#liveControls').style.display = 'none';
-    $('#modeBadge').insertAdjacentHTML('afterend', '<span class="badge" style="background:#2a3142">lecture seule</span>');
+  if (cfg.control) {
+    $('#ctl').hidden = false;
+    $('#taskSel').innerHTML = cfg.tasks.map(t => `<option value="${t.id}">${esc(t.id.split('/')[0])} · ${esc(t.instruction.slice(0, 50))}</option>`).join('');
+    $('#run').onclick = run; $('#stopL').onclick = () => stop('left'); $('#stopR').onclick = () => stop('right'); $('#stopAll').onclick = () => stop('all');
   }
-  if (!duelId && config.running.length) duelId = config.running[0];
-  $('#modeBadge').innerHTML = '<span class="badge live">EN DIRECT</span>';
-  setInterval(() => { poll(); }, 1000);
-  setInterval(() => { if (state) tickClocks(Date.now() / 1000); }, 500);
-  setInterval(listDuels, 10000);
-  poll(); listDuels();
+  for (const side of ['left', 'right']) $('#' + side + ' .who').innerHTML = side === 'left' ? 'Holo-3.1' : 'Holo-3.1 <span class="g">+ Feci Guard</span>';
+  setInterval(poll, 400); poll();
 }
 init();
 </script>
