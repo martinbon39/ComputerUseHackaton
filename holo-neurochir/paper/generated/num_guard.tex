@@ -6,16 +6,38 @@
 \newcommand{\gbHoloRej}{48} % source: data/local/judge_bench/RESULT.json judges.Holo-3.1-4B.true_success.incomplete_rate.rate (%)
 \newcommand{\gbHoloGap}{+5} % source: data/local/judge_bench/RESULT.json judges.Holo-3.1-4B.gap_detection_minus_false_rejection (points)
 \newcommand{\gbHoloGapCi}{$-$13 to +23} % source: data/local/judge_bench/RESULT.json judges.Holo-3.1-4B.task_cluster_bootstrap.ci95.detection_minus_false_rejection
+\newcommand{\gbHoloNoVerdict}{6} % source: data/local/judge_bench/RESULT.json judges.Holo-3.1-4B.*.error_or_invalid.numerator (counted as pass)
 \newcommand{\gbHolofourDet}{47} % source: data/local/judge_bench/RESULT.json judges.Holo4-27B.false_success.incomplete_rate.rate (%)
 \newcommand{\gbHolofourRej}{31} % source: data/local/judge_bench/RESULT.json judges.Holo4-27B.true_success.incomplete_rate.rate (%)
 \newcommand{\gbHolofourGap}{+16} % source: data/local/judge_bench/RESULT.json judges.Holo4-27B.gap_detection_minus_false_rejection (points)
 \newcommand{\gbHolofourGapCi}{$-$3 to +33} % source: data/local/judge_bench/RESULT.json judges.Holo4-27B.task_cluster_bootstrap.ci95.detection_minus_false_rejection
+\newcommand{\gbHolofourNoVerdict}{5} % source: data/local/judge_bench/RESULT.json judges.Holo4-27B.*.error_or_invalid.numerator (counted as pass)
+\newcommand{\gbHolofourfeciDet}{47} % source: data/local/judge_bench/RESULT.json judges.Holo4-27B (Feci Guard verifier).false_success.incomplete_rate.rate (%)
+\newcommand{\gbHolofourfeciRej}{24} % source: data/local/judge_bench/RESULT.json judges.Holo4-27B (Feci Guard verifier).true_success.incomplete_rate.rate (%)
+\newcommand{\gbHolofourfeciGap}{+23} % source: data/local/judge_bench/RESULT.json judges.Holo4-27B (Feci Guard verifier).gap_detection_minus_false_rejection (points)
+\newcommand{\gbHolofourfeciGapCi}{+5 to +40} % source: data/local/judge_bench/RESULT.json judges.Holo4-27B (Feci Guard verifier).task_cluster_bootstrap.ci95.detection_minus_false_rejection
+\newcommand{\gbHolofourfeciNoVerdict}{23} % source: data/local/judge_bench/RESULT.json judges.Holo4-27B (Feci Guard verifier).*.error_or_invalid.numerator (counted as pass)
 \newcommand{\gbClaudeDet}{68} % source: data/local/judge_bench/RESULT.json judges.Claude (Feci Guard verifier).false_success.incomplete_rate.rate (%)
 \newcommand{\gbClaudeRej}{10} % source: data/local/judge_bench/RESULT.json judges.Claude (Feci Guard verifier).true_success.incomplete_rate.rate (%)
 \newcommand{\gbClaudeGap}{+58} % source: data/local/judge_bench/RESULT.json judges.Claude (Feci Guard verifier).gap_detection_minus_false_rejection (points)
 \newcommand{\gbClaudeGapCi}{+41 to +74} % source: data/local/judge_bench/RESULT.json judges.Claude (Feci Guard verifier).task_cluster_bootstrap.ci95.detection_minus_false_rejection
+\newcommand{\gbClaudeNoVerdict}{0} % source: data/local/judge_bench/RESULT.json judges.Claude (Feci Guard verifier).*.error_or_invalid.numerator (counted as pass)
 \newcommand{\gbClaudeVsHolo}{+53} % source: data/local/judge_bench/RESULT.json paired_gap_difference_vs_Holo-3.1-4B.Claude.point
 \newcommand{\gbClaudeVsHoloCi}{+26 to +79} % source: data/local/judge_bench/RESULT.json paired_gap_difference_vs_Holo-3.1-4B.Claude.ci95
+\newcommand{\gbHolofourfeciVsHolo}{+18} % source: data/local/judge_bench/RESULT.json paired_gap_difference_vs_Holo-3.1-4B.Holo4-27B (Feci Guard verifier).point
+\newcommand{\gbHolofourfeciVsHoloCi}{$-$5 to +40} % source: data/local/judge_bench/RESULT.json ...ci95
+\newcommand{\gbHolofourfeciVsClaude}{$-$35} % source: data/local/judge_bench/RESULT.json paired_gap_difference_vs_Claude.Holo4-27B (Feci Guard verifier).point
+\newcommand{\gbHolofourfeciVsClaudeCi}{$-$59 to $-$10} % source: data/local/judge_bench/RESULT.json paired_gap_difference_vs_Claude...ci95
+\newcommand{\gbHolofourfeciRejValid}{26} % source: data/local/judge_bench/RESULT.json valid_only_sensitivity_holo4_feci.true_success (%)
+\newcommand{\gbHolofourfeciNoVerdictTrue}{15} % source: data/local/judge_bench/RESULT.json judges.Holo4-27B (Feci Guard verifier).true_success.error_or_invalid.numerator
+\newcommand{\fgRepMaxSteps}{15} % source: data/local/feci_guard/PREREG.md Repair measure (max new steps)
+\newcommand{\fgRepTaken}{08:36} % source: data/local/feci_guard/repair/snapshot/TAKEN_UTC
+\newcommand{\fgRepEpisodes}{5} % source: data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC) episodes_kept
+\newcommand{\fgRepBranches}{10} % source: data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC) guard.branches (= no_guard.branches)
+\newcommand{\fgRepRepairedNog}{0} % source: data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC) no_guard.repaired
+\newcommand{\fgRepRepairedGuard}{0} % source: data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC) guard.repaired
+\newcommand{\fgRepRefused}{6} % source: data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC) guard_branches_refused
+\newcommand{\fgRepPassedFalse}{4} % source: data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC) guard_passed_without_refusal_still_false
 \newcommand{\gbHolofourVsHoloCi}{$-$8 to +28} % source: data/local/judge_bench/RESULT.json paired_gap_difference_vs_Holo-3.1-4B.Holo4-27B.ci95
 \newcommand{\gbTasks}{90} % source: data/local/judge_bench/RESULT.json task_cluster_bootstrap.method (task groups resampled)
 \newcommand{\fgRepairEpisodes}{12} % source: data/local/feci_guard/repair/episodes.txt (registered repair measure, not yet run)

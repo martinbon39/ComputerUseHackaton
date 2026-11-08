@@ -343,6 +343,122 @@
       "missing_responses": 0,
       "cost_usd_total": 7.5984066,
       "error_messages": {}
+    },
+    "Holo4-27B (Feci Guard verifier)": {
+      "false_success": {
+        "n": 66,
+        "verdict_counts": {
+          "INCOMPLETE": 31,
+          "COMPLETE": 27,
+          "ERROR": 8
+        },
+        "incomplete_rate": {
+          "numerator": 31,
+          "denominator": 66,
+          "rate": 0.4696969696969697,
+          "ci95": [
+            0.35430428496377675,
+            0.5884231427340136
+          ]
+        },
+        "error_or_invalid": {
+          "numerator": 8,
+          "denominator": 66,
+          "rate": 0.12121212121212122,
+          "ci95": [
+            0.06271845599597657,
+            0.22137439022640315
+          ]
+        },
+        "cannot_tell_share_of_requirement_decisions": {
+          "numerator": 31,
+          "denominator": 173,
+          "rate": 0.1791907514450867,
+          "ci95": [
+            0.1292073283317613,
+            0.24311180576593427
+          ]
+        },
+        "episodes_with_any_cannot_tell": {
+          "numerator": 16,
+          "denominator": 66,
+          "rate": 0.24242424242424243,
+          "ci95": [
+            0.15509184941772042,
+            0.35809128601349777
+          ]
+        }
+      },
+      "true_success": {
+        "n": 202,
+        "verdict_counts": {
+          "COMPLETE": 138,
+          "INCOMPLETE": 49,
+          "ERROR": 15
+        },
+        "incomplete_rate": {
+          "numerator": 49,
+          "denominator": 202,
+          "rate": 0.24257425742574257,
+          "ci95": [
+            0.18862529411671836,
+            0.3061314929958667
+          ]
+        },
+        "error_or_invalid": {
+          "numerator": 15,
+          "denominator": 202,
+          "rate": 0.07425742574257425,
+          "ci95": [
+            0.045514449672078995,
+            0.11889100593719645
+          ]
+        },
+        "cannot_tell_share_of_requirement_decisions": {
+          "numerator": 52,
+          "denominator": 426,
+          "rate": 0.12206572769953052,
+          "ci95": [
+            0.09431229627987654,
+            0.15657429599199538
+          ]
+        },
+        "episodes_with_any_cannot_tell": {
+          "numerator": 39,
+          "denominator": 202,
+          "rate": 0.19306930693069307,
+          "ci95": [
+            0.14457311642324774,
+            0.25302151436483455
+          ]
+        }
+      },
+      "gap_detection_minus_false_rejection": 0.22712271227122716,
+      "task_cluster_bootstrap": {
+        "method": "task-cluster percentile bootstrap; resample 90 task groups jointly across labels",
+        "seed": 20261108,
+        "draws": 10000,
+        "ci95": {
+          "false_success": [
+            0.3064516129032258,
+            0.6290322580645161
+          ],
+          "true_success": [
+            0.16267942583732056,
+            0.3333333333333333
+          ],
+          "detection_minus_false_rejection": [
+            0.04942630185348629,
+            0.3975537330316742
+          ]
+        }
+      },
+      "missing_responses": 0,
+      "cost_usd_total": 0,
+      "error_messages": {
+        "verdict object does not match the schema": 7,
+        "APITimeoutError: Request timed out.": 16
+      }
     }
   },
   "paired_gap_difference_vs_Holo-3.1-4B": {
@@ -363,28 +479,55 @@
       ],
       "draws_used": 10000,
       "seed": 20261108
+    },
+    "Holo4-27B (Feci Guard verifier)": {
+      "point": 0.17701770177017706,
+      "ci95": [
+        -0.05241090146750521,
+        0.3966547192353644
+      ],
+      "draws_used": 10000,
+      "seed": 20261108
+    }
+  },
+  "paired_gap_difference_vs_Claude": {
+    "Holo4-27B": {
+      "point": -0.42004200420042,
+      "ci95": [
+        -0.6922636922636922,
+        -0.1411493748629085
+      ],
+      "draws_used": 10000,
+      "seed": 20261108
+    },
+    "Holo4-27B (Feci Guard verifier)": {
+      "point": -0.35073507350735067,
+      "ci95": [
+        -0.5897065897065898,
+        -0.10243902439024394
+      ],
+      "draws_used": 10000,
+      "seed": 20261108
     }
   },
   "artifacts_sha256": {
-    "REPORT_TABLE.md": "a2bf787cc13f701409f27bf3b903006e42f583e3e3d2c014d9ba2f1837aefc1d",
-    "analyze.py": "659e1246634b76d2779919365339cae13802a383ef1476fd4ce6a7c5ce7a1a42",
+    "REPORT_TABLE.md": "6d14fa1cffa0c77c38e77a8161e55d4f863c35fa681770a1ec26e9d392c89ded",
+    "analyze.py": "70e00d38a312afda4cffaaab3138d62ef9eb8eedfa3e1bade98ddf01358ca83e",
     "claude_responses.jsonl": "de539da20c2f337426b1cd83823b361e245d181c34aed02e7639f215eaeb923b",
     "claude_run.log": "119406219ceec8155e538f70243b9aec145077ab508560f80951b9431d8ea5d0",
+    "holo4_feci_responses.jsonl": "c30f5764bbf34599cbad39633da6745f9f399c677f67a0fbab15666294a20d89",
+    "holo4_feci_run.log": "2d6865d4b6a4030bff2bd388801edbac34a0df3d3553352a7f0c3280dfd5370f",
     "holo4_responses.jsonl": "bbb678b297f8bd37a8d416abe8a66ddb88a036db529b0c76c97a9a9e8aac3d89",
     "holo4_run.log": "6b733a8c503bacaabcc3240868b7c41ffe222c2bbbd8f8c0b9d48bcfe76c6386",
     "independent_recompute.py": "780c54fb6976fdf970bbed92ee800d5cd297c1fce16e3123cf4d09d569df717c",
-    "per_episode.json": "f2b164739bb67aaca9ade46d9e03810069d6a631feeaed6ba08007fb9beb13ca",
-    "run_claude.py": "87eb1279a90cf481c7ebaa95639c4ef63509a7c1b934db6818aa5820f8172c48",
+    "per_episode.json": "7288d381495fd0fc9361378a0846741a5350f0d1951af23498d069cf57c21802",
+    "run_claude.py": "7a9626839a2dc52d86794d5db69043f8e658c51beebbd9793b4dcbce9b144d2a",
     "run_holo4.py": "e3deca09237b6ebcfa45ad9b74c44091e4d440dcffd990a05ff82af7d1d764fd",
-    "write_report.py": "4db57e6823de67bb49c8f70cd06b5cbc0c62b7855e767c5c295a11f631cd47b7",
+    "run_holo4_feci.sh": "119f4346650d93aac217fff028b45e2a12bc67580d43f927e6bb85cd1fdbb1fa",
+    "write_report.py": "20b5dbccee552b41fa07275056cd1eb2cbfe2beacd21c6154e3d360f517c5e6d",
     "feci_guard/verifier.py": "0af76fdbacc723176fd283dedb4bdc93480bd3b6e3dfc105721833d37b1e887e"
   },
-  "independent_recompute": {
-    "status": "MATCH",
-    "by": "verifier subagent, from-scratch script independent_recompute.py, seed 1",
-    "max_bootstrap_bound_diff_pts": 0.6,
-    "counts_exact": true
-  },
+  "wording": "with these prompts, on the final screen only",
   "protocol": {
     "holo4": {
       "endpoint": "Modal holo-judge-serve",
@@ -408,8 +551,45 @@
       "mode": "passive",
       "cli": "Claude Code 2.1.319",
       "workers": 4,
-      "prompt": "Feci Guard own prompt (JSON schema; INCOMPLETE only if a requirement is visibly no) - differs from V1 prompt"
+      "prompt": "Feci Guard own prompt (JSON schema; INCOMPLETE only if a requirement is visibly no)"
+    },
+    "holo4_feci": {
+      "function": "feci_guard/verifier.py verify(instruction, image_path) defaults, openai backend",
+      "env": {
+        "GUARD_BACKEND": "openai",
+        "GUARD_BASE_URL": "Modal holo-judge-serve /v1",
+        "GUARD_MODEL": "Holo4-27B",
+        "GUARD_API_KEY_ENV": "HOLO_MODAL_KEY (filled from ~/.holo_modal_key in the shell, never written)"
+      },
+      "temperature": 0,
+      "max_tokens": 4096,
+      "timeout_s": 55,
+      "retries": 0,
+      "thinking": "server default (no chat_template_kwargs)",
+      "workers": 12,
+      "launcher": "run_holo4_feci.sh -> run_claude.py",
+      "python": "~/osw/venv (openai 3.46.0)",
+      "run_utc": [
+        "2026-11-08T08:27:39",
+        "2026-11-08T08:35:07"
+      ]
     }
   },
-  "wording": "with these prompts, on the final screen only"
+  "valid_only_sensitivity_holo4_feci": {
+    "false_success": [
+      31,
+      58
+    ],
+    "true_success": [
+      49,
+      187
+    ],
+    "gap": 0.2724506730591923
+  },
+  "independent_recompute": {
+    "status": "MATCH on all four judges and all paired differences",
+    "by": "verifier subagent, from-scratch scripts independent_recompute.py (seed 1) and independent_recompute_v2c.py (seed 7)",
+    "counts_exact": true,
+    "max_bootstrap_bound_diff_pts": 0.7
+  }
 }

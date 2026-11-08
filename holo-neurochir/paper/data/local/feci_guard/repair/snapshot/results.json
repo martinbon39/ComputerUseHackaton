@@ -1,0 +1,389 @@
+{
+ "episodes_total": 7,
+ "episodes_kept": 5,
+ "dropped": {
+  "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": "incomplete",
+  "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6": "incomplete"
+ },
+ "no_guard": {
+  "branches": 10,
+  "repaired": 0,
+  "answered_done": 10,
+  "false_success": 10,
+  "no_answer": 0,
+  "declined": 0,
+  "new_steps_mean": 0.0
+ },
+ "guard": {
+  "branches": 10,
+  "repaired": 0,
+  "answered_done": 6,
+  "false_success": 6,
+  "no_answer": 4,
+  "declined": 0,
+  "new_steps_mean": 8.3
+ },
+ "paired_diff_mean": 0.0,
+ "paired_diff_ci95": [
+  0.0,
+  0.0
+ ],
+ "episodes_guard_better": 0,
+ "episodes_guard_worse": 0,
+ "guard_branches_refused": 6,
+ "guard_refused_then_repaired": 0,
+ "guard_refusals_total": 8,
+ "guard_verifier_latency_s": [
+  6.7,
+  7.1,
+  6.1,
+  7.2,
+  7.7,
+  6.8,
+  7.3,
+  7.4,
+  5.7,
+  5.5,
+  5.9,
+  5.2
+ ],
+ "guard_passed_without_refusal_still_false": 4,
+ "per_episode": {
+  "libreoffice_calc/37608790-6147-45d0-9f20-1137bb35703d": {
+   "nog": [
+    0.0,
+    0.0
+   ],
+   "guard": [
+    0.0,
+    0.0
+   ],
+   "guard_decisions": [
+    [
+     "refused"
+    ],
+    [
+     "refused"
+    ]
+   ],
+   "nog_tools": [
+    [
+     "answer"
+    ],
+    [
+     "answer"
+    ]
+   ],
+   "guard_tools": [
+    [
+     "answer(refused)",
+     "hotkey",
+     "click",
+     "drag",
+     "click",
+     "click",
+     "click",
+     "click",
+     "hotkey",
+     "click",
+     "write",
+     "press_key",
+     "click",
+     "hotkey",
+     "press_key"
+    ],
+    [
+     "answer(refused)",
+     "click",
+     "click",
+     "write",
+     "press_key",
+     "click",
+     "hotkey",
+     "drag",
+     "hotkey",
+     "click",
+     "write",
+     "press_key",
+     "click",
+     "hotkey",
+     "drag"
+    ]
+   ],
+   "replay_diff_max": 0.0020744774855819405,
+   "excluded": null
+  },
+  "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54": {
+   "nog": [
+    0.0,
+    0.0
+   ],
+   "guard": [
+    0.0,
+    0.0
+   ],
+   "guard_decisions": [
+    [
+     "refused",
+     "refused",
+     "passed_cap"
+    ],
+    [
+     "refused",
+     "refused",
+     "passed_cap"
+    ]
+   ],
+   "nog_tools": [
+    [
+     "answer"
+    ],
+    [
+     "answer"
+    ]
+   ],
+   "guard_tools": [
+    [
+     "answer(refused)",
+     "click",
+     "drag",
+     "click",
+     "hotkey",
+     "answer(refused)",
+     "click",
+     "hotkey",
+     "hotkey",
+     "click",
+     "hotkey",
+     "answer"
+    ],
+    [
+     "answer(refused)",
+     "click",
+     "drag",
+     "click",
+     "hotkey",
+     "answer(refused)",
+     "click",
+     "hotkey",
+     "hotkey",
+     "click",
+     "hotkey",
+     "answer"
+    ]
+   ],
+   "replay_diff_max": 0.0025238240466398353,
+   "excluded": null
+  },
+  "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6": {
+   "nog": [
+    0.0,
+    0.0
+   ],
+   "guard": [
+    0.0,
+    0.0
+   ],
+   "guard_decisions": [
+    [
+     "refused"
+    ],
+    [
+     "refused"
+    ]
+   ],
+   "nog_tools": [
+    [
+     "answer"
+    ],
+    [
+     "answer"
+    ]
+   ],
+   "guard_tools": [
+    [
+     "answer(refused)",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click"
+    ],
+    [
+     "answer(refused)",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "right_click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click"
+    ]
+   ],
+   "replay_diff_max": 0.0019300814937142764,
+   "excluded": null
+  },
+  "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8": {
+   "nog": [
+    0.0,
+    0.0
+   ],
+   "guard": [
+    0.0,
+    0.0
+   ],
+   "guard_decisions": [
+    [
+     "passed_complete"
+    ],
+    [
+     "passed_complete"
+    ]
+   ],
+   "nog_tools": [
+    [
+     "answer"
+    ],
+    [
+     "answer"
+    ]
+   ],
+   "guard_tools": [
+    [
+     "answer"
+    ],
+    [
+     "answer"
+    ]
+   ],
+   "replay_diff_max": 0.00194740984954086,
+   "excluded": null
+  },
+  "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": {
+   "nog": [
+    1.0,
+    1.0
+   ],
+   "guard": [
+    1.0
+   ],
+   "guard_decisions": [
+    [
+     "passed_complete"
+    ]
+   ],
+   "nog_tools": [
+    [
+     "answer"
+    ],
+    [
+     "answer"
+    ]
+   ],
+   "guard_tools": [
+    [
+     "answer"
+    ]
+   ],
+   "replay_diff_max": 0.0019472686683430392,
+   "excluded": "incomplete"
+  },
+  "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38": {
+   "nog": [
+    0.0,
+    0.0
+   ],
+   "guard": [
+    0.0,
+    0.0
+   ],
+   "guard_decisions": [
+    [
+     "passed_complete"
+    ],
+    [
+     "passed_complete"
+    ]
+   ],
+   "nog_tools": [
+    [
+     "answer"
+    ],
+    [
+     "answer"
+    ]
+   ],
+   "guard_tools": [
+    [
+     "answer"
+    ],
+    [
+     "click",
+     "answer"
+    ]
+   ],
+   "replay_diff_max": 0.014024560591753792,
+   "excluded": null
+  },
+  "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6": {
+   "nog": [
+    0.0,
+    0.0
+   ],
+   "guard": [],
+   "guard_decisions": [],
+   "nog_tools": [
+    [
+     "click",
+     "hotkey",
+     "write",
+     "write",
+     "write",
+     "write",
+     "write",
+     "wait",
+     "write",
+     "write",
+     "double_click",
+     "answer"
+    ],
+    [
+     "double_click",
+     "write",
+     "press_key",
+     "hotkey",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "click",
+     "wait",
+     "click",
+     "click",
+     "click"
+    ]
+   ],
+   "guard_tools": [],
+   "replay_diff_max": 0.03683328441545075,
+   "excluded": "incomplete"
+  }
+ }
+}
