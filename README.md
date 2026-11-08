@@ -232,6 +232,10 @@ one human supervised:
   Holo4-27B behind the same prompt separates less well (row 7 caveat).
 - Rows 9–10 are still running at the time of writing. Read the linked files for their final state.
 
+## Sponsors
+
+- **Devin**: Devin API integration installed and authenticated (client + GPU-controller mission, dry-run tested; no session run to preserve credits): [`holo-neurochir/devin/README.md`](holo-neurochir/devin/README.md).
+
 ## Acknowledgements and license
 
 Thanks to H Company for Holo-3.1-4B and Holo4, to 42AI for the hackathon, and to the OSWorld authors (xlang-ai) for

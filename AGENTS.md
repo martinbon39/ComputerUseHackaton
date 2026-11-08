@@ -63,6 +63,9 @@ infeasible tasks).
 - `holo-neurochir/holo/`, `scripts/`: harness and weight-edit code. `astra-*`, `moon-*`: weight-edit experiments, mostly negative.
 - `holo-neurochir/JOURNAL.md` and the root `LOG.md`: raw working logs of the agent team (French, chronological). They are not needed for review.
 
+## Sponsors
+- Devin: Devin API integration installed and authenticated (client + GPU-controller mission, dry-run tested; no session run to preserve credits): `holo-neurochir/devin/README.md`. No Devin-written code exists in this repository.
+
 ## Things that look odd but are intended
 - Many folders hold negative results. They are kept on purpose, and `docs/REPO_MAP.md` gives each one's status.
 - Some scripts contain absolute paths of our server (`/home/orbit/...`, `~/osw/...`). They document what ran. The
