@@ -1,6 +1,6 @@
 # Cogito, Ergo Feci (ComputerUseHackaton)
 
-> H Company × 42AI hackathon, Computer Use track. H's computer-use agent Holo-3.1-4B often ends OSWorld tasks with a false "done" (29 of its 51 failures). We show that the agent does not internally know this: self-judging is at chance, and weight edits move the decision without targeting it, with no detectable online gain. We built Feci Guard instead, an external verifier that checks each requirement on the screen, refuses a false "done" with a reason, and lets the agent repair or escalate to Holo4. Online, on 120 pre-registered OSWorld tasks, it halves the false "done" rate (22.5 % -> 10.8 %, -11.7 pts [-19.2, -4.2]) with no measurable score change (no score gain claimed). Offline it detects 45/66 false successes at 21/202 false alarms; in replay of 9 recorded false successes, Guard + escalation to Holo4 repairs 11/18 branches vs 2/18 without the Guard (+50 pts [+22, +78]).
+> H Company × 42AI hackathon, Computer Use track. H's computer-use agent Holo-3.1-4B often ends OSWorld tasks with a false "done" (29 of its 51 failures). We show that the agent does not internally know this: self-judging is at chance, and weight edits move the decision without targeting it, with no detectable online gain. We built Feci Guard instead, an external verifier that checks each requirement on the screen, refuses a false "done" with a reason, and lets the agent repair or escalate to Holo4. Online, on 120 pre-registered OSWorld tasks, it halves the false "done" rate (22.5 % -> 10.8 %, -11.7 pts [-19.2, -4.2]) with no measurable score change (no score gain claimed). The online arm is Holo-3.1 plus the Guard's refusal only; escalation to Holo4 is measured in replay only. Offline it detects 45/66 false successes at 21/202 false alarms; in replay of 9 recorded false successes, Guard + escalation to Holo4 repairs 11/18 branches vs 2/18 without the Guard (+50 pts [+22, +78]).
 
 Everything below can be checked offline in seconds with Python >= 3.9 standard library: `bash jury_kit/quickstart.sh` (exit 0 = published numbers reproduced). A gain is claimed only if the lower bound of the paired 95 % CI is > 0.
 
@@ -27,6 +27,7 @@ Everything below can be checked offline in seconds with Python >= 3.9 standard l
 - [holo-neurochir/report/PREREG_ONLINE_GUARD.md](holo-neurochir/report/PREREG_ONLINE_GUARD.md): pre-registration of the online Guard test
 
 ## Optional
+- [holo-neurochir/infra/DEVIN_SESSION.md](holo-neurochir/infra/DEVIN_SESSION.md): sponsor tool: GPU budget monitor written by a Devin API session after the experiments; no reported number depends on it
 - [holo-neurochir/paper/main.pdf](holo-neurochir/paper/main.pdf): the paper (arXiv format); neurips.pdf has the reproducibility checklist
 - [holo-neurochir/osworld/duel/README.md](holo-neurochir/osworld/duel/README.md): live duel page (two VMs, STOP buttons, replay)
 - [holo-neurochir/JOURNAL.md](holo-neurochir/JOURNAL.md): raw chronological log of the agent team (French)

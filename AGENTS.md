@@ -7,12 +7,15 @@ which claims are **measured** versus **only predicted or still running**. Human-
 ## What the project is, in four lines
 1. **Problem**: H's computer-use agent Holo-3.1-4B often ends an OSWorld task with a false "done" (29 of its 51 failures on 120 tasks).
 2. **Diagnosis**: the agent does not internally know its "done" is false. Self-judging is at chance, and internal states do not
-   beat the step number. About 15 weight/activation edits move the stopping decision but cannot target it. Online
+   beat the step number. About 15 weight/activation edits were screened; two (a merge, a closed-form edit) move the stopping decision, and
+   neither is shown to target false "done". Online
    result: no detectable gain.
 3. **Solution**: Feci Guard is an external verifier (Claude Sonnet). It checks each task requirement on the screen, refuses a
    false "done" with a reason, and the agent repairs or escalates to Holo4-27B. Online, on 120 pre-registered
    OSWorld tasks, it halves the false "done" rate (22.5 % → 10.8 %, significant) with no measurable score change.
-4. **Honesty rule**: a gain is claimed only when the lower bound of the paired 95 % CI is > 0. That rule was fixed before the data was read.
+   The online arm is Holo-3.1 plus the Guard's refusal only; escalation to Holo4 is measured in replay only.
+4. **Honesty rule**: a gain is claimed only when the lower bound of the paired 95 % CI is > 0. It was registered before the Guard's online results
+   were read; for the merge after its reserve scores had been seen (only its test part is prospective); paper §5.6.
 
 ## Verify everything that can be verified offline (≈ 1 s each, Python ≥ 3.9 stdlib only)
 ```bash
@@ -44,10 +47,10 @@ refusal → repair on `libreoffice_calc/1de60575` (one episode, not an average e
 | AlphaEdit +2.2 [−13.3, +17.8] n=45; ExPO −1.5 [−8.9, +5.7] n=120 → no gain | measured | same | same |
 | Merged checkpoint rebuilt bit-for-bit from 3 pinned public models | measured (on an independent machine) | `jury_kit/expected_sha256.json`, `jury_kit/README.md` | `python3 jury_kit/rebuild_merge.py --check 2 --merged DIR` |
 | Guard repair: 5/18 vs 2/18 branches scored 1, of which 3 genuine repairs vs 0 (impress/8979838c succeeds without any action in all 4 branches), +16.7 [0, +44] | measured, **not distinguishable from 0** | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/repair/results.json` | read |
-| Guard + escalation to Holo4 vs Holo4 alone, replay of 9 recorded false successes × 2 branches: 11/18 vs 2/18 scored 1, +50 pts [+22, +78] (episode-cluster bootstrap) | measured in replay, significant; pre-registered (`PREREG.md`); not an online score gain | `holo-neurochir/rescue_bench/REPORT.md`, `RESULT.json`, `PREREG.md`, `MEASURED_REPAIRS_REVIEW.md` | read |
+| Guard + escalation to Holo4 vs Holo4 alone, replay of 9 recorded false successes × 2 branches: 11/18 vs 2/18 scored 1, +50 pts [+22, +78] (episode-cluster bootstrap) | measured in replay, significant; pre-registered (`PREREG.md`); 9 of 12 episodes kept by the pre-registered replay-validity filter (all 12: +33 [+4, +63]); not an online score gain | `holo-neurochir/rescue_bench/REPORT.md`, `RESULT.json`, `PREREG.md`, `MEASURED_REPAIRS_REVIEW.md` | read |
 | Holo + Guard online on the 120-task test split: false "done" 22.5 % → 10.8 %, −11.7 pts [−19.2, −4.2]; score +1.6 [−4.4, +7.7] → no score gain claimed; B=8 repaired, C=4 lost | measured online, pre-registered (`report/PREREG_ONLINE_GUARD.md`, analysis committed before results) | `jury_kit/results/online_guard_tasks.csv`, `holo-neurochir/report/ONLINE_GUARD_RESULT.md`, `.json` | `python3 jury_kit/verify_online_guard.py` |
 | Guard v2 (Opus + history) vs v1 on the held-out half, used once: detection +13.8 pts [+2.9, +30] (20/29 vs 16/29); false rejection +4.3 [−5, +15] (15/116 vs 10/116) | measured offline, not run online; target ≥ 80 % / ≤ 10 % not met | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/v2/PROTOCOL.md`, `v2/runs/` | read |
-| "A verifier can be added to any agent with one call" | design property, measured on Holo only | `feci_guard.py` docstring | read 61 lines |
+| "A verifier can be plugged into an agent loop with one call" | design property, tested on Holo-3.1-4B only | `feci_guard.py` docstring | read 61 lines |
 | End-to-end plumbing: refusal → escalation → re-check → official score | measured on 1 task (no efficacy claim) | `holo-neurochir/feci_guard/smoke/impress_550ce7e7_rescue_guard.md` | read |
 
 Not claimed anywhere: an OSWorld score gain from any weight edit or from the Guard (online score +1.6 [−4.4, +7.7]); a
@@ -64,7 +67,9 @@ infeasible tasks).
 - `holo-neurochir/judge_bench/`, `verif_study/`: offline comparison of judges on 268 labelled final screens.
 - `holo-neurochir/paper/`: the paper (`main.pdf`, `neurips.pdf`), with every number generated from `data/` by `build.sh`.
 - `holo-neurochir/osworld/`: online evaluation (Modal serving, GitHub runner collection, live duel page).
-- `holo-neurochir/infra/`: Our GPU infrastructure controller (holo-neurochir/infra/gpu_ctl.py: Modal app status, per-account daily cost, budget guard, manifest-based redeploy) was written by Devin through the Devin API, reviewed by us before any run, and running on our server as our read-only GPU budget monitor (both Modal accounts, every 5 min, warn-only) since 11:47 UTC on 2026-11-08. Evidence: `holo-neurochir/infra/DEVIN_SESSION.md`.
+- `holo-neurochir/infra/`: GPU budget monitor `gpu_ctl.py`, written by one Devin API session (10:51–11:05 UTC) **after** the
+  reported experiments, reviewed, running read-only and warn-only since 11:47 UTC. No reported number depends on it.
+  Evidence: `holo-neurochir/infra/DEVIN_SESSION.md`.
 - `holo-neurochir/holo/`, `scripts/`: harness and weight-edit code. `astra-*`, `moon-*`: weight-edit experiments, mostly negative.
 - `holo-neurochir/JOURNAL.md` and the root `LOG.md`: raw working logs of the agent team (French, chronological). They are not needed for review.
 
