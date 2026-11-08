@@ -1,6 +1,6 @@
 # Quickstart proof
 
-Every command of the README quickstart, run on 2026-11-08 at 11:00 UTC in a **fresh clone** of `main` at commit `5eaf4e6`,
+Every command of the README quickstart, run on 2026-11-08 at 11:07 UTC in a **fresh clone** of `main` at commit `37b00e0`,
 with a **fresh virtual environment** (nothing installed), Python 3.14.4, Linux x86-64, CPU only. Every command exited 0, and
 `git status` in the clone was still clean afterwards. The same quickstart runs in GitHub Actions with the runner's
 preinstalled Python 3, whenever the jury kit, the Guard code or its data change:
