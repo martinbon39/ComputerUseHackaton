@@ -21,5 +21,6 @@ Prix H100 Modal : ~3,95 $/h (0,001097 $/s), plus le CPU et la mémoire du conten
 | 06:55 | 2 | déploiement de `holo-jury-probe` (CPU seul, porte fermée), tests de validation, débit, CORS, sans GPU | 0 | 16,67 $ et 15,26 $ |
 | 07:00-07:01 | 1 et 2 | **erreur de modal-serve** : un test du refus budgétaire (`modal_jury_window.sh up 90`) est passé et a déployé les deux serveurs ; coupé aussitôt (`down`), ~1 min de H100 sur le compte 1, rien sur le compte 2 ; `up` exige désormais `--go` et `check` fait le seul calcul | ~1 min | |
 | 07:40-07:59 | 2 | Holo4-27B : téléchargement HF → Volume (CPU), app `holo-judge` déployée, prête en 170 s, smoke 2 requêtes ; juge de verif-study, redescend à zéro après 5 min sans requête | à la demande | 15,32 $ (07:38) |
+| 08:16 | 2 | judge-bench fini : `holo-judge` (Holo4-27B) ARRÊTÉ sur ordre d'ares ; zéro conteneur sur les deux comptes (reste `holo-jury-probe`, CPU, porte fermée, 0 tâche) ; garde : compte 1 20/24 $, compte 2 27/29,5 $ | 0 | **16,80 $ et 16,61 $** (facturation en léger retard) |
 
 Rythme : une H100 allumée en continu coûte ~4 $/h, soit une alerte à ~20 $ par compte environ 4 h 30 après le point de 00:49.
