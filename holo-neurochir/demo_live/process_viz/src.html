@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Holo · processus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--fg:#e8ecf2;--dim:#7d8796;--faint:#3a414c;--push:#ffd75e;--hold:#ff4fd8;--attn:#6fd3ff;--ok:#7dffb0;--no:#ff4f6a}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--fg);overflow:hidden;font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace}
+canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+#labels{position:fixed;inset:0;pointer-events:none}
+.lb{position:absolute;left:0;top:0;white-space:nowrap;font-size:clamp(11px,0.85vw,16px);letter-spacing:.02em;color:var(--fg);opacity:0;will-change:transform,opacity;text-shadow:0 0 6px #000,0 0 2px #000}
+.lb.l{color:var(--dim);font-size:clamp(10px,.72vw,14px)}
+.lb.a{color:var(--attn)}
+.lb.p{color:var(--push)}
+.lb.m{color:var(--hold)}
+.lb.big{font-size:clamp(13px,1.05vw,19px)}
+.lb .s{color:var(--dim)}
+#panel{position:fixed;top:4vh;right:2.2vw;width:clamp(260px,24vw,460px);border-left:1px solid #2a3038;padding:.4vw 1vw .8vw 1.2vw;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.82))}
+#chap{font-size:clamp(11px,.8vw,15px);color:var(--dim);letter-spacing:.18em;text-transform:uppercase}
+#title{font-size:clamp(22px,2.1vw,40px);font-weight:500;margin:.35em 0 .7em;letter-spacing:.01em}
+#lines{display:flex;flex-direction:column;gap:.62em}
+.ln{font-size:clamp(12px,.95vw,18px);line-height:1.35;color:var(--fg);opacity:0;transform:translateY(6px);transition:opacity .7s,transform .7s}
+.ln.on{opacity:1;transform:none}
+.ln .k{color:var(--dim)}
+.ln .y{color:var(--push)}.ln .m{color:var(--hold)}.ln .c{color:var(--attn)}.ln .g{color:var(--ok)}.ln .r{color:var(--no)}
+#src{position:fixed;left:2.2vw;bottom:3.2vh;font-size:clamp(10px,.68vw,13px);color:#4f5866;max-width:60vw;pointer-events:none}
+#cap{position:fixed;left:2.2vw;top:4vh;background:rgba(0,0,0,.7);padding:.3em .6em;max-width:56vw;font-size:clamp(14px,1.25vw,24px);line-height:1.4;color:var(--fg);pointer-events:none;opacity:0;transition:opacity .8s}
+#cap .k{color:var(--dim)}#cap .m{color:var(--hold)}#cap .y{color:var(--push)}
+#bar{position:fixed;left:2.2vw;right:2.2vw;bottom:1.4vh;height:2px;display:flex;gap:6px;pointer-events:none}
+#bar i{flex:1;background:#1b2027;position:relative;overflow:hidden}
+#bar i b{position:absolute;inset:0;width:0;background:#9aa4b2}
+#big{position:fixed;left:2.2vw;right:calc(24vw + 5vw);top:50%;transform:translateY(-50%);display:grid;grid-template-columns:repeat(3,1fr);gap:3vw;pointer-events:none;background:radial-gradient(ellipse at center,rgba(0,0,0,.85),rgba(0,0,0,0) 75%);padding:3vh 0}
+.bn{opacity:0;transform:translateY(14px);transition:opacity 1s,transform 1s}
+.bn.on{opacity:1;transform:none}
+.bn .v{font-size:clamp(30px,3.6vw,72px);font-weight:500;letter-spacing:-.01em;line-height:1.05}
+.bn .v .m{color:var(--hold)}.bn .v .y{color:var(--push)}.bn .v .g{color:var(--ok)}.bn .v .k{color:var(--dim);font-size:.55em}
+.bn .d{margin-top:.8em;font-size:clamp(12px,.95vw,18px);color:var(--fg);line-height:1.45}
+.bn .d .k{color:var(--dim)}
+#ci{position:fixed;left:2.2vw;bottom:9vh;width:min(54vw,980px);pointer-events:none;opacity:0;transition:opacity 1s}
+#ci text{font-family:'IBM Plex Mono',ui-monospace,monospace}
+#paused{position:fixed;right:2.2vw;bottom:3.2vh;font-size:12px;color:var(--dim);opacity:0}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="labels"></div>
+<div id="cap"></div>
+<div id="panel"><div id="chap"></div><div id="title"></div><div id="lines"></div></div>
+<div id="big"></div>
+<svg id="ci" viewBox="0 0 1120 250"></svg>
+<div id="src"></div>
+<div id="paused">pause · espace</div>
+<div id="bar"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+"use strict";
+const IMG={s1:"__IMG_step_1__",s3:"__IMG_step_3__",s5:"__IMG_step_5__",s6:"__IMG_step_6__",c12:"__IMG_calc_12__",c17:"__IMG_calc_17__"};
+
+// ---------- renderer ----------
+const canvas=document.getElementById('c');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+const scene=new THREE.Scene();
+scene.background=new THREE.Color(0x000000);
+scene.fog=new THREE.FogExp2(0x000000,0.0105);
+const camera=new THREE.PerspectiveCamera(42,1,0.05,500);
+function resize(){renderer.setSize(innerWidth,innerHeight,false);camera.aspect=innerWidth/innerHeight;camera.setViewOffset(innerWidth,innerHeight,innerWidth*.13,0,innerWidth,innerHeight);camera.updateProjectionMatrix();}
+addEventListener('resize',resize);resize();
+
+const V=(x,y,z)=>new THREE.Vector3(x,y,z);
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const sm=x=>{x=clamp(x,0,1);return x*x*(3-2*x)};
+const win=(t,a,b,f=0.8)=>sm((t-a)/f)*(1-sm((t-b)/f)); // 0..1 window with fades
+let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return (seed-1)/2147483646};
+const hashR=(s)=>{let h=2166136261;for(const c of String(s)){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return ((h>>>0)%100000)/100000};
+
+// glow sprite texture
+const glowTex=(()=>{const c=document.createElement('canvas');c.width=c.height=64;const g=c.getContext('2d');const r=g.createRadialGradient(32,32,0,32,32,32);r.addColorStop(0,'rgba(255,255,255,1)');r.addColorStop(.25,'rgba(255,255,255,.75)');r.addColorStop(.6,'rgba(255,255,255,.12)');r.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=r;g.fillRect(0,0,64,64);const t=new THREE.CanvasTexture(c);return t})();
+const ADD=THREE.AdditiveBlending;
+const C={push:0xffd75e,hold:0xff4fd8,attn:0x6fd3ff,dnet:0x8f9bb3,white:0xffffff,ok:0x7dffb0,no:0xff4f6a};
+
+// ---------- network geometry ----------
+const NL=32, SP=2.2, PW=6.2, PH=4.4;
+const ATTN=[3,7,11,15,19,23,27,31]; // config.json layer_types (full_attention), full_attention_interval=4
+const isAttn=i=>ATTN.includes(i);
+const LX=i=>(i-15.5)*SP;
+const X0=LX(0), X1=LX(31);
+const layers=[];
+function gridGeom(){const p=[];const st=0.4;for(let y=-PH/2;y<=PH/2+1e-6;y+=st){p.push(0,y,-PW/2,0,y,PW/2)}for(let z=-PW/2;z<=PW/2+1e-6;z+=st){p.push(0,-PH/2,z,0,PH/2,z)}const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));return g}
+const GG=gridGeom();
+const borderG=new THREE.BufferGeometry().setFromPoints([V(0,-PH/2,-PW/2),V(0,-PH/2,PW/2),V(0,PH/2,PW/2),V(0,PH/2,-PW/2),V(0,-PH/2,-PW/2)]);
+const planeG=new THREE.PlaneGeometry(PW,PH);
+for(let i=0;i<NL;i++){
+  const col=new THREE.Color(isAttn(i)?C.attn:C.dnet);
+  const g=new THREE.Group();g.position.x=LX(i);scene.add(g);
+  const fillM=new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.025,depthWrite:false,side:THREE.DoubleSide,blending:ADD});
+  const fill=new THREE.Mesh(planeG,fillM);fill.rotation.y=Math.PI/2;g.add(fill);
+  const gridM=new THREE.LineBasicMaterial({color:col,transparent:true,opacity:.08,depthWrite:false,blending:ADD});
+  g.add(new THREE.LineSegments(GG,gridM));
+  const borM=new THREE.LineBasicMaterial({color:col,transparent:true,opacity:.45,depthWrite:false,blending:ADD});
+  g.add(new THREE.Line(borderG,borM));
+  const n=64,pp=[];seed=101+i*37;
+  for(let k=0;k<n;k++)pp.push(0,(rnd()-.5)*PH*.9,(rnd()-.5)*PW*.92);
+  const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.Float32BufferAttribute(pp,3));
+  const ptM=new THREE.PointsMaterial({color:col,map:glowTex,size:.3,transparent:true,opacity:.55,depthWrite:false,blending:ADD});
+  g.add(new THREE.Points(pg,ptM));
+  layers.push({g,fillM,gridM,borM,ptM,base:col.clone(),hl:0,hlc:0,tint:null,tintAmt:0,dim:0,vis:1});
+}
+function layerReset(){for(const L of layers){L.hl=0;L.tintAmt=0;L.tint=null;L.dim=0}}
+function setLayerVis(v){for(const L of layers)L.vis=v}
+const tmpC=new THREE.Color();
+function updateLayers(dt){
+  for(const L of layers){
+    L.hlc+= (L.hl-L.hlc)*Math.min(1,dt*3);
+    L.tac=(L.tac||0)+((L.tintAmt||0)-(L.tac||0))*Math.min(1,dt*3);
+    L.dc=(L.dc||0)+((L.dim||0)-(L.dc||0))*Math.min(1,dt*3);
+    L.vc=(L.vc===undefined?1:L.vc)+(L.vis-(L.vc===undefined?1:L.vc))*Math.min(1,dt*2);
+    const k=(1+L.hlc*2.2)*(1-L.dc*.8)*L.vc;
+    tmpC.copy(L.base);if(L.tint)tmpC.lerp(L.tint,L.tac);
+    for(const m of [L.fillM,L.gridM,L.borM,L.ptM])m.color.copy(tmpC);
+    L.fillM.opacity=.025*k+.05*L.tac*L.vc;L.gridM.opacity=.08*k;L.borM.opacity=Math.min(1,.42*k);L.ptM.opacity=Math.min(1,.5*k);
+  }
+}
+
+// residual stream
+const streamM=new THREE.LineBasicMaterial({color:0x9fc4ff,transparent:true,opacity:.35,blending:ADD,depthWrite:false});
+const streamLine=new THREE.Line(new THREE.BufferGeometry().setFromPoints([V(X0-4,0,0),V(X1+4,0,0)]),streamM);scene.add(streamLine);
+const NP=420;const pPos=new Float32Array(NP*3);const pSeed=[];seed=3;
+for(let k=0;k<NP;k++){pSeed.push({x:X0-4+rnd()*(X1-X0+8),r:Math.pow(rnd(),2)*.32,a:rnd()*6.28,v:.6+rnd()*.8})}
+const pGeo=new THREE.BufferGeometry();pGeo.setAttribute('position',new THREE.BufferAttribute(pPos,3));
+const pM=new THREE.PointsMaterial({color:0xbcd6ff,map:glowTex,size:.26,transparent:true,opacity:.0,depthWrite:false,blending:ADD});
+scene.add(new THREE.Points(pGeo,pM));
+let streamSpeed=4, streamOp=0, streamOpC=0;
+function updateStream(dt){
+  streamOpC+=(streamOp-streamOpC)*Math.min(1,dt*2);
+  pM.opacity=.85*streamOpC;streamM.opacity=.3*streamOpC;
+  for(let k=0;k<NP;k++){const s=pSeed[k];s.x+=dt*streamSpeed*s.v;if(s.x>X1+4)s.x=X0-4;s.a+=dt*.6;
+    pPos[k*3]=s.x;pPos[k*3+1]=Math.sin(s.a)*s.r;pPos[k*3+2]=Math.cos(s.a)*s.r}
+  pGeo.attributes.position.needsUpdate=true;
+}
+
+// tied-embedding arc
+const arcCurve=new THREE.QuadraticBezierCurve3(V(X1+4,0,0),V(0,13,-2),V(X0-4,0,0));
+const arcM=new THREE.LineDashedMaterial({color:0x9fc4ff,dashSize:.5,gapSize:.35,transparent:true,opacity:0,depthWrite:false});
+const arcLine=new THREE.Line(new THREE.BufferGeometry().setFromPoints(arcCurve.getPoints(120)),arcM);arcLine.computeLineDistances();scene.add(arcLine);
+
+// glowing node helper
+function node(pos,color,size){const m=new THREE.SpriteMaterial({map:glowTex,color,transparent:true,opacity:0,depthWrite:false,blending:ADD});const s=new THREE.Sprite(m);s.position.copy(pos);s.scale.set(size,size,1);scene.add(s);return {s,m,op:0,opc:0,size}}
+const nodes=[];function mkNode(p,c,s){const n=node(p,c,s);nodes.push(n);return n}
+function updateNodes(dt,T){for(const n of nodes){n.opc+=(n.op-n.opc)*Math.min(1,dt*3);n.m.opacity=n.opc;const pul=1+.08*Math.sin(T*3+n.s.position.x);n.s.scale.set(n.size*pul,n.size*pul,1)}}
+
+const ANS=V(X1+5.2,1.0,0), CLK=V(X1+5.2,-1.0,0);
+const ansN=mkNode(ANS,C.push,1.5), clkN=mkNode(CLK,0x9aa4b2,1.0);
+
+// special units — positions decorative, labels from paper/data/pod_astra/circuit/REPORT.md
+function unitPos(L,id){const r1=hashR('y'+L+'_'+id),r2=hashR('z'+L+'_'+id);return V(LX(L),(r1-.5)*PH*.75,(r2-.5)*PW*.8)}
+const HEADS=[{L:19,h:15,d:'−2,06'},{L:23,h:1,d:'−3,88'},{L:31,h:14,d:'−3,56'}];
+const NEUR={30:[8,216,345,1012,1418],31:[302,315,1591,1855,3099]};
+const units=[];
+for(const h of HEADS){const p=unitPos(h.L,'h'+h.h);units.push({p,kind:'head',n:mkNode(p,C.white,.75),h})}
+for(const L of [30,31])for(const id of NEUR[L]){const p=unitPos(L,'n'+id);units.push({p,kind:'neur',n:mkNode(p,C.push,.42),L,id})}
+// connections unit -> answer (yellow = pushes toward "answer")
+function curveLine(a,b,color,lift=1.2){const mid=a.clone().lerp(b,.5);mid.y+=lift;const c=new THREE.QuadraticBezierCurve3(a,mid,b);const g=new THREE.BufferGeometry().setFromPoints(c.getPoints(48));const m=new THREE.LineBasicMaterial({color,transparent:true,opacity:0,depthWrite:false,blending:ADD});const l=new THREE.Line(g,m);scene.add(l);return {l,m,g,op:0,opc:0,draw:0,drawc:0}}
+const links=[];function mkLink(a,b,c,lift){const k=curveLine(a,b,c,lift);links.push(k);return k}
+const unitLinks=units.map(u=>mkLink(u.p,ANS,C.push,u.kind==='head'?1.6:.8));
+function updateLinks(dt){for(const k of links){k.opc+=(k.op-k.opc)*Math.min(1,dt*3);k.drawc+=(k.draw-k.drawc)*Math.min(1,dt*1.6);k.m.opacity=k.opc;k.g.setDrawRange(0,Math.floor(49*k.drawc))}}
+
+// block brackets (ceiling test, AlphaEdit range)
+function bracket(a,b,color){const x0=LX(a)-.6,x1=LX(b)+.6,y=-PH/2-.5,z=PW/2+.2;const g=new THREE.BufferGeometry().setFromPoints([V(x0,y+.35,z),V(x0,y,z),V(x1,y,z),V(x1,y+.35,z)]);const m=new THREE.LineBasicMaterial({color,transparent:true,opacity:0,depthWrite:false,blending:ADD});scene.add(new THREE.Line(g,m));return {m,op:0,opc:0,c:V((x0+x1)/2,y-.45,z)}}
+const BR={early:bracket(0,11,C.white),mid:bracket(12,23,C.hold),late:bracket(24,31,C.white),all:bracket(0,31,0x9aa4b2)};
+function updateBr(dt){for(const k in BR){const b=BR[k];b.opc+=(b.op-b.opc)*Math.min(1,dt*3);b.m.opacity=b.opc}}
+
+// steering injections (magenta = holds back the stop)
+function inject(L){const top=V(LX(L),PH/2+3.2,0),bot=V(LX(L),0,0);const g=new THREE.BufferGeometry().setFromPoints([top,bot]);const m=new THREE.LineBasicMaterial({color:C.hold,transparent:true,opacity:0,depthWrite:false,blending:ADD});scene.add(new THREE.Line(g,m));const n=mkNode(top,C.hold,.7);return {m,n,op:0,opc:0,top}}
+const INJ={16:inject(16),24:inject(24),31:inject(31),18:inject(18)};
+function updateInj(dt){for(const k in INJ){const j=INJ[k];j.opc+=(j.op-j.opc)*Math.min(1,dt*3);j.m.opacity=j.opc*.9;j.n.op=j.op}}
+
+// activation-space clouds (positions decorative; counts = verif_study 268 final screens: 66 false, 202 true)
+const CL_C=V(LX(14),0,0);
+function gauss(){return Math.sqrt(-2*Math.log(rnd()+1e-9))*Math.cos(6.283*rnd())}
+function cloud(n,shift,color,sd){seed=shift>0?991:313;const p=[];for(let k=0;k<n;k++)p.push(CL_C.x+gauss()*sd*.5,gauss()*sd+shift*.0,gauss()*sd+shift);const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));const m=new THREE.PointsMaterial({color,map:glowTex,size:.4,transparent:true,opacity:0,depthWrite:false,blending:ADD});const P=new THREE.Points(g,m);scene.add(P);return {P,m,op:0,opc:0,col:new THREE.Color(color)}}
+const cTrue=cloud(202,-.35,C.push,1.05), cFalse=cloud(66,.45,C.hold,1.0);
+function updateClouds(dt,T,colorMix){for(const c of [cTrue,cFalse]){c.opc+=(c.op-c.opc)*Math.min(1,dt*2);c.m.opacity=c.opc*.9;tmpC.set(0xdfe6ef).lerp(c.col,colorMix);c.m.color.copy(tmpC);c.P.rotation.x=Math.sin(T*.15)*.15}}
+
+// screens (VM captures)
+const texL=new THREE.TextureLoader();const TX={};for(const k in IMG){TX[k]=texL.load(IMG[k]);TX[k].minFilter=THREE.LinearFilter;TX[k].anisotropy=8}
+function screen(pos,ry,sc){const m=new THREE.MeshBasicMaterial({map:TX.s1,transparent:true,opacity:0,side:THREE.DoubleSide,depthWrite:false,fog:false});const s=new THREE.Mesh(new THREE.PlaneGeometry(19.2,10.8),m);s.position.copy(pos);s.rotation.y=ry;s.scale.setScalar(sc);scene.add(s);
+  const fg=new THREE.BufferGeometry().setFromPoints([V(-9.6,-5.4,0),V(9.6,-5.4,0),V(9.6,5.4,0),V(-9.6,5.4,0),V(-9.6,-5.4,0)]);const fm=new THREE.LineBasicMaterial({color:0x8f9bb3,transparent:true,opacity:0,fog:false});s.add(new THREE.Line(fg,fm));s.updateMatrixWorld(true);
+  return {s,m,fm,op:0,opc:0,key:'s1'}}
+const VM_X=X0-13; const vm=screen(V(VM_X,0,0),-Math.PI/2,1);
+const GD_P=V(X1+15,2.2,-5); const gs=screen(GD_P,-.25,.72);
+// pixel (u,v) of a 1920x1080 capture -> world point on that screen
+const sl=(S,u,v)=>S.s.localToWorld(V((u/1920-.5)*19.2,(.5-v/1080)*10.8,.03));
+function box(S,u0,v0,u1,v1,color){const a=V((u0/1920-.5)*19.2,(.5-v0/1080)*10.8,.04),b=V((u1/1920-.5)*19.2,(.5-v1/1080)*10.8,.04);const g=new THREE.BufferGeometry().setFromPoints([V(a.x,a.y,a.z),V(b.x,a.y,a.z),V(b.x,b.y,a.z),V(a.x,b.y,a.z),V(a.x,a.y,a.z)]);const m=new THREE.LineBasicMaterial({color,transparent:true,opacity:0,fog:false});S.s.add(new THREE.Line(g,m));return {m,op:0,opc:0}}
+const vmBox=box(vm,488,1048,884,1077,C.hold);
+const vmBox2=box(vm,600,32,1370,60,C.hold);
+const gdBox=box(gs,265,1030,432,1062,C.no);
+function updateScreens(dt){for(const S of [vm,gs]){S.opc+=(S.op-S.opc)*Math.min(1,dt*2.5);S.m.opacity=S.opc;S.fm.opacity=S.opc*.5;if(S.m.map!==TX[S.key]){S.m.map=TX[S.key];S.m.needsUpdate=true}}for(const b of [vmBox,vmBox2,gdBox]){b.opc+=(b.op-b.opc)*Math.min(1,dt*3);b.m.opacity=b.opc}}
+
+// guard + escalation nodes
+const GUARD=V(X1+10,0,0), H4=V(X1+11,-4.5,4);
+const guardN=mkNode(GUARD,C.white,1.9);
+const guardShape=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.OctahedronGeometry(.9)),new THREE.LineBasicMaterial({color:0xffffff,transparent:true,opacity:0,blending:ADD}));guardShape.position.copy(GUARD);scene.add(guardShape);
+const h4N=mkNode(H4,C.attn,1.6);
+const lkAnsGuard=mkLink(ANS,GUARD,C.push,.6);
+const lkScreenGuard=mkLink(GD_P,GUARD,0xdfe6ef,0);
+const lkRepair=(()=>{const c=new THREE.CubicBezierCurve3(GUARD,V(X1+10,8,-6),V(X0-2,8,-6),V(X0-4,0,0));const g=new THREE.BufferGeometry().setFromPoints(c.getPoints(48));const m=new THREE.LineBasicMaterial({color:C.hold,transparent:true,opacity:0,depthWrite:false,blending:ADD});scene.add(new THREE.Line(g,m));const k={l:null,m,g,op:0,opc:0,draw:0,drawc:0};links.push(k);return k})();
+const lkH4=mkLink(GUARD,H4,C.attn,.3);
+
+// ---------- HTML labels ----------
+const LBL={};const lblRoot=document.getElementById('labels');
+function lbl(key,html,pos,cls='',dx=0,dy=0){const e=document.createElement('div');e.className='lb '+cls;e.innerHTML=html;lblRoot.appendChild(e);LBL[key]={e,pos,o:0,oc:0,dx,dy};return LBL[key]}
+for(let i=0;i<NL;i++)lbl('L'+i,'L'+i+(isAttn(i)?' <span class="s">attn</span>':''),V(LX(i),PH/2+.3,-PW/2),'l'+(isAttn(i)?' a':''),-4,-4);
+lbl('ans','answer <span class="s">· token 8944</span>',ANS,'p big',14,-8);
+lbl('clk','click <span class="s">· autre outil</span>',CLK,'l',14,-8);
+for(const u of units){if(u.kind==='head')lbl('h'+u.h.L,'L'+u.h.L+' H'+u.h.h+' <span class="s">· Δmarge '+u.h.d+'</span>',u.p,'big',12,-10)}
+lbl('n30','L30 N8 · N216 · N345 · N1012 · N1418',V(LX(30),-PH/2-.2,PW/2),'p',-80,10);
+lbl('n31','L31 N302 · N315 · N1591 · N1855 · N3099',V(LX(31),-PH/2-.9,PW/2),'p',-60,14);
+lbl('arc','embed_tokens = lm_head <span class="s">· embeddings liés</span>',V(0,6.6,-1),'',-120,0);
+lbl('stream','flux résiduel <span class="s">· d = 2560</span>',V(X0-3.5,.2,0),'',-40,-26);
+lbl('brE','L0–11 · <span class="s">marge</span> +16,1 <span class="s">· garde « answer »</span>',BR.early.c,'',-120,8);
+lbl('brM','L12–23 · <span class="s">marge</span> −3,5 <span class="s">· bascule</span>',BR.mid.c,'m',-110,8);
+lbl('brL','L24–31 · <span class="s">marge</span> −10,0 <span class="s">· bascule</span>',BR.late.c,'',-100,8);
+lbl('brA','32 MLP seuls · <span class="s">marge</span> +0,9 <span class="s">· pas de bascule</span>',BR.all.c,'',-140,40);
+lbl('aeM','AlphaEdit · 24 écrivains L12–23 <span class="s">· 12 down_proj · 9 linear_attn.out_proj · 3 self_attn.o_proj</span>',BR.mid.c,'m',-240,8);
+lbl('j16','steer L16 · α −1,20',INJ[16].top,'m',10,-10);
+lbl('j24','steer L24 · α −5,54',INJ[24].top,'m',10,-10);
+lbl('j31','direction « conclusion » L31 · α −0,5',INJ[31].top,'m',10,-10);
+lbl('j18','valeur / engagement L18 · L24',INJ[18].top,'m',-210,-10);
+lbl('cl','espace des activations <span class="s">· L14 · positions illustratives</span>',V(LX(14),3.6,0),'big',-60,0);
+lbl('clF','faux fini',V(LX(14),-.6,2.8),'m big',10,0);
+lbl('clT','vrai fini',V(LX(14),.8,-3.4),'p big',-140,0);
+lbl('vmTask','gimp/77b8ab4d <span class="s">· Holo-3.1-4B · pas 6</span>',sl(vm,0,0),'big',0,-30);
+lbl('guard','Feci Guard <span class="s">· Claude Sonnet · vérificateur externe</span>',GUARD,'big',-60,44);
+lbl('gscreen','libreoffice_calc/1de60575 <span class="s">· écran final</span>',sl(gs,0,0),'big',0,-30);
+lbl('h4','Holo4-27B <span class="s">· escalade</span>',H4,'a big',18,-8);
+lbl('repair','réparation <span class="s">· retour à l\'agent avec la raison</span>',V(0,7.6,-5.5),'m big',-160,0);
+
+const v3=new THREE.Vector3();
+function updateLabels(dt){const w=innerWidth,h=innerHeight;for(const k in LBL){const L=LBL[k];L.oc+=(L.o-L.oc)*Math.min(1,dt*4);if(L.oc<.01){if(L.e.style.opacity!=='0')L.e.style.opacity='0';continue}
+  v3.copy(L.pos).project(camera);if(v3.z>1||v3.z<-1){L.e.style.opacity='0';continue}
+  const x=(v3.x*.5+.5)*w+L.dx,y=(-v3.y*.5+.5)*h+L.dy;L.e.style.transform='translate('+x.toFixed(1)+'px,'+y.toFixed(1)+'px)';L.e.style.opacity=L.oc.toFixed(3)}}
+function show(keys){for(const k in LBL)LBL[k].o=0;for(const k of keys)if(LBL[k])LBL[k].o=1}
+
+// ---------- panel / caption / big numbers ----------
+const $=id=>document.getElementById(id);
+let panelLines=[];
+function setPanel(ch){$('chap').textContent=ch.num;$('title').textContent=ch.title;$('lines').innerHTML=ch.lines.map(l=>'<div class="ln">'+l[1]+'</div>').join('');panelLines=[...$('lines').children];$('src').textContent=ch.src||'';$('big').innerHTML=(ch.big||[]).map(b=>'<div class="bn"><div class="v">'+b.v+'</div><div class="d">'+b.d+'</div></div>').join('');$('ci').innerHTML=ch.ci?ciSVG():'';$('ci').style.opacity=0}
+function updatePanel(ch,t){ch.lines.forEach((l,i)=>{const on=t>=l[0]&&(l[2]===undefined||t<l[2]);panelLines[i]&&panelLines[i].classList.toggle('on',on)});
+  const caps=(ch.caps||[]).filter(c=>t>=c[0]&&t<c[1]);const cap=$('cap');if(caps.length){if(cap.dataset.k!==caps[0][2]){cap.innerHTML=caps[0][2];cap.dataset.k=caps[0][2]}cap.style.opacity=1}else cap.style.opacity=0;
+  if(ch.big)[...$('big').children].forEach((e,i)=>e.classList.toggle('on',t>=ch.big[i].t));
+  if(ch.ci)$('ci').style.opacity=t>=ch.ci[0]&&t<ch.ci[1]?1:0}
+// online paired CIs (jury_kit/results/scores.csv; paper/generated/tab_b4_heldout.tex)
+function ciSVG(){const rows=[['fusion β 0,5','n=165',1.94,-4.3,8.0],['AlphaEdit','n=45',2.2,-13.3,17.8],['ExPO λ 1,25','n=120',-1.5,-8.9,5.7]];const x0=330,x1=930,lo=-20,hi=20;const X=v=>x0+(v-lo)/(hi-lo)*(x1-x0);let s='<line x1="'+X(0)+'" y1="10" x2="'+X(0)+'" y2="200" stroke="#7d8796" stroke-width="1.5" stroke-dasharray="4 4"/>';
+  s+='<text x="'+X(0)+'" y="236" fill="#7d8796" font-size="19" text-anchor="middle">0</text><text x="'+X(-20)+'" y="236" fill="#4f5866" font-size="17" text-anchor="middle">−20</text><text x="'+X(20)+'" y="236" fill="#4f5866" font-size="17" text-anchor="middle">+20 pts</text>';
+  rows.forEach((r,i)=>{const y=40+i*62;s+='<text x="0" y="'+(y+7)+'" fill="#e8ecf2" font-size="22">'+r[0]+' <tspan fill="#7d8796" font-size="17">'+r[1]+'</tspan></text>';s+='<line x1="'+X(r[3])+'" y1="'+y+'" x2="'+X(r[4])+'" y2="'+y+'" stroke="#ff4fd8" stroke-width="3"/><line x1="'+X(r[3])+'" y1="'+(y-9)+'" x2="'+X(r[3])+'" y2="'+(y+9)+'" stroke="#ff4fd8" stroke-width="2"/><line x1="'+X(r[4])+'" y1="'+(y-9)+'" x2="'+X(r[4])+'" y2="'+(y+9)+'" stroke="#ff4fd8" stroke-width="2"/><circle cx="'+X(r[2])+'" cy="'+y+'" r="7" fill="#fff"/>';
+   s+='<text x="'+(X(r[4])+14)+'" y="'+(y+7)+'" fill="#e8ecf2" font-size="19">'+(r[2]>0?'+':'−')+Math.abs(r[2]).toFixed(r[2]===1.94?2:1).replace('.',',')+' <tspan fill="#7d8796">['+(r[3]<0?'−':'+')+Math.abs(r[3]).toFixed(1).replace('.',',')+' ; +'+r[4].toFixed(1).replace('.',',')+']</tspan></text>'});return s}
+
+// ---------- camera ----------
+const camPos=V(0,0,40),camLook=V(0,0,0);let blendFrom=null;
+function camAt(keys,t){if(t<=keys[0][0])return[keys[0][1],keys[0][2]];for(let i=0;i<keys.length-1;i++){const a=keys[i],b=keys[i+1];if(t<=b[0]){const u=sm((t-a[0])/(b[0]-a[0]));return[a[1].clone().lerp(b[1],u),a[2].clone().lerp(b[2],u)]}}const z=keys[keys.length-1];return[z[1],z[2]]}
+
+// ---------- chapters ----------
+const VMc=V(VM_X,0,0);
+const CH=[
+{num:'00 · OSWorld',title:'Un faux « fini »',dur:24,
+ src:'~/osw/results_test_gh_orig · gimp/77b8ab4d-994f-43ac-8930-8ca087d7c4b4 · bras orig_pod · jury_kit/results/online_guard_tasks.csv',
+ cam:[[0,V(VM_X-23,0,0),VMc],[13,V(VM_X-21,0,0),VMc],[16.5,V(VM_X-7.5,-3.9,-1.2),V(VM_X,-4.1,-1.2)],[20.5,V(VM_X-7,-3.95,-1.0),V(VM_X,-4.15,-1.3)],[24,V(VM_X-9,-.5,0),VMc]],
+ lines:[[1,'<span class="k">tâche</span> « Could you assist me in placing my photo on the desktop and renaming it to export.jpg? »'],[4,'<span class="k">agent</span> Holo-3.1-4B · VM Ubuntu'],[12,'<span class="k">pas 6 · answer</span> « …exported to the desktop with the filename \'export.jpg\'… The task is now complete. »'],[17,'<span class="k">score OSWorld</span> <span class="r">0.0</span> · <span class="m">faux « fini »</span>']],
+ caps:[[1,4.5,'<span class="k">pas 1 ·</span> click « File menu »'],[4.5,8,'<span class="k">pas 3 ·</span> write « export.jpg »'],[8,11.5,'<span class="k">pas 5 ·</span> click « Export »'],[11.5,24,'<span class="k">pas 6 ·</span> answer <span class="y">« done »</span>']],
+ enter(){setLayerVis(0);streamOp=0;vm.op=1;gs.op=0},
+ update(t){vm.key=t<4.5?'s1':t<8?'s3':t<11.5?'s5':'s6';vm.op=t<22.5?1:1-sm((t-22.5)/1.4);vmBox.op=win(t,15.5,23);vmBox2.op=win(t,12,15.5);setLayerVis(t>21?.6:0);show([...(t<15?['vmTask']:[]),])}},
+{num:'01 · Le modèle',title:'Holo-3.1-4B, de l’intérieur',dur:20,
+ src:'config.json · Hcompany/Holo-3.1-4B @ 8c88265a · paper/generated/num_b4.tex',
+ cam:[[0,V(VM_X-9,-.5,0),VMc],[3.5,V(X0-1.5,1.5,3.5),V(X0+8,0,0)],[9,V(X0-14,8,17),V(-8,0,0)],[15,V(-20,12,38),V(2,0,0)],[20,V(X1-16,7,16),V(X1-3,0,0)]],
+ lines:[[3,'<span class="k">base</span> Qwen3.5-4B hybride'],[5,'<span class="k">couches</span> 32 · d 2560 · MLP 9216'],[7,'<span class="c">8 attention complète</span> <span class="k">·</span> L3 L7 L11 L15 L19 L23 L27 L31'],[9,'<span class="k">24 Gated DeltaNet</span> <span class="k">· attention linéaire</span>'],[12,'<span class="k">embeddings liés</span> · lm_head = embed_tokens · vocab 248 320'],[15,'<span class="k">sortie</span> l’outil <span class="y">answer</span> = « fini »']],
+ enter(){vm.op=0;streamOp=1;streamSpeed=4;setLayerVis(1)},
+ update(t,T){vm.op=t<2.5?1-sm(t/2.5):0;setLayerVis(sm(t/2));for(let i=0;i<NL;i++)layers[i].hl=(t>7&&t<13&&isAttn(i))?.6+.4*Math.sin(T*4+i):0;arcM.opacity=.45*win(t,11,21);ansN.op=t>14?1:0;clkN.op=t>14?.6:0;
+  const L=[];if(t>3)for(let i=0;i<NL;i++)L.push('L'+i);if(t>4&&t<12)L.push('stream');if(t>11)L.push('arc');if(t>14)L.push('ans','clk');show(L)}},
+{num:'02 · Localiser',title:'Où se décide « answer »',dur:28,
+ src:'paper/sec/interventions.tex §patching · paper/data/pod_astra/circuit/REPORT.md · paper/generated/num_causal.tex',
+ cam:[[0,V(X1-16,7,16),V(X1-3,0,0)],[5,V(-30,10,24),V(6,0,0)],[11,V(X1-15,6,12),V(X1-2,0,0)],[19,V(X1-21,6,15),V(X1-4,.2,0)],[28,V(X1-23,7,16),V(X1-4,0,0)]],
+ lines:[[1,'<span class="k">patching du flux résiduel</span> · 512 patches · 4 contextes × 32 couches × 4 positions'],[5,'<span class="k">fin du prefill</span> Δmarge −0,19'],[6.5,'<span class="k">mi-réflexion</span> Δmarge −2,28'],[8,'<span class="k">nom de l’outil</span> <span class="y">Δmarge −34,8</span> · dès ~L16'],[12,'<span class="k">scans de composants</span> · 992 patches · L19 L23 L30 L31'],[15,'<span class="k">circuit C1</span> · 3 têtes + 10 neurones MLP'],[21,'<span class="k">les têtes lisent</span> la définition de <span class="y">answer</span> (L19 H15, L23 H1) · le JSON en cours (L31 H14)']],
+ enter(){setLayerVis(1);streamOp=1},
+ update(t,T){for(let i=0;i<NL;i++){layers[i].hl=t>7.5&&t<13?(i>=16?sm((t-7.5-(i-16)*.12)/.8)*(.4+.6*(i-16)/15):0):0;layers[i].dim=t>12?(([19,23,30,31].includes(i))?0:.7):0}
+  for(const u of units)u.n.op=t>12.5?1:0;unitLinks.forEach((k,j)=>{k.op=t>15?.75:0;k.draw=t>15+j*.12?1:0});ansN.op=1;clkN.op=.6;
+  const L=['ans','clk'];if(t<12)for(let i=0;i<NL;i++)L.push('L'+i);else for(const i of [19,23,30,31])L.push('L'+i);if(t>13)L.push('h19','h23','h31');if(t>16)L.push('n30','n31');show(L)}},
+{num:'03 · Supprimer',title:'Retirer le circuit',dur:24,
+ src:'paper/generated/tab_causal_all.tex · num_causal.tex · num_broad.tex (test plafond, projection rang 1)',
+ cam:[[0,V(X1-23,7,16),V(X1-4,0,0)],[7,V(X1-20,5,14),V(X1-3,0,0)],[10,V(-14,12,38),V(6,-1.5,0)],[24,V(-10,11,39),V(8,-1.5,0)]],
+ lines:[[1,'<span class="k">C1 retiré (α = 1)</span> · Δmarge −11,2 à −12,2 · <span class="y">0/4 décisions basculent</span>'],[4,'<span class="k">faux fini</span> répond 8/8 · <span class="k">vrai fini</span> 8/8 · <span class="k">contrôle aléatoire</span> 8/8'],[9,'<span class="k">test plafond</span> · échanger des blocs d’écrivains · contexte faux fini, marge +16,9'],[17,'<span class="k">un vrai fini bascule aussi</span> · +16,4 → −2,2'],[19.5,'<span class="k">projection rang 1, écrivains L12–23</span> · faux +1,4 / +1,6 · vrais +4,8 / +2,8'],[21.5,'<span class="y">levier causal : oui</span> · <span class="m">sélectif : non</span>']],
+ enter(){setLayerVis(1);streamOp=1},
+ update(t,T){for(let i=0;i<NL;i++){layers[i].dim=t<8?(([19,23,30,31].includes(i))?0:.7):0;layers[i].hl=0;layers[i].tintAmt=0}
+  const rm=sm((t-1)/2.5);for(const u of units){u.n.op=t<9?1-rm*.85:0;u.n.m.color.set(rm>.5?C.hold:(u.kind==='head'?C.white:C.push))}unitLinks.forEach(k=>{k.op=t<9?.75*(1-rm)+.08:0;k.draw=1});
+  const e=win(t,10,23,.6),m=win(t,11.5,23,.6),l=win(t,13,23,.6),a=win(t,14.5,23,.6);BR.early.op=e;BR.mid.op=m;BR.late.op=l;BR.all.op=a*.6;
+  for(let i=0;i<NL;i++){if(i>=12&&i<=23){layers[i].tint=new THREE.Color(C.hold);layers[i].tintAmt=m*.8}}
+  ansN.op=1;clkN.op=.6;const L=['ans','clk'];if(t<9)L.push('h19','h23','h31','L19','L23','L30','L31');if(t>10)L.push('brE');if(t>11.5)L.push('brM');if(t>13)L.push('brL');if(t>14.5)L.push('brA');show(L)}},
+{num:'04 · Ajouter',title:'Pousser contre l’arrêt',dur:26,
+ src:'paper/generated/tab_causal_all.tex · num_*.tex (mergeCua, alpha) · tab_b4_heldout.tex · jury_kit/results/scores.csv',ci:[16,26],
+ cam:[[0,V(-10,11,39),V(8,-1.5,0)],[6,V(-12,12,24),V(8,1,0)],[10,V(-28,10,26),V(-1,-1,0)],[16,V(-14,14,40),V(8,-5,0)],[26,V(-10,13,41),V(10,-5,0)]],
+ lines:[[1,'<span class="m">steering</span> · L16 · L24 · L31 · L18'],[4,'<span class="k">faux fini</span> répond toujours <span class="y">8/8</span> <span class="k">à chaque dose</span>'],[8,'<span class="m">AlphaEdit</span> · faux fini 15→8/16 · <span class="r">vrai fini 15→3/16</span>'],[11,'<span class="m">fusion β 0,5</span> · faux fini 16→11/16 · <span class="r">vrai fini 16→2/16</span>'],[13,'<span class="k">bouge l’arrêt</span> · <span class="m">ne cible pas le faux fini</span>'],[16,'<span class="k">en ligne, OSWorld, apparié</span> · aucun gain détectable']],
+ enter(){setLayerVis(1);streamOp=1;for(const u of units){u.n.op=0;u.n.m.color.set(u.kind==='head'?C.white:C.push)}unitLinks.forEach(k=>{k.op=0;k.draw=0})},
+ update(t,T){for(const k of [16,24,31,18])INJ[k].op=win(t,{16:.8,24:1.6,31:2.4,18:3.2}[k],15.5);
+  for(let i=0;i<NL;i++){layers[i].tint=new THREE.Color(C.hold);const ae=(i>=12&&i<=23)?win(t,7.5,10.8):0;const mg=win(t,10.8,15.5)*.55;layers[i].tintAmt=Math.max(ae,mg);layers[i].hl=[16,24,31,18].includes(i)?win(t,1,7.5)*.8:0;layers[i].dim=t>16?.75:0}
+  BR.mid.op=win(t,7.5,10.8);ansN.op=1;clkN.op=.6;streamSpeed=4+2*win(t,1,15);
+  const L=['ans','clk'];if(t<16)L.push('j16','j24','j31','j18');if(t>7.5&&t<10.8)L.push('aeM');show(L)}},
+{num:'05 · Diagnostic',title:'Faux fini, vrai fini : même nuage',dur:22,
+ src:'paper/generated/tab_fs_auc.tex · judge_bench/REPORT.md · verif_study/ · paper/generated/num_*.tex (text_signal)',
+ cam:[[0,V(-10,13,41),V(10,-5,0)],[5,V(LX(14)-10,3,10),CL_C],[14,V(LX(14)-8,5,-9),CL_C],[22,V(LX(14)-12,2,-4),CL_C]],
+ lines:[[6,'<span class="k">sonde résiduelle</span> · L14 · AUROC <span class="m">0,760</span>'],[8,'<span class="k">numéro du pas seul</span> · AUROC 0,724'],[9.5,'<span class="k">longueur du contexte seule</span> · AUROC 0,735'],[12,'<span class="k">texte du raisonnement</span> · 0,66 <span class="k">vs pas</span> 0,72'],[15,'<span class="k">auto-jugement de Holo</span> · 35/66 détectés · 97/202 rejetés à tort'],[18,'<span class="m">l’information n’est pas dedans</span>']],
+ enter(){setLayerVis(.12);streamOp=.2},
+ update(t,T){cTrue.op=t>2?1:0;cFalse.op=t>2?1:0;this._mix=sm((t-4.5)/2);for(let i=0;i<NL;i++){layers[i].hl=i===14?win(t,5,22)*.6:0;layers[i].tintAmt=0}
+  setLayerVis(.12);layers[14].vis=.8;const L=['L14'];if(t>2)L.push('cl');if(t>5)L.push('clF','clT');show(L)}},
+{num:'06 · Vérifier',title:'Le vérificateur, hors du réseau',dur:28,
+ src:'feci_guard/feci_guard.py · ~/osw/feci_demo/calc_1de60575/guard_branch_k0/guard.jsonl (demo_live/repair_calc.html) · rescue_bench/REPORT.md',
+ cam:[[0,V(LX(14)-12,2,-4),CL_C],[4,V(X1-6,3,12),V(X1+4,.5,0)],[9,V(X1-9,5,19),V(X1+9,.5,-2)],[17,V(X1-8,4.5,18),V(X1+10,1,-3)],[22,V(X1-12,9,26),V(X1+4,2,0)],[28,V(X1-3,4,20),V(X1+10,-1,0)]],
+ lines:[[3,'<span class="k">« done » sort du réseau</span> → <span class="y">answer</span>'],[6,'<span class="k">Feci Guard</span> lit l’écran final, exigence par exigence'],[10,'<span class="g">✓</span> tableau croisé créé, promotions en colonnes'],[11.5,'<span class="r">✗</span> dans une nouvelle feuille « Sheet2 » <span class="k">· l’onglet s’appelle « Pivot Table_Sheet1_1 »</span>'],[13,'<span class="r">REFUS · INCOMPLETE</span> <span class="k">· pas 12</span>'],[17,'<span class="k">réparation · pas 17</span> · <span class="g">✓ ✓ ✓ COMPLETE</span>'],[22,'<span class="k">sinon :</span> <span class="c">escalade vers Holo4-27B</span>']],
+ enter(){setLayerVis(1);streamOp=1;cTrue.op=0;cFalse.op=0;gs.key='c12'},
+ update(t,T){setLayerVis(.75);gs.op=t>5?1:0;gs.key=t<17?'c12':'c17';gdBox.op=win(t,11.5,16.5);guardN.op=t>5?1:0;guardShape.material.opacity=t>5?.9:0;guardShape.rotation.y=T*.5;guardShape.rotation.x=T*.2;
+  ansN.op=1;clkN.op=.5;lkAnsGuard.op=t>4?.8:0;lkAnsGuard.draw=t>4?1:0;lkScreenGuard.op=t>6?.5:0;lkScreenGuard.draw=t>6?1:0;lkRepair.op=win(t,13.5,21)*.9;lkRepair.draw=t>13.5?1:0;lkH4.op=t>22?.8:0;lkH4.draw=t>22?1:0;h4N.op=t>22?1:0;
+  const L=['ans'];if(t>5)L.push('guard','gscreen');if(t>13.5&&t<21)L.push('repair');if(t>22)L.push('h4');show(L)}},
+{num:'07 · Résultats',title:'Ce que le vérificateur change',dur:24,
+ src:'report/ONLINE_GUARD_RESULT.md · jury_kit/results/online_guard_tasks.csv · rescue_bench/REPORT.md · judge_bench/REPORT.md',
+ cam:[[0,V(X1-3,4,20),V(X1+10,-1,0)],[8,V(-12,16,50),V(4,1,0)],[24,V(-18,15,48),V(0,1,0)]],
+ lines:[],
+ big:[{t:1,v:'<span class="m">22,5 %</span> <span class="k">→</span> <span class="g">10,8 %</span>',d:'faux « done », en ligne, 120 tâches<br><span class="k">−11,7 pts [−19,2 ; −4,2] · score +1,6 [−4,4 ; +7,7], inchangé</span>'},
+      {t:8,v:'<span class="g">11/18</span> <span class="k">vs</span> 2/18',d:'Guard → Holo4-27B vs Holo4 seul<br><span class="k">rejeu de 9 faux succès × 2 · +50 pts [+22 ; +78]</span>'},
+      {t:14,v:'<span class="g">45/66</span> <span class="k">vs</span> 35/66',d:'faux « done » détectés<br><span class="k">Feci Guard vs auto-jugement de Holo · 268 écrans</span>'}],
+ enter(){gs.op=0;guardN.op=.6;setLayerVis(.5)},
+ update(t,T){gs.op=0;guardShape.material.opacity=.5;guardShape.rotation.y=T*.5;lkAnsGuard.op=.4;lkScreenGuard.op=0;lkRepair.op=0;lkH4.op=.3;h4N.op=.5;setLayerVis(.2);show([])}}
+];
+// chapter 5 point colour mix uses a per-chapter field
+CH[5]._mix=0;
+
+// ---------- bar ----------
+$('bar').innerHTML=CH.map(()=>'<i><b></b></i>').join('');const barB=[...document.querySelectorAll('#bar b')];
+
+// ---------- loop ----------
+let ci=0,ct=0,paused=false,last=performance.now(),T=0;
+function enter(i){ci=(i+CH.length)%CH.length;ct=0;blendFrom=[camPos.clone(),camLook.clone()];
+  for(const u of units){u.n.op=0;u.n.m.color.set(u.kind==='head'?C.white:C.push)}unitLinks.forEach(k=>{k.op=0});for(const k in BR)BR[k].op=0;for(const k in INJ)INJ[k].op=0;
+  for(const k of [lkAnsGuard,lkScreenGuard,lkRepair,lkH4])k.op=0;h4N.op=0;guardN.op=0;guardShape.material.opacity=0;cTrue.op=0;cFalse.op=0;vm.op=0;gs.op=0;vmBox.op=vmBox2.op=gdBox.op=0;arcM.opacity=0;layerReset();streamSpeed=4;
+  CH[ci].enter();setPanel(CH[ci])}
+addEventListener('keydown',e=>{if(e.code==='Space'){paused=!paused;$('paused').style.opacity=paused?1:0;e.preventDefault()}else if(e.code==='ArrowRight'){enter(ci+1)}else if(e.code==='ArrowLeft'){enter(ct>2?ci:ci-1)}else if(/^Digit[0-7]$/.test(e.code)){enter(+e.code.slice(5))}});
+function frame(now){requestAnimationFrame(frame);const dt=Math.min(.05,(now-last)/1000);last=now;
+  if(!paused){ct+=dt;T+=dt;if(ct>=CH[ci].dur)enter(ci+1)}
+  const ch=CH[ci];ch.update(ct,T);
+  const [p,l]=camAt(ch.cam,ct);
+  if(blendFrom){const u=sm(ct/1.6);camPos.copy(blendFrom[0]).lerp(p,u);camLook.copy(blendFrom[1]).lerp(l,u);if(u>=1)blendFrom=null}else{camPos.copy(p);camLook.copy(l)}
+  camera.position.copy(camPos);camera.position.y+=Math.sin(T*.35)*.12;camera.position.z+=Math.cos(T*.27)*.12;camera.lookAt(camLook);
+  updateLayers(dt);updateStream(paused?0:dt);updateNodes(dt,T);updateLinks(dt);updateBr(dt);updateInj(dt);updateClouds(dt,T,CH[5]._mix||0);updateScreens(dt);
+  updatePanel(ch,ct);updateLabels(dt);
+  barB.forEach((b,i)=>b.style.width=(i<ci?100:i===ci?100*ct/ch.dur:0)+'%');
+  renderer.render(scene,camera)}
+const q=new URLSearchParams(location.search);enter(+(q.get('ch')||0));if(q.get('t')){ct=+q.get('t');blendFrom=null}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
