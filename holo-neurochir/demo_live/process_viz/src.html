@@ -1,39 +1,40 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Holo · processus</title>
+<title>Holo · process</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#000;--fg:#e8ecf2;--dim:#7d8796;--faint:#3a414c;--push:#ffd75e;--hold:#ff4fd8;--attn:#6fd3ff;--ok:#7dffb0;--no:#ff4f6a}
+:root{--bg:#0b0d10;--fg:#f4f6fa;--dim:#a9b3c1;--faint:#4a525e;--push:#ffd75e;--hold:#ff4fd8;--attn:#6fd3ff;--ok:#7dffb0;--no:#ff4f6a}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--bg);color:var(--fg);overflow:hidden;font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace}
-canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+canvas{position:fixed;inset:0;width:100%;height:100%;display:block;cursor:grab}canvas:active{cursor:grabbing}
 #labels{position:fixed;inset:0;pointer-events:none}
-.lb{position:absolute;left:0;top:0;white-space:nowrap;font-size:clamp(11px,0.85vw,16px);letter-spacing:.02em;color:var(--fg);opacity:0;will-change:transform,opacity;text-shadow:0 0 6px #000,0 0 2px #000}
-.lb.l{color:var(--dim);font-size:clamp(10px,.72vw,14px)}
+.lb{position:absolute;left:0;top:0;white-space:nowrap;font-size:clamp(13px,1.05vw,20px);letter-spacing:.02em;color:var(--fg);opacity:0;will-change:transform,opacity;text-shadow:0 0 8px #0b0d10,0 0 3px #0b0d10,0 0 1px #000}
+.lb.l{color:#c3ccd8;font-size:clamp(12px,.9vw,17px)}
 .lb.a{color:var(--attn)}
 .lb.p{color:var(--push)}
 .lb.m{color:var(--hold)}
-.lb.big{font-size:clamp(13px,1.05vw,19px)}
+.lb.big{font-size:clamp(15px,1.3vw,24px)}
 .lb .s{color:var(--dim)}
-#panel{position:fixed;top:4vh;right:2.2vw;width:clamp(260px,24vw,460px);border-left:1px solid #2a3038;padding:.4vw 1vw .8vw 1.2vw;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.82))}
-#chap{font-size:clamp(11px,.8vw,15px);color:var(--dim);letter-spacing:.18em;text-transform:uppercase}
+#panel{position:fixed;top:4vh;right:2.2vw;width:clamp(280px,26vw,520px);border-left:1px solid #2a3038;padding:.4vw 1vw .8vw 1.2vw;pointer-events:none;background:linear-gradient(90deg,rgba(11,13,16,.6),rgba(11,13,16,.88))}
+#chap{font-size:clamp(12px,.9vw,17px);color:var(--dim);letter-spacing:.18em;text-transform:uppercase}
 #title{font-size:clamp(22px,2.1vw,40px);font-weight:500;margin:.35em 0 .7em;letter-spacing:.01em}
 #lines{display:flex;flex-direction:column;gap:.62em}
-.ln{font-size:clamp(12px,.95vw,18px);line-height:1.35;color:var(--fg);opacity:0;transform:translateY(6px);transition:opacity .7s,transform .7s}
+.ln{font-size:clamp(14px,1.12vw,21px);line-height:1.35;color:var(--fg);opacity:0;transform:translateY(6px);transition:opacity .7s,transform .7s}
 .ln.on{opacity:1;transform:none}
 .ln .k{color:var(--dim)}
 .ln .y{color:var(--push)}.ln .m{color:var(--hold)}.ln .c{color:var(--attn)}.ln .g{color:var(--ok)}.ln .r{color:var(--no)}
-#src{position:fixed;left:2.2vw;bottom:3.2vh;font-size:clamp(10px,.68vw,13px);color:#4f5866;max-width:60vw;pointer-events:none}
-#cap{position:fixed;left:2.2vw;top:4vh;background:rgba(0,0,0,.7);padding:.3em .6em;max-width:56vw;font-size:clamp(14px,1.25vw,24px);line-height:1.4;color:var(--fg);pointer-events:none;opacity:0;transition:opacity .8s}
+#src{position:fixed;left:2.2vw;bottom:3.2vh;font-size:clamp(11px,.75vw,14px);color:#7a8494;max-width:60vw;pointer-events:none}
+#cap{position:fixed;left:2.2vw;top:4vh;background:rgba(11,13,16,.8);padding:.3em .6em;max-width:56vw;font-size:clamp(14px,1.25vw,24px);line-height:1.4;color:var(--fg);pointer-events:none;opacity:0;transition:opacity .8s}
 #cap .k{color:var(--dim)}#cap .m{color:var(--hold)}#cap .y{color:var(--push)}
 #bar{position:fixed;left:2.2vw;right:2.2vw;bottom:1.4vh;height:2px;display:flex;gap:6px;pointer-events:none}
-#bar i{flex:1;background:#1b2027;position:relative;overflow:hidden}
+#bar i{flex:1;background:#262c35;position:relative;overflow:hidden}
 #bar i b{position:absolute;inset:0;width:0;background:#9aa4b2}
 #big{position:fixed;left:2.2vw;right:calc(24vw + 5vw);top:50%;transform:translateY(-50%);display:grid;grid-template-columns:repeat(3,1fr);gap:3vw;pointer-events:none;background:radial-gradient(ellipse at center,rgba(0,0,0,.85),rgba(0,0,0,0) 75%);padding:3vh 0}
+#big:empty{background:none}
 .bn{opacity:0;transform:translateY(14px);transition:opacity 1s,transform 1s}
 .bn.on{opacity:1;transform:none}
 .bn .v{font-size:clamp(30px,3.6vw,72px);font-weight:500;letter-spacing:-.01em;line-height:1.05}
@@ -42,7 +43,8 @@ canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
 .bn .d .k{color:var(--dim)}
 #ci{position:fixed;left:2.2vw;bottom:9vh;width:min(54vw,980px);pointer-events:none;opacity:0;transition:opacity 1s}
 #ci text{font-family:'IBM Plex Mono',ui-monospace,monospace}
-#paused{position:fixed;right:2.2vw;bottom:3.2vh;font-size:12px;color:var(--dim);opacity:0}
+#paused{position:fixed;right:2.2vw;bottom:3.2vh;font-size:clamp(12px,.85vw,16px);color:var(--dim);opacity:0}
+#help{position:fixed;right:2.2vw;bottom:5.6vh;font-size:clamp(11px,.72vw,14px);color:#6d7685;pointer-events:none}
 </style>
 </head>
 <body>
@@ -53,9 +55,17 @@ canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
 <div id="big"></div>
 <svg id="ci" viewBox="0 0 1120 250"></svg>
 <div id="src"></div>
-<div id="paused">pause · espace</div>
+<div id="paused">paused · space · R to resume</div>
 <div id="bar"></div>
+<div id="help">drag · rotate &nbsp; wheel · zoom &nbsp; right-drag · pan &nbsp; double-click · details &nbsp; ←/→ · chapter &nbsp; space · pause &nbsp; R · resume</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
 "use strict";
 const IMG={s1:"__IMG_step_1__",s3:"__IMG_step_3__",s5:"__IMG_step_5__",s6:"__IMG_step_6__",c12:"__IMG_calc_12__",c17:"__IMG_calc_17__"};
@@ -65,10 +75,12 @@ const canvas=document.getElementById('c');
 const renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 const scene=new THREE.Scene();
-scene.background=new THREE.Color(0x000000);
-scene.fog=new THREE.FogExp2(0x000000,0.0105);
+scene.background=new THREE.Color(0x0b0d10);
+scene.fog=new THREE.FogExp2(0x0b0d10,0.0072);
 const camera=new THREE.PerspectiveCamera(42,1,0.05,500);
-function resize(){renderer.setSize(innerWidth,innerHeight,false);camera.aspect=innerWidth/innerHeight;camera.setViewOffset(innerWidth,innerHeight,innerWidth*.13,0,innerWidth,innerHeight);camera.updateProjectionMatrix();}
+const composer=new THREE.EffectComposer(renderer);composer.addPass(new THREE.RenderPass(scene,camera));
+const bloom=new THREE.UnrealBloomPass(new THREE.Vector2(innerWidth,innerHeight),1.0,.5,.78);composer.addPass(bloom);
+function resize(){renderer.setSize(innerWidth,innerHeight,false);composer.setPixelRatio(Math.min(devicePixelRatio,2));composer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.setViewOffset(innerWidth,innerHeight,innerWidth*.15,0,innerWidth,innerHeight);camera.updateProjectionMatrix();}
 addEventListener('resize',resize);resize();
 
 const V=(x,y,z)=>new THREE.Vector3(x,y,z);
@@ -81,7 +93,7 @@ const hashR=(s)=>{let h=2166136261;for(const c of String(s)){h^=c.charCodeAt(0);
 // glow sprite texture
 const glowTex=(()=>{const c=document.createElement('canvas');c.width=c.height=64;const g=c.getContext('2d');const r=g.createRadialGradient(32,32,0,32,32,32);r.addColorStop(0,'rgba(255,255,255,1)');r.addColorStop(.25,'rgba(255,255,255,.75)');r.addColorStop(.6,'rgba(255,255,255,.12)');r.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=r;g.fillRect(0,0,64,64);const t=new THREE.CanvasTexture(c);return t})();
 const ADD=THREE.AdditiveBlending;
-const C={push:0xffd75e,hold:0xff4fd8,attn:0x6fd3ff,dnet:0x8f9bb3,white:0xffffff,ok:0x7dffb0,no:0xff4f6a};
+const C={push:0xffd75e,hold:0xff4fd8,attn:0x7fdcff,dnet:0xb4c0d6,white:0xffffff,ok:0x7dffb0,no:0xff4f6a};
 
 // ---------- network geometry ----------
 const NL=32, SP=2.2, PW=6.2, PH=4.4;
@@ -106,7 +118,7 @@ for(let i=0;i<NL;i++){
   const n=64,pp=[];seed=101+i*37;
   for(let k=0;k<n;k++)pp.push(0,(rnd()-.5)*PH*.9,(rnd()-.5)*PW*.92);
   const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.Float32BufferAttribute(pp,3));
-  const ptM=new THREE.PointsMaterial({color:col,map:glowTex,size:.3,transparent:true,opacity:.55,depthWrite:false,blending:ADD});
+  const ptM=new THREE.PointsMaterial({color:col,map:glowTex,size:.36,transparent:true,opacity:.55,depthWrite:false,blending:ADD});
   g.add(new THREE.Points(pg,ptM));
   layers.push({g,fillM,gridM,borM,ptM,base:col.clone(),hl:0,hlc:0,tint:null,tintAmt:0,dim:0,vis:1});
 }
@@ -122,7 +134,7 @@ function updateLayers(dt){
     const k=(1+L.hlc*2.2)*(1-L.dc*.8)*L.vc;
     tmpC.copy(L.base);if(L.tint)tmpC.lerp(L.tint,L.tac);
     for(const m of [L.fillM,L.gridM,L.borM,L.ptM])m.color.copy(tmpC);
-    L.fillM.opacity=.025*k+.05*L.tac*L.vc;L.gridM.opacity=.08*k;L.borM.opacity=Math.min(1,.42*k);L.ptM.opacity=Math.min(1,.5*k);
+    L.fillM.opacity=.055*k+.07*L.tac*L.vc;L.gridM.opacity=Math.min(1,.22*k);L.borM.opacity=Math.min(1,.8*k);L.ptM.opacity=Math.min(1,.9*k);
   }
 }
 
@@ -137,7 +149,7 @@ scene.add(new THREE.Points(pGeo,pM));
 let streamSpeed=4, streamOp=0, streamOpC=0;
 function updateStream(dt){
   streamOpC+=(streamOp-streamOpC)*Math.min(1,dt*2);
-  pM.opacity=.85*streamOpC;streamM.opacity=.3*streamOpC;
+  pM.opacity=1*streamOpC;streamM.opacity=.6*streamOpC;
   for(let k=0;k<NP;k++){const s=pSeed[k];s.x+=dt*streamSpeed*s.v;if(s.x>X1+4)s.x=X0-4;s.a+=dt*.6;
     pPos[k*3]=s.x;pPos[k*3+1]=Math.sin(s.a)*s.r;pPos[k*3+2]=Math.cos(s.a)*s.r}
   pGeo.attributes.position.needsUpdate=true;
@@ -158,7 +170,7 @@ const ansN=mkNode(ANS,C.push,1.5), clkN=mkNode(CLK,0x9aa4b2,1.0);
 
 // special units — positions decorative, labels from paper/data/pod_astra/circuit/REPORT.md
 function unitPos(L,id){const r1=hashR('y'+L+'_'+id),r2=hashR('z'+L+'_'+id);return V(LX(L),(r1-.5)*PH*.75,(r2-.5)*PW*.8)}
-const HEADS=[{L:19,h:15,d:'−2,06'},{L:23,h:1,d:'−3,88'},{L:31,h:14,d:'−3,56'}];
+const HEADS=[{L:19,h:15,d:'−2.06'},{L:23,h:1,d:'−3.88'},{L:31,h:14,d:'−3.56'}];
 const NEUR={30:[8,216,345,1012,1418],31:[302,315,1591,1855,3099]};
 const units=[];
 for(const h of HEADS){const p=unitPos(h.L,'h'+h.h);units.push({p,kind:'head',n:mkNode(p,C.white,.75),h})}
@@ -167,7 +179,7 @@ for(const L of [30,31])for(const id of NEUR[L]){const p=unitPos(L,'n'+id);units.
 function curveLine(a,b,color,lift=1.2){const mid=a.clone().lerp(b,.5);mid.y+=lift;const c=new THREE.QuadraticBezierCurve3(a,mid,b);const g=new THREE.BufferGeometry().setFromPoints(c.getPoints(48));const m=new THREE.LineBasicMaterial({color,transparent:true,opacity:0,depthWrite:false,blending:ADD});const l=new THREE.Line(g,m);scene.add(l);return {l,m,g,op:0,opc:0,draw:0,drawc:0}}
 const links=[];function mkLink(a,b,c,lift){const k=curveLine(a,b,c,lift);links.push(k);return k}
 const unitLinks=units.map(u=>mkLink(u.p,ANS,C.push,u.kind==='head'?1.6:.8));
-function updateLinks(dt){for(const k of links){k.opc+=(k.op-k.opc)*Math.min(1,dt*3);k.drawc+=(k.draw-k.drawc)*Math.min(1,dt*1.6);k.m.opacity=k.opc;k.g.setDrawRange(0,Math.floor(49*k.drawc))}}
+function updateLinks(dt){for(const k of links){k.opc+=(k.op-k.opc)*Math.min(1,dt*3);k.drawc+=(k.draw-k.drawc)*Math.min(1,dt*1.6);k.m.opacity=Math.min(1,k.opc*1.3);k.g.setDrawRange(0,Math.floor(49*k.drawc))}}
 
 // block brackets (ceiling test, AlphaEdit range)
 function bracket(a,b,color){const x0=LX(a)-.6,x1=LX(b)+.6,y=-PH/2-.5,z=PW/2+.2;const g=new THREE.BufferGeometry().setFromPoints([V(x0,y+.35,z),V(x0,y,z),V(x1,y,z),V(x1,y+.35,z)]);const m=new THREE.LineBasicMaterial({color,transparent:true,opacity:0,depthWrite:false,blending:ADD});scene.add(new THREE.Line(g,m));return {m,op:0,opc:0,c:V((x0+x1)/2,y-.45,z)}}
@@ -188,7 +200,7 @@ function updateClouds(dt,T,colorMix){for(const c of [cTrue,cFalse]){c.opc+=(c.op
 
 // screens (VM captures)
 const texL=new THREE.TextureLoader();const TX={};for(const k in IMG){TX[k]=texL.load(IMG[k]);TX[k].minFilter=THREE.LinearFilter;TX[k].anisotropy=8}
-function screen(pos,ry,sc){const m=new THREE.MeshBasicMaterial({map:TX.s1,transparent:true,opacity:0,side:THREE.DoubleSide,depthWrite:false,fog:false});const s=new THREE.Mesh(new THREE.PlaneGeometry(19.2,10.8),m);s.position.copy(pos);s.rotation.y=ry;s.scale.setScalar(sc);scene.add(s);
+function screen(pos,ry,sc){const m=new THREE.MeshBasicMaterial({map:TX.s1,color:0xc4c4c4,transparent:true,opacity:0,side:THREE.DoubleSide,depthWrite:false,fog:false});const s=new THREE.Mesh(new THREE.PlaneGeometry(19.2,10.8),m);s.position.copy(pos);s.rotation.y=ry;s.scale.setScalar(sc);scene.add(s);
   const fg=new THREE.BufferGeometry().setFromPoints([V(-9.6,-5.4,0),V(9.6,-5.4,0),V(9.6,5.4,0),V(-9.6,5.4,0),V(-9.6,-5.4,0)]);const fm=new THREE.LineBasicMaterial({color:0x8f9bb3,transparent:true,opacity:0,fog:false});s.add(new THREE.Line(fg,fm));s.updateMatrixWorld(true);
   return {s,m,fm,op:0,opc:0,key:'s1'}}
 const VM_X=X0-13; const vm=screen(V(VM_X,0,0),-Math.PI/2,1);
@@ -216,29 +228,29 @@ const LBL={};const lblRoot=document.getElementById('labels');
 function lbl(key,html,pos,cls='',dx=0,dy=0){const e=document.createElement('div');e.className='lb '+cls;e.innerHTML=html;lblRoot.appendChild(e);LBL[key]={e,pos,o:0,oc:0,dx,dy};return LBL[key]}
 for(let i=0;i<NL;i++)lbl('L'+i,'L'+i+(isAttn(i)?' <span class="s">attn</span>':''),V(LX(i),PH/2+.3,-PW/2),'l'+(isAttn(i)?' a':''),-4,-4);
 lbl('ans','answer <span class="s">· token 8944</span>',ANS,'p big',14,-8);
-lbl('clk','click <span class="s">· autre outil</span>',CLK,'l',14,-8);
-for(const u of units){if(u.kind==='head')lbl('h'+u.h.L,'L'+u.h.L+' H'+u.h.h+' <span class="s">· Δmarge '+u.h.d+'</span>',u.p,'big',12,-10)}
+lbl('clk','click <span class="s">· any other tool</span>',CLK,'l',14,-8);
+for(const u of units){if(u.kind==='head')lbl('h'+u.h.L,'L'+u.h.L+' H'+u.h.h+' <span class="s">· Δmargin '+u.h.d+'</span>',u.p,'big',12,-10)}
 lbl('n30','L30 N8 · N216 · N345 · N1012 · N1418',V(LX(30),-PH/2-.2,PW/2),'p',-80,10);
 lbl('n31','L31 N302 · N315 · N1591 · N1855 · N3099',V(LX(31),-PH/2-.9,PW/2),'p',-60,40);
-lbl('arc','embed_tokens = lm_head <span class="s">· embeddings liés</span>',V(0,6.6,-1),'',-120,0);
-lbl('stream','flux résiduel <span class="s">· d = 2560</span>',V(X0-3.5,.2,0),'',-40,-26);
-lbl('brE','L0–11 · <span class="s">marge</span> +16,1 <span class="s">· garde « answer »</span>',BR.early.c,'',-120,8);
-lbl('brM','L12–23 · <span class="s">marge</span> −3,5 <span class="s">· bascule</span>',BR.mid.c,'m',-110,8);
-lbl('brL','L24–31 · <span class="s">marge</span> −10,0 <span class="s">· bascule</span>',BR.late.c,'',-100,8);
-lbl('brA','32 MLP seuls · <span class="s">marge</span> +0,9 <span class="s">· pas de bascule</span>',BR.all.c,'',-140,40);
-lbl('aeM','AlphaEdit · 24 écrivains L12–23 <span class="s">· 12 down_proj · 9 linear_attn.out_proj · 3 self_attn.o_proj</span>',BR.mid.c,'m',-240,8);
-lbl('j16','steer L16 · α −1,20',INJ[16].top,'m',10,-10);
-lbl('j24','steer L24 · α −5,54',INJ[24].top,'m',10,-10);
-lbl('j31','direction « conclusion » L31 · α −0,5',INJ[31].top,'m',10,-10);
-lbl('j18','valeur / engagement L18 · L24',INJ[18].top,'m',-250,-34);
-lbl('cl','espace des activations <span class="s">· L14 · positions illustratives</span>',V(LX(14),3.6,0),'big',-60,0);
-lbl('clF','faux fini',V(LX(14),-.6,2.8),'m big',10,0);
-lbl('clT','vrai fini',V(LX(14),.8,-3.4),'p big',-140,0);
-lbl('vmTask','gimp/77b8ab4d <span class="s">· Holo-3.1-4B · pas 6</span>',sl(vm,0,0),'big',0,-30);
-lbl('guard','Feci Guard <span class="s">· Claude Sonnet · vérificateur externe</span>',GUARD,'big',-60,44);
-lbl('gscreen','libreoffice_calc/1de60575 <span class="s">· écran final</span>',sl(gs,0,0),'big',0,-30);
-lbl('h4','Holo4-27B <span class="s">· escalade</span>',H4,'a big',18,-8);
-lbl('repair','réparation <span class="s">· retour à l\'agent avec la raison</span>',V(0,7.6,-5.5),'m big',-160,0);
+lbl('arc','embed_tokens = lm_head <span class="s">· tied embeddings</span>',V(0,6.6,-1),'',-120,0);
+lbl('stream','residual stream <span class="s">· d = 2560</span>',V(X0-3.5,.2,0),'',-40,-26);
+lbl('brE','L0–11 · <span class="s">margin</span> +16.1 <span class="s">· keeps “answer”</span>',BR.early.c,'',-120,8);
+lbl('brM','L12–23 · <span class="s">margin</span> −3.5 <span class="s">· flips</span>',BR.mid.c,'m',-110,8);
+lbl('brL','L24–31 · <span class="s">margin</span> −10.0 <span class="s">· flips</span>',BR.late.c,'',-100,8);
+lbl('brA','all 32 MLPs · <span class="s">margin</span> +0.9 <span class="s">· no flip</span>',BR.all.c,'',-60,72);
+lbl('aeM','AlphaEdit · 24 writers L12–23 <span class="s">· 12 down_proj · 9 linear_attn.out_proj · 3 self_attn.o_proj</span>',BR.mid.c,'m',-240,8);
+lbl('j16','steer L16 · α −1.20',INJ[16].top,'m',10,-10);
+lbl('j24','steer L24 · α −5.54',INJ[24].top,'m',10,-10);
+lbl('j31','“conclusion” direction L31 · α −0.5',INJ[31].top,'m',10,-10);
+lbl('j18','value / commitment L18 · L24',INJ[18].top,'m',-250,-34);
+lbl('cl','activation space <span class="s">· L14 · illustrative positions</span>',V(LX(14),3.6,0),'big',-60,0);
+lbl('clF','false done',V(LX(14),-.6,2.8),'m big',10,0);
+lbl('clT','true done',V(LX(14),.8,-3.4),'p big',-140,0);
+lbl('vmTask','gimp/77b8ab4d <span class="s">· Holo-3.1-4B · step 6</span>',sl(vm,0,1080),'big',0,10);
+lbl('guard','Feci Guard <span class="s">· Claude Sonnet · external verifier</span>',GUARD,'big',-60,44);
+lbl('gscreen','libreoffice_calc/1de60575 <span class="s">· final screen</span>',sl(gs,0,0),'big',0,-30);
+lbl('h4','Holo4-27B <span class="s">· escalation</span>',H4,'a big',18,-8);
+lbl('repair','repair <span class="s">· sent back to the agent with the reason</span>',V(0,7.6,-5.5),'m big',-160,0);
 
 const v3=new THREE.Vector3();
 function updateLabels(dt){const w=innerWidth,h=innerHeight;for(const k in LBL){const L=LBL[k];L.oc+=(L.o-L.oc)*Math.min(1,dt*4);if(L.oc<.01){if(L.e.style.opacity!=='0')L.e.style.opacity='0';continue}
@@ -255,10 +267,10 @@ function updatePanel(ch,t){ch.lines.forEach((l,i)=>{const on=t>=l[0]&&(l[2]===un
   if(ch.big)[...$('big').children].forEach((e,i)=>e.classList.toggle('on',t>=ch.big[i].t));
   if(ch.ci)$('ci').style.opacity=t>=ch.ci[0]&&t<ch.ci[1]?1:0}
 // online paired CIs (jury_kit/results/scores.csv; paper/generated/tab_b4_heldout.tex)
-function ciSVG(){const rows=[['fusion β 0,5','n=165',1.94,-4.3,8.0],['AlphaEdit','n=45',2.2,-13.3,17.8],['ExPO λ 1,25','n=120',-1.5,-8.9,5.7]];const x0=330,x1=930,lo=-20,hi=20;const X=v=>x0+(v-lo)/(hi-lo)*(x1-x0);let s='<line x1="'+X(0)+'" y1="10" x2="'+X(0)+'" y2="200" stroke="#7d8796" stroke-width="1.5" stroke-dasharray="4 4"/>';
+function ciSVG(){const rows=[['merge β 0.5','n=165',1.94,-4.3,8.0],['AlphaEdit','n=45',2.2,-13.3,17.8],['ExPO λ 1.25','n=120',-1.5,-8.9,5.7]];const x0=330,x1=930,lo=-20,hi=20;const X=v=>x0+(v-lo)/(hi-lo)*(x1-x0);let s='<line x1="'+X(0)+'" y1="10" x2="'+X(0)+'" y2="200" stroke="#7d8796" stroke-width="1.5" stroke-dasharray="4 4"/>';
   s+='<text x="'+X(0)+'" y="236" fill="#7d8796" font-size="19" text-anchor="middle">0</text><text x="'+X(-20)+'" y="236" fill="#4f5866" font-size="17" text-anchor="middle">−20</text><text x="'+X(20)+'" y="236" fill="#4f5866" font-size="17" text-anchor="middle">+20 pts</text>';
   rows.forEach((r,i)=>{const y=40+i*62;s+='<text x="0" y="'+(y+7)+'" fill="#e8ecf2" font-size="22">'+r[0]+' <tspan fill="#7d8796" font-size="17">'+r[1]+'</tspan></text>';s+='<line x1="'+X(r[3])+'" y1="'+y+'" x2="'+X(r[4])+'" y2="'+y+'" stroke="#ff4fd8" stroke-width="3"/><line x1="'+X(r[3])+'" y1="'+(y-9)+'" x2="'+X(r[3])+'" y2="'+(y+9)+'" stroke="#ff4fd8" stroke-width="2"/><line x1="'+X(r[4])+'" y1="'+(y-9)+'" x2="'+X(r[4])+'" y2="'+(y+9)+'" stroke="#ff4fd8" stroke-width="2"/><circle cx="'+X(r[2])+'" cy="'+y+'" r="7" fill="#fff"/>';
-   s+='<text x="'+(X(r[4])+14)+'" y="'+(y+7)+'" fill="#e8ecf2" font-size="19">'+(r[2]>0?'+':'−')+Math.abs(r[2]).toFixed(r[2]===1.94?2:1).replace('.',',')+' <tspan fill="#7d8796">['+(r[3]<0?'−':'+')+Math.abs(r[3]).toFixed(1).replace('.',',')+' ; +'+r[4].toFixed(1).replace('.',',')+']</tspan></text>'});return s}
+   s+='<text x="'+(X(r[4])+14)+'" y="'+(y+7)+'" fill="#e8ecf2" font-size="19">'+(r[2]>0?'+':'−')+Math.abs(r[2]).toFixed(r[2]===1.94?2:1)+' <tspan fill="#7d8796">['+(r[3]<0?'−':'+')+Math.abs(r[3]).toFixed(1)+', +'+r[4].toFixed(1)+']</tspan></text>'});return s}
 
 // ---------- camera ----------
 const camPos=V(0,0,40),camLook=V(0,0,0);let blendFrom=null;
@@ -267,69 +279,69 @@ function camAt(keys,t){if(t<=keys[0][0])return[keys[0][1],keys[0][2]];for(let i=
 // ---------- chapters ----------
 const VMc=V(VM_X,0,0);
 const CH=[
-{num:'00 · OSWorld',title:'Un faux « fini »',dur:24,
- src:'~/osw/results_test_gh_orig · gimp/77b8ab4d-994f-43ac-8930-8ca087d7c4b4 · bras orig_pod · jury_kit/results/online_guard_tasks.csv',
+{num:'00 · OSWorld',title:'A false “done”',dur:24,
+ src:'~/osw/results_test_gh_orig · gimp/77b8ab4d-994f-43ac-8930-8ca087d7c4b4 · arm orig_pod · jury_kit/results/online_guard_tasks.csv',
  cam:[[0,V(VM_X-23,0,0),VMc],[13,V(VM_X-21,0,0),VMc],[16.5,V(VM_X-7.5,-4.6,-1.9),V(VM_X,-4.95,-1.9)],[20.5,V(VM_X-6.8,-4.6,-1.7),V(VM_X,-4.95,-2.0)],[24,V(VM_X-9,-.5,0),VMc]],
- lines:[[1,'<span class="k">tâche</span> « Could you assist me in placing my photo on the desktop and renaming it to export.jpg? »'],[4,'<span class="k">agent</span> Holo-3.1-4B · VM Ubuntu'],[12,'<span class="k">pas 6 · answer</span> « …exported to the desktop with the filename \'export.jpg\'… The task is now complete. »'],[17,'<span class="k">score OSWorld</span> <span class="r">0.0</span> · <span class="m">faux « fini »</span>']],
- caps:[[1,4.5,'<span class="k">pas 1 ·</span> click « File menu »'],[4.5,8,'<span class="k">pas 3 ·</span> write « export.jpg »'],[8,11.5,'<span class="k">pas 5 ·</span> click « Export »'],[11.5,24,'<span class="k">pas 6 ·</span> answer <span class="y">« done »</span>']],
+ lines:[[1,'<span class="k">task</span> “Could you assist me in placing my photo on the desktop and renaming it to export.jpg?”'],[4,'<span class="k">agent</span> Holo-3.1-4B · Ubuntu VM'],[12,'<span class="k">step 6 · answer</span> “…exported to the desktop with the filename \'export.jpg\'… The task is now complete.”'],[17,'<span class="k">OSWorld score</span> <span class="r">0.0</span> · <span class="m">false “done”</span>']],
+ caps:[[1,4.5,'<span class="k">step 1 ·</span> click “File menu”'],[4.5,8,'<span class="k">step 3 ·</span> write “export.jpg”'],[8,11.5,'<span class="k">step 5 ·</span> click “Export”'],[11.5,24,'<span class="k">step 6 ·</span> answer <span class="y">“done”</span>']],
  enter(){setLayerVis(0);streamOp=0;vm.op=1;gs.op=0},
  update(t){vm.key=t<4.5?'s1':t<8?'s3':t<11.5?'s5':'s6';vm.op=t<22.5?1:1-sm((t-22.5)/1.4);vmBox.op=win(t,15.5,23);vmBox2.op=win(t,12,15.5);setLayerVis(t>21?.6:0);show([...(t<15?['vmTask']:[]),])}},
-{num:'01 · Le modèle',title:'Holo-3.1-4B, de l’intérieur',dur:20,
+{num:'01 · The model',title:'Holo-3.1-4B, from the inside',dur:20,
  src:'config.json · Hcompany/Holo-3.1-4B @ 8c88265a · paper/generated/num_b4.tex',
  cam:[[0,V(VM_X-9,-.5,0),VMc],[3.5,V(X0-1.5,1.5,3.5),V(X0+8,0,0)],[9,V(X0-14,8,17),V(-8,0,0)],[15,V(-20,12,38),V(2,0,0)],[20,V(X1-16,7,16),V(X1-3,0,0)]],
- lines:[[3,'<span class="k">base</span> Qwen3.5-4B hybride'],[5,'<span class="k">couches</span> 32 · d 2560 · MLP 9216'],[7,'<span class="c">8 attention complète</span> <span class="k">·</span> L3 L7 L11 L15 L19 L23 L27 L31'],[9,'<span class="k">24 Gated DeltaNet</span> <span class="k">· attention linéaire</span>'],[12,'<span class="k">embeddings liés</span> · lm_head = embed_tokens · vocab 248 320'],[15,'<span class="k">sortie</span> l’outil <span class="y">answer</span> = « fini »']],
+ lines:[[3,'<span class="k">base</span> Qwen3.5-4B hybrid'],[5,'<span class="k">layers</span> 32 · d 2560 · MLP 9216'],[7,'<span class="c">8 full attention</span> <span class="k">·</span> L3 L7 L11 L15 L19 L23 L27 L31'],[9,'<span class="k">24 Gated DeltaNet</span> <span class="k">· linear attention</span>'],[12,'<span class="k">tied embeddings</span> · lm_head = embed_tokens · vocab 248,320'],[15,'<span class="k">output</span> the <span class="y">answer</span> tool = “done”']],
  enter(){vm.op=0;streamOp=1;streamSpeed=4;setLayerVis(1)},
  update(t,T){vm.op=t<2.5?1-sm(t/2.5):0;setLayerVis(sm(t/2));for(let i=0;i<NL;i++)layers[i].hl=(t>7&&t<13&&isAttn(i))?.6+.4*Math.sin(T*4+i):0;arcM.opacity=.45*win(t,11,21);ansN.op=t>14?1:0;clkN.op=t>14?.6:0;
   const L=[];if(t>3)for(let i=0;i<NL;i++)L.push('L'+i);if(t>4&&t<12)L.push('stream');if(t>11)L.push('arc');if(t>14)L.push('ans','clk');show(L)}},
-{num:'02 · Localiser',title:'Où se joue le choix de l’outil',dur:28,
+{num:'02 · Locate',title:'Where the tool choice is made',dur:28,
  src:'paper/sec/interventions.tex §patching · paper/data/pod_astra/circuit/REPORT.md · paper/generated/num_causal.tex',
- cam:[[0,V(X1-16,7,16),V(X1-3,0,0)],[5,V(-30,10,24),V(6,0,0)],[11,V(X1-15,6,12),V(X1-2,0,0)],[19,V(X1+12,7,21),V(X1-7,.2,0)],[28,V(X1+10,8,23),V(X1-8,0,0)]],
- lines:[[1,'<span class="k">patching du flux résiduel</span> · 512 patches · 4 contextes × 32 couches × 4 positions'],[5,'<span class="k">fin du prefill</span> Δmarge −0,19'],[6.5,'<span class="k">mi-réflexion</span> Δmarge −2,28'],[8,'<span class="k">nom de l’outil</span> <span class="y">Δmarge −34,8</span> · dès ~L16'],[12,'<span class="k">scans de composants</span> · 992 patches · L19 L23 L30 L31'],[15,'<span class="k">circuit C1</span> · 3 têtes + 10 neurones MLP'],[21,'<span class="k">les têtes lisent</span> la définition de <span class="y">answer</span> (L19 H15, L23 H1) · le JSON en cours (L31 H14) <span class="k">· poids d’attention, pas une preuve causale</span>']],
+ cam:[[0,V(X1-16,7,16),V(X1-3,0,0)],[5,V(-30,10,24),V(6,0,0)],[11,V(X1-15,6,12),V(X1-2,0,0)],[19,V(X1+13,7,22),V(X1-3,.2,0)],[28,V(X1+11,8,24),V(X1-4,0,0)]],
+ lines:[[1,'<span class="k">residual-stream patching</span> · 512 patches · 4 contexts × 32 layers × 4 positions'],[5,'<span class="k">end of prefill</span> Δmargin −0.19'],[6.5,'<span class="k">mid-reasoning</span> Δmargin −2.28'],[8,'<span class="k">tool-name position</span> <span class="y">Δmargin −34.8</span> · from ~L16'],[12,'<span class="k">component scans</span> · 992 patches · L19 L23 L30 L31'],[15,'<span class="k">circuit C1</span> · 3 heads + 10 MLP neurons'],[21,'<span class="k">heads attend to</span> the definition of <span class="y">answer</span> (L19 H15, L23 H1) · the JSON being written (L31 H14) <span class="k">· attention weights, not causal proof</span>']],
  enter(){setLayerVis(1);streamOp=1},
  update(t,T){for(let i=0;i<NL;i++){layers[i].hl=t>7.5&&t<13?(i>=16?sm((t-7.5-(i-16)*.12)/.8)*(.4+.6*(i-16)/15):0):0;layers[i].dim=t>12?(([19,23,30,31].includes(i))?0:.7):0}
   for(const u of units)u.n.op=t>12.5?1:0;unitLinks.forEach((k,j)=>{k.op=t>15?.75:0;k.draw=t>15+j*.12?1:0});ansN.op=1;clkN.op=.6;
   const L=['ans','clk'];if(t<12)for(let i=0;i<NL;i++)L.push('L'+i);else for(const i of [19,23,30,31])L.push('L'+i);if(t>13)L.push('h19','h23','h31');if(t>16)L.push('n30','n31');show(L)}},
-{num:'03 · Supprimer',title:'Retirer le circuit',dur:24,
- src:'paper/generated/tab_causal_all.tex · num_causal.tex · num_broad.tex (test plafond, projection rang 1)',
- cam:[[0,V(X1+10,8,23),V(X1-8,0,0)],[7,V(X1+9,6,20),V(X1-6,0,0)],[10,V(-14,12,38),V(6,-1.5,0)],[24,V(-10,11,39),V(8,-1.5,0)]],
- lines:[[1,'<span class="k">C1 retiré (α = 1)</span> · Δmarge −11,2 à −12,2 · <span class="y">0/4 décisions basculent</span>'],[4,'<span class="k">faux fini</span> répond encore 8/8 <span class="k">· contrôle aléatoire (α = 0,5)</span> 8/8 <span class="k">· données de construction</span>'],[9,'<span class="k">test plafond</span> · échanger des blocs d’écrivains · contexte faux fini, marge +16,9'],[17,'<span class="k">un vrai fini bascule aussi</span> · +16,4 → −2,2'],[19.5,'<span class="k">projection rang 1, écrivains L12–23</span> · faux +1,4 / +1,6 · vrais +4,8 / +2,8'],[21.5,'<span class="y">levier causal : oui</span> · <span class="m">sélectif : non</span>']],
+{num:'03 · Remove',title:'Ablating the circuit',dur:24,
+ src:'paper/generated/tab_causal_all.tex · num_causal.tex · num_broad.tex (ceiling test, rank-1 projection)',
+ cam:[[0,V(X1+11,8,24),V(X1-4,0,0)],[7,V(X1+10,6,21),V(X1-3,0,0)],[10,V(-31,22,70),V(-2,-1.5,0)],[24,V(-28,21,71),V(-1,-1.5,0)]],
+ lines:[[1,'<span class="k">C1 removed (α = 1)</span> · Δmargin −11.2 to −12.2 · <span class="y">0/4 decisions flip</span>'],[4,'<span class="k">false done</span> still answers 8/8 <span class="k">· random control (α = 0.5)</span> 8/8 <span class="k">· construction data</span>'],[9,'<span class="k">ceiling test</span> · swap whole writer blocks · false-done context, margin +16.9'],[17,'<span class="k">a true done flips too</span> · +16.4 → −2.2'],[19.5,'<span class="k">rank-1 projection, L12–23 writers</span> · false +1.4 / +1.6 · true +4.8 / +2.8'],[21.5,'<span class="y">causal lever: yes</span> · <span class="m">selective: no</span>']],
  enter(){setLayerVis(1);streamOp=1},
  update(t,T){for(let i=0;i<NL;i++){layers[i].dim=t<8?(([19,23,30,31].includes(i))?0:.7):0;layers[i].hl=0;layers[i].tintAmt=0}
   const rm=sm((t-1)/2.5);for(const u of units){u.n.op=t<9?1-rm*.85:0;u.n.m.color.set(rm>.5?C.hold:(u.kind==='head'?C.white:C.push))}unitLinks.forEach(k=>{k.op=t<9?.75*(1-rm)+.08:0;k.draw=1});
   const e=win(t,10,23,.6),m=win(t,11.5,23,.6),l=win(t,13,23,.6),a=win(t,14.5,23,.6);BR.early.op=e;BR.mid.op=m;BR.late.op=l;BR.all.op=a*.6;
   for(let i=0;i<NL;i++){if(i>=12&&i<=23){layers[i].tint=new THREE.Color(C.hold);layers[i].tintAmt=m*.8}}
   ansN.op=1;clkN.op=.6;const L=['ans','clk'];if(t<9)L.push('h19','h23','h31','L19','L23','L30','L31');if(t>10)L.push('brE');if(t>11.5)L.push('brM');if(t>13)L.push('brL');if(t>14.5)L.push('brA');show(L)}},
-{num:'04 · Ajouter',title:'Pousser contre l’arrêt',dur:26,
+{num:'04 · Add',title:'Pushing against the stop',dur:26,
  src:'paper/generated/tab_causal_all.tex · num_*.tex (mergeCua, alpha) · tab_b4_heldout.tex · jury_kit/results/scores.csv',ci:[16,26],
- cam:[[0,V(-10,11,39),V(8,-1.5,0)],[6,V(-6,13,40),V(9,1,0)],[10,V(-8,11,38),V(8,-1,0)],[16,V(-14,14,40),V(8,-5,0)],[26,V(-10,13,41),V(10,-5,0)]],
- lines:[[1,'<span class="m">steering</span> · L16 · L24 · L31 · L18'],[4,'<span class="k">faux fini</span> répond toujours <span class="y">8/8</span> <span class="k">à chaque dose</span>'],[8,'<span class="m">AlphaEdit</span> · faux fini 15→8/16 · <span class="r">vrai fini 15→3/16</span>'],[11,'<span class="m">fusion β 0,5</span> · faux fini 16→11/16 · <span class="r">vrai fini 16→2/16</span>'],[13,'<span class="k">bouge l’arrêt</span> · <span class="m">ne cible pas le faux fini</span>'],[16,'<span class="k">en ligne, OSWorld, apparié</span> · aucun gain détectable']],
+ cam:[[0,V(-28,21,71),V(-1,-1.5,0)],[6,V(-30,20,68),V(-1,1,0)],[10,V(-31,19,68),V(-2,-1,0)],[16,V(-14,14,40),V(8,-5,0)],[26,V(-10,13,41),V(10,-5,0)]],
+ lines:[[1,'<span class="m">steering</span> · L16 · L24 · L31 · L18'],[4,'<span class="k">false done</span> still answers <span class="y">8/8</span> <span class="k">at every dose</span>'],[8,'<span class="m">AlphaEdit</span> · false done 15→8/16 · <span class="r">true done 15→3/16</span>'],[11,'<span class="m">merge β 0.5</span> · false done 16→11/16 · <span class="r">true done 16→2/16</span>'],[13,'<span class="k">moves the stop</span> · <span class="m">does not target false done</span>'],[16,'<span class="k">online, OSWorld, paired</span> · no detectable gain']],
  enter(){setLayerVis(1);streamOp=1;for(const u of units){u.n.op=0;u.n.m.color.set(u.kind==='head'?C.white:C.push)}unitLinks.forEach(k=>{k.op=0;k.draw=0})},
  update(t,T){for(const k of [16,24,31,18])INJ[k].op=win(t,{16:.8,24:1.6,31:2.4,18:3.2}[k],15.5);
   for(let i=0;i<NL;i++){layers[i].tint=new THREE.Color(C.hold);const ae=(i>=12&&i<=23)?win(t,7.5,10.8):0;const mg=win(t,10.8,15.5)*.55;layers[i].tintAmt=Math.max(ae,mg);layers[i].hl=[16,24,31,18].includes(i)?win(t,1,7.5)*.8:0;layers[i].dim=t>16?.75:0}
   BR.mid.op=win(t,7.5,10.8);ansN.op=1;clkN.op=.6;streamSpeed=4+2*win(t,1,15);
   const L=['ans','clk'];if(t<16)L.push('j16','j24','j31','j18');if(t>7.5&&t<10.8)L.push('aeM');show(L)}},
-{num:'05 · Diagnostic',title:'Faux fini, vrai fini : rien de plus que le pas',dur:22,
+{num:'05 · Diagnosis',title:'False done, true done: nothing beyond the step',dur:22,
  src:'paper/generated/tab_fs_auc.tex · num_traps.tex · sec/traps.tex · judge_bench/REPORT.md · verif_study/ · paper/generated/num_*.tex (text_signal)',
  cam:[[0,V(-10,13,41),V(10,-5,0)],[5,V(LX(14)-10,3,10),CL_C],[14,V(LX(14)-8,5,-9),CL_C],[22,V(LX(14)-12,2,-4),CL_C]],
- lines:[[6,'<span class="k">sonde résiduelle</span> · L14 · AUROC <span class="m">0,760</span>'],[8,'<span class="k">numéro du pas seul</span> · AUROC 0,724'],[9.5,'<span class="k">longueur du contexte seule</span> · AUROC 0,735'],[12,'<span class="k">texte du raisonnement</span> · 0,66 <span class="k">vs pas</span> 0,72'],[15,'<span class="k">auto-jugement de Holo</span> · 35/66 détectés · 97/202 rejetés à tort'],[18,'<span class="m">aucun signal au-delà de la longueur de l’épisode</span> <span class="k">· +0,04 AUROC au mieux</span>']],
+ lines:[[6,'<span class="k">residual probe</span> · L14 · AUROC <span class="m">0.760</span>'],[8,'<span class="k">step index alone</span> · AUROC 0.724'],[9.5,'<span class="k">context length alone</span> · AUROC 0.735'],[12,'<span class="k">reasoning text</span> · 0.66 <span class="k">vs step</span> 0.72'],[15,'<span class="k">Holo self-judge</span> · 35/66 caught · 97/202 wrongly rejected'],[18,'<span class="m">no signal beyond episode length</span> <span class="k">· +0.04 AUROC at best</span>']],
  enter(){setLayerVis(.12);streamOp=.2},
  update(t,T){cTrue.op=t>2?1:0;cFalse.op=t>2?1:0;this._mix=sm((t-4.5)/2);for(let i=0;i<NL;i++){layers[i].hl=i===14?win(t,5,22)*.6:0;layers[i].tintAmt=0}
   setLayerVis(.12);layers[14].vis=.8;const L=['L14'];if(t>2)L.push('cl');if(t>5)L.push('clF','clT');show(L)}},
-{num:'06 · Vérifier',title:'Le vérificateur, hors du réseau',dur:28,
+{num:'06 · Verify',title:'The verifier, outside the network',dur:28,
  src:'feci_guard/feci_guard.py · ~/osw/feci_demo/calc_1de60575/guard_branch_k0/guard.jsonl (demo_live/repair_calc.html) · rescue_bench/REPORT.md',
  cam:[[0,V(LX(14)-12,2,-4),CL_C],[4,V(X1-6,3,12),V(X1+4,.5,0)],[9,V(X1-9,5,19),V(X1+9,.5,-2)],[17,V(X1-8,4.5,18),V(X1+10,1,-3)],[22,V(X1-12,9,26),V(X1+4,2,0)],[28,V(X1-3,4,20),V(X1+10,-1,0)]],
- lines:[[3,'<span class="k">« done » sort du réseau</span> → <span class="y">answer</span>'],[6,'<span class="k">Feci Guard</span> lit l’écran final, exigence par exigence'],[10,'<span class="g">✓</span> tableau croisé créé, promotions en colonnes'],[11.5,'<span class="r">✗</span> dans une nouvelle feuille « Sheet2 » <span class="k">· l’onglet s’appelle « Pivot Table_Sheet1_1 »</span>'],[13,'<span class="r">REFUS · INCOMPLETE</span> <span class="k">· pas 12</span>'],[17,'<span class="k">réparation · pas 17</span> · <span class="g">✓ ✓ ✓ COMPLETE</span> <span class="k">· 1 indéterminé (fichier enregistré)</span>'],[22,'<span class="k">sinon :</span> <span class="c">escalade vers Holo4-27B</span>']],
+ lines:[[3,'<span class="k">“done” leaves the network</span> → <span class="y">answer</span>'],[6,'<span class="k">Feci Guard</span> reads the final screen, requirement by requirement'],[10,'<span class="g">✓</span> pivot table created, promotions as columns'],[11.5,'<span class="r">✗</span> in a new sheet “Sheet2” <span class="k">· the tab is named “Pivot Table_Sheet1_1”</span>'],[13,'<span class="r">REFUSED · INCOMPLETE</span> <span class="k">· step 12</span>'],[17,'<span class="k">repair · step 17</span> · <span class="g">✓ ✓ ✓ COMPLETE</span> <span class="k">· 1 cannot tell (file saved)</span>'],[22,'<span class="k">otherwise:</span> <span class="c">escalate to Holo4-27B</span>']],
  enter(){setLayerVis(1);streamOp=1;cTrue.op=0;cFalse.op=0;gs.key='c12'},
  update(t,T){setLayerVis(.75);gs.op=t>5?1:0;gs.key=t<17?'c12':'c17';gdBox.op=win(t,11.5,16.5);guardN.op=t>5?1:0;guardShape.material.opacity=t>5?.9:0;guardShape.rotation.y=T*.5;guardShape.rotation.x=T*.2;
   ansN.op=1;clkN.op=.5;lkAnsGuard.op=t>4?.8:0;lkAnsGuard.draw=t>4?1:0;lkScreenGuard.op=t>6?.5:0;lkScreenGuard.draw=t>6?1:0;lkRepair.op=win(t,13.5,21)*.9;lkRepair.draw=t>13.5?1:0;lkH4.op=t>22?.8:0;lkH4.draw=t>22?1:0;h4N.op=t>22?1:0;
   const L=['ans'];if(t>5)L.push('guard','gscreen');if(t>13.5&&t<21)L.push('repair');if(t>22)L.push('h4');show(L)}},
-{num:'07 · Résultats',title:'Ce que le vérificateur change',dur:24,
+{num:'07 · Results',title:'What the verifier changes',dur:24,
  src:'report/ONLINE_GUARD_RESULT.md · jury_kit/results/online_guard_tasks.csv · rescue_bench/REPORT.md · judge_bench/REPORT.md',
  cam:[[0,V(X1-3,4,20),V(X1+10,-1,0)],[8,V(-12,16,50),V(4,1,0)],[24,V(-18,15,48),V(0,1,0)]],
  lines:[],
- big:[{t:1,v:'<span class="m">22,5 %</span> <span class="k">→</span> <span class="g">10,8 %</span>',d:'faux « done », en ligne, 120 tâches<br><span class="k">−11,7 pts [−19,2 ; −4,2] · score +1,6 [−4,4 ; +7,7], aucun gain détecté</span>'},
-      {t:8,v:'<span class="g">11/18</span> <span class="k">vs</span> 2/18',d:'Guard → Holo4-27B vs Holo4 seul<br><span class="k">rejeu de 9 faux succès × 2 · +50 pts [+22 ; +78]</span>'},
-      {t:14,v:'<span class="g">45/66</span> <span class="k">vs</span> 35/66',d:'faux « done » détectés<br><span class="k">Feci Guard vs auto-jugement de Holo · 268 écrans</span>'}],
+ big:[{t:1,v:'<span class="m">22.5 %</span> <span class="k">→</span> <span class="g">10.8 %</span>',d:'false “done”, online, 120 tasks<br><span class="k">−11.7 pts [−19.2, −4.2] · score +1.6 [−4.4, +7.7], no gain detected</span>'},
+      {t:8,v:'<span class="g">11/18</span> <span class="k">vs</span> 2/18',d:'Guard → Holo4-27B vs Holo4 alone<br><span class="k">replay of 9 false successes × 2 · +50 pts [+22, +78]</span>'},
+      {t:14,v:'<span class="g">45/66</span> <span class="k">vs</span> 35/66',d:'false “done” caught<br><span class="k">Feci Guard vs Holo self-judge · 268 screens</span>'}],
  enter(){gs.op=0;guardN.op=.6;setLayerVis(.5)},
  update(t,T){gs.op=0;guardShape.material.opacity=.5;guardShape.rotation.y=T*.5;lkAnsGuard.op=.4;lkScreenGuard.op=0;lkRepair.op=0;lkH4.op=.3;h4N.op=.5;setLayerVis(.2);show([])}}
 ];
@@ -339,23 +351,56 @@ CH[5]._mix=0;
 // ---------- bar ----------
 $('bar').innerHTML=CH.map(()=>'<i><b></b></i>').join('');const barB=[...document.querySelectorAll('#bar b')];
 
+
+// ---------- free navigation + details (sources in each entry) ----------
+const controls=new THREE.OrbitControls(camera,canvas);controls.enableDamping=false;controls.screenSpacePanning=true;controls.zoomSpeed=.8;
+let user=false,lastUI=0,fly=null,detailOn=false,blendStart=0;
+controls.addEventListener('start',()=>{if(!user){user=true;controls.target.copy(camLook)}fly=null;lastUI=performance.now();$('paused').style.opacity=1});
+controls.addEventListener('change',()=>{lastUI=performance.now()});
+function resumeAuto(){if(!user&&!detailOn)return;user=false;fly=null;detailOn=false;blendFrom=[camera.position.clone(),controls.target.clone()];blendStart=ct;setPanel(CH[ci]);$('paused').style.opacity=paused?1:0}
+const CIRC='paper/data/pod_astra/circuit/REPORT.md · paper/generated/num_causal.tex';
+const y=t=>'<span class="y">'+t+'</span>',kk=t=>'<span class="k">'+t+'</span>';
+const PICK=[];
+const HEADINFO={19:['−2.06','−1.50','the system-prompt definition of '+y('answer')],23:['−3.88','−3.38','the '+y('answer')+' schema (const, AnswerArgs)'],31:['−3.56','−2.81','the JSON being written (tool_call → tool_name)']};
+for(const u of units){if(u.kind==='head'){const h=HEADINFO[u.h.L];PICK.push({pos:u.p,node:u.n,dist:8,name:'L'+u.h.L+' H'+u.h.h+' · attention head',lines:[kk('component patch')+' mean Δmargin '+h[0]+' (false done) · '+h[1]+' (true done)',kk('attends mostly to')+' '+h[2]+' '+kk('· attention weights, not causal proof'),kk('circuit C1')+' · removing all of it: Δmargin −11.2 to −12.2 · 0/4 decisions flip'],src:CIRC})}
+ else PICK.push({pos:u.p,node:u.n,dist:6,name:'L'+u.L+' N'+u.id+' · MLP neuron',lines:[kk('unit')+' post-gate coordinate at the input of down_proj',kk('selected by')+' single-neuron patching: top 4 per false-done context, in MLP30 and MLP31',kk('circuit C1')+' · 3 heads + 10 neurons · joint removal: 0/4 decisions flip · it is a generic tool-retrieval circuit, not a false-done circuit'],src:CIRC+' · paper/sec/interventions.tex'})}
+PICK.push({pos:ANS,node:ansN,dist:7,name:'answer · token 8944',lines:['the tool call that ends the episode: the agent says “done”',kk('answer rate')+' 72 % on false done · 94 % on true done '+kk('(strictly feasible cohort, repeated samples)'),kk('residual patching')+' at the tool-name position: Δmargin up to −34.8 logits'],src:'osworld/ONLINE_EVAL.md · paper/sec/diag.tex · paper/generated/num_*.tex (pwOrig, cmMin)'});
+PICK.push({pos:CLK,node:clkN,dist:7,name:'click · any other tool',lines:['every other action of the agent (click, write, …)','a decision “flips” when the model picks another tool instead of '+y('answer')],src:'paper/sec/interventions.tex'});
+PICK.push({pos:GUARD,node:guardN,dist:8,name:'Feci Guard · external verifier',lines:['Claude Sonnet reads the final screen and checks each requirement of the task',kk('offline, 268 labelled screens')+' · 45/66 false done caught · 21/202 true done wrongly rejected',kk('Holo self-judge, same screens')+' · 35/66 · 97/202',kk('online, 120 tasks')+' · false “done” 22.5 % → 10.8 % · score +1.6 [−4.4, +7.7], no gain detected'],src:'feci_guard/feci_guard.py · judge_bench/REPORT.md · report/ONLINE_GUARD_RESULT.md'});
+PICK.push({pos:H4,node:h4N,dist:7,name:'Holo4-27B · escalation',lines:['after a Guard refusal, the larger Holo4-27B takes over the episode',kk('replay of 9 recorded false successes × 2')+' · 11/18 vs 2/18 scored 1 · +50 pts [+22, +78]','not run online'],src:'rescue_bench/REPORT.md · rescue_bench/PREREG.md'});
+const INJINFO={16:['steer L16','add the false−true done direction at the last prefill token, α −1.20 × its norm'],24:['steer L24','same direction at L24, α −5.54 · also a value / commitment axis, α 0.5'],31:['“conclusion” direction · L31','fitted on reasoning tokens, added at every reasoning token, α −0.5'],18:['value / commitment · L18','value axis α 0.5 · CAA “verify” vs “conclude”, doses 1 and 2']};
+for(const k in INJINFO)PICK.push({pos:INJ[k].top,node:INJ[k].n,dist:7,name:INJINFO[k][0],lines:[INJINFO[k][1],kk('result')+' false done still answers 8/8 · rejected'],src:'paper/sec/interventions.tex · paper/generated/tab_causal_all.tex'});
+const LNOTE={3:['best direction before the action: AUROC 0.701'],14:['best residual direction, last prefill token: AUROC 0.760 · step index alone 0.724','best single writer probe: DeltaNet out_proj, AUROC 0.901 (prefill, uncorrected p = .005)'],15:['position + direction: AUROC 0.762 vs 0.722 for position alone','“imminent completion” axis (AUROC 0.910 inside correct episodes); subtracting it: false done 5/8, 4/8, 5/8, 5/8 · rejected'],16:['steering α −1.20 · false done 8/8'],18:['value / commitment axis, CAA “verify” · false done 8/8'],19:['head H15 of circuit C1'],23:['head H1 of circuit C1'],24:['steering α −5.54 · false done 8/8'],30:['neurons N8 · N216 · N345 · N1012 · N1418 of circuit C1'],31:['head H14 + neurons N302 · N315 · N1591 · N1855 · N3099 of C1','“conclusion” direction α −0.5 · false done 8/8']};
+function layerInfo(i){const a=isAttn(i);const l=[kk(a?'full attention':'Gated DeltaNet')+' '+(a?'16 query heads · 4 KV heads · head dim 256 · output gate':'linear attention · 16 key heads · 32 value heads · head dim 128'),kk('MLP')+' 9216 · '+kk('residual')+' 2560'];
+ if(i<=11)l.push(kk('ceiling test')+' swapping MLP + mixers of L0–11: margin +16.1, no flip');else if(i<=23)l.push(kk('ceiling test')+' L12–23: margin +16.9 → −3.5, flips (a true done flips too) · '+kk('AlphaEdit writer set'));else l.push(kk('ceiling test')+' L24–31: margin +16.9 → −10.0, flips');
+ for(const n of (LNOTE[i]||[]))l.push(n);return {pos:V(LX(i),0,0),dist:10,name:'L'+i+' · '+(a?'full attention':'Gated DeltaNet'),lines:l,src:'config.json @ 8c88265a · paper/generated/tab_fs_auc.tex · num_traps.tex · num_broad.tex · tab_causal_all.tex · astra-regmean/REPORT.md'}}
+const ray=new THREE.Raycaster();const fills=layers.map(L=>L.g.children[0]);
+canvas.addEventListener('dblclick',e=>{const x=e.clientX,yy=e.clientY;let best=null,bd=34;
+ for(const p of PICK){if(p.node.opc<.2)continue;v3.copy(p.pos).project(camera);if(v3.z>1)continue;const d=Math.hypot((v3.x*.5+.5)*innerWidth-x,(-v3.y*.5+.5)*innerHeight-yy);if(d<bd){bd=d;best=p}}
+ if(!best){ray.setFromCamera({x:x/innerWidth*2-1,y:-(yy/innerHeight)*2+1},camera);const hit=ray.intersectObjects(fills.filter((f,i)=>layers[i].vc>.2))[0];if(hit)best=layerInfo(fills.indexOf(hit.object))}
+ if(best)focus(best)});
+function focus(p){const from=user?controls.target.clone():camLook.clone();user=true;detailOn=true;lastUI=performance.now();$('paused').style.opacity=1;
+ const dir=camera.position.clone().sub(p.pos).normalize();fly={t:0,fp:camera.position.clone(),ft:from,tp:p.pos.clone().add(dir.multiplyScalar(p.dist)),tt:p.pos.clone()};
+ $('chap').textContent='details · R to resume';$('title').textContent=p.name;$('lines').innerHTML=p.lines.map(l=>'<div class="ln on">'+l+'</div>').join('');panelLines=[];$('src').textContent=p.src;$('cap').style.opacity=0;$('ci').style.opacity=0;[...$('big').children].forEach(e=>e.classList.remove('on'))}
 // ---------- loop ----------
 let ci=0,ct=0,paused=false,last=performance.now(),T=0;
-function enter(i){ci=(i+CH.length)%CH.length;ct=0;blendFrom=[camPos.clone(),camLook.clone()];
+function enter(i){if(user||detailOn){user=false;detailOn=false;fly=null;$('paused').style.opacity=paused?1:0;camLook.copy(controls.target);camPos.copy(camera.position)}ci=(i+CH.length)%CH.length;ct=0;blendStart=0;blendFrom=[camPos.clone(),camLook.clone()];
   for(const u of units){u.n.op=0;u.n.m.color.set(u.kind==='head'?C.white:C.push)}unitLinks.forEach(k=>{k.op=0});for(const k in BR)BR[k].op=0;for(const k in INJ)INJ[k].op=0;
   for(const k of [lkAnsGuard,lkScreenGuard,lkRepair,lkH4])k.op=0;h4N.op=0;guardN.op=0;guardShape.material.opacity=0;cTrue.op=0;cFalse.op=0;vm.op=0;gs.op=0;vmBox.op=vmBox2.op=gdBox.op=0;arcM.opacity=0;layerReset();streamSpeed=4;
   CH[ci].enter();setPanel(CH[ci])}
-addEventListener('keydown',e=>{if(e.code==='Space'){paused=!paused;$('paused').style.opacity=paused?1:0;e.preventDefault()}else if(e.code==='ArrowRight'){enter(ci+1)}else if(e.code==='ArrowLeft'){enter(ct>2?ci:ci-1)}else if(/^Digit[0-7]$/.test(e.code)){enter(+e.code.slice(5))}});
+addEventListener('keydown',e=>{if(e.code==='KeyR'){paused=false;resumeAuto();$('paused').style.opacity=0}else if(e.code==='Space'){paused=!paused;$('paused').style.opacity=paused?1:0;e.preventDefault()}else if(e.code==='ArrowRight'){enter(ci+1)}else if(e.code==='ArrowLeft'){enter(ct>2?ci:ci-1)}else if(/^Digit[0-7]$/.test(e.code)){enter(+e.code.slice(5))}});
 function frame(now){requestAnimationFrame(frame);const dt=Math.min(.05,(now-last)/1000);last=now;
-  if(!paused){ct+=dt;T+=dt;if(ct>=CH[ci].dur)enter(ci+1)}
+  if(user&&!fly&&performance.now()-lastUI>20000)resumeAuto();
+  if(!paused&&!user){ct+=dt;if(ct>=CH[ci].dur)enter(ci+1)}T+=dt;
   const ch=CH[ci];ch.update(ct,T);
-  const [p,l]=camAt(ch.cam,ct);
-  if(blendFrom){const u=sm(ct/1.6);camPos.copy(blendFrom[0]).lerp(p,u);camLook.copy(blendFrom[1]).lerp(l,u);if(u>=1)blendFrom=null}else{camPos.copy(p);camLook.copy(l)}
-  camera.position.copy(camPos);camera.position.y+=Math.sin(T*.35)*.12;camera.position.z+=Math.cos(T*.27)*.12;camera.lookAt(camLook);
+  if(user){if(fly){fly.t+=dt/1.2;const u=sm(fly.t);camera.position.lerpVectors(fly.fp,fly.tp,u);controls.target.lerpVectors(fly.ft,fly.tt,u);camera.lookAt(controls.target);if(fly.t>=1)fly=null}}
+  else{const [p,l]=camAt(ch.cam,ct);
+  if(blendFrom){const u=sm((ct-blendStart)/1.6);camPos.copy(blendFrom[0]).lerp(p,u);camLook.copy(blendFrom[1]).lerp(l,u);if(u>=1)blendFrom=null}else{camPos.copy(p);camLook.copy(l)}
+  camera.position.copy(camPos);camera.position.y+=Math.sin(T*.35)*.12;camera.position.z+=Math.cos(T*.27)*.12;camera.lookAt(camLook)}
   updateLayers(dt);updateStream(paused?0:dt);updateNodes(dt,T);updateLinks(dt);updateBr(dt);updateInj(dt);updateClouds(dt,T,CH[5]._mix||0);updateScreens(dt);
-  updatePanel(ch,ct);updateLabels(dt);
+  if(!detailOn)updatePanel(ch,ct);updateLabels(dt);
   barB.forEach((b,i)=>b.style.width=(i<ci?100:i===ci?100*ct/ch.dur:0)+'%');
-  renderer.render(scene,camera)}
+  composer.render()}
 const q=new URLSearchParams(location.search);enter(+(q.get('ch')||0));if(q.get('t')){ct=+q.get('t');blendFrom=null}
 requestAnimationFrame(frame);
 </script>
