@@ -1,17 +1,18 @@
 # Quickstart proof
 
-Every command of the README quickstart, run on 2026-11-08 at about 10:05 UTC in a **fresh clone** with a **fresh
-virtual environment** (no package installed: `pip list` shows only pip), Python 3.14.4, Linux x86-64, CPU only.
-Clone of `main` at commit `6bb899f` (level 2 used the later `guard_live.py`, which only adds a clear error for an unknown episode id). The same commands run in GitHub
-Actions, with the runner's preinstalled Python 3, whenever the jury kit, the Guard code or its data change:
+Every command of the README quickstart, run on 2026-11-08 at 10:18 UTC in a **fresh clone** of `main` at commit `a016560`,
+with a **fresh virtual environment** (nothing installed), Python 3.14.4, Linux x86-64, CPU only. Every command exited 0, and
+`git status` in the clone was still clean afterwards. The same quickstart runs in GitHub Actions with the runner's
+preinstalled Python 3, whenever the jury kit, the Guard code or its data change:
 [.github/workflows/quickstart.yml](../.github/workflows/quickstart.yml).
 
 ```bash
-git clone https://github.com/martinbon39/ComputerUseHackaton && cd ComputerUseHackaton   # 9 s
+git clone https://github.com/martinbon39/ComputerUseHackaton && cd ComputerUseHackaton
 python3 -m venv venv && . venv/bin/activate
 ```
 
-## (a) `python3 jury_kit/verify_results.py`, exit 0, 0.55 s
+## (a) `python3 jury_kit/verify_results.py`, exit 0
+The columns "92.5 vs 89.3" are sums of per-task scores over the n tasks.
 ```
 == PRIMARY VERDICT (rule fixed before reading results): merge vs Modal-served original, Modal vs Modal ==
 merge_cua_b050 vs orig_modal, reserve + test               n=165    92.5 vs   89.3  delta +1.94 pt  CI95 [ -4.3 ;  +8.0]  18 wins / 14 losses
@@ -34,7 +35,7 @@ checks against the published values:
 Verdict rule: a gain is claimed only if the CI95 lower bound is > 0. Lower bound = -4.3 pt -> NO DETECTABLE GAIN
 ```
 
-## (b) `python3 jury_kit/replay_guard.py --show 2`, exit 0, 0.33 s
+## (b) `python3 jury_kit/replay_guard.py --show 2`, exit 0
 ```
 --- refusal 1: chrome/47543840
 TASK: On the current website, show me the cars available for pickup at Boston Logan Intl Airport from the 10th to the 11th of next month, sorted by the number of seats to find the largest capacity.
@@ -64,7 +65,28 @@ Feci Guard replay: frozen feci_guard.check on 268 recorded final screens, record
 Matches the published judge-bench numbers.
 ```
 
-## (a) + (b) + (c) `bash jury_kit/quickstart.sh`, exit 0, 0.89 s
+## (b2) `python3 jury_kit/recount_judges.py`, exit 0
+```
+manifest 268 268 90
+A t0 lines 268 unique 268 in manifest 268
+B lines 268 268 True
+C lines 268 268 True
+A FS 35 66 0.5303 [0.4116, 0.6457] TS 97 202 0.4802 [0.4123, 0.5488] invalid 3 3 gap 0.0501
+  groups 90 boot CI -0.1341 0.2288
+B FS 31 66 0.4697 [0.3543, 0.5884] TS 63 202 0.3119 [0.252, 0.3788] invalid 1 4 gap 0.1578
+  groups 90 boot CI -0.0191 0.3388
+C FS 45 66 0.6818 [0.5621, 0.7815] TS 21 202 0.104 [0.069, 0.1537] invalid 0 0 gap 0.5779
+  groups 90 boot CI 0.4067 0.7366
+
+judge                         detected      wrongly rejected   gap CI95 (task bootstrap, pts)
+OK  Holo-3.1-4B (self-judge)    35/66         97/202             [-13, +23]  published [-13, +23]
+OK  Holo4-27B                   31/66         63/202             [-2, +34]  published [-3, +33]
+OK  Claude Sonnet (Feci Guard)  45/66         21/202             [+41, +74]  published [+41, +74]
+268 episodes from 90 tasks; the bootstrap resamples tasks. Counts must match exactly; the CI bounds within 2 pts
+(this recount uses its own seed, the published CIs come from judge_bench/analyze.py).
+```
+
+## All of it: `bash jury_kit/quickstart.sh`, exit 0
 ```
 == (a) OSWorld paired comparisons, recomputed from per-task scores ==
 == PRIMARY VERDICT (rule fixed before reading results): merge vs Modal-served original, Modal vs Modal ==
@@ -108,16 +130,25 @@ Feci Guard replay: frozen feci_guard.check on 268 recorded final screens, record
   OK  verifier_sha: 0af76fdb (expected 0af76fdb)
 Matches the published judge-bench numbers.
 
-== (c) demo replay page ==
-holo-neurochir/demo_faux_fini/demo_faux_fini.html: 3.1 MB, self-contained (47 embedded images, 1 inline scripts, 0 external scripts). Open it in a browser.
+== (b2) the three judges recounted from their raw responses (README rows 2 and 7) ==
+judge                         detected      wrongly rejected   gap CI95 (task bootstrap, pts)
+OK  Holo-3.1-4B (self-judge)    35/66         97/202             [-13, +23]  published [-13, +23]
+OK  Holo4-27B                   31/66         63/202             [-2, +34]  published [-3, +33]
+OK  Claude Sonnet (Feci Guard)  45/66         21/202             [+41, +74]  published [+41, +74]
+268 episodes from 90 tasks; the bootstrap resamples tasks. Counts must match exactly; the CI bounds within 2 pts
+(this recount uses its own seed, the published CIs come from judge_bench/analyze.py).
 
-QUICKSTART OK: (a) and (b) match the published numbers, (c) is ready to open.
+== (c) demo replay pages ==
+holo-neurochir/demo_live/repair_calc.html: 1.0 MB, self-contained (8 embedded screenshots, 0 external scripts): Feci Guard refuses a false done, the agent repairs
+holo-neurochir/demo_faux_fini/demo_faux_fini.html: 3.1 MB, self-contained (47 embedded screenshots, 0 external scripts): the original agent's false done, step by step
+
+QUICKSTART OK: (a) and (b) match the published numbers, (c) the two demo pages are ready to open in a browser.
 ```
 
-## Level 2
-`python3 jury_kit/guard_live.py` with the `claude` CLI (Claude Code, logged in), fresh verifier calls. Each live decision matched
-the recorded one. The `--api` path (Anthropic key through the OpenAI-compatible endpoint) was **not run**: no key on
-the machine.
+## Level 2 (earlier fresh clone, commit `6bb899f`, about 10:05 UTC)
+`python3 jury_kit/guard_live.py` uses the `claude` CLI (Claude Code, logged in) for fresh verifier calls. Both live
+decisions matched the recorded ones. The `--api` path (Anthropic key through the OpenAI-compatible endpoint) was
+**not run**, because no key was on the machine.
 
 Default episode (a false success), exit 0:
 ```
@@ -145,5 +176,5 @@ recorded : COMPLETE -> accept   same decision: True
 ```
 
 ## Oldest supported Python
-Same fresh clone, Python 3.9.25 (`uv run --python 3.9 --no-project python ...`): `verify_results.py` exit 0,
-`replay_guard.py` exit 0, `guard_live.py --list` prints 268 episodes.
+Fresh clone at `6bb899f`, Python 3.9.25 (`uv run --python 3.9 --no-project python ...`): `verify_results.py` exited 0,
+`replay_guard.py` exited 0, and `guard_live.py --list` printed 268 episodes.
