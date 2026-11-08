@@ -25,7 +25,7 @@ launch() {  # $1 = arm, $2 = tag, $3 = list, [$4 = workers, else the free capaci
   fi
   log "launch $1 $2 ($3) workers=$w"
   tmux kill-window -t "osw_val_$2:$1" 2>/dev/null
-  (flock 9; echo "$1 $2 $3 $w" > "$LAST"
+  (flock 9; echo "$1 $2 $3 $w ${PATCHED_URL:--} ${PATCHED_NAME:--}" > "$LAST"
    RESUME=1 WAIT=1 ARMS="$1" MIN_AVAIL_G=$((MIN_AVAIL_G + GB_PER_VM * w)) bash osworld/run_patched_eval.sh "$2" "$3" "$w") 9>"$LOCK"
 }
 ram_guard() {
@@ -33,7 +33,8 @@ ram_guard() {
   while [ "$(date +%s)" -lt "$end_s" ]; do
     if [ "$(avail)" -lt "$GUARD_G" ]; then low=$((low + 1)); else low=0; fi
     if [ $low -ge 4 ] && [ -s "$LAST" ]; then
-      read -r arm tag list w < "$LAST"
+      read -r arm tag list w purl pname < "$LAST"
+      [ "$purl" = - ] || export PATCHED_URL="$purl" PATCHED_NAME="$pname"  # restart against the arm's own server
       log "RAM guard: $(avail)G < ${GUARD_G}G for 2 min -> $arm $tag from $w to $((w - 1)) workers"
       ( flock 9; stop_arm "$arm" "$tag"; tmux kill-window -t "osw_val_$tag:$arm" 2>/dev/null; : > "$LAST" ) 9>"$LOCK"
       [ "$w" -gt 1 ] && launch "$arm" "$tag" "$list" $((w - 1))
