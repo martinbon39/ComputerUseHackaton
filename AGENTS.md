@@ -60,7 +60,7 @@ infeasible tasks).
 - `holo-neurochir/paper/`: the paper (`main.pdf`, `neurips.pdf`), with every number generated from `data/` by `build.sh`.
 - `holo-neurochir/osworld/`: online evaluation (Modal serving, GitHub runner collection, live duel page).
 - `holo-neurochir/holo/`, `scripts/`: harness and weight-edit code. `astra-*`, `moon-*`: weight-edit experiments, mostly negative.
-- `holo-neurochir/JOURNAL.md`, `LOG.md`: raw working logs of the agent team (French, chronological). They are not needed for review.
+- `holo-neurochir/JOURNAL.md` and the root `LOG.md`: raw working logs of the agent team (French, chronological). They are not needed for review.
 
 ## Things that look odd but are intended
 - Many folders hold negative results. They are kept on purpose, and `docs/REPO_MAP.md` gives each one's status.

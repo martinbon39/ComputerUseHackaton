@@ -93,13 +93,15 @@ resamples, seed 0) for differences, and Wilson intervals for proportions.
 | 6 | Noise floor: same model, two servers | +1.5 pts [−4.5, +7.6], n=120 | reference | same script |
 | 7 | Feci Guard verifier, offline, same 268 episodes (90 tasks) | detects **45/66 (68 % [56–78])**, wrongly rejects **21/202 (10 % [7–15])**; gap **+58 [+41, +74]** | **separates** | `python3 jury_kit/replay_guard.py` |
 | 8 | Guard repair on replayed false successes | 5/18 vs 2/18 branches repaired (9 episodes × 2); +16.7 pts [0, +44], sign test p=0.5 | **not distinguishable from 0** | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md) |
-| 9 | Guard + escalation to Holo4, vs Holo4 alone (replayed false successes, same boundary) | interim, 5 strict-valid episodes × 2: **4/10 vs 0/10** repaired, +0.40 [0, 0.80] (cluster CI); two repairs independently audited (`calc/37608790`, `impress/70bca0cc`) | **running**, numbers will move | [`rescue_bench/REPORT.md` in PR #1](https://github.com/martinbon39/ComputerUseHackaton/pull/1) |
-| 10 | Holo + Guard on the 120-task OSWorld test split, vs the same model on the same server | pre-registered; first launch lost to a pod outage with 0 tasks played (amendment 2), relaunched on Modal at 09:50 UTC | **running**, no result yet | [`report/PREREG_ONLINE_GUARD.md`](holo-neurochir/report/PREREG_ONLINE_GUARD.md) |
+| 9 | Guard + escalation to Holo4, vs Holo4 alone (replayed false successes, same boundary) | interim, 5 strict-valid episodes × 2 branches: **4/10 vs 0/10** branches repaired, i.e. 2 of 5 episodes repaired in both branches (`calc/37608790`, `impress/70bca0cc`, independently audited); +0.40 [0, 0.80] (cluster CI) | **running**, numbers will move | [`rescue_bench/REPORT.md` in PR #1](https://github.com/martinbon39/ComputerUseHackaton/pull/1) |
+| 10 | Holo + Guard on the 120-task OSWorld test split, vs the same model on the same server | pre-registered; first launch lost to a pod outage with 0 tasks played (amendment 2: the agent moves to Modal, comparator = the original on Modal); relaunched on GitHub runners, runs 42468308809 and 42468884640 of [holo-osworld-runner](https://github.com/martinbon39/holo-osworld-runner/actions) | **running**, no result yet | [`report/PREREG_ONLINE_GUARD.md`](holo-neurochir/report/PREREG_ONLINE_GUARD.md) |
 | 11 | Stronger judge: Guard v2 (Opus + the 2 previous screens + action list) vs v1, held-out half used once | detects 20/29 (69 %) vs 16/29 (55 %): **+13.8 pts [+2.9, +30]**; false rejection 15/116 (12.9 %) vs 10/116 (8.6 %): +4.3 [−5, +15] | **more detection, significant**; the target (≥ 80 % detection, ≤ 10 % false rejection) is **not met**; offline only | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md#guard-v2-sprint-s1-offline-judge_bench-corpus-v2protocolmd-independently-recomputed), [`v2/PROTOCOL.md`](holo-neurochir/feci_guard/v2/PROTOCOL.md) |
 
 Caveats that change how to read the table:
-- Row 7: the Holo judges used a different prompt than the Claude verifier, so the gap mixes model and prompt
-  ([`judge_bench/REPORT.md`](holo-neurochir/judge_bench/REPORT.md), Limits). The verifier sees one final screen: it
+- Row 7: the Holo rows used a different prompt than the Claude verifier. A fourth judge settles most of it: Holo4-27B
+  behind the **same frozen Feci Guard prompt** detects 31/66 (47 %) and wrongly rejects 49/202 (24 %), gap +23 [+5, +40];
+  Claude stays ahead at equal prompt (paired difference −35 pts [−59, −10]), so the advantage is mostly the model. An
+  open-weights verifier works, but less well ([`judge_bench/REPORT.md`](holo-neurochir/judge_bench/REPORT.md), French). The verifier sees one final screen: it
   cannot see a saved file. On `impress/550ce7e7` it fixed what was visible and the evaluator still scored 0
   ([`smoke/impress_550ce7e7_guard.md`](holo-neurochir/feci_guard/smoke/impress_550ce7e7_guard.md)).
 - Rows 3–6: our OSWorld harness is more permissive than H's official adapter on infeasible tasks. Absolute scores are
@@ -121,7 +123,8 @@ bash jury_kit/quickstart.sh                 # all of the above + (c), exit code 
 
 - **(a)** [`jury_kit/verify_results.py`](jury_kit/verify_results.py) reads [`jury_kit/results/scores.csv`](jury_kit/results/scores.csv)
   (one row per task, arm and split) and recomputes every paired comparison with a fixed-seed bootstrap. It prints
-  the primary verdict: *"Lower bound = −4.3 pt → NO DETECTABLE GAIN"*.
+  the primary verdict: *"Lower bound = −4.3 pt → NO DETECTABLE GAIN"*. In its output, "92.5 vs 89.3" are sums of
+  per-task scores over the n tasks, not percentages.
 - **(b)** [`jury_kit/replay_guard.py`](jury_kit/replay_guard.py) runs the **frozen** `feci_guard.check` on each
   episode's real final screenshot (sha256-checked) and swaps only the network call for the verdict Claude returned
   on 2026-11-08. It scores the decisions against the official OSWorld labels. `--show N` prints the refusals the
@@ -131,9 +134,11 @@ bash jury_kit/quickstart.sh                 # all of the above + (c), exit code 
   in a browser (one self-contained 1 MB file, French captions; hosted copy: [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxehqaqs.SsRdAM7BfXxBtWZEUzqCHbXqFzQApOsO)). On OSWorld task `libreoffice_calc/1de60575`, the agent
   says "done" with the pivot table on the wrong sheet; the Guard refuses ("the table is on 'Pivot Table_Sheet1_1', not
   'Sheet2'"); the agent renames the sheet in 5 steps; the second check passes and the official evaluator scores 1.
-  This is one recorded episode of the repair measure (row 8), not evidence of an average gain. The problem itself, an
-  original false "done" step by step: [`demo_faux_fini.html`](holo-neurochir/demo_faux_fini/demo_faux_fini.html) (3 MB). Screenshots of the live duel page (two VMs side by side, STOP buttons, recorded verdicts):
-  [`osworld/duel/shots/`](holo-neurochir/osworld/duel/shots/).
+  This is one recorded episode of the repair measure (row 8), not evidence of an average gain. The problem itself:
+  [`demo_faux_fini.html`](holo-neurochir/demo_faux_fini/demo_faux_fini.html) (3 MB) replays one task side by side, the
+  original agent's false "done" next to the weight-merged agent, which succeeds on that episode. It was picked to
+  show the failure; across 165 tasks the merge shows no detectable gain (row 3). Screenshots of the live duel page
+  (original vs a modified agent on two VMs, STOP buttons, recorded verdicts): [`osworld/duel/shots/`](holo-neurochir/osworld/duel/shots/).
 
 Expected outputs, pasted from a fresh clone: [docs/QUICKSTART_PROOF.md](docs/QUICKSTART_PROOF.md). The same script
 runs in GitHub Actions whenever the jury kit, the Guard code or its data change ([`.github/workflows/quickstart.yml`](.github/workflows/quickstart.yml)).
@@ -178,7 +183,7 @@ on GitHub runners. A judge cannot run them in 5 minutes.
 | **Technical execution & reliability (25 %)** | End-to-end pipeline (VMs, vLLM on Modal, GitHub runners, paired evaluation); checkpoint rebuilt bit-for-bit; frozen decision code with a hash; a CI job that reproduces the numbers whenever their inputs change | [`jury_kit/`](jury_kit/), [`.github/workflows/quickstart.yml`](.github/workflows/quickstart.yml), [`jury_kit/expected_sha256.json`](jury_kit/expected_sha256.json), [`feci_guard/feci_guard.py`](holo-neurochir/feci_guard/feci_guard.py), [docs/QUICKSTART_PROOF.md](docs/QUICKSTART_PROOF.md) |
 | **Usefulness & impact (20 %)** | The false "done" is the main failure mode (57 % of failures). A verifier that catches 68 % of them at a 10 % false-alarm rate can be added to any agent through one function call, `feci_guard.check(task, png)` | rows 1 and 7 above, [`feci_guard/README.md`](holo-neurochir/feci_guard/README.md), [paper](holo-neurochir/paper/main.pdf) |
 | **Originality & innovation (15 %)** | First weight-surgery study of a GUI agent's stopping decision, with three traps that would each have produced a false positive; a negative result that motivates the external verifier; an autonomous agent research team | [paper](holo-neurochir/paper/main.pdf) §4–6, [docs/REPO_MAP.md](docs/REPO_MAP.md), [How we worked](#how-we-worked) |
-| **UX & user control (10 %)** | The refusal says *which* requirement failed and *what* to do; ≤ 2 refusals so the agent is never stuck; a failing verifier never blocks; a readable journal per episode (`guard.md`, ✓/✗ per requirement); the duel page has STOP buttons and step-by-step replay | [`smoke/impress_550ce7e7_guard.md`](holo-neurochir/feci_guard/smoke/impress_550ce7e7_guard.md), [`osworld/duel/shots/`](holo-neurochir/osworld/duel/shots/) |
+| **UX & user control (10 %)** | The refusal says *which* requirement failed and *what* to do; ≤ 2 refusals so the agent is never stuck; a failing verifier never blocks; a readable journal per episode (`guard.md`, ✓/✗ per requirement); a step-by-step replay of a refusal and its repair; the live duel page (original vs a modified agent) has per-agent and global STOP buttons | [`demo_live/repair_calc.html`](holo-neurochir/demo_live/repair_calc.html), [`smoke/impress_550ce7e7_guard.md`](holo-neurochir/feci_guard/smoke/impress_550ce7e7_guard.md), [`osworld/duel/README.md`](holo-neurochir/osworld/duel/README.md) |
 | **Demo clarity & Q&A (5 %)** | Quickstart in a few commands, a demo video, a Guard repair replay page, a paper with every number regenerated from data | [Quickstart](#quickstart-under-5-minutes-no-gpu-no-key-no-vm), [`repair_calc.html`](holo-neurochir/demo_live/repair_calc.html), [`demo_faux_fini.html`](holo-neurochir/demo_faux_fini/demo_faux_fini.html), [`paper/README.md`](holo-neurochir/paper/README.md) |
 
 ## Links
@@ -220,8 +225,8 @@ one human supervised:
   infeasible tasks). Small n for repair (9 episodes) and escalation (in progress).
 - The verifier sees the screen only. It cannot check file contents or saved settings; an "active" mode that asks the
   agent to make them visible exists but is not measured.
-- The Guard costs ~$0.03 and 5–10 s per `answer`, and relies on a closed model (Claude Sonnet).
-- The offline verifier comparison mixes prompt and model (row 7 caveat).
+- The Guard costs ~$0.03 and 5–10 s per `answer`, and works best with a closed model (Claude Sonnet); the open-weights
+  Holo4-27B behind the same prompt separates less well (row 7 caveat).
 - Rows 9–10 are still running at the time of writing. Read the linked files for their final state.
 
 ## Acknowledgements and license
