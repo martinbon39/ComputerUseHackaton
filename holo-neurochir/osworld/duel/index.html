@@ -269,7 +269,7 @@ async function init() {
   }
   config = await (await fetch('/api/config')).json();
   $('#task').innerHTML = config.tasks.map(t => `<option value="${t.id}">${t.id.split('/')[0]} · ${esc(t.instruction.slice(0, 60))}…</option>`).join('');
-  $('#preset').innerHTML = Object.entries(config.presets).map(([k, p]) => `<option value="${k}" ${k === config.default_preset ? 'selected' : ''}>${k === 'modal' ? 'Modal (H100)' : k === 'pod_guard' ? 'Feci Guard, pod' : 'pod (H200)'} : ${p.left} vs ${p.right}</option>`).join('');
+  $('#preset').innerHTML = Object.entries(config.presets).map(([k, p]) => `<option value="${k}" ${k === config.default_preset ? 'selected' : ''}>${k === 'modal' ? 'Modal (H100)' : k === 'pod_guard' ? 'Feci Guard, pod' : k === 'modal_guard' ? 'Feci Guard, Modal' : 'pod (H200)'} : ${p.left} vs ${p.right}</option>`).join('');
   sideSkeleton('left', config.labels.left, ''); sideSkeleton('right', config.labels.right, '');
   $('#guardRight').disabled = !config.guard_available;
   $('#preset').onchange = () => { if ($('#preset').value === 'pod_guard' && config.guard_available) $('#guardRight').checked = true; };
