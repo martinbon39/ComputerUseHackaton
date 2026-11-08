@@ -10,7 +10,11 @@ every requirement on the screen, refuses a false "done" with a reason, and can h
 claimed (+1.6 [−4.4, +7.7]).** The online arm is Holo-3.1 plus the Guard's refusal only. Escalation to Holo4 (+50 pts
 [+22, +78]) is measured in replay of 9 recorded false successes, not online.
 
-> **Demo video, 3 min:** [`holo-neurochir/video_demo/feci-guard-wall.mp4`](holo-neurochir/video_demo/feci-guard-wall.mp4)
+> **Demo video, 2 min:** [`holo-neurochir/video_demo/feci-guard-demo-2min.mp4`](holo-neurochir/video_demo/feci-guard-demo-2min.mp4)
+> (file in this repo, 1:38; generator in [`holo-neurochir/video_wall/demo2min/`](holo-neurochir/video_wall/demo2min/)). Hosted copy,
+> link expires 2026-12-08: [video](https://argos.martinbonan.com/artifacts/feci-guard-demo-2min.mp4?t=mxenkc8g.o4bkDyQC_vucYCP8zMnMbJ-jDlEs-zhh).
+>
+> **Extended video:** [`holo-neurochir/video_demo/feci-guard-wall.mp4`](holo-neurochir/video_demo/feci-guard-wall.mp4)
 > (file in this repo, 2:54; generator in [`holo-neurochir/video_wall/`](holo-neurochir/video_wall/)). Hosted copy, link expires
 > 2026-12-08: [video](https://argos.martinbonan.com/artifacts/feci-guard-wall-video.mp4?t=mxemmn8w.RZNeZKw_tnK0Nezq6OvZ6exYV6aMCSOx) · [interactive page](https://argos.martinbonan.com/artifacts/feci-guard-wall.html?t=mxemmnav.usCClc-xmdZJ2WZb3TM3Rqyt64iSkwJL).
 >
@@ -214,7 +218,9 @@ Files in this repository come first. Hosted copies are signed links that expire 
   [arXiv-style PDF](holo-neurochir/paper/main.pdf) · [NeurIPS-format PDF](holo-neurochir/paper/neurips.pdf) (anonymous,
   with the filled reproducibility checklist). Every number is regenerated from `paper/data/` by `paper/build.sh`.
   Hosted copies, link expires: [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxendzty.YtNRzC2XZbOfsCPfKb43m0vI_OuDRaJs) · [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxendzvz.7zzezsDOwwrahm95moLSz3Efcg3-IAzE).
-- **Demo video, 3 min** (submission): [`holo-neurochir/video_demo/feci-guard-wall.mp4`](holo-neurochir/video_demo/feci-guard-wall.mp4),
+- **Demo video, 2 min** (submission): [`holo-neurochir/video_demo/feci-guard-demo-2min.mp4`](holo-neurochir/video_demo/feci-guard-demo-2min.mp4),
+  generator in [`holo-neurochir/video_wall/demo2min/`](holo-neurochir/video_wall/demo2min/). Hosted copy, link expires: [video](https://argos.martinbonan.com/artifacts/feci-guard-demo-2min.mp4?t=mxenkc8g.o4bkDyQC_vucYCP8zMnMbJ-jDlEs-zhh).
+- **Extended video, 2:54**: [`holo-neurochir/video_demo/feci-guard-wall.mp4`](holo-neurochir/video_demo/feci-guard-wall.mp4),
   generator in [`holo-neurochir/video_wall/`](holo-neurochir/video_wall/). Hosted copies, links expire: [video](https://argos.martinbonan.com/artifacts/feci-guard-wall-video.mp4?t=mxemmn8w.RZNeZKw_tnK0Nezq6OvZ6exYV6aMCSOx) ·
   [interactive page](https://argos.martinbonan.com/artifacts/feci-guard-wall.html?t=mxemmnav.usCClc-xmdZJ2WZb3TM3Rqyt64iSkwJL).
 - **Earlier demo video**: [`holo-neurochir/video_demo/holo-demo-video.mp4`](holo-neurochir/video_demo/holo-demo-video.mp4)
