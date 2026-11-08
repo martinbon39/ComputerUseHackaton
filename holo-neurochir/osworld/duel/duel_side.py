@@ -76,14 +76,15 @@ def agent_class(guard):
         def _check(self, step_idx, answer):  # GuardedAgent only
             self.events.emit("phase", phase="guard_checking", answer=answer)
             rec = super()._check(step_idx, answer)
-            v = rec.get("verifier") or {}
+            v = rec.get("verifier") or {}  # the verifier's detail; the record's own fields come from GuardedAgent
             shot = Path(self.guard_dir) / rec["screenshot"] if rec.get("screenshot") else None
             self.pending_guard = dict(
-                decision=rec["decision"], verdict=v.get("verdict"), answer=answer,
-                requirements=[{"text": r.get("requirement"), "mark": {"yes": "✓", "no": "✗"}.get(r.get("status"), "?"),
-                               "evidence": r.get("evidence")} for r in v.get("requirements", [])],
-                feedback=run_holo_guard.feci.feedback(v) if rec["decision"] == "refused" else "",
-                latency_s=v.get("latency_s"), error=v.get("error"),
+                decision=rec["decision"], verdict=v.get("verdict"), answer=answer, guard_kind=rec.get("kind"),
+                requirements=[{"text": r.get("requirement") or r.get("text"),
+                               "mark": {"yes": "✓", "no": "✗"}.get(r.get("status"), "?"),
+                               "evidence": r.get("evidence")} for r in v.get("requirements") or []],
+                feedback=rec.get("feedback", "") if rec["decision"] == "refused" else "",
+                latency_s=v.get("latency_s"), error=v.get("error"), verifier_sha=v.get("verifier_sha"),
                 file=self.events.save(Image.open(shot), "guard") if shot and shot.exists() else None)
             return rec
 
@@ -180,7 +181,8 @@ def main():
         if args.guard:
             import verifier
             (out / "guard").mkdir(exist_ok=True)
-            extra = dict(guard_dir=str(out / "guard"), instruction=example["instruction"], guard_model=verifier.DEFAULT_MODEL)
+            extra = dict(guard_dir=str(out / "guard"), instruction=example["instruction"], guard_model=verifier.DEFAULT_MODEL,
+                         guard_mode=os.environ.get("GUARD_MODE", "passive"))
         agent = DuelAgent(**extra, client=client_for(url, auth), model=model, env=cenv, max_steps=rh.max_steps,
                           temperature=rh.temperature, reasoning_effort=rh.reasoning_effort,
                           image_budget=rh.image_budget, on_step=on_step,
