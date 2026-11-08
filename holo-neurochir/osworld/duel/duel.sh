@@ -4,7 +4,8 @@
 #   bash duel.sh list                recorded duels (id, task, verdicts)
 #   bash duel.sh replay <id|last>    URL that replays a recorded duel at real speed in the same page
 #   bash duel.sh stop                STOP every running duel (both VMs closed)
-# From another machine: ssh -L 8765:127.0.0.1:8765 orbit, then open http://127.0.0.1:8765/
+#   bash duel.sh tunnel              public https URL (cloudflared); start/stop need ?k=<~/.duel_key> once
+# Public: read-only for everyone (page, replays, state); start/stop need the key (~/.duel_key, ?k= once -> cookie).
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"; PORT=8765; ROOT="$HOME/osw/duels"
 up() { curl -sf -m 3 "127.0.0.1:$PORT/api/config" > /dev/null; }
@@ -27,6 +28,10 @@ for d in json.load(sys.stdin):
     [ -f "$ROOT/$id/meta.json" ] || { echo "no duel $id in $ROOT" >&2; exit 1; }
     echo "http://127.0.0.1:$PORT/?replay=$id" ;;
   stop)
-    curl -s -X POST "127.0.0.1:$PORT/api/stop" -d '{"side":"all"}'; echo ;;
-  *) sed -n 2,7p "$0"; exit 2 ;;
+    curl -s -X POST -H "Cookie: duel_key=$(cat ~/.duel_key)" "127.0.0.1:$PORT/api/stop" -d '{"side":"all"}'; echo ;;
+  tunnel)  # public URL (cloudflared quick tunnel, tmux duel_tunnel); control still needs ?k=<~/.duel_key>
+    tmux has-session -t duel_tunnel 2>/dev/null || tmux new-session -d -s duel_tunnel "/home/orbit/bin/cloudflared tunnel --no-autoupdate --url http://127.0.0.1:$PORT 2>&1 | tee ~/osw/duel_tunnel.log"
+    for _ in $(seq 30); do u=$(grep -o 'https://[a-z0-9-]*\.trycloudflare\.com' ~/osw/duel_tunnel.log 2>/dev/null | tail -1); [ -n "$u" ] && { echo "$u"; exit 0; }; sleep 2; done
+    echo "no tunnel URL, see ~/osw/duel_tunnel.log" >&2; exit 1 ;;
+  *) sed -n 2,9p "$0"; exit 2 ;;
 esac

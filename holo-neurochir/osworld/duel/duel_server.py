@@ -3,9 +3,11 @@ at the same time; per-side STOP and global STOP; every duel recorded (events.jso
 Each side is a duel_side.py process started through ~/osw/osh (docker + kvm), with run_osw.sh's exact environment.
 Usage: devcap python duel_server.py [--port 8765] [--root ~/osw/duels] [--preset pod|modal]
   page:   http://127.0.0.1:8765/            replay: http://127.0.0.1:8765/?replay=<duel_id>
-Bound to 127.0.0.1 only: the page starts and stops VMs.
+Public through a tunnel (cloudflared -> 127.0.0.1:8765): the page, replays and state are read-only for everyone;
+starting or stopping VMs needs the key in ~/.duel_key, given once as ?k=<key> (then an HttpOnly SameSite=Strict
+cookie, and a redirect drops it from the address bar) or in the cookie; 403 otherwise.
 """
-import argparse, json, os, re, signal, subprocess, threading, time, urllib.request
+import argparse, hmac, json, os, re, signal, subprocess, threading, time, urllib.request
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
@@ -188,11 +190,20 @@ DUEL_ID = re.compile(r"[\w-]+")
 class Handler(BaseHTTPRequestHandler):
     duels: Duels = None
 
-    def local_origin(self):
-        """Reject cross-site requests (CSRF, DNS rebinding): a page on another site can POST text/plain here."""
-        ok = {f"127.0.0.1:{self.server.server_port}", f"localhost:{self.server.server_port}"}
+    key = None
+
+    def given_key(self):
+        q = {k: v[0] for k, v in parse_qs(urlparse(self.path).query).items()}
+        cookies = dict(c.strip().split("=", 1) for c in (self.headers.get("Cookie") or "").split(";") if "=" in c)
+        return q.get("k") or cookies.get("duel_key") or ""
+
+    def authorized(self):
+        return bool(self.key) and hmac.compare_digest(self.given_key().encode(), self.key.encode())
+
+    def same_origin(self):
+        """A POST must come from this page: a page on another site can POST text/plain here (CSRF)."""
         origin = self.headers.get("Origin")
-        return self.headers.get("Host") in ok and (origin is None or urlparse(origin).netloc in ok)
+        return origin is None or urlparse(origin).netloc == self.headers.get("Host")
 
     def log_message(self, fmt, *a):
         pass
@@ -204,16 +215,22 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers(); self.wfile.write(data)
 
     def do_GET(self):
-        if not self.local_origin():
-            return self.send(403, {"error": "local origin only"})
         u = urlparse(self.path); q = {k: v[0] for k, v in parse_qs(u.query).items()}
         root = self.duels.root
         if u.path in ("/", "/index.html"):
+            if "k" in q:  # key given in the URL: store it as a cookie and drop it from the address bar (screen sharing)
+                rest = "&".join(f"{k}={v}" for k, v in q.items() if k != "k")
+                self.send_response(302)
+                if self.authorized():
+                    self.send_header("Set-Cookie", f"duel_key={q['k']}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=604800")
+                self.send_header("Location", "/" + ("?" + rest if rest else "")); self.send_header("Content-Length", "0")
+                return self.end_headers()
             return self.send(200, (HERE / "index.html").read_bytes(), "text/html; charset=utf-8")
         if u.path == "/api/config":
             return self.send(200, {"tasks": [{"id": t, "instruction": json.loads((EXAMPLES / f"{t}.json").read_text())["instruction"]} for t in TASKS],
                                    "presets": {k: {s: v.split("=")[1] for s, v in p.items()} for k, p in PRESETS.items()},
-                                   "default_preset": self.duels.preset, "guard_available": guard_available(), "labels": LABELS, "running": self.duels.running()})
+                                   "default_preset": self.duels.preset, "guard_available": guard_available(), "labels": LABELS, "running": self.duels.running(),
+                                   "control": self.authorized()})
         if u.path == "/api/duels":
             return self.send(200, self.duels.listing())
         if u.path == "/api/events":
@@ -234,11 +251,15 @@ class Handler(BaseHTTPRequestHandler):
         return self.send(404, {"error": "not found"})
 
     def do_POST(self):
-        if not self.local_origin():
-            return self.send(403, {"error": "local origin only"})
+        if not (self.authorized() and self.same_origin()):
+            return self.send(403, {"error": "control needs the duel key"})
         u = urlparse(self.path)
         body = json.loads(self.rfile.read(int(self.headers.get("Content-Length") or 0)) or b"{}")
         try:
+            if u.path == "/api/start" and body.get("dry_run"):  # auth test: validates the request, starts nothing
+                if body.get("preset", self.duels.preset) not in PRESETS or body.get("task") not in TASKS + [None]:
+                    raise ValueError("bad preset or task")
+                return self.send(200, {"dry_run": True, "authorized": True, "running": self.duels.running()})
             if u.path == "/api/start":
                 return self.send(200, {"id": self.duels.start(body["task"], body.get("preset"), int(body.get("max_steps", 50)), body.get("guard", "none"))})
             if u.path == "/api/stop":
@@ -261,6 +282,8 @@ def main():
     ap.add_argument("--preset", choices=sorted(PRESETS), default="pod")
     args = ap.parse_args()
     Handler.duels = Duels(args.root, args.preset)
+    key_file = Path.home() / ".duel_key"
+    Handler.key = key_file.read_text().strip() if key_file.exists() else None  # no key file: nobody can start or stop
     print(f"duel page: http://127.0.0.1:{args.port}/  (preset {args.preset}, duels in {args.root})", flush=True)
     ThreadingHTTPServer(("127.0.0.1", args.port), Handler).serve_forever()
 

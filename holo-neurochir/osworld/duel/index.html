@@ -68,7 +68,7 @@ table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
 td, th { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: left; }
 th { color: var(--muted); font-weight: 600; }
 a { color: var(--mod); }
-.replay .side .stop { display: none; }
+.replay .side .stop, .readonly .side .stop { display: none; }
 .guardp { display: none; margin: 0 12px 10px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: #10141c; }
 .guardp.show { display: block; }
 .guardp .gh { font-weight: 800; font-size: 15px; margin-bottom: 4px; }
@@ -274,6 +274,10 @@ async function init() {
   $('#guardRight').disabled = !config.guard_available;
   $('#preset').onchange = () => { if ($('#preset').value === 'pod_guard' && config.guard_available) $('#guardRight').checked = true; };
   $('#start').onclick = start; $('#stopAll').onclick = () => stop('all');
+  if (!config.control) {  // public read-only view: no start, no STOP
+    document.body.classList.add('readonly'); $('#liveControls').style.display = 'none';
+    $('#modeBadge').insertAdjacentHTML('afterend', '<span class="badge" style="background:#2a3142">lecture seule</span>');
+  }
   if (!duelId && config.running.length) duelId = config.running[0];
   $('#modeBadge').innerHTML = '<span class="badge live">EN DIRECT</span>';
   setInterval(() => { poll(); }, 1000);

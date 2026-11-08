@@ -22,8 +22,10 @@ bash duel.sh replay <id|last>    # -> http://127.0.0.1:8765/?replay=<id>
 bash duel.sh stop                # STOP all
 ```
 
-To reach the page from another machine: `ssh -L 8765:127.0.0.1:8765 orbit`. The server binds to 127.0.0.1 only,
-because the page starts and stops VMs.
+Public access: `bash duel.sh tunnel` (cloudflared quick tunnel, tmux `duel_tunnel`) prints an https URL. Everyone gets
+the page, the replays and the live state, read-only. Starting or stopping VMs needs the key in `~/.duel_key` (umask
+077): open the page once with `?k=<key>`. The server stores it as an HttpOnly SameSite=Strict cookie and redirects to
+drop it from the address bar. Any POST without it, or from another site, gets 403. Still one duel at a time.
 
 ## Server presets
 - `pod` uses H200 on the pod. The original is served on pod 8000 (orbit 8000); the merged model is served on pod 8011
