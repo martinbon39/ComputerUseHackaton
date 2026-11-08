@@ -1,0 +1,677 @@
+{
+  "branch_pilot": {
+    "arms": {
+      "candidate": {
+        "all": {
+          "denominator": 10,
+          "nominal_wilson95": [
+            0.16818032970623614,
+            0.6873262302663417
+          ],
+          "rate": 0.4,
+          "successes": 4
+        },
+        "distinct_task_count": 5,
+        "error_count": 0,
+        "recorded_failures_raw": {
+          "denominator": 6,
+          "nominal_wilson95": [
+            2.7755575615628914e-17,
+            0.3903342879021653
+          ],
+          "rate": 0.0,
+          "successes": 0
+        },
+        "recorded_failures_replay_valid": {
+          "denominator": 4,
+          "nominal_wilson95": [
+            0.0,
+            0.4898908364545973
+          ],
+          "rate": 0.0,
+          "successes": 0
+        },
+        "recorded_failures_replay_valid_feasible": {
+          "denominator": 2,
+          "nominal_wilson95": [
+            0.0,
+            0.6576197724933469
+          ],
+          "rate": 0.0,
+          "successes": 0
+        },
+        "recorded_successes_replay_valid": {
+          "denominator": 4,
+          "nominal_wilson95": [
+            0.5101091635454027,
+            1.0
+          ],
+          "rate": 1.0,
+          "successes": 4
+        },
+        "sha256": "6c63911fc3082e4092f7b9abdf2445492bc3475657495570bf4a60599b928694",
+        "source": "/home/orbit/osw/branch_pilot/cand/branches.jsonl"
+      },
+      "original": {
+        "all": {
+          "denominator": 10,
+          "nominal_wilson95": [
+            0.236593090512564,
+            0.7634069094874361
+          ],
+          "rate": 0.5,
+          "successes": 5
+        },
+        "distinct_task_count": 5,
+        "error_count": 0,
+        "recorded_failures_raw": {
+          "denominator": 6,
+          "nominal_wilson95": [
+            0.030053369748306635,
+            0.5635028221864702
+          ],
+          "rate": 0.16666666666666666,
+          "successes": 1
+        },
+        "recorded_failures_replay_valid": {
+          "denominator": 4,
+          "nominal_wilson95": [
+            0.04558726080970055,
+            0.6993581574175981
+          ],
+          "rate": 0.25,
+          "successes": 1
+        },
+        "recorded_failures_replay_valid_feasible": {
+          "denominator": 2,
+          "nominal_wilson95": [
+            0.0,
+            0.6576197724933469
+          ],
+          "rate": 0.0,
+          "successes": 0
+        },
+        "recorded_successes_replay_valid": {
+          "denominator": 4,
+          "nominal_wilson95": [
+            0.5101091635454027,
+            1.0
+          ],
+          "rate": 1.0,
+          "successes": 4
+        },
+        "sha256": "1675e99a3c60d8963ed89dd6323f0305954bc24c8c2d7732a7b0ce522a2e2fc4",
+        "source": "/home/orbit/osw/branch_pilot/orig/branches.jsonl"
+      }
+    },
+    "fidelity_threshold": 0.05,
+    "transfer_warning": "The only original-arm repair is on an officially infeasible GIMP task excluded from the verifier corpus.",
+    "uncertainty_warning": "Wilson intervals are nominal only: K=2 continuations from each task are clustered; the feasible-failure subset contains one task, so task-level uncertainty is not estimable."
+  },
+  "corpus": {
+    "all_scored_feasible_sensitivity_population": {
+      "feasible_scored_episode_count": 315,
+      "infeasible_scored_excluded": 34,
+      "malformed": [],
+      "official_score_mean": 0.6670437555450568,
+      "official_score_sum": 210.1187829966929,
+      "scope": "All saved result.txt episodes in the four source roots with a non-infeasible task evaluator; includes partial-score and non-answer episodes and is not the full benchmark."
+    },
+    "cross_label_repeated_task_group_count": 18,
+    "duplicate_image_groups": [],
+    "duplicate_image_hash_group_count": 0,
+    "episodes_in_repeated_task_groups": 245,
+    "episodes_with_duplicate_image_hash": 0,
+    "errors": [],
+    "extra_episode_ids": [],
+    "field_mismatches": [],
+    "hash_mismatches": [],
+    "independent_eligible_count": 268,
+    "independent_exclusions": {
+      "infeasible": 28,
+      "invalid_or_missing_evidence": 3,
+      "last_tool_not_answer": 47,
+      "partial_score": 6
+    },
+    "independent_labels": {
+      "false_success": 66,
+      "true_success": 202
+    },
+    "invalid_png_episode_ids": [],
+    "maker_exclusions": {
+      "infeasible": 28,
+      "invalid_or_missing_evidence": 3,
+      "last_tool_not_answer": 47,
+      "partial_score": 6
+    },
+    "manifest_count": 268,
+    "manifest_screen_counts": {
+      "final_trajectory_screenshot": 268
+    },
+    "manifest_sha256": "67cc43166d6b13094f858fd11cc631a2c21aa5379638837fa71572255a673fdc",
+    "missing_episode_ids": [],
+    "repeated_task_group_count": 67,
+    "screen_dimension_counts": {
+      "1920x1080": 268
+    },
+    "screen_rule_differences": [],
+    "screen_step_mismatch_episode_ids": [],
+    "selected_model_declared_infeasible_counts": {
+      "False": 266,
+      "True": 2
+    },
+    "selected_model_declared_infeasible_episode_ids": [
+      "diag2__chrome__6c4c23a1-42a4-43cc-9db1-2f86ff3738cc",
+      "diag2__chrome__fc6d8143-9452-4171-9459-7f515143419a"
+    ],
+    "source_episode_count": 352,
+    "strict_protocol_screen_counts": {
+      "final_trajectory_screenshot": 268
+    },
+    "unique_task_count": 90,
+    "warnings": []
+  },
+  "requirement_review": {
+    "audited_subgroup_totals": {
+      "false_success": {
+        "cannot tell": 28,
+        "no": 47,
+        "yes": 124
+      },
+      "true_success": {
+        "cannot tell": 98,
+        "no": 48,
+        "yes": 369
+      }
+    },
+    "audited_totals": {
+      "cannot tell": 126,
+      "no": 95,
+      "yes": 493
+    },
+    "base_parser_totals": {
+      "cannot tell": 120,
+      "no": 86,
+      "yes": 438
+    },
+    "correction_count": 27,
+    "errors": [],
+    "interpretation": "Counts are explicit model-emitted requirement ratings after a semantic formatting audit; they do not measure whether the ratings are correct.",
+    "review_path": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/verif_study/audit/requirement_review.json",
+    "review_sha256": "cec6de383cffed256dce3fa55726096b088f25d366461843f1160cc0c94d8e12",
+    "selected_t0_raw_lines_sha256": "e2e8ed64763c6b0f6e1b5f938c310ecec6bcb79ececd0ff38d16e0c0319f2455",
+    "selected_t0_rows": 268
+  },
+  "responses": {
+    "attempt_counts": {
+      "1": 1072
+    },
+    "attempts_audit": {
+      "attempt_count_distribution": {
+        "1": 1072
+      },
+      "attempt_record_count": 1072,
+      "attempt_request_ids_without_final_row": [],
+      "attempts_finished_after_deadline": 0,
+      "attempts_started_at_or_after_deadline": 0,
+      "errors": [],
+      "final_copy_mismatch_count": 0,
+      "logical_request_count": 1072,
+      "max_observed_concurrent_attempts": 4,
+      "max_seconds_between_attempt_completions": 25.070537090301514,
+      "missing_attempt_for_final_request_ids": [],
+      "path": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/verif_study/attempts.jsonl",
+      "raw_response_json_mismatch_count": 0,
+      "retry_count": 0,
+      "sha256": "86b45eb5a71d61fd8d07291428117746a6acfac0a80567a303f24a63399b004d"
+    },
+    "blocking_only_simulation": {
+      "all_scored_feasible_denominator_sensitivity": {
+        "assumption": "Hold every episode outside the 268 verified answer episodes unchanged and apply repairs/damage only to verified episodes.",
+        "population": {
+          "feasible_scored_episode_count": 315,
+          "infeasible_scored_excluded": 34,
+          "malformed": [],
+          "official_score_mean": 0.6670437555450568,
+          "official_score_sum": 210.1187829966929,
+          "scope": "All saved result.txt episodes in the four source roots with a non-infeasible task evaluator; includes partial-score and non-answer episodes and is not the full benchmark."
+        },
+        "scenarios": {
+          "feasible_replay_valid": {
+            "expected_repairs_not_observed": 0.0,
+            "gain_pp_if_all_flagged_true_successes_lost": -30.793650793650794,
+            "gain_pp_if_true_successes_preserved": 0.0,
+            "score_mean_if_all_flagged_true_successes_lost": 0.35910724760854884,
+            "score_mean_if_true_successes_preserved": 0.6670437555450568
+          },
+          "naive_all_replay_valid": {
+            "expected_repairs_not_observed": 8.75,
+            "gain_pp_if_all_flagged_true_successes_lost": -28.015873015873016,
+            "gain_pp_if_true_successes_preserved": 2.7777777777777777,
+            "score_mean_if_all_flagged_true_successes_lost": 0.38688502538632663,
+            "score_mean_if_true_successes_preserved": 0.6948215333228346
+          }
+        }
+      },
+      "baseline_success_rate": 0.753731343283582,
+      "baseline_successes": 202,
+      "best_case_if_true_successes_are_not_damaged": 0,
+      "conditional_repair_extrapolation": {
+        "feasible_replay_valid": {
+          "branch_evidence": {
+            "denominator": 2,
+            "nominal_wilson95": [
+              0.0,
+              0.6576197724933469
+            ],
+            "rate": 0.0,
+            "successes": 0
+          },
+          "expected_repairs_not_observed": 0.0,
+          "gain_pp_if_all_flagged_true_successes_lost": -36.19402985074627,
+          "gain_pp_if_true_successes_preserved": 0.0,
+          "net_change_if_all_flagged_true_successes_lost": -97.0,
+          "net_change_if_true_successes_preserved": 0.0
+        },
+        "naive_all_replay_valid": {
+          "branch_evidence": {
+            "denominator": 4,
+            "nominal_wilson95": [
+              0.04558726080970055,
+              0.6993581574175981
+            ],
+            "rate": 0.25,
+            "successes": 1
+          },
+          "expected_repairs_not_observed": 8.75,
+          "gain_pp_if_all_flagged_true_successes_lost": -32.92910447761194,
+          "gain_pp_if_true_successes_preserved": 3.264925373134328,
+          "net_change_if_all_flagged_true_successes_lost": -88.25,
+          "net_change_if_true_successes_preserved": 8.75
+        }
+      },
+      "false_successes_flagged_but_not_repaired": 35,
+      "hard_block_net_success_change": -97,
+      "limits": [
+        "Wilson intervals are nominal only: K=2 continuations from each task are clustered; the feasible-failure subset contains one task, so task-level uncertainty is not estimable.",
+        "The only original-arm repair is on an officially infeasible GIMP task excluded from the verifier corpus.",
+        "Blocking alone repairs zero tasks; extrapolated repairs are not measured OSWorld improvement.",
+        "The 268 selected answer episodes are not the full benchmark."
+      ],
+      "measured_repairs": 0,
+      "true_successes_flagged_and_potentially_blocked": 97
+    },
+    "by_replicate": {
+      "t0": {
+        "false_success": {
+          "denominator_all": 66,
+          "denominator_valid": 63,
+          "finish_reason_counts": {
+            "length": 2,
+            "stop": 64
+          },
+          "incomplete_rate_all": 0.5303030303030303,
+          "incomplete_rate_valid": 0.5555555555555556,
+          "incomplete_wilson95_all": [
+            0.41157685726598636,
+            0.6456957150362233
+          ],
+          "incomplete_wilson95_valid": [
+            0.43319638238682345,
+            0.671529039881082
+          ],
+          "verdict_counts": {
+            "complete": 28,
+            "incomplete": 35,
+            "missing": 1,
+            "truncated": 2
+          }
+        },
+        "true_success": {
+          "denominator_all": 202,
+          "denominator_valid": 199,
+          "finish_reason_counts": {
+            "length": 2,
+            "stop": 200
+          },
+          "incomplete_rate_all": 0.4801980198019802,
+          "incomplete_rate_valid": 0.48743718592964824,
+          "incomplete_wilson95_all": [
+            0.41231528638213755,
+            0.5488198510880613
+          ],
+          "incomplete_wilson95_valid": [
+            0.41888828815613466,
+            0.5564619187045847
+          ],
+          "verdict_counts": {
+            "complete": 102,
+            "incomplete": 97,
+            "missing": 1,
+            "truncated": 2
+          }
+        }
+      },
+      "t08_r1": {
+        "false_success": {
+          "denominator_all": 66,
+          "denominator_valid": 66,
+          "finish_reason_counts": {
+            "stop": 66
+          },
+          "incomplete_rate_all": 0.5606060606060606,
+          "incomplete_rate_valid": 0.5606060606060606,
+          "incomplete_wilson95_all": [
+            0.4408263537999137,
+            0.6737187908045056
+          ],
+          "incomplete_wilson95_valid": [
+            0.4408263537999137,
+            0.6737187908045056
+          ],
+          "verdict_counts": {
+            "complete": 29,
+            "incomplete": 37
+          }
+        },
+        "true_success": {
+          "denominator_all": 202,
+          "denominator_valid": 199,
+          "finish_reason_counts": {
+            "stop": 202
+          },
+          "incomplete_rate_all": 0.49504950495049505,
+          "incomplete_rate_valid": 0.5025125628140703,
+          "incomplete_wilson95_all": [
+            0.42684030762316477,
+            0.563443476744385
+          ],
+          "incomplete_wilson95_valid": [
+            0.4336577051939979,
+            0.571272253433858
+          ],
+          "verdict_counts": {
+            "complete": 99,
+            "incomplete": 100,
+            "malformed": 1,
+            "missing": 2
+          }
+        }
+      },
+      "t08_r2": {
+        "false_success": {
+          "denominator_all": 66,
+          "denominator_valid": 65,
+          "finish_reason_counts": {
+            "stop": 66
+          },
+          "incomplete_rate_all": 0.6666666666666666,
+          "incomplete_rate_valid": 0.676923076923077,
+          "incomplete_wilson95_all": [
+            0.5465634388771762,
+            0.7684357087849766
+          ],
+          "incomplete_wilson95_valid": [
+            0.5561398872118912,
+            0.7779611093969441
+          ],
+          "verdict_counts": {
+            "complete": 21,
+            "incomplete": 44,
+            "missing": 1
+          }
+        },
+        "true_success": {
+          "denominator_all": 202,
+          "denominator_valid": 199,
+          "finish_reason_counts": {
+            "stop": 202
+          },
+          "incomplete_rate_all": 0.504950495049505,
+          "incomplete_rate_valid": 0.5125628140703518,
+          "incomplete_wilson95_all": [
+            0.4365565232556151,
+            0.5731596923768353
+          ],
+          "incomplete_wilson95_valid": [
+            0.4435380812954153,
+            0.5811117118438653
+          ],
+          "verdict_counts": {
+            "complete": 97,
+            "incomplete": 102,
+            "malformed": 1,
+            "missing": 2
+          }
+        }
+      },
+      "t08_r3": {
+        "false_success": {
+          "denominator_all": 66,
+          "denominator_valid": 65,
+          "finish_reason_counts": {
+            "stop": 66
+          },
+          "incomplete_rate_all": 0.5757575757575758,
+          "incomplete_rate_valid": 0.5846153846153846,
+          "incomplete_wilson95_all": [
+            0.45560653224094294,
+            0.6875748985145812
+          ],
+          "incomplete_wilson95_valid": [
+            0.46338984873497363,
+            0.6963975844257738
+          ],
+          "verdict_counts": {
+            "complete": 27,
+            "incomplete": 38,
+            "missing": 1
+          }
+        },
+        "true_success": {
+          "denominator_all": 202,
+          "denominator_valid": 200,
+          "finish_reason_counts": {
+            "length": 1,
+            "stop": 201
+          },
+          "incomplete_rate_all": 0.4405940594059406,
+          "incomplete_rate_valid": 0.445,
+          "incomplete_wilson95_all": [
+            0.37387259362649167,
+            0.5095328187841048
+          ],
+          "incomplete_wilson95_valid": [
+            0.3778060100295335,
+            0.5142669758719658
+          ],
+          "verdict_counts": {
+            "complete": 111,
+            "incomplete": 89,
+            "missing": 1,
+            "truncated": 1
+          }
+        }
+      }
+    },
+    "duplicate_request_ids": [],
+    "expected_record_count": 1072,
+    "finish_reason_counts": {
+      "length": 5,
+      "stop": 1067
+    },
+    "majority_t0_agreement_count": 227,
+    "majority_t0_agreement_rate": 0.8730769230769231,
+    "majority_t0_comparable_count": 260,
+    "missing_request_count": 0,
+    "missing_request_ids": [],
+    "posthoc_metadata_sensitivity": {
+      "definition": "Exclude score-0 answer episodes whose pre-existing meta.json marks model_declared_infeasible=true; primary retains them under the registered last-answer rule.",
+      "excluded_episode_ids": [
+        "diag2__chrome__6c4c23a1-42a4-43cc-9db1-2f86ff3738cc",
+        "diag2__chrome__fc6d8143-9452-4171-9459-7f515143419a"
+      ],
+      "false_success_metrics_after_exclusion": {
+        "denominator_all": 64,
+        "denominator_valid": 61,
+        "finish_reason_counts": {
+          "length": 2,
+          "stop": 62
+        },
+        "incomplete_rate_all": 0.515625,
+        "incomplete_rate_valid": 0.5409836065573771,
+        "incomplete_wilson95_all": [
+          0.39581601478580125,
+          0.6336644833456737
+        ],
+        "incomplete_wilson95_valid": [
+          0.41724048130756475,
+          0.6598706770614424
+        ],
+        "verdict_counts": {
+          "complete": 28,
+          "incomplete": 33,
+          "missing": 1,
+          "truncated": 2
+        }
+      }
+    },
+    "prepare_sha256": "7b55f7a69a87a7faff004f94c60df63acc5176db39c10a3209763ba9fe831294",
+    "protocol_sha256": "737ee316595423f64927400e298857b8b88a89f3e1ba6a2365501acd5dab9b7d",
+    "raw_record_count": 1072,
+    "reasoning_nonempty_count": 1072,
+    "response_model_counts": {
+      "Holo-3.1-4B": 1072
+    },
+    "responses_path": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/verif_study/responses.jsonl",
+    "responses_sha256": "86b45eb5a71d61fd8d07291428117746a6acfac0a80567a303f24a63399b004d",
+    "runner_sha256": "84e2456ac6e655fab088d644f38e29ead9f8344642ab2ca3325c62cc6ab83640",
+    "stability_by_label": {
+      "all": {
+        "all_three_valid": 258,
+        "episodes": 268,
+        "majority_t0_agreement_count": 227,
+        "majority_t0_agreement_rate": 0.8730769230769231,
+        "majority_t0_comparable_count": 260,
+        "pairwise_comparison_count": 784,
+        "pairwise_disagreement_count": 162,
+        "pairwise_disagreement_rate": 0.2066326530612245,
+        "unanimity_rate_all": 0.664179104477612,
+        "unanimity_rate_valid_triplets": 0.689922480620155,
+        "unanimous_count": 178
+      },
+      "false_success": {
+        "all_three_valid": 64,
+        "episodes": 66,
+        "majority_t0_agreement_count": 49,
+        "majority_t0_agreement_rate": 0.7903225806451613,
+        "majority_t0_comparable_count": 62,
+        "pairwise_comparison_count": 194,
+        "pairwise_disagreement_count": 51,
+        "pairwise_disagreement_rate": 0.26288659793814434,
+        "unanimity_rate_all": 0.5909090909090909,
+        "unanimity_rate_valid_triplets": 0.609375,
+        "unanimous_count": 39
+      },
+      "true_success": {
+        "all_three_valid": 194,
+        "episodes": 202,
+        "majority_t0_agreement_count": 178,
+        "majority_t0_agreement_rate": 0.898989898989899,
+        "majority_t0_comparable_count": 198,
+        "pairwise_comparison_count": 590,
+        "pairwise_disagreement_count": 111,
+        "pairwise_disagreement_rate": 0.188135593220339,
+        "unanimity_rate_all": 0.6881188118811881,
+        "unanimity_rate_valid_triplets": 0.7164948453608248,
+        "unanimous_count": 139
+      }
+    },
+    "status_counts": {
+      "ok": 1072
+    },
+    "t08_complete_triplet_count": 268,
+    "t08_majority": {
+      "false_success": {
+        "denominator_all": 66,
+        "denominator_valid": 65,
+        "finish_reason_counts": {
+          "null": 66
+        },
+        "incomplete_rate_all": 0.6060606060606061,
+        "incomplete_rate_valid": 0.6153846153846154,
+        "incomplete_wilson95_all": [
+          0.4854840080039292,
+          0.7149699950538045
+        ],
+        "incomplete_wilson95_valid": [
+          0.493842028060131,
+          0.7240499262499791
+        ],
+        "verdict_counts": {
+          "complete": 25,
+          "incomplete": 40,
+          "missing": 1
+        }
+      },
+      "true_success": {
+        "denominator_all": 202,
+        "denominator_valid": 201,
+        "finish_reason_counts": {
+          "null": 202
+        },
+        "incomplete_rate_all": 0.48514851485148514,
+        "incomplete_rate_valid": 0.48756218905472637,
+        "incomplete_wilson95_all": [
+          0.41715038207104244,
+          0.5537009710316068
+        ],
+        "incomplete_wilson95_valid": [
+          0.4193448368803218,
+          0.5562460418959483
+        ],
+        "verdict_counts": {
+          "complete": 103,
+          "incomplete": 98,
+          "missing": 1
+        }
+      }
+    },
+    "t08_pairwise_comparable_count": 784,
+    "t08_pairwise_disagreement_count": 162,
+    "t08_pairwise_disagreement_rate": 0.2066326530612245,
+    "t08_unanimity_rate_all_episodes": 0.664179104477612,
+    "t08_unanimous_count": 178,
+    "t0_cluster_bootstrap95": {
+      "cluster_count": 90,
+      "detection_minus_false_rejection": [
+        -0.13484848484848488,
+        0.23157807584037093
+      ],
+      "false_success": [
+        0.3684210526315789,
+        0.6865671641791045
+      ],
+      "iterations": 20000,
+      "seed": 20261108,
+      "true_success": [
+        0.3681592039800995,
+        0.5951219512195122
+      ]
+    },
+    "t0_detection_minus_false_rejection": 0.050105010501050096,
+    "t0_requirement_decision_counts": {
+      "cannot tell": 120,
+      "no": 86,
+      "yes": 438
+    },
+    "t0_requirement_format_counts": {
+      "missing_content": 3,
+      "no_explicit_decision_lines": 74,
+      "parsed_explicit_lines": 191
+    },
+    "unexpected_request_ids": [],
+    "validation_error_count": 0,
+    "validation_errors": []
+  }
+}

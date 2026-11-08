@@ -1,0 +1,66 @@
+{
+  "decision_utc": "2026-11-08T08:04:31.661612+00:00",
+  "decision": "NO_CANDIDATE_ADMITTED",
+  "deadline_utc": "2026-11-08T09:45:00+00:00",
+  "cohort_manifest_sha256": "2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0",
+  "new_gui_outputs": 660,
+  "reused_baseline_outputs": 220,
+  "new_text_outputs": 9,
+  "numeric_fs_threshold_pp": -15,
+  "required_max_fs_answers": 43,
+  "arms": {
+    "V05": {
+      "json_gate": true,
+      "text_gate": true,
+      "numerical_fs_gate": false,
+      "qualitative_fs_verdict": "FAIL",
+      "healthy_semantic_verdict": "UNCERTAIN",
+      "admission": "NOT_ADMITTED",
+      "reason": "Required fs+ improvement is absent or not established",
+      "fs_answer": 57,
+      "fs_delta_pp": 2.631578947368421,
+      "generation_sha256": "eb73b7f08c7a72152b24a6a7b939f071627af06ee4ae6af38f10a79be49460c1",
+      "review_evidence": {
+        "VERIFY_SEMANTIC_V05.md": "2e93d63d42fe96f192beb0b14b6bcc9ee7ec6aa64883edab344934f219ca9bf6",
+        "VERIFY_HEALTHY_V05.md": "b10a7e660eb06d9db21a03569df0d0b2d9533ca625bda86f1cf140f99b489bb1",
+        "VERIFY_RESULTS_V05.md": "030a3d4b2c8ad4a0651c68023513a31d1f844d94cf1ee757f2825eb140311c2a"
+      }
+    },
+    "V10": {
+      "json_gate": true,
+      "text_gate": true,
+      "numerical_fs_gate": false,
+      "qualitative_fs_verdict": "UNCERTAIN",
+      "healthy_semantic_verdict": "UNCERTAIN",
+      "admission": "NOT_ADMITTED",
+      "reason": "Required fs+ improvement is absent or not established",
+      "fs_answer": 54,
+      "fs_delta_pp": -1.3157894736842104,
+      "generation_sha256": "f706b1cc5553730f3317fdc96ce6c42665d10365fb3b26aca5b3fc5d53ddc1dd",
+      "review_evidence": {
+        "VERIFY_SEMANTIC_V10.md": "1f3c4f9ad02afac9c8026f07491e487680e80039a3f3e1c74df6747a2b4252cc",
+        "VERIFY_HEALTHY_V10.md": "712ed5d152a4070f30c4784e9700f8a263591b8158e6b8b92f7a9669a24ed285",
+        "VERIFY_RESULTS_V10.md": "9e56e9309276a22e548201b7134676a897218c0fbb2b0d471dbfe5a1733c54ff"
+      }
+    },
+    "E025": {
+      "json_gate": true,
+      "text_gate": true,
+      "numerical_fs_gate": false,
+      "qualitative_fs_verdict": "FAIL",
+      "healthy_semantic_verdict": "PASS",
+      "admission": "NOT_ADMITTED",
+      "reason": "Required fs+ improvement is absent or not established",
+      "fs_answer": 57,
+      "fs_delta_pp": 2.631578947368421,
+      "generation_sha256": "a4d9b5100eacb399870740967057b575f647e26dc996c7aa186551259516989e",
+      "review_evidence": {
+        "VERIFY_SEMANTIC_E025.md": "40003d85d43adf6ec36bc854eb1e4aca27ef8d245d4821716dda8d88f15a4072",
+        "VERIFY_HEALTHY_E025.md": "821e628060df279210d0b049f7cb18009ee7d4c9901bfe3412344f17964cb2af",
+        "VERIFY_RESULTS_E025.md": "5d2ae75adfadbb0eaacb808f0576b7464d18fa37223df1baeadeccfa565d5550"
+      }
+    }
+  },
+  "online_requested": false,
+  "finalized_utc": "2026-11-08T08:06:18.830975+00:00"
+}

@@ -1,0 +1,616 @@
+{
+  "baseline": {
+    "fs+": {
+      "n": 76,
+      "answer": 55,
+      "valid_nonanswer": 21,
+      "invalid": 0,
+      "error": 0,
+      "truncated": 0,
+      "tools": {
+        "answer": 55,
+        "hotkey": 7,
+        "click": 5,
+        "double_click": 4,
+        "scroll": 2,
+        "write": 2,
+        "wait": 1
+      }
+    },
+    "fs-": {
+      "n": 80,
+      "answer": 75,
+      "valid_nonanswer": 5,
+      "invalid": 0,
+      "error": 0,
+      "truncated": 0,
+      "tools": {
+        "answer": 75,
+        "hotkey": 2,
+        "click": 3
+      }
+    },
+    "healthy": {
+      "n": 64,
+      "answer": 5,
+      "valid_nonanswer": 59,
+      "invalid": 0,
+      "error": 0,
+      "truncated": 0,
+      "tools": {
+        "click": 43,
+        "hotkey": 7,
+        "wait": 5,
+        "press_key": 4,
+        "answer": 5
+      }
+    },
+    "all": {
+      "n": 220,
+      "answer": 135,
+      "valid_nonanswer": 85,
+      "invalid": 0,
+      "error": 0,
+      "truncated": 0,
+      "tools": {
+        "answer": 135,
+        "hotkey": 16,
+        "click": 51,
+        "double_click": 4,
+        "scroll": 2,
+        "write": 2,
+        "wait": 6,
+        "press_key": 4
+      }
+    }
+  },
+  "baseline_sha256": "c7f309a97947452e47a343bb07f429937f200a5159d0868be2aad8d7fb9ad546",
+  "arms": {
+    "V05": {
+      "summary": {
+        "fs+": {
+          "n": 76,
+          "answer": 57,
+          "valid_nonanswer": 19,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0,
+          "tools": {
+            "answer": 57,
+            "click": 6,
+            "hotkey": 5,
+            "double_click": 3,
+            "scroll": 2,
+            "write": 3
+          }
+        },
+        "fs-": {
+          "n": 80,
+          "answer": 75,
+          "valid_nonanswer": 5,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0,
+          "tools": {
+            "answer": 75,
+            "click": 4,
+            "hotkey": 1
+          }
+        },
+        "healthy": {
+          "n": 64,
+          "answer": 6,
+          "valid_nonanswer": 58,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0,
+          "tools": {
+            "click": 43,
+            "hotkey": 6,
+            "wait": 5,
+            "answer": 6,
+            "press_key": 4
+          }
+        },
+        "all": {
+          "n": 220,
+          "answer": 138,
+          "valid_nonanswer": 82,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0,
+          "tools": {
+            "answer": 138,
+            "click": 53,
+            "hotkey": 12,
+            "double_click": 3,
+            "scroll": 2,
+            "write": 3,
+            "wait": 5,
+            "press_key": 4
+          }
+        }
+      },
+      "sha256": "eb73b7f08c7a72152b24a6a7b939f071627af06ee4ae6af38f10a79be49460c1",
+      "comparison": {
+        "fs+": {
+          "delta_pp": 2.631578947368421,
+          "ci95_pp": [
+            -2.631578947368421,
+            7.894736842105263
+          ],
+          "bootstrap_unit": "task",
+          "n_tasks": 19
+        },
+        "fs-": {
+          "delta_pp": 0.0,
+          "ci95_pp": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_unit": "task",
+          "n_tasks": 20
+        },
+        "healthy": {
+          "delta_pp": -1.5625,
+          "ci95_pp": [
+            -4.6875,
+            0.0
+          ],
+          "bootstrap_unit": "task",
+          "n_tasks": 16
+        }
+      },
+      "json_gate": true,
+      "numerical_fs_gate": false,
+      "healthy_structural_gate_diagnostic": true,
+      "semantic_health": "UNCERTAIN",
+      "text_results": {
+        "server": {
+          "url": "http://127.0.0.1:18028/v1",
+          "model": "moon_vision_V05",
+          "vllm_version": "0.23.0",
+          "models": [
+            {
+              "id": "moon_vision_V05",
+              "root": "/dev/shm/moon-vision/cua_b050"
+            }
+          ]
+        },
+        "runner_sha256": "36a4d103a3332c22fecceaea259a2ea2725f3d344a3fec91793f2ffe209ff546",
+        "results": [
+          {
+            "prompt": "What is 17 + 28? Reply with the number only.",
+            "seed": 0,
+            "reasoning": "",
+            "content": "45",
+            "text": "45",
+            "token_ids": [
+              19,
+              20,
+              248046
+            ],
+            "n_out": 3,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "prompt": "Translate into French: The blue cup is on the table.",
+            "seed": 0,
+            "reasoning": "",
+            "content": "La tasse bleue est sur la table.",
+            "text": "La tasse bleue est sur la table.",
+            "token_ids": [
+              8482,
+              203570,
+              12066,
+              356,
+              1725,
+              1668,
+              1147,
+              1898,
+              13,
+              248046
+            ],
+            "n_out": 10,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "prompt": "Name three common fruits, separated by commas.",
+            "seed": 0,
+            "reasoning": "",
+            "content": "Apple, banana, orange.",
+            "text": "Apple, banana, orange.",
+            "token_ids": [
+              25719,
+              11,
+              41674,
+              11,
+              18016,
+              13,
+              248046
+            ],
+            "n_out": 7,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "truncated": false,
+            "error": null
+          }
+        ]
+      },
+      "disagreements_count": 156,
+      "qualitative_fs_verdict": "FAIL",
+      "text_gate": true,
+      "admission": "NOT_ADMITTED"
+    },
+    "V10": {
+      "summary": {
+        "fs+": {
+          "n": 76,
+          "answer": 54,
+          "valid_nonanswer": 22,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0,
+          "tools": {
+            "answer": 54,
+            "click": 6,
+            "hotkey": 7,
+            "double_click": 5,
+            "scroll": 2,
+            "write": 2
+          }
+        },
+        "fs-": {
+          "n": 80,
+          "answer": 73,
+          "valid_nonanswer": 7,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0,
+          "tools": {
+            "answer": 73,
+            "click": 3,
+            "hotkey": 4
+          }
+        },
+        "healthy": {
+          "n": 64,
+          "answer": 5,
+          "valid_nonanswer": 59,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0,
+          "tools": {
+            "click": 44,
+            "hotkey": 6,
+            "wait": 5,
+            "press_key": 4,
+            "answer": 5
+          }
+        },
+        "all": {
+          "n": 220,
+          "answer": 132,
+          "valid_nonanswer": 88,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0,
+          "tools": {
+            "answer": 132,
+            "click": 53,
+            "hotkey": 17,
+            "double_click": 5,
+            "scroll": 2,
+            "write": 2,
+            "wait": 5,
+            "press_key": 4
+          }
+        }
+      },
+      "sha256": "f706b1cc5553730f3317fdc96ce6c42665d10365fb3b26aca5b3fc5d53ddc1dd",
+      "comparison": {
+        "fs+": {
+          "delta_pp": -1.3157894736842104,
+          "ci95_pp": [
+            -5.263157894736842,
+            2.631578947368421
+          ],
+          "bootstrap_unit": "task",
+          "n_tasks": 19
+        },
+        "fs-": {
+          "delta_pp": -2.5,
+          "ci95_pp": [
+            -7.5,
+            0.0
+          ],
+          "bootstrap_unit": "task",
+          "n_tasks": 20
+        },
+        "healthy": {
+          "delta_pp": 0.0,
+          "ci95_pp": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_unit": "task",
+          "n_tasks": 16
+        }
+      },
+      "json_gate": true,
+      "numerical_fs_gate": false,
+      "healthy_structural_gate_diagnostic": true,
+      "semantic_health": "UNCERTAIN",
+      "text_results": {
+        "server": {
+          "url": "http://127.0.0.1:18028/v1",
+          "model": "moon_vision_V10",
+          "vllm_version": "0.23.0",
+          "models": [
+            {
+              "id": "moon_vision_V10",
+              "root": "/dev/shm/moon-vision/cua_b100"
+            }
+          ]
+        },
+        "runner_sha256": "36a4d103a3332c22fecceaea259a2ea2725f3d344a3fec91793f2ffe209ff546",
+        "results": [
+          {
+            "prompt": "What is 17 + 28? Reply with the number only.",
+            "seed": 0,
+            "reasoning": "",
+            "content": "45",
+            "text": "45",
+            "token_ids": [
+              19,
+              20,
+              248046
+            ],
+            "n_out": 3,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "prompt": "Translate into French: The blue cup is on the table.",
+            "seed": 0,
+            "reasoning": "",
+            "content": "La tasse bleue est sur la table.",
+            "text": "La tasse bleue est sur la table.",
+            "token_ids": [
+              8482,
+              203570,
+              12066,
+              356,
+              1725,
+              1668,
+              1147,
+              1898,
+              13,
+              248046
+            ],
+            "n_out": 10,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "prompt": "Name three common fruits, separated by commas.",
+            "seed": 0,
+            "reasoning": "",
+            "content": "Apple, banana, orange.",
+            "text": "Apple, banana, orange.",
+            "token_ids": [
+              25719,
+              11,
+              41674,
+              11,
+              18016,
+              13,
+              248046
+            ],
+            "n_out": 7,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "truncated": false,
+            "error": null
+          }
+        ]
+      },
+      "disagreements_count": 157,
+      "qualitative_fs_verdict": "UNCERTAIN",
+      "text_gate": true,
+      "admission": "NOT_ADMITTED"
+    },
+    "E025": {
+      "summary": {
+        "fs+": {
+          "n": 76,
+          "answer": 57,
+          "valid_nonanswer": 19,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0,
+          "tools": {
+            "answer": 57,
+            "click": 5,
+            "hotkey": 6,
+            "double_click": 4,
+            "scroll": 1,
+            "write": 3
+          }
+        },
+        "fs-": {
+          "n": 80,
+          "answer": 76,
+          "valid_nonanswer": 4,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0,
+          "tools": {
+            "answer": 76,
+            "hotkey": 2,
+            "click": 2
+          }
+        },
+        "healthy": {
+          "n": 64,
+          "answer": 4,
+          "valid_nonanswer": 60,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0,
+          "tools": {
+            "click": 43,
+            "hotkey": 7,
+            "wait": 6,
+            "press_key": 4,
+            "answer": 4
+          }
+        },
+        "all": {
+          "n": 220,
+          "answer": 137,
+          "valid_nonanswer": 83,
+          "invalid": 0,
+          "error": 0,
+          "truncated": 0,
+          "tools": {
+            "answer": 137,
+            "click": 50,
+            "hotkey": 15,
+            "double_click": 4,
+            "scroll": 1,
+            "write": 3,
+            "wait": 6,
+            "press_key": 4
+          }
+        }
+      },
+      "sha256": "a4d9b5100eacb399870740967057b575f647e26dc996c7aa186551259516989e",
+      "comparison": {
+        "fs+": {
+          "delta_pp": 2.631578947368421,
+          "ci95_pp": [
+            -2.631578947368421,
+            7.894736842105263
+          ],
+          "bootstrap_unit": "task",
+          "n_tasks": 19
+        },
+        "fs-": {
+          "delta_pp": 1.25,
+          "ci95_pp": [
+            0.0,
+            3.75
+          ],
+          "bootstrap_unit": "task",
+          "n_tasks": 20
+        },
+        "healthy": {
+          "delta_pp": 1.5625,
+          "ci95_pp": [
+            0.0,
+            4.6875
+          ],
+          "bootstrap_unit": "task",
+          "n_tasks": 16
+        }
+      },
+      "json_gate": true,
+      "numerical_fs_gate": false,
+      "healthy_structural_gate_diagnostic": true,
+      "semantic_health": "PASS",
+      "text_results": {
+        "server": {
+          "url": "http://127.0.0.1:18028/v1",
+          "model": "moon_vision_E025",
+          "vllm_version": "0.23.0",
+          "models": [
+            {
+              "id": "moon_vision_E025",
+              "root": "/dev/shm/moon-vision/holo_g025"
+            }
+          ]
+        },
+        "runner_sha256": "36a4d103a3332c22fecceaea259a2ea2725f3d344a3fec91793f2ffe209ff546",
+        "results": [
+          {
+            "prompt": "What is 17 + 28? Reply with the number only.",
+            "seed": 0,
+            "reasoning": "",
+            "content": "45",
+            "text": "45",
+            "token_ids": [
+              19,
+              20,
+              248046
+            ],
+            "n_out": 3,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "prompt": "Translate into French: The blue cup is on the table.",
+            "seed": 0,
+            "reasoning": "",
+            "content": "La tasse bleue est sur la table.",
+            "text": "La tasse bleue est sur la table.",
+            "token_ids": [
+              8482,
+              203570,
+              12066,
+              356,
+              1725,
+              1668,
+              1147,
+              1898,
+              13,
+              248046
+            ],
+            "n_out": 10,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "truncated": false,
+            "error": null
+          },
+          {
+            "prompt": "Name three common fruits, separated by commas.",
+            "seed": 0,
+            "reasoning": "",
+            "content": "Apple, banana, orange.",
+            "text": "Apple, banana, orange.",
+            "token_ids": [
+              25719,
+              11,
+              41674,
+              11,
+              18016,
+              13,
+              248046
+            ],
+            "n_out": 7,
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "truncated": false,
+            "error": null
+          }
+        ]
+      },
+      "disagreements_count": 168,
+      "qualitative_fs_verdict": "FAIL",
+      "text_gate": true,
+      "admission": "NOT_ADMITTED"
+    }
+  }
+}

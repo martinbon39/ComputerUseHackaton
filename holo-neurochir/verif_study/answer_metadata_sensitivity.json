@@ -1,0 +1,34 @@
+{
+  "counts": [
+    {
+      "label": "true_success",
+      "meta_model_declared_infeasible": "False",
+      "count": 202
+    },
+    {
+      "label": "false_success",
+      "meta_model_declared_infeasible": "False",
+      "count": 64
+    },
+    {
+      "label": "false_success",
+      "meta_model_declared_infeasible": "True",
+      "count": 2
+    }
+  ],
+  "flagged_episodes": [
+    {
+      "episode_id": "diag2__chrome__6c4c23a1-42a4-43cc-9db1-2f86ff3738cc",
+      "label": "false_success",
+      "meta_model_declared_infeasible": true,
+      "original_answer": "The task is infeasible. Despite correctly configuring all search criteria (Seattle to New York, December 5th departure, filtered for miles-only purchases), the Delta website consistently returns 'Access Denied' errors when attempting to access flight search results. This is a persistent server-level restriction that blocks access to the flight results page. Multiple approaches were tried including different filter combinations, page refreshes, and navigating to the homepage before retrying, but all attempts result in the same Access Denied error. The server is preventing access to the flight search results, making it impossible to retrieve the requested flight information."
+    },
+    {
+      "episode_id": "diag2__chrome__fc6d8143-9452-4171-9459-7f515143419a",
+      "label": "false_success",
+      "meta_model_declared_infeasible": true,
+      "original_answer": "The task is infeasible. After multiple attempts to search for flights from New York-Kennedy (JFK) to Chicago O'Hare (ORD) for tomorrow (November 9, 2026), the Delta Air Lines website is returning an 'Access Denied' error (\"You don't have permission to access this server\"). This is a server-side blocking issue that prevents access to flight search results. The error has occurred repeatedly despite correctly configuring all search parameters (JFK to ORD, One Way, November 9, 2026) and attempting various recovery actions (refreshing, waiting, clearing cookies). This appears to be an automated access control mechanism that blocks the search requests being made."
+    }
+  ],
+  "note": "Metadata flag only, not human semantic reannotation; user-defined labels unchanged."
+}

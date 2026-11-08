@@ -1,0 +1,30 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "moon_vision_E025",
+      "object": "model",
+      "created": 1794124743,
+      "owned_by": "vllm",
+      "root": "/dev/shm/moon-vision/holo_g025",
+      "parent": null,
+      "max_model_len": 32768,
+      "permission": [
+        {
+          "id": "modelperm-8f81d2cc61a85549",
+          "object": "model_permission",
+          "created": 1794124743,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    }
+  ]
+}

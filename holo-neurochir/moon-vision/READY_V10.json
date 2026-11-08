@@ -1,0 +1,30 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "moon_vision_V10",
+      "object": "model",
+      "created": 1794123754,
+      "owned_by": "vllm",
+      "root": "/dev/shm/moon-vision/cua_b100",
+      "parent": null,
+      "max_model_len": 32768,
+      "permission": [
+        {
+          "id": "modelperm-9a15a9135b522221",
+          "object": "model_permission",
+          "created": 1794123754,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    }
+  ]
+}

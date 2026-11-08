@@ -1,0 +1,42 @@
+{
+  "blocks": {
+    "tensors": 288,
+    "numel": 302309376,
+    "cua_changed_tensors": 256,
+    "cua_nonzero": 199608254,
+    "cua_l2_squared": 1.4886257959455642,
+    "holo_l2_squared": 392.2389409658631,
+    "cua_l2": 1.220092535812577,
+    "holo_l2": 19.80502312459804
+  },
+  "merger": {
+    "tensors": 6,
+    "numel": 27271680,
+    "cua_changed_tensors": 5,
+    "cua_nonzero": 20281962,
+    "cua_l2_squared": 0.1330196169896918,
+    "holo_l2_squared": 3.3951424904376943,
+    "cua_l2": 0.3647185448941304,
+    "holo_l2": 1.8425912434497496
+  },
+  "patch_embed": {
+    "tensors": 2,
+    "numel": 1573888,
+    "cua_changed_tensors": 2,
+    "cua_nonzero": 1331080,
+    "cua_l2_squared": 0.008357053999088284,
+    "holo_l2_squared": 0.0674653477309635,
+    "cua_l2": 0.09141692402989877,
+    "holo_l2": 0.25974092425138456
+  },
+  "pos_embed": {
+    "tensors": 1,
+    "numel": 2359296,
+    "cua_changed_tensors": 1,
+    "cua_nonzero": 771187,
+    "cua_l2_squared": 0.008652563798487284,
+    "holo_l2_squared": 3.477618636167829,
+    "cua_l2": 0.09301915823359876,
+    "holo_l2": 1.8648374288843061
+  }
+}

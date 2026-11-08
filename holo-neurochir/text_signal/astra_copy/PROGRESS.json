@@ -1,0 +1,19 @@
+{
+  "updated_utc": "2026-11-08T07:23:52.410966+00:00",
+  "owner": "astra-power",
+  "cohort_sha256": "2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0",
+  "cohort_counts": {
+    "feasible_fs": 19,
+    "strict_true_finish": 20,
+    "healthy": 16
+  },
+  "arms": {
+    "A": "complete220",
+    "B": "complete220",
+    "C": "complete220",
+    "D": "running_after_one_pre_generation_cache_recovery"
+  },
+  "checkpoints_audit": "PASS67/67",
+  "next": "Finish D; analyze; independent final audit; report; stop owned server and tunnel",
+  "production_8000": "untouched"
+}

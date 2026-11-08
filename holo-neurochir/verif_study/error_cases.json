@@ -1,0 +1,47 @@
+[
+  {
+    "episode_id": "diag1__libreoffice_calc__1de60575-bb6e-4c3d-9e6a-2fa699f9f197",
+    "replicate": "t0",
+    "official_score": 0,
+    "verifier_verdict": "COMPLETE",
+    "kind": "explicit_requirement_relaxed",
+    "assessment": "La tâche exige une nouvelle feuille nommée Sheet2. La capture montre Pivot Table_Sheet1_1. Le vérificateur voit ce nom mais considère qu'il peut servir de Sheet2 : il relâche une exigence explicite. Le score officiel est 0 ; cette observation n'identifie pas à elle seule toutes les causes de cet échec.",
+    "image_reviewed_by_main": true
+  },
+  {
+    "episode_id": "diag1__libreoffice_calc__1273e544-688f-496b-8d89-3e0f40aa0606",
+    "replicate": "t0",
+    "official_score": 1,
+    "verifier_verdict": "INCOMPLETE",
+    "kind": "visible_evidence_missed",
+    "assessment": "La capture affiche la feuille sélectionnée Sheet2, l'en-tête Revenue et les valeurs copiées. Le vérificateur affirme ne pas pouvoir confirmer la copie vers Sheet2. L'état visible soutient donc davantage l'exigence qu'il ne le reconnaît ; l'évaluateur officiel donne 1.",
+    "image_reviewed_by_main": true
+  },
+  {
+    "episode_id": "diag1__chrome__35253b65-1c19-4304-8aa4-6884b8218fc0",
+    "replicate": "t0",
+    "official_score": 1,
+    "verifier_verdict": "INCOMPLETE",
+    "kind": "visible_artifact_missed",
+    "assessment": "La fenêtre Desktop montre le fichier chrome-Play_Puzzle_Game_2048.desktop sélectionné. Le vérificateur affirme que la création du raccourci n'a pas commencé. Le fichier visible contredit cette affirmation, sans permettre à l'image seule de prouver tout le contenu du raccourci ; l'évaluateur officiel donne 1.",
+    "image_reviewed_by_main": true
+  },
+  {
+    "episode_id": "diag1__libreoffice_impress__2cd43775-7085-45d8-89fa-9e35c0a915cf",
+    "replicate": "t0",
+    "official_score": 1,
+    "verifier_verdict": "INCOMPLETE",
+    "kind": "hidden_persistent_state",
+    "assessment": "La tâche demande l'enregistrement automatique toutes les trois minutes. Le vérificateur indique cannot tell pour l'activation et l'intervalle, puis INCOMPLETE. La capture finale sans le panneau de réglage ne suffit pas à confirmer ce paramètre persistant ; le score officiel est pourtant 1.",
+    "image_reviewed_by_main": true
+  },
+  {
+    "episode_id": "diag1__gimp__7a4deb26-d57d-4ea9-9a73-630f66a7b568",
+    "replicate": "t0",
+    "official_score": 1,
+    "verifier_verdict": "INCOMPLETE",
+    "kind": "unsupported_before_after_inference",
+    "assessment": "Pour réduire la luminosité, le vérificateur dit que l'image est identique à l'original alors qu'il n'a reçu qu'une capture finale, sans référence avant modification. Le score officiel est 1. Cette critique vise l'inférence de comparaison, pas une mesure humaine de luminosité.",
+    "image_reviewed_by_main": true
+  }
+]

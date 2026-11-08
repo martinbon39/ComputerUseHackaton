@@ -1,0 +1,16 @@
+{
+  "serve_sha256": "c4062ce5f1f3f524d5e459ed90c35b11ffb9c49d4d08635d04d00cb7acc2bdac",
+  "port": 8028,
+  "dtype": "bfloat16",
+  "max_model_len": 32768,
+  "max_num_seqs": 32,
+  "gpu_memory_utilization": 0.15,
+  "kv_cache_memory_bytes": "8G",
+  "reasoning_parser": "qwen3",
+  "prefix_caching": true,
+  "image_limit": 5,
+  "cache_root": "/workspace/astra/moon-vision/cache",
+  "ares_cache_order": 6579,
+  "executable_compiler_cache": "/workspace/astra/moon-vision/cache",
+  "noexec_guard": true
+}

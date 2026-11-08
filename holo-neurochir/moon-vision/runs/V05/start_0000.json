@@ -1,0 +1,21 @@
+{
+  "started_utc": "2026-11-08T07:32:34.645646+00:00",
+  "arm": "V05",
+  "runner_sha256": "36a4d103a3332c22fecceaea259a2ea2725f3d344a3fec91793f2ffe209ff546",
+  "frozen_sha256": "9bf07af1f630ffbee0f628347270dff9c3abe068aa9fb76c9c8c747e47585839",
+  "server": {
+    "url": "http://127.0.0.1:18028/v1",
+    "model": "moon_vision_V05",
+    "vllm_version": "0.23.0",
+    "models": [
+      {
+        "id": "moon_vision_V05",
+        "root": "/dev/shm/moon-vision/cua_b050"
+      }
+    ]
+  },
+  "scheduled": 4,
+  "previously_completed": 0,
+  "max_retries": 0,
+  "workers": 8
+}

@@ -1,0 +1,11 @@
+{
+  "request_id": "diag1__chrome__0d8b7de3-e8de-4d86-b9fd-dd2dce58a217__t0",
+  "status": "ok",
+  "finish_reason": "stop",
+  "reasoning_nonempty": true,
+  "schema_absent": true,
+  "max_tokens": 4096,
+  "elapsed_seconds": 1.6202370910032187,
+  "pilot_passed": true,
+  "next": "1071 remaining requests, concurrency 4, unchanged prompt and sampling"
+}

@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-08T08:02:24.492428+00:00",
+  "tunnel_pid_stopped": 1693747,
+  "servers": {
+    "V05": [
+      427366,
+      429270,
+      429272
+    ],
+    "V10": [
+      433055,
+      433506,
+      433507
+    ],
+    "E025": [
+      439344,
+      439424,
+      439425
+    ]
+  },
+  "completed_arm_shutdown_forced_pids": [],
+  "earlier_cache_startup_forced_pids": [
+    425811,
+    426468,
+    426469
+  ],
+  "remote_postcheck": "No live completed-arm PIDs and no listener on8028"
+}

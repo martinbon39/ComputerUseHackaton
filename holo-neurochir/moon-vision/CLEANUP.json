@@ -1,0 +1,26 @@
+[
+  {
+    "arm": "V05",
+    "checkpoint": "/dev/shm/moon-vision/cua_b050",
+    "reason": "Offline fs+ admission not established; own reproducible intermediate",
+    "removed_bytes": 10373329563,
+    "manifest_sha256": "92e52ea002194a7067e25326e878bf651d0bbea675e36c8bcf8162cb5cd9ddd3",
+    "utc": "2026-11-08T07:54:14.945296+00:00"
+  },
+  {
+    "arm": "V10",
+    "checkpoint": "/dev/shm/moon-vision/cua_b100",
+    "reason": "Offline fs+ admission not established; own reproducible intermediate",
+    "removed_bytes": 10373329619,
+    "manifest_sha256": "31798fc3bd36f612efd083a1c439af035d478e3617eb6be81de92643b1b6624b",
+    "utc": "2026-11-08T07:54:15.841747+00:00"
+  },
+  {
+    "arm": "E025",
+    "checkpoint": "/dev/shm/moon-vision/holo_g025",
+    "reason": "Numerical and qualitative fs+ admission failed; own reproducible intermediate",
+    "removed_bytes": 10373329621,
+    "manifest_sha256": "5ecf87d949c1fb21ceab405ae95dfad023573fd46f8ba3ff306a5d575aabd7de",
+    "utc": "2026-11-08T08:03:27.838692+00:00"
+  }
+]

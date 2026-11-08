@@ -1,0 +1,110 @@
+{
+  "recorded_at_utc": "2026-11-08T07:23:20Z",
+  "scope": "Read-only inventory of the pre-existing vLLM service on port 8000 and locally cached model artifacts.",
+  "endpoint": {
+    "base_url": "http://127.0.0.1:8000/v1",
+    "model_id": "Holo-3.1-4B",
+    "model_root": "Hcompany/Holo-3.1-4B",
+    "max_model_len": 32768,
+    "server_process_flags": [
+      "--model Hcompany/Holo-3.1-4B",
+      "--served-model-name Holo-3.1-4B",
+      "--dtype bfloat16",
+      "--max-model-len 32768",
+      "--max-num-seqs 64",
+      "--gpu-memory-utilization 0.40",
+      "--kv-cache-memory-bytes 30G",
+      "--limit-mm-per-prompt {\"image\":5}",
+      "--reasoning-parser qwen3",
+      "--enable-prefix-caching",
+      "--host 0.0.0.0",
+      "--port 8000"
+    ]
+  },
+  "model_provenance": {
+    "publisher": "H Company",
+    "license": "apache-2.0",
+    "pipeline_tag": "image-text-to-text",
+    "architecture": "Qwen3_5ForConditionalGeneration",
+    "model_type": "qwen3_5",
+    "upstream_family": "Qwen 3.5",
+    "hugging_face_snapshot_revision": "8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+    "snapshot_path": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+    "config_path": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e/config.json",
+    "model_card_path": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e/README.md",
+    "chat_template_path": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e/chat_template.jinja",
+    "tokenizer_config_path": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e/tokenizer_config.json",
+    "reasoning_parser_path": "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/reasoning/qwen3_reasoning_parser.py",
+    "weight_bytes": 10350077568
+  },
+  "thinking_mechanics": {
+    "default": "enabled",
+    "enable_flag": "chat_template_kwargs.enable_thinking",
+    "enabled_behavior": "The template places <think> in the prompt. Generated text before </think> is returned as message.reasoning; text after </think> is returned as message.content.",
+    "disabled_behavior": "The template places an empty <think>...</think> block in the prompt and routes generated output directly to message.content.",
+    "truncation_behavior": "With thinking enabled, if generation ends before </think>, all generated text is message.reasoning and message.content is null. Such a response is not a usable verifier verdict."
+  },
+  "probe_accounting": {
+    "models_inventory_requests": 1,
+    "text_chat_completion_requests": 4,
+    "image_chat_completion_requests": 0,
+    "maximum_probe_concurrency": 1,
+    "text_probes": [
+      {
+        "enable_thinking": false,
+        "max_tokens": 12,
+        "temperature": 0,
+        "result": "HTTP 200; finish_reason stop; content OK"
+      },
+      {
+        "enable_thinking": true,
+        "max_tokens": 12,
+        "temperature": 0,
+        "result": "HTTP 200; finish_reason length; content null"
+      },
+      {
+        "enable_thinking": true,
+        "max_tokens": 64,
+        "temperature": 0,
+        "top_p": 1,
+        "result": "HTTP 200; finish_reason length; generated text returned in message.reasoning; content null"
+      },
+      {
+        "enable_thinking": true,
+        "max_tokens": 1,
+        "temperature": 0,
+        "top_p": 1,
+        "top_k": -1,
+        "result": "HTTP 200; exact proposed scalar sampling parameters accepted"
+      }
+    ],
+    "stopped_after_inventory": true
+  },
+  "local_model_inventory": {
+    "cached_released_models": [
+      {
+        "name": "Hcompany/Holo-3.1-0.8B",
+        "revision": "72da4c53b351eb60e10a7022279019633c479292",
+        "weight_bytes": 2214629376
+      },
+      {
+        "name": "Hcompany/Holo-3.1-4B",
+        "revision": "8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+        "weight_bytes": 10350077568
+      }
+    ],
+    "other_local_artifacts": "The additional model directories under /dev/shm and /workspace/astra are edited or intermediate variants of the same Qwen3.5 4B VLM architecture, not stronger independent verifier models."
+  },
+  "v2_stronger_verifier": {
+    "available": false,
+    "decision": "skip",
+    "reason": "No stronger independent open-weights VLM is cached locally. The model card names 9B and 35B-A3B family members, but neither is present. Downloading or loading another model, or stopping an existing server to make room, is outside the authorized scope."
+  },
+  "constraints_observed": [
+    "No model was loaded, launched, stopped, or modified.",
+    "No existing service other than port 8000 was queried.",
+    "No credentials or environment secrets were read into this record.",
+    "All completion probes were text-only and sequential.",
+    "No port 8000 calls were made after the stop instruction."
+  ]
+}

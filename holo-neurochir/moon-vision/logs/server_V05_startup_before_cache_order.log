@@ -1,0 +1,94 @@
+WARNING 11-08 07:20:09 [config.py:71] Support for Transformers v4 is deprecated. The Transformers v4 codepath will become unmaintained in vLLM v0.22.0 and will be removed in vLLM v0.24.0. Please upgrade to Transformers v5: pip install --upgrade transformers
+(APIServer pid=424579) INFO 11-08 07:20:15 [api_utils.py:339] 
+(APIServer pid=424579) INFO 11-08 07:20:15 [api_utils.py:339]        █     █     █▄   ▄█
+(APIServer pid=424579) INFO 11-08 07:20:15 [api_utils.py:339]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.23.0
+(APIServer pid=424579) INFO 11-08 07:20:15 [api_utils.py:339]   █▄█▀ █     █     █     █  model   /dev/shm/moon-vision/cua_b050
+(APIServer pid=424579) INFO 11-08 07:20:15 [api_utils.py:339]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+(APIServer pid=424579) INFO 11-08 07:20:15 [api_utils.py:339] 
+(APIServer pid=424579) INFO 11-08 07:20:15 [api_utils.py:273] non-default args: {'host': '127.0.0.1', 'port': 8028, 'model': '/dev/shm/moon-vision/cua_b050', 'dtype': 'bfloat16', 'max_model_len': 32768, 'served_model_name': ['moon_vision_V05'], 'reasoning_parser': 'qwen3', 'gpu_memory_utilization': 0.15, 'kv_cache_memory_bytes': 8589934592, 'enable_prefix_caching': True, 'limit_mm_per_prompt': {'image': 5}, 'max_num_seqs': 32}
+(APIServer pid=424579) Traceback (most recent call last):
+(APIServer pid=424579)   File "<frozen runpy>", line 198, in _run_module_as_main
+(APIServer pid=424579)   File "<frozen runpy>", line 88, in _run_code
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 705, in <module>
+(APIServer pid=424579)     uvloop.run(run_server(args))
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/uvloop/__init__.py", line 96, in run
+(APIServer pid=424579)     return __asyncio.run(
+(APIServer pid=424579)            ^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+(APIServer pid=424579)     return runner.run(main)
+(APIServer pid=424579)            ^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+(APIServer pid=424579)     return self._loop.run_until_complete(task)
+(APIServer pid=424579)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "uvloop/loop.pyx", line 1509, in uvloop.loop.Loop.run_until_complete
+(APIServer pid=424579)   File "uvloop/loop.pyx", line 1502, in uvloop.loop.Loop.run_until_complete
+(APIServer pid=424579)   File "uvloop/loop.pyx", line 1371, in uvloop.loop.Loop.run_forever
+(APIServer pid=424579)   File "uvloop/loop.pyx", line 551, in uvloop.loop.Loop._run
+(APIServer pid=424579)   File "uvloop/loop.pyx", line 471, in uvloop.loop.Loop._on_idle
+(APIServer pid=424579)   File "uvloop/cbhandles.pyx", line 86, in uvloop.loop.Handle._run
+(APIServer pid=424579)   File "uvloop/cbhandles.pyx", line 64, in uvloop.loop.Handle._run
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/uvloop/__init__.py", line 48, in wrapper
+(APIServer pid=424579)     return await main
+(APIServer pid=424579)            ^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 665, in run_server
+(APIServer pid=424579)     await run_server_worker(listen_address, sock, args, **uvicorn_kwargs)
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 679, in run_server_worker
+(APIServer pid=424579)     async with build_async_engine_client(
+(APIServer pid=424579)   File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+(APIServer pid=424579)     return await anext(self.gen)
+(APIServer pid=424579)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 99, in build_async_engine_client
+(APIServer pid=424579)     async with build_async_engine_client_from_engine_args(
+(APIServer pid=424579)   File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+(APIServer pid=424579)     return await anext(self.gen)
+(APIServer pid=424579)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 123, in build_async_engine_client_from_engine_args
+(APIServer pid=424579)     vllm_config = engine_args.create_engine_config(usage_context=usage_context)
+(APIServer pid=424579)                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 1735, in create_engine_config
+(APIServer pid=424579)     model_config = self.create_model_config()
+(APIServer pid=424579)                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 1565, in create_model_config
+(APIServer pid=424579)     return ModelConfig(
+(APIServer pid=424579)            ^^^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+(APIServer pid=424579)     s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/config/model.py", line 572, in __post_init__
+(APIServer pid=424579)     is_generative_model = registry.is_text_generation_model(architectures, self)
+(APIServer pid=424579)                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 1271, in is_text_generation_model
+(APIServer pid=424579)     model_cls, _ = self.inspect_model_cls(architectures, model_config)
+(APIServer pid=424579)                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 1195, in inspect_model_cls
+(APIServer pid=424579)     model_info = self._try_inspect_model_cls(normalized_arch)
+(APIServer pid=424579)                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 1062, in _try_inspect_model_cls
+(APIServer pid=424579)     return _try_inspect_model_cls(model_arch, self.models[model_arch])
+(APIServer pid=424579)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 959, in _try_inspect_model_cls
+(APIServer pid=424579)     return model.inspect_model_cls()
+(APIServer pid=424579)            ^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/logging_utils/log_time.py", line 21, in _wrapper
+(APIServer pid=424579)     result = func(*args, **kwargs)
+(APIServer pid=424579)              ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 920, in inspect_model_cls
+(APIServer pid=424579)     mi = _run_in_subprocess(
+(APIServer pid=424579)          ^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 1390, in _run_in_subprocess
+(APIServer pid=424579)     returned = subprocess.run(
+(APIServer pid=424579)                ^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/usr/lib/python3.12/subprocess.py", line 550, in run
+(APIServer pid=424579)     stdout, stderr = process.communicate(input, timeout=timeout)
+(APIServer pid=424579)                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/usr/lib/python3.12/subprocess.py", line 1209, in communicate
+(APIServer pid=424579)     stdout, stderr = self._communicate(input, endtime, timeout)
+(APIServer pid=424579)                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/usr/lib/python3.12/subprocess.py", line 2115, in _communicate
+(APIServer pid=424579)     ready = selector.select(timeout)
+(APIServer pid=424579)             ^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/usr/lib/python3.12/selectors.py", line 415, in select
+(APIServer pid=424579)     fd_event_list = self._selector.poll(timeout)
+(APIServer pid=424579)                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424579)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 660, in _interrupt_init
+(APIServer pid=424579)     raise KeyboardInterrupt("terminated")
+(APIServer pid=424579) KeyboardInterrupt: terminated

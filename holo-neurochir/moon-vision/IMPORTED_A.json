@@ -1,0 +1,12 @@
+{
+  "utc": "2026-11-08T07:11:36.448160+00:00",
+  "source": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-power/runs/A",
+  "rows": 220,
+  "files": {
+    "complete_0000.json": "170941aac5d0213c218f0499978731b1a8bd6ae81338f728d896bb792cdb47b5",
+    "start_0000.json": "a48e4511fdc07560834f439f2ec3ea0baa37f10b83fedccfa36d72e2be6cac53",
+    "generations.jsonl": "c7f309a97947452e47a343bb07f429937f200a5159d0868be2aad8d7fb9ad546"
+  },
+  "copied_verbatim": true,
+  "reason": "Complete frozen power_A reused as required. Same pod/vLLM/BF16/seq32/context32768/KV8G; memory utilization .20 vs own .15 is explicitly overridden for KV by8G."
+}

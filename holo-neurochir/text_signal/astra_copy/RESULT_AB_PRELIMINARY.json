@@ -1,0 +1,941 @@
+{
+  "created_utc": "2026-11-08T07:11:15.175029+00:00",
+  "status": "PARTIAL",
+  "independent_audit_artifact": "VERIFY_FINAL.json",
+  "frozen_sha256": "9bf07af1f630ffbee0f628347270dff9c3abe068aa9fb76c9c8c747e47585839",
+  "raw_sha256": {
+    "runs/A/generations.jsonl": "c7f309a97947452e47a343bb07f429937f200a5159d0868be2aad8d7fb9ad546",
+    "runs/B/generations.jsonl": "d557568c3e9906870119d6d83c23c65fa571999235bea9717391167bf2de5e02"
+  },
+  "completeness": {
+    "A": {
+      "status": "COMPLETE",
+      "completed": 220,
+      "expected": 220
+    },
+    "B": {
+      "status": "COMPLETE",
+      "completed": 220,
+      "expected": 220
+    },
+    "C": {
+      "status": "NOT_RUN",
+      "completed": 0
+    },
+    "D": {
+      "status": "NOT_RUN",
+      "completed": 0
+    }
+  },
+  "method": {
+    "paired_seeds": [
+      17000,
+      17001,
+      17002,
+      17003
+    ],
+    "bootstrap_replicates": 100000,
+    "bootstrap_seed": 20261108,
+    "bootstrap_unit": "task, stratified, paired across arms",
+    "bootstrap_interval": "percentile95",
+    "delta": "candidate minus reference",
+    "wilson_warning": "descriptive pooled Bernoulli interval; ignores within-context dependence",
+    "errors": "retained as invalid/nonanswer in scheduled denominator"
+  },
+  "full_cohort": {
+    "arms": {
+      "A": {
+        "fs+": {
+          "n_tasks": 19,
+          "n_generations": 76,
+          "answer": 55,
+          "answer_rate": 0.7236842105263158,
+          "wilson95_descriptive": [
+            0.6142463460107743,
+            0.8115975764600853
+          ],
+          "task_bootstrap95": [
+            0.5394736842105263,
+            0.881578947368421
+          ],
+          "valid_nonanswer": 21,
+          "invalid": 0,
+          "transport_error": 0,
+          "truncated": 0,
+          "schema_invalid_without_transport_error": 0,
+          "context_answer_rates": {
+            "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54": 1.0,
+            "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487": 1.0,
+            "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f": 1.0,
+            "chrome/47543840-672a-467d-80df-8f7c3b9788c9": 1.0,
+            "chrome/fc6d8143-9452-4171-9459-7f515143419a": 0.0,
+            "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0": 0.75,
+            "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197": 1.0,
+            "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6": 1.0,
+            "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": 1.0,
+            "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68": 0.0,
+            "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38": 0.5,
+            "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850": 1.0,
+            "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73": 1.0,
+            "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8": 1.0,
+            "multi_apps/74d5859f-ed66-4d3e-aa0e-93d7a592ce41": 0.25,
+            "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805": 0.5,
+            "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762": 1.0,
+            "multi_apps/5df7b33a-9f77-4101-823e-02f863e1c1ae": 0.75,
+            "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6": 0.0
+          },
+          "tools": {
+            "answer": 55,
+            "hotkey": 7,
+            "click": 5,
+            "double_click": 4,
+            "scroll": 2,
+            "write": 2,
+            "wait": 1
+          }
+        },
+        "fs-": {
+          "n_tasks": 20,
+          "n_generations": 80,
+          "answer": 75,
+          "answer_rate": 0.9375,
+          "wilson95_descriptive": [
+            0.8618985123272557,
+            0.973010624329158
+          ],
+          "task_bootstrap95": [
+            0.825,
+            1.0
+          ],
+          "valid_nonanswer": 5,
+          "invalid": 0,
+          "transport_error": 0,
+          "truncated": 0,
+          "schema_invalid_without_transport_error": 0,
+          "context_answer_rates": {
+            "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d": 1.0,
+            "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82": 1.0,
+            "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217": 1.0,
+            "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9": 1.0,
+            "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": 1.0,
+            "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb": 1.0,
+            "os/13584542-872b-42d8-b299-866967b5c3ef": 0.0,
+            "chrome/3299584d-8f11-4457-bf4c-ce98f7600250": 1.0,
+            "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57": 1.0,
+            "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4": 1.0,
+            "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224": 1.0,
+            "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74": 1.0,
+            "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78": 1.0,
+            "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf": 1.0,
+            "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5": 1.0,
+            "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568": 0.75,
+            "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c": 1.0,
+            "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d": 1.0,
+            "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f": 1.0,
+            "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c": 1.0
+          },
+          "tools": {
+            "answer": 75,
+            "hotkey": 2,
+            "click": 3
+          }
+        },
+        "healthy": {
+          "n_tasks": 16,
+          "n_generations": 64,
+          "answer": 5,
+          "answer_rate": 0.078125,
+          "wilson95_descriptive": [
+            0.03383117690855046,
+            0.17019537354162906
+          ],
+          "task_bootstrap95": [
+            0.0,
+            0.203125
+          ],
+          "valid_nonanswer": 59,
+          "invalid": 0,
+          "transport_error": 0,
+          "truncated": 0,
+          "schema_invalid_without_transport_error": 0,
+          "context_answer_rates": {
+            "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3": 0.0,
+            "chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263": 0.0,
+            "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15": 0.0,
+            "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6": 0.0,
+            "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a": 0.0,
+            "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b": 0.0,
+            "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38": 0.0,
+            "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf": 0.0,
+            "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63": 0.0,
+            "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb": 0.0,
+            "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3": 0.0,
+            "os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2": 0.0,
+            "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618": 0.5,
+            "libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195": 0.0,
+            "multi_apps/81c425f5-78f3-4771-afd6-3d2973825947": 0.0,
+            "chrome/c1fa57f3-c3db-4596-8f09-020701085416": 0.75
+          },
+          "tools": {
+            "click": 43,
+            "hotkey": 7,
+            "wait": 5,
+            "answer": 5,
+            "press_key": 4
+          }
+        }
+      },
+      "B": {
+        "fs+": {
+          "n_tasks": 19,
+          "n_generations": 76,
+          "answer": 47,
+          "answer_rate": 0.618421052631579,
+          "wilson95_descriptive": [
+            0.5060175500135465,
+            0.7194292324710262
+          ],
+          "task_bootstrap95": [
+            0.40789473684210525,
+            0.8157894736842105
+          ],
+          "valid_nonanswer": 29,
+          "invalid": 0,
+          "transport_error": 0,
+          "truncated": 0,
+          "schema_invalid_without_transport_error": 0,
+          "context_answer_rates": {
+            "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54": 1.0,
+            "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487": 0.0,
+            "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f": 1.0,
+            "chrome/47543840-672a-467d-80df-8f7c3b9788c9": 1.0,
+            "chrome/fc6d8143-9452-4171-9459-7f515143419a": 0.0,
+            "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0": 0.0,
+            "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197": 1.0,
+            "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6": 1.0,
+            "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": 1.0,
+            "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68": 0.0,
+            "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38": 0.25,
+            "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850": 1.0,
+            "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73": 1.0,
+            "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8": 1.0,
+            "multi_apps/74d5859f-ed66-4d3e-aa0e-93d7a592ce41": 0.0,
+            "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805": 0.5,
+            "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762": 1.0,
+            "multi_apps/5df7b33a-9f77-4101-823e-02f863e1c1ae": 1.0,
+            "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6": 0.0
+          },
+          "tools": {
+            "answer": 47,
+            "click": 11,
+            "hotkey": 8,
+            "double_click": 6,
+            "scroll": 2,
+            "write": 2
+          }
+        },
+        "fs-": {
+          "n_tasks": 20,
+          "n_generations": 80,
+          "answer": 66,
+          "answer_rate": 0.825,
+          "wilson95_descriptive": [
+            0.7274245802116865,
+            0.8927936355902206
+          ],
+          "task_bootstrap95": [
+            0.675,
+            0.95
+          ],
+          "valid_nonanswer": 14,
+          "invalid": 0,
+          "transport_error": 0,
+          "truncated": 0,
+          "schema_invalid_without_transport_error": 0,
+          "context_answer_rates": {
+            "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d": 1.0,
+            "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82": 1.0,
+            "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217": 1.0,
+            "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9": 0.25,
+            "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": 1.0,
+            "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb": 0.75,
+            "os/13584542-872b-42d8-b299-866967b5c3ef": 0.0,
+            "chrome/3299584d-8f11-4457-bf4c-ce98f7600250": 1.0,
+            "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57": 1.0,
+            "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4": 0.75,
+            "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224": 1.0,
+            "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74": 1.0,
+            "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78": 1.0,
+            "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf": 0.75,
+            "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5": 1.0,
+            "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568": 0.0,
+            "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c": 1.0,
+            "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d": 1.0,
+            "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f": 1.0,
+            "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c": 1.0
+          },
+          "tools": {
+            "answer": 66,
+            "hotkey": 8,
+            "click": 6
+          }
+        },
+        "healthy": {
+          "n_tasks": 16,
+          "n_generations": 64,
+          "answer": 0,
+          "answer_rate": 0.0,
+          "wilson95_descriptive": [
+            0.0,
+            0.05662405979280534
+          ],
+          "task_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "valid_nonanswer": 64,
+          "invalid": 0,
+          "transport_error": 0,
+          "truncated": 0,
+          "schema_invalid_without_transport_error": 0,
+          "context_answer_rates": {
+            "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3": 0.0,
+            "chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263": 0.0,
+            "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15": 0.0,
+            "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6": 0.0,
+            "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a": 0.0,
+            "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b": 0.0,
+            "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38": 0.0,
+            "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf": 0.0,
+            "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63": 0.0,
+            "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb": 0.0,
+            "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3": 0.0,
+            "os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2": 0.0,
+            "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618": 0.0,
+            "libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195": 0.0,
+            "multi_apps/81c425f5-78f3-4771-afd6-3d2973825947": 0.0,
+            "chrome/c1fa57f3-c3db-4596-8f09-020701085416": 0.0
+          },
+          "tools": {
+            "click": 44,
+            "hotkey": 8,
+            "wait": 8,
+            "press_key": 4
+          }
+        }
+      }
+    },
+    "contrasts": {
+      "B-A": {
+        "treatment": "B",
+        "reference": "A",
+        "strata": {
+          "fs+": {
+            "delta": -0.10526315789473684,
+            "task_bootstrap95": [
+              -0.25,
+              0.0
+            ],
+            "context_deltas": {
+              "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54": 0.0,
+              "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487": -1.0,
+              "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f": 0.0,
+              "chrome/47543840-672a-467d-80df-8f7c3b9788c9": 0.0,
+              "chrome/fc6d8143-9452-4171-9459-7f515143419a": 0.0,
+              "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0": -0.75,
+              "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197": 0.0,
+              "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6": 0.0,
+              "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": 0.0,
+              "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68": 0.0,
+              "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38": -0.25,
+              "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850": 0.0,
+              "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73": 0.0,
+              "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8": 0.0,
+              "multi_apps/74d5859f-ed66-4d3e-aa0e-93d7a592ce41": -0.25,
+              "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805": 0.0,
+              "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762": 0.0,
+              "multi_apps/5df7b33a-9f77-4101-823e-02f863e1c1ae": 0.25,
+              "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6": 0.0
+            }
+          },
+          "fs-": {
+            "delta": -0.11250000000000004,
+            "task_bootstrap95": [
+              -0.22499999999999998,
+              -0.02499999999999991
+            ],
+            "context_deltas": {
+              "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d": 0.0,
+              "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82": 0.0,
+              "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217": 0.0,
+              "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9": -0.75,
+              "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": 0.0,
+              "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb": -0.25,
+              "os/13584542-872b-42d8-b299-866967b5c3ef": 0.0,
+              "chrome/3299584d-8f11-4457-bf4c-ce98f7600250": 0.0,
+              "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57": 0.0,
+              "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4": -0.25,
+              "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224": 0.0,
+              "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74": 0.0,
+              "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78": 0.0,
+              "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf": -0.25,
+              "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5": 0.0,
+              "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568": -0.75,
+              "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c": 0.0,
+              "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d": 0.0,
+              "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f": 0.0,
+              "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c": 0.0
+            }
+          },
+          "healthy": {
+            "delta": -0.078125,
+            "task_bootstrap95": [
+              -0.203125,
+              0.0
+            ],
+            "context_deltas": {
+              "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3": 0.0,
+              "chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263": 0.0,
+              "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15": 0.0,
+              "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6": 0.0,
+              "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a": 0.0,
+              "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b": 0.0,
+              "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38": 0.0,
+              "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf": 0.0,
+              "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63": 0.0,
+              "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb": 0.0,
+              "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3": 0.0,
+              "os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2": 0.0,
+              "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618": -0.5,
+              "libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195": 0.0,
+              "multi_apps/81c425f5-78f3-4771-afd6-3d2973825947": 0.0,
+              "chrome/c1fa57f3-c3db-4596-8f09-020701085416": -0.75
+            }
+          }
+        },
+        "selectivity": {
+          "delta_fs_minus_delta_true": 0.007236842105263208,
+          "task_bootstrap95": [
+            -0.16118421052631582,
+            0.16315789473684206
+          ],
+          "interpretation": "negative means greater suppression of false than true finishes"
+        }
+      }
+    },
+    "contexts": {
+      "fs+": {
+        "n_tasks": 19,
+        "task_ids": [
+          "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",
+          "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487",
+          "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f",
+          "chrome/47543840-672a-467d-80df-8f7c3b9788c9",
+          "chrome/fc6d8143-9452-4171-9459-7f515143419a",
+          "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0",
+          "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197",
+          "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6",
+          "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f",
+          "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68",
+          "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38",
+          "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850",
+          "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8",
+          "multi_apps/74d5859f-ed66-4d3e-aa0e-93d7a592ce41",
+          "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805",
+          "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762",
+          "multi_apps/5df7b33a-9f77-4101-823e-02f863e1c1ae",
+          "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6"
+        ]
+      },
+      "fs-": {
+        "n_tasks": 20,
+        "task_ids": [
+          "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d",
+          "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82",
+          "chrome/0d8b7de3-e8de-4d86-b9fd-dd2dce58a217",
+          "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9",
+          "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302",
+          "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb",
+          "os/13584542-872b-42d8-b299-866967b5c3ef",
+          "chrome/3299584d-8f11-4457-bf4c-ce98f7600250",
+          "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57",
+          "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4",
+          "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224",
+          "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74",
+          "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78",
+          "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf",
+          "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5",
+          "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568",
+          "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c",
+          "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d",
+          "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f",
+          "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c"
+        ]
+      },
+      "healthy": {
+        "n_tasks": 16,
+        "task_ids": [
+          "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3",
+          "chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263",
+          "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15",
+          "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6",
+          "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a",
+          "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b",
+          "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38",
+          "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf",
+          "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63",
+          "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb",
+          "chrome/7b6c7e24-c58a-49fc-a5bb-d57b80e5b4c3",
+          "os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2",
+          "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618",
+          "libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195",
+          "multi_apps/81c425f5-78f3-4771-afd6-3d2973825947",
+          "chrome/c1fa57f3-c3db-4596-8f09-020701085416"
+        ]
+      }
+    }
+  },
+  "excluding_C_construction_and_preservation": {
+    "arms": {
+      "A": {
+        "fs+": {
+          "n_tasks": 18,
+          "n_generations": 72,
+          "answer": 51,
+          "answer_rate": 0.7083333333333334,
+          "wilson95_descriptive": [
+            0.5949425733065095,
+            0.8006194381116332
+          ],
+          "task_bootstrap95": [
+            0.5277777777777778,
+            0.875
+          ],
+          "valid_nonanswer": 21,
+          "invalid": 0,
+          "transport_error": 0,
+          "truncated": 0,
+          "schema_invalid_without_transport_error": 0,
+          "context_answer_rates": {
+            "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54": 1.0,
+            "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487": 1.0,
+            "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f": 1.0,
+            "chrome/fc6d8143-9452-4171-9459-7f515143419a": 0.0,
+            "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0": 0.75,
+            "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197": 1.0,
+            "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6": 1.0,
+            "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": 1.0,
+            "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68": 0.0,
+            "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38": 0.5,
+            "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850": 1.0,
+            "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73": 1.0,
+            "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8": 1.0,
+            "multi_apps/74d5859f-ed66-4d3e-aa0e-93d7a592ce41": 0.25,
+            "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805": 0.5,
+            "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762": 1.0,
+            "multi_apps/5df7b33a-9f77-4101-823e-02f863e1c1ae": 0.75,
+            "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6": 0.0
+          },
+          "tools": {
+            "answer": 51,
+            "hotkey": 7,
+            "click": 5,
+            "double_click": 4,
+            "scroll": 2,
+            "write": 2,
+            "wait": 1
+          }
+        },
+        "fs-": {
+          "n_tasks": 19,
+          "n_generations": 76,
+          "answer": 71,
+          "answer_rate": 0.9342105263157895,
+          "wilson95_descriptive": [
+            0.8550647346629656,
+            0.9715734677804679
+          ],
+          "task_bootstrap95": [
+            0.8157894736842105,
+            1.0
+          ],
+          "valid_nonanswer": 5,
+          "invalid": 0,
+          "transport_error": 0,
+          "truncated": 0,
+          "schema_invalid_without_transport_error": 0,
+          "context_answer_rates": {
+            "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d": 1.0,
+            "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82": 1.0,
+            "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9": 1.0,
+            "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": 1.0,
+            "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb": 1.0,
+            "os/13584542-872b-42d8-b299-866967b5c3ef": 0.0,
+            "chrome/3299584d-8f11-4457-bf4c-ce98f7600250": 1.0,
+            "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57": 1.0,
+            "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4": 1.0,
+            "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224": 1.0,
+            "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74": 1.0,
+            "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78": 1.0,
+            "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf": 1.0,
+            "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5": 1.0,
+            "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568": 0.75,
+            "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c": 1.0,
+            "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d": 1.0,
+            "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f": 1.0,
+            "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c": 1.0
+          },
+          "tools": {
+            "answer": 71,
+            "hotkey": 2,
+            "click": 3
+          }
+        },
+        "healthy": {
+          "n_tasks": 15,
+          "n_generations": 60,
+          "answer": 5,
+          "answer_rate": 0.08333333333333333,
+          "wilson95_descriptive": [
+            0.03612045660173077,
+            0.1806894201833441
+          ],
+          "task_bootstrap95": [
+            0.0,
+            0.2
+          ],
+          "valid_nonanswer": 55,
+          "invalid": 0,
+          "transport_error": 0,
+          "truncated": 0,
+          "schema_invalid_without_transport_error": 0,
+          "context_answer_rates": {
+            "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3": 0.0,
+            "chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263": 0.0,
+            "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15": 0.0,
+            "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6": 0.0,
+            "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a": 0.0,
+            "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b": 0.0,
+            "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38": 0.0,
+            "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf": 0.0,
+            "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63": 0.0,
+            "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb": 0.0,
+            "os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2": 0.0,
+            "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618": 0.5,
+            "libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195": 0.0,
+            "multi_apps/81c425f5-78f3-4771-afd6-3d2973825947": 0.0,
+            "chrome/c1fa57f3-c3db-4596-8f09-020701085416": 0.75
+          },
+          "tools": {
+            "click": 39,
+            "hotkey": 7,
+            "wait": 5,
+            "answer": 5,
+            "press_key": 4
+          }
+        }
+      },
+      "B": {
+        "fs+": {
+          "n_tasks": 18,
+          "n_generations": 72,
+          "answer": 43,
+          "answer_rate": 0.5972222222222222,
+          "wilson95_descriptive": [
+            0.48180671684951565,
+            0.7027888884789509
+          ],
+          "task_bootstrap95": [
+            0.375,
+            0.8055555555555556
+          ],
+          "valid_nonanswer": 29,
+          "invalid": 0,
+          "transport_error": 0,
+          "truncated": 0,
+          "schema_invalid_without_transport_error": 0,
+          "context_answer_rates": {
+            "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54": 1.0,
+            "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487": 0.0,
+            "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f": 1.0,
+            "chrome/fc6d8143-9452-4171-9459-7f515143419a": 0.0,
+            "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0": 0.0,
+            "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197": 1.0,
+            "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6": 1.0,
+            "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": 1.0,
+            "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68": 0.0,
+            "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38": 0.25,
+            "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850": 1.0,
+            "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73": 1.0,
+            "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8": 1.0,
+            "multi_apps/74d5859f-ed66-4d3e-aa0e-93d7a592ce41": 0.0,
+            "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805": 0.5,
+            "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762": 1.0,
+            "multi_apps/5df7b33a-9f77-4101-823e-02f863e1c1ae": 1.0,
+            "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6": 0.0
+          },
+          "tools": {
+            "answer": 43,
+            "click": 11,
+            "hotkey": 8,
+            "double_click": 6,
+            "scroll": 2,
+            "write": 2
+          }
+        },
+        "fs-": {
+          "n_tasks": 19,
+          "n_generations": 76,
+          "answer": 62,
+          "answer_rate": 0.8157894736842105,
+          "wilson95_descriptive": [
+            0.7142173789108908,
+            0.8869740410479698
+          ],
+          "task_bootstrap95": [
+            0.6578947368421053,
+            0.9473684210526315
+          ],
+          "valid_nonanswer": 14,
+          "invalid": 0,
+          "transport_error": 0,
+          "truncated": 0,
+          "schema_invalid_without_transport_error": 0,
+          "context_answer_rates": {
+            "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d": 1.0,
+            "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82": 1.0,
+            "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9": 0.25,
+            "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": 1.0,
+            "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb": 0.75,
+            "os/13584542-872b-42d8-b299-866967b5c3ef": 0.0,
+            "chrome/3299584d-8f11-4457-bf4c-ce98f7600250": 1.0,
+            "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57": 1.0,
+            "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4": 0.75,
+            "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224": 1.0,
+            "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74": 1.0,
+            "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78": 1.0,
+            "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf": 0.75,
+            "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5": 1.0,
+            "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568": 0.0,
+            "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c": 1.0,
+            "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d": 1.0,
+            "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f": 1.0,
+            "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c": 1.0
+          },
+          "tools": {
+            "answer": 62,
+            "hotkey": 8,
+            "click": 6
+          }
+        },
+        "healthy": {
+          "n_tasks": 15,
+          "n_generations": 60,
+          "answer": 0,
+          "answer_rate": 0.0,
+          "wilson95_descriptive": [
+            0.0,
+            0.06017185214208986
+          ],
+          "task_bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "valid_nonanswer": 60,
+          "invalid": 0,
+          "transport_error": 0,
+          "truncated": 0,
+          "schema_invalid_without_transport_error": 0,
+          "context_answer_rates": {
+            "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3": 0.0,
+            "chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263": 0.0,
+            "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15": 0.0,
+            "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6": 0.0,
+            "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a": 0.0,
+            "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b": 0.0,
+            "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38": 0.0,
+            "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf": 0.0,
+            "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63": 0.0,
+            "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb": 0.0,
+            "os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2": 0.0,
+            "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618": 0.0,
+            "libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195": 0.0,
+            "multi_apps/81c425f5-78f3-4771-afd6-3d2973825947": 0.0,
+            "chrome/c1fa57f3-c3db-4596-8f09-020701085416": 0.0
+          },
+          "tools": {
+            "click": 40,
+            "hotkey": 8,
+            "wait": 8,
+            "press_key": 4
+          }
+        }
+      }
+    },
+    "contrasts": {
+      "B-A": {
+        "treatment": "B",
+        "reference": "A",
+        "strata": {
+          "fs+": {
+            "delta": -0.11111111111111116,
+            "task_bootstrap95": [
+              -0.26388888888888884,
+              0.0
+            ],
+            "context_deltas": {
+              "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54": 0.0,
+              "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487": -1.0,
+              "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f": 0.0,
+              "chrome/fc6d8143-9452-4171-9459-7f515143419a": 0.0,
+              "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0": -0.75,
+              "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197": 0.0,
+              "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6": 0.0,
+              "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f": 0.0,
+              "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68": 0.0,
+              "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38": -0.25,
+              "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850": 0.0,
+              "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73": 0.0,
+              "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8": 0.0,
+              "multi_apps/74d5859f-ed66-4d3e-aa0e-93d7a592ce41": -0.25,
+              "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805": 0.0,
+              "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762": 0.0,
+              "multi_apps/5df7b33a-9f77-4101-823e-02f863e1c1ae": 0.25,
+              "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6": 0.0
+            }
+          },
+          "fs-": {
+            "delta": -0.11842105263157898,
+            "task_bootstrap95": [
+              -0.23684210526315785,
+              -0.02631578947368418
+            ],
+            "context_deltas": {
+              "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d": 0.0,
+              "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82": 0.0,
+              "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9": -0.75,
+              "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302": 0.0,
+              "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb": -0.25,
+              "os/13584542-872b-42d8-b299-866967b5c3ef": 0.0,
+              "chrome/3299584d-8f11-4457-bf4c-ce98f7600250": 0.0,
+              "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57": 0.0,
+              "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4": -0.25,
+              "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224": 0.0,
+              "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74": 0.0,
+              "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78": 0.0,
+              "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf": -0.25,
+              "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5": 0.0,
+              "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568": -0.75,
+              "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c": 0.0,
+              "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d": 0.0,
+              "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f": 0.0,
+              "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c": 0.0
+            }
+          },
+          "healthy": {
+            "delta": -0.08333333333333333,
+            "task_bootstrap95": [
+              -0.2,
+              0.0
+            ],
+            "context_deltas": {
+              "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3": 0.0,
+              "chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263": 0.0,
+              "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15": 0.0,
+              "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6": 0.0,
+              "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a": 0.0,
+              "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b": 0.0,
+              "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38": 0.0,
+              "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf": 0.0,
+              "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63": 0.0,
+              "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb": 0.0,
+              "os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2": 0.0,
+              "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618": -0.5,
+              "libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195": 0.0,
+              "multi_apps/81c425f5-78f3-4771-afd6-3d2973825947": 0.0,
+              "chrome/c1fa57f3-c3db-4596-8f09-020701085416": -0.75
+            }
+          }
+        },
+        "selectivity": {
+          "delta_fs_minus_delta_true": 0.007309941520467822,
+          "task_bootstrap95": [
+            -0.1703216374269006,
+            0.17105263157894735
+          ],
+          "interpretation": "negative means greater suppression of false than true finishes"
+        }
+      }
+    },
+    "contexts": {
+      "fs+": {
+        "n_tasks": 18,
+        "task_ids": [
+          "libreoffice_impress/550ce7e7-747b-495f-b122-acdc4d0b8e54",
+          "multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487",
+          "libreoffice_calc/3a7c8185-25c1-4941-bd7b-96e823c9f21f",
+          "chrome/fc6d8143-9452-4171-9459-7f515143419a",
+          "chrome/35253b65-1c19-4304-8aa4-6884b8218fc0",
+          "libreoffice_calc/1de60575-bb6e-4c3d-9e6a-2fa699f9f197",
+          "libreoffice_impress/70bca0cc-c117-427e-b0be-4df7299ebeb6",
+          "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f",
+          "libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68",
+          "multi_apps/716a6079-22da-47f1-ba73-c9d58f986a38",
+          "libreoffice_calc/f9584479-3d0d-4c79-affa-9ad7afdd8850",
+          "libreoffice_calc/21ab7b40-77c2-4ae6-8321-e00d3a086c73",
+          "libreoffice_impress/7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8",
+          "multi_apps/74d5859f-ed66-4d3e-aa0e-93d7a592ce41",
+          "chrome/9f3f70fc-5afc-4958-a7b7-3bb4fcb01805",
+          "multi_apps/5990457f-2adb-467b-a4af-5c857c92d762",
+          "multi_apps/5df7b33a-9f77-4101-823e-02f863e1c1ae",
+          "multi_apps/d68204bf-11c1-4b13-b48b-d303c73d4bf6"
+        ]
+      },
+      "fs-": {
+        "n_tasks": 19,
+        "task_ids": [
+          "libreoffice_calc/abed40dc-063f-4598-8ba5-9fe749c0615d",
+          "multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82",
+          "libreoffice_writer/66399b0d-8fda-4618-95c4-bfc6191617e9",
+          "libreoffice_impress/08aced46-45a2-48d7-993b-ed3fb5b32302",
+          "multi_apps/227d2f97-562b-4ccb-ae47-a5ec9e142fbb",
+          "os/13584542-872b-42d8-b299-866967b5c3ef",
+          "chrome/3299584d-8f11-4457-bf4c-ce98f7600250",
+          "os/5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57",
+          "multi_apps/c2751594-0cd5-4088-be1b-b5f2f9ec97c4",
+          "libreoffice_impress/73c99fb9-f828-43ce-b87a-01dc07faa224",
+          "libreoffice_impress/04578141-1d42-4146-b9cf-6fab4ce5fd74",
+          "libreoffice_calc/51b11269-2ca8-4b2a-9163-f21758420e78",
+          "libreoffice_impress/2cd43775-7085-45d8-89fa-9e35c0a915cf",
+          "multi_apps/2c9fc0de-3ee7-45e1-a5df-c86206ad78b5",
+          "gimp/7a4deb26-d57d-4ea9-9a73-630f66a7b568",
+          "libreoffice_calc/1d17d234-e39d-4ed7-b46f-4417922a4e7c",
+          "multi_apps/2373b66a-092d-44cb-bfd7-82e86e7a3b4d",
+          "libreoffice_writer/936321ce-5236-426a-9a20-e0e3c5dc536f",
+          "libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c"
+        ]
+      },
+      "healthy": {
+        "n_tasks": 15,
+        "task_ids": [
+          "libreoffice_calc/3aaa4e37-dc91-482e-99af-132a612d40f3",
+          "chrome/7a5a7856-f1b6-42a4-ade9-1ca81ca0f263",
+          "gimp/d16c99dc-2a1e-46f2-b350-d97c86c85c15",
+          "libreoffice_calc/0cecd4f3-74de-457b-ba94-29ad6b5dafb6",
+          "multi_apps/a74b607e-6bb5-4ea8-8a7c-5d97c7bbcd2a",
+          "libreoffice_calc/aa3a8974-2e85-438b-b29e-a64df44deb4b",
+          "multi_apps/26660ad1-6ebb-4f59-8cba-a8432dfe8d38",
+          "libreoffice_impress/ef9d12bd-bcee-4ba0-a40e-918400f43ddf",
+          "chrome/368d9ba4-203c-40c1-9fa3-da2f1430ce63",
+          "libreoffice_writer/ecc2413d-8a48-416e-a3a2-d30106ca36cb",
+          "os/28cc3b7e-b194-4bc9-8353-d04c0f4d56d2",
+          "multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618",
+          "libreoffice_writer/0e763496-b6bb-4508-a427-fad0b6c3e195",
+          "multi_apps/81c425f5-78f3-4771-afd6-3d2973825947",
+          "chrome/c1fa57f3-c3db-4596-8f09-020701085416"
+        ]
+      }
+    }
+  }
+}

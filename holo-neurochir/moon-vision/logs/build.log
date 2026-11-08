@@ -1,0 +1,8 @@
+{"numel": 333514240, "cua_qwen_l2_squared": 1.6386550307328314, "holo_qwen_l2_squared": 399.1791674401994, "cua_qwen_nonzero": 221992483, "holo_qwen_nonzero": 305994837, "cua_qwen_l2": 1.2800996175035877, "holo_qwen_l2": 19.979468647594196}
+saved /dev/shm/moon-vision/cua_b050/model-00001-of-00002.safetensors
+saved /dev/shm/moon-vision/cua_b050/model-00002-of-00002.safetensors
+verified /dev/shm/moon-vision/cua_b050 261 0.7584099583777293
+saved /dev/shm/moon-vision/cua_b100/model-00001-of-00002.safetensors
+saved /dev/shm/moon-vision/cua_b100/model-00002-of-00002.safetensors
+verified /dev/shm/moon-vision/cua_b100 264 1.2808340288524804
+COMPLETE

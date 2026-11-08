@@ -1,0 +1,293 @@
+{
+  "V05": {
+    "summary": {
+      "fs+": {
+        "n": 76,
+        "answer": 57,
+        "valid_nonanswer": 19,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0,
+        "tools": {
+          "answer": 57,
+          "click": 6,
+          "hotkey": 5,
+          "double_click": 3,
+          "scroll": 2,
+          "write": 3
+        }
+      },
+      "fs-": {
+        "n": 80,
+        "answer": 75,
+        "valid_nonanswer": 5,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0,
+        "tools": {
+          "answer": 75,
+          "click": 4,
+          "hotkey": 1
+        }
+      },
+      "healthy": {
+        "n": 64,
+        "answer": 6,
+        "valid_nonanswer": 58,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0,
+        "tools": {
+          "click": 43,
+          "hotkey": 6,
+          "wait": 5,
+          "answer": 6,
+          "press_key": 4
+        }
+      },
+      "all": {
+        "n": 220,
+        "answer": 138,
+        "valid_nonanswer": 82,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0,
+        "tools": {
+          "answer": 138,
+          "click": 53,
+          "hotkey": 12,
+          "double_click": 3,
+          "scroll": 2,
+          "write": 3,
+          "wait": 5,
+          "press_key": 4
+        }
+      }
+    },
+    "comparison": {
+      "fs+": {
+        "delta_pp": 2.631578947368421,
+        "ci95_pp": [
+          -2.631578947368421,
+          7.894736842105263
+        ],
+        "bootstrap_unit": "task",
+        "n_tasks": 19
+      },
+      "fs-": {
+        "delta_pp": 0.0,
+        "ci95_pp": [
+          0.0,
+          0.0
+        ],
+        "bootstrap_unit": "task",
+        "n_tasks": 20
+      },
+      "healthy": {
+        "delta_pp": -1.5625,
+        "ci95_pp": [
+          -4.6875,
+          0.0
+        ],
+        "bootstrap_unit": "task",
+        "n_tasks": 16
+      }
+    },
+    "json_gate": true,
+    "numerical_fs_gate": false
+  },
+  "V10": {
+    "summary": {
+      "fs+": {
+        "n": 76,
+        "answer": 54,
+        "valid_nonanswer": 22,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0,
+        "tools": {
+          "answer": 54,
+          "click": 6,
+          "hotkey": 7,
+          "double_click": 5,
+          "scroll": 2,
+          "write": 2
+        }
+      },
+      "fs-": {
+        "n": 80,
+        "answer": 73,
+        "valid_nonanswer": 7,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0,
+        "tools": {
+          "answer": 73,
+          "click": 3,
+          "hotkey": 4
+        }
+      },
+      "healthy": {
+        "n": 64,
+        "answer": 5,
+        "valid_nonanswer": 59,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0,
+        "tools": {
+          "click": 44,
+          "hotkey": 6,
+          "wait": 5,
+          "press_key": 4,
+          "answer": 5
+        }
+      },
+      "all": {
+        "n": 220,
+        "answer": 132,
+        "valid_nonanswer": 88,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0,
+        "tools": {
+          "answer": 132,
+          "click": 53,
+          "hotkey": 17,
+          "double_click": 5,
+          "scroll": 2,
+          "write": 2,
+          "wait": 5,
+          "press_key": 4
+        }
+      }
+    },
+    "comparison": {
+      "fs+": {
+        "delta_pp": -1.3157894736842104,
+        "ci95_pp": [
+          -5.263157894736842,
+          2.631578947368421
+        ],
+        "bootstrap_unit": "task",
+        "n_tasks": 19
+      },
+      "fs-": {
+        "delta_pp": -2.5,
+        "ci95_pp": [
+          -7.5,
+          0.0
+        ],
+        "bootstrap_unit": "task",
+        "n_tasks": 20
+      },
+      "healthy": {
+        "delta_pp": 0.0,
+        "ci95_pp": [
+          0.0,
+          0.0
+        ],
+        "bootstrap_unit": "task",
+        "n_tasks": 16
+      }
+    },
+    "json_gate": true,
+    "numerical_fs_gate": false
+  },
+  "E025": {
+    "summary": {
+      "fs+": {
+        "n": 76,
+        "answer": 57,
+        "valid_nonanswer": 19,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0,
+        "tools": {
+          "answer": 57,
+          "click": 5,
+          "hotkey": 6,
+          "double_click": 4,
+          "scroll": 1,
+          "write": 3
+        }
+      },
+      "fs-": {
+        "n": 80,
+        "answer": 76,
+        "valid_nonanswer": 4,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0,
+        "tools": {
+          "answer": 76,
+          "hotkey": 2,
+          "click": 2
+        }
+      },
+      "healthy": {
+        "n": 64,
+        "answer": 4,
+        "valid_nonanswer": 60,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0,
+        "tools": {
+          "click": 43,
+          "hotkey": 7,
+          "wait": 6,
+          "press_key": 4,
+          "answer": 4
+        }
+      },
+      "all": {
+        "n": 220,
+        "answer": 137,
+        "valid_nonanswer": 83,
+        "invalid": 0,
+        "error": 0,
+        "truncated": 0,
+        "tools": {
+          "answer": 137,
+          "click": 50,
+          "hotkey": 15,
+          "double_click": 4,
+          "scroll": 1,
+          "write": 3,
+          "wait": 6,
+          "press_key": 4
+        }
+      }
+    },
+    "comparison": {
+      "fs+": {
+        "delta_pp": 2.631578947368421,
+        "ci95_pp": [
+          -2.631578947368421,
+          7.894736842105263
+        ],
+        "bootstrap_unit": "task",
+        "n_tasks": 19
+      },
+      "fs-": {
+        "delta_pp": 1.25,
+        "ci95_pp": [
+          0.0,
+          3.75
+        ],
+        "bootstrap_unit": "task",
+        "n_tasks": 20
+      },
+      "healthy": {
+        "delta_pp": 1.5625,
+        "ci95_pp": [
+          0.0,
+          4.6875
+        ],
+        "bootstrap_unit": "task",
+        "n_tasks": 16
+      }
+    },
+    "json_gate": true,
+    "numerical_fs_gate": false
+  }
+}

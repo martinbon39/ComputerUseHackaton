@@ -1,0 +1,31 @@
+{
+  "source_manifest": "/workspace/astra/moon-vision/source_provenance.json",
+  "checkpoints": [
+    {
+      "path": "/dev/shm/moon-vision/cua_b050",
+      "coefficient": 0.5,
+      "status": "PASS",
+      "total_tensors": 724,
+      "selected_tensors": 297,
+      "nonvisual_tensors": 427,
+      "changed_elements": 169449071,
+      "update_l2": 0.7584099583777293,
+      "bf16_serving_changed_elements": 169449071,
+      "bf16_serving_update_l2": 0.7584099583777293
+    },
+    {
+      "path": "/dev/shm/moon-vision/cua_b100",
+      "coefficient": 1.0,
+      "status": "PASS",
+      "total_tensors": 724,
+      "selected_tensors": 297,
+      "nonvisual_tensors": 427,
+      "changed_elements": 221128354,
+      "update_l2": 1.2808340288524802,
+      "bf16_serving_changed_elements": 221128354,
+      "bf16_serving_update_l2": 1.2808340288524802
+    }
+  ],
+  "status": "PASS",
+  "failures": []
+}

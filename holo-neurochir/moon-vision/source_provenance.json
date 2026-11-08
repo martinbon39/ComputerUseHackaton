@@ -1,0 +1,56 @@
+{
+  "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e": {
+    "config.json": {
+      "sha256": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1",
+      "bytes": 2785
+    },
+    "model-00001-of-00002.safetensors": {
+      "sha256": "f7f12ccce5c518a4039dbcd132077e9822639d580843c9cfa0610bf8812485bc",
+      "bytes": 6459246344
+    },
+    "model-00002-of-00002.safetensors": {
+      "sha256": "0490ba7c9b4f6b16b9de8cc2fe50e44657af031c27fec49cb0b87571c0a7cab4",
+      "bytes": 3890831224
+    },
+    "model.safetensors.index.json": {
+      "sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7",
+      "bytes": 66258
+    }
+  },
+  "/root/expo/base": {
+    "config.json": {
+      "sha256": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670",
+      "bytes": 3161
+    },
+    "model.safetensors-00001-of-00002.safetensors": {
+      "sha256": "26a93f066e1916adb13453dae5a0c707c0fbc71299ed98779571a907b8e74c61",
+      "bytes": 5329398688
+    },
+    "model.safetensors-00002-of-00002.safetensors": {
+      "sha256": "cb544bd9bfae93dc59b0f22b292f5933573854a7f9b97835c67060d7d910e188",
+      "bytes": 3990429408
+    },
+    "model.safetensors.index.json": {
+      "sha256": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d",
+      "bytes": 76196
+    }
+  },
+  "/dev/shm/astra_merge_cua": {
+    "config.json": {
+      "sha256": "1330559294767cfca2f0a5f84782dda7189becd1d49c826882a9b5c8d622e8b3",
+      "bytes": 2808
+    },
+    "model.safetensors-00001-of-00002.safetensors": {
+      "sha256": "a8ad0e6fb47369fed2262d423d713e47f8f7d878851e0ee8bdd7c90bc47d8237",
+      "bytes": 5329398688
+    },
+    "model.safetensors-00002-of-00002.safetensors": {
+      "sha256": "ae5828491a638b66d198b52297fcf07c1cb9970326c7e027c55afc791bdff213",
+      "bytes": 3990422272
+    },
+    "model.safetensors.index.json": {
+      "sha256": "b2fcc402fd11a30944ce93805f6de15000b6f87d5e28bb18e2950142ad4218b7",
+      "bytes": 79160
+    }
+  }
+}

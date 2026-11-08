@@ -1,0 +1,25 @@
+{
+  "source": "cua",
+  "outputs": [
+    {
+      "path": "/dev/shm/moon-vision/cua_b050",
+      "coefficient": 0.5,
+      "manifest_sha256": "92e52ea002194a7067e25326e878bf651d0bbea675e36c8bcf8162cb5cd9ddd3"
+    },
+    {
+      "path": "/dev/shm/moon-vision/cua_b100",
+      "coefficient": 1.0,
+      "manifest_sha256": "31798fc3bd36f612efd083a1c439af035d478e3617eb6be81de92643b1b6624b"
+    },
+    {
+      "path": "/dev/shm/moon-vision/holo_g025",
+      "coefficient": 0.25,
+      "manifest_sha256": "5ecf87d949c1fb21ceab405ae95dfad023573fd46f8ba3ff306a5d575aabd7de"
+    }
+  ],
+  "ares_amendment": {
+    "message_id": 6520,
+    "formula": "Holo_vis + 0.25*(Holo_vis-Qwen_vis)",
+    "cap": 3
+  }
+}

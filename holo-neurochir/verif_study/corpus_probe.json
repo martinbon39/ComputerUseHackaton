@@ -1,0 +1,269 @@
+{
+  "scope": {
+    "mode": "read_only_probe",
+    "sources": {
+      "diag1": "/home/orbit/osw/results_diag",
+      "diag2": "/home/orbit/osw/results_diag2",
+      "extra1": "/home/orbit/osw/results_diag_extra_gh/pass1",
+      "extra2": "/home/orbit/osw/results_diag_extra_gh/pass2"
+    },
+    "task_definitions": "/home/orbit/osw/rtg/Env/OSWorld/evaluation_examples/examples/<domain>/<task_id>.json"
+  },
+  "corpus_counts": {
+    "episode_directories": 353,
+    "directories_with_nonempty_trajectory": 352,
+    "answer_episodes": 302,
+    "answer_feasible_episodes": 274,
+    "answer_feasible_score_0": 66,
+    "answer_feasible_score_1": 202,
+    "answer_feasible_partial": 6,
+    "answer_infeasible": 28,
+    "nonanswer_with_result": 47,
+    "missing_result_total": 4,
+    "missing_result_with_nonempty_trajectory": 3,
+    "unique_tasks_across_all_directories": 120,
+    "unique_tasks_among_selected_binary_answer_feasible_episodes": 90
+  },
+  "by_source": {
+    "diag1": {
+      "episode_directories": 120,
+      "nonempty_trajectories": 120,
+      "answer_total": 96,
+      "answer_infeasible": 11,
+      "answer_feasible": 85,
+      "answer_feasible_scores": {"0": 20, "1": 63, "partial": 2}
+    },
+    "diag2": {
+      "episode_directories": 83,
+      "nonempty_trajectories": 82,
+      "answer_total": 69,
+      "answer_infeasible": 7,
+      "answer_feasible": 62,
+      "answer_feasible_scores": {"0": 18, "1": 43, "partial": 1}
+    },
+    "extra1": {
+      "episode_directories": 75,
+      "nonempty_trajectories": 75,
+      "answer_total": 67,
+      "answer_infeasible": 5,
+      "answer_feasible": 62,
+      "answer_feasible_scores": {"0": 14, "1": 47, "partial": 1}
+    },
+    "extra2": {
+      "episode_directories": 75,
+      "nonempty_trajectories": 75,
+      "answer_total": 70,
+      "answer_infeasible": 5,
+      "answer_feasible": 65,
+      "answer_feasible_scores": {"0": 14, "1": 49, "partial": 2}
+    }
+  },
+  "directory_and_schema": {
+    "episode_pattern": "<root>/pyautogui/screenshot/Holo-3.1-4B/<domain>/<task_id>/",
+    "normal_files": [
+      "traj.jsonl",
+      "step_<step_num>_<timestamp>.png",
+      "system_prompt.txt",
+      "meta.json",
+      "result.txt",
+      "report.html"
+    ],
+    "trajectory_record_example": {
+      "step_num": 7,
+      "timestamp": "20261107@183909825820",
+      "note": "...",
+      "thought": "...",
+      "tool_name": "answer",
+      "tool_call": {"tool_name": "answer", "content": "..."},
+      "reasoning": "...",
+      "screenshot_file": "step_7_20261107@183909825820.png",
+      "info": {"done": true}
+    },
+    "task_definition_example": {
+      "id": "cb130f0d-d36f-4302-9838-b3baf46139b6",
+      "snapshot": "base_setup",
+      "instruction": "...",
+      "config": [],
+      "related_apps": ["vlc"],
+      "evaluator": {"func": "infeasible"},
+      "proxy": false,
+      "fixed_ip": false
+    },
+    "evaluator_func_types_in_120_tasks": {"string": 101, "list": 19},
+    "infeasible_rule": "Lowercase JSON serialization of evaluator.func contains the substring 'infeasible'."
+  },
+  "robust_answer_extraction": {
+    "algorithm": [
+      "Read traj.jsonl in file order, ignoring blank lines.",
+      "Parse each line as one JSON object; retain the last valid tool-bearing record.",
+      "Read tool name from top-level tool_name, falling back to tool_call.tool_name.",
+      "Classify as an answer episode only when that last tool name is exactly 'answer'.",
+      "Extract answer content from tool_call.content; metadata answer is a consistency check, not the primary source.",
+      "Join the same record's screenshot_file to the episode directory for the terminal observation."
+    ],
+    "observed_quality": {
+      "malformed_json_lines": 0,
+      "answer_rows_with_missing_referenced_png": 0,
+      "answer_rows_where_a_later_step_png_exists": 0,
+      "answer_rows_checked": 302
+    }
+  },
+  "screenshot_semantics": {
+    "conclusion": "Each row stores the screenshot observed before that row's tool. For an answer row, the answer is terminal and does not execute a GUI action, so its referenced screenshot is the fresh observation after the preceding GUI action and is the correct final-state screen. For a non-answer episode ending at the step cap, the final row screenshot is before the final GUI action; the corpus has no saved post-action screen for that last action.",
+    "evidence": [
+      {
+        "path": "/home/orbit/osw/rtg/Agent/holo_agent/agent.py",
+        "lines": "229-270",
+        "fact": "The loop captures env.screenshot at lines 234-235, calls the model, and records terminal tools with that image at lines 264-270."
+      },
+      {
+        "path": "/home/orbit/osw/rtg/Agent/holo_agent/agent.py",
+        "lines": "272-291",
+        "fact": "Nonterminal env.step runs at lines 272-274, while on_step receives the already captured image at lines 289-290; the next loop captures the post-action observation."
+      },
+      {
+        "path": "/home/orbit/osw/rtg/Agent/holo_agent/recorder.py",
+        "lines": "67-95",
+        "fact": "The recorder explicitly calls image the screenshot the model saw and writes it as screenshot_file on the same trajectory record."
+      },
+      {
+        "path": "/home/orbit/osw/rtg/Env/OSWorld/holo_repro/run_holo.py",
+        "lines": "370-382",
+        "fact": "After the agent returns, the runner sends DONE or FAIL and evaluates later; it does not save another trajectory screenshot."
+      }
+    ],
+    "prepare_fallback_observation": "Across all 302 answer episodes, screenshot_file exists and is also the latest step PNG. A latest-available fallback is never needed for this corpus."
+  },
+  "missing_evidence": [
+    {
+      "directory": "/home/orbit/osw/results_diag2/pyautogui/screenshot/Holo-3.1-4B/multi_apps/aad10cd7-9337-4b62-b704-a857848cedf2",
+      "trajectory": "absent",
+      "result": "absent",
+      "interpretation": "Episode directory exists but is not a trajectory. This explains 353 directories versus 352 nonempty trajectories."
+    },
+    {
+      "directory": "/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/69acbb55-d945-4927-a87b-8480e1a5bb7e",
+      "trajectory": "nonempty",
+      "result": "absent"
+    },
+    {
+      "directory": "/home/orbit/osw/results_diag2/pyautogui/screenshot/Holo-3.1-4B/multi_apps/4c26e3f3-3a14-4d86-b44a-d3cedebbb487",
+      "trajectory": "nonempty",
+      "result": "absent"
+    },
+    {
+      "directory": "/home/orbit/osw/results_diag2/pyautogui/screenshot/Holo-3.1-4B/multi_apps/7e287123-70ca-47b9-8521-47db09b69b14",
+      "trajectory": "nonempty",
+      "result": "absent"
+    }
+  ],
+  "pass_provenance_and_duplicates": {
+    "pass_identity": "Treat each of diag1, diag2, extra1, and extra2 as a distinct source pass.",
+    "evidence": [
+      "/home/orbit/osw/results_diag.log starts an independent 120-task run on 2026-11-07 16:49 with 5 workers.",
+      "/home/orbit/osw/results_diag2.log starts another independent 120-task run on 2026-11-07 18:48 with 4 workers; only 83 episode directories remain, one without a trajectory.",
+      "/home/orbit/osw/results_diag_extra_gh/pass1/_jobs/orig-diag1-*/shard.json defines a 75-task sharded run on 2026-11-08.",
+      "/home/orbit/osw/results_diag_extra_gh/pass2/_jobs/orig-diag2-*/shard.json defines a second 75-task sharded run on 2026-11-08."
+    ],
+    "duplicate_task_pass_keys": 0,
+    "cross_pass_repetition": {
+      "distinct_tasks_seen_in_multiple_sources": 94,
+      "directory_patterns": {
+        "diag1+diag2+extra1+extra2": 64,
+        "diag1+extra1+extra2": 11,
+        "diag1+diag2": 19
+      },
+      "interpretation": "These are independent repeated rollouts, not duplicate files. Among every pair of roots, zero overlapping traj.jsonl files have identical SHA256 hashes."
+    }
+  },
+  "branch_bonus": {
+    "report": "/home/orbit/osw/branch_pilot/REPORT.md",
+    "raw_data": [
+      "/home/orbit/osw/branch_pilot/orig/branches.jsonl",
+      "/home/orbit/osw/branch_pilot/cand/branches.jsonl"
+    ],
+    "design": {
+      "episodes": 5,
+      "continuations_per_episode_per_arm": 2,
+      "branches_per_arm": 10,
+      "recorded_failure_episodes": 3,
+      "recorded_success_episodes": 2,
+      "fidelity_threshold_max_pixel_difference": 0.05
+    },
+    "rates": {
+      "all_branches": {
+        "original": {"successes": 5, "denominator": 10, "rate": 0.5},
+        "candidate": {"successes": 4, "denominator": 10, "rate": 0.4},
+        "denominator_provenance": "5 episode states x K=2 continuations per arm."
+      },
+      "recorded_failures_raw": {
+        "original": {"repairs": 1, "denominator": 6, "rate": 0.1666666667},
+        "candidate": {"repairs": 0, "denominator": 6, "rate": 0.0},
+        "denominator_provenance": "3 recorded-score-0 episode states x K=2 per arm."
+      },
+      "recorded_failures_fidelity_valid": {
+        "original": {"repairs": 1, "denominator": 4, "rate": 0.25},
+        "candidate": {"repairs": 0, "denominator": 4, "rate": 0.0},
+        "denominator_provenance": "The dynamic Chrome episode failed replay fidelity in both continuations, leaving 2 valid recorded-score-0 episodes x K=2 per arm."
+      },
+      "recorded_success_persistence": {
+        "original": {"successes": 4, "denominator": 4, "rate": 1.0},
+        "candidate": {"successes": 4, "denominator": 4, "rate": 1.0},
+        "denominator_provenance": "2 recorded-score-1 episode states x K=2 per arm."
+      },
+      "eligible_feasible_failure_repair_fidelity_valid": {
+        "original": {"repairs": 0, "denominator": 2, "rate": 0.0},
+        "candidate": {"repairs": 0, "denominator": 2, "rate": 0.0},
+        "denominator_provenance": "After applying this study's feasible-task rule and replay fidelity, only libreoffice_writer/6f81754e... remains: K=2 per arm."
+      }
+    },
+    "per_task": [
+      {
+        "task": "gimp/fbb548ca-c2a6-4601-9204-e39a2efc507b",
+        "recorded_score": 0,
+        "officially_infeasible": true,
+        "replay_valid_per_arm": 2,
+        "original_successes": 1,
+        "candidate_successes": 0
+      },
+      {
+        "task": "libreoffice_writer/6f81754e-285d-4ce0-b59e-af7edb02d108",
+        "recorded_score": 0,
+        "officially_infeasible": false,
+        "replay_valid_per_arm": 2,
+        "original_successes": 0,
+        "candidate_successes": 0
+      },
+      {
+        "task": "chrome/6c4c23a1-42a4-43cc-9db1-2f86ff3738cc",
+        "recorded_score": 0,
+        "officially_infeasible": false,
+        "replay_valid_per_arm": 0,
+        "original_successes": 0,
+        "candidate_successes": 0,
+        "invalid_reason": "Dynamic page diverged from replay step 0; max difference about 0.49."
+      },
+      {
+        "task": "os/23393935-50c7-4a86-aeea-2b78fd089c5c",
+        "recorded_score": 1,
+        "replay_valid_per_arm": 2,
+        "original_successes": 2,
+        "candidate_successes": 2
+      },
+      {
+        "task": "thunderbird/f201fbc3-44e6-46fc-bcaa-432f9815454c",
+        "recorded_score": 1,
+        "replay_valid_per_arm": 2,
+        "original_successes": 2,
+        "candidate_successes": 2
+      }
+    ],
+    "limitations_for_simulation": [
+      "The headline 5/10 versus 4/10 includes four trivial success-persistence continuations per arm and two invalid dynamic-Chrome continuations per arm; it is not a repair rate.",
+      "The sole repair is one continuation on one officially infeasible GIMP task, which the verifier study excludes. No replay-valid feasible failed episode was repaired by either arm.",
+      "K=2 continuations from the same state are clustered, not independent episode-level observations.",
+      "Branching at t-1 gives the two recorded successes almost no opportunity to change behavior; all eight such continuations stayed successful.",
+      "Only two replay-valid failed episode states contribute to the 1/4 versus 0/4 repair comparison, so no generalization is supported."
+    ]
+  }
+}

@@ -1,0 +1,244 @@
+{
+ "n_episodes": 268,
+ "n_fs": 66,
+ "n_true": 202,
+ "n_tasks": 90,
+ "collection_audit": {
+  "n_result": 349,
+  "partial": 7,
+  "no_traj": 0,
+  "infeasible": 34,
+  "no_eval": 0,
+  "not_answer": 40,
+  "dup": 0,
+  "bad_score": 0
+ },
+ "models": {
+  "tfidf_final_note_thought": {
+   "auroc_logo": 0.5868586858685869,
+   "ci95_task_boot": [
+    0.4769129732274323,
+    0.6938471473310716
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.5917941794179418,
+   "auroc_5fold_grouped_range": [
+    0.5672817281728173,
+    0.623012301230123
+   ]
+  },
+  "tfidf_last3_notes": {
+   "auroc_logo": 0.555055505550555,
+   "ci95_task_boot": [
+    0.45640333674972955,
+    0.658607058935338
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.5742124212421242,
+   "auroc_5fold_grouped_range": [
+    0.5268901890189018,
+    0.6101110111011101
+   ]
+  },
+  "tfidf_final_reasoning": {
+   "auroc_logo": 0.6042604260426043,
+   "ci95_task_boot": [
+    0.5033313422812347,
+    0.6961395670854048
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.6163666366636663,
+   "auroc_5fold_grouped_range": [
+    0.5756075607560756,
+    0.6536153615361536
+   ]
+  },
+  "tfidf_final_all(note+thought+reasoning)": {
+   "auroc_logo": 0.6034353435343534,
+   "ci95_task_boot": [
+    0.49206468998242586,
+    0.7034285965785059
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.6197119711971197,
+   "auroc_5fold_grouped_range": [
+    0.5863336333633363,
+    0.6464896489648965
+   ]
+  },
+  "hand_final_note_thought": {
+   "auroc_logo": 0.659015901590159,
+   "ci95_task_boot": [
+    0.548315589108272,
+    0.7630658230614344
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.6441944194419443,
+   "auroc_5fold_grouped_range": [
+    0.6188118811881188,
+    0.6743174317431744
+   ]
+  },
+  "hand_final_all": {
+   "auroc_logo": 0.6357635763576358,
+   "ci95_task_boot": [
+    0.5146335844775736,
+    0.7458266633219502
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.6121062106210622,
+   "auroc_5fold_grouped_range": [
+    0.5894839483948395,
+    0.641989198919892
+   ]
+  },
+  "domain_onehot": {
+   "auroc_logo": 0.5354785478547855,
+   "ci95_task_boot": [
+    0.424656441543135,
+    0.6588883990462618
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.5495874587458747,
+   "auroc_5fold_grouped_range": [
+    0.5357785778577857,
+    0.5794704470447046
+   ]
+  },
+  "baseline_final_step": {
+   "auroc_logo": 0.7191344134413441,
+   "ci95_task_boot": [
+    0.6091175347889711,
+    0.8155486107972522
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.7231773177317732,
+   "auroc_5fold_grouped_range": [
+    0.7146339633963396,
+    0.7343234323432344
+   ],
+   "auroc_raw_feature_no_fit": 0.7367611761176117
+  },
+  "baseline_n_steps": {
+   "auroc_logo": 0.7191344134413441,
+   "ci95_task_boot": [
+    0.6074558931138014,
+    0.8183299127648852
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.7231773177317732,
+   "auroc_5fold_grouped_range": [
+    0.7146339633963396,
+    0.7343234323432344
+   ],
+   "auroc_raw_feature_no_fit": 0.7367611761176117
+  },
+  "baseline_final_reasoning_chars": {
+   "auroc_logo": 0.6056855685568556,
+   "ci95_task_boot": [
+    0.49523359634551495,
+    0.7087658918772314
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.5977047704770476,
+   "auroc_5fold_grouped_range": [
+    0.5777077707770777,
+    0.611011101110111
+   ],
+   "auroc_raw_feature_no_fit": 0.6195244524452445
+  },
+  "baseline_total_reasoning_chars": {
+   "auroc_logo": 0.7435493549354937,
+   "ci95_task_boot": [
+    0.6395988240141453,
+    0.8399704373532735
+   ],
+   "auroc_5fold_grouped_mean_5rep": 0.7427692769276928,
+   "auroc_5fold_grouped_range": [
+    0.7233723372337234,
+    0.7512751275127513
+   ],
+   "auroc_raw_feature_no_fit": 0.7539003900390039
+  }
+ },
+ "n_mixed_tasks": 18,
+ "within_mixed_tasks": {
+  "n_episodes": 68,
+  "n_fs": 33,
+  "tfidf_final_note_thought": 0.4865800865800866,
+  "tfidf_last3_notes": 0.5246753246753247,
+  "tfidf_final_reasoning": 0.5116883116883117,
+  "tfidf_final_all(note+thought+reasoning)": 0.5108225108225108,
+  "hand_final_note_thought": 0.48658008658008656,
+  "hand_final_all": 0.47359307359307357,
+  "domain_onehot": 0.4727272727272728,
+  "baseline_final_step": 0.5372294372294373,
+  "baseline_n_steps": 0.5372294372294373,
+  "baseline_final_reasoning_chars": 0.46320346320346323,
+  "baseline_total_reasoning_chars": 0.4987012987012987
+ },
+ "best_text_model": "hand_final_note_thought",
+ "best_minus_final_step_ci95": [
+  -0.17944083947644543,
+  0.05651388587794519
+ ],
+ "best_minus_domain_ci95": [
+  -0.02699059922367768,
+  0.2621127506460802
+ ],
+ "permutation": {
+  "model": "hand_final_note_thought",
+  "observed_auroc": 0.659015901590159,
+  "n_perm": 500,
+  "within_task_p": 0.4411177644710579,
+  "within_task_null_mean": 0.6547098709870988,
+  "within_task_null_95pct": 0.6930055505550555,
+  "global_p": 0.001996007984031936,
+  "global_null_mean": 0.4849605460546055,
+  "note": "within-task permutation only shuffles labels inside the mixed tasks; pure tasks keep labels, so its null keeps task/domain signal and tests only the extra within-task signal"
+ },
+ "hand_feature_means": {
+  "chars": {
+   "fs": 635.1666666666666,
+   "true": 540.0693069306931,
+   "auroc_raw": 0.6254875487548754
+  },
+  "words": {
+   "fs": 97.37878787878788,
+   "true": 85.61881188118812,
+   "auroc_raw": 0.5906840684068406
+  },
+  "hedge_n": {
+   "fs": 0.45454545454545453,
+   "true": 0.39603960396039606,
+   "auroc_raw": 0.5173267326732672
+  },
+  "done_n": {
+   "fs": 6.636363636363637,
+   "true": 6.603960396039604,
+   "auroc_raw": 0.4996624662466247
+  },
+  "hedge_rate": {
+   "fs": 0.004886878769923286,
+   "true": 0.004392359074384625,
+   "auroc_raw": 0.5137638763876388
+  },
+  "done_rate": {
+   "fs": 0.07757092986163269,
+   "true": 0.08176490422639283,
+   "auroc_raw": 0.46722172217221725
+  }
+ },
+ "domain_counts": {
+  "chrome": {
+   "fs": 11,
+   "true": 37
+  },
+  "gimp": {
+   "fs": 0,
+   "true": 12
+  },
+  "libreoffice_calc": {
+   "fs": 14,
+   "true": 36
+  },
+  "libreoffice_impress": {
+   "fs": 14,
+   "true": 34
+  },
+  "libreoffice_writer": {
+   "fs": 1,
+   "true": 20
+  },
+  "multi_apps": {
+

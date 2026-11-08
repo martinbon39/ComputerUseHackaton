@@ -29,3 +29,15 @@ feci_guard.check, which now also ENFORCES the registered rule (an INCOMPLETE wit
 "inconsistent" -> accept); the guard checks a FRESH capture from the VM controller (it was checking the cached
 post-action frame); new opt-in "active" mode (NEED_CHECK -> the agent is asked for a read-only check action), never
 the default.
+
+## Repair measure (registered 07:54 UTC, before any branch ran; replaces (b) at ares' request)
+Episodes: repair/episodes.txt, 12 feasible false successes of the original (claimed done, score 0, feasible), from
+original runs on orbit :8000 (diag, diag2, val_orig_eager_m40; never test). Selection: shortest first, no chrome
+(dynamic pages fail replay fidelity), no os/5c1075ca (non-deterministic under replay), one recording per task.
+Branch at the recorded answer step (branch_back 0), K=2 continuations per arm, max 15 new steps, same server.
+Arm A no guard = osworld/branch_runner.py unchanged; arm B = repair_runner.py (same replay + GuardedAgent policy,
+passive mode, Claude Sonnet; a refusal counts as a new step). Score = official evaluator.
+Valid branch = replay_valid (max pixel diff <= 0.05) in BOTH arms' branches of that episode is not required; the
+analysis uses episodes whose branches are valid in both arms (all 4). Primary: repaired branches (score 1) per arm,
+episode-level paired difference (mean over K), bootstrap 95 % CI over episodes (10 000), plus exact counts.
+Secondary: answered-false-success branches per arm; refusals; refused-then-repaired.

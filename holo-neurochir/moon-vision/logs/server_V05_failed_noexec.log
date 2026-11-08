@@ -1,0 +1,143 @@
+WARNING 11-08 07:20:52 [config.py:71] Support for Transformers v4 is deprecated. The Transformers v4 codepath will become unmaintained in vLLM v0.22.0 and will be removed in vLLM v0.24.0. Please upgrade to Transformers v5: pip install --upgrade transformers
+(APIServer pid=424925) INFO 11-08 07:20:58 [api_utils.py:339] 
+(APIServer pid=424925) INFO 11-08 07:20:58 [api_utils.py:339]        █     █     █▄   ▄█
+(APIServer pid=424925) INFO 11-08 07:20:58 [api_utils.py:339]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.23.0
+(APIServer pid=424925) INFO 11-08 07:20:58 [api_utils.py:339]   █▄█▀ █     █     █     █  model   /dev/shm/moon-vision/cua_b050
+(APIServer pid=424925) INFO 11-08 07:20:58 [api_utils.py:339]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+(APIServer pid=424925) INFO 11-08 07:20:58 [api_utils.py:339] 
+(APIServer pid=424925) INFO 11-08 07:20:58 [api_utils.py:273] non-default args: {'host': '127.0.0.1', 'port': 8028, 'model': '/dev/shm/moon-vision/cua_b050', 'dtype': 'bfloat16', 'max_model_len': 32768, 'served_model_name': ['moon_vision_V05'], 'reasoning_parser': 'qwen3', 'gpu_memory_utilization': 0.15, 'kv_cache_memory_bytes': 8589934592, 'enable_prefix_caching': True, 'limit_mm_per_prompt': {'image': 5}, 'max_num_seqs': 32}
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961] Error in inspecting model architecture 'Qwen3_5ForConditionalGeneration'
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961] Traceback (most recent call last):
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 1396, in _run_in_subprocess
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     returned.check_returncode()
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/usr/lib/python3.12/subprocess.py", line 502, in check_returncode
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     raise CalledProcessError(self.returncode, self.args, self.stdout,
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961] subprocess.CalledProcessError: Command '['/workspace/vllm-venv/bin/python', '-m', 'vllm.model_executor.models.registry']' returned non-zero exit status 1.
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961] 
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961] The above exception was the direct cause of the following exception:
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961] 
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961] Traceback (most recent call last):
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 959, in _try_inspect_model_cls
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     return model.inspect_model_cls()
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/logging_utils/log_time.py", line 21, in _wrapper
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     result = func(*args, **kwargs)
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]              ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 920, in inspect_model_cls
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     mi = _run_in_subprocess(
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]          ^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 1399, in _run_in_subprocess
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     raise RuntimeError(
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961] RuntimeError: Error raised in subprocess:
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961] <frozen runpy>:128: RuntimeWarning: 'vllm.model_executor.models.registry' found in sys.modules after import of package 'vllm.model_executor.models', but prior to execution of 'vllm.model_executor.models.registry'; this may result in unpredictable behaviour
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961] Traceback (most recent call last):
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "<frozen runpy>", line 198, in _run_module_as_main
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "<frozen runpy>", line 88, in _run_code
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 1422, in <module>
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     _run()
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 1415, in _run
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     result = fn()
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]              ^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 921, in <lambda>
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     lambda: _ModelInfo.from_model_cls(self.load_model_cls())
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]                                       ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/registry.py", line 934, in load_model_cls
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     mod = importlib.import_module(self.module_name)
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     return _bootstrap._gcd_import(name[level:], package, level)
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/models/qwen3_5.py", line 43, in <module>
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import (
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py", line 24, in <module>
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     from vllm.model_executor.layers.fla.ops import (
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/layers/fla/ops/__init__.py", line 9, in <module>
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     from .chunk import chunk_gated_delta_rule
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/layers/fla/ops/chunk.py", line 13, in <module>
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     from .chunk_delta_h import chunk_gated_delta_rule_fwd_h
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/layers/fla/ops/chunk_delta_h.py", line 15, in <module>
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     from .index import prepare_chunk_indices, prepare_chunk_offsets
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/layers/fla/ops/index.py", line 14, in <module>
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     from .utils import tensor_cache
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/layers/fla/ops/utils.py", line 145, in <module>
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     device_platform = _check_platform()
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]                       ^^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/layers/fla/ops/utils.py", line 130, in _check_platform
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     device = get_available_device()
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]              ^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/model_executor/layers/fla/ops/utils.py", line 123, in get_available_device
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     return triton.runtime.driver.active.get_current_target().backend
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/triton/runtime/driver.py", line 28, in active
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     self._active = self.default
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]                    ^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/triton/runtime/driver.py", line 22, in default
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     self._default = _create_driver()
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]                     ^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/triton/runtime/driver.py", line 10, in _create_driver
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     return active_drivers[0]()
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]            ^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/triton/backends/nvidia/driver.py", line 720, in __init__
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     self.utils = CudaUtils()  # TODO: make static
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]                  ^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/triton/backends/nvidia/driver.py", line 62, in __init__
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     mod = compile_module_from_src(
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]           ^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/triton/runtime/build.py", line 97, in compile_module_from_src
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     return _load_module_from_path(name, cache_path)
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]   File "/workspace/vllm-venv/lib/python3.12/site-packages/triton/runtime/build.py", line 69, in _load_module_from_path
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]     mod = importlib.util.module_from_spec(spec)
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961]           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961] ImportError: /dev/shm/moon-vision-cache/triton/XU5DT2AO5BD5AEHEYGLPP5LRDFHHCUEJT4LGDVLB4STXUGVGHFPA/cuda_utils.cpython-312-x86_64-linux-gnu.so: failed to map segment from shared object
+(APIServer pid=424925) ERROR 11-08 07:21:22 [registry.py:961] 
+(APIServer pid=424925) Traceback (most recent call last):
+(APIServer pid=424925)   File "<frozen runpy>", line 198, in _run_module_as_main
+(APIServer pid=424925)   File "<frozen runpy>", line 88, in _run_code
+(APIServer pid=424925)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 705, in <module>
+(APIServer pid=424925)     uvloop.run(run_server(args))
+(APIServer pid=424925)   File "/workspace/vllm-venv/lib/python3.12/site-packages/uvloop/__init__.py", line 96, in run
+(APIServer pid=424925)     return __asyncio.run(
+(APIServer pid=424925)            ^^^^^^^^^^^^^^
+(APIServer pid=424925)   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+(APIServer pid=424925)     return runner.run(main)
+(APIServer pid=424925)            ^^^^^^^^^^^^^^^^
+(APIServer pid=424925)   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+(APIServer pid=424925)     return self._loop.run_until_complete(task)
+(APIServer pid=424925)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925)   File "uvloop/loop.pyx", line 1515, in uvloop.loop.Loop.run_until_complete
+(APIServer pid=424925)   File "/workspace/vllm-venv/lib/python3.12/site-packages/uvloop/__init__.py", line 48, in wrapper
+(APIServer pid=424925)     return await main
+(APIServer pid=424925)            ^^^^^^^^^^
+(APIServer pid=424925)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 665, in run_server
+(APIServer pid=424925)     await run_server_worker(listen_address, sock, args, **uvicorn_kwargs)
+(APIServer pid=424925)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 679, in run_server_worker
+(APIServer pid=424925)     async with build_async_engine_client(
+(APIServer pid=424925)   File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+(APIServer pid=424925)     return await anext(self.gen)
+(APIServer pid=424925)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 99, in build_async_engine_client
+(APIServer pid=424925)     async with build_async_engine_client_from_engine_args(
+(APIServer pid=424925)   File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+(APIServer pid=424925)     return await anext(self.gen)
+(APIServer pid=424925)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 123, in build_async_engine_client_from_engine_args
+(APIServer pid=424925)     vllm_config = engine_args.create_engine_config(usage_context=usage_context)
+(APIServer pid=424925)                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 1735, in create_engine_config
+(APIServer pid=424925)     model_config = self.create_model_config()
+(APIServer pid=424925)                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=424925)   File "/workspace/vllm-venv/lib/python3.12/site-packages/vllm/engine/arg_utils.py", line 1565, in create_model_config
+(APIServer pid=424925)     return ModelConfig(
+(APIServer pid=424925)            ^^^^^^^^^^^^
+(APIServer pid=424925)   File "/workspace/vllm-venv/lib/python3.12/site-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+(APIServer pid=424925)     s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+(APIServer pid=424925) pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+(APIServer pid=424925)   Value error, Model architectures ['Qwen3_5ForConditionalGeneration'] failed to be inspected. Please check the logs for more details. [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+(APIServer pid=424925)     For further information visit https://errors.pydantic.dev/2.14/v/value_error

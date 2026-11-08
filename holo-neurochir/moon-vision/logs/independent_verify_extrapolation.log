@@ -1,0 +1,19 @@
+{
+  "source_manifest": "/workspace/astra/moon-vision/source_provenance.json",
+  "checkpoints": [
+    {
+      "path": "/dev/shm/moon-vision/holo_g025",
+      "coefficient": 0.25,
+      "status": "PASS",
+      "total_tensors": 724,
+      "selected_tensors": 297,
+      "nonvisual_tensors": 427,
+      "changed_elements": 228976750,
+      "update_l2": 5.028068901394733,
+      "bf16_serving_changed_elements": 228976750,
+      "bf16_serving_update_l2": 5.028068901394733
+    }
+  ],
+  "status": "PASS",
+  "failures": []
+}

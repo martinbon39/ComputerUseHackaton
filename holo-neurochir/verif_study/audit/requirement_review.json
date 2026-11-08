@@ -1,0 +1,1051 @@
+{
+  "audit": "strict requirement-decision semantic review",
+  "source": {
+    "path": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/verif_study/responses.jsonl",
+    "whole_file_sha256_at_review": "91859f3566f6cc353e9ae4a36ca611c0e0ced142ee50e9bbfb7ccd64fab88d55",
+    "selected_t0_raw_lines_sha256": "e2e8ed64763c6b0f6e1b5f938c310ecec6bcb79ececd0ff38d16e0c0319f2455",
+    "selected_request_rule": "request_id ends with __t0",
+    "selected_t0_rows": 268,
+    "selected_unique_request_ids": 268,
+    "non_t0_rows_present_and_ignored_at_review": 292,
+    "content_field": "response.choices[0].message.content",
+    "reasoning_fields_used": false
+  },
+  "counts": {
+    "current_parse_response": {
+      "yes": 438,
+      "no": 86,
+      "cannot tell": 120,
+      "total": 644
+    },
+    "strict_audited_distinct_model_listed_requirements": {
+      "yes": 493,
+      "no": 95,
+      "cannot tell": 126,
+      "total": 714
+    },
+    "net_delta": {
+      "yes": 55,
+      "no": 9,
+      "cannot tell": 6
+    },
+    "responses_with_corrections": 27
+  },
+  "strict_rubric": [
+    "Read message.content only and stop before VERDICT; never use reasoning or reasoning_content.",
+    "Count one decision for each distinct model-listed requirement carrying an explicit anchored rating: Status/Answer/Rating colon token, delimiter or arrow token, table rating cell, terminal parenthetical/token, or a numbered checkmark row inside an explicit evaluation block. Allowed tokens are yes, no, and cannot tell; a checkmark means yes.",
+    "A continuation-line arrow rating attaches only to the immediately preceding requirement. A structured requirements plus satisfaction JSON object is accepted only when both arrays have equal length and every satisfaction value is an allowed token.",
+    "When a line contains task-language yes/no and an explicit rating, use the explicit anchored rating at the right edge. Bare prose such as No visible setting, quoted UI/data Yes/No, satisfied/not satisfied, and cannot verify are not ratings.",
+    "When a later explicit Evaluation block rates requirements already discussed in prose, count the evaluation rows and exclude earlier analysis prose. Split multiple Requirement N plus Status clauses on one physical line.",
+    "Deduplicate repeated copies of the same semantic requirement plus rating within a response; retain identical labels attached to distinct requirements."
+  ],
+  "corrections": [
+    {
+      "request_id": "diag1__chrome__3299584d-8f11-4457-bf4c-ce98f7600250__t0",
+      "jsonl_file_line": 3,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 4,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 10,
+          "decision": "yes",
+          "text": "1. ✓ The screen shows Chrome's Settings page with the \"On start-up\" section visible"
+        },
+        {
+          "op": "add",
+          "content_line": 11,
+          "decision": "yes",
+          "text": "2. ✓ The current startup behavior is shown as \"Open the New Tab page\" (selected)"
+        },
+        {
+          "op": "add",
+          "content_line": 12,
+          "decision": "yes",
+          "text": "3. ✓ The screen shows the startup settings where funbrain.com would be configured if it were set as a startup page"
+        },
+        {
+          "op": "add",
+          "content_line": 13,
+          "decision": "yes",
+          "text": "4. ✓ The screen provides the necessary information to change the startup behavior"
+        }
+      ]
+    },
+    {
+      "request_id": "diag1__gimp__7b7617bd-57cc-468e-9c91-40c4ec2bcb3d__t0",
+      "jsonl_file_line": 14,
+      "parser_counts": {
+        "yes": 0,
+        "no": 1,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "remove",
+          "content_line": 10,
+          "decision": "no",
+          "reason": "bare task/evidence negation is not an explicit rating",
+          "text": "- No visible setting for undo steps is displayed on the screen"
+        }
+      ]
+    },
+    {
+      "request_id": "diag1__libreoffice_calc__aa3a8974-2e85-438b-b29e-a64df44deb4b__t0",
+      "jsonl_file_line": 25,
+      "parser_counts": {
+        "yes": 0,
+        "no": 5,
+        "cannot tell": 1
+      },
+      "audited_counts": {
+        "yes": 0,
+        "no": 3,
+        "cannot tell": 1
+      },
+      "operations": [
+        {
+          "op": "remove",
+          "content_line": 7,
+          "decision": "no",
+          "reason": "duplicate analysis prose before later explicit Evaluation block",
+          "text": "2. **Export to PDF** - No PDF export dialog or indication of PDF creation is visible in the current screen."
+        },
+        {
+          "op": "remove",
+          "content_line": 11,
+          "decision": "no",
+          "reason": "duplicate analysis prose before later explicit Evaluation block",
+          "text": "4. **Place it under home directory** - No file save dialog or location indicator shows the PDF being saved to the home directory."
+        }
+      ]
+    },
+    {
+      "request_id": "diag1__multi_apps__5df7b33a-9f77-4101-823e-02f863e1c1ae__t0",
+      "jsonl_file_line": 53,
+      "parser_counts": {
+        "yes": 1,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 4,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "split_compound_line",
+          "content_line": 3,
+          "parser_counted": 1,
+          "audited_count": 4,
+          "decision": "yes",
+          "text": "Requirement 1: Divide the book into several PDFs, each containing a different chapter. Status: yes. Requirement 2: Name the PDFs following the example set with chapter one. Status: yes. Requirement 3: The PDFs are created in the same directory as the original book. Status: yes. Requirement 4: The PDFs are named with a consistent pattern (e.g., \"1. Symmetric matrices and adjacency of a graph.pdf\"). Status: yes. VERDICT: COMPLETE"
+        }
+      ]
+    },
+    {
+      "request_id": "diag1__os__5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57__t0",
+      "jsonl_file_line": 67,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 1,
+        "no": 2,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 8,
+          "decision": "no",
+          "text": "- Requirement 1: The Trash window shows \"Trash is Empty,\" so the file is not in the Trash. → no"
+        },
+        {
+          "op": "add",
+          "content_line": 10,
+          "decision": "no",
+          "text": "- Requirement 3: Since the file is not in the Trash, it cannot be recovered from the Trash. → no"
+        },
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "yes",
+          "text": "- Requirement 2: The Trash window is open and accessible. → yes"
+        }
+      ]
+    },
+    {
+      "request_id": "diag1__thunderbird__dd84e895-72fd-4023-a336-97689ded257c__t0",
+      "jsonl_file_line": 72,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 1,
+        "no": 2,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "yes",
+          "text": "1. The Bills folder is selected in the folder pane. → **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 10,
+          "decision": "no",
+          "text": "2. Every email in the Bills folder has a star added. → **No** (The second email does not have a star)"
+        },
+        {
+          "op": "add",
+          "content_line": 11,
+          "decision": "no",
+          "text": "3. The task is complete. → **No**"
+        }
+      ]
+    },
+    {
+      "request_id": "diag1__vlc__aa4b5023-aef6-4ed9-bdc9-705f59ab9ad6__t0",
+      "jsonl_file_line": 78,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 0,
+        "no": 3,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "no",
+          "text": "1. The video is currently playing in VLC with the original orientation (VLC cone logo visible). The video has not been flipped yet. → **No**"
+        },
+        {
+          "op": "add",
+          "content_line": 10,
+          "decision": "no",
+          "text": "2. The file is not saved with the exact name '1984_Apple_Macintosh_Commercial.mp4'. The visible file is named '1984_Apple_Macintosh_Com...' (incomplete) and there's another file named 'flipped_1984_Apple_Macinto...' which doesn't match the required name. → **No**"
+        },
+        {
+          "op": "add",
+          "content_line": 11,
+          "decision": "no",
+          "text": "3. While there are video files on the desktop, the required file with the exact name '1984_Apple_Macintosh_Commercial.mp4' is not present. → **No**"
+        }
+      ]
+    },
+    {
+      "request_id": "diag1__vs_code__0512bb38-d531-4acf-9e7e-0add90816068__t0",
+      "jsonl_file_line": 81,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 5,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 7,
+          "decision": "yes",
+          "text": "2. **The Extensions view must be open** - The screenshot shows the Extensions panel is open on the left side of the VS Code window. ✓ **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "yes",
+          "text": "3. **The 'Install from VSIX' option must be accessible** - This option is typically found in the Extensions view's menu (three dots) or via the command palette. The screenshot shows the Extensions view is active, and the installation was completed, suggesting this option was used. ✓ **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 11,
+          "decision": "yes",
+          "text": "4. **The correct VSIX file must be selected** - The notification message \"Completed installing test extension from VSIX\" indicates the correct file was selected and processed. ✓ **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 13,
+          "decision": "yes",
+          "text": "5. **The installation must complete successfully** - The notification at the bottom right explicitly states \"Completed installing test extension from VSIX.\" ✓ **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 15,
+          "decision": "yes",
+          "text": "6. **The extension should appear in the installed extensions list** - The \"test\" extension is visible in the INSTALLED section on the left panel. ✓ **Yes**"
+        }
+      ]
+    },
+    {
+      "request_id": "diag2__chrome__9f3f70fc-5afc-4958-a7b7-3bb4fcb01805__t0",
+      "jsonl_file_line": 94,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 3,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 10,
+          "decision": "yes",
+          "text": "\"yes\","
+        },
+        {
+          "op": "add",
+          "content_line": 11,
+          "decision": "yes",
+          "text": "\"yes\","
+        },
+        {
+          "op": "add",
+          "content_line": 12,
+          "decision": "yes",
+          "text": "\"yes\""
+        }
+      ]
+    },
+    {
+      "request_id": "diag2__gimp__7a4deb26-d57d-4ea9-9a73-630f66a7b568__t0",
+      "jsonl_file_line": 98,
+      "parser_counts": {
+        "yes": 0,
+        "no": 2,
+        "cannot tell": 1
+      },
+      "audited_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 1
+      },
+      "operations": [
+        {
+          "op": "remove",
+          "content_line": 11,
+          "decision": "no",
+          "reason": "bare task/evidence negation is not an explicit rating",
+          "text": "2. No brightness value slider or adjustment is visible in the interface"
+        },
+        {
+          "op": "remove",
+          "content_line": 13,
+          "decision": "no",
+          "reason": "bare task/evidence negation is not an explicit rating",
+          "text": "4. No evidence of brightness adjustment being applied to the image"
+        }
+      ]
+    },
+    {
+      "request_id": "diag2__gimp__7b7617bd-57cc-468e-9c91-40c4ec2bcb3d__t0",
+      "jsonl_file_line": 99,
+      "parser_counts": {
+        "yes": 0,
+        "no": 1,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "remove",
+          "content_line": 10,
+          "decision": "no",
+          "reason": "bare task/evidence negation is not an explicit rating",
+          "text": "- No visible setting for undo steps is displayed on the screen"
+        }
+      ]
+    },
+    {
+      "request_id": "diag2__libreoffice_calc__1334ca3e-f9e3-4db8-9ca7-b4c653be7d17__t0",
+      "jsonl_file_line": 103,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 1,
+        "no": 2,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "no",
+          "text": "1. The cells in the screenshot appear to be of standard size, not oversized. → **no**"
+        },
+        {
+          "op": "add",
+          "content_line": 11,
+          "decision": "no",
+          "text": "3. The zoom level is at 100% (default), not reduced. → **no**"
+        },
+        {
+          "op": "add",
+          "content_line": 10,
+          "decision": "yes",
+          "text": "2. The cells are clearly visible and clickable. → **yes**"
+        }
+      ]
+    },
+    {
+      "request_id": "diag2__libreoffice_calc__3a7c8185-25c1-4941-bd7b-96e823c9f21f__t0",
+      "jsonl_file_line": 108,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 3,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 5,
+          "decision": "yes",
+          "text": "1. **Sort data according to column A in ascending order** - The data in column A (Date Time) appears to be sorted chronologically from 12/6/14 to 12/20/15, which is ascending order. **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 7,
+          "decision": "yes",
+          "text": "2. **Create a line chart with \"Date Time\" column on the X-axis** - The chart clearly shows Date Time values on the X-axis. **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "yes",
+          "text": "3. **Create a line chart with \"Quantity\" on the Y-axis** - The chart shows Quantity values on the Y-axis, with the legend confirming \"Quantity\" as the measured variable. **Yes**"
+        }
+      ]
+    },
+    {
+      "request_id": "diag2__libreoffice_impress__2cd43775-7085-45d8-89fa-9e35c0a915cf__t0",
+      "jsonl_file_line": 116,
+      "parser_counts": {
+        "yes": 0,
+        "no": 1,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "remove",
+          "content_line": 9,
+          "decision": "no",
+          "reason": "bare task/evidence negation is not an explicit rating",
+          "text": "- No auto-save settings or status indicators are visible on the current screen"
+        }
+      ]
+    },
+    {
+      "request_id": "diag2__libreoffice_impress__bf4e9888-f10f-47af-8dba-76413038b73c__t0",
+      "jsonl_file_line": 125,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 0,
+        "no": 2,
+        "cannot tell": 2
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 6,
+          "decision": "no",
+          "text": "→ **No**"
+        },
+        {
+          "op": "add",
+          "content_line": 15,
+          "decision": "no",
+          "text": "→ **No**"
+        },
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "cannot tell",
+          "text": "→ **Cannot tell**"
+        },
+        {
+          "op": "add",
+          "content_line": 12,
+          "decision": "cannot tell",
+          "text": "→ **Cannot tell**"
+        }
+      ]
+    },
+    {
+      "request_id": "extra1__gimp__7b7617bd-57cc-468e-9c91-40c4ec2bcb3d__t0",
+      "jsonl_file_line": 156,
+      "parser_counts": {
+        "yes": 0,
+        "no": 1,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "remove",
+          "content_line": 10,
+          "decision": "no",
+          "reason": "bare task/evidence negation is not an explicit rating",
+          "text": "- No visible setting for \"undo steps\" or \"minimum undo steps\" is present in the current view."
+        }
+      ]
+    },
+    {
+      "request_id": "extra1__libreoffice_calc__f9584479-3d0d-4c79-affa-9ad7afdd8850__t0",
+      "jsonl_file_line": 175,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 11,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 4,
+          "decision": "yes",
+          "text": "- **Zone 1**: Khewra Salt (F3: ¥14,451.00), Lahori Paye (F4: ¥10,781.00), Nihari (F5: ¥11,091.00) → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 5,
+          "decision": "yes",
+          "text": "- **Zone 2**: Chapli Kebab (F10: ¥13,363.00), Biryani (F11: ¥9,960.00), Sajji (F12: ¥13,296.00) → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 6,
+          "decision": "yes",
+          "text": "- **Zone 3**: Sohan Halwa (F17: ¥11,176.00), Nan Khatai (F18: ¥16,530.00), Gajrela (F19: ¥15,261.00) → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "yes",
+          "text": "- **Zone 1**: F6: ¥36,323.00 → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 10,
+          "decision": "yes",
+          "text": "- **Zone 2**: F13: ¥36,619.00 → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 11,
+          "decision": "yes",
+          "text": "- **Zone 3**: F20: ¥42,966.00 → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 14,
+          "decision": "yes",
+          "text": "- **Q1**: B2 (¥4,142.00) + B10 (¥2,617.00) + B17 (¥1,117.00) = ¥7,876.00 → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 15,
+          "decision": "yes",
+          "text": "- **Q2**: C2 (¥4,867.00) + C10 (¥3,402.00) + C17 (¥3,339.00) = ¥11,608.00 → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 16,
+          "decision": "yes",
+          "text": "- **Q3**: D2 (¥3,072.00) + D10 (¥4,649.00) + D17 (¥4,486.00) = ¥12,207.00 → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 17,
+          "decision": "yes",
+          "text": "- **Q4**: E2 (¥2,370.00) + E10 (¥2,695.00) + E17 (¥2,233.00) = ¥7,298.00 → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 20,
+          "decision": "yes",
+          "text": "- **F20**: ¥42,966.00 (sum of all products in Zone 3) → Yes"
+        }
+      ]
+    },
+    {
+      "request_id": "extra1__libreoffice_impress__04578141-1d42-4146-b9cf-6fab4ce5fd74__t0",
+      "jsonl_file_line": 172,
+      "parser_counts": {
+        "yes": 3,
+        "no": 1,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 4,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "change",
+          "content_line": 13,
+          "from": "no",
+          "to": "yes",
+          "reason": "prefer explicit terminal rating over task-language negation at line start",
+          "text": "4. No color variations: The colors appear to be the standard yellow, red, and green as specified - **Yes**"
+        }
+      ]
+    },
+    {
+      "request_id": "extra1__libreoffice_impress__08aced46-45a2-48d7-993b-ed3fb5b32302__t0",
+      "jsonl_file_line": 170,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 2,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 8,
+          "decision": "yes",
+          "text": "1. The title on slide 2 is \"Note\" → **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "yes",
+          "text": "2. The title is right-aligned → **Yes**"
+        }
+      ]
+    },
+    {
+      "request_id": "extra1__libreoffice_impress__7ae48c60-f143-4119-b659-15b8f485eb9a__t0",
+      "jsonl_file_line": 177,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 1,
+        "no": 0,
+        "cannot tell": 3
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 10,
+          "decision": "cannot tell",
+          "text": "1. Slide 3: Height = 20cm? **cannot tell** (slide 3 is visible in thumbnail but current view is slide 6)"
+        },
+        {
+          "op": "add",
+          "content_line": 11,
+          "decision": "cannot tell",
+          "text": "2. Slide 4: Height = 30cm? **cannot tell** (slide 4 is visible in thumbnail but current view is slide 6)"
+        },
+        {
+          "op": "add",
+          "content_line": 13,
+          "decision": "cannot tell",
+          "text": "4. Slide 6: Height = 30cm? **cannot tell** (only one image is currently selected; second image height not visible)"
+        },
+        {
+          "op": "add",
+          "content_line": 12,
+          "decision": "yes",
+          "text": "3. Slide 6: Height = 25cm? **yes** (current slide shows height = 25.00 cm in Properties panel)"
+        }
+      ]
+    },
+    {
+      "request_id": "extra1__multi_apps__2373b66a-092d-44cb-bfd7-82e86e7a3b4d__t0",
+      "jsonl_file_line": 189,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 2,
+        "no": 1,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 5,
+          "decision": "yes",
+          "text": "1. **Use the `sar` command from sysstat toolkit** - The terminal output shows CPU statistics with timestamps and metrics, which appears to be from the `sar` command. The format matches expected `sar -u` output. → **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "yes",
+          "text": "3. **Save the output to 'System_Resources_Report.txt' on Desktop** - A file named \"System_Resources_Rep...\" is visible on the desktop, which appears to be the report file. → **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 7,
+          "decision": "no",
+          "text": "2. **Collect CPU statistics every second for 30 seconds** - The terminal shows data from 11:28:15 to 11:28:25, which is only 11 seconds of data, not the required 30 seconds. → **No**"
+        }
+      ]
+    },
+    {
+      "request_id": "extra1__multi_apps__4c26e3f3-3a14-4d86-b44a-d3cedebbb487__t0",
+      "jsonl_file_line": 190,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 0,
+        "no": 3,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "no",
+          "text": "1. The image brightness is currently at 40% (as shown in the Properties panel), but no adjustment has been made yet. **No**"
+        },
+        {
+          "op": "add",
+          "content_line": 10,
+          "decision": "no",
+          "text": "2. The image has not been saved to the Desktop. **No**"
+        },
+        {
+          "op": "add",
+          "content_line": 11,
+          "decision": "no",
+          "text": "3. The file has not been named \"background.png\". **No**"
+        }
+      ]
+    },
+    {
+      "request_id": "extra1__os__5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57__t0",
+      "jsonl_file_line": 204,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 1,
+        "no": 2,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 8,
+          "decision": "no",
+          "text": "- Requirement 1: The Trash window shows \"Trash is Empty,\" so the file is not in the Trash. → no"
+        },
+        {
+          "op": "add",
+          "content_line": 10,
+          "decision": "no",
+          "text": "- Requirement 3: Since the file is not in the Trash, it cannot be recovered from the Trash. → no"
+        },
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "yes",
+          "text": "- Requirement 2: The Trash window is open and accessible. → yes"
+        }
+      ]
+    },
+    {
+      "request_id": "extra2__gimp__7a4deb26-d57d-4ea9-9a73-630f66a7b568__t0",
+      "jsonl_file_line": 218,
+      "parser_counts": {
+        "yes": 0,
+        "no": 1,
+        "cannot tell": 1
+      },
+      "audited_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 1
+      },
+      "operations": [
+        {
+          "op": "remove",
+          "content_line": 11,
+          "decision": "no",
+          "reason": "bare task/evidence negation is not an explicit rating",
+          "text": "2. No brightness value is visible in the interface to confirm it was reduced"
+        }
+      ]
+    },
+    {
+      "request_id": "extra2__libreoffice_calc__f9584479-3d0d-4c79-affa-9ad7afdd8850__t0",
+      "jsonl_file_line": 257,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 12,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 4,
+          "decision": "yes",
+          "text": "- **Zone 1**: Khewra Salt (F3: ¥14,451.00), Lahori Paye (F4: ¥10,781.00), Nihari (F5: ¥11,091.00) → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 5,
+          "decision": "yes",
+          "text": "- **Zone 2**: Chapli Kebab (F10: ¥13,363.00), Biryani (F11: ¥9,960.00), Sajji (F12: ¥13,296.00) → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 6,
+          "decision": "yes",
+          "text": "- **Zone 3**: Sohan Halwa (F17: ¥11,175.00), Nan Khatai (F18: ¥16,500.00), Gajrela (F19: ¥15,261.00) → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "yes",
+          "text": "- **Zone 1**: F6: ¥36,323.00 → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 10,
+          "decision": "yes",
+          "text": "- **Zone 2**: F13: ¥36,619.00 → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 11,
+          "decision": "yes",
+          "text": "- **Zone 3**: F20: ¥42,966.00 → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 14,
+          "decision": "yes",
+          "text": "- **Zone 1**: Q1 (C3:C5), Q2 (C3:C5), Q3 (C3:C5), Q4 (C3:C5) → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 15,
+          "decision": "yes",
+          "text": "- **Zone 2**: Q1 (C10:C12), Q2 (C10:C12), Q3 (C10:C12), Q4 (C10:C12) → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 16,
+          "decision": "yes",
+          "text": "- **Zone 3**: Q1 (C17:C19), Q2 (C17:C19), Q3 (C17:C19), Q4 (C17:C19) → Yes"
+        },
+        {
+          "op": "add",
+          "content_line": 19,
+          "decision": "yes",
+          "text": "- **Products**: Khewra Salt, Lahori Paye, Nihari, Chapli Kebab, Biryani, Sajji, Sohan Halwa, Nan Khatai, Gajrela → Yes (all products have totals in their respective zones)"
+        },
+        {
+          "op": "add",
+          "content_line": 22,
+          "decision": "yes",
+          "text": "- **Zones**: Zone 1, Zone 2, Zone 3 → Yes (each zone has a total row with a value in column F)"
+        },
+        {
+          "op": "add",
+          "content_line": 28,
+          "decision": "yes",
+          "text": "- **Quarters**: Q1, Q2, Q3, Q4 → Yes (each quarter has a total row with a value in column F)"
+        }
+      ]
+    },
+    {
+      "request_id": "extra2__multi_apps__8df7e444-8e06-4f93-8a1a-c5c974269d82__t0",
+      "jsonl_file_line": 258,
+      "parser_counts": {
+        "yes": 0,
+        "no": 0,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 4,
+        "no": 0,
+        "cannot tell": 1
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 6,
+          "decision": "yes",
+          "text": "→ **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "yes",
+          "text": "→ **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 12,
+          "decision": "yes",
+          "text": "→ **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 15,
+          "decision": "yes",
+          "text": "→ **Yes**"
+        },
+        {
+          "op": "add",
+          "content_line": 18,
+          "decision": "cannot tell",
+          "text": "→ **Cannot tell**"
+        }
+      ]
+    },
+    {
+      "request_id": "extra2__os__5ea617a3-0e86-4ba6-aab2-dac9aa2e8d57__t0",
+      "jsonl_file_line": 267,
+      "parser_counts": {
+        "yes": 0,
+        "no": 1,
+        "cannot tell": 0
+      },
+      "audited_counts": {
+        "yes": 0,
+        "no": 3,
+        "cannot tell": 0
+      },
+      "operations": [
+        {
+          "op": "add",
+          "content_line": 9,
+          "decision": "no",
+          "text": "1. The Trash window shows \"Trash is Empty,\" so the file is not present in the Trash. → **No**"
+        },
+        {
+          "op": "add",
+          "content_line": 11,
+          "decision": "no",
+          "text": "3. The file is not in a recoverable state in the Trash. → **No**"
+        }
+      ]
+    }
+  ],
+  "special_cases": [
+    {
+      "request_id": "diag2__chrome__9f3f70fc-5afc-4958-a7b7-3bb4fcb01805__t0",
+      "finding": "Three standalone quoted yes values on content lines 10-12 are explicit positional ratings because the satisfaction array has length three and aligns with the three requirements on lines 5-7."
+    },
+    {
+      "request_id": "extra2__libreoffice_calc__f9584479-3d0d-4c79-affa-9ad7afdd8850__t0",
+      "finding": "The response is length-truncated and repeats rating blocks through content line 184. The requirement audit counts 12 unique arrow-yes requirement/rating pairs on lines 4,5,6,9,10,11,14,15,16,19,22,28; later exact semantic repeats are ignored. This does not rehabilitate its truncated verdict."
+    }
+  ],
+  "conservative_exclusions_examples": [
+    {
+      "request_id": "diag1__libreoffice_calc__1273e544-688f-496b-8d89-3e0f40aa0606__t0",
+      "content_line": 11,
+      "reason": "Cannot verify prose is not the exact allowed token cannot tell"
+    },
+    {
+      "request_id": "diag2__chrome__99146c54-4f37-4ab8-9327-5f3291665e1e__t0",
+      "content_line": 13,
+      "reason": "No sites added is quoted UI/data text"
+    },
+    {
+      "request_id": "diag1__multi_apps__f5c13cdd-205c-4719-a562-348ae5cd1d91__t0",
+      "content_line": 11,
+      "reason": "Yes is a spreadsheet cell value, not an evaluation rating"
+    },
+    {
+      "request_id": "diag2__libreoffice_impress__7dbc52a6-11e0-4c9a-a2cb-1e36cfda80d8__t0",
+      "content_lines": [
+        8,
+        9
+      ],
+      "reason": "satisfied/not satisfied prose is excluded under the explicit-token metric"
+    }
+  ],
+  "limitations": [
+    "This is a manual semantic correction map over analyze.py parse_response output, not a proposed code change.",
+    "Counts measure explicit model-emitted requirement ratings, not whether the ratings are visually or factually correct.",
+    "The T0 selection hash is the stable provenance key; the whole responses file gained non-T0 rows during the review, all of which were ignored."
+  ]
+}
