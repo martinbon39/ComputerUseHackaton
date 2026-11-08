@@ -27,10 +27,12 @@ Our GPU and Modal budget monitoring runs on code built through the Devin API (De
 > [`feci-guard-demo-2min-martin.mp4`](holo-neurochir/video_demo/feci-guard-demo-2min-martin.mp4). Hosted copies, links expire 2026-12-08:
 > [video](https://argos.martinbonan.com/artifacts/feci-guard-demo-2min.mp4?t=mxeo98l1.hUt5zJJPcaF9ltPV6LbXpk_cvu4DytlL) ·
 > [Martin's voice](https://argos.martinbonan.com/artifacts/feci-guard-demo-2min-martin.mp4?t=mxeoroh9.EFSAebmQUH7HRtcZ-NGT64plRX584L4p).
+> *Recorded before the post-submission review: its claim that the Guard halves false "done" is superseded by §7 of the paper (no causal claim).*
 >
 > **Extended video:** [`holo-neurochir/video_demo/feci-guard-wall.mp4`](holo-neurochir/video_demo/feci-guard-wall.mp4)
 > (file in this repo, 2:54; generator in [`holo-neurochir/video_wall/`](holo-neurochir/video_wall/)). Hosted copy, link expires
 > 2026-12-08: [video](https://argos.martinbonan.com/artifacts/feci-guard-wall-video.mp4?t=mxemmn8w.RZNeZKw_tnK0Nezq6OvZ6exYV6aMCSOx) · [interactive page](https://argos.martinbonan.com/artifacts/feci-guard-wall.html?t=mxemmnav.usCClc-xmdZJ2WZb3TM3Rqyt64iSkwJL).
+> *Recorded before the post-submission review: its claim that the Guard halves false "done" is superseded by §7 of the paper (no causal claim).*
 >
 > **Guard repair replay:** [`holo-neurochir/demo_live/repair_calc.html`](holo-neurochir/demo_live/repair_calc.html): the Guard refuses a
 > false "done" and the agent repairs it, step by step ([hosted copy](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxelxklo.a9rcuMpAex2GppIQuTZdr5GyIPal9zYu), link expires).
@@ -234,9 +236,11 @@ Files in this repository come first. Hosted copies are signed links that expire 
   Hosted copies, link expires: [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxendzty.YtNRzC2XZbOfsCPfKb43m0vI_OuDRaJs) · [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxendzvz.7zzezsDOwwrahm95moLSz3Efcg3-IAzE).
 - **Demo video, 2 min** (submission): [`holo-neurochir/video_demo/feci-guard-demo-2min.mp4`](holo-neurochir/video_demo/feci-guard-demo-2min.mp4),
   generator in [`holo-neurochir/video_wall/demo2min/`](holo-neurochir/video_wall/demo2min/). Hosted copy, link expires: [video](https://argos.martinbonan.com/artifacts/feci-guard-demo-2min.mp4?t=mxeo98l1.hUt5zJJPcaF9ltPV6LbXpk_cvu4DytlL).
+  *Recorded before the post-submission review: its claim that the Guard halves false "done" is superseded by §7 of the paper (no causal claim).*
 - **Extended video, 2:54**: [`holo-neurochir/video_demo/feci-guard-wall.mp4`](holo-neurochir/video_demo/feci-guard-wall.mp4),
   generator in [`holo-neurochir/video_wall/`](holo-neurochir/video_wall/). Hosted copies, links expire: [video](https://argos.martinbonan.com/artifacts/feci-guard-wall-video.mp4?t=mxemmn8w.RZNeZKw_tnK0Nezq6OvZ6exYV6aMCSOx) ·
   [interactive page](https://argos.martinbonan.com/artifacts/feci-guard-wall.html?t=mxemmnav.usCClc-xmdZJ2WZb3TM3Rqyt64iSkwJL).
+  *Recorded before the post-submission review: its claim that the Guard halves false "done" is superseded by §7 of the paper (no causal claim).*
 - **Earlier demo video**: [`holo-neurochir/video_demo/holo-demo-video.mp4`](holo-neurochir/video_demo/holo-demo-video.mp4)
   (13 MB). Hosted copy, link expires: [holo-demo-video.mp4](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7).
 - **Guard repair replay** (the Guard refuses a false "done" on `calc/1de60575`, the agent renames the sheet, the second

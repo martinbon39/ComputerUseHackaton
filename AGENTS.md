@@ -37,6 +37,7 @@ bash jury_kit/quickstart.sh               # all of the above + checks the 2 demo
 
 Demo video, 2 min: `holo-neurochir/video_demo/feci-guard-demo-2min.mp4` (generator: `holo-neurochir/video_wall/demo2min/`).
 Extended video, 2:54: `holo-neurochir/video_demo/feci-guard-wall.mp4` (generator: `holo-neurochir/video_wall/`).
+Both videos were recorded before the post-submission review: their claim that the Guard halves false "done" is superseded by §7 of the paper (no causal claim).
 Demo of the Guard (open in a browser, self-contained): `holo-neurochir/demo_live/repair_calc.html`, a recorded
 refusal → repair on `libreoffice_calc/1de60575` (one episode, not an average effect).
 
