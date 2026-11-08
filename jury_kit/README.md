@@ -27,7 +27,7 @@ Paper (signed links, valid 30 days): [arXiv version](https://argos.martinbonan.c
 
 Pinned inputs for level 2: `Hcompany/Holo-3.1-4B@8c88265a5a159bfd1492db9243733dd2e6e04a6e`, `Qwen/Qwen3.5-4B@851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a`, `OnAnOrange/CUA-Lite-Qwen3.5-4B-ScaleCUA-gpt5_5-epoch3-public@df6eba93efb2df3ed9adc810e0f7f4e038959c74`.
 
-What was and was not tested before release: level 1 run in full; level 2 formula checked bit-for-bit on 2 tensors against a checkpoint built by our own merge code (layers 0–11 variant), full rebuild not run; level 3 message construction checked identical to our harness and tokenisation checked, the model forward pass was not run on a GPU by the author. Read the caveats in RESULTS.md.
+What was and was not tested before release: level 1 run in full; level 2: the full merged checkpoint was rebuilt on an independent machine with our merge script (`merge_v2.py`, same formula) and **reproduced bit-for-bit** the sha256 of both safetensors shards (`b7acdd12…`, `6f88c913…`); `rebuild_merge.py` itself was checked on 2 tensors only, its full `--build` was not run; level 3 message construction checked identical to our harness and tokenisation checked, the model forward pass was not run on a GPU by the author. Read the caveats in RESULTS.md.
 
 Harness caveat: our OSWorld harness (RealtimeGUI @ a763361) is more permissive than the official Holo adapter on infeasible tasks, so absolute scores are not comparable with H's published ones. Only the paired comparisons are meaningful.
 
@@ -52,7 +52,7 @@ Papier (liens signés, valables 30 jours) : [version arXiv](https://argos.martin
 2. **Niveau 2, `python rebuild_merge.py --build SORTIE`** : reconstruit le checkpoint fusionné depuis trois modèles publics à révisions épinglées et compare les sha256 des safetensors aux nôtres (`expected_sha256.json`). `--check 2 --merged DOSSIER` ne compare que 2 tenseurs.
 3. **Niveau 3, `probe_decision.py` ou `probe_decision.ipynb`** (Colab T4, fp16) : rejoue 4 contextes enregistrés (`contexts/`) et affiche P(answer) contre les autres outils, original contre fusionné.
 
-Testé avant publication : niveau 1 en entier ; niveau 2 : formule vérifiée bit à bit sur 2 tenseurs contre un checkpoint construit par notre code (variante couches 0–11), reconstruction complète non lancée ; niveau 3 : construction des messages identique à notre harnais et tokenisation vérifiée, passe avant du modèle non exécutée sur GPU par l'auteur.
+Testé avant publication : niveau 1 en entier ; niveau 2 : checkpoint fusionné complet reconstruit sur une machine indépendante avec notre script (`merge_v2.py`, même formule), sha256 des deux shards **reproduits bit à bit** (`b7acdd12…`, `6f88c913…`) ; `rebuild_merge.py` lui-même vérifié sur 2 tenseurs seulement, son `--build` complet non lancé ; niveau 3 : construction des messages identique à notre harnais et tokenisation vérifiée, passe avant du modèle non exécutée sur GPU par l'auteur.
 
 Réserve de harnais : notre harnais OSWorld (RealtimeGUI @ a763361) est plus permissif que l'adaptateur officiel de Holo sur les tâches infaisables ; les scores absolus ne sont pas comparables à ceux publiés par H. Seules les comparaisons appariées ont un sens.
 
