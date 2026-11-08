@@ -1,0 +1,9 @@
+# Fixed behavioural probe steps for answer-levers (probe_answer_rate.py): 2 fs+ final answers, 2 fs- final answers,
+# 2 healthy mid-trajectory steps of successful tasks. All in-sample results_diag, outside confirm and outside the
+# eager_lm calibration set. One step per line; '~' is expanded by the caller.
+~/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/47543840-672a-467d-80df-8f7c3b9788c9
+~/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/480bcfea-d68f-4aaa-a0a9-2589ef319381
+~/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/c867c42d-a52d-4a24-8ae3-f75d256b5618
+~/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/ed43c15f-00cb-4054-9c95-62c880865d68
+~/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/multi_apps/8df7e444-8e06-4f93-8a1a-c5c974269d82@15
+~/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/libreoffice_impress/af2d657a-e6b3-4c6a-9f67-9e3ed015974c@9
