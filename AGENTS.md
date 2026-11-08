@@ -39,7 +39,7 @@ bash jury_kit/quickstart.sh               # both of the above + checks the demo 
 | Guard repair: 5/18 vs 2/18 branches, +16.7 [0, +44] | measured, **not distinguishable from 0** | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/repair/results.json` | read |
 | Guard + escalation to Holo4 | **running** (interim 4/10 vs 0/10 at 09:51 UTC; do not treat as final) | PR #1 (`rescue_bench/`) | read the PR |
 | Holo + Guard on the 120-task test split | **running**, pre-registered | `holo-neurochir/report/PREREG_ONLINE_GUARD.md` | read |
-| Guard v2 (Opus + history) on held-out half | **running**, protocol fixed before results | `holo-neurochir/feci_guard/v2/PROTOCOL.md` | read |
+| Guard v2 (Opus + history) vs v1 on the held-out half, used once: detection +13.8 pts [+2.9, +30] (20/29 vs 16/29); false rejection +4.3 [−5, +15] (15/116 vs 10/116) | measured offline, not run online | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/v2/PROTOCOL.md`, `v2/runs/` | read |
 | "A verifier can be added to any agent with one call" | design property, measured on Holo only | `feci_guard.py` docstring | read 61 lines |
 | End-to-end plumbing: refusal → escalation → re-check → official score | measured on 1 task (no efficacy claim) | `holo-neurochir/feci_guard/smoke/impress_550ce7e7_rescue_guard.md` | read |
 

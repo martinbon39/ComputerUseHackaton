@@ -84,7 +84,7 @@ resamples, seed 0) for differences, and Wilson intervals for proportions.
 | 8 | Guard repair on replayed false successes | 5/18 vs 2/18 branches repaired (9 episodes × 2); +16.7 pts [0, +44], sign test p=0.5 | **not distinguishable from 0** | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md) |
 | 9 | Guard + escalation to Holo4, vs Holo4 alone | interim snapshot 09:51 UTC: 4/10 vs 0/10, +40 pts [0, +80], 20/48 branches | **running**, not frozen | [PR #1](https://github.com/martinbon39/ComputerUseHackaton/pull/1) |
 | 10 | Holo + Guard on the 120-task OSWorld test split | pre-registered ([`PREREG_ONLINE_GUARD.md`](holo-neurochir/report/PREREG_ONLINE_GUARD.md)) | **running** | [`report/PREREG_ONLINE_GUARD.md`](holo-neurochir/report/PREREG_ONLINE_GUARD.md) |
-| 11 | Guard v2 (Opus + history), single held-out evaluation | dev: 31/37 detection, 8/86 false rejection; held-out: evaluated once | **running** | [`feci_guard/v2/PROTOCOL.md`](holo-neurochir/feci_guard/v2/PROTOCOL.md) |
+| 11 | Stronger judge: Guard v2 (Opus + the 2 previous screens + action list) vs v1, held-out half used once | detects 20/29 (69 %) vs 16/29 (55 %): **+13.8 pts [+2.9, +30]**; false rejection 15/116 (12.9 %) vs 10/116 (8.6 %): +4.3 [−5, +15] | **more detection, significant**; offline only, not run online | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md#guard-v2-sprint-s1-offline-judge_bench-corpus-v2protocolmd-independently-recomputed), [`v2/PROTOCOL.md`](holo-neurochir/feci_guard/v2/PROTOCOL.md) |
 
 Caveats that change how to read the table:
 - Row 7: the Holo judges used a different prompt than the Claude verifier, so the gap mixes model and prompt
@@ -170,7 +170,9 @@ on GitHub runners. A judge cannot run them in 5 minutes.
 
 - **Paper**: *Cogito, Ergo Feci: False Success and the Limits of Weight Surgery in a Computer-Use Agent*.
   [arXiv-style PDF](holo-neurochir/paper/main.pdf) · [NeurIPS-format PDF](holo-neurochir/paper/neurips.pdf) (with the filled
-  reproducibility checklist). Every number is regenerated from `paper/data/` by `paper/build.sh`.
+  reproducibility checklist). Every number is regenerated from `paper/data/` by `paper/build.sh`. Hosted copies:
+  [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxejdbei.e3VHNdhebV_SJ8R0wLl3xTjkUyMV-i1O) ·
+  [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxejdbgj.RgncRPbt6dqkr8uMBww4pW_vSoe45k5K).
 - **Demo replay page** (hosted copy): [holo-demo-faux-fini.html](https://argos.martinbonan.com/artifacts/holo-demo-faux-fini.html?t=mxec08h4.ypUQurEtCFn45XOw47vn5eHhOEl5Gyfd)
 - **Agent runner**: [martinbon39/holo-osworld-runner](https://github.com/martinbon39/holo-osworld-runner)
 - **Model studied**: [Hcompany/Holo-3.1-4B](https://huggingface.co/Hcompany/Holo-3.1-4B) @ `8c88265a`
@@ -201,7 +203,7 @@ one human supervised:
   agent to make them visible exists but is not measured.
 - The Guard costs ~$0.03 and 5–10 s per `answer`, and relies on a closed model (Claude Sonnet).
 - The offline verifier comparison mixes prompt and model (row 7 caveat).
-- Rows 9–11 are still running at the time of writing. Read the linked files for their final state.
+- Rows 9–10 are still running at the time of writing. Read the linked files for their final state.
 
 ## Acknowledgements and license
 
@@ -228,7 +230,8 @@ IC95 [−4,3 ; +8,0], donc aucun gain n'est revendiqué (règle fixée avant de 
 de la tâche, vérifie chacune sur l'écran, refuse le faux « fini » en disant ce qui manque, puis l'agent répare ou
 passe la main à Holo4-27B. Hors ligne, sur les mêmes 268 épisodes, il détecte 68 % des faux succès [56–78] pour 10 %
 de vrais rejetés à tort [7–15]. La réparation (5/18 contre 2/18) ne se distingue pas encore de zéro. L'escalade vers
-Holo4 et le test en ligne sur 120 tâches sont en cours.
+Holo4 et le test en ligne sur 120 tâches sont en cours. Un juge plus fort (Opus avec l'historique des écrans)
+détecte 69 % des faux succès contre 55 % sur une moitié réservée utilisée une seule fois (+13,8 points [+2,9 ; +30]).
 
 **Vérifier en 5 minutes, sans GPU ni clé** : `python3 jury_kit/verify_results.py`, `python3 jury_kit/replay_guard.py`,
 `bash jury_kit/quickstart.sh`. Papier : [`holo-neurochir/paper/main.pdf`](holo-neurochir/paper/main.pdf).
