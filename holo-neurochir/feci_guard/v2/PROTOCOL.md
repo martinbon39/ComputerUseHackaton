@@ -12,3 +12,4 @@
 - Note (09:31): v1's held-out scores (existing judge_bench responses, no v2 call) were printed while testing score_v2.py: 16/29 detection, 10/116 false rejection. No v2 variant has touched the held-out half.
 - Dev results (09:46): v1 29/37 det 11/86 FR; a 28/37, 7/86; b 29/37, 8/86; c 35/37, 33/86. Offline ensembles were looked at (no calls): a|b 31/37, 11/86 (fails FR). The one combination run: ab (opus + history).
 - ab on dev: 31/37 det, 8/86 FR. SELECTED by the rule (highest detection with dev FR <= 10 %): ab = opus + history (2 previous screens + action list), non-strict prompt. Held-out evaluation launched once at 09:54 UTC.
+- Held-out (10:04), ab, single run: 20/29 detection [51–83], 15/116 false rejection [8–20]; v1 on the same half 16/29, 10/116. Paired task bootstrap: detection +13.8 pts [+2.9, +30.0], false rejection +4.3 pts [−5.2, +15.2]. Target (>= 80 % / <= 10 %) NOT met.
