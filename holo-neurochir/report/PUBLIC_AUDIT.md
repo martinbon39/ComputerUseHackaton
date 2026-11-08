@@ -194,6 +194,28 @@ Audit du 2026-11-08 (repo-audit, flotte argos), à la demande de ares. Il ne ré
   - Les 14 PDF sont des figures et le papier, avec « Anonymous Authors ».
   - Je n'ai pas ouvert un par un les PNG de `screenshot/`, de `verif_study/images` ni de `diagnostic_examples`. Ce sont des sorties automatiques d'OSWorld.
 
+## Addendum : commit `4c8b1ab` (repo-ready, 10:13 UTC, 50 fichiers de synthèse)
+
+Ajouté à la demande de ares après l'audit principal. J'ai scanné le diff complet (6 302 lignes ajoutées) avec les mêmes motifs.
+
+- **OK : `Bearer cog_…` factices.**
+  - Les quatre occurrences sont `holo-neurochir/devin/README.md` (« `Authorization: Bearer cog_…` », « clé `cog_…` dans `~/.devin_key` ») et `holo-neurochir/pitch/PITCH.md` (deux lignes « en-tête `Authorization: Bearer cog_…` », « clé de service Devin (`cog_…`) »).
+  - Elles sont toutes littéralement `cog_` suivi d'une ellipsis `…`. Ce sont donc des gabarits de documentation : aucune valeur de clé n'y figure.
+  - La seule autre chaîne qui ressemble à une clé, `sk-disjoint-from-construction`, est un libellé de split.
+- **OK : aucun autre secret.** Pas de `hf_`, `sk-`, `ghp_`, Modal `ak-`/`as-`, `hk-`, `rpa_` ni clé privée.
+- **OK : aucune donnée de vie privée nouvelle.**
+  - Aucune occurrence de `emilejouannet`, d'IP de pod ou de VPS, d'e-mail, de téléphone, d'Oopercast/Ooper/Astry ni de `to_session`.
+  - Le seul nom propre de personne est Esben Kran (Apart Research), cité avec un lien public LessWrong dans `pitch/PITCH.md:124`.
+- **À NETTOYER (rattaché à N1) : deux URL `?t=` signées.**
+  - `holo-guard-repair.html?t=mxehqaqs…`, que je n'avais pas encore recensée, se trouve dans un des fichiers de synthèse.
+  - `holo-pitch-deck.html?t=mxdng2xy…` est dans `pitch/PITCH.md`. Elle était déjà relevée en N1.
+  - Toutes deux sont partageables, et chaque jeton est limité à son propre artifact : on peut les garder ou les révoquer côté argos.
+- **À NETTOYER (rattaché à N6 et N10) :**
+  - `astra-evo/HANDOFF_ARES.md` est un compte rendu de worker à ares, sans secret.
+  - `demo_live/CHECKLIST_JOUR_J.md` contient le tunnel `ssh -N -L 8765:127.0.0.1:8765 orbit` (alias d'hôte, sans IP) et le chemin `/home/orbit/.local/bin/claude`.
+  - On trouve aussi des chemins `/home/orbit/…` dans les rapports `astra-*`.
+- **Verdict.** `4c8b1ab` n'ajoute aucun BLOQUANT.
+
 ## Vérification
 
 Un vérificateur indépendant, qui n'a pas écrit ce rapport, a refait la recherche de secrets sur les 3 475 blobs avec ses propres motifs, archives décompressées comprises. Il n'a trouvé ni secret ni donnée privée manquée. Il a aussi recontrôlé les commits, chemins et comptages cités, et j'ai corrigé les chiffres qu'il a trouvés faux.
