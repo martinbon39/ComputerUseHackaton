@@ -12,6 +12,7 @@ Everything below can be checked offline in seconds with Python >= 3.9 standard l
 
 ## Verify
 - [jury_kit/verify_results.py](jury_kit/verify_results.py): recomputes the online paired comparisons from per-task scores
+- [jury_kit/recount_judges.py](jury_kit/recount_judges.py): recounts the three judges from their raw recorded responses
 - [jury_kit/replay_guard.py](jury_kit/replay_guard.py): replays the frozen Feci Guard decision on 268 recorded episodes
 - [jury_kit/guard_live.py](jury_kit/guard_live.py): one live verifier call (claude CLI or Anthropic key)
 - [jury_kit/README.md](jury_kit/README.md): model-side checks (checkpoint rebuild bit-for-bit, decision probe on GPU)

@@ -16,6 +16,7 @@ which claims are **measured** versus **only predicted or still running**. Human-
 ## Verify everything that can be verified offline (≈ 1 s each, Python ≥ 3.9 stdlib only)
 ```bash
 python3 jury_kit/verify_results.py        # exit 0; prints "+1.94 pt CI95 [-4.3; +8.0] ... NO DETECTABLE GAIN"
+python3 jury_kit/recount_judges.py        # exit 0; the 3 judges recounted from raw responses (35/66, 31/66, 45/66)
 python3 jury_kit/replay_guard.py --show 2 # exit 0; prints "45/66 = 68 % [56-78]", "21/202 = 10 % [7-15]", gap "+58 [+41, +74]"
 bash jury_kit/quickstart.sh               # both of the above + checks the demo page; ends with "QUICKSTART OK"
 ```
@@ -30,16 +31,16 @@ bash jury_kit/quickstart.sh               # both of the above + checks the demo 
 ## Claim → evidence map
 | Claim | Status | Evidence (path) | How to check |
 |---|---|---|---|
-| 29/51 failures (57 %) are false "done"; score 56.7 % on 119 scored tasks | measured | `holo-neurochir/paper/generated/num_osw_diag.tex`, paper §3 | read |
-| Holo self-judge: 35/66 detected, 97/202 wrongly rejected | measured | `holo-neurochir/judge_bench/RESULT.json`, `REPORT.md` | `judge_bench/independent_recompute.py` (paths are absolute to our server) |
+| 29/51 failures (57 %) are false "done"; success 66/119 (55.5 %) | measured | `holo-neurochir/paper/generated/num_osw_diag.tex`, paper §3 | read |
+| Holo self-judge: 35/66 detected, 97/202 wrongly rejected (268 screens, 90 tasks) | measured | `holo-neurochir/judge_bench/RESULT.json`, `REPORT.md`, `verif_study/responses.jsonl` | `python3 jury_kit/recount_judges.py` |
 | Feci Guard verifier: 45/66 detected, 21/202 wrongly rejected, gap +58 [+41, +74] | measured | `holo-neurochir/judge_bench/claude_responses.jsonl` | `python3 jury_kit/replay_guard.py` |
 | Merge vs original online: +1.94 [−4.3, +8.0], n=165 → no gain | measured | `jury_kit/results/scores.csv` | `python3 jury_kit/verify_results.py` |
 | AlphaEdit +2.2 [−13.3, +17.8] n=45; ExPO −1.5 [−8.9, +5.7] n=120 → no gain | measured | same | same |
 | Merged checkpoint rebuilt bit-for-bit from 3 pinned public models | measured (on an independent machine) | `jury_kit/expected_sha256.json`, `jury_kit/README.md` | `python3 jury_kit/rebuild_merge.py --check 2 --merged DIR` |
 | Guard repair: 5/18 vs 2/18 branches, +16.7 [0, +44] | measured, **not distinguishable from 0** | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/repair/results.json` | read |
 | Guard + escalation to Holo4 vs Holo4 alone | **running** (interim: 5 strict-valid episodes, 4/10 vs 0/10 branches repaired, +0.40 [0, 0.80]; two repairs independently audited: calc/37608790, impress/70bca0cc). Not final | draft PR #1, `holo-neurochir/rescue_bench/REPORT.md`, `MEASURED_REPAIRS_REVIEW.md` | read the PR |
-| Holo + Guard on the 120-task test split | **running**, pre-registered | `holo-neurochir/report/PREREG_ONLINE_GUARD.md` | read |
-| Guard v2 (Opus + history) vs v1 on the held-out half, used once: detection +13.8 pts [+2.9, +30] (20/29 vs 16/29); false rejection +4.3 [−5, +15] (15/116 vs 10/116) | measured offline, not run online | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/v2/PROTOCOL.md`, `v2/runs/` | read |
+| Holo + Guard on the 120-task test split | **running** (first launch lost to a pod outage with 0 tasks, amendment 2; relaunched on Modal), pre-registered, no result yet | `holo-neurochir/report/PREREG_ONLINE_GUARD.md` | read |
+| Guard v2 (Opus + history) vs v1 on the held-out half, used once: detection +13.8 pts [+2.9, +30] (20/29 vs 16/29); false rejection +4.3 [−5, +15] (15/116 vs 10/116) | measured offline, not run online; target ≥ 80 % / ≤ 10 % not met | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/v2/PROTOCOL.md`, `v2/runs/` | read |
 | "A verifier can be added to any agent with one call" | design property, measured on Holo only | `feci_guard.py` docstring | read 61 lines |
 | End-to-end plumbing: refusal → escalation → re-check → official score | measured on 1 task (no efficacy claim) | `holo-neurochir/feci_guard/smoke/impress_550ce7e7_rescue_guard.md` | read |
 
@@ -62,7 +63,7 @@ infeasible tasks).
 - Many folders hold negative results. They are kept on purpose, and `docs/REPO_MAP.md` gives each one's status.
 - Some scripts contain absolute paths of our server (`/home/orbit/...`, `~/osw/...`). They document what ran. The
   jury-facing scripts (`jury_kit/*.py`, `jury_kit/quickstart.sh`) use relative paths only.
-- `holo-neurochir/feci_guard/` code is **frozen** during the measurements (hash `0af76fdb`). Do not expect recent edits there.
+- In `holo-neurochir/feci_guard/`, the v1 decision code (`feci_guard.py`, `verifier.py`, sha256 prefix `0af76fdb` recorded in every verdict) is **frozen**; v2 lives in separate files (`verifier_v2.py`, `v2/`).
 - The split called "reserve" in the paper is `confirm` in `scores.csv`.
 
 ## If you are an agent asked to work on this repo

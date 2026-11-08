@@ -11,6 +11,9 @@ echo "== (a) OSWorld paired comparisons, recomputed from per-task scores =="
 echo; echo "== (b) Feci Guard replayed on 268 recorded episodes (frozen decision code, recorded verdicts) =="
 "$PY" jury_kit/replay_guard.py --show 1
 
+echo; echo "== (b2) the three judges recounted from their raw responses (README rows 2 and 7) =="
+"$PY" jury_kit/recount_judges.py | tail -6
+
 echo; echo "== (c) demo replay page =="
 "$PY" - <<'PY'
 import html.parser, pathlib
