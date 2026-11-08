@@ -33,3 +33,9 @@ L'agent sera servi par Modal, avec le même déploiement que les bras `orig_moda
 - `results_confirm_gh_orig_modal_confirm` pour la réserve.
 
 C'est le même serveur, ce qui évite le confondant pod/Modal. Les comparaisons à l'original servi par le pod restent rapportées en secondaire.
+
+## Amendement 3 (10:44 UTC, AVANT toute comparaison avec l'original)
+Les 6 tâches du job run (0) de la relance (run 42468884640) sont mortes pour raison d'infrastructure, avec 0 résultat. Elles seront rejouées une fois, avec les mêmes réglages, pour compléter les 120 tâches prévues.
+- L'analyse PRINCIPALE porte sur l'ensemble final.
+- Les tâches encore sans résultat après cette relance sont exclues des deux bras, selon la règle d'origine.
+- L'analyse sur les 114 tâches disponibles à 10:42 est rapportée en secondaire.
