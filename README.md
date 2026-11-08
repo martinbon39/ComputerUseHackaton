@@ -197,8 +197,8 @@ on GitHub runners. A judge cannot run them in 5 minutes.
 - **Paper**: *Cogito, Ergo Feci: False Success and the Limits of Weight Surgery in a Computer-Use Agent*.
   [arXiv-style PDF](holo-neurochir/paper/main.pdf) · [NeurIPS-format PDF](holo-neurochir/paper/neurips.pdf) (with the filled
   reproducibility checklist). Every number is regenerated from `paper/data/` by `paper/build.sh`. Hosted copies:
-  [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxelge4c.LSxzU-Tqzjg0MDDGnHwrg8eo4oGhcaw3) ·
-  [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxelge6y.lVLDjfho3bzWPbIK8QFE1kCyYYhTum3V).
+  [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxelhqws.MrJLSn9ALy0ExZeylVvzjzQRw94Mndm_) ·
+  [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxelhr01.9_ebcRpYQRJ22aZnjzbeRJvI9f5stk8U).
 - **Demo video**: [holo-demo-video.mp4](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7)
 - **Guard repair replay** (the Guard refuses a false "done" on `calc/1de60575`, the agent renames the sheet, the second check passes): [holo-guard-repair.html](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32)
 - **Slides** (the research system): [holo-pitch-system.html](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxel9bap.omSEnhbk5HaxlM8gpkVeVegN4DndZZUE) · **pitch cockpit**: [holo-cockpit-pitch.html](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxel9bc8.a7vQeBaoBiUCIj4L8kuDDqkhdsROZEUD)
