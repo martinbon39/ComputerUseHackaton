@@ -2,6 +2,7 @@
 
 Reads data/local/judge_bench/RESULT.json (independent recompute: MATCH) and data/local/feci_guard/.
 """
+import json
 import re
 
 from common import DATA, Macros, load, write_table
@@ -58,6 +59,20 @@ assert rp["no_guard"]["branches"] == rp["guard"]["branches"]
 vs = r["valid_only_sensitivity_holo4_feci"]
 m.add("gbHolofourfeciRejValid", pct(vs["true_success"][0] / vs["true_success"][1]), SRC + " valid_only_sensitivity_holo4_feci.true_success (%)")
 m.add("gbHolofourfeciNoVerdictTrue", r["judges"]["Holo4-27B (Feci Guard verifier)"]["true_success"]["error_or_invalid"]["numerator"], SRC + " judges.Holo4-27B (Feci Guard verifier).true_success.error_or_invalid.numerator")
+LS = "data/local/online/results_test_gh_orig_modal_test/last_steps.jsonl"
+ls = [json.loads(x) for x in (DATA / "local/online/results_test_gh_orig_modal_test/last_steps.jsonl").read_text().splitlines()]
+assert len(ls) == 120
+fs_done = sum(x["last_tool"] == "answer" and x["score"] == 0 for x in ls)
+true_done = sum(x["last_tool"] == "answer" and x["score"] >= 1 for x in ls)
+f = fs_done / (fs_done + true_done)
+cj = r["judges"]["Claude (Feci Guard verifier)"]
+det, rej = cj["false_success"]["incomplete_rate"]["rate"], cj["true_success"]["incomplete_rate"]["rate"]
+prec = det * f / (det * f + rej * (1 - f))
+m.add("fgBaseFsDone", fs_done, LS + " last_tool == answer and score == 0 (extract_last_steps.py)")
+m.add("fgBaseTrueDone", true_done, LS + " last_tool == answer and score == 1")
+m.add("fgBasePartialDone", sum(x["last_tool"] == "answer" and 0 < x["score"] < 1 for x in ls), LS + " last_tool == answer and partial score (excluded)")
+m.add("fgBaseF", f"{f:.2f}", LS + " false share of answered tasks, partial credit excluded")
+m.add("fgPrecision", f"{prec:.2f}", "det*f/(det*f+rej*(1-f)), Claude rates from " + SRC + " and f from " + LS)
 m.add("fgRepMaxSteps", re.search(r"max (\d+) new steps", (DATA / "local/feci_guard/PREREG.md").read_text()).group(1), "data/local/feci_guard/PREREG.md Repair measure (max new steps)")
 m.add("fgRepTaken", (DATA / "local/feci_guard/repair/snapshot/TAKEN_UTC").read_text().strip(), "data/local/feci_guard/repair/snapshot/TAKEN_UTC")
 m.add("fgRepEpisodes", rp["episodes_kept"], RP + " episodes_kept")

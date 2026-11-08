@@ -30,6 +30,11 @@
 \newcommand{\gbHolofourfeciVsClaudeCi}{$-$59 to $-$10} % source: data/local/judge_bench/RESULT.json paired_gap_difference_vs_Claude...ci95
 \newcommand{\gbHolofourfeciRejValid}{26} % source: data/local/judge_bench/RESULT.json valid_only_sensitivity_holo4_feci.true_success (%)
 \newcommand{\gbHolofourfeciNoVerdictTrue}{15} % source: data/local/judge_bench/RESULT.json judges.Holo4-27B (Feci Guard verifier).true_success.error_or_invalid.numerator
+\newcommand{\fgBaseFsDone}{27} % source: data/local/online/results_test_gh_orig_modal_test/last_steps.jsonl last_tool == answer and score == 0 (extract_last_steps.py)
+\newcommand{\fgBaseTrueDone}{65} % source: data/local/online/results_test_gh_orig_modal_test/last_steps.jsonl last_tool == answer and score == 1
+\newcommand{\fgBasePartialDone}{5} % source: data/local/online/results_test_gh_orig_modal_test/last_steps.jsonl last_tool == answer and partial score (excluded)
+\newcommand{\fgBaseF}{0.29} % source: data/local/online/results_test_gh_orig_modal_test/last_steps.jsonl false share of answered tasks, partial credit excluded
+\newcommand{\fgPrecision}{0.73} % source: det*f/(det*f+rej*(1-f)), Claude rates from data/local/judge_bench/RESULT.json and f from data/local/online/results_test_gh_orig_modal_test/last_steps.jsonl
 \newcommand{\fgRepMaxSteps}{15} % source: data/local/feci_guard/PREREG.md Repair measure (max new steps)
 \newcommand{\fgRepTaken}{08:36} % source: data/local/feci_guard/repair/snapshot/TAKEN_UTC
 \newcommand{\fgRepEpisodes}{5} % source: data/local/feci_guard/repair/snapshot/results.json (analyze_repair.py on a copy of the live branches, taken at TAKEN_UTC) episodes_kept
