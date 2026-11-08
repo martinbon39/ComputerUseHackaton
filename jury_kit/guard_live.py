@@ -34,6 +34,8 @@ def main():
         return 0
     ep = a.episode or next(k for k, e in manifest.items() if e["label"] == "false_success"
                            and recorded[k].get("verdict") == "INCOMPLETE")
+    if ep not in manifest:
+        sys.exit(f"unknown episode {ep!r}: run with --list to see the 268 ids")
     e = manifest[ep]
 
     if a.api:

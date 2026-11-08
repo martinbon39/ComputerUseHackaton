@@ -20,5 +20,8 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: (a) + (b) + (c)
         run: bash jury_kit/quickstart.sh
-      - name: guard_live.py parses and lists episodes (no network call)
-        run: python jury_kit/guard_live.py --list | head -3
+      - name: guard_live.py lists the 268 episodes (no network call)
+        run: |
+          python jury_kit/guard_live.py --list > episodes.txt
+          test "$(wc -l < episodes.txt)" -eq 268
+          head -3 episodes.txt
