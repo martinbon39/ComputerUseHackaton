@@ -31,7 +31,10 @@ def close(actual, expected, message):
     check(math.isclose(actual, expected, rel_tol=1e-12, abs_tol=1e-12), f"{message}: {actual} != {expected}")
 
 
-def branch(task, arm, k, score, tools, *, escalated=False, replay_valid=True):
+def branch(task, arm, k, score, tools, *, escalated=False, replay_valid=True,
+           strict_replay_valid=None, boundary_diff=0.0):
+    if strict_replay_valid is None:
+        strict_replay_valid = replay_valid
     gate = None if arm == "control" else {
         "decision": "refused" if escalated else "accepted",
         "verifier": {"ok": True},
@@ -45,10 +48,10 @@ def branch(task, arm, k, score, tools, *, escalated=False, replay_valid=True):
         "valid_model_calls": 1,
         "gate": gate,
         "replay_valid": replay_valid,
-        "strict_replay_valid": replay_valid,
+        "strict_replay_valid": strict_replay_valid,
         "escalated": escalated,
         "replay_diff_max": 0.0,
-        "boundary_diff": 0.0,
+        "boundary_diff": boundary_diff,
         "model_calls": 1,
         "model_call_errors": 0,
     }
@@ -79,7 +82,18 @@ def prepare_fixture(root, analysis):
         }
     }
     (analysis_here / "PREVALENCE.json").write_text(json.dumps(prevalence))
-    reference = {"contemporary_live_measure": {}, "comparison_warning": "synthetic fixture"}
+    reference = {
+        "contemporary_live_measure": {
+            "guard": {"repaired_score1": 0, "branches": 2},
+            "no_guard": {"repaired_score1": 0, "branches": 2},
+            "paired_diff_mean": 0.0,
+            "paired_diff_ci95_episode_bootstrap": {
+                "independent_recomputation": {"ci95": [0.0, 0.0]},
+                "reported_source": {"ci95": [0.0, 0.0]},
+            },
+        },
+        "comparison_warning": "synthetic fixture",
+    }
     (analysis_here / "HOLO31_REFERENCE.json").write_text(json.dumps(reference))
     analysis.HERE = analysis_here
     return tasks
@@ -98,7 +112,8 @@ def check_mixed_fixture(analysis, root, tasks):
         branch(tasks[2], "guard", 0, 0.5, ["click"]),
         branch(tasks[2], "guard", 1, 0.0, ["answer"]),
         branch(tasks[2], "control", 0, 0.5, ["click"]),
-        branch(tasks[2], "control", 1, 0.0, ["answer"]),
+        branch(tasks[2], "control", 1, 0.0, ["answer"], strict_replay_valid=False,
+               boundary_diff=0.1028),
         branch(tasks[3], "control", 0, 1.0, ["click"]),
     ]
     source = root / "branches-fixture.jsonl"
@@ -109,6 +124,12 @@ def check_mixed_fixture(analysis, root, tasks):
     conditional = primary["conditional_repair"]
 
     check(primary["episodes"] == 3, "incomplete episode entered paired primary")
+    check(result["strict_boundary_sensitivity"]["episodes"] == 2,
+          "boundary-invalid episode entered strict sensitivity")
+    check(result["per_episode"][tasks[2]]["exclusion"] is None,
+          "boundary-invalid episode was removed from preregistered primary")
+    check(result["per_episode"][tasks[2]]["strict_boundary_exclusion"] == "boundary_invalid",
+          "boundary-invalid episode lacks its strict exclusion reason")
     check(guard["branches"] == 6, "paired primary did not retain exactly K=2 per complete episode")
     check(guard["full_successes"] == 2, "official score1 endpoint changed")
     check(guard["full_success_without_new_action"] == 1, "no-action score1 was not disclosed")
@@ -140,6 +161,9 @@ def check_mixed_fixture(analysis, root, tasks):
     ]
     check(scenario["loss_scenarios"][0]["repair_only_bootstrap95"] == expected_interval,
           "prediction did not transform the repair-credit interval")
+    report = analysis.report(result)
+    check("domain/task2" in report and "none / boundary_invalid" in report,
+          "report table does not distinguish primary and strict boundary inclusion")
 
     duplicated = rows + [branch(tasks[0], "guard", 0, 0.0, ["click"], escalated=True)]
     write_jsonl(source, duplicated)

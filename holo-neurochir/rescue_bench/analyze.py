@@ -172,6 +172,7 @@ def analyze(root):
             excluded[task] = reason
         per[task] = {arm: [{key: row.get(key) for key in ("k", "score", "escalated", "replay_diff_max", "boundary_diff", "replay_valid", "strict_replay_valid", "valid_model_calls", "tools")} for row in sorted(groups[task][arm], key=lambda row: row["k"])] for arm in ARMS}
         per[task]["exclusion"] = reason
+        per[task]["strict_boundary_exclusion"] = reason or (None if task in strict else "boundary_invalid")
     result = {
         "generated_utc": datetime.now(timezone.utc).isoformat(),
         "status": "complete" if len(keys) == 48 else "partial",
@@ -183,7 +184,13 @@ def analyze(root):
         "guard_detection": {"false_success_rejected": 45, "false_success_total": 66, "true_success_rejected": 21, "true_success_total": 202, "source": "judge_bench/RESULT.json", "repair_losses_on_true_successes": "not measured"},
         "provenance": {"branches_sha256": {str(source): hashlib.sha256(source.read_bytes()).hexdigest() for source in sources}, "runner_sha256": hashlib.sha256((HERE.parent / "feci_guard/rescue_runner.py").read_bytes()).hexdigest()},
         "prediction": {"label": "prediction, not measured online gain", "formula": "Delta = p_FS_feasible * d_FS * r_score_after_reject - p_TS_exposed * fpr_TS * loss_after_false_reject", "status": "pending prevalence artifact or measured conditional repair", "unmeasured_strata": "infeasible false completions and partial-score endpoints; repair measured only on selected feasible short episodes"},
-        "independent_review": "VERIFY_RUNNER.md; final numerical review pending",
+        "independent_review": {
+            "runner": ["VERIFY_RUNNER.md", "SCHEDULING_REVIEW.md"],
+            "analysis_logic": "STATS_REVIEW.md",
+            "raw_evaluator_evidence": "MEASURED_REPAIRS_REVIEW.md",
+            "completed_cohort": "FINAL_REVIEW.md",
+            "note": "Reviewer-authored artifacts contain verdicts and the hashes identifying their reviewed inputs.",
+        },
     }
     result["all_available_descriptive"] = {}
     for arm in ARMS:
@@ -234,12 +241,12 @@ def report(result):
         conditional["credit_definition"], "",
         primary["uncertainty_note"], "",
         f"Companion any-repair-in-K2 episode estimate: {conditional['episodes_with_any_full_repair']}/{conditional['refused_episodes']}; Wilson95 {ci_text(conditional['episode_any_full_repair_wilson95'])}. This is a different estimand from per-branch repair probability.", "",
-        "| Episode | Guard K0, K1 | Control K0, K1 | Primary exclusion |",
+        "| Episode | Guard K0, K1 | Control K0, K1 | Primary / strict exclusion |",
         "|---|---|---|---|",
     ]
     for task, values in result["per_episode"].items():
         scores = {arm: ", ".join(f"K{row['k']}={number(row['score'])}" for row in values[arm]) or "pending" for arm in ARMS}
-        lines.append(f"| {task.split('/')[0]}/{task.split('/')[-1][:8]} | {scores['guard']} | {scores['control']} | {values['exclusion'] or 'none'} |")
+        lines.append(f"| {task.split('/')[0]}/{task.split('/')[-1][:8]} | {scores['guard']} | {scores['control']} | {values['exclusion'] or 'none'} / {values['strict_boundary_exclusion'] or 'none'} |")
     for label, key in (("Strict replay + boundary", "strict_boundary_sensitivity"), ("All complete, ignoring replay validity", "all_complete_sensitivity")):
         sensitivity = result[key]
         lines += ["", f"{label}: {sensitivity['episodes']} episodes; paired difference {number(sensitivity['paired_difference']['mean'])}, CI {ci_text(sensitivity['paired_difference'].get('episode_cluster_bootstrap95'))}."]
@@ -268,7 +275,8 @@ def report(result):
         "## Verification and limits", "",
         f"Initial Guard checks: {result['observed_guard']['initial_checks']}; refusals: {result['observed_guard']['refused']}; verifier errors: {result['observed_guard']['verifier_errors']}. Infrastructure error attempts: {len(result['infrastructure_error_attempts'])}. Missing or invalid replays are disclosed, never converted into successes.", "",
         "Pixel replay validity does not guarantee evaluator-state identity. Zero-action positive scores are retained as official outcomes but receive zero repair credit in the prediction. A new action by itself also cannot prove the handoff state was failing. Common complete-case exclusion may induce selection bias; intervals do not capture that bias or transport uncertainty.", "",
-        "RESULT.json contains per-episode scores, exclusions and source hashes. Raw calls, screenshots, boundary contexts, Guard journals and official evaluator outcomes are under /home/orbit/osw/rescue_bench/. FROZEN.json checks unchanged Guard and harness sources; compatibility.json records the one-step schema check. Runner and scheduling review: VERIFY_RUNNER.md and SCHEDULING_REVIEW.md. First Calc pairing audit: FIRST_REPAIR_REVIEW.md. Complete Calc and Impress K2 repair audit: MEASURED_REPAIRS_REVIEW.md. Final numerical review is pending.",
+        "Required-output retrieval failed for d682 control K1 (rearranged.png missing, boundary-invalid) and all four aa4 VLC branches (MP4 missing, replay-invalid). These official zeros are retained and qualified in the raw evidence review; successful branch execution does not imply that every evaluator getter succeeded. The f5 control K1 success is a real correction on a strict-valid branch, although its episode is excluded from the primary because other repetitions have invalid replays.", "",
+        "RESULT.json contains per-episode scores, exclusions and source hashes. The data/ archive allows numerical reproduction with analyze.py --root holo-neurochir/rescue_bench/data. Raw calls, screenshots, boundary contexts, Guard journals and official evaluator outcomes are under /home/orbit/osw/rescue_bench/. FROZEN.json checks unchanged Guard and harness sources; compatibility.json records the one-step schema check. Runner and scheduling reviews: VERIFY_RUNNER.md and SCHEDULING_REVIEW.md. Raw evaluator audit: MEASURED_REPAIRS_REVIEW.md. The independent completed-cohort numerical verdict and reviewed hashes are recorded separately in FINAL_REVIEW.md.",
     ]
     return "\n".join(lines) + "\n"
 
