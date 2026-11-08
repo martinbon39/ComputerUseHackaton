@@ -186,9 +186,53 @@ class Duels:
 
 DUEL_ID = re.compile(r"[\w-]+")
 
+# /try: six fixed final screenshots of real OSWorld episodes where the agent said "done" (3 false, 3 true, from the
+# frozen verif_study corpus), checked live by the frozen Feci Guard verifier through the judge relay; no key, but one
+# check at a time and at most 60 per hour.
+STUDY = HERE.parent.parent / "verif_study"
+TRY_IDS = ["diag1__libreoffice_calc__1de60575-bb6e-4c3d-9e6a-2fa699f9f197", "diag1__chrome__368d9ba4-203c-40c1-9fa3-da2f1430ce63",
+           "diag1__libreoffice_impress__8979838c-54a5-4454-a2b8-3d135a1a5c8f", "diag1__gimp__7b7617bd-57cc-468e-9c91-40c4ec2bcb3d",
+           "diag1__chrome__9f3f70fc-5afc-4958-a7b7-3bb4fcb01805", "diag1__libreoffice_calc__0cecd4f3-74de-457b-ba94-29ad6b5dafb6"]
+TRY_RELAY, TRY_MODEL, TRY_PER_HOUR = "http://127.0.0.1:9911/v1", "claude-sonnet", 60
+
+
+class Try:
+    def __init__(self):
+        man = {e["episode_id"]: e for e in json.loads((STUDY / "manifest.json").read_text())}
+        self.cases = [man[i] for i in TRY_IDS]
+        self.lock, self.calls, self.jpg = threading.Lock(), [], {}
+
+    def image(self, n):
+        if n not in self.jpg:
+            from io import BytesIO
+            from PIL import Image
+            buf = BytesIO(); Image.open(STUDY / self.cases[n]["image_path"]).convert("RGB").save(buf, "JPEG", quality=85)
+            self.jpg[n] = buf.getvalue()
+        return self.jpg[n]
+
+    def verify(self, n):
+        if not self.lock.acquire(blocking=False):
+            return 429, {"error": "busy, retry in 30 s"}
+        try:
+            now = time.time(); self.calls = [t for t in self.calls if now - t < 3600]
+            if len(self.calls) >= TRY_PER_HOUR:
+                return 429, {"error": "busy, retry in 30 s"}
+            self.calls.append(now)
+            import sys
+            sys.path.insert(0, str(HERE.parent.parent / "feci_guard"))
+            import verifier  # the frozen verifier's own OpenAI-compatible client, pointed at the judge relay
+            os.environ["GUARD_BASE_URL"] = TRY_RELAY
+            c = self.cases[n]
+            v = verifier.verify_openai(c["instruction"], str(STUDY / c["image_path"]), TRY_MODEL)
+            return 200, {"verdict": v.get("verdict"), "requirements": v.get("requirements") or [], "error": v.get("error"),
+                         "latency_s": v.get("latency_s"), "official": c["score"]}
+        finally:
+            self.lock.release()
+
 
 class Handler(BaseHTTPRequestHandler):
     duels: Duels = None
+    tryer: Try = None
     guard_preset = "modal_guard"  # the page's Run button: Holo-3.1 alone vs Holo-3.1 + Feci Guard
 
     key = None
@@ -218,6 +262,13 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         u = urlparse(self.path); q = {k: v[0] for k, v in parse_qs(u.query).items()}
         root = self.duels.root
+        if u.path in ("/try", "/try/"):
+            return self.send(200, (HERE / "try.html").read_bytes(), "text/html; charset=utf-8")
+        if u.path == "/api/try/cases":  # no label, no score: the official verdict is revealed after the check
+            return self.send(200, [{"n": n, "domain": c["domain"], "instruction": c["instruction"]} for n, c in enumerate(self.tryer.cases)])
+        m = re.fullmatch(r"/try/img/([0-5])\.jpg", u.path)
+        if m:
+            return self.send(200, self.tryer.image(int(m.group(1))), "image/jpeg")
         if u.path in ("/", "/index.html"):
             if "k" in q:  # key given in the URL: store it as a cookie and drop it from the address bar (screen sharing)
                 rest = "&".join(f"{k}={v}" for k, v in q.items() if k != "k")
@@ -252,6 +303,14 @@ class Handler(BaseHTTPRequestHandler):
         return self.send(404, {"error": "not found"})
 
     def do_POST(self):
+        if urlparse(self.path).path == "/api/try/verify":  # public, rate-limited
+            if not self.same_origin():
+                return self.send(403, {"error": "same origin only"})
+            body = json.loads(self.rfile.read(int(self.headers.get("Content-Length") or 0)) or b"{}")
+            n = body.get("n")
+            if not isinstance(n, int) or not 0 <= n < len(self.tryer.cases):
+                return self.send(400, {"error": "bad case"})
+            return self.send(*self.tryer.verify(n))
         if not (self.authorized() and self.same_origin()):
             return self.send(403, {"error": "control needs the duel key"})
         u = urlparse(self.path)
@@ -285,6 +344,7 @@ def main():
     args = ap.parse_args()
     Handler.duels = Duels(args.root, args.preset)
     Handler.guard_preset = args.guard_preset
+    Handler.tryer = Try()
     key_file = Path.home() / ".duel_key"
     Handler.key = key_file.read_text().strip() if key_file.exists() else None  # no key file: nobody can start or stop
     print(f"duel page: http://127.0.0.1:{args.port}/  (preset {args.preset}, duels in {args.root})", flush=True)
