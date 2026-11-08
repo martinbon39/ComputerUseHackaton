@@ -6,6 +6,9 @@
 "task done" when it is not. The fix is not in its weights. It is an external verifier, **Feci Guard**, that checks
 every requirement on the screen, refuses a false "done" with a reason, and can hand the task to a stronger agent (Holo4).
 
+> **Watch first:** [demo video](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7) · [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxehqaqs.SsRdAM7BfXxBtWZEUzqCHbXqFzQApOsO): the Guard refuses a false "done" and the agent
+> repairs it, step by step.
+>
 > **Judges in a hurry:** run the 3-command [quickstart](#quickstart-under-5-minutes-no-gpu-no-key-no-vm) (no GPU, no
 > key, no VM). It recomputes our headline numbers and replays the Guard on 268 recorded episodes. Then read the
 > [criterion → evidence table](#hackathon-criteria--where-the-evidence-is). AI reviewers: start with [AGENTS.md](AGENTS.md).
@@ -127,7 +130,7 @@ bash jury_kit/quickstart.sh                 # all of the above + (c), exit code 
 - **(c)** Demo replay: open [`holo-neurochir/demo_faux_fini/demo_faux_fini.html`](holo-neurochir/demo_faux_fini/demo_faux_fini.html)
   in a browser (one self-contained 3 MB file, or `python3 -m http.server -d holo-neurochir/demo_faux_fini`). It
   replays a recorded episode step by step: the original agent's false "done" on a real desktop. This is one illustrative episode, not evidence of a
-  gain. Screenshots of the live duel page (two VMs side by side, STOP buttons, recorded verdicts):
+  gain. The Guard's own repair, step by step, is the hosted [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxehqaqs.SsRdAM7BfXxBtWZEUzqCHbXqFzQApOsO). Screenshots of the live duel page (two VMs side by side, STOP buttons, recorded verdicts):
   [`osworld/duel/shots/`](holo-neurochir/osworld/duel/shots/).
 
 Expected outputs, pasted from a fresh clone: [docs/QUICKSTART_PROOF.md](docs/QUICKSTART_PROOF.md). The same script
@@ -183,7 +186,11 @@ on GitHub runners. A judge cannot run them in 5 minutes.
   reproducibility checklist). Every number is regenerated from `paper/data/` by `paper/build.sh`. Hosted copies:
   [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxejdbei.e3VHNdhebV_SJ8R0wLl3xTjkUyMV-i1O) ·
   [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxejdbgj.RgncRPbt6dqkr8uMBww4pW_vSoe45k5K).
-- **Demo replay page** (hosted copy): [holo-demo-faux-fini.html](https://argos.martinbonan.com/artifacts/holo-demo-faux-fini.html?t=mxec08h4.ypUQurEtCFn45XOw47vn5eHhOEl5Gyfd)
+- **Demo video**: [holo-demo-video.mp4](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7)
+- **Guard repair replay** (the Guard refuses a false "done" on `calc/1de60575`, the agent renames the sheet, the second check passes): [holo-guard-repair.html](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxehqaqs.SsRdAM7BfXxBtWZEUzqCHbXqFzQApOsO)
+- **Slides** (the research system): [holo-pitch-system.html](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxecxpk6.j0qXMMEz_gD19Udmb-PtgbdfH0vQshbj) · **pitch cockpit**: [holo-cockpit-pitch.html](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxehr551.VZFbsI5yivsEwoRTc0MXXXbMOs73kLaU)
+- **Agent-team dashboard** (who did what, live during the hackathon): [holo-team-dashboard.html](https://argos.martinbonan.com/artifacts/holo-team-dashboard.html?t=mxdiu0lc.nt4fYBALfUzTctGJh0GtUh0xpnlo8QFF)
+- **False-"done" replay page** (hosted copy of quickstart (c)): [holo-demo-faux-fini.html](https://argos.martinbonan.com/artifacts/holo-demo-faux-fini.html?t=mxec08h4.ypUQurEtCFn45XOw47vn5eHhOEl5Gyfd)
 - **Agent runner**: [martinbon39/holo-osworld-runner](https://github.com/martinbon39/holo-osworld-runner)
 - **Model studied**: [Hcompany/Holo-3.1-4B](https://huggingface.co/Hcompany/Holo-3.1-4B) @ `8c88265a`
 

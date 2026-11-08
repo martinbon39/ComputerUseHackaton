@@ -4,7 +4,8 @@ One line per folder of `holo-neurochir/`: what it is, its status, and the file t
 to `holo-neurochir/`). Status values: **RESULT** (a finding used in the README or paper), **NEGATIVE** (ran to a
 verdict and found no effect, or was rejected by its gate), **ABANDONED** (stopped before a verdict), **IN PROGRESS**,
 **TOOLING**, **DEMO**, **DATA**. The "in git" column says whether the folder's files are committed. A folder marked
-*not committed* exists on our server only, and its outcome is summarised here and in the paper.
+*summaries only* has its text summaries committed (REPORT, PROTOCOL, VERIFY, RESULT files); its checkpoints, raw
+logs and images stay on our server. *not committed* means nothing of it is in git.
 
 Start with the Guard (solution), then the diagnosis, then the weight-edit experiments.
 
@@ -33,18 +34,18 @@ Start with the Guard (solution), then the diagnosis, then the weight-edit experi
 | `astra-regmean/` | yes | Selective RegMean closed-form edit, two precisions | NEGATIVE | `astra-regmean/REPORT.md` | false-success answers 15/16 → 13/16; gate ≤ 11/16 fails |
 | `moon-leak/` | yes | Attenuating the heads that carry the note into the tool choice | NEGATIVE | `moon-leak/REPORT.md` | 56/76 false answers vs 55/76 original |
 | `moon-vision/` | yes | Vision-tower-only merge and extrapolation | NEGATIVE | `moon-vision/REPORT.md` | 54–57/76 vs 55/76; needed ≤ 43/76 |
-| `astra-broad/` | not committed | Static edit spread over many writers, dose grid (AlphaEdit family) | NEGATIVE | `astra-broad/REPORT.md` | false answers 15/16 → 8/16 but true finishes 15/16 → 3/16 |
-| `astra-power/` | not committed | Larger feasible false-success cohort, candidate vs control | RESULT (offline lever, no selectivity) | `astra-power/REPORT.md` | false answers −17.1 pp [−28.9, −6.6]; selectivity not shown |
-| `astra-evo/` | not committed | Evolutionary search of merge coefficients | NEGATIVE | `astra-evo/REPORT.md` | 45 candidates; no selectivity, no online gain |
-| `astra-mit1/` | not committed | Fixed-weight edit families (conclusion tokens, heads, MLP interpolation) | NEGATIVE | `astra-mit1/REPORT.md` | 0/8 useful actions at every dose |
-| `astra-mit2/` | not committed | Conditional circuit edit (two SwiGLU neurons) | NEGATIVE | `astra-mit2/REPORT.md` | 7 edits, each leaves 5/5 false successes |
-| `astra-preamble/` | not committed | Learned "verify first" preamble written into the weights | NEGATIVE | `astra-preamble/REPORT.md` | 0/8 preambles (needed ≥ 6/8) |
-| `astra-ratio/` | not committed | Rationalisation direction and narrow MLP edit | NEGATIVE | `astra-ratio/REPORT.md` | no admissible candidate; 0/8 useful at every dose |
-| `astra-short/` | not committed | Promoting `</think>` to shorten reasoning | NEGATIVE | `astra-short/REPORT.md` | best −7.0 % thinking (needed −25 %) |
-| `astra-tact/` | not committed | TACT activation-intervention pilot | NEGATIVE | `astra-tact/REPORT.md` | no dose reduced false completion |
-| `astra-infeas/` | not committed | Rewording of infeasibility declarations | NEGATIVE | `astra-infeas/REPORT.md` | max admissible gain 1 task; gate 3 |
-| `moon-combo/` | not committed | Merge plus true-finish protection variants | NEGATIVE | `moon-combo/REPORT.md` | 3 variants rejected |
-| `moon-rl/` | not committed | RL-donor and anti-post-training merges | NEGATIVE | `moon-rl/REPORT.md` | 58/76 false answers vs 55/76 |
+| `astra-broad/` | summaries only | Static edit spread over many writers, dose grid (AlphaEdit family) | NEGATIVE | `astra-broad/REPORT.md` | false answers 15/16 → 8/16 but true finishes 15/16 → 3/16 |
+| `astra-power/` | summaries only | Larger feasible false-success cohort, candidate vs control | RESULT (offline lever, no selectivity) | `astra-power/REPORT.md` | false answers −17.1 pp [−28.9, −6.6]; selectivity not shown |
+| `astra-evo/` | summaries only | Evolutionary search of merge coefficients | NEGATIVE | `astra-evo/REPORT.md` | 45 candidates; no selectivity, no online gain |
+| `astra-mit1/` | summaries only | Fixed-weight edit families (conclusion tokens, heads, MLP interpolation) | NEGATIVE | `astra-mit1/REPORT.md` | 0/8 useful actions at every dose |
+| `astra-mit2/` | summaries only | Conditional circuit edit (two SwiGLU neurons) | NEGATIVE | `astra-mit2/REPORT.md` | 7 edits, each leaves 5/5 false successes |
+| `astra-preamble/` | summaries only | Learned "verify first" preamble written into the weights | NEGATIVE | `astra-preamble/REPORT.md` | 0/8 preambles (needed ≥ 6/8) |
+| `astra-ratio/` | summaries only | Rationalisation direction and narrow MLP edit | NEGATIVE | `astra-ratio/REPORT.md` | no admissible candidate; 0/8 useful at every dose |
+| `astra-short/` | summaries only | Promoting `</think>` to shorten reasoning | NEGATIVE | `astra-short/REPORT.md` | best −7.0 % thinking (needed −25 %) |
+| `astra-tact/` | summaries only | TACT activation-intervention pilot | NEGATIVE | `astra-tact/REPORT.md` | no dose reduced false completion |
+| `astra-infeas/` | summaries only | Rewording of infeasibility declarations | NEGATIVE | `astra-infeas/REPORT.md` | max admissible gain 1 task; gate 3 |
+| `moon-combo/` | summaries only | Merge plus true-finish protection variants | NEGATIVE | `moon-combo/REPORT.md` | 3 variants rejected |
+| `moon-rl/` | summaries only | RL-donor and anti-post-training merges | NEGATIVE | `moon-rl/REPORT.md` | 58/76 false answers vs 55/76 |
 
 ## Online evaluation and tooling
 | Folder | In git | What | Status | Source of truth |
@@ -55,14 +56,15 @@ Start with the Guard (solution), then the diagnosis, then the weight-edit experi
 | `runs/` | partial | Raw rollout outputs (acceptance, diagnostic, smoke) | DATA | `diagnostic.md` |
 | `report/` | 3 files | Coordination notes; committed: online Guard pre-registration, ExPO report, sprints | DATA | `report/PREREG_ONLINE_GUARD.md` |
 | `dashboard/` | partial | Local "MRI" dashboard of the model's internals | TOOLING | |
-| `devin/`, `team_dash/`, `alerts/` | not committed | Agent-team tooling (external agent client, team status page, phone alerts) | TOOLING | |
+| `devin/` (README), `team_dash/`, `alerts/` | README only / not committed | Agent-team tooling (external agent client, team status page, phone alerts) | TOOLING | |
 
 ## Demo material
 | Folder | In git | What | Status |
 |---|---|---|---|
 | `demo_faux_fini/` | yes | Self-contained replay page of a recorded false "done" (quickstart (c)) | DEMO |
 | `osworld/duel/` | yes | Live duel page, two VMs side by side, STOP buttons, replay; screenshots in `shots/` | DEMO |
-| `demo_live/`, `demo_banc/`, `demo_graphe/`, `pitch/`, `video_*` | not committed | Live-demo cockpit, pitch text, video build pipelines | DEMO |
+| `pitch/`, `demo_live/` | .md only | Pitch text, run-of-show and day-of checklist (hosted pages linked in the README) | DEMO |
+| `demo_banc/`, `demo_graphe/`, `video_*` | not committed | Demo pages and video build pipelines (video hosted, linked in the README) | DEMO |
 
 ## Top-level files
 | File | What |
