@@ -1,6 +1,6 @@
 # moon-leak — note/thought → tool-choice channel
 
-Status: attribution in progress. No candidate admitted and no online gain claimed.
+Status: attribution complete; first weights-only candidate under generation screening. No candidate admitted and no online gain claimed.
 
 ## Question and scope
 Can a weights-only reduction of attention heads that read the model's own note/thought reduce false completion more than genuine completion? The source model is Hcompany/Holo-3.1-4B, exact revision8c88265a5a159bfd1492db9243733dd2e6e04a6e. No gradient, LoRA, runtime hook, changed prompt, or changed harness is part of any candidate; hooks are used only for diagnosis.
@@ -30,7 +30,7 @@ Each of24 DeltaNet layers is also patched at its final mixer output with the cor
 Engineering failures and pilots are preserved but excluded from ranking. Five contexts completed before one missing original_pod_path stopped the first full process; the canonical recorded-step bundle fixes provenance for all39, and resumption skips only complete contexts. Full attribution budget6435 forward calls, hard process total6500; inclusive fidelity-debugging cap8500. All runs use fleet slots and2 CPU threads.
 
 ## Candidate and screening protocol
-Rank heads by mean margin drop on false finishes minus mean drop on true finishes, requiring positive false-finish effect. Fixed sets top2/top4/top6; o_proj columns256h:256(h+1) multiplied by0.5 or0. Start top4 half, top4 zero, then top2 and top6 only within registered stop rules. Random controls use equal numbers of other heads in the same layers, seed261029609. There is no attribution-based DeltaNet weight edit.
+Two families of4 heads are frozen. Selective rank (mean false-finish margin drop minus mean true-finish drop): L11h2,L7h4,L3h3,L15h4. Literal raw-channel rank (largest mean false-finish margin drop): L7h13,L11h2,L7h8,L15h5. For both, scale o_proj columns256h:256(h+1) by0.5 or0. The raw family replaces the original optional2/6-head sweep following independent review, before any candidate generations were inspected; the candidate cap decreases from6 to4. The original unused2/6 specs are retained for audit. The selection rule and its amendment are exploratory. Random controls match each family's head counts per layer, seed261029609; use the best numerically passing dose, or zero if neither passes, at most one control dose per family. No further search after these4 candidates.
 
 A head-column edit suppresses all uses of that head at every position; it cannot selectively remove only note/thought edges. Therefore causal diagnosis does not imply a selective weight edit. Wv/Wk variants are optional and not in the primary sweep; GQA shares each KV head across4 query heads, and normalization complicates K scaling.
 
@@ -39,7 +39,18 @@ Every tested checkpoint gets a full independent CPU tensor audit before serving:
 Per arm:220 GUI draws, T0.8/top_p0.9/top_k20/max3072, reasoning enabled/medium, exact JSON schema and seeds; plus3 fixed plain-text T0 controls. No retries. Gates: JSON≥95%, healthy proxy loss≤2pp, healthy text, fs+ answer reduction≥15pp or independently verified better actions; channel hypothesis additionally requires fs+ loss greater than true-finish loss. Healthy proxy means valid nonanswer, not demonstrated downstream task success. Paired bootstrap intervals resample tasks, not individual seeds. No online admission from incomplete arms.
 
 ## Results and decision
-Pending full attribution and generation screening. No checkpoint recommended yet.
+Attribution is complete:6357 raw records,6435 forward calls, all39 contexts complete, all312 zero-mask controls exactly zero, maximum full-versus-cache margin difference0.198738. Independent recomputation matches every supplied aggregate exactly.
+
+| Diagnostic | Mean fs+ margin loss | Mean true-finish margin loss | Difference fs+−true |
+|---|---:|---:|---:|
+| All note/thought interior tokens neutralized |7.5485|8.1850|−0.6365|
+| Best selective single head, L11h2 |0.04359|−0.00739|+0.05098|
+| Best raw-strength single head, L7h13 |0.04798|0.01811|+0.02986|
+| Best selective DeltaNet output patch, L17 |0.08205|−0.10039|+0.18243|
+
+Neutralization difference task-bootstrap95% interval is[−2.1332,+0.7996] logits. This does not establish equivalence or absence of an internal discriminator. Selection-biased descriptive intervals for selected heads are in independent_attribution_stats.json, not treated as confirmatory significance. The very small head effects should be interpreted alongside the measured replay sensitivity. Narrow final-query attention-link masking cannot rule out earlier-token, multi-head, recurrent-state, or residual routes.
+
+Generation screening pending. No checkpoint recommended yet.
 
 ## Evidence
 PROTOCOL.md; VERIFY_ATTRIBUTION.md; attribution_pilot_attempt*.log/jsonl; attribution.jsonl; baseline_A/; spec_*.json; build_*.json; verify_*.json; runs/; screen_*.json. Decisions and any cleanup are appended in LOG.md. Ares owns all online confirmation.
