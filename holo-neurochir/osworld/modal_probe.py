@@ -2,6 +2,8 @@
 then the harness call of probe_answer_rate.py (holo_agent schema, thinking, T=0.8) on the last recorded step of a task.
 Usage: PYTHONPATH=. ~/osw/venv/bin/python osworld/modal_probe.py <base_url> <task_dir> [--model Holo-3.1-4B]
 The key is read from ~/.holo_modal_key and never printed.
+astra-free's checkpoints (served names containing "free_", and modal-orig, its baseline) get NO generative smoke: their
+frozen pilot is the control and every request counts in its budget. Use /health, /version, /v1/models for them.
 """
 import argparse, json, time
 from pathlib import Path
@@ -27,6 +29,8 @@ def main():
     ap.add_argument("task")
     ap.add_argument("--model", default="Holo-3.1-4B")
     a = ap.parse_args()
+    if "free_" in a.model or a.model.endswith("modal-orig"):
+        raise SystemExit(f"{a.model}: no generative smoke on astra-free checkpoints (read-only /health, /v1/models only)")
     client = OpenAI(base_url=a.url, api_key=Path("~/.holo_modal_key").expanduser().read_text().strip(), timeout=900)
     timed(client, "text_t0", model=a.model, temperature=0, max_tokens=128,
           messages=[{"role": "user", "content": "Explain in one sentence why the sky is blue."}],
