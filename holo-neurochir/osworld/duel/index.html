@@ -53,7 +53,16 @@ main { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; paddin
 .mode.live { background: #d92020; color: #fff; }
 .mode.live .dot { animation: blink 1.2s infinite; }
 @keyframes blink { 50% { opacity: .2; } }
-.mode.replay { background: #e9e9e4; color: #4a4a46; }
+.mode.replay { background: none; border: 1px solid var(--line); color: var(--muted); font-size: 12px; font-weight: 600; padding: 3px 10px; letter-spacing: 0; }
+.picker { position: fixed; inset: 56px 0 0 0; background: var(--bg); z-index: 6; overflow: auto; padding: 24px; }
+.picker h2 { font-size: 22px; margin: 0 0 14px; }
+.picker a { display: grid; grid-template-columns: 64px 1fr 190px; gap: 12px; align-items: center; padding: 12px 14px; margin-bottom: 8px;
+  background: #fff; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); text-decoration: none; }
+.picker a:hover { border-color: var(--accent); }
+.picker .t { color: var(--muted); font-variant-numeric: tabular-nums; }
+.picker .n { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.picker .o { font-size: 15px; text-align: right; white-space: nowrap; }
+.picker .o b { font-weight: 800; } .picker .ok { color: var(--ok); } .picker .ko { color: var(--bad); }
 .mode.ended { background: #e9e9e4; color: #4a4a46; }
 .empty { position: fixed; inset: 56px 0 0 0; display: grid; place-items: center; background: var(--bg); z-index: 5; }
 .empty h1 { font-size: 40px; font-weight: 800; margin: 0 0 22px; letter-spacing: -.5px; text-align: center; }
@@ -65,9 +74,9 @@ main { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; paddin
 </head>
 <body>
 <div class="top">
+  <span class="mode" id="mode" hidden></span>
   <div class="task" id="task"></div>
   <span class="err" id="err"></span>
-  <span class="mode" id="mode" hidden></span>
   <span class="seg" id="speed" hidden><button data-s="1">×1</button><button data-s="2">×2</button><button data-s="4" class="on">×4</button></span>
   <div class="ctl" id="ctl" hidden>
     <select id="taskSel" aria-label="task"></select>
@@ -76,6 +85,7 @@ main { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; paddin
     <button class="btn stop" id="stopR">Stop right</button>
     <button class="btn stop" id="stopAll">Stop all</button>
   </div>
+  <button class="link" id="pickBtn">recorded duels</button>
   <button class="link" id="detBtn">details</button>
 </div>
 <div class="empty" id="empty" hidden>
@@ -83,6 +93,7 @@ main { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; paddin
     <div class="row"><button class="big go" id="startBig" hidden>Start live duel</button><a class="big" id="watchBig">Watch recorded duel</a></div>
     <select id="taskBig" hidden aria-label="task"></select></div>
 </div>
+<div class="picker" id="picker" hidden><h2>Recorded duels</h2><div id="pickList"></div></div>
 <main>
   <section id="left"><div class="who"></div><div class="screen"><div class="idle">no live duel</div><img alt="" hidden></div><div class="state"></div></section>
   <section id="right"><div class="who"></div><div class="screen"><div class="idle">no live duel</div><img alt="" hidden><div class="toast"></div></div><div class="state"></div></section>
@@ -134,7 +145,7 @@ function toast(e, speed) {
   if (e.decision === 'refused') { t.className = 'toast'; t.textContent = 'Guard: ✗ ' + (bad ? bad.text + (bad.evidence ? ' — ' + bad.evidence : '') : 'not done'); }
   else if (e.decision === 'passed_complete') { t.className = 'toast pass'; t.textContent = 'Guard: ✓ verified on screen'; }
   else return;
-  requestAnimationFrame(() => t.classList.add('show'));
+  setTimeout(() => t.classList.add('show'), 20);
   clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 7000);  // readable at any replay speed
 }
 function apply(side, e, speed) {
@@ -192,11 +203,12 @@ function mode() {  // LIVE only while a duel really runs; a finished duel opened
     m.className = 'mode live'; m.innerHTML = `<span class="dot">●</span> LIVE · ${Math.floor(e / 60)}:${String(Math.floor(e % 60)).padStart(2, '0')}`; }
   else { m.className = 'mode ended'; m.textContent = `ENDED · recorded ${new Date(meta.t0 * 1000).toISOString().slice(11, 16)} UTC`; }
 }
-function bootClock() {  // live: the ~80 s VM boot is readable
-  if (!running || !S) return;
+function bootClock(now) {  // the ~80 s VM boot is readable: live (wall clock) or replay (its own clock)
+  if (!S || (now === undefined && !running)) return;
+  now = now ?? Date.now() / 1000;
   for (const side of ['left', 'right']) {
     const b = S[side].boot; if (!b) continue;
-    const n = Math.round(Date.now() / 1000 - b), txt = `Booting Ubuntu VM… ${n} s (~80 s)`;
+    const n = Math.max(0, Math.round(now - b)), txt = `Booting Ubuntu VM… ${n} s (~80 s)`;
     state(side, txt); const idle = $('#' + side + ' .idle'); if (!idle.hidden) idle.textContent = txt;
   }
 }
@@ -208,34 +220,37 @@ async function run(task) {
 const stop = side => duelId && post('/api/stop', { duel: duelId, side });
 
 // ---- replay ----
-const R = { ev: [], i: 0, clock: 0, last: null, speed: 4 };
+const REAL = P.get('mode') === 'real';  // realistic: x1 from the VM boot on, with the recorded latencies
+const R = { ev: [], i: 0, clock: 0, last: null, speed: REAL ? 1 : 4 };
 const FEATURED = '20261108-110023_libreoffice_calc_1de60575-bb6e-4c3d-9e6a';  // R1: Guard refuses a false "done", agent repairs
 async function loadReplay() {
   const r = await fetch(`/api/events?duel=${REPLAY}&left=0&right=0`), d = await r.json();
   if (!r.ok) { $('#err').textContent = d.error; return; }
   R.meta = d.meta; R.ev = [...d.left.map(e => ['left', e]), ...d.right.map(e => ['right', e])].sort((a, b) => a[1].t - b[1].t);
   $('#speed').hidden = false; $('#mode').hidden = false; $('#mode').className = 'mode replay';
-  $('#mode').textContent = `REPLAY · recorded ${new Date(d.meta.t0 * 1000).toISOString().slice(11, 16)} UTC · real VMs`;
+  $('#mode').textContent = `REPLAY · recorded ${new Date(d.meta.t0 * 1000).toISOString().slice(11, 16)} UTC`;
+  $('#speed').querySelectorAll('button').forEach(x => x.classList.toggle('on', +x.dataset.s === R.speed));
   setup(R.meta);
   // skip the VM boot and the 60 s task settle: start just before the first model call; ?t=<s> seeks
   const first = R.ev.find(([, e]) => e.kind === 'phase' && e.phase === 'thinking');
-  const start = P.get('t') ? R.meta.t0 + +P.get('t') : first ? first[1].t - 1 : R.meta.t0;
+  const start = P.get('t') ? R.meta.t0 + +P.get('t') : REAL ? R.meta.t0 : first ? first[1].t - 1 : R.meta.t0;
   while (R.i < R.ev.length && R.ev[R.i][1].t < start) { const [s, e] = R.ev[R.i++]; apply(s, e, R.speed); }
   R.clock = start - R.meta.t0;
-  requestAnimationFrame(tick);
+  setInterval(tick, 100);  // timer, not requestAnimationFrame: rAF stops in background tabs and some browsers
 }
 const preloaded = new Set();
-function tick(ts) {
+function tick() {
+  const ts = performance.now();
   if (R.last !== null) R.clock += (ts - R.last) / 1000 * R.speed;
   R.last = ts;
   let now = R.meta.t0 + R.clock;
-  if (R.i < R.ev.length && R.ev[R.i][1].t - now > 5) { R.clock = R.ev[R.i][1].t - R.meta.t0 - 0.3; now = R.meta.t0 + R.clock; }  // skip waits > 5 s
+  if (R.speed > 1 && R.i < R.ev.length && R.ev[R.i][1].t - now > 5) { R.clock = R.ev[R.i][1].t - R.meta.t0 - 0.3; now = R.meta.t0 + R.clock; }  // skip waits > 5 s
   while (R.i < R.ev.length && R.ev[R.i][1].t <= now) { const [s, e] = R.ev[R.i++]; apply(s, e, R.speed); }
+  bootClock(now);
   for (let j = R.i, n = 0; j < R.ev.length && n < 8; j++) {  // fetch the next frames ahead of time
     const [s, e] = R.ev[j]; if (e.kind !== 'frame' || !e.file) continue; n++;
     const u = `/duels/${R.meta.id}/${s}/${e.file}`; if (!preloaded.has(u)) { preloaded.add(u); new Image().src = u; }
   }
-  requestAnimationFrame(tick);
 }
 
 async function listDuels() {
@@ -246,7 +261,19 @@ async function listDuels() {
     <td><a href="?replay=${d.id}">replay</a></td></tr>`).join('');
 }
 
+async function openPicker() {
+  const rows = (await (await fetch('/api/duels')).json()).filter(d => d.sides.left.verdict || d.sides.right.verdict);
+  const o = v => v ? (v.score >= 1 ? '<b class="ok">✓</b>' : '<b class="ko">✗</b>') : '–';
+  $('#pickList').innerHTML = rows.map(d => {
+    const name = (cfg.tasks.find(t => t.id === d.task) || {}).instruction || d.task;
+    const right = (d.preset || '').includes('guard') ? '+ Guard' : 'merged';
+    return `<a href="?replay=${d.id}&mode=real"><span class="t">${new Date(d.t0 * 1000).toISOString().slice(11, 16)}</span>
+      <span class="n">${esc(name)}</span><span class="o">Holo ${o(d.sides.left.verdict)} · ${right} ${o(d.sides.right.verdict)}</span></a>`; }).join('');
+  $('#picker').hidden = false; $('#empty').hidden = true;
+}
+
 async function init() {
+  $('#pickBtn').onclick = () => $('#picker').hidden ? openPicker() : ($('#picker').hidden = true);
   $('#detBtn').onclick = () => { $('#details').hidden = !$('#details').hidden; if (!$('#details').hidden) listDuels(); };
   cfg = await (await fetch('/api/config')).json();
   if (REPLAY) {
@@ -260,12 +287,12 @@ async function init() {
     $('#run').onclick = run; $('#stopL').onclick = () => stop('left'); $('#stopR').onclick = () => stop('right'); $('#stopAll').onclick = () => stop('all');
   }
   for (const side of ['left', 'right']) $('#' + side + ' .who').innerHTML = side === 'left' ? 'Holo-3.1' : 'Holo-3.1 <span class="g">+ Feci Guard</span>';
-  $('#watchBig').href = '?replay=' + FEATURED;
+  $('#watchBig').href = '#'; $('#watchBig').onclick = e => { e.preventDefault(); openPicker(); };
   if (cfg.control) {
     $('#startBig').hidden = false; $('#taskBig').hidden = false; $('#taskBig').innerHTML = $('#taskSel').innerHTML;
     $('#startBig').onclick = () => run($('#taskBig').value);
   }
-  setInterval(poll, 400); setInterval(() => { mode(); bootClock(); }, 500); poll();
+  setInterval(() => { if ($('#picker').hidden) poll(); }, 400); setInterval(() => { mode(); bootClock(); }, 500); poll();
 }
 init();
 </script>
