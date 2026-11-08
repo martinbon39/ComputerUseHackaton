@@ -26,7 +26,8 @@ body { min-height: 100vh; display: flex; flex-direction: column; }
 .btn.stop { color: var(--bad); }
 .btn:disabled { opacity: .35; cursor: default; }
 .link { font-size: 13px; color: var(--muted); background: none; border: 0; cursor: pointer; font-family: inherit; padding: 4px; }
-main { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 0 16px 8px; align-content: center; }
+main { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 8px 16px; align-content: start; }
+.gline { min-height: 24px; color: var(--accent); font-weight: 600; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
 .who { font-weight: 700; font-size: 17px; margin: 0 0 8px; }
 .who .g { color: var(--accent); }
@@ -96,7 +97,7 @@ main { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; paddin
 <div class="picker" id="picker" hidden><h2>Recorded duels</h2><div id="pickList"></div></div>
 <main>
   <section id="left"><div class="who"></div><div class="screen"><div class="idle">no live duel</div><img alt="" hidden></div><div class="state"></div></section>
-  <section id="right"><div class="who"></div><div class="screen"><div class="idle">no live duel</div><img alt="" hidden><div class="toast"></div></div><div class="state"></div></section>
+  <section id="right"><div class="who"></div><div class="screen"><div class="idle">no live duel</div><img alt="" hidden><div class="toast"></div></div><div class="state"></div><div class="gline" id="gline"></div></section>
 </main>
 <div class="details" id="details" hidden>
   <div class="cols"><div><b>Left</b><ol id="histL"></ol></div><div><b>Right</b><ol id="histR"></ol></div></div>
@@ -128,7 +129,7 @@ function setup(m) {
     el.querySelector('img').hidden = true; el.querySelector('.idle').hidden = false; el.querySelector('.idle').textContent = '…';
     el.querySelector('.state').textContent = '';
   }
-  $('#right .toast').classList.remove('show');
+  $('#right .toast').classList.remove('show'); $('#gline').textContent = ''; G = { refusals: 0, last: '' };
   $('#histL').innerHTML = ''; $('#histR').innerHTML = '';
 }
 const shown = { left: 0, right: 0 };
@@ -139,7 +140,14 @@ function showImg(side, file) {  // swap only once loaded (no blank flash), and n
   pre.src = url;
 }
 function state(side, text) { if (!S[side].end) $('#' + side + ' .state').textContent = text; }
-let toastTimer = null;
+let toastTimer = null, G = { refusals: 0, last: '' };
+function guardLine(e) {  // the refused requirement stays visible under the right screen, to the end
+  const bad = (e.requirements || []).find(r => r.mark === '✗');
+  const times = n => n === 1 ? 'once' : n === 2 ? 'twice' : n + ' times';
+  if (e.decision === 'refused') { G.refusals++; G.last = bad ? bad.text : 'not done';
+    $('#gline').textContent = `Guard refused ${times(G.refusals)}: ✗ ${G.last}`; }
+  else if (G.refusals) $('#gline').textContent = `Guard refused ${times(G.refusals)}: ✗ ${G.last} → then ${e.decision === 'passed_complete' ? '✓ verified' : '✓ accepted'}`;
+}
 function toast(e, speed) {
   const t = $('#right .toast'), bad = (e.requirements || []).find(r => r.mark === '✗');
   if (e.decision === 'refused') { t.className = 'toast'; t.textContent = 'Guard: ✗ ' + (bad ? bad.text + (bad.evidence ? ' — ' + bad.evidence : '') : 'not done'); }
@@ -161,7 +169,7 @@ function apply(side, e, speed) {
     if (e.phase === 'thinking') s.boot = null;
     if (e.phase === 'stopped' || e.phase === 'error') s.end = true;
   } else if (e.kind === 'guard') {
-    toast(e, speed);
+    toast(e, speed); guardLine(e);
     const bad = (e.requirements || []).filter(r => r.mark === '✗').map(r => r.text).join('; ');
     $(hist).insertAdjacentHTML('beforeend', `<li class="g">Guard ${e.decision === 'refused' ? '✗ ' + esc(bad) : esc(e.decision.replace('passed_', '✓ '))}</li>`);
   } else if (e.kind === 'verdict') {
