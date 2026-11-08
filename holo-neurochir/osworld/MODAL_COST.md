@@ -18,5 +18,7 @@ Prix H100 Modal : ~3,95 $/h (0,001097 $/s), plus le CPU et la mémoire du conten
 | 03:15-05:00 | 2 | merge_cua_b050 redéployé (test GitHub 120 tâches), free_h10_half (lot 21), free_h10_zero (lot 22) ; app arrêtée à 05:00 | à la demande | |
 | 03:21-05:11 | 1 | modal-orig redéployé (tests GitHub orig_modal_test et orig_modal_confirm) ; app arrêtée à 05:11 | ~1 h 50 | |
 | **05:11** | **1 et 2** | **les deux comptes ARRÊTÉS pour la nuit** (`modal app stop` holo-vllm et holo-slot, zéro conteneur, verrous CLOSED) | 0 | **16,65 $ et 15,26 $** |
+| 06:55 | 2 | déploiement de `holo-jury-probe` (CPU seul, porte fermée), tests de validation, débit, CORS, sans GPU | 0 | 16,67 $ et 15,26 $ |
+| 07:00-07:01 | 1 et 2 | **erreur de modal-serve** : un test du refus budgétaire (`modal_jury_window.sh up 90`) est passé et a déployé les deux serveurs ; coupé aussitôt (`down`), ~1 min de H100 sur le compte 1, rien sur le compte 2 ; `up` exige désormais `--go` et `check` fait le seul calcul | ~1 min | |
 
 Rythme : une H100 allumée en continu coûte ~4 $/h, soit une alerte à ~20 $ par compte environ 4 h 30 après le point de 00:49.

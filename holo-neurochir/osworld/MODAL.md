@@ -81,3 +81,29 @@ Exemple testé : `/workspace/osw_shared/modal_slot_example` (`gen.py` : une gén
 Mesures du 2026-11-08 sur le compte 1 : 75 à 89 s de bout en bout, dont chargement des poids 10 à 15 s et génération de 48 tokens
 48 à 52 s, qui comprennent le JIT et l'autotune des noyaux fla au premier appel ; envoi 7 à 9 s. Sortie : torch 2.11.0+cu128,
 transformers 5.22.2, NVIDIA H100 80GB HBM3.
+
+## Sonde publique du jury (app `holo-jury-probe`, `osworld/modal_jury_probe.py`, compte 2, CPU)
+
+`https://martinbon39--holo-jury-probe-web.us-east.modal.run`: no key, open CORS. It accepts ONLY the ids of the
+4 pre-recorded contexts in `jury_kit/contexts/` (no free text). For each request, it queries the original
+(account 1, `Holo-3.1-4B-modal-orig`) and the merge (account 2, `Holo-3.1-4B-merge_cua_b050`) in parallel, server side
+with the Bearer key, using the exact call of our OSWorld runs (holo_agent schema `jury_schema.json` under structured_outputs,
+thinking on, T=0.8, top_p=0.9, max_tokens 3072). One sample per model and request.
+
+| Route | Rôle |
+|---|---|
+| `GET /health` | état de la porte, ids des contextes (n'appelle aucun GPU) |
+| `GET /contexts` | les 4 contextes : tâche, pas, nature, action enregistrée, taux `answer` mesuré sur 8 tirages |
+| `GET /contexts/<id>/<stepNN.png>` | les captures d'écran du contexte |
+| `GET /probe/<id>` or `POST /probe {"context": "<id>"}` | `original` and `merge`: `tool`, `args`, `note`, `thought`, `reasoning`, `latency_s`, `tool_first_token` (raw probability of the first token of the tool name, top alternatives with the tools they start, `p_answer_token`) |
+
+Garde-fous : 1 sonde toutes les 5 s par IP (IP vue par Modal, un `X-Forwarded-For` forgé est ignoré, vérifié), 4 sondes
+en vol au plus, délai amont 120 s, 1 conteneur CPU. **Porte** (`modal.Dict` `holo-jury-gate`) FERMÉE par défaut :
+`/probe` répond 503 sans toucher aux H100. `bash osworld/modal_jury_gate.sh open|close|status`.
+
+Fenêtre du jugement (sur ordre d'ares) : `bash osworld/modal_jury_window.sh up <minutes> --go` refuse si 2 H100 pendant
+`<minutes>` (+15) dépassent 24 $ sur un compte (au 08/11 à 07:05 : ~90 min au plus, compte 1 à ~16,7 $ ; `check <minutes>`
+fait seulement ce calcul), déploie les
+deux serveurs, attend qu'ils répondent (~2 min à chaud), ouvre la porte, fait une sonde de répétition, les garde chauds
+(`/v1/models` toutes les 4 min) puis se referme seul au bout de `<minutes>`. `bash osworld/modal_jury_window.sh down` ferme
+tout à la main. La garde-budget (`modal_budget_guard.sh 20 24`) prévient ares à 20 $ et coupe à 24 $ (porte comprise).
