@@ -4,11 +4,11 @@ Source: data/local/online/<run>/pyautogui/screenshot/<model>/<domain>/<task>/{re
 ~/osw/<run>/ (score in result.txt; the model directory names the served checkpoint).
 Runs and where the model was served:
   reserve (confirm_tasks.json):
-    results_val_orig_eager_m40         original, orbit harness, served by the pod (H200)
+    results_val_orig_eager_m40         original, local harness, served by the pod (H200)
     results_confirm_gh_orig_confirm    original, GitHub Actions harness, served by the pod (H200)
-    results_val_patched_eager_m40      ExPO lambda=1.25 (model dir Holo-3.1-4B-expo125), orbit harness, pod
-    results_val_lm40_eager_m40         answer output-row edit lm40, orbit harness, pod (stopped at 14 tasks)
-    results_val_prompt_eager_m40       corrective prompt, orbit harness, pod (stopped at 20 tasks)
+    results_val_patched_eager_m40      ExPO lambda=1.25 (model dir Holo-3.1-4B-expo125), local harness, pod
+    results_val_lm40_eager_m40         answer output-row edit lm40, local harness, pod (stopped at 14 tasks)
+    results_val_prompt_eager_m40       corrective prompt, local harness, pod (stopped at 20 tasks)
     results_confirm_gh_orig_modal_confirm  original, GitHub harness, served by Modal (H100), model dir Holo-3.1-4B-modal-orig
     results_confirm_gh_merge_cua_b050  CUA-Lite merge beta=0.5, GitHub harness, served by Modal (H100)
     results_confirm_gh_broad_residual_p100  closed-form edit of 24 writers, GitHub harness, Modal
@@ -102,7 +102,7 @@ assert len(dom) == 1
 m.add("onNoiseMissingTask", miss[0][:8], S + RUNS["res_orig_gh"] + " task absent from " + RUNS["res_orig"])
 m.add("onNoiseMissingDomain", dom.pop().replace("_", "\\_"), S + RUNS["res_orig_gh"] + " domain directory of that task")
 m.add("onNoiseMissingScore", f"{R['res_orig_gh'][miss[0]]:.0f}", S + RUNS["res_orig_gh"] + " its score")
-NOISE3 = [("res_orig", "orbit/pod"), ("res_orig_gh", "GitHub/pod"), ("res_orig_modal", "GitHub/Modal")]
+NOISE3 = [("res_orig", "local/pod"), ("res_orig_gh", "GitHub/pod"), ("res_orig_modal", "GitHub/Modal")]
 pcts = [100 * sum(R[k].values()) / len(R[k]) for k, _ in NOISE3]
 ns = sorted({len(R[k]) for k, _ in NOISE3})
 m.add("onReserveOrigRange", f"{max(pcts) - min(pcts):.1f}", S + " max - min mean score of the three reserve runs of the original")
@@ -111,9 +111,9 @@ rows = [
     ("Original, three runs, harness/server (" + "; ".join(l for _, l in NOISE3) + ") & " + "--".join(map(str, ns)) + " & \\multicolumn{2}{c}{"
      + " / ".join(f"{x:.1f}" for x in pcts) + f"}} & spread {max(pcts) - min(pcts):.1f} points & -- \\\\ % source: "
      + ", ".join(S + RUNS[k] for k, _ in NOISE3)),
-    compare("res_orig", "res_orig_gh", "onNoise", "Original, orbit vs.\\ GitHub harness (both served by the pod)", S + RUNS["res_orig"]),
+    compare("res_orig", "res_orig_gh", "onNoise", "Original, local vs.\\ GitHub harness (both served by the pod)", S + RUNS["res_orig"]),
     compare("res_orig_gh", "res_orig_modal", "onNoiseServer", "Original, pod vs.\\ Modal (both on the GitHub harness)", S + RUNS["res_orig_gh"]),
-    "\\midrule\\multicolumn{6}{l}{\\emph{Reserve, arms served by the pod, vs.\\ the pod original on the orbit harness}} \\\\",
+    "\\midrule\\multicolumn{6}{l}{\\emph{Reserve, arms served by the pod, vs.\\ the pod original on the local harness}} \\\\",
     compare("res_expo", "res_orig", "onReserveExpo", "ExPO $\\lambda=1.25$", S + RUNS["res_expo"]),
     compare("res_lm40", "res_orig", "onReserveLmrow", "\\texttt{answer} output-row edit (stopped early)", S + RUNS["res_lm40"]),
     compare("res_prompt", "res_orig", "onReservePrompt", "Corrective prompt (stopped early)", S + RUNS["res_prompt"]),

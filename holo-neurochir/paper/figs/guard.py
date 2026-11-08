@@ -130,7 +130,7 @@ pd4 = r["paired_gap_difference_vs_Holo-3.1-4B"]["Holo4-27B"]
 m.add("gbHolofourVsHoloCi", " to ".join(spts(x) for x in pd4["ci95"]), SRC + " paired_gap_difference_vs_Holo-3.1-4B.Holo4-27B.ci95")
 m.add("gbTasks", re.search(r"resample (\d+) task groups", r["judges"]["Claude (Feci Guard verifier)"]["task_cluster_bootstrap"]["method"]).group(1), SRC + " task_cluster_bootstrap.method (task groups resampled)")
 m.add("fgRepairEpisodes", len([l for l in (DATA / "local/feci_guard/repair/episodes.txt").read_text().splitlines() if l.strip()]),
-      "data/local/feci_guard/repair/episodes.txt (registered repair measure, not yet run)")
+      "data/local/feci_guard/repair/episodes.txt (registered repair measure)")
 V2 = DATA / "local/feci_guard/v2"
 V2S = "data/local/feci_guard/v2/"
 man = {e["episode_id"]: e for e in json.loads((DATA / "local/judge_bench/verif_study_manifest.json").read_text())}

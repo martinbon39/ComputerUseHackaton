@@ -30,7 +30,9 @@ lo, hi = wilson(d["cats"]["success"], n_norm)
 m.add("mwSuccessLo", pct(lo), S + " Wilson 95% lower on cats.success/normal")
 m.add("mwSuccessHi", pct(hi), S + " Wilson 95% upper")
 m.add("mwNFail", n_fail, S + " normal - cats.success")
-m.add("mwLoopSharePct", pct(d["loop_fail_share"]), S + " loop_fail_share")
+nfail = d["normal"] - d["cats"]["success"]
+assert round(d["cats"]["false_success"] / nfail, 3) == d["fs_fail_share"]
+m.add("mwLoopSharePct", pct(d["cats"]["loop"] / nfail), S + " cats.loop / (normal - cats.success); the stored loop_fail_share (0.255) disagrees with these counts")
 m.add("mwFsSharePct", pct(d["fs_fail_share"]), S + " fs_fail_share")
 m.add("mwLoopPos", d["loop_pos"], S + " loop_pos")
 m.add("mwLoopNeg", d["loop_neg"], S + " loop_neg")

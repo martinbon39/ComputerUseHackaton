@@ -74,6 +74,10 @@ m.add("rlFsp", signed(x["delta"]), RL + " strata.fs+.metrics.answer.delta")
 m.add("rlFspCi", " to ".join(signed(v) for v in x["ci95"]), RL + " strata.fs+.metrics.answer.ci95")
 h = rl["strata"]["healthy"]["metrics"]["valid_nonanswer"]
 m.add("rlHealthy", signed(h["delta"]), RL + " strata.healthy.metrics.valid_nonanswer.delta (REVIEW_RL100.md: healthy gate fails)")
+for arm, A in [("A", "Orig")]:
+    for s_, S_ in [("fs+", "Fsp"), ("fs-", "Fsm")]:
+        c = fc["arms"][arm][s_]
+        m.add(f"pw{A}{S_}Pct", f"{100 * c['answer'] / c['n_generations']:.0f}", SRC + f" full_cohort.arms.{arm}.{s_} answer rate (%)")
 m.add("pwBootReps", f"{d['method']['bootstrap_replicates']:,}".replace(",", "{,}"), SRC + " method.bootstrap_replicates")
 m.add("pwStatus", d["status"], SRC + " status")
 m.write()

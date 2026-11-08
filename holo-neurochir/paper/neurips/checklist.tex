@@ -8,7 +8,7 @@
 \item {\bf Claims}
     \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: The abstract and \S\ref{nsec:intro} claim a diagnosis, three measured traps, a causal record in which no intervention shows a large effect, and a mechanistic account of that failure; \S\ref{nsec:diag}--\S\ref{nsec:disc} support each claim, and the abstract states that the screens are pilots and that the ceiling test covers one step.
+    \item[] Justification: The abstract and \S\ref{nsec:intro} claim a diagnosis, three measured traps, a causal record in which no intervention passes the gate selectively, a mechanistic account of that failure and an offline evaluation of an external verifier; \S\ref{nsec:diag}--\S\ref{nsec:disc} and the appendices support each claim, and the abstract states that the screens are pilots that detect only a fall to 4/8 false answers on a single feasible false-success context, and that the verifier's effect on the OSWorld score is not measured.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the abstract and introduction do not include the claims made in the paper.
@@ -20,7 +20,7 @@
 \item {\bf Limitations}
     \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: \S\ref{nsec:disc} (Limitations) and Appendix~\ref{sec:limits}: small causal samples that exclude only large effects, a one-step ceiling test, an exploratory direction analysis, automatic labels, a public harness, possible donor contamination, and the pending online validation.
+    \item[] Justification: \S\ref{nsec:disc} (Limitations) and Appendix~\ref{sec:limits}: small causal samples that exclude only large effects, infeasible screening contexts, a three-context ceiling test, an exploratory direction analysis, reuse of the reserve and \textsc{test} split by non-admitted arms, many uncorrected comparisons, self-registered rules (the primary online rule was fixed after the merge's reserve scores were read), automatic labels and LLM auditors not validated against humans, a third-party harness, possible donor and verifier contamination, and a single model and benchmark.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper has no limitation while the answer \answerNo{} means that the paper has limitations, but those are not discussed in the paper. 
@@ -36,7 +36,7 @@
 \item {\bf Theory assumptions and proofs}
     \item[] Question: For each theoretical result, does the paper provide the full set of assumptions and a complete (and correct) proof?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: The paper's one formal statement, Proposition~\ref{prop:equiv} (directional ablation equals writer orthogonalisation), states its assumptions (a pre-norm decoder whose sublayers read the residual stream only through their normalisation, bias-free writers, every writer and the embedding projected); a proof sketch by induction over writes follows it in Appendix~\ref{sec:compile}.
+    \item[] Justification: The paper's one formal statement, Proposition~\ref{prop:equiv} (directional ablation equals writer orthogonalisation), states its assumptions (a pre-norm decoder whose sublayers read the residual stream only through their normalisation, bias-free writers, every writer and the embedding projected); a proof by induction over writes follows it in Appendix~\ref{sec:compile}; it is short and given as a sketch, which we flag here.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not include theoretical results. 
@@ -139,7 +139,7 @@
 \item {\bf Broader impacts}
     \item[] Question: Does the paper discuss both potential positive societal impacts and negative societal impacts of the work performed?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: \S\ref{nsec:disc} (Broader impact): false success claims mislead users and downstream automation; our results argue for external verification and caution with interpretability-based repairs. Weight editing could in principle alter safety behaviour; we release no edited model.
+    \item[] Justification: \S\ref{nsec:disc} (Broader impact): false success claims mislead users and downstream automation; our results argue for external verification and caution with interpretability-based repairs. The recommended fix sends desktop screenshots to a third-party model, a privacy cost, and about one refusal in four would hit a true success (\S\ref{sec:guard}); we release no edited model.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that there is no societal impact of the work performed.
@@ -217,7 +217,7 @@
     \item[] Question: Does the paper describe the usage of LLMs if it is an important, original, or non-standard component of the core methods in this research? Note that if the LLM is used only for writing, editing, or formatting purposes and does \emph{not} impact the core methodology, scientific rigor, or originality of the research, declaration is not required.
     %this research? 
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: Experiments were planned, run and audited by LLM agents (Claude Code sessions and GPT-based Codex agents) under human supervision, following the protocol of \S\ref{nsec:traps}; every result was audited by an agent that did not produce it (Appendix~\ref{sec:repro}). LLMs also assisted in writing.
+    \item[] Justification: Experiments were planned, run and audited by LLM agents (Claude Code sessions and Codex agents; Appendix~\ref{sec:repro}) under human supervision, some protocol decisions were taken by an LLM coordinator, and LLMs are method components (the Claude verifier and judges, and the semantic audits of changed actions), following the protocol of \S\ref{nsec:traps}; every result was audited by an agent that did not produce it (Appendix~\ref{sec:repro}). LLMs also assisted in writing.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the core method development in this research does not involve LLMs as any important, original, or non-standard components.
