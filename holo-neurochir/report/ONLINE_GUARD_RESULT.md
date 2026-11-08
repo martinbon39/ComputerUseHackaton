@@ -22,6 +22,9 @@ Raw output: `ONLINE_GUARD_RESULT.json`.
 - True successes lost (C, 1 → 0): 4.
 - Net gain B − C: +4.
 - False "done" avoided (E): 19, so E / C = 4.75.
+  - Of these 19, **7 became successes** and **12 ended without a false "done"**: the agent reached the step cap without answering, or ended otherwise.
+  - Separately, **5 tasks that were not false "done" for the original became false "done" with the Guard**. The net count therefore goes 27 → 13 (−14), not −19.
+  - B = 8 includes 1 task that was not a false "done" for the original. Only **7 of the 8 repairs are repaired false "done"**.
 
 **Noise reference.** The original against itself (pod vs Modal, same 120 tasks) flips 9 tasks 1 → 0 and 5 tasks 0 → 1.
 
