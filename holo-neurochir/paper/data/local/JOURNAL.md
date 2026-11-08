@@ -75,15 +75,15 @@
 - Lectures (Secure Cloud, pods) : H200 SXM 141 Go **5,29 $/h**, stock MEDIUM (EUR-IS-4 : LOW) ; H100 SXM 3,99 $/h ; B200 7,99 $/h ; B300 8,99 $/h. Le parc est en CUDA 13.2 → plancher `minCudaVersion 12.8`.
 - Choix : **H200 SXM** (rang 1 du document de provisioning). B200/B300 écartés : prix ×1,5-1,7 sans gain pour cette mission ; avec ~100 € de crédit, le H200 laisse ~20 h de calcul.
 - Créés à 14:37 UTC :
-  - volume réseau `8206qbtznz` (« holo-neurochir », 100 Go STANDARD, EUR-IS-4) ;
-  - pod `fbup7c0tebnkwf` (« holo-neurochir-h200 »), 1× H200, image `runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404` (template officiel `runpod-torch-v280`), disque conteneur 50 Go, volume monté sur `/workspace`, ports 22/tcp et 8000/http, `HF_HOME=/workspace/hf`.
-  - clé SSH dédiée `~/.ssh/runpod_holo`.
+  - volume réseau (« holo-neurochir », 100 Go STANDARD, EUR-IS-4) ;
+  - pod (« holo-neurochir-h200 »), 1× H200, image `runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404` (template officiel `runpod-torch-v280`), disque conteneur 50 Go, volume monté sur `/workspace`, ports 22/tcp et 8000/http, `HF_HOME=/workspace/hf`.
+  - clé SSH dédiée.
 - **Règles de dépense** : un seul pod ; arrêt (stop, jamais delete) dès qu'il ne tourne plus rien ; plafond personnel ~90 $ pour ne jamais vider le crédit ; coût cumulé noté toutes les 2 h.
 - Coût à 14:37 UTC : 0 $ (démarrage).
 
 ## Migration vers orbit / argos (2026-11-07 ~16:10 Paris)
 - 8 shards 4B sur le pod : 25-50 s/pas, charge 19 pour 12 vCPU → shards arrêtés (~13 rollouts 4B faits). Benchmark FLA vs fallback préparé (`scripts/bench_gen.py`), pas encore lancé.
-- À la demande de Martin : le projet est copié dans `orbit:~/projects/ComputerUseHackaton/holo-neurochir/`, la clé `runpod_holo` est copiée sur orbit (SSH vers le pod OK depuis orbit), et la suite est confiée à une session Claude Code dans argos (voir `HANDOFF.md`). Le pod reste allumé (choix de Martin).
+- À la demande de Martin : le projet est copié dans `orbit:~/projects/ComputerUseHackaton/holo-neurochir/`, la clé SSH du pod est copiée sur orbit (SSH vers le pod OK depuis orbit), et la suite est confiée à une session Claude Code dans argos (voir `HANDOFF.md`). Le pod reste allumé (choix de Martin).
 - Coût pod à ~15:10 UTC : ~0,6 h × 5,29 $ ≈ 3 $ (estimation horaire, pas une lecture de facturation).
 - 15:16 bench_gen 4B: FLA = fallback (pass1 2.7s vs 2.9s, pass0 ~9s warmup); donc pas le noyau. Goulot = CPU cgroup (12 vCPU, nproc=96). Relance 4 shards.
 

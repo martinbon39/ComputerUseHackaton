@@ -1,6 +1,6 @@
 # Online validation of a patched 4B (runbook)
 
-Goal: from a CANDIDATE `patch_spec.json` to both OSWorld arms running in < 10 min. Pod = `ssh -i ~/.ssh/runpod_holo -p 15780 root@213.181.111.151`.
+Goal: from a CANDIDATE `patch_spec.json` to both OSWorld arms running in < 10 min. Pod = SSH to the RunPod GPU pod (address withheld in the public version; the pod is terminated).
 
 1. **Checkpoint** (pod, ~2 min):
    `cd /workspace/projet && PYTHONPATH=. HF_HOME=/workspace/hf HF_HUB_OFFLINE=1 HOLO_MODEL=Hcompany/Holo-3.1-4B /workspace/venv/bin/python scripts/make_patched_ckpt.py <spec.json> /workspace/ckpt/<tag>`

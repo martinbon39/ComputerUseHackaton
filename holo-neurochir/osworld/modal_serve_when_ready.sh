@@ -17,7 +17,7 @@ CKPT="$1"; IFS=, read -ra ACCOUNTS <<< "$2"; IFS=, read -ra PRIOS <<< "${3:-5}"
 prio_of() { local i; for i in "${!ACCOUNTS[@]}"; do [ "${ACCOUNTS[$i]}" = "$1" ] && echo "${PRIOS[$i]:-${PRIOS[0]}}"; done; }
 LOCKS=~/modal_queue; mkdir -p "$LOCKS"
 profile() { [ "$1" = 1 ] && echo emilejouannet || echo martinbon39; }
-POD="ssh -o BatchMode=yes -i $HOME/.ssh/runpod_holo -p 15780 root@213.181.111.151"
+POD="${POD:?set POD to the ssh command of the GPU pod}"
 NAME="Holo-3.1-4B-$CKPT"
 TASK=/home/orbit/osw/results_diag/pyautogui/screenshot/Holo-3.1-4B/chrome/fc6d8143-9452-4171-9459-7f515143419a
 SRC=$(profile "${ACCOUNTS[0]}")
