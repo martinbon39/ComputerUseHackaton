@@ -1,0 +1,21 @@
+{
+ "checkpoint": "merge_cua_b050",
+ "formula": "theta = theta_Holo + 0.5*(theta_CUA - theta_Qwen), tensors under model.language_model. only, float32 arithmetic, cast back to bfloat16",
+ "changed_tensors": 338,
+ "changed_elements": 2125448677,
+ "actual_update_l2": 2.337738928725211,
+ "files": {
+  "model-00001-of-00002.safetensors": {
+   "bytes": 6459239120,
+   "sha256": "b7acdd12152d0f2b351831ce7b691259cbd9e4188eba084050505e504c60eecd"
+  },
+  "model-00002-of-00002.safetensors": {
+   "bytes": 3890779664,
+   "sha256": "6f88c913b715d1f66ae08ddc995c4eb3df0bd75e1919df7e60a944d5b61652ad"
+  },
+  "model.safetensors.index.json": {
+   "bytes": 66258,
+   "sha256": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7"
+  }
+ }
+}
