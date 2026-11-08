@@ -9,6 +9,8 @@ every requirement on the screen, refuses a false "done" with a reason, and can h
 10.8 %, −11.7 pts [−19.2, −4.2]; it holds against both comparators) without a measurable loss of score; no score gain is
 claimed (+1.6 [−4.4, +7.7]).** The online arm is Holo-3.1 plus the Guard's refusal only. Escalation to Holo4 (+50 pts
 [+22, +78]) is measured in replay of 9 recorded false successes, not online.
+Our GPU and Modal budget monitoring runs on code built through the Devin API (Devin's cloud agent):
+[`gpu_ctl.py`](holo-neurochir/infra/gpu_ctl.py), live on our server since 11:47 UTC.
 
 > **Demo video, 2 min:** [`holo-neurochir/video_demo/feci-guard-demo-2min.mp4`](holo-neurochir/video_demo/feci-guard-demo-2min.mp4)
 > (file in this repo, 1:38; generator in [`holo-neurochir/video_wall/demo2min/`](holo-neurochir/video_wall/demo2min/)). Hosted copy,
@@ -281,15 +283,18 @@ one human supervised:
 - The Guard costs ~$0.03 and 5–10 s per `answer`, and works best with a closed model (Claude Sonnet); the open-weights
   Holo4-27B behind the same prompt separates less well (row 7 caveat).
 
-## Sponsor tools
+## Sponsor tools: H Company and Devin
 
 - **H Company models**: Holo-3.1-4B is the agent studied; Holo4-27B is a compared judge (row 7) and the escalation
   target (row 9).
-- **Devin**: one Devin API session (`devin-13e97ca8…`, 2026-11-08, 10:51–11:05 UTC) wrote the GPU infrastructure
-  controller [`holo-neurochir/infra/gpu_ctl.py`](holo-neurochir/infra/gpu_ctl.py) and its tests. We reviewed it before any
-  run, and since 11:47 UTC it runs on our server as a read-only, warn-only budget monitor of both Modal accounts
-  (every 5 min). It was written **after** the reported experiments: **no reported number depends on it**. Session,
-  review and run log: [`infra/DEVIN_SESSION.md`](holo-neurochir/infra/DEVIN_SESSION.md).
+- **Devin (Cognition)**:
+  - **What it built.** We used the Devin API (Devin's cloud agent) to build our GPU infrastructure monitor,
+    [`holo-neurochir/infra/gpu_ctl.py`](holo-neurochir/infra/gpu_ctl.py), with its 39 unit tests, which pass on our server.
+  - **Session.** `devin-13e97ca8…`, on 2026-11-08 from 10:51 to 11:05 UTC.
+  - **What it does.** It watches both Modal accounts every 5 minutes, and warns at the warn threshold, before the budget cap is reached.
+  - **How we run it.** We reviewed the code before running it. It runs read-only and warn-only (no `--enforce`), since 11:47 UTC.
+  - **Scope.** It was written **after** the reported experiments: **no reported number depends on it**.
+  - **Evidence.** Session log, review and run log: [`infra/DEVIN_SESSION.md`](holo-neurochir/infra/DEVIN_SESSION.md).
 
 ## Team
 
@@ -317,6 +322,8 @@ Sur 120 tâches OSWorld (vrais bureaux Ubuntu, évaluateurs officiels), **29 de 
 vrais que le numéro du pas. Les éditions de poids (fusion, AlphaEdit et une quinzaine d'autres expériences) déplacent la
 décision d'arrêt sans pouvoir la viser. En ligne, fusion contre original sur 165 tâches appariées : +1,9 point,
 IC95 [−4,3 ; +8,0], donc aucun gain n'est revendiqué (règle fixée avant de lire les résultats).
+
+**Devin.** Notre surveillance du budget GPU et Modal tourne sur du code construit via l'API Devin (`holo-neurochir/infra/gpu_ctl.py`, session du 08/11 de 10:51 à 11:05 UTC). Il est en service sur notre serveur depuis 11:47 UTC, en lecture seule, toutes les 5 min. Aucun chiffre rapporté n'en dépend.
 
 **La solution.** Feci Guard est un vérificateur externe (Claude Sonnet). À chaque « fini », il liste les exigences
 de la tâche, vérifie chacune sur l'écran, refuse le faux « fini » en disant ce qui manque, puis l'agent répare ou
