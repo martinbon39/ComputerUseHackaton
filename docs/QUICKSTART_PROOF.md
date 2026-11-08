@@ -3,7 +3,7 @@
 Every command of the README quickstart, run on 2026-11-08 at about 10:15 UTC in a **fresh clone** with a **fresh
 virtual environment** (no package installed: `pip list` shows only pip), Python 3.14.4, Linux x86-64, CPU only.
 Clone of `main` at commit `6bb899f` (the quickstart files are unchanged since). The same commands run on every push
-in GitHub Actions on Python 3.9 and 3.12: [.github/workflows/quickstart.yml](../.github/workflows/quickstart.yml).
+in GitHub Actions on Python 3.9 (whenever the jury kit, the Guard code or its data change): [.github/workflows/quickstart.yml](../.github/workflows/quickstart.yml).
 
 ```bash
 git clone https://github.com/martinbon39/ComputerUseHackaton && cd ComputerUseHackaton   # 9 s

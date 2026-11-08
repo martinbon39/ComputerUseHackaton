@@ -19,8 +19,8 @@ python3 jury_kit/verify_results.py        # exit 0; prints "+1.94 pt CI95 [-4.3;
 python3 jury_kit/replay_guard.py --show 2 # exit 0; prints "45/66 = 68 % [56-78]", "21/202 = 10 % [7-15]", gap "+58 [+41, +74]"
 bash jury_kit/quickstart.sh               # both of the above + checks the demo page; ends with "QUICKSTART OK"
 ```
-- Expected full outputs: [docs/QUICKSTART_PROOF.md](docs/QUICKSTART_PROOF.md). CI runs the same on every push:
-  [.github/workflows/quickstart.yml](.github/workflows/quickstart.yml) (Python 3.9 and 3.12).
+- Expected full outputs: [docs/QUICKSTART_PROOF.md](docs/QUICKSTART_PROOF.md). CI runs the same whenever the jury kit, the Guard code or its data change:
+  [.github/workflows/quickstart.yml](.github/workflows/quickstart.yml) (Python 3.9, the oldest supported).
 - `replay_guard.py` runs the frozen decision function `holo-neurochir/feci_guard/feci_guard.py::check` on the 268 real
   final screenshots (`holo-neurochir/verif_study/images/`, sha256-checked against the manifest). Only the network call
   is replaced, by the verdict recorded on 2026-11-08 (`holo-neurochir/judge_bench/claude_responses.jsonl`).

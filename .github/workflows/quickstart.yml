@@ -1,23 +1,31 @@
 name: quickstart
 # Reproduces the published numbers on every push, on CPU, with no secret: the same commands as the README quickstart.
+# Path filter and one job: the account's runners are shared with the OSWorld evaluation jobs.
 on:
   push:
-  pull_request:
+    paths:
+      - "jury_kit/**"
+      - "holo-neurochir/feci_guard/*.py"
+      - "holo-neurochir/verif_study/manifest.json"
+      - "holo-neurochir/verif_study/images/**"
+      - "holo-neurochir/judge_bench/claude_responses.jsonl"
+      - "holo-neurochir/demo_faux_fini/**"
+      - ".github/workflows/quickstart.yml"
   workflow_dispatch:
+concurrency:
+  group: quickstart
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
   quickstart:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    strategy:
-      matrix:
-        python: ["3.9", "3.12"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python }}
+          python-version: "3.9"
       - name: (a) + (b) + (c)
         run: bash jury_kit/quickstart.sh
       - name: guard_live.py lists the 268 episodes (no network call)
