@@ -2,7 +2,7 @@
 image budget 3, 60 s settle, answer -> DONE/FAIL, 20 s settle, official evaluator).
 Everything the page shows is appended to <out>/events.jsonl (one JSON object per line, field t = unix time):
   phase    {phase: booting|settling|thinking|acting|evaluating|done|stopped|error, ...}
-  frame    {file}             live VM screenshot (every --live_every s, default 1, JPEG 960x540, from the VM's own HTTP server)
+  frame    {file}             live VM screenshot (every --live_every s, default 2, JPEG 960x540, from the VM's own HTTP server)
   step     {i, note, thought, action, tool, file}   one agent step (file = the observation the model saw)
   verdict  {score, claimed_done, answer, declined, steps}
 Feci Guard (--guard): the agent is feci_guard/run_holo_guard.GuardedAgent (its exact policy: a non-infeasible
@@ -135,7 +135,7 @@ def main():
     ap.add_argument("--server", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--max_steps", type=int, default=50)
-    ap.add_argument("--live_every", type=float, default=1.0)
+    ap.add_argument("--live_every", type=float, default=2.0)
     ap.add_argument("--guard", action="store_true", help="Feci Guard on this side (feci_guard/run_holo_guard.GuardedAgent)")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
