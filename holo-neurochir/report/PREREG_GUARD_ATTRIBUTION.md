@@ -1,6 +1,6 @@
 # Pre-registration: is the online drop in false "done" caused by the guard or by the loop?
 
-Written 2026-11-08 ~22:45 UTC, before any run of this study. No episode of arms A, B or C below exists at the time of
+Written 2026-11-08 ~22:30 UTC (first commit b8d2ddd, 22:33 UTC), before any run of this study. No episode of arms A, B or C below exists at the time of
 writing. Analysis script to be committed before any result is read, as for `PREREG_ONLINE_GUARD.md` (b52c9f6).
 
 ## Why
