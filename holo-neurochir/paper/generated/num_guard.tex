@@ -81,13 +81,13 @@
 \newcommand{\gvStrictRej}{33/86} % source: data/local/feci_guard/v2/PROTOCOL.md dev results, variant c false rejection
 \newcommand{\rbPrimEpisodes}{9} % source: data/local/rescue_bench/RESULT.json primary.episodes
 \newcommand{\rbPrimDiff}{+50} % source: data/local/rescue_bench/RESULT.json primary.paired_difference.mean (points)
-\newcommand{\rbPrimDiffCi}{+22 to +78} % source: data/local/rescue_bench/RESULT.json primary.paired_difference.episode_cluster_bootstrap95
+\newcommand{\rbPrimDiffCi}{+22 to +78} % source: data/local/rescue_bench/RESULT.json primary.paired_difference.episode_cluster_bootstrap95 (rounded half up)
 \newcommand{\rbStrictEpisodes}{8} % source: data/local/rescue_bench/RESULT.json strict_boundary_sensitivity.episodes
 \newcommand{\rbStrictDiff}{+50} % source: data/local/rescue_bench/RESULT.json strict_boundary_sensitivity.paired_difference.mean (points)
-\newcommand{\rbStrictDiffCi}{+12 to +88} % source: data/local/rescue_bench/RESULT.json strict_boundary_sensitivity.paired_difference.episode_cluster_bootstrap95
+\newcommand{\rbStrictDiffCi}{+13 to +88} % source: data/local/rescue_bench/RESULT.json strict_boundary_sensitivity.paired_difference.episode_cluster_bootstrap95 (rounded half up)
 \newcommand{\rbAllEpisodes}{12} % source: data/local/rescue_bench/RESULT.json all_complete_sensitivity.episodes
 \newcommand{\rbAllDiff}{+33} % source: data/local/rescue_bench/RESULT.json all_complete_sensitivity.paired_difference.mean (points)
-\newcommand{\rbAllDiffCi}{+4 to +62} % source: data/local/rescue_bench/RESULT.json all_complete_sensitivity.paired_difference.episode_cluster_bootstrap95
+\newcommand{\rbAllDiffCi}{+4 to +63} % source: data/local/rescue_bench/RESULT.json all_complete_sensitivity.paired_difference.episode_cluster_bootstrap95 (rounded half up)
 \newcommand{\rbGuardSucc}{11/18} % source: data/local/rescue_bench/RESULT.json primary.arms.guard full_successes/branches
 \newcommand{\rbCtrlSucc}{2/18} % source: data/local/rescue_bench/RESULT.json primary.arms.control full_successes/branches
 \newcommand{\rbGuardAfterAction}{9} % source: data/local/rescue_bench/RESULT.json primary.arms.guard.full_success_after_new_action
@@ -124,5 +124,12 @@
 \newcommand{\OgpodC}{8} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.C_true_lost
 \newcommand{\OgpodE}{20} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) secondary_vs_pod.E_false_done_avoided
 \newcommand{\OgpodFds}{13/120} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) guard arm false-done count
+\newcommand{\ogAvoidSucc}{7} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) avoided false done that became successes (score 1)
+\newcommand{\ogAvoidOther}{12} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) avoided false done that ended without success (no answer or otherwise)
+\newcommand{\ogAvoidCap}{12} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) avoided false done that hit the 50-step limit without answering
+\newcommand{\ogNewFd}{5} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) tasks that became false done only with the guard
+\newcommand{\ogFdBaseN}{27} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) false done count, original (Modal)
+\newcommand{\ogFdGuardN}{13} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) false done count, guard
+\newcommand{\ogBnotFd}{1} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) repaired tasks (B) whose original was not a false done
 \newcommand{\ogNoiseDown}{9} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) noise_orig_pod_vs_modal.flips_1_to_0
 \newcommand{\ogNoiseUp}{5} % source: data/local/online/ONLINE_GUARD_RESULT.json, recomputed from results_*/last_steps.jsonl (extract_last_steps.py) noise_orig_pod_vs_modal.flips_0_to_1

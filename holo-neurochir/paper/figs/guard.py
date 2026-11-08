@@ -192,7 +192,7 @@ for key, tag in [("primary", "Prim"), ("strict_boundary_sensitivity", "Strict"),
     pdiff = x["paired_difference"]
     m.add(f"rb{tag}Episodes", x["episodes"], RBS + f" {key}.episodes")
     m.add(f"rb{tag}Diff", f"{100 * pdiff['mean']:+.0f}", RBS + f" {key}.paired_difference.mean (points)")
-    m.add(f"rb{tag}DiffCi", " to ".join(f"{100 * v:+.0f}" for v in pdiff["episode_cluster_bootstrap95"]), RBS + f" {key}.paired_difference.episode_cluster_bootstrap95")
+    m.add(f"rb{tag}DiffCi", " to ".join(f"{int(100 * v + 0.5 + 1e-9):+d}" if v >= 0 else f"{-int(-100 * v + 0.5 + 1e-9):+d}" for v in pdiff["episode_cluster_bootstrap95"]), RBS + f" {key}.paired_difference.episode_cluster_bootstrap95 (rounded half up)")
 pa = RB["primary"]["arms"]
 m.add("rbGuardSucc", f"{pa['guard']['full_successes']}/{pa['guard']['branches']}", RBS + " primary.arms.guard full_successes/branches")
 m.add("rbCtrlSucc", f"{pa['control']['full_successes']}/{pa['control']['branches']}", RBS + " primary.arms.control full_successes/branches")
@@ -243,6 +243,19 @@ for base, key, tag in [("results_test_gh_orig_modal_test", "primary_vs_modal", "
     m.add(f"{tag}C", c["C_true_lost"], OGS + f" {key}.C_true_lost")
     m.add(f"{tag}E", c["E_false_done_avoided"], OGS + f" {key}.E_false_done_avoided")
     m.add(f"{tag}Fds", f"{sum(v['false_done'] for v in G.values())}/{len(G)}", OGS + " guard arm false-done count")
+Mb = arm("results_test_gh_orig_modal_test")
+keys = sorted(set(G) & set(Mb))
+avoided = [k for k in keys if Mb[k]["false_done"] and not G[k]["false_done"]]
+new_fd = [k for k in keys if G[k]["false_done"] and not Mb[k]["false_done"]]
+B_keys = [k for k in keys if Mb[k]["score"] < 1 <= G[k]["score"]]
+assert len(avoided) == OG["primary_vs_modal"]["E_false_done_avoided"]
+m.add("ogAvoidSucc", sum(G[k]["score"] >= 1 for k in avoided), OGS + " avoided false done that became successes (score 1)")
+m.add("ogAvoidOther", sum(G[k]["score"] < 1 for k in avoided), OGS + " avoided false done that ended without success (no answer or otherwise)")
+m.add("ogAvoidCap", sum(G[k]["score"] < 1 and G[k]["steps"] >= 50 for k in avoided), OGS + " avoided false done that hit the 50-step limit without answering")
+m.add("ogNewFd", len(new_fd), OGS + " tasks that became false done only with the guard")
+m.add("ogFdBaseN", sum(Mb[k]["false_done"] for k in keys), OGS + " false done count, original (Modal)")
+m.add("ogFdGuardN", sum(G[k]["false_done"] for k in keys), OGS + " false done count, guard")
+m.add("ogBnotFd", sum(not Mb[k]["false_done"] for k in B_keys), OGS + " repaired tasks (B) whose original was not a false done")
 nz = OG["noise_orig_pod_vs_modal"]
 m.add("ogNoiseDown", nz["flips_1_to_0"], OGS + " noise_orig_pod_vs_modal.flips_1_to_0")
 m.add("ogNoiseUp", nz["flips_0_to_1"], OGS + " noise_orig_pod_vs_modal.flips_0_to_1")
