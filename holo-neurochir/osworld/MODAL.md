@@ -47,3 +47,31 @@ Les coûts sont tenus dans `MODAL_COST.md` (`modal billing report --for today --
 
 ## Mesures
 (à compléter après le test)
+
+## Créneau de recherche (app `holo-slot`, `osworld/modal_slot.py`)
+
+Ce créneau exécute un job de recherche quelconque (transformers, hooks, activations) sur une H100 Modal. Le venv est le même que
+celui du pod (`/workspace/venv`, figé dans `modal_slot_requirements.txt` : torch 2.11.0+cu128, transformers 5.22.2, fla 0.6.0,
+causal_conv1d 1.7.0, dont le build est copié du pod). La fonction `run_job` tourne dans un seul conteneur à la fois par compte,
+1 h au plus, et redescend à zéro 60 s après la fin.
+
+Sur le pod :
+```bash
+bash /workspace/modal_run_job.sh <dossier_job> "python <script> <job.json>" [1|2]   # compte 2 par défaut
+```
+1. Le script envoie `/workspace/projet/holo` (`/slot/code/holo`, à chaque job) et `<dossier_job>` (`/slot/jobs/<id>/in`) dans le
+   Volume `holo-slot` du compte.
+2. Il lance la commande avec `bash -c`, `cwd` = la copie du dossier, `PYTHONPATH=/slot/code:<dossier>`, `HF_HOME=/models/hf`
+   (Holo-3.1-4B en cache, hors ligne) et `OUT_DIR=/slot/jobs/<id>/out`. Les checkpoints édités sont lisibles sous
+   `/models/ckpt/<nom>`.
+3. Il rapatrie `OUT_DIR` dans `<dossier_job>/modal_out/` (avec `modal_log.txt`, la sortie standard et les erreurs du job, et
+   `modal_exit_code`) et rend le code de retour du job.
+
+Règles pour le job : chemins relatifs au dossier du job (rien sous `/workspace`) ; écrire les résultats dans `$OUT_DIR` ; ne pas
+dépasser quelques Go (le débit d'upload est d'environ 40 Mo/s). Le script refuse de lancer un job si le même compte sert
+`holo-vllm` sur sa GPU (une H100 par compte, budget), sauf avec `MODAL_SLOT_FORCE=1`.
+
+Exemple testé : `/workspace/osw_shared/modal_slot_example` (`gen.py` : une génération gloutonne avec `holo.model.Holo`).
+Mesures du 2026-11-08 sur le compte 1 : 75 à 89 s de bout en bout, dont chargement des poids 10 à 15 s et génération de 48 tokens
+48 à 52 s, qui comprennent le JIT et l'autotune des noyaux fla au premier appel ; envoi 7 à 9 s. Sortie : torch 2.11.0+cu128,
+transformers 5.22.2, NVIDIA H100 80GB HBM3.
