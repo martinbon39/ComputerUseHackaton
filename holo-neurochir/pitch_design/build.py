@@ -12,6 +12,9 @@ def fr(m):
     n, d, lo, hi = (x.replace(".", ",").replace("-", "−") for x in m.groups())
     return f"{d}, IC95 [{lo} ; {hi}] sur {n} épisodes"
 
+def pts(x):
+    return str(round(float(x) * 100))
+
 def rescue():
     """Interim escalation numbers, read from rescue_bench/REPORT.md at build time so the page never lags the source."""
     t = RESCUE.read_text()
@@ -26,6 +29,10 @@ def rescue():
         "{{R_DIFF}}": g(r"mean score difference: \*\*([\d.]+)\*\*").replace(".", ","),
         "{{R_STRICT}}": fr(re.search(r"Strict replay \+ boundary: (\d+) episodes; paired difference ([\d.-]+), CI \[([\d.-]+), ([\d.-]+)\]", t)),
         "{{R_ALL}}": fr(re.search(r"All complete, ignoring replay validity: (\d+) episodes; paired difference ([\d.-]+), CI \[([\d.-]+), ([\d.-]+)\]", t)),
+        "{{R_STATE}}": "collecte complète" if re.search(r"Status: \*\*complete\*\*", t) else "collecte en cours, intermédiaire",
+        "{{R_PTS}}": pts(g(r"mean score difference: \*\*([\d.]+)\*\*")),
+        "{{R_LOP}}": pts(g(r"95% CI \*\*\[([\d.-]+),")),
+        "{{R_HIP}}": pts(g(r"95% CI \*\*\[[\d.-]+, ([\d.-]+)\]")),
         "{{R_CI}}": " ; ".join(x.strip().replace(".", ",") for x in g(r"95% CI \*\*\[([\d., ]+)\]\*\*").split(",")),
     }
 

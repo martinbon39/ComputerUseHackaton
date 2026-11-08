@@ -24,12 +24,12 @@
       <div class="stage"></div>
     </figure>
   </div>
-  <p class="corner bl">01 / 10</p>
+  <p class="corner bl">01 / 11</p>
 </section>
 
 <section class="slide" id="s2">
   <p class="corner tl">Feci Guard</p>
-  <p class="corner tr">02 / 10</p>
+  <p class="corner tr">02 / 11</p>
   <div class="head"><h2>Le problème</h2><span class="n">01</span></div>
   <div class="grid">
     <div class="stack">
@@ -47,7 +47,7 @@
 
 <section class="slide" id="s3">
   <p class="corner tl">Feci Guard</p>
-  <p class="corner tr">03 / 10</p>
+  <p class="corner tr">03 / 11</p>
   <div class="head"><h2>Le diagnostic</h2><span class="n">02</span></div>
   <div class="grid rev">
     <figure class="fig" data-fig="absent" data-rest="6 couches · rien" data-label="Six couches internes écartées : chacune porte les mêmes marques, rien ne sépare un faux « fini » d'un vrai.">
@@ -67,7 +67,7 @@
 
 <section class="slide" id="s4">
   <p class="corner tl">Feci Guard</p>
-  <p class="corner tr">04 / 10</p>
+  <p class="corner tr">04 / 11</p>
   <div class="head"><h2>La chirurgie des poids</h2><span class="n">03</span></div>
   <div class="stack" style="max-width:1500px;width:100%">
     <p class="lede" style="max-width:26ch">On a retouché les poids. <em>Aucun gain détectable.</em></p>
@@ -84,7 +84,7 @@
 
 <section class="slide" id="s5">
   <p class="corner tl">Feci Guard</p>
-  <p class="corner tr">05 / 10</p>
+  <p class="corner tr">05 / 11</p>
   <div class="head"><h2>Le vérificateur</h2><span class="n">04</span></div>
   <div class="grid rev">
     <figure class="fig" data-fig="guard" data-rest="exigence 3 · ✗" data-tour="off" data-label="La loupe du Guard sur l'exigence non remplie.">
@@ -114,21 +114,40 @@
   <p class="corner bl">jury_kit/replay_guard.py</p>
 </section>
 
+<section class="slide" id="s5b">
+  <p class="corner tl">Feci Guard</p>
+  <p class="corner tr">06 / 11</p>
+  <div class="head"><h2>En ligne</h2><span class="n">05</span></div>
+  <div class="stack" style="max-width:1500px;width:100%">
+    <p class="lede" style="max-width:28ch">Sur 120 tâches de test tenues à part, le Guard <span class="lit">divise par deux</span> les faux « fini ».</p>
+    <div class="facts" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+      <div><div class="num">22,5 %<small> → </small>10,8 %</div><p class="mono">faux « fini » · 27/120 → 13/120</p></div>
+      <div><div class="num">58,6<small> → </small>60,2</div><p class="mono">score OSWorld · non significatif</p></div>
+    </div>
+    <div class="ci lit" data-min="-25" data-max="10" data-lo="-19.2" data-pt="-11.7" data-hi="-4.2" data-ticks="-20,-10,0,10" data-unit="" data-aria="Faux fini : −11,7 points, IC95 de −19,2 à −4,2">
+      <div class="ci-l"><b>Faux « fini » · −11,7 pts</b><span class="mono">IC95 [−19,2 ; −4,2] · critère 1 atteint</span></div>
+    </div>
+    <div class="ci" data-min="-25" data-max="10" data-lo="-4.4" data-pt="1.6" data-hi="7.7" data-ticks="-20,-10,0,10" data-unit="" data-aria="Score : +1,6 point, IC95 de −4,4 à +7,7">
+      <div class="ci-l"><b>Score OSWorld · +1,6 pt</b><span class="mono">IC95 [−4,4 ; +7,7] · aucun gain de score revendiqué</span></div>
+    </div>
+  </div>
+  <p class="corner bl">report/ONLINE_GUARD_RESULT.md · préenregistré</p>
+</section>
+
 <section class="slide" id="s6">
   <p class="corner tl">Feci Guard</p>
-  <p class="corner tr">06 / 10</p>
-  <div class="head"><h2>Réparer, puis escalader</h2><span class="n">05</span></div>
+  <p class="corner tr">07 / 11</p>
+  <div class="head"><h2>Réparer, puis escalader</h2><span class="n">06</span></div>
   <div class="grid">
     <div class="stack">
-      <p class="lede">Refusé, l'agent répare. S'il n'y arrive pas, la tâche monte à <em>Holo4-27B</em>.</p>
+      <p class="lede">Refusé, l'agent répare rarement seul. Confiée à <em>Holo4-27B</em>, elle l'est plus souvent.</p>
       <div class="ci" data-min="-10" data-max="60" data-lo="0" data-pt="16.7" data-hi="44" data-ticks="0,20,40,60" data-unit="" data-aria="Réparation avec Guard : +16,7 points, IC95 de 0 à +44">
         <div class="ci-l"><b>Holo-3.1 répare · 5/18 contre 2/18 sans Guard</b><span class="mono">+16,7 pts · IC95 [0 ; +44] · non distinguable de 0</span></div>
       </div>
-      <div class="list">
-        <div><span class="k">Guard → Holo4</span><span class="v">{{R_GUARD}} branches à score 1, contre {{R_CTRL}} pour Holo4 seul · écart moyen par épisode {{R_DIFF}}, IC95 [{{R_CI}}] sur {{R_EPIS}} épisodes</span><span class="mono">en cours</span></div>
-        <div><span class="k">Rejeu strict</span><span class="v">{{R_STRICT}} · tous épisodes complets : {{R_ALL}}</span><span class="mono">en cours</span></div>
+      <div class="ci" data-min="-10" data-max="100" data-lo="{{R_LOP}}" data-pt="{{R_PTS}}" data-hi="{{R_HIP}}" data-ticks="0,25,50,75,100" data-unit="" data-aria="Escalade vers Holo4 : +{{R_PTS}} points, IC95 de +{{R_LOP}} à +{{R_HIP}}">
+        <div class="ci-l"><b>Escalade vers Holo4 · {{R_GUARD}} contre {{R_CTRL}}</b><span class="mono">+{{R_PTS}} pts · IC95 [+{{R_LOP}} ; +{{R_HIP}}] · rejeu, épisodes valides {{R_EPIS}}</span></div>
       </div>
-      <p class="caveat">Rejeu conditionnel, pas un gain en ligne. Intermédiaire : {{R_BR}} branches, relevé du {{R_UPDATED}}. Aucun gain revendiqué avant la fin de la collecte.</p>
+      <p class="caveat">Rejeu conditionnel, pas lancé en ligne ; {{R_STATE}} ({{R_BR}} branches). Rejeu strict : {{R_STRICT}}.</p>
     </div>
     <figure class="fig" data-fig="repair" data-rest="1 · refus" data-label="Trois écrans : refusé, réparé, puis confié à un modèle plus grand sur une marche.">
       <span class="read mono"></span>
@@ -140,8 +159,8 @@
 
 <section class="slide" id="s7">
   <p class="corner tl">Feci Guard</p>
-  <p class="corner tr">07 / 10</p>
-  <div class="head"><h2>Le labo</h2><span class="n">06</span></div>
+  <p class="corner tr">08 / 11</p>
+  <div class="head"><h2>Le labo</h2><span class="n">07</span></div>
   <p class="lede" style="max-width:28ch">Une équipe d'environ 25 agents IA, coordonnée, <em>qui se relit elle-même.</em></p>
   <div class="facts">
     <div><div class="num">≈ 25</div><p class="mono">agents</p></div>
@@ -159,8 +178,8 @@
 
 <section class="slide" id="s8">
   <p class="corner tl">Feci Guard</p>
-  <p class="corner tr">08 / 10</p>
-  <div class="head"><h2>La méthode</h2><span class="n">07</span></div>
+  <p class="corner tr">09 / 11</p>
+  <div class="head"><h2>La méthode</h2><span class="n">08</span></div>
   <p class="lede" style="max-width:24ch">La règle est écrite <em>avant</em> les résultats.</p>
   <p class="note">« Gain » seulement si la borne basse de l'IC95 apparié est &gt; 0. Figée à 03:36.</p>
   <div class="list">
@@ -175,8 +194,8 @@
 
 <section class="slide" id="s9">
   <p class="corner tl">Feci Guard</p>
-  <p class="corner tr">09 / 10</p>
-  <div class="head"><h2>Pour H</h2><span class="n">08</span></div>
+  <p class="corner tr">10 / 11</p>
+  <div class="head"><h2>Pour H</h2><span class="n">09</span></div>
   <p class="display" style="max-width:17ch">Retoucher les poids <em>n'a pas suffi</em>.</p>
   <p class="lede" style="max-width:30ch">Les pistes : un <span class="lit">vérificateur externe</span>, ou l'entraînement.</p>
   <p class="note">Et un labo d'agents qui se relit lui-même produit un résultat auquel on peut se fier, même négatif.</p>
@@ -184,8 +203,8 @@
 
 <section class="slide" id="s10">
   <p class="corner tl">Feci Guard</p>
-  <p class="corner tr">10 / 10</p>
-  <div class="head"><h2>Grille du jury</h2><span class="n">09</span></div>
+  <p class="corner tr">11 / 11</p>
+  <div class="head"><h2>Grille du jury</h2><span class="n">10</span></div>
   <div class="list">
     <div><span class="k">Computer Use · 25 %</span><span class="v">Holo-3.1-4B sur des VMs Ubuntu OSWorld, 1 207 épisodes notés ; duel en direct, original contre agent modifié, même tâche, deux VMs</span><span class="mono">démo</span></div>
     <div><span class="k">Exécution · 25 %</span><span class="v">KVM, vLLM sur Modal, GitHub Actions ; fusion reproductible au bit près (sha256), un manifeste par bras</span><span class="mono">jury_kit/</span></div>
