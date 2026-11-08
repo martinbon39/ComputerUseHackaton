@@ -1,0 +1,31 @@
+{
+ "deployed_at_utc": "2026-11-08T07:56:39Z",
+ "account": 2,
+ "modal_profile": "martinbon39",
+ "app": "holo-judge",
+ "url": "https://martinbon39--holo-judge-serve.us-east.modal.run/v1",
+ "served_model_name": "Holo4-27B",
+ "checkpoint": "Hcompany/Holo4-27B@4de03cfeee1d930b616bfd4817570293f29ad8b9",
+ "role": "judge for verif-study (text + one image per request)",
+ "gpu": "1x NVIDIA H100 80GB (Modal gpu=H100, max_containers=1, scaledown 300 s)",
+ "vllm": "0.23.0",
+ "vllm_args": [
+  "--dtype",
+  "bfloat16",
+  "--max-model-len",
+  "32768",
+  "--max-num-seqs",
+  "16",
+  "--gpu-memory-utilization",
+  "0.92",
+  "--limit-mm-per-prompt",
+  "{\"image\": 2}",
+  "--reasoning-parser",
+  "qwen3",
+  "--enable-prefix-caching",
+  "--api-key",
+  "***"
+ ],
+ "modal_client": "1.6.3",
+ "startup": "ready 170 s after deploy (weights 46 s, 51.1 GiB; max concurrency 8.5x at 32k tokens)"
+}
