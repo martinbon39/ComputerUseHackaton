@@ -20,7 +20,7 @@ python3 jury_kit/replay_guard.py --show 2 # exit 0; prints "45/66 = 68 % [56-78]
 bash jury_kit/quickstart.sh               # both of the above + checks the demo page; ends with "QUICKSTART OK"
 ```
 - Expected full outputs: [docs/QUICKSTART_PROOF.md](docs/QUICKSTART_PROOF.md). CI runs the same whenever the jury kit, the Guard code or its data change:
-  [.github/workflows/quickstart.yml](.github/workflows/quickstart.yml) (Python 3.9, the oldest supported).
+  [.github/workflows/quickstart.yml](.github/workflows/quickstart.yml) (preinstalled Python 3 of the runner, nothing installed).
 - `replay_guard.py` runs the frozen decision function `holo-neurochir/feci_guard/feci_guard.py::check` on the 268 real
   final screenshots (`holo-neurochir/verif_study/images/`, sha256-checked against the manifest). Only the network call
   is replaced, by the verdict recorded on 2026-11-08 (`holo-neurochir/judge_bench/claude_responses.jsonl`).

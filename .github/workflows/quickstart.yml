@@ -23,13 +23,12 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.9"
+      - name: preinstalled Python, nothing downloaded or installed
+        run: python3 --version
       - name: (a) + (b) + (c)
         run: bash jury_kit/quickstart.sh
       - name: guard_live.py lists the 268 episodes (no network call)
         run: |
-          python jury_kit/guard_live.py --list > episodes.txt
+          python3 jury_kit/guard_live.py --list > episodes.txt
           test "$(wc -l < episodes.txt)" -eq 268
           head -3 episodes.txt

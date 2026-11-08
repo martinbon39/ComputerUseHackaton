@@ -1,9 +1,10 @@
 # Quickstart proof
 
-Every command of the README quickstart, run on 2026-11-08 at about 10:15 UTC in a **fresh clone** with a **fresh
+Every command of the README quickstart, run on 2026-11-08 at about 10:05 UTC in a **fresh clone** with a **fresh
 virtual environment** (no package installed: `pip list` shows only pip), Python 3.14.4, Linux x86-64, CPU only.
-Clone of `main` at commit `6bb899f` (the quickstart files are unchanged since). The same commands run on every push
-in GitHub Actions on Python 3.9 (whenever the jury kit, the Guard code or its data change): [.github/workflows/quickstart.yml](../.github/workflows/quickstart.yml).
+Clone of `main` at commit `6bb899f` (level 2 used the later `guard_live.py`, which only adds a clear error for an unknown episode id). The same commands run in GitHub
+Actions, with the runner's preinstalled Python 3, whenever the jury kit, the Guard code or its data change:
+[.github/workflows/quickstart.yml](../.github/workflows/quickstart.yml).
 
 ```bash
 git clone https://github.com/martinbon39/ComputerUseHackaton && cd ComputerUseHackaton   # 9 s
@@ -142,3 +143,7 @@ live     : ACCEPT (complete)  [claude:sonnet, 4.7 s, error=None]
   [v] Browsing content (A-Z listing) is visible: The 'Browse A-Z' letter links and the product listings (5-Hydroxytryptophan, Acai, Aortic Extract) are visible.
 recorded : COMPLETE -> accept   same decision: True
 ```
+
+## Oldest supported Python
+Same fresh clone, Python 3.9.25 (`uv run --python 3.9 --no-project python ...`): `verify_results.py` exit 0,
+`replay_guard.py` exit 0, `guard_live.py --list` prints 268 episodes.
