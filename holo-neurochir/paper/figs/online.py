@@ -160,6 +160,14 @@ for a, tag in [("orig", "Orig"), ("cand", "Cand")]:
 m.add("brEpisodes", len({x["task"] for x in br["orig"]}), S + "branch_pilot/orig/branches.jsonl distinct tasks")
 bad = {x["task"] for x in br["orig"] + br["cand"] if x["replay_diff_max"] > 0.05}
 assert len(bad) == 1, bad
+func = {t: __import__("json").loads((DATA / f"local/osworld_tasks/{t.split('/')[-1]}.json").read_text())["evaluator"]["func"] for t in {x["task"] for x in br["orig"]}}
+rep = [x for x in br["orig"] if x["recorded_score"] == 0 and x["score"] > 0]
+assert len(rep) == 1 and func[rep[0]["task"]] == "infeasible", rep
+m.add("brRepairTask", rep[0]["task"].split("/")[1][:8], S + "branch_pilot/orig/branches.jsonl recorded_score 0, branch score > 0")
+m.add("brRepairDomain", rep[0]["task"].split("/")[0], S + "branch_pilot/orig/branches.jsonl task domain")
+for a_, tag in [("orig", "Orig"), ("cand", "Cand")]:
+    ff = [x for x in br[a_] if x["recorded_score"] == 0 and func[x["task"]] != "infeasible" and x["task"] not in bad]
+    m.add(f"brFeasFalse{tag}", f"{sum(x['score'] == 1 for x in ff)}/{len(ff)}", S + f"branch_pilot/{a_}/branches.jsonl recorded false successes, evaluator.func != infeasible (data/local/osworld_tasks), faithful replay")
 vm = __import__("re").search(r"paced replay: \*\*(\d+)/(\d+)\*\*", (BP / "REPORT.md").read_text())
 m.add("brValidOk", vm.group(1), S + "branch_pilot/REPORT.md 'paced replay' validation")
 m.add("brValidN", vm.group(2), S + "branch_pilot/REPORT.md 'paced replay' validation")
