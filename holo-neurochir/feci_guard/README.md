@@ -4,56 +4,57 @@ The fix our paper ("Cogito, Ergo Feci") recommends. A computer-use agent's false
 weights. It needs an **external verifier** that checks every requirement of the task on the screen and tells the
 agent what is missing.
 
-Holo-3.1-4B judging its own work is at chance level: it catches 53 % of false successes and rejects 48 % of true
-ones (judge bench below). So the verifier is a stronger model, Claude through the local `claude -p` CLI (Sonnet by default). Blocking a
-false "done" with no explanation repaired 0 of 2 feasible false successes, so a refusal always says what is missing.
+Holo-3.1-4B judging its own work is at chance level: it catches 53 % of false successes and rejects 48 % of true ones.
+So the verifier is a stronger model, Claude. Blocking a false "done" with no explanation repaired 0 of 2 feasible
+false successes, so a refusal always says what is missing. **Results: `RESULTS.md`** (final). Protocols: `PREREG.md`
+(v1, repair measure) and `v2/PROTOCOL.md` (sprint S1).
 
-## Judge bench (same 268 episodes, final screen only)
-Source: `../judge_bench/RESULT.json` and `REPORT.md` (verif-study corpus: 66 false successes, 202 true successes,
-90 tasks). Rule: INCOMPLETE = detection, COMPLETE = pass, error = pass. Wilson 95 % CI; CI of the gap from a
-task-level bootstrap.
-
-| | Holo-3.1-4B | Holo4-27B | Claude Sonnet (Feci Guard verifier, sha `0af76fdb`) |
-|---|---|---|---|
-| False successes detected | 53 % (35/66) [41–65] | 47 % (31/66) [35–59] | **68 % (45/66) [56–78]** |
-| True successes wrongly rejected | 48 % (97/202) [41–55] | 31 % (63/202) [25–38] | **10 % (21/202) [7–15]** |
-| Gap, detection − false rejection | +5 pts [−13, +23] | +16 pts [−3, +33] | **+58 pts [+41, +74]** |
-| Errors / invalid outputs (count as pass) | 3 / 3 | 1 / 4 | 0 / 0 |
-
-Caveat (REPORT.md, Limits): the Holo judges used verif-study's V1 prompt, while Claude used the Feci Guard prompt
-(strict JSON, INCOMPLETE only when a requirement is visibly "no"). The Claude advantage therefore mixes the model and
-the prompt.
-
-## How it works
-- `run_holo_guard.py` is a **copy** of the official `holo_repro/run_holo.py`. The original is never modified. The agent
-  loop is the same as `HoloComputerAgent.run`, except at the terminal `answer`.
-- On `answer` (unless the answer declares the task infeasible), the guard takes a fresh screenshot and calls
-  `verifier.verify(task, screenshot)`. The verifier lists every requirement, gives each one yes/no/cannot_tell with
-  its visual evidence, and returns `COMPLETE` or `INCOMPLETE`, plus the most important missing requirement and a next
-  action. The output is strict JSON (`--json-schema`), with a 55 s timeout.
-- **INCOMPLETE** refuses the answer. As the answer's tool output, the agent gets
+## How it works (v1, the version used online)
+- `run_holo_guard.py` is a **copy** of the official `holo_repro/run_holo.py`; the original is never modified. The
+  agent loop is the same as `HoloComputerAgent.run`, except at the terminal `answer`.
+- On `answer` (unless the answer declares the task infeasible), the guard takes a fresh screenshot from the VM and
+  calls `feci_guard.check(task, screenshot)`. The verifier (`verifier.py`) lists every requirement, gives each one
+  yes/no/cannot_tell with its visual evidence, and returns COMPLETE or INCOMPLETE, plus the most important missing
+  requirement and a next action. The output is strict JSON, with a 55 s timeout.
+- **INCOMPLETE** (with at least one requirement "no") refuses the answer. As the answer's tool output, the agent gets
   `Verifier: requirement '…' is not satisfied on screen: <evidence>. <next action> Continue the task.`, and the
-  episode goes on. **COMPLETE**, or no verdict (timeout, CLI error, invalid JSON), lets the answer through.
-- Each episode allows at most 2 refusals. The 3rd answer is accepted without a check.
+  episode goes on.
+- **COMPLETE**, no verdict (timeout, error) or a self-contradictory verdict lets the answer through (fail-open).
+- At most 2 refusals per episode; the 3rd answer passes unchecked.
 - Each episode directory gets:
-  - `guard.md`: the readable journal, with each requirement ✓/✗/? and its evidence, the decision, and the feedback sent;
+  - `guard.md`: the readable journal, with each requirement ✓/✗/? and its evidence, the decision, and the feedback
+    sent;
   - `guard.jsonl`: the raw verdicts, with latency and cost;
   - `guard_step_N.png`: the screenshot that was checked;
-  - a `feci_guard` summary inside `meta.json`.
+  - a `feci_guard` summary in `meta.json`.
+- Options: `--guard on|off`, `--guard_mode passive|active` (active: NEED_CHECK asks the agent for a read-only check
+  first), `--guard_model`, `--guard_max_refusals`.
+- Judge backend from the environment:
+  - `GUARD_BACKEND=claude` (local `claude -p`);
+  - `openai`, for any OpenAI-compatible endpoint: `GUARD_BASE_URL`, `GUARD_MODEL`, and `GUARD_API_KEY_ENV` = the name
+    of the variable holding the key. GitHub runs use the relay `guard_server.py` (127.0.0.1:9911,
+    `GUARD_MODEL=claude-sonnet`).
+
+## Files
+| file | what |
+|---|---|
+| `verifier.py`, `feci_guard.py`, `run_holo_guard.py` | v1: verifier, the accept/reject rule (`check`), the guarded harness. **Frozen** (sha in PREREG.md). |
+| `run_holo_guard_rescue.py` | v1 plus escalation: after the first refusal, the rest of the episode is played by `RESCUE_MODEL` (`RESCUE_BASE_URL`, `RESCUE_API_KEY_ENV`, `RESCUE_TIMEOUT_S`). |
+| `verifier_v2.py`, `feci_guard_v2.py`, `run_holo_guard_v2.py`, `guard_server_v2.py` | v2 (Opus + history), with an optional `GUARD_V2_UNBLOCK=1` feedback hint; relay on 9912 (stopped: no online v2 arm). |
+| `guard_server.py` | v1 relay for GitHub runners (written by ares). |
+| `repair_runner.py`, `run_repair.sh`, `analyze_repair.py`, `repair/` | repair measure (guard arm; the no-guard arm is `../osworld/branch_runner.py`). |
+| `compare_online.py`, `run_guard.sh`, `run_guard_rescue.sh` | online paired comparison and local launchers. |
+| `v2/` | sprint S1: split, protocol, runs, scores. |
+| `smoke/` | journals of the end-to-end runs. |
+| `sync_to_runner.sh` | copies the guard files to holo-osworld-runner/feci_guard/ (the source of truth is here). |
 
 ```
-bash run_guard.sh ~/osw/results_feci_guard <tasks.json> 3            # guard on (default)
-bash run_guard.sh ~/osw/results_x <tasks.json> 1 --guard off         # official behaviour, same copy
-python verifier.py --task "<instruction>" --image shot.png           # one manual check
-python -c "import feci_guard; print(feci_guard.check(task, png_bytes))"  # library entry point (duel, verif-study)
-python compare_online.py --guard <dir> --orig <dir> [--orig <dir>] --tasks <tasks.json>
-bash run_repair.sh nog|guard <out> repair/episodes.txt 2             # repair measure (replayed false successes)
-python analyze_repair.py ~/osw/feci_repair                           # its paired analysis
+bash run_guard.sh <result_dir> <tasks.json> <workers> [--guard off]      # guarded run_holo on orbit VMs
+bash run_guard_rescue.sh <result_dir> <tasks.json> <workers>             # + escalation to Holo4-27B
+python verifier.py --task "<instruction>" --image shot.png               # one manual check
+python -c "import feci_guard; print(feci_guard.check(task, png_bytes))"  # library entry point
+python analyze_repair.py ~/osw/feci_repair                               # repair measure analysis
+python v2/score_v2.py holdout ab v1                                      # S1 scores
 ```
-Options: `--guard on|off`, `--guard_mode passive|active`, `--guard_model sonnet|opus|…`, `--guard_max_refusals 2`.
-Judge backend from the environment: `GUARD_BACKEND=claude` (local `claude -p`) or `openai` (`GUARD_BASE_URL`,
-`GUARD_MODEL`, `GUARD_API_KEY_ENV` = name of the variable holding the key). `sync_to_runner.sh` copies the guard to
-holo-osworld-runner for GitHub runs. The API (GuardedAgent, feci_guard.check, verifier.py) is frozen during the duels.
 
-## Results
-See `RESULTS.md`, which is filled in after the runs. The protocol was fixed beforehand in `PREREG.md`.
+Demo sequence (refusal, then a real repair): `~/osw/feci_demo/calc_1de60575/`.
