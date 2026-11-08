@@ -18,7 +18,7 @@ which claims are **measured** versus **only predicted or still running**. Human-
 python3 jury_kit/verify_results.py        # exit 0; prints "+1.94 pt CI95 [-4.3; +8.0] ... NO DETECTABLE GAIN"
 python3 jury_kit/recount_judges.py        # exit 0; the 3 judges recounted from raw responses (35/66, 31/66, 45/66)
 python3 jury_kit/replay_guard.py --show 2 # exit 0; prints "45/66 = 68 % [56-78]", "21/202 = 10 % [7-15]", gap "+58 [+41, +74]"
-bash jury_kit/quickstart.sh               # both of the above + checks the demo page; ends with "QUICKSTART OK"
+bash jury_kit/quickstart.sh               # all of the above + checks the 2 demo pages; ends with "QUICKSTART OK"
 ```
 - Expected full outputs: [docs/QUICKSTART_PROOF.md](docs/QUICKSTART_PROOF.md). CI runs the same whenever the jury kit, the Guard code or its data change:
   [.github/workflows/quickstart.yml](.github/workflows/quickstart.yml) (preinstalled Python 3 of the runner, nothing installed).
@@ -27,6 +27,9 @@ bash jury_kit/quickstart.sh               # both of the above + checks the demo 
   is replaced, by the verdict recorded on 2026-11-08 (`holo-neurochir/judge_bench/claude_responses.jsonl`).
 - With the `claude` CLI or an Anthropic key (level 2, ~$0.03): `python3 jury_kit/guard_live.py [--api] [--episode ID]` makes
   one fresh verifier call. Model-side checks of the weight edits: [jury_kit/README.md](jury_kit/README.md) (40 GB download, GPU).
+
+Demo of the Guard (open in a browser, self-contained): `holo-neurochir/demo_live/repair_calc.html`, a recorded
+refusal → repair on `libreoffice_calc/1de60575` (one episode, not an average effect).
 
 ## Claim → evidence map
 | Claim | Status | Evidence (path) | How to check |

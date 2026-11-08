@@ -127,10 +127,12 @@ bash jury_kit/quickstart.sh                 # all of the above + (c), exit code 
   on 2026-11-08. It scores the decisions against the official OSWorld labels. `--show N` prints the refusals the
   agent would have received. [`jury_kit/recount_judges.py`](jury_kit/recount_judges.py) recounts all three judges
   (Holo-3.1-4B, Holo4-27B, Claude) from their raw responses, as the independent recount did during the hackathon.
-- **(c)** Demo replay: open [`holo-neurochir/demo_faux_fini/demo_faux_fini.html`](holo-neurochir/demo_faux_fini/demo_faux_fini.html)
-  in a browser (one self-contained 3 MB file, or `python3 -m http.server -d holo-neurochir/demo_faux_fini`). It
-  replays a recorded episode step by step: the original agent's false "done" on a real desktop. This is one illustrative episode, not evidence of a
-  gain. The Guard's own repair, step by step, is the hosted [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxehqaqs.SsRdAM7BfXxBtWZEUzqCHbXqFzQApOsO). Screenshots of the live duel page (two VMs side by side, STOP buttons, recorded verdicts):
+- **(c)** Demo of the Guard: open [`holo-neurochir/demo_live/repair_calc.html`](holo-neurochir/demo_live/repair_calc.html)
+  in a browser (one self-contained 1 MB file, French captions; hosted copy: [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxehqaqs.SsRdAM7BfXxBtWZEUzqCHbXqFzQApOsO)). On OSWorld task `libreoffice_calc/1de60575`, the agent
+  says "done" with the pivot table on the wrong sheet; the Guard refuses ("the table is on 'Pivot Table_Sheet1_1', not
+  'Sheet2'"); the agent renames the sheet in 5 steps; the second check passes and the official evaluator scores 1.
+  This is one recorded episode of the repair measure (row 8), not evidence of an average gain. The problem itself, an
+  original false "done" step by step: [`demo_faux_fini.html`](holo-neurochir/demo_faux_fini/demo_faux_fini.html) (3 MB). Screenshots of the live duel page (two VMs side by side, STOP buttons, recorded verdicts):
   [`osworld/duel/shots/`](holo-neurochir/osworld/duel/shots/).
 
 Expected outputs, pasted from a fresh clone: [docs/QUICKSTART_PROOF.md](docs/QUICKSTART_PROOF.md). The same script
@@ -177,7 +179,7 @@ on GitHub runners. A judge cannot run them in 5 minutes.
 | **Usefulness & impact (20 %)** | The false "done" is the main failure mode (57 % of failures). A verifier that catches 68 % of them at a 10 % false-alarm rate can be added to any agent through one function call, `feci_guard.check(task, png)` | rows 1 and 7 above, [`feci_guard/README.md`](holo-neurochir/feci_guard/README.md), [paper](holo-neurochir/paper/main.pdf) |
 | **Originality & innovation (15 %)** | First weight-surgery study of a GUI agent's stopping decision, with three traps that would each have produced a false positive; a negative result that motivates the external verifier; an autonomous agent research team | [paper](holo-neurochir/paper/main.pdf) §4–6, [docs/REPO_MAP.md](docs/REPO_MAP.md), [How we worked](#how-we-worked) |
 | **UX & user control (10 %)** | The refusal says *which* requirement failed and *what* to do; ≤ 2 refusals so the agent is never stuck; a failing verifier never blocks; a readable journal per episode (`guard.md`, ✓/✗ per requirement); the duel page has STOP buttons and step-by-step replay | [`smoke/impress_550ce7e7_guard.md`](holo-neurochir/feci_guard/smoke/impress_550ce7e7_guard.md), [`osworld/duel/shots/`](holo-neurochir/osworld/duel/shots/) |
-| **Demo clarity & Q&A (5 %)** | 3-command quickstart, a demo replay page, a paper with every number regenerated from data | [Quickstart](#quickstart-under-5-minutes-no-gpu-no-key-no-vm), [`demo_faux_fini.html`](holo-neurochir/demo_faux_fini/demo_faux_fini.html), [`paper/README.md`](holo-neurochir/paper/README.md) |
+| **Demo clarity & Q&A (5 %)** | Quickstart in a few commands, a demo video, a Guard repair replay page, a paper with every number regenerated from data | [Quickstart](#quickstart-under-5-minutes-no-gpu-no-key-no-vm), [`repair_calc.html`](holo-neurochir/demo_live/repair_calc.html), [`demo_faux_fini.html`](holo-neurochir/demo_faux_fini/demo_faux_fini.html), [`paper/README.md`](holo-neurochir/paper/README.md) |
 
 ## Links
 
