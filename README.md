@@ -179,6 +179,7 @@ public models, and replay 4 frozen contexts.
 - **Episodes on GitHub-hosted runners**: [martinbon39/holo-osworld-runner](https://github.com/martinbon39/holo-osworld-runner)
   runs OSWorld VMs (KVM) in GitHub Actions jobs, 20 shards in parallel. The agent is served by vLLM on Modal, and the Guard is
   reached through an OpenAI-compatible relay. Collection: [`osworld/gh_collect.sh`](holo-neurochir/osworld/gh_collect.sh).
+- **GPU budget monitor**: Our GPU infrastructure controller (holo-neurochir/infra/gpu_ctl.py: Modal app status, per-account daily cost, budget guard, manifest-based redeploy) was written by Devin through the Devin API, reviewed by us before any run, and running on our server as our read-only GPU budget monitor (both Modal accounts, every 5 min, warn-only) since 11:47 UTC on 2026-11-08. Session, review and run log: [`infra/DEVIN_SESSION.md`](holo-neurochir/infra/DEVIN_SESSION.md).
 - **Serving the models**: [`osworld/MODAL.md`](holo-neurochir/osworld/MODAL.md),
   [`osworld/MODAL_MANIFEST.md`](holo-neurochir/osworld/MODAL_MANIFEST.md) (deploy manifests with sha256), cost log
   [`osworld/MODAL_COST.md`](holo-neurochir/osworld/MODAL_COST.md).

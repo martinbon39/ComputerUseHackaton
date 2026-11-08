@@ -64,6 +64,7 @@ infeasible tasks).
 - `holo-neurochir/judge_bench/`, `verif_study/`: offline comparison of judges on 268 labelled final screens.
 - `holo-neurochir/paper/`: the paper (`main.pdf`, `neurips.pdf`), with every number generated from `data/` by `build.sh`.
 - `holo-neurochir/osworld/`: online evaluation (Modal serving, GitHub runner collection, live duel page).
+- `holo-neurochir/infra/`: Our GPU infrastructure controller (holo-neurochir/infra/gpu_ctl.py: Modal app status, per-account daily cost, budget guard, manifest-based redeploy) was written by Devin through the Devin API, reviewed by us before any run, and running on our server as our read-only GPU budget monitor (both Modal accounts, every 5 min, warn-only) since 11:47 UTC on 2026-11-08. Evidence: `holo-neurochir/infra/DEVIN_SESSION.md`.
 - `holo-neurochir/holo/`, `scripts/`: harness and weight-edit code. `astra-*`, `moon-*`: weight-edit experiments, mostly negative.
 - `holo-neurochir/JOURNAL.md` and the root `LOG.md`: raw working logs of the agent team (French, chronological). They are not needed for review.
 

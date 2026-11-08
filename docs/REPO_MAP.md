@@ -51,6 +51,7 @@ Start with the Guard (solution), then the diagnosis, then the weight-edit experi
 | Folder | In git | What | Status | Source of truth |
 |---|---|---|---|---|
 | `osworld/` | partial | OSWorld runs: Modal serving and manifests, GitHub runner collection, paired comparisons, live duel | TOOLING | `osworld/ONLINE_EVAL.md`, `MODAL.md`, `duel/README.md` |
+| `infra/` | yes | GPU infrastructure controller `gpu_ctl.py` (Modal app status, per-account daily cost, budget guard, manifest-based redeploy), written by Devin through the Devin API and reviewed before any run; read-only budget monitor since 11:47 UTC | TOOLING | `infra/DEVIN_SESSION.md`, `infra/README.md` |
 | `holo/` | partial | Harness: agent, model loading, diagnostic, directions, rollouts, surgery | TOOLING | module docstrings |
 | `scripts/` | partial | Checkpoint builders (patched, ExPO) and checks | TOOLING | script docstrings |
 | `runs/` | partial | Raw rollout outputs (acceptance, diagnostic, smoke) | DATA | `diagnostic.md` |
