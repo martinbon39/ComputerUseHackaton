@@ -232,6 +232,12 @@ one human supervised:
   Holo4-27B behind the same prompt separates less well (row 7 caveat).
 - Rows 9–10 are still running at the time of writing. Read the linked files for their final state.
 
+## Team
+
+- **Émile Jouannet** (EPITA), GitHub [Symbioose](https://github.com/Symbioose)
+- **Souad Boukhedenna** (SKEMA Business School)
+- **Martin Bonan**, GitHub [martinbon39](https://github.com/martinbon39)
+
 ## Sponsors
 
 - **Devin**: Devin API integration installed and authenticated (client + GPU-controller mission, dry-run tested; no session run to preserve credits): [`holo-neurochir/devin/README.md`](holo-neurochir/devin/README.md).
