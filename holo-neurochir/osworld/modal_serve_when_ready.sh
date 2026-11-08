@@ -10,10 +10,11 @@
 #    (modal_probe.py --out; none for astra-free's free_* checkpoints), commit manifest + smoke, report to ares.
 #    While waiting, a lower <prio> number goes first: a ready job never takes an account that a ready job of better
 #    priority is also waiting for (markers ~/modal_queue/ready_acct<n>_p<prio>_<ckpt>).
-# Usage: bash osworld/modal_serve_when_ready.sh <ckpt> <accounts, e.g. 2,1> [prio, default 5]
+# Usage: bash osworld/modal_serve_when_ready.sh <ckpt> <accounts, e.g. 2,1> [prio per account, e.g. 0,4; default 5]
 set -uo pipefail
 cd "$(dirname "$0")/.."
-CKPT="$1"; IFS=, read -ra ACCOUNTS <<< "$2"; PRIO="${3:-5}"
+CKPT="$1"; IFS=, read -ra ACCOUNTS <<< "$2"; IFS=, read -ra PRIOS <<< "${3:-5}"
+prio_of() { local i; for i in "${!ACCOUNTS[@]}"; do [ "${ACCOUNTS[$i]}" = "$1" ] && echo "${PRIOS[$i]:-${PRIOS[0]}}"; done; }
 LOCKS=~/modal_queue; mkdir -p "$LOCKS"
 profile() { [ "$1" = 1 ] && echo emilejouannet || echo martinbon39; }
 POD="ssh -o BatchMode=yes -i $HOME/.ssh/runpod_holo -p 15780 root@213.181.111.151"
@@ -33,9 +34,9 @@ done
 [ -n "$cur" ] && [ "$cur" = "$prev" ] || { echo "$CKPT never completed on account ${ACCOUNTS[0]}"; exit 1; }
 echo "$(date -u +%T) $CKPT complete on account ${ACCOUNTS[0]}"
 ACCOUNT=""
-for a in "${ACCOUNTS[@]}"; do touch "$LOCKS/ready_acct${a}_p${PRIO}_$CKPT"; done
+for a in "${ACCOUNTS[@]}"; do touch "$LOCKS/ready_acct${a}_p$(prio_of "$a")_$CKPT"; done
 outranked() { ls "$LOCKS" | grep -E "^ready_acct$1_p[0-9]+_" | grep -v "_$CKPT\$" |
-  sed -E 's/^ready_acct[0-9]+_p([0-9]+)_.*/\1/' | awk -v p="$PRIO" '$1 < p' | grep -q .; }
+  sed -E 's/^ready_acct[0-9]+_p([0-9]+)_.*/\1/' | awk -v p="$(prio_of "$1")" '$1 < p' | grep -q .; }
 until [ -n "$ACCOUNT" ]; do
   for a in "${ACCOUNTS[@]}"; do
     outranked "$a" && continue
