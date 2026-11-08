@@ -2,7 +2,7 @@
 
 Original Holo-3.1-4B, révision `8c88265a5a159bfd1492db9243733dd2e6e04a6e`. Résultats du 8 novembre 2026. Rejeu HF en teacher forcing, logits seulement, sans génération ni modification des poids.
 
-**L’ablation conjointe de la note et de la pensée change la marge « answer » de 14.033 [12.875 ; 15.099] logits chez les faux « fini » et de 14.494 [12.875 ; 15.981] chez les vrais.** Cela mesure une dépendance causale au texte fourni avant le nom de l’outil. Cela ne démontre ni une copie littérale de la conclusion, ni l’absence de jugement interne.
+**L’ablation conjointe de la note et de la pensée change la marge « answer » de 14.033 [12.875 ; 15.099] logits chez les faux « fini » et de 14.494 [12.875 ; 15.981] chez les vrais.** Cela mesure une dépendance causale au texte fourni avant le nom de l’outil. Cela ne démontre ni une copie littérale de la conclusion, ni l’absence de jugement interne. Après neutralisation b, answer reste favori parmi les outils dans 37/39 cas : une forte atténuation de marge ne signifie pas un changement de décision dans la même proportion.
 
 **La meilleure des 72 sondes exploratoires atteint une AUROC de 0.639 [0.466 ; 0.803].** Son test de permutation donne p=0.0420 brut et p=1.0000 après correction conservatrice pour les 72 comparaisons. Le numéro du pas brut atteint 0.704 et la longueur du prompt 0.695 sur ces mêmes tâches. Ni la sélection du meilleur résultat ni les intervalles descriptifs ne permettent de conclure que l’information est absente.
 
