@@ -9,7 +9,7 @@ every requirement on the screen, refuses a false "done" with a reason, and can h
 10.8 %, −11.7 pts [−19.2, −4.2]) without a measurable loss of score; no score gain is claimed (+1.6 [−4.4, +7.7]).**
 
 > **Watch first:** [demo video](holo-neurochir/video_demo/holo-demo-video.mp4) · [Guard repair replay](holo-neurochir/demo_live/repair_calc.html)
-> (files in this repo; [hosted video](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7) and [hosted replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32), links expire 2026-12-08): the Guard refuses a false "done" and the agent
+> (files in this repo; [hosted video](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7) and [hosted replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxelxklo.a9rcuMpAex2GppIQuTZdr5GyIPal9zYu), links expire 2026-12-08): the Guard refuses a false "done" and the agent
 > repairs it, step by step.
 >
 > **Judges in a hurry:** run the 3-command [quickstart](#quickstart-under-5-minutes-no-gpu-no-key-no-vm) (no GPU, no
@@ -100,7 +100,7 @@ resamples, seed 0) for differences, and Wilson intervals for proportions.
 | 5 | ExPO extrapolation online | −1.5 pts [−8.9, +5.7], n=120 | no detectable gain | same script |
 | 6 | Noise floor: same model, two servers | +1.5 pts [−4.5, +7.6], n=120 | reference | same script |
 | 7 | Feci Guard verifier, offline, same 268 episodes (90 tasks) | detects **45/66 (68 % [56–78])**, wrongly rejects **21/202 (10 % [7–15])**; gap **+58 [+41, +74]** | **separates** | `python3 jury_kit/replay_guard.py` |
-| 8 | Guard repair on replayed false successes | 5/18 vs 2/18 branches repaired (9 episodes × 2); +16.7 pts [0, +44], sign test p=0.5 | **not distinguishable from 0** | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md) |
+| 8 | Guard repair on replayed false successes | 5/18 vs 2/18 branches scored 1 (9 episodes × 2), **of which 3 genuine repairs vs 0**: `impress/8979838c` scores 1 in all 4 branches as soon as the agent answers, so it accounts for both no-Guard successes and 2 of the 5 Guard ones; +16.7 pts [0, +44], sign test p=0.5 | **not distinguishable from 0** | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md) |
 | 9 | Guard + escalation to Holo4, vs Holo4 alone (replayed false successes, same boundary) | 9 replay-valid recorded false successes × 2 branches per arm: Guard → Holo4 **11/18** vs Holo4 alone **2/18** scored 1; **+50 pts [+22, +78]** (episode-cluster bootstrap, 9 episodes). After a real refusal, 9 of 11 branches were repaired by new actions. Sensitivity: strict replay (8 episodes) +50 [+12.5, +87.5]; all 12 episodes +33 [+4, +63] | **significant, in replay** (conditional on a recorded false "done"; not an online score gain) | [`rescue_bench/REPORT.md`](holo-neurochir/rescue_bench/REPORT.md), [`PREREG.md`](holo-neurochir/rescue_bench/PREREG.md) |
 | 10 | **Holo + Guard online**, 120-task OSWorld test split (pre-registered), vs the same model on the same server | false "done" rate **27/120 (22.5 %) → 13/120 (10.8 %): −11.7 pts [−19.2, −4.2]**; OSWorld score 58.6 → 60.2: +1.6 pts [−4.4, +7.7]; 19 false "done" avoided: 8 became successes, the others honest failures; 4 true successes lost (within the original's own noise: 9 flips); 0 tasks excluded | **false "done" halved, significant**; **no score gain claimed**; useful under the pre-registered rule 5 | `python3 jury_kit/verify_online_guard.py`, [`report/ONLINE_GUARD_RESULT.md`](holo-neurochir/report/ONLINE_GUARD_RESULT.md) |
 | 11 | Stronger judge: Guard v2 (Opus + the 2 previous screens + action list) vs v1, held-out half used once | detects 20/29 (69 %) vs 16/29 (55 %): **+13.8 pts [+2.9, +30]**; false rejection 15/116 (12.9 %) vs 10/116 (8.6 %): +4.3 [−5, +15] | **more detection, significant**; the target (≥ 80 % detection, ≤ 10 % false rejection) is **not met**; offline only | [`feci_guard/RESULTS.md`](holo-neurochir/feci_guard/RESULTS.md#2-guard-v2-sprint-s1-offline-protocol-v2protocolmd-independently-recomputed), [`v2/PROTOCOL.md`](holo-neurochir/feci_guard/v2/PROTOCOL.md) |
@@ -143,7 +143,7 @@ bash jury_kit/quickstart.sh                 # all of the above + (c), exit code 
   [`results/online_guard_tasks.csv`](jury_kit/results/online_guard_tasks.csv) (score, steps, false "done" per task and
   arm) with the analysis function committed before the Guard results were read, and checks the published JSON exactly.
 - **(c)** Demo of the Guard: open [`holo-neurochir/demo_live/repair_calc.html`](holo-neurochir/demo_live/repair_calc.html)
-  in a browser (one file with every screenshot embedded and no external script, English and French; hosted copy, link expires: [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32)). On OSWorld task `libreoffice_calc/1de60575`, the agent
+  in a browser (one file with every screenshot embedded and no external script, English and French; hosted copy, link expires: [Guard repair replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxelxklo.a9rcuMpAex2GppIQuTZdr5GyIPal9zYu)). On OSWorld task `libreoffice_calc/1de60575`, the agent
   says "done" with the pivot table on the wrong sheet; the Guard refuses ("the table is on 'Pivot Table_Sheet1_1', not
   'Sheet2'"); the agent renames the sheet in 5 steps; the second check passes and the official evaluator scores 1.
   This is one recorded episode of the repair measure (row 8), not evidence of an average gain. The problem itself:
@@ -210,11 +210,11 @@ Files in this repository come first. Hosted copies are signed links that expire 
   (13 MB). Hosted copy, link expires: [holo-demo-video.mp4](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7).
 - **Guard repair replay** (the Guard refuses a false "done" on `calc/1de60575`, the agent renames the sheet, the second
   check passes): [`holo-neurochir/demo_live/repair_calc.html`](holo-neurochir/demo_live/repair_calc.html). Hosted copy,
-  link expires: [holo-guard-repair.html](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32).
+  link expires: [holo-guard-repair.html](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxelxklo.a9rcuMpAex2GppIQuTZdr5GyIPal9zYu).
 - **False-"done" replay page**: [`holo-neurochir/demo_faux_fini/demo_faux_fini.html`](holo-neurochir/demo_faux_fini/demo_faux_fini.html).
   Hosted copy, link expires: [holo-demo-faux-fini.html](https://argos.martinbonan.com/artifacts/holo-demo-faux-fini.html?t=mxec08h4.ypUQurEtCFn45XOw47vn5eHhOEl5Gyfd).
 - **Slides** (the research system) and **pitch cockpit**: sources in [`holo-neurochir/pitch_design/`](holo-neurochir/pitch_design/)
-  (`python3 build.py pages/pitch.html out/pitch.html`). Hosted copies, links expire: [slides](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxel9bap.omSEnhbk5HaxlM8gpkVeVegN4DndZZUE) · [cockpit](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxel9bc8.a7vQeBaoBiUCIj4L8kuDDqkhdsROZEUD).
+  (`python3 build.py pages/pitch.html out/pitch.html`). Hosted copies, links expire: [slides](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxelxkol.AJDAnrhAH9FvnKfF3n2qxlh1tmsblqOz) · [cockpit](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxel9bc8.a7vQeBaoBiUCIj4L8kuDDqkhdsROZEUD).
 - **Agent-team dashboard** (who did what, live during the hackathon), hosted only, link expires: [holo-team-dashboard.html](https://argos.martinbonan.com/artifacts/holo-team-dashboard.html?t=mxek8e49.ufV1Pb8Fk9vGO-OmMMUJevLsFPiYtuKc).
 - **Agent runner**: [martinbon39/holo-osworld-runner](https://github.com/martinbon39/holo-osworld-runner)
 - **Model studied**: [Hcompany/Holo-3.1-4B](https://huggingface.co/Hcompany/Holo-3.1-4B) @ `8c88265a`
@@ -286,7 +286,7 @@ IC95 [−4,3 ; +8,0], donc aucun gain n'est revendiqué (règle fixée avant de 
 **La solution.** Feci Guard est un vérificateur externe (Claude Sonnet). À chaque « fini », il liste les exigences
 de la tâche, vérifie chacune sur l'écran, refuse le faux « fini » en disant ce qui manque, puis l'agent répare ou
 passe la main à Holo4-27B. Hors ligne, sur les mêmes 268 épisodes, il détecte 68 % des faux succès [56–78] pour 10 %
-de vrais rejetés à tort [7–15]. La réparation par Holo-3.1 seul (5/18 contre 2/18) ne se distingue pas de zéro. **L'escalade vers Holo4
+de vrais rejetés à tort [7–15]. La réparation par Holo-3.1 seul (5/18 contre 2/18, dont 3 vraies réparations contre 0) ne se distingue pas de zéro. **L'escalade vers Holo4
 est significative** : en rejeu de 9 faux succès enregistrés, Guard → Holo4 répare 11 branches sur 18 contre 2 sur 18
 pour Holo4 seul, soit +50 points [+22 ; +78]. **En ligne, sur 120 tâches OSWorld réservées (préenregistré), le Guard
 divise par deux le taux de faux « fini » (22,5 % → 10,8 %, −11,7 points [−19,2 ; −4,2])**, sans perte de score
