@@ -255,7 +255,7 @@ const stop = side => duelId && post('/api/stop', { duel: duelId, side });
 const REAL = P.get('mode') === 'real';  // realistic: x1 from the VM boot on, with the recorded latencies
 const R = { ev: [], i: 0, clock: 0, last: null, speed: REAL ? 1 : 4 };
 const CARDS = ['20261108-110023_libreoffice_calc_1de60575-bb6e-4c3d-9e6a', '20261108-111313_libreoffice_calc_1de60575-bb6e-4c3d-9e6a',
-  '20261108-074039_libreoffice_impress_b8adbc24-cef2-4b15-9'];  // landing cards: Holo-3.1 alone vs + Feci Guard only
+  '20261108-110716_libreoffice_calc_1de60575-bb6e-4c3d-9e6a'];  // landing cards: Holo-3.1 alone vs + Feci Guard only
 const FEATURED = '20261108-110023_libreoffice_calc_1de60575-bb6e-4c3d-9e6a';  // R1: Guard refuses a false "done", agent repairs
 async function loadReplay() {
   const r = await fetch(`/api/events?duel=${REPLAY}&left=0&right=0`), d = await r.json();
