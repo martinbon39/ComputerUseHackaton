@@ -201,7 +201,7 @@ on GitHub runners. A judge cannot run them in 5 minutes.
   [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxejdbgj.RgncRPbt6dqkr8uMBww4pW_vSoe45k5K).
 - **Demo video**: [holo-demo-video.mp4](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7)
 - **Guard repair replay** (the Guard refuses a false "done" on `calc/1de60575`, the agent renames the sheet, the second check passes): [holo-guard-repair.html](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxek8dxc.NCBcvWvkLN25gZYlBm59LS_LloiB6d32)
-- **Slides** (the research system): [holo-pitch-system.html](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxek8dtm.dkmDOjnAdcQkCGXMW-yuf5L8ksbIQWf-) · **pitch cockpit**: [holo-cockpit-pitch.html](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxek8dvg.8s_I9BVtWXyTrkRGHqB2_aUQMHBiNtFO)
+- **Slides** (the research system): [holo-pitch-system.html](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxel9bap.omSEnhbk5HaxlM8gpkVeVegN4DndZZUE) · **pitch cockpit**: [holo-cockpit-pitch.html](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxel9bc8.a7vQeBaoBiUCIj4L8kuDDqkhdsROZEUD)
 - **Agent-team dashboard** (who did what, live during the hackathon): [holo-team-dashboard.html](https://argos.martinbonan.com/artifacts/holo-team-dashboard.html?t=mxek8e49.ufV1Pb8Fk9vGO-OmMMUJevLsFPiYtuKc)
 - **False-"done" replay page** (hosted copy of quickstart (c)): [holo-demo-faux-fini.html](https://argos.martinbonan.com/artifacts/holo-demo-faux-fini.html?t=mxec08h4.ypUQurEtCFn45XOw47vn5eHhOEl5Gyfd)
 - **Agent runner**: [martinbon39/holo-osworld-runner](https://github.com/martinbon39/holo-osworld-runner)
