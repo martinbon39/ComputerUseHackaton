@@ -202,10 +202,10 @@ on GitHub runners. A judge cannot run them in 5 minutes.
 
 Files in this repository come first. Hosted copies are signed links that expire on 2026-12-08 (30 days).
 
-- **Paper**: *Cogito, Ergo Feci: False Success and the Limits of Weight Surgery in a Computer-Use Agent*.
+- **Paper**: *Cogito, Ergo Feci: False Success, the Limits of Weight Surgery, and What an External Verifier Catches in a Computer-Use Agent*.
   [arXiv-style PDF](holo-neurochir/paper/main.pdf) · [NeurIPS-format PDF](holo-neurochir/paper/neurips.pdf) (anonymous,
   with the filled reproducibility checklist). Every number is regenerated from `paper/data/` by `paper/build.sh`.
-  Hosted copies, link expires: [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxelhqws.MrJLSn9ALy0ExZeylVvzjzQRw94Mndm_) · [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxelhr01.9_ebcRpYQRJ22aZnjzbeRJvI9f5stk8U).
+  Hosted copies, link expires: [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxelsq99.XBEhB11w3U9yDnECxNhK0KRz1pXqQDRn) · [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxelsqbv.P3FbrvgmO8pRQodN9QTT9UEq3fOKaV3R).
 - **Demo video**: [`holo-neurochir/video_demo/holo-demo-video.mp4`](holo-neurochir/video_demo/holo-demo-video.mp4)
   (13 MB). Hosted copy, link expires: [holo-demo-video.mp4](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7).
 - **Guard repair replay** (the Guard refuses a false "done" on `calc/1de60575`, the agent renames the sheet, the second
