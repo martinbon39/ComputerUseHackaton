@@ -1,0 +1,17 @@
+{
+  "name": "head2_s05",
+  "heads": [
+    [
+      11,
+      2
+    ],
+    [
+      7,
+      4
+    ]
+  ],
+  "scale": 0.5,
+  "control": false,
+  "ranking": "mean fs+ drop minus mean true-finish drop, matched zero-mask controls",
+  "random_seed": 261029609
+}

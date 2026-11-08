@@ -1,0 +1,69 @@
+Loading weights:   0%|          | 0/724 [00:00<?, ?it/s]Loading weights: 100%|██████████| 724/724 [00:00<00:00, 10205.87it/s]
+{"context": "power_000", "phase": "baseline", "seconds": 2.0679890729952604, "answer_margin": 19.058218002319336, "tool_logits": {"answer": 36.762542724609375, "click": 17.70432472229004, "double_click": 14.973564147949219, "right_click": 11.440961837768555, "write": 11.614395141601562, "press_key": 12.177188873291016, "hotkey": 14.40785026550293, "scroll": 11.14078140258789, "drag": 9.702780723571777, "wait": 15.563121795654297}, "margin_error": 0.010349273681640625}
+{"context": "power_000", "phase": "head", "layer": 3, "seconds": 2.785711505013751, "forwards": 20}
+{"context": "power_000", "phase": "head", "layer": 7, "seconds": 3.501062207011273, "forwards": 37}
+{"context": "power_000", "phase": "head", "layer": 11, "seconds": 4.214944895007648, "forwards": 54}
+{"context": "power_000", "phase": "head", "layer": 15, "seconds": 4.929078360000858, "forwards": 71}
+{"context": "power_000", "phase": "head", "layer": 19, "seconds": 5.643946413008962, "forwards": 88}
+{"context": "power_000", "phase": "head", "layer": 23, "seconds": 6.358975473995088, "forwards": 105}
+{"context": "power_000", "phase": "head", "layer": 27, "seconds": 7.074823620001553, "forwards": 122}
+{"context": "power_000", "phase": "head", "layer": 31, "seconds": 7.788815239007818, "forwards": 139}
+{"context": "power_000", "phase": "complete", "seconds": 9.189609157008817, "forwards": 165}
+{"context": "power_019", "phase": "baseline", "seconds": 1.0645437110215425, "answer_margin": 21.287267684936523, "tool_logits": {"answer": 37.82526779174805, "click": 16.538000106811523, "double_click": 15.084527969360352, "right_click": 10.839627265930176, "write": 13.235284805297852, "press_key": 12.26066780090332, "hotkey": 13.20424747467041, "scroll": 11.144814491271973, "drag": 7.981917381286621, "wait": 14.763951301574707}, "margin_error": 0.028047561645507812}
+{"context": "power_019", "phase": "head", "layer": 3, "seconds": 1.7828231080202386, "forwards": 185}
+{"context": "power_019", "phase": "head", "layer": 7, "seconds": 2.4991126760141924, "forwards": 202}
+{"context": "power_019", "phase": "head", "layer": 11, "seconds": 3.2138344880077057, "forwards": 219}
+{"context": "power_019", "phase": "head", "layer": 15, "seconds": 3.9301336890202947, "forwards": 236}
+{"context": "power_019", "phase": "head", "layer": 19, "seconds": 4.646377928002039, "forwards": 253}
+{"context": "power_019", "phase": "head", "layer": 23, "seconds": 5.360917973011965, "forwards": 270}
+{"context": "power_019", "phase": "head", "layer": 27, "seconds": 6.0728873159969226, "forwards": 287}
+{"context": "power_019", "phase": "head", "layer": 31, "seconds": 6.784390867018374, "forwards": 304}
+{"context": "power_019", "phase": "complete", "seconds": 8.193494903011015, "forwards": 330}
+{"context": "power_001", "phase": "baseline", "seconds": 1.1045640469819773, "answer_margin": 13.187280654907227, "tool_logits": {"answer": 31.776592254638672, "click": 18.126956939697266, "double_click": 10.461675643920898, "right_click": 10.179363250732422, "write": 12.4331636428833, "press_key": 14.255289077758789, "hotkey": 18.589311599731445, "scroll": 11.77524471282959, "drag": 7.90156364440918, "wait": 15.693361282348633}, "margin_error": 0.08389663696289062}
+{"context": "power_001", "phase": "head", "layer": 3, "seconds": 1.8280752589926124, "forwards": 350}
+{"context": "power_001", "phase": "head", "layer": 7, "seconds": 2.547226314985892, "forwards": 367}
+{"context": "power_001", "phase": "head", "layer": 11, "seconds": 3.2702231209841557, "forwards": 384}
+{"context": "power_001", "phase": "head", "layer": 15, "seconds": 4.089296519989148, "forwards": 401}
+{"context": "power_001", "phase": "head", "layer": 19, "seconds": 4.808863821992418, "forwards": 418}
+{"context": "power_001", "phase": "head", "layer": 23, "seconds": 5.528298230987275, "forwards": 435}
+{"context": "power_001", "phase": "head", "layer": 27, "seconds": 6.24459972398472, "forwards": 452}
+{"context": "power_001", "phase": "head", "layer": 31, "seconds": 6.962181129987584, "forwards": 469}
+{"context": "power_001", "phase": "complete", "seconds": 8.426233256002888, "forwards": 495}
+{"context": "power_020", "phase": "baseline", "seconds": 1.7245166240027174, "answer_margin": 15.312700271606445, "tool_logits": {"answer": 35.03145217895508, "click": 19.718751907348633, "double_click": 15.308584213256836, "right_click": 12.475982666015625, "write": 15.191307067871094, "press_key": 14.895142555236816, "hotkey": 14.987222671508789, "scroll": 10.837249755859375, "drag": 8.596040725708008, "wait": 15.215027809143066}, "margin_error": 0.09351539611816406}
+{"context": "power_020", "phase": "head", "layer": 3, "seconds": 2.5875746459933, "forwards": 515}
+{"context": "power_020", "phase": "head", "layer": 7, "seconds": 3.305813123995904, "forwards": 532}
+{"context": "power_020", "phase": "head", "layer": 11, "seconds": 4.025571364996722, "forwards": 549}
+{"context": "power_020", "phase": "head", "layer": 15, "seconds": 4.758767374994932, "forwards": 566}
+{"context": "power_020", "phase": "head", "layer": 19, "seconds": 5.48066416598158, "forwards": 583}
+{"context": "power_020", "phase": "head", "layer": 23, "seconds": 6.244634208007483, "forwards": 600}
+{"context": "power_020", "phase": "head", "layer": 27, "seconds": 6.965187741996488, "forwards": 617}
+{"context": "power_020", "phase": "head", "layer": 31, "seconds": 7.687376251997193, "forwards": 634}
+{"context": "power_020", "phase": "complete", "seconds": 9.20679540099809, "forwards": 660}
+{"context": "power_002", "phase": "baseline", "seconds": 1.3077381319890264, "answer_margin": 19.239975929260254, "tool_logits": {"answer": 33.88593292236328, "click": 14.645956993103027, "double_click": 12.835081100463867, "right_click": 9.872964859008789, "write": 10.855514526367188, "press_key": 10.312516212463379, "hotkey": 11.68474006652832, "scroll": 9.079529762268066, "drag": 6.709488868713379, "wait": 12.951770782470703}, "margin_error": 0.08991813659667969}
+{"context": "power_002", "phase": "head", "layer": 3, "seconds": 2.050639200984733, "forwards": 680}
+{"context": "power_002", "phase": "head", "layer": 7, "seconds": 2.7945746849873103, "forwards": 697}
+{"context": "power_002", "phase": "head", "layer": 11, "seconds": 3.5169868869998027, "forwards": 714}
+{"context": "power_002", "phase": "head", "layer": 15, "seconds": 4.2468577249965165, "forwards": 731}
+{"context": "power_002", "phase": "head", "layer": 19, "seconds": 4.973130583995953, "forwards": 748}
+{"context": "power_002", "phase": "head", "layer": 23, "seconds": 5.697968594002305, "forwards": 765}
+{"context": "power_002", "phase": "head", "layer": 27, "seconds": 6.469025205995422, "forwards": 782}
+{"context": "power_002", "phase": "head", "layer": 31, "seconds": 7.197573965007905, "forwards": 799}
+{"context": "power_002", "phase": "complete", "seconds": 8.76508685099543, "forwards": 825}
+Traceback (most recent call last):
+  File "/workspace/astra/moon-leak/attribution.py", line 299, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/astra/moon-leak/attribution.py", line 294, in main
+    if c['row']['context_id'] not in done: run_context(model,processor,c,out,args.pilot)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/astra/moon-leak/attribution.py", line 193, in run_context
+    full, neutral, positions, meta = prepare(processor, context)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/astra/moon-leak/attribution.py", line 110, in prepare
+    d = Path(row['original_pod_path'])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1164, in __init__
+    super().__init__(*args)
+  File "/usr/lib/python3.12/pathlib.py", line 373, in __init__
+    raise TypeError(
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'NoneType'

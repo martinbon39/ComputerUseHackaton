@@ -1,0 +1,80 @@
+{
+  "ended_utc": "2026-11-08T08:03:01.723918+00:00",
+  "status": "COMPLETE",
+  "gui_completed": 220,
+  "gui_expected": 220,
+  "text_controls_completed": 3,
+  "text_controls_expected": 3,
+  "deadline_utc": "2026-11-08T09:40:00+00:00",
+  "generations_sha256": "20f0a278cdf68fb6e1fefcd9b15248a70f38d68eb2251f0086326e31d6d55b1e",
+  "text_controls_sha256": "2148d8b67ffd425a75448bd624555fec7b8e98ca41e65e3ad1eef3b6ed40f3ff"
+}
+{
+  "arm": "raw4_s05",
+  "metrics": {
+    "fs+": {
+      "candidate_invalid": 0,
+      "candidate_valid_nonanswer": 19,
+      "tasks": 19,
+      "samples": 76,
+      "field": "answer",
+      "A": 0.7236842105263158,
+      "candidate": 0.75,
+      "drop": -0.02631578947368421,
+      "drop_ci95": [
+        -0.11842105263157894,
+        0.06578947368421052
+      ]
+    },
+    "fs-": {
+      "candidate_invalid": 0,
+      "candidate_valid_nonanswer": 7,
+      "tasks": 20,
+      "samples": 80,
+      "field": "answer",
+      "A": 0.9375,
+      "candidate": 0.9125,
+      "drop": 0.025,
+      "drop_ci95": [
+        0.0,
+        0.0625
+      ]
+    },
+    "healthy": {
+      "candidate_invalid": 0,
+      "candidate_valid_nonanswer": 60,
+      "tasks": 16,
+      "samples": 64,
+      "field": "valid_nonanswer",
+      "A": 0.921875,
+      "candidate": 0.9375,
+      "drop": -0.015625,
+      "drop_ci95": [
+        -0.046875,
+        0.0
+      ]
+    }
+  },
+  "selectivity": -0.05131578947368421,
+  "selectivity_ci95": [
+    -0.15592105263157893,
+    0.05263157894736842
+  ],
+  "json_valid": 1.0,
+  "errors": 0,
+  "truncated": 0,
+  "gates": {
+    "json_valid": true,
+    "healthy_proxy_loss": true,
+    "fs_reduction": false,
+    "selectivity": false
+  },
+  "text": "REQUIRES_INDEPENDENT_REVIEW",
+  "online": "NOT_RUN",
+  "scope": "exploratory: heads selected on this cohort; healthy proxy is schema-valid non-answer",
+  "numerical_pass": false,
+  "input_sha256": {
+    "/workspace/astra/moon-leak/baseline_A/generations.jsonl": "c7f309a97947452e47a343bb07f429937f200a5159d0868be2aad8d7fb9ad546",
+    "/workspace/astra/moon-leak/runs/raw4_s05/generations.jsonl": "20f0a278cdf68fb6e1fefcd9b15248a70f38d68eb2251f0086326e31d6d55b1e"
+  }
+}

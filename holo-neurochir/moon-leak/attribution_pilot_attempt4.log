@@ -1,0 +1,25 @@
+Loading weights:   0%|          | 0/724 [00:00<?, ?it/s]Loading weights: 100%|██████████| 724/724 [00:00<00:00, 11708.71it/s]
+{"context": "power_000", "phase": "baseline", "seconds": 4.1983097330085, "answer_margin": 18.918426513671875, "tool_logits": {"answer": 36.7099609375, "click": 17.791534423828125, "double_click": 15.00864028930664, "right_click": 11.496650695800781, "write": 11.73835563659668, "press_key": 12.259581565856934, "hotkey": 14.556509017944336, "scroll": 11.158145904541016, "drag": 9.725431442260742, "wait": 15.477670669555664}, "margin_error": 0.008808135986328125}
+{"phase": "cache_repeatability", "context": "power_000", "baseline": {"answer_margin": 18.918426513671875, "tool_logits": {"answer": 36.7099609375, "click": 17.791534423828125, "double_click": 15.00864028930664, "right_click": 11.496650695800781, "write": 11.73835563659668, "press_key": 12.259581565856934, "hotkey": 14.556509017944336, "scroll": 11.158145904541016, "drag": 9.725431442260742, "wait": 15.477670669555664}}, "repeat": {"answer_margin": 18.918426513671875, "tool_logits": {"answer": 36.7099609375, "click": 17.791534423828125, "double_click": 15.00864028930664, "right_click": 11.496650695800781, "write": 11.73835563659668, "press_key": 12.259581565856934, "hotkey": 14.556509017944336, "scroll": 11.158145904541016, "drag": 9.725431442260742, "wait": 15.477670669555664}}, "hidden_max_abs_diff": 0.0, "hidden_equal": true}
+{"context": "power_000", "phase": "head", "layer": 3, "seconds": 5.13882624998223, "forwards": 21}
+{"context": "power_000", "phase": "head", "layer": 7, "seconds": 5.646845732990187, "forwards": 38}
+{"context": "power_000", "phase": "head", "layer": 11, "seconds": 6.155420488998061, "forwards": 55}
+{"context": "power_000", "phase": "head", "layer": 15, "seconds": 6.663918339996599, "forwards": 72}
+{"context": "power_000", "phase": "head", "layer": 19, "seconds": 7.173647023009835, "forwards": 89}
+{"context": "power_000", "phase": "head", "layer": 23, "seconds": 7.6851650580065325, "forwards": 106}
+{"context": "power_000", "phase": "head", "layer": 27, "seconds": 8.194152857991867, "forwards": 123}
+{"context": "power_000", "phase": "head", "layer": 31, "seconds": 8.70036023799912, "forwards": 140}
+{"context": "power_000", "phase": "complete", "seconds": 9.752617450983962, "forwards": 166}
+{"context": "power_019", "phase": "baseline", "seconds": 2.9636895949952304, "answer_margin": 21.13132095336914, "tool_logits": {"answer": 37.688438415527344, "click": 16.557117462158203, "double_click": 15.215045928955078, "right_click": 10.822504997253418, "write": 13.22608470916748, "press_key": 12.244696617126465, "hotkey": 13.23735523223877, "scroll": 11.206924438476562, "drag": 8.05317497253418, "wait": 14.675718307495117}, "margin_error": 0.07094764709472656}
+{"phase": "cache_repeatability", "context": "power_019", "baseline": {"answer_margin": 21.13132095336914, "tool_logits": {"answer": 37.688438415527344, "click": 16.557117462158203, "double_click": 15.215045928955078, "right_click": 10.822504997253418, "write": 13.22608470916748, "press_key": 12.244696617126465, "hotkey": 13.23735523223877, "scroll": 11.206924438476562, "drag": 8.05317497253418, "wait": 14.675718307495117}}, "repeat": {"answer_margin": 21.180126190185547, "tool_logits": {"answer": 37.726806640625, "click": 16.546680450439453, "double_click": 15.2177095413208, "right_click": 10.848153114318848, "write": 13.221126556396484, "press_key": 12.193034172058105, "hotkey": 13.240999221801758, "scroll": 11.204874038696289, "drag": 8.08233642578125, "wait": 14.648783683776855}}, "hidden_max_abs_diff": 0.125, "hidden_equal": false}
+Traceback (most recent call last):
+  File "/workspace/astra/moon-leak/attribution.py", line 291, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/astra/moon-leak/attribution.py", line 286, in main
+    if c['row']['context_id'] not in done: run_context(model,processor,c,out,args.pilot)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/astra/moon-leak/attribution.py", line 213, in run_context
+    assert again_score == baseline, 'cache clone nonrepeatable'
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: cache clone nonrepeatable

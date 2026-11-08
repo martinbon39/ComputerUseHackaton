@@ -1,0 +1,154 @@
+{
+  "status": "PASS",
+  "output": "/workspace/astra/moon-leak/control_contrasts.json",
+  "pairs": [
+    {
+      "family": "ranked",
+      "edited": "head4_s0",
+      "control": "random4_s0",
+      "scale": 0,
+      "head_count_per_arm": 4,
+      "metrics": {
+        "fs+:answer": {
+          "tasks": 19,
+          "samples_per_arm": 76,
+          "edited_count": 71,
+          "control_count": 67,
+          "edited_rate": 0.9342105263157895,
+          "control_rate": 0.881578947368421,
+          "control_minus_edited": -0.05263157894736842,
+          "task_bootstrap95": [
+            -0.15789473684210525,
+            0.02631578947368421
+          ]
+        },
+        "fs-:answer": {
+          "tasks": 20,
+          "samples_per_arm": 80,
+          "edited_count": 74,
+          "control_count": 75,
+          "edited_rate": 0.925,
+          "control_rate": 0.9375,
+          "control_minus_edited": 0.0125,
+          "task_bootstrap95": [
+            -0.05,
+            0.075
+          ]
+        },
+        "healthy:answer": {
+          "tasks": 16,
+          "samples_per_arm": 64,
+          "edited_count": 7,
+          "control_count": 8,
+          "edited_rate": 0.109375,
+          "control_rate": 0.125,
+          "control_minus_edited": 0.015625,
+          "task_bootstrap95": [
+            0.0,
+            0.046875
+          ]
+        },
+        "healthy:valid_nonanswer": {
+          "tasks": 16,
+          "samples_per_arm": 64,
+          "edited_count": 57,
+          "control_count": 56,
+          "edited_rate": 0.890625,
+          "control_rate": 0.875,
+          "control_minus_edited": -0.015625,
+          "task_bootstrap95": [
+            -0.046875,
+            0.0
+          ]
+        }
+      },
+      "differential_selectivity": {
+        "definition": "(control-minus-edited) fs+ answer contrast minus (control-minus-edited) true-finish answer contrast",
+        "value": -0.06513157894736842,
+        "task_bootstrap95": [
+          -0.18421052631578946,
+          0.038815789473684206
+        ]
+      },
+      "interpretation": {
+        "positive_fs_answer_contrast": "the targeted edited heads suppress false-success answers more than their matched random control",
+        "positive_differential_selectivity": "the targeted edited heads have a larger false-success-specific advantage over control after subtracting the true-finish contrast",
+        "healthy_valid_nonanswer": "positive means the control retains more valid non-answer actions than the targeted edit; negative means the targeted edit retains more"
+      }
+    },
+    {
+      "family": "raw",
+      "edited": "raw4_s0",
+      "control": "random_raw4_s0",
+      "scale": 0,
+      "head_count_per_arm": 4,
+      "metrics": {
+        "fs+:answer": {
+          "tasks": 19,
+          "samples_per_arm": 76,
+          "edited_count": 56,
+          "control_count": 64,
+          "edited_rate": 0.7368421052631579,
+          "control_rate": 0.8421052631578947,
+          "control_minus_edited": 0.10526315789473684,
+          "task_bootstrap95": [
+            -0.039473684210526314,
+            0.25
+          ]
+        },
+        "fs-:answer": {
+          "tasks": 20,
+          "samples_per_arm": 80,
+          "edited_count": 71,
+          "control_count": 77,
+          "edited_rate": 0.8875,
+          "control_rate": 0.9625,
+          "control_minus_edited": 0.075,
+          "task_bootstrap95": [
+            0.0125,
+            0.15
+          ]
+        },
+        "healthy:answer": {
+          "tasks": 16,
+          "samples_per_arm": 64,
+          "edited_count": 4,
+          "control_count": 4,
+          "edited_rate": 0.0625,
+          "control_rate": 0.0625,
+          "control_minus_edited": 0.0,
+          "task_bootstrap95": [
+            -0.140625,
+            0.140625
+          ]
+        },
+        "healthy:valid_nonanswer": {
+          "tasks": 16,
+          "samples_per_arm": 64,
+          "edited_count": 60,
+          "control_count": 60,
+          "edited_rate": 0.9375,
+          "control_rate": 0.9375,
+          "control_minus_edited": 0.0,
+          "task_bootstrap95": [
+            -0.140625,
+            0.140625
+          ]
+        }
+      },
+      "differential_selectivity": {
+        "definition": "(control-minus-edited) fs+ answer contrast minus (control-minus-edited) true-finish answer contrast",
+        "value": 0.03026315789473684,
+        "task_bootstrap95": [
+          -0.12631578947368421,
+          0.1875
+        ]
+      },
+      "interpretation": {
+        "positive_fs_answer_contrast": "the targeted edited heads suppress false-success answers more than their matched random control",
+        "positive_differential_selectivity": "the targeted edited heads have a larger false-success-specific advantage over control after subtracting the true-finish contrast",
+        "healthy_valid_nonanswer": "positive means the control retains more valid non-answer actions than the targeted edit; negative means the targeted edit retains more"
+      }
+    }
+  ]
+}

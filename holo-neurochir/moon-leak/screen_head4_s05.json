@@ -1,0 +1,69 @@
+{
+  "arm": "head4_s05",
+  "metrics": {
+    "fs+": {
+      "candidate_invalid": 0,
+      "candidate_valid_nonanswer": 13,
+      "tasks": 19,
+      "samples": 76,
+      "field": "answer",
+      "A": 0.7236842105263158,
+      "candidate": 0.8289473684210527,
+      "drop": -0.10526315789473684,
+      "drop_ci95": [
+        -0.18421052631578946,
+        -0.039473684210526314
+      ]
+    },
+    "fs-": {
+      "candidate_invalid": 0,
+      "candidate_valid_nonanswer": 4,
+      "tasks": 20,
+      "samples": 80,
+      "field": "answer",
+      "A": 0.9375,
+      "candidate": 0.95,
+      "drop": -0.0125,
+      "drop_ci95": [
+        -0.0375,
+        0.0
+      ]
+    },
+    "healthy": {
+      "candidate_invalid": 0,
+      "candidate_valid_nonanswer": 58,
+      "tasks": 16,
+      "samples": 64,
+      "field": "valid_nonanswer",
+      "A": 0.921875,
+      "candidate": 0.90625,
+      "drop": 0.015625,
+      "drop_ci95": [
+        -0.046875,
+        0.09375
+      ]
+    }
+  },
+  "selectivity": -0.09276315789473684,
+  "selectivity_ci95": [
+    -0.1717269736842105,
+    -0.01513157894736842
+  ],
+  "json_valid": 1.0,
+  "errors": 0,
+  "truncated": 0,
+  "gates": {
+    "json_valid": true,
+    "healthy_proxy_loss": true,
+    "fs_reduction": false,
+    "selectivity": false
+  },
+  "text": "REQUIRES_INDEPENDENT_REVIEW",
+  "online": "NOT_RUN",
+  "scope": "exploratory: heads selected on this cohort; healthy proxy is schema-valid non-answer",
+  "numerical_pass": false,
+  "input_sha256": {
+    "/workspace/astra/moon-leak/baseline_A/generations.jsonl": "c7f309a97947452e47a343bb07f429937f200a5159d0868be2aad8d7fb9ad546",
+    "/workspace/astra/moon-leak/runs/head4_s05/generations.jsonl": "0b3715a23a51527861d9c071aedc619d22e08543030324ce86c3b1c1a43a74f9"
+  }
+}

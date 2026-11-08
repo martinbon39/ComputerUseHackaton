@@ -1,0 +1,11 @@
+{
+  "ended_utc": "2026-11-08T08:08:13.497716+00:00",
+  "status": "COMPLETE",
+  "gui_completed": 220,
+  "gui_expected": 220,
+  "text_controls_completed": 3,
+  "text_controls_expected": 3,
+  "deadline_utc": "2026-11-08T09:40:00+00:00",
+  "generations_sha256": "7c8d038bb7e2d28eb29d1008e21c4ea70fef09525a2cc472fa7a6fbade8b38bb",
+  "text_controls_sha256": "8a7eb6dcd397909bc6ebcb3b2279f68bff7502ce5f6af754d6cc7b5ad9aebfdf"
+}

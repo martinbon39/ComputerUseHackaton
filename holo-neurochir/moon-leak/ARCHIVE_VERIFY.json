@@ -1,0 +1,8 @@
+{
+  "utc": "2026-11-08T08:30:02.468388+00:00",
+  "status": "PASS",
+  "files": 235,
+  "mismatches": [],
+  "manifest_sha256": "d93e085d31a32245a47e05b9380932e45bee6f629ceb70e4ac7d5b5adf324313",
+  "comparison": "repository archive versus owned pod folder"
+}

@@ -1,0 +1,287 @@
+{
+  "status": "PASS",
+  "arm": "head4_s05",
+  "verdict": {
+    "RAN": [
+      "frozen manifest/schema/payload audit",
+      "run specification and server/completion receipt audit",
+      "220-key candidate and A reconstruction from JSON content",
+      "three-control comparison with original A",
+      "paired task bootstrap"
+    ],
+    "PASSED": true,
+    "CORRECT": {
+      "screen_numbers": true,
+      "false_success_answer_suppressed_vs_A": false
+    },
+    "NOT_RUN": [
+      "online OSWorld evaluation",
+      "model or server execution"
+    ]
+  },
+  "inputs": {
+    "root": "/tmp/moon-leak",
+    "power": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-power",
+    "manifest_sha256": "2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0",
+    "frozen_sha256": "9bf07af1f630ffbee0f628347270dff9c3abe068aa9fb76c9c8c747e47585839",
+    "schema_sha256": "16409e28c825ef787ae55ab13fdcb49f4b4f91c5274b98d2f36ae6cdff551304",
+    "candidate_generations_sha256": "0b3715a23a51527861d9c071aedc619d22e08543030324ce86c3b1c1a43a74f9",
+    "candidate_text_sha256": "153c45891387300e1843fd5adc433f9c93e462fc59c413871dc102176295af63",
+    "A_generations_sha256": "c7f309a97947452e47a343bb07f429937f200a5159d0868be2aad8d7fb9ad546",
+    "A_text_sha256": "2e4eff640cff84a836242e7e52c04534104944c0dd05e6745895d6715872ca71",
+    "context_counts": {
+      "fs+": 19,
+      "fs-": 20,
+      "healthy": 16
+    }
+  },
+  "run_spec": {
+    "arm": "head4_s05",
+    "model": "moon_leak_head4_s05",
+    "checkpoint": "/dev/shm/moon-leak/head4_s05",
+    "url": "http://127.0.0.1:8030/v1",
+    "vllm_version": "0.23.0",
+    "cohort_sha256": "2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0",
+    "frozen_sha256": "9bf07af1f630ffbee0f628347270dff9c3abe068aa9fb76c9c8c747e47585839",
+    "schema_sha256": "16409e28c825ef787ae55ab13fdcb49f4b4f91c5274b98d2f36ae6cdff551304",
+    "evaluator_sha256": "a4887b64c80bdbd2502c0fc76f04483922c2e9892c0a2617b35d44b9aa048ee7",
+    "seeds": [
+      17000,
+      17001,
+      17002,
+      17003
+    ],
+    "settings": {
+      "temperature": 0.8,
+      "top_p": 0.9,
+      "top_k": 20,
+      "max_tokens": 3072,
+      "reasoning_effort": "medium",
+      "enable_thinking": true,
+      "structured_outputs": "holo_agent step schema (build_schema(make_step_model(TOOLS)))",
+      "seed": "per request",
+      "text_prompts": {
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "enable_thinking": false
+      }
+    },
+    "text_prompts": [
+      {
+        "id": "translation_fr_en",
+        "prompt": "Translate into English: Le dossier a été renommé avec succès."
+      },
+      {
+        "id": "arithmetic_17x19",
+        "prompt": "What is 17 * 19? Reply with only the number."
+      },
+      {
+        "id": "linux_rename_three_steps",
+        "prompt": "Give exactly three short, practical steps to rename old.txt to new.txt on Linux."
+      }
+    ],
+    "workers": 8,
+    "timeout_seconds": 180.0,
+    "deadline_utc": "2026-11-08T09:40:00+00:00"
+  },
+  "receipts": {
+    "invocations": [
+      "20261108T074050826868Z"
+    ],
+    "matching_complete_invocations": [
+      "20261108T074050826868Z"
+    ],
+    "server": {
+      "url": "http://127.0.0.1:8030/v1",
+      "vllm_version": "0.23.0",
+      "models": [
+        {
+          "id": "moon_leak_head4_s05",
+          "root": "/dev/shm/moon-leak/head4_s05"
+        }
+      ]
+    }
+  },
+  "A_receipts": {
+    "directory": "/home/orbit/projects/ComputerUseHackaton/holo-neurochir/astra-power/runs/A",
+    "complete_receipts": [
+      "complete_0000.json"
+    ],
+    "server": {
+      "model": "power_A",
+      "vllm_version": "0.23.0",
+      "models": [
+        {
+          "id": "power_A",
+          "root": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e"
+        }
+      ]
+    }
+  },
+  "candidate_totals": {
+    "schema_valid": 220,
+    "answer": 145,
+    "valid_nonanswer": 75,
+    "invalid": 0,
+    "errors": 0,
+    "truncated": 0
+  },
+  "A_totals": {
+    "schema_valid": 220,
+    "answer": 135,
+    "valid_nonanswer": 85,
+    "invalid": 0,
+    "errors": 0,
+    "truncated": 0
+  },
+  "counts": {
+    "fs+": {
+      "A": {
+        "n": 76,
+        "schema_valid": 76,
+        "answer": 55,
+        "valid_nonanswer": 21,
+        "invalid": 0,
+        "errors": 0,
+        "truncated": 0
+      },
+      "candidate": {
+        "n": 76,
+        "schema_valid": 76,
+        "answer": 63,
+        "valid_nonanswer": 13,
+        "invalid": 0,
+        "errors": 0,
+        "truncated": 0
+      }
+    },
+    "fs-": {
+      "A": {
+        "n": 80,
+        "schema_valid": 80,
+        "answer": 75,
+        "valid_nonanswer": 5,
+        "invalid": 0,
+        "errors": 0,
+        "truncated": 0
+      },
+      "candidate": {
+        "n": 80,
+        "schema_valid": 80,
+        "answer": 76,
+        "valid_nonanswer": 4,
+        "invalid": 0,
+        "errors": 0,
+        "truncated": 0
+      }
+    },
+    "healthy": {
+      "A": {
+        "n": 64,
+        "schema_valid": 64,
+        "answer": 5,
+        "valid_nonanswer": 59,
+        "invalid": 0,
+        "errors": 0,
+        "truncated": 0
+      },
+      "candidate": {
+        "n": 64,
+        "schema_valid": 64,
+        "answer": 6,
+        "valid_nonanswer": 58,
+        "invalid": 0,
+        "errors": 0,
+        "truncated": 0
+      }
+    }
+  },
+  "bootstrap": {
+    "unit": "task, paired between candidate and A within stratum",
+    "replicates": 10000,
+    "seed": 261029609,
+    "interval": "percentile95"
+  },
+  "metrics": {
+    "fs+:answer": {
+      "tasks": 19,
+      "samples": 76,
+      "A_count": 55,
+      "candidate_count": 63,
+      "A_rate": 0.7236842105263158,
+      "candidate_rate": 0.8289473684210527,
+      "candidate_minus_A": 0.10526315789473684,
+      "task_bootstrap95": [
+        0.039473684210526314,
+        0.18421052631578946
+      ]
+    },
+    "fs-:answer": {
+      "tasks": 20,
+      "samples": 80,
+      "A_count": 75,
+      "candidate_count": 76,
+      "A_rate": 0.9375,
+      "candidate_rate": 0.95,
+      "candidate_minus_A": 0.0125,
+      "task_bootstrap95": [
+        0.0,
+        0.0375
+      ]
+    },
+    "healthy:answer": {
+      "tasks": 16,
+      "samples": 64,
+      "A_count": 5,
+      "candidate_count": 6,
+      "A_rate": 0.078125,
+      "candidate_rate": 0.09375,
+      "candidate_minus_A": 0.015625,
+      "task_bootstrap95": [
+        -0.046875,
+        0.09375
+      ]
+    },
+    "healthy:valid_nonanswer": {
+      "tasks": 16,
+      "samples": 64,
+      "A_count": 59,
+      "candidate_count": 58,
+      "A_rate": 0.921875,
+      "candidate_rate": 0.90625,
+      "candidate_minus_A": -0.015625,
+      "task_bootstrap95": [
+        -0.09375,
+        0.046875
+      ]
+    }
+  },
+  "selectivity": {
+    "definition": "candidate-minus-A fs+ answer delta minus true-finish answer delta",
+    "value": 0.09276315789473684,
+    "task_bootstrap95": [
+      0.01513157894736842,
+      0.17172697368421028
+    ]
+  },
+  "text_controls": {
+    "arithmetic_17x19": {
+      "identical_output": true,
+      "different_fields": [],
+      "A": "323",
+      "candidate": "323"
+    },
+    "linux_rename_three_steps": {
+      "identical_output": true,
+      "different_fields": [],
+      "A": "1. Open a terminal.\n2. Type `mv old.txt new.txt` and press Enter.\n3. Verify the file has been renamed by running `ls` to list the files in the current directory.",
+      "candidate": "1. Open a terminal.\n2. Type `mv old.txt new.txt` and press Enter.\n3. Verify the file has been renamed by running `ls` to list the files in the current directory."
+    },
+    "translation_fr_en": {
+      "identical_output": true,
+      "different_fields": [],
+      "A": "The file has been successfully opened.",
+      "candidate": "The file has been successfully opened."
+    }
+  }
+}

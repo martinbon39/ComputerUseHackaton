@@ -1,0 +1,6 @@
+RETROSPECTIVE ONLY: this audit was not an active interlock during the experiments.
+TOTAL: 7426 forward attempts (expected 7426; cap 8500)
+PASS: global forward cap, 7426 <= 8500 (headroom 1074)
+PASS: main forward cap, 6435 <= 6500 (headroom 65)
+FAIL: required stop was not honored after two consecutive failures of guard 'exact_cache_repeatability' without execution progress; second failure='pilot_attempt4'; later model runs=['pilot_final', 'main_attribution']
+AUDIT RESULT: FAIL (1 issue(s)); numeric caps may still pass independently.

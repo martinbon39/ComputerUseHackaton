@@ -1,0 +1,6 @@
+{"name": "head4_s05", "bytes": 10373060561, "utc": "2026-11-08T07:47:31.501966+00:00", "reason": "screened; reproducible spec/build/verification retained"}
+{"name": "head4_s0", "bytes": 10373060561, "utc": "2026-11-08T07:58:00.610861+00:00", "reason": "screened; reproducible spec/build/verification retained"}
+{"name": "raw4_s05", "bytes": 10373060561, "utc": "2026-11-08T08:03:49.587942+00:00", "reason": "screened; reproducible spec/build/verification retained"}
+{"name": "raw4_s0", "bytes": 10373060561, "utc": "2026-11-08T08:09:43.830292+00:00", "reason": "screened; reproducible spec/build/verification retained"}
+{"name": "random4_s0", "bytes": 10373060561, "utc": "2026-11-08T08:15:03.157112+00:00", "reason": "screened; reproducible spec/build/verification retained"}
+{"name": "random_raw4_s0", "bytes": 10373060561, "utc": "2026-11-08T08:20:34.141320+00:00", "reason": "screened; reproducible spec/build/verification retained"}

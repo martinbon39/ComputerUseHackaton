@@ -1,0 +1,64 @@
+{
+  "started_utc": "2026-11-08T08:06:32.603547+00:00",
+  "spec": {
+    "arm": "raw4_s0",
+    "model": "moon_leak_raw4_s0",
+    "checkpoint": "/dev/shm/moon-leak/raw4_s0",
+    "url": "http://127.0.0.1:8030/v1",
+    "vllm_version": "0.23.0",
+    "cohort_sha256": "2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0",
+    "frozen_sha256": "9bf07af1f630ffbee0f628347270dff9c3abe068aa9fb76c9c8c747e47585839",
+    "schema_sha256": "16409e28c825ef787ae55ab13fdcb49f4b4f91c5274b98d2f36ae6cdff551304",
+    "evaluator_sha256": "a4887b64c80bdbd2502c0fc76f04483922c2e9892c0a2617b35d44b9aa048ee7",
+    "seeds": [
+      17000,
+      17001,
+      17002,
+      17003
+    ],
+    "settings": {
+      "temperature": 0.8,
+      "top_p": 0.9,
+      "top_k": 20,
+      "max_tokens": 3072,
+      "reasoning_effort": "medium",
+      "enable_thinking": true,
+      "structured_outputs": "holo_agent step schema (build_schema(make_step_model(TOOLS)))",
+      "seed": "per request",
+      "text_prompts": {
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "enable_thinking": false
+      }
+    },
+    "text_prompts": [
+      {
+        "id": "translation_fr_en",
+        "prompt": "Translate into English: Le dossier a été renommé avec succès."
+      },
+      {
+        "id": "arithmetic_17x19",
+        "prompt": "What is 17 * 19? Reply with only the number."
+      },
+      {
+        "id": "linux_rename_three_steps",
+        "prompt": "Give exactly three short, practical steps to rename old.txt to new.txt on Linux."
+      }
+    ],
+    "workers": 8,
+    "timeout_seconds": 180.0,
+    "deadline_utc": "2026-11-08T09:40:00+00:00"
+  },
+  "server": {
+    "url": "http://127.0.0.1:8030/v1",
+    "vllm_version": "0.23.0",
+    "models": [
+      {
+        "id": "moon_leak_raw4_s0",
+        "root": "/dev/shm/moon-leak/raw4_s0"
+      }
+    ]
+  },
+  "previous_gui": 0,
+  "previous_text_controls": 0
+}

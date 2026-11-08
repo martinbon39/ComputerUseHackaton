@@ -1,0 +1,82 @@
+{
+  "spec": {
+    "name": "random4_s0",
+    "heads": [
+      [
+        3,
+        5
+      ],
+      [
+        7,
+        11
+      ],
+      [
+        11,
+        6
+      ],
+      [
+        15,
+        0
+      ]
+    ],
+    "scale": 0,
+    "control": true,
+    "ranking": "mean fs+ drop minus mean true-finish drop, matched zero-mask controls",
+    "random_seed": 261029609
+  },
+  "spec_sha256": "8309689167e95d1a966414813cd8f32d73f5334ba8c4ecf8f0d1079b1c18b868",
+  "source": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+  "output": "/dev/shm/moon-leak/random4_s0",
+  "target_matrices": [
+    {
+      "key": "model.language_model.layers.11.self_attn.o_proj.weight",
+      "heads": [
+        6
+      ],
+      "changed_elements": 655360,
+      "dtype": "torch.bfloat16"
+    },
+    {
+      "key": "model.language_model.layers.15.self_attn.o_proj.weight",
+      "heads": [
+        0
+      ],
+      "changed_elements": 655360,
+      "dtype": "torch.bfloat16"
+    },
+    {
+      "key": "model.language_model.layers.3.self_attn.o_proj.weight",
+      "heads": [
+        5
+      ],
+      "changed_elements": 655360,
+      "dtype": "torch.bfloat16"
+    },
+    {
+      "key": "model.language_model.layers.7.self_attn.o_proj.weight",
+      "heads": [
+        11
+      ],
+      "changed_elements": 655360,
+      "dtype": "torch.bfloat16"
+    }
+  ],
+  "unchanged_tensor_count": 720,
+  "files": {
+    ".gitattributes": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930",
+    "README.md": "059de62841a8ca6c8d2c32f1210ecf58cd8efc8755c2795000d8d87afe49ad5e",
+    "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+    "config.json": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1",
+    "generation_config.json": "a219dff6ed1d52d8a88fe50026de36ebcbcb913cbac0e70fdfaecf380949d7f1",
+    "latest": "99fd8c91ced0bff4012cfa40644e1fb9d89629c57d21f2f5d46395b595c088a4",
+    "merges.txt": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d",
+    "model-00001-of-00002.safetensors": "816f669b32308152ed719a1d87d8dd4031d49c98c2835f490b109468ae23268f",
+    "model-00002-of-00002.safetensors": "7873ad3b4d92a2be050353524801ae2d677bcc6a7fd4568a9f1010a31feb05f2",
+    "model.safetensors.index.json": "7b03a0145171130242e6068c91aa2aea4af17f8324d861a907392b3fbfe4e1e7",
+    "preprocessor_config.json": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+    "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+    "video_preprocessor_config.json": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+    "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+  }
+}

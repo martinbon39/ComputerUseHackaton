@@ -1,0 +1,24 @@
+Loading weights:   0%|          | 0/724 [00:00<?, ?it/s]Loading weights: 100%|██████████| 724/724 [00:00<00:00, 14418.89it/s]
+{"context": "power_000", "phase": "baseline", "seconds": 2.1476418880047277, "answer_margin": 19.058218002319336, "tool_logits": {"answer": 36.762542724609375, "click": 17.70432472229004, "double_click": 14.973564147949219, "right_click": 11.440961837768555, "write": 11.614395141601562, "press_key": 12.177188873291016, "hotkey": 14.40785026550293, "scroll": 11.14078140258789, "drag": 9.702780723571777, "wait": 15.563121795654297}, "margin_error": 0.010349273681640625}
+{"phase": "cache_repeatability", "context": "power_000", "baseline": {"answer_margin": 19.058218002319336, "tool_logits": {"answer": 36.762542724609375, "click": 17.70432472229004, "double_click": 14.973564147949219, "right_click": 11.440961837768555, "write": 11.614395141601562, "press_key": 12.177188873291016, "hotkey": 14.40785026550293, "scroll": 11.14078140258789, "drag": 9.702780723571777, "wait": 15.563121795654297}}, "repeat": {"answer_margin": 19.058218002319336, "tool_logits": {"answer": 36.762542724609375, "click": 17.70432472229004, "double_click": 14.973564147949219, "right_click": 11.440961837768555, "write": 11.614395141601562, "press_key": 12.177188873291016, "hotkey": 14.40785026550293, "scroll": 11.14078140258789, "drag": 9.702780723571777, "wait": 15.563121795654297}}, "hidden_max_abs_diff": 0.0, "hidden_equal": true}
+{"context": "power_000", "phase": "head", "layer": 3, "seconds": 2.904102849017363, "forwards": 21}
+{"context": "power_000", "phase": "head", "layer": 7, "seconds": 3.617805652000243, "forwards": 38}
+{"context": "power_000", "phase": "head", "layer": 11, "seconds": 4.332708725007251, "forwards": 55}
+{"context": "power_000", "phase": "head", "layer": 15, "seconds": 5.046848313999362, "forwards": 72}
+{"context": "power_000", "phase": "head", "layer": 19, "seconds": 5.761378324008547, "forwards": 89}
+{"context": "power_000", "phase": "head", "layer": 23, "seconds": 6.47617670299951, "forwards": 106}
+{"context": "power_000", "phase": "head", "layer": 27, "seconds": 7.196095326013165, "forwards": 123}
+{"context": "power_000", "phase": "head", "layer": 31, "seconds": 7.909950041997945, "forwards": 140}
+{"context": "power_000", "phase": "complete", "seconds": 9.308144069014816, "forwards": 166}
+{"context": "power_019", "phase": "baseline", "seconds": 1.0593092089984566, "answer_margin": 21.287267684936523, "tool_logits": {"answer": 37.82526779174805, "click": 16.538000106811523, "double_click": 15.084527969360352, "right_click": 10.839627265930176, "write": 13.235284805297852, "press_key": 12.26066780090332, "hotkey": 13.20424747467041, "scroll": 11.144814491271973, "drag": 7.981917381286621, "wait": 14.763951301574707}, "margin_error": 0.028047561645507812}
+{"phase": "cache_repeatability", "context": "power_019", "baseline": {"answer_margin": 21.287267684936523, "tool_logits": {"answer": 37.82526779174805, "click": 16.538000106811523, "double_click": 15.084527969360352, "right_click": 10.839627265930176, "write": 13.235284805297852, "press_key": 12.26066780090332, "hotkey": 13.20424747467041, "scroll": 11.144814491271973, "drag": 7.981917381286621, "wait": 14.763951301574707}}, "repeat": {"answer_margin": 21.287267684936523, "tool_logits": {"answer": 37.82526779174805, "click": 16.538000106811523, "double_click": 15.084527969360352, "right_click": 10.839627265930176, "write": 13.235284805297852, "press_key": 12.26066780090332, "hotkey": 13.20424747467041, "scroll": 11.144814491271973, "drag": 7.981917381286621, "wait": 14.763951301574707}}, "hidden_max_abs_diff": 0.0, "hidden_equal": true}
+{"context": "power_019", "phase": "head", "layer": 3, "seconds": 1.8181048549886327, "forwards": 187}
+{"context": "power_019", "phase": "head", "layer": 7, "seconds": 2.5320788389944937, "forwards": 204}
+{"context": "power_019", "phase": "head", "layer": 11, "seconds": 3.4709437059937045, "forwards": 221}
+{"context": "power_019", "phase": "head", "layer": 15, "seconds": 4.477678660012316, "forwards": 238}
+{"context": "power_019", "phase": "head", "layer": 19, "seconds": 5.308255684998585, "forwards": 255}
+{"context": "power_019", "phase": "head", "layer": 23, "seconds": 6.022285662009381, "forwards": 272}
+{"context": "power_019", "phase": "head", "layer": 27, "seconds": 6.736852217989508, "forwards": 289}
+{"context": "power_019", "phase": "head", "layer": 31, "seconds": 7.723287117987638, "forwards": 306}
+{"context": "power_019", "phase": "complete", "seconds": 9.870127389993286, "forwards": 332}
+{"phase": "finished", "seconds": 27.919328204996418, "forwards": 332, "output": "/workspace/astra/moon-leak/attribution_pilot.jsonl"}

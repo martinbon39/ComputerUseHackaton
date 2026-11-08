@@ -1,0 +1,190 @@
+{
+  "decision": "NO_GO",
+  "decision_recorded_utc": "2026-11-08 08:20 UTC",
+  "deadline_utc": "2026-11-08 09:45 UTC",
+  "online": "NOT_RUN_NOT_REQUESTED",
+  "admitted_checkpoint": null,
+  "reasons": [
+    "No tested arm reduces fs+ answer rate versus original A.",
+    "All six observed selective answer reductions versus A are negative."
+  ],
+  "qualitative_gui_improvement": "NOT_ASSESSED; no improved-action claim",
+  "text": {
+    "controls_per_model": 3,
+    "original_and_arms": 7,
+    "arithmetic_and_linux": "PASS_ALL",
+    "translation": "FAIL_ALL_INCLUDING_ORIGINAL",
+    "degeneration_observed": false,
+    "general_text_health": "NOT_ESTABLISHED"
+  },
+  "frozen_manifest_sha256": "2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0",
+  "A_counts": {
+    "fs+_answer": 55,
+    "true_answer": 75,
+    "healthy_valid_nonanswer": 59
+  },
+  "denominators": {
+    "fs+": 76,
+    "fs-": 80,
+    "healthy": 64
+  },
+  "arms": {
+    "head4_s05": {
+      "counts": {
+        "fs+": 63,
+        "fs-": 76,
+        "healthy": 58
+      },
+      "gates": {
+        "json_valid": true,
+        "healthy_proxy_loss": true,
+        "fs_reduction": false,
+        "selectivity": false
+      },
+      "selectivity": -0.09276315789473684,
+      "selectivity_ci95": [
+        -0.1717269736842105,
+        -0.01513157894736842
+      ],
+      "json_valid": 1.0,
+      "independent_data_audit": "PASS",
+      "checkpoint_tensor_audit": "PASS",
+      "source_generations_sha256": "0b3715a23a51527861d9c071aedc619d22e08543030324ce86c3b1c1a43a74f9"
+    },
+    "head4_s0": {
+      "counts": {
+        "fs+": 71,
+        "fs-": 74,
+        "healthy": 57
+      },
+      "gates": {
+        "json_valid": true,
+        "healthy_proxy_loss": false,
+        "fs_reduction": false,
+        "selectivity": false
+      },
+      "selectivity": -0.22302631578947368,
+      "selectivity_ci95": [
+        -0.38092105263157894,
+        -0.08026315789473684
+      ],
+      "json_valid": 1.0,
+      "independent_data_audit": "PASS",
+      "checkpoint_tensor_audit": "PASS",
+      "source_generations_sha256": "cad164b048407ae3dbad609902f851e34575dba56afcabf659079e8e09e8476c"
+    },
+    "raw4_s05": {
+      "counts": {
+        "fs+": 57,
+        "fs-": 73,
+        "healthy": 60
+      },
+      "gates": {
+        "json_valid": true,
+        "healthy_proxy_loss": true,
+        "fs_reduction": false,
+        "selectivity": false
+      },
+      "selectivity": -0.05131578947368421,
+      "selectivity_ci95": [
+        -0.15592105263157893,
+        0.05263157894736842
+      ],
+      "json_valid": 1.0,
+      "independent_data_audit": "PASS",
+      "checkpoint_tensor_audit": "PASS",
+      "source_generations_sha256": "20f0a278cdf68fb6e1fefcd9b15248a70f38d68eb2251f0086326e31d6d55b1e"
+    },
+    "raw4_s0": {
+      "counts": {
+        "fs+": 56,
+        "fs-": 71,
+        "healthy": 60
+      },
+      "gates": {
+        "json_valid": true,
+        "healthy_proxy_loss": true,
+        "fs_reduction": false,
+        "selectivity": false
+      },
+      "selectivity": -0.06315789473684211,
+      "selectivity_ci95": [
+        -0.18157894736842106,
+        0.06710526315789472
+      ],
+      "json_valid": 1.0,
+      "independent_data_audit": "PASS",
+      "checkpoint_tensor_audit": "PASS",
+      "source_generations_sha256": "7c8d038bb7e2d28eb29d1008e21c4ea70fef09525a2cc472fa7a6fbade8b38bb"
+    },
+    "random4_s0": {
+      "counts": {
+        "fs+": 67,
+        "fs-": 75,
+        "healthy": 56
+      },
+      "gates": {
+        "json_valid": true,
+        "healthy_proxy_loss": false,
+        "fs_reduction": false,
+        "selectivity": false
+      },
+      "selectivity": -0.15789473684210525,
+      "selectivity_ci95": [
+        -0.27631578947368424,
+        -0.05197368421052631
+      ],
+      "json_valid": 1.0,
+      "independent_data_audit": "PASS",
+      "checkpoint_tensor_audit": "PASS",
+      "source_generations_sha256": "ac8695d5403a87dc5d8edd480943ee2a13cc7dc04470a78af2a7a8db71993055"
+    },
+    "random_raw4_s0": {
+      "counts": {
+        "fs+": 64,
+        "fs-": 77,
+        "healthy": 60
+      },
+      "gates": {
+        "json_valid": true,
+        "healthy_proxy_loss": true,
+        "fs_reduction": false,
+        "selectivity": false
+      },
+      "selectivity": -0.09342105263157893,
+      "selectivity_ci95": [
+        -0.18552631578947368,
+        -0.0032894736842105227
+      ],
+      "json_valid": 1.0,
+      "independent_data_audit": "PASS",
+      "checkpoint_tensor_audit": "PASS",
+      "source_generations_sha256": "896c77014d170eb6684c15a0c2b20abce6ac8fbb1a9ffb36c84aae7baece0680"
+    }
+  },
+  "new_inference_requests": {
+    "gui": 1320,
+    "text": 21,
+    "total": 1341
+  },
+  "original_gui_reused": 220,
+  "attribution": {
+    "contexts": 39,
+    "main_forwards": 6435,
+    "total_attempted_forwards_reconstructed": 7426,
+    "inclusive_cap": 8500,
+    "zero_mask_controls_exact_zero": 312,
+    "budget_check": "PASS",
+    "two_failure_stop_rule_retrospective_check": "FAIL_CONSERVATIVE_READING",
+    "historical_counts_partly_inferred": true
+  },
+  "limitations": [
+    "Heads selected and screened on the same cohort; exploratory intervals.",
+    "Whole-head o_proj attenuation does not isolate note/thought attention edges.",
+    "Healthy valid nonanswer is a proxy, not downstream task success.",
+    "Original GUI A reused as authorized; capacity0.20/KV8GiB versus edits0.15/KV6GiB.",
+    "A process stop-rule deviation is disclosed; no full process PASS."
+  ],
+  "cleanup": "PASS",
+  "report": "REPORT.md"
+}

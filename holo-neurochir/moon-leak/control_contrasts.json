@@ -1,0 +1,194 @@
+{
+  "status": "PASS",
+  "pairs": [
+    {
+      "family": "ranked",
+      "edited": "head4_s0",
+      "control": "random4_s0",
+      "scale": 0,
+      "head_count_per_arm": 4,
+      "metrics": {
+        "fs+:answer": {
+          "tasks": 19,
+          "samples_per_arm": 76,
+          "edited_count": 71,
+          "control_count": 67,
+          "edited_rate": 0.9342105263157895,
+          "control_rate": 0.881578947368421,
+          "control_minus_edited": -0.05263157894736842,
+          "task_bootstrap95": [
+            -0.15789473684210525,
+            0.02631578947368421
+          ]
+        },
+        "fs-:answer": {
+          "tasks": 20,
+          "samples_per_arm": 80,
+          "edited_count": 74,
+          "control_count": 75,
+          "edited_rate": 0.925,
+          "control_rate": 0.9375,
+          "control_minus_edited": 0.0125,
+          "task_bootstrap95": [
+            -0.05,
+            0.075
+          ]
+        },
+        "healthy:answer": {
+          "tasks": 16,
+          "samples_per_arm": 64,
+          "edited_count": 7,
+          "control_count": 8,
+          "edited_rate": 0.109375,
+          "control_rate": 0.125,
+          "control_minus_edited": 0.015625,
+          "task_bootstrap95": [
+            0.0,
+            0.046875
+          ]
+        },
+        "healthy:valid_nonanswer": {
+          "tasks": 16,
+          "samples_per_arm": 64,
+          "edited_count": 57,
+          "control_count": 56,
+          "edited_rate": 0.890625,
+          "control_rate": 0.875,
+          "control_minus_edited": -0.015625,
+          "task_bootstrap95": [
+            -0.046875,
+            0.0
+          ]
+        }
+      },
+      "differential_selectivity": {
+        "definition": "(control-minus-edited) fs+ answer contrast minus (control-minus-edited) true-finish answer contrast",
+        "value": -0.06513157894736842,
+        "task_bootstrap95": [
+          -0.18421052631578946,
+          0.038815789473684206
+        ]
+      },
+      "interpretation": {
+        "positive_fs_answer_contrast": "the targeted edited heads suppress false-success answers more than their matched random control",
+        "positive_differential_selectivity": "the targeted edited heads have a larger false-success-specific advantage over control after subtracting the true-finish contrast",
+        "healthy_valid_nonanswer": "positive means the control retains more valid non-answer actions than the targeted edit; negative means the targeted edit retains more"
+      }
+    },
+    {
+      "family": "raw",
+      "edited": "raw4_s0",
+      "control": "random_raw4_s0",
+      "scale": 0,
+      "head_count_per_arm": 4,
+      "metrics": {
+        "fs+:answer": {
+          "tasks": 19,
+          "samples_per_arm": 76,
+          "edited_count": 56,
+          "control_count": 64,
+          "edited_rate": 0.7368421052631579,
+          "control_rate": 0.8421052631578947,
+          "control_minus_edited": 0.10526315789473684,
+          "task_bootstrap95": [
+            -0.039473684210526314,
+            0.25
+          ]
+        },
+        "fs-:answer": {
+          "tasks": 20,
+          "samples_per_arm": 80,
+          "edited_count": 71,
+          "control_count": 77,
+          "edited_rate": 0.8875,
+          "control_rate": 0.9625,
+          "control_minus_edited": 0.075,
+          "task_bootstrap95": [
+            0.0125,
+            0.15
+          ]
+        },
+        "healthy:answer": {
+          "tasks": 16,
+          "samples_per_arm": 64,
+          "edited_count": 4,
+          "control_count": 4,
+          "edited_rate": 0.0625,
+          "control_rate": 0.0625,
+          "control_minus_edited": 0.0,
+          "task_bootstrap95": [
+            -0.140625,
+            0.140625
+          ]
+        },
+        "healthy:valid_nonanswer": {
+          "tasks": 16,
+          "samples_per_arm": 64,
+          "edited_count": 60,
+          "control_count": 60,
+          "edited_rate": 0.9375,
+          "control_rate": 0.9375,
+          "control_minus_edited": 0.0,
+          "task_bootstrap95": [
+            -0.140625,
+            0.140625
+          ]
+        }
+      },
+      "differential_selectivity": {
+        "definition": "(control-minus-edited) fs+ answer contrast minus (control-minus-edited) true-finish answer contrast",
+        "value": 0.03026315789473684,
+        "task_bootstrap95": [
+          -0.12631578947368421,
+          0.1875
+        ]
+      },
+      "interpretation": {
+        "positive_fs_answer_contrast": "the targeted edited heads suppress false-success answers more than their matched random control",
+        "positive_differential_selectivity": "the targeted edited heads have a larger false-success-specific advantage over control after subtracting the true-finish contrast",
+        "healthy_valid_nonanswer": "positive means the control retains more valid non-answer actions than the targeted edit; negative means the targeted edit retains more"
+      }
+    }
+  ],
+  "bootstrap": {
+    "unit": "task, four seeds averaged within task, paired between control and edited arm",
+    "replicates": 10000,
+    "seed": 261029609,
+    "interval": "percentile95",
+    "strata": {
+      "fs+": 19,
+      "fs-": 20,
+      "healthy": 16
+    }
+  },
+  "frozen_sha256": "9bf07af1f630ffbee0f628347270dff9c3abe068aa9fb76c9c8c747e47585839",
+  "source_sha256": {
+    "script": "47970b998821cd1b08682b82e8fb2ad5601958625863fda40aa161e8e6c970df",
+    "audit_module": "72f36c54f356f72bbbff41d97919f33a3b0053798a9c4e7b4489e0d3a23f755d",
+    "FROZEN.json": "9bf07af1f630ffbee0f628347270dff9c3abe068aa9fb76c9c8c747e47585839",
+    "schema.json": "fd58226db5edfb058b8a8dbbccdc197be3817a2da46e77155c5dfb14692e3a8d",
+    "cohort/manifest.json": "2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0",
+    "head4_s0/generations": "cad164b048407ae3dbad609902f851e34575dba56afcabf659079e8e09e8476c",
+    "head4_s0/audit": "e25f7ced301f9433710643fd4716e1f423222fbb8ef57bab5056ccea8de8ca69",
+    "head4_s0/run_spec": "5149b7dca42617a044269cce69db767135b78f09ab8ef000a4159bf9781ecc8a",
+    "head4_s0/build_spec": "0f66bca70fa9a41566f65f8e0628284686e5dca3cc7ccc8abf94c7178537a8e7",
+    "random4_s0/generations": "ac8695d5403a87dc5d8edd480943ee2a13cc7dc04470a78af2a7a8db71993055",
+    "random4_s0/audit": "2b969d17790292690864ae532fa907ced91d8a6f1a7276f4de5f58610e422127",
+    "random4_s0/run_spec": "ba3e24183789ccab17e712b4876cc56816943b23b6d4e2e9bddb6b25ee429d16",
+    "random4_s0/build_spec": "8309689167e95d1a966414813cd8f32d73f5334ba8c4ecf8f0d1079b1c18b868",
+    "random_raw4_s0/generations": "896c77014d170eb6684c15a0c2b20abce6ac8fbb1a9ffb36c84aae7baece0680",
+    "random_raw4_s0/audit": "e23c71a23c23a5ff0ffdd149b94eb614355cdc1e5616ae858069bf99b43f9594",
+    "random_raw4_s0/run_spec": "e36e875de5a307447633bb223b3d10f7b3260f7260a24e2f9ce3bd1d10db742f",
+    "random_raw4_s0/build_spec": "f5a0aff8d63234f41034096fe157a3b52786691767e1ea94c688d9a1a1130afb",
+    "raw4_s0/generations": "7c8d038bb7e2d28eb29d1008e21c4ea70fef09525a2cc472fa7a6fbade8b38bb",
+    "raw4_s0/audit": "3c4b8c2a2175c8ed884d12ca7588006e88a9b2413407b40122ccbdae4491b627",
+    "raw4_s0/run_spec": "e3119d2c8431719cf24eec6720aad467fd45bf3afa348fd3317bf060379ecbbb",
+    "raw4_s0/build_spec": "be64ce321c2f69e01d3c1c80a96414bacce41c2d6de694c5e6d35a28502b7aa8"
+  },
+  "not_run": [
+    "model server",
+    "GPU",
+    "generation requests",
+    "online OSWorld evaluation"
+  ]
+}

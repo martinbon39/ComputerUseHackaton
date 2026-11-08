@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "scope": "All preserved attribution model-forward attempts, including failed pilots and the completed main attribution run.",
+  "retrospective_only": true,
+  "active_interlock_during_experiment": false,
+  "count_semantics": "A forward attempt counts when guarded() increments COUNT before calling the model. The attempt-1 third call therefore counts even though the model call raised.",
+  "caps": {
+    "all_attribution_forward_attempts": 8500,
+    "main_attribution_forward_attempts": 6500
+  },
+  "expected_total_forward_attempts": 7426,
+  "attempts": [
+    {
+      "order": 1,
+      "id": "pilot_attempt1",
+      "run_kind": "pilot",
+      "forward_attempts": 3,
+      "count_type": "inferred",
+      "count_evidence": "Traceback fails inside the third guarded model call after successful full-prefill and cache-prefill calls; PROTOCOL.md independently records 'failed after3 calls'.",
+      "guard_id": "cached_decode_position_ids",
+      "gate_result": "FAIL",
+      "execution_progress": false,
+      "progress_evidence": "No baseline or context completion; third model call failed in cached decode."
+    },
+    {
+      "order": 2,
+      "id": "pilot_attempt2",
+      "run_kind": "pilot",
+      "forward_attempts": 316,
+      "count_type": "observed",
+      "count_evidence": "attribution_pilot_attempt2.log prints complete counters 158 and 316, followed by finished forwards=316.",
+      "guard_id": "then_current_pilot_gate",
+      "gate_result": "PASS",
+      "execution_progress": true,
+      "progress_evidence": "Both pilot contexts completed under the then-current checks."
+    },
+    {
+      "order": 3,
+      "id": "pilot_attempt3",
+      "run_kind": "pilot_repair",
+      "forward_attempts": 170,
+      "count_type": "inferred",
+      "count_evidence": "Counter 166 is observed at first-context completion; the second baseline requires three more forwards and the repeat forward returns before the exact-repeatability assertion fails: 166+3+1.",
+      "guard_id": "exact_cache_repeatability",
+      "gate_result": "FAIL",
+      "execution_progress": false,
+      "progress_evidence": "First context completed, then the second context failed the exact cache-repeatability gate. No complete two-context pilot."
+    },
+    {
+      "order": 4,
+      "id": "pilot_attempt4",
+      "run_kind": "pilot_repair_diagnostic",
+      "forward_attempts": 170,
+      "count_type": "inferred",
+      "count_evidence": "Counter 166 is observed at first-context completion; the second baseline adds three forwards and the logged repeat adds one before the assertion: 166+3+1.",
+      "guard_id": "exact_cache_repeatability",
+      "gate_result": "FAIL",
+      "execution_progress": false,
+      "progress_evidence": "Stopped at the same second-context repeatability assertion and reconstructed count as attempt3. New diagnostics measured hidden_max_abs_diff=0.125, but execution did not advance."
+    },
+    {
+      "order": 5,
+      "id": "pilot_final",
+      "run_kind": "pilot_repair",
+      "forward_attempts": 332,
+      "count_type": "observed",
+      "count_evidence": "attribution_pilot.log prints complete counters 166 and 332, followed by finished forwards=332.",
+      "guard_id": "exact_cache_repeatability",
+      "gate_result": "PASS",
+      "execution_progress": true,
+      "progress_evidence": "Both contexts completed and both exact repeatability checks passed.",
+      "continued_after_required_stop": true
+    },
+    {
+      "order": 6,
+      "id": "main_attribution",
+      "run_kind": "main",
+      "forward_attempts": 6435,
+      "count_type": "observed",
+      "count_evidence": "attribution.log ends with complete and finished forwards=6435. The first 825 calls in attribution_part1.log are included: resume initialized COUNT=825 and added 34*165=5610.",
+      "guard_id": "main_completion",
+      "gate_result": "PASS",
+      "execution_progress": true,
+      "progress_evidence": "All 39 contexts completed; final cumulative counter is 6435."
+    }
+  ]
+}

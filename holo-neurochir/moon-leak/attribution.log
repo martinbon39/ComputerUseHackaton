@@ -1,0 +1,342 @@
+Loading weights:   0%|          | 0/724 [00:00<?, ?it/s]Loading weights: 100%|██████████| 724/724 [00:00<00:00, 19558.90it/s]
+{"context": "power_021", "phase": "baseline", "seconds": 6.365086837002309, "answer_margin": 18.652198791503906, "tool_logits": {"answer": 36.36839294433594, "click": 17.71619415283203, "double_click": 13.515962600708008, "right_click": 9.017152786254883, "write": 11.681249618530273, "press_key": 12.377664566040039, "hotkey": 12.873658180236816, "scroll": 13.408221244812012, "drag": 8.327597618103027, "wait": 15.396987915039062}, "margin_error": 0.0327301025390625}
+{"context": "power_021", "phase": "head", "layer": 3, "seconds": 7.696796680014813, "forwards": 845}
+{"context": "power_021", "phase": "head", "layer": 7, "seconds": 8.954429133009398, "forwards": 862}
+{"context": "power_021", "phase": "head", "layer": 11, "seconds": 10.346819857019, "forwards": 879}
+{"context": "power_021", "phase": "head", "layer": 15, "seconds": 11.613728727010312, "forwards": 896}
+{"context": "power_021", "phase": "head", "layer": 19, "seconds": 12.784755721018882, "forwards": 913}
+{"context": "power_021", "phase": "head", "layer": 23, "seconds": 14.12860549299512, "forwards": 930}
+{"context": "power_021", "phase": "head", "layer": 27, "seconds": 15.670923143014079, "forwards": 947}
+{"context": "power_021", "phase": "head", "layer": 31, "seconds": 17.144623303000117, "forwards": 964}
+{"context": "power_021", "phase": "complete", "seconds": 21.46965289101354, "forwards": 990}
+{"context": "power_003", "phase": "baseline", "seconds": 5.514858536014799, "answer_margin": 17.95517921447754, "tool_logits": {"answer": 34.558231353759766, "click": 16.603052139282227, "double_click": 13.73958683013916, "right_click": 10.465692520141602, "write": 12.010788917541504, "press_key": 12.380491256713867, "hotkey": 14.181982040405273, "scroll": 13.39317512512207, "drag": 8.95752239227295, "wait": 14.760107040405273}, "margin_error": 0.06738853454589844}
+{"context": "power_003", "phase": "head", "layer": 3, "seconds": 6.949396917014383, "forwards": 1010}
+{"context": "power_003", "phase": "head", "layer": 7, "seconds": 8.556152738019591, "forwards": 1027}
+{"context": "power_003", "phase": "head", "layer": 11, "seconds": 10.081875304022105, "forwards": 1044}
+{"context": "power_003", "phase": "head", "layer": 15, "seconds": 11.663926687004277, "forwards": 1061}
+{"context": "power_003", "phase": "head", "layer": 19, "seconds": 13.134020833997056, "forwards": 1078}
+{"context": "power_003", "phase": "head", "layer": 23, "seconds": 14.860289152013138, "forwards": 1095}
+{"context": "power_003", "phase": "head", "layer": 27, "seconds": 16.69630180700915, "forwards": 1112}
+{"context": "power_003", "phase": "head", "layer": 31, "seconds": 18.26860838101129, "forwards": 1129}
+{"context": "power_003", "phase": "complete", "seconds": 23.63709377302439, "forwards": 1155}
+{"context": "power_022", "phase": "baseline", "seconds": 5.711443476990098, "answer_margin": 18.121723175048828, "tool_logits": {"answer": 36.02021026611328, "click": 17.898487091064453, "double_click": 14.137229919433594, "right_click": 10.507562637329102, "write": 11.829917907714844, "press_key": 12.393973350524902, "hotkey": 15.406665802001953, "scroll": 10.839418411254883, "drag": 8.315035820007324, "wait": 14.429320335388184}, "margin_error": 0.01849365234375}
+{"context": "power_022", "phase": "head", "layer": 3, "seconds": 7.088276970986044, "forwards": 1175}
+{"context": "power_022", "phase": "head", "layer": 7, "seconds": 8.402003189985408, "forwards": 1192}
+{"context": "power_022", "phase": "head", "layer": 11, "seconds": 10.347556936001638, "forwards": 1209}
+{"context": "power_022", "phase": "head", "layer": 15, "seconds": 12.20714893299737, "forwards": 1226}
+{"context": "power_022", "phase": "head", "layer": 19, "seconds": 13.633358888997464, "forwards": 1243}
+{"context": "power_022", "phase": "head", "layer": 23, "seconds": 15.175759048986947, "forwards": 1260}
+{"context": "power_022", "phase": "head", "layer": 27, "seconds": 16.975234476994956, "forwards": 1277}
+{"context": "power_022", "phase": "head", "layer": 31, "seconds": 18.691781211993657, "forwards": 1294}
+{"context": "power_022", "phase": "complete", "seconds": 23.65181368298363, "forwards": 1320}
+{"context": "power_004", "phase": "baseline", "seconds": 5.8363181710010394, "answer_margin": 16.465835571289062, "tool_logits": {"answer": 33.675601959228516, "click": 17.209766387939453, "double_click": 12.507957458496094, "right_click": 9.967844009399414, "write": 13.512920379638672, "press_key": 12.453161239624023, "hotkey": 14.122044563293457, "scroll": 12.799833297729492, "drag": 7.141383171081543, "wait": 16.3732852935791}, "margin_error": 0.034519195556640625}
+{"context": "power_004", "phase": "head", "layer": 3, "seconds": 7.471998819994042, "forwards": 1340}
+{"context": "power_004", "phase": "head", "layer": 7, "seconds": 8.852418311988004, "forwards": 1357}
+{"context": "power_004", "phase": "head", "layer": 11, "seconds": 10.371078071999364, "forwards": 1374}
+{"context": "power_004", "phase": "head", "layer": 15, "seconds": 11.943356627016328, "forwards": 1391}
+{"context": "power_004", "phase": "head", "layer": 19, "seconds": 13.365191899007186, "forwards": 1408}
+{"context": "power_004", "phase": "head", "layer": 23, "seconds": 14.838642744987737, "forwards": 1425}
+{"context": "power_004", "phase": "head", "layer": 27, "seconds": 16.3360589449876, "forwards": 1442}
+{"context": "power_004", "phase": "head", "layer": 31, "seconds": 17.83839913699194, "forwards": 1459}
+{"context": "power_004", "phase": "complete", "seconds": 22.09367850900162, "forwards": 1485}
+{"context": "power_023", "phase": "baseline", "seconds": 4.880704255978344, "answer_margin": 23.442800521850586, "tool_logits": {"answer": 37.18185806274414, "click": 13.739057540893555, "double_click": 13.005950927734375, "right_click": 10.798269271850586, "write": 11.00054931640625, "press_key": 9.51538372039795, "hotkey": 10.596824645996094, "scroll": 8.642414093017578, "drag": 6.887650489807129, "wait": 13.245756149291992}, "margin_error": 0.0873870849609375}
+{"context": "power_023", "phase": "head", "layer": 3, "seconds": 6.345268684992334, "forwards": 1505}
+{"context": "power_023", "phase": "head", "layer": 7, "seconds": 7.725885762978578, "forwards": 1522}
+{"context": "power_023", "phase": "head", "layer": 11, "seconds": 9.192165845975978, "forwards": 1539}
+{"context": "power_023", "phase": "head", "layer": 15, "seconds": 10.5906795229821, "forwards": 1556}
+{"context": "power_023", "phase": "head", "layer": 19, "seconds": 11.981523472990375, "forwards": 1573}
+{"context": "power_023", "phase": "head", "layer": 23, "seconds": 13.409807631978765, "forwards": 1590}
+{"context": "power_023", "phase": "head", "layer": 27, "seconds": 14.826781092997408, "forwards": 1607}
+{"context": "power_023", "phase": "head", "layer": 31, "seconds": 16.15999023898621, "forwards": 1624}
+{"context": "power_023", "phase": "complete", "seconds": 20.178084276994923, "forwards": 1650}
+{"context": "power_005", "phase": "baseline", "seconds": 5.058202532003634, "answer_margin": 9.696063995361328, "tool_logits": {"answer": 30.261932373046875, "click": 19.94044303894043, "double_click": 14.684287071228027, "right_click": 12.018651008605957, "write": 12.907129287719727, "press_key": 14.720510482788086, "hotkey": 19.105064392089844, "scroll": 11.811328887939453, "drag": 8.801624298095703, "wait": 20.565868377685547}, "margin_error": 0.05670356750488281}
+{"context": "power_005", "phase": "head", "layer": 3, "seconds": 6.51871281300555, "forwards": 1670}
+{"context": "power_005", "phase": "head", "layer": 7, "seconds": 7.942121046013199, "forwards": 1687}
+{"context": "power_005", "phase": "head", "layer": 11, "seconds": 9.43616231600754, "forwards": 1704}
+{"context": "power_005", "phase": "head", "layer": 15, "seconds": 10.972826949990122, "forwards": 1721}
+{"context": "power_005", "phase": "head", "layer": 19, "seconds": 12.39542282000184, "forwards": 1738}
+{"context": "power_005", "phase": "head", "layer": 23, "seconds": 13.834425812994596, "forwards": 1755}
+{"context": "power_005", "phase": "head", "layer": 27, "seconds": 15.240243828011444, "forwards": 1772}
+{"context": "power_005", "phase": "head", "layer": 31, "seconds": 16.799426910991315, "forwards": 1789}
+{"context": "power_005", "phase": "complete", "seconds": 21.18063784998958, "forwards": 1815}
+{"context": "power_024", "phase": "baseline", "seconds": 5.353762768994784, "answer_margin": 22.255059242248535, "tool_logits": {"answer": 36.24829864501953, "click": 13.968637466430664, "double_click": 13.993239402770996, "right_click": 11.052250862121582, "write": 10.36194896697998, "press_key": 10.430496215820312, "hotkey": 13.513018608093262, "scroll": 9.794537544250488, "drag": 6.697076320648193, "wait": 13.623167991638184}, "margin_error": 0.0562744140625}
+{"context": "power_024", "phase": "head", "layer": 3, "seconds": 6.842429321986856, "forwards": 1835}
+{"context": "power_024", "phase": "head", "layer": 7, "seconds": 8.373402157012606, "forwards": 1852}
+{"context": "power_024", "phase": "head", "layer": 11, "seconds": 9.839633364987094, "forwards": 1869}
+{"context": "power_024", "phase": "head", "layer": 15, "seconds": 11.11953146700398, "forwards": 1886}
+{"context": "power_024", "phase": "head", "layer": 19, "seconds": 12.32315091000055, "forwards": 1903}
+{"context": "power_024", "phase": "head", "layer": 23, "seconds": 13.581505237001693, "forwards": 1920}
+{"context": "power_024", "phase": "head", "layer": 27, "seconds": 14.888577344012447, "forwards": 1937}
+{"context": "power_024", "phase": "head", "layer": 31, "seconds": 16.120847651007352, "forwards": 1954}
+{"context": "power_024", "phase": "complete", "seconds": 19.58967296598712, "forwards": 1980}
+{"context": "power_006", "phase": "baseline", "seconds": 4.337448111997219, "answer_margin": 18.256229400634766, "tool_logits": {"answer": 35.241573333740234, "click": 16.98534393310547, "double_click": 14.582716941833496, "right_click": 11.335077285766602, "write": 11.230273246765137, "press_key": 13.070082664489746, "hotkey": 14.700780868530273, "scroll": 10.774093627929688, "drag": 8.323299407958984, "wait": 14.379457473754883}, "margin_error": 0.0513153076171875}
+{"context": "power_006", "phase": "head", "layer": 3, "seconds": 5.48455164898769, "forwards": 2000}
+{"context": "power_006", "phase": "head", "layer": 7, "seconds": 6.642813548998674, "forwards": 2017}
+{"context": "power_006", "phase": "head", "layer": 11, "seconds": 7.916798607999226, "forwards": 2034}
+{"context": "power_006", "phase": "head", "layer": 15, "seconds": 9.241759900003672, "forwards": 2051}
+{"context": "power_006", "phase": "head", "layer": 19, "seconds": 10.432566737988964, "forwards": 2068}
+{"context": "power_006", "phase": "head", "layer": 23, "seconds": 11.600155712978449, "forwards": 2085}
+{"context": "power_006", "phase": "head", "layer": 27, "seconds": 12.8527628799784, "forwards": 2102}
+{"context": "power_006", "phase": "head", "layer": 31, "seconds": 14.105504834005842, "forwards": 2119}
+{"context": "power_006", "phase": "complete", "seconds": 17.392276074999245, "forwards": 2145}
+{"context": "power_025", "phase": "baseline", "seconds": 3.3810521739942487, "answer_margin": 11.531280517578125, "tool_logits": {"answer": 33.68293762207031, "click": 22.151657104492188, "double_click": 12.843302726745605, "right_click": 12.422353744506836, "write": 16.575891494750977, "press_key": 17.847896575927734, "hotkey": 19.08248519897461, "scroll": 11.554895401000977, "drag": 8.704480171203613, "wait": 17.666959762573242}, "margin_error": 0.16574478149414062}
+{"context": "power_025", "phase": "head", "layer": 3, "seconds": 4.384575053001754, "forwards": 2165}
+{"context": "power_025", "phase": "head", "layer": 7, "seconds": 5.367172002996085, "forwards": 2182}
+{"context": "power_025", "phase": "head", "layer": 11, "seconds": 6.351984687993536, "forwards": 2199}
+{"context": "power_025", "phase": "head", "layer": 15, "seconds": 7.36623450400657, "forwards": 2216}
+{"context": "power_025", "phase": "head", "layer": 19, "seconds": 8.406820928008528, "forwards": 2233}
+{"context": "power_025", "phase": "head", "layer": 23, "seconds": 9.405349868000485, "forwards": 2250}
+{"context": "power_025", "phase": "head", "layer": 27, "seconds": 10.403332540008705, "forwards": 2267}
+{"context": "power_025", "phase": "head", "layer": 31, "seconds": 11.387955500016687, "forwards": 2284}
+{"context": "power_025", "phase": "complete", "seconds": 14.220266582007753, "forwards": 2310}
+{"context": "power_007", "phase": "baseline", "seconds": 3.168815708020702, "answer_margin": 20.107666969299316, "tool_logits": {"answer": 35.650115966796875, "click": 15.542448997497559, "double_click": 13.48893928527832, "right_click": 9.719127655029297, "write": 10.670219421386719, "press_key": 10.876047134399414, "hotkey": 10.904654502868652, "scroll": 10.15017318725586, "drag": 8.227052688598633, "wait": 13.749954223632812}, "margin_error": 0.05040168762207031}
+{"context": "power_007", "phase": "head", "layer": 3, "seconds": 4.143440989020746, "forwards": 2330}
+{"context": "power_007", "phase": "head", "layer": 7, "seconds": 5.137118681013817, "forwards": 2347}
+{"context": "power_007", "phase": "head", "layer": 11, "seconds": 6.099432868999429, "forwards": 2364}
+{"context": "power_007", "phase": "head", "layer": 15, "seconds": 7.0539168039977085, "forwards": 2381}
+{"context": "power_007", "phase": "head", "layer": 19, "seconds": 8.025451381021412, "forwards": 2398}
+{"context": "power_007", "phase": "head", "layer": 23, "seconds": 9.018166960013332, "forwards": 2415}
+{"context": "power_007", "phase": "head", "layer": 27, "seconds": 9.993418340018252, "forwards": 2432}
+{"context": "power_007", "phase": "head", "layer": 31, "seconds": 10.970603863999713, "forwards": 2449}
+{"context": "power_007", "phase": "complete", "seconds": 13.569414566009073, "forwards": 2475}
+{"context": "power_026", "phase": "baseline", "seconds": 2.9444515639916062, "answer_margin": 14.47220230102539, "tool_logits": {"answer": 34.52475357055664, "click": 20.05255126953125, "double_click": 14.001601219177246, "right_click": 10.448993682861328, "write": 13.192500114440918, "press_key": 14.204575538635254, "hotkey": 16.08464813232422, "scroll": 11.596864700317383, "drag": 9.798240661621094, "wait": 16.320281982421875}, "margin_error": 0.08761787414550781}
+{"context": "power_026", "phase": "head", "layer": 3, "seconds": 3.945524205977563, "forwards": 2495}
+{"context": "power_026", "phase": "head", "layer": 7, "seconds": 4.914923846983584, "forwards": 2512}
+{"context": "power_026", "phase": "head", "layer": 11, "seconds": 5.883386700996198, "forwards": 2529}
+{"context": "power_026", "phase": "head", "layer": 15, "seconds": 6.94801883798209, "forwards": 2546}
+{"context": "power_026", "phase": "head", "layer": 19, "seconds": 7.926451976003591, "forwards": 2563}
+{"context": "power_026", "phase": "head", "layer": 23, "seconds": 9.1094518659811, "forwards": 2580}
+{"context": "power_026", "phase": "head", "layer": 27, "seconds": 10.232659498986322, "forwards": 2597}
+{"context": "power_026", "phase": "head", "layer": 31, "seconds": 11.296340770000825, "forwards": 2614}
+{"context": "power_026", "phase": "complete", "seconds": 14.588260802003788, "forwards": 2640}
+{"context": "power_008", "phase": "baseline", "seconds": 4.014059770008316, "answer_margin": 21.52666664123535, "tool_logits": {"answer": 37.20130920410156, "click": 15.674642562866211, "double_click": 14.568988800048828, "right_click": 9.996199607849121, "write": 11.411447525024414, "press_key": 11.049647331237793, "hotkey": 12.841584205627441, "scroll": 10.277481079101562, "drag": 8.552188873291016, "wait": 14.684837341308594}, "margin_error": 0.017917633056640625}
+{"context": "power_008", "phase": "head", "layer": 3, "seconds": 5.141173148993403, "forwards": 2660}
+{"context": "power_008", "phase": "head", "layer": 7, "seconds": 6.218650757014984, "forwards": 2677}
+{"context": "power_008", "phase": "head", "layer": 11, "seconds": 7.530199961998733, "forwards": 2694}
+{"context": "power_008", "phase": "head", "layer": 15, "seconds": 8.72678607000853, "forwards": 2711}
+{"context": "power_008", "phase": "head", "layer": 19, "seconds": 9.814620660006767, "forwards": 2728}
+{"context": "power_008", "phase": "head", "layer": 23, "seconds": 10.984775517019443, "forwards": 2745}
+{"context": "power_008", "phase": "head", "layer": 27, "seconds": 12.151370719016995, "forwards": 2762}
+{"context": "power_008", "phase": "head", "layer": 31, "seconds": 13.179389641998569, "forwards": 2779}
+{"context": "power_008", "phase": "complete", "seconds": 16.186777180992067, "forwards": 2805}
+{"context": "power_027", "phase": "baseline", "seconds": 3.4507593949965667, "answer_margin": 13.790870666503906, "tool_logits": {"answer": 33.45108413696289, "click": 19.660213470458984, "double_click": 16.013689041137695, "right_click": 9.773696899414062, "write": 11.869166374206543, "press_key": 14.880658149719238, "hotkey": 17.142520904541016, "scroll": 10.988346099853516, "drag": 9.97776985168457, "wait": 15.667933464050293}, "margin_error": 0.07158660888671875}
+{"context": "power_027", "phase": "head", "layer": 3, "seconds": 4.4946515139890835, "forwards": 2825}
+{"context": "power_027", "phase": "head", "layer": 7, "seconds": 5.589308347000042, "forwards": 2842}
+{"context": "power_027", "phase": "head", "layer": 11, "seconds": 6.659204232011689, "forwards": 2859}
+{"context": "power_027", "phase": "head", "layer": 15, "seconds": 7.720681097009219, "forwards": 2876}
+{"context": "power_027", "phase": "head", "layer": 19, "seconds": 8.831289800989907, "forwards": 2893}
+{"context": "power_027", "phase": "head", "layer": 23, "seconds": 9.944406030990649, "forwards": 2910}
+{"context": "power_027", "phase": "head", "layer": 27, "seconds": 11.071863529010443, "forwards": 2927}
+{"context": "power_027", "phase": "head", "layer": 31, "seconds": 12.188046191993635, "forwards": 2944}
+{"context": "power_027", "phase": "complete", "seconds": 15.221287077001762, "forwards": 2970}
+{"context": "power_009", "phase": "baseline", "seconds": 3.7725956290087197, "answer_margin": 18.56852149963379, "tool_logits": {"answer": 35.006996154785156, "click": 16.438474655151367, "double_click": 14.240379333496094, "right_click": 10.718559265136719, "write": 12.06714153289795, "press_key": 11.044557571411133, "hotkey": 14.228975296020508, "scroll": 11.571144104003906, "drag": 8.796445846557617, "wait": 15.740288734436035}, "margin_error": 0.07820701599121094}
+{"context": "power_009", "phase": "head", "layer": 3, "seconds": 4.872583528020186, "forwards": 2990}
+{"context": "power_009", "phase": "head", "layer": 7, "seconds": 6.006412396003725, "forwards": 3007}
+{"context": "power_009", "phase": "head", "layer": 11, "seconds": 7.157217527012108, "forwards": 3024}
+{"context": "power_009", "phase": "head", "layer": 15, "seconds": 8.295624112011865, "forwards": 3041}
+{"context": "power_009", "phase": "head", "layer": 19, "seconds": 9.449689614004456, "forwards": 3058}
+{"context": "power_009", "phase": "head", "layer": 23, "seconds": 10.54951073002303, "forwards": 3075}
+{"context": "power_009", "phase": "head", "layer": 27, "seconds": 11.732545356004266, "forwards": 3092}
+{"context": "power_009", "phase": "head", "layer": 31, "seconds": 12.77517912501935, "forwards": 3109}
+{"context": "power_009", "phase": "complete", "seconds": 16.385333259007894, "forwards": 3135}
+{"context": "power_028", "phase": "baseline", "seconds": 4.812623349978821, "answer_margin": 17.47314453125, "tool_logits": {"answer": 35.53648376464844, "click": 18.063339233398438, "double_click": 14.559652328491211, "right_click": 12.620125770568848, "write": 13.230165481567383, "press_key": 13.23215389251709, "hotkey": 15.321553230285645, "scroll": 11.458866119384766, "drag": 8.573869705200195, "wait": 15.384081840515137}, "margin_error": 0.040485382080078125}
+{"context": "power_028", "phase": "head", "layer": 3, "seconds": 6.341336096986197, "forwards": 3155}
+{"context": "power_028", "phase": "head", "layer": 7, "seconds": 7.803813160979189, "forwards": 3172}
+{"context": "power_028", "phase": "head", "layer": 11, "seconds": 8.915531654987717, "forwards": 3189}
+{"context": "power_028", "phase": "head", "layer": 15, "seconds": 10.219526286993641, "forwards": 3206}
+{"context": "power_028", "phase": "head", "layer": 19, "seconds": 11.776914852991467, "forwards": 3223}
+{"context": "power_028", "phase": "head", "layer": 23, "seconds": 13.025405297987163, "forwards": 3240}
+{"context": "power_028", "phase": "head", "layer": 27, "seconds": 14.292134379997151, "forwards": 3257}
+{"context": "power_028", "phase": "head", "layer": 31, "seconds": 15.521497480978724, "forwards": 3274}
+{"context": "power_028", "phase": "complete", "seconds": 19.601632332982263, "forwards": 3300}
+{"context": "power_010", "phase": "baseline", "seconds": 4.432262517977506, "answer_margin": 19.714210510253906, "tool_logits": {"answer": 36.13325881958008, "click": 16.419048309326172, "double_click": 14.680639266967773, "right_click": 10.570870399475098, "write": 11.993509292602539, "press_key": 13.124170303344727, "hotkey": 14.190553665161133, "scroll": 11.047391891479492, "drag": 8.687658309936523, "wait": 14.922428131103516}, "margin_error": 0.12949180603027344}
+{"context": "power_010", "phase": "head", "layer": 3, "seconds": 5.458010286994977, "forwards": 3320}
+{"context": "power_010", "phase": "head", "layer": 7, "seconds": 6.5095824119925965, "forwards": 3337}
+{"context": "power_010", "phase": "head", "layer": 11, "seconds": 7.964436376001686, "forwards": 3354}
+{"context": "power_010", "phase": "head", "layer": 15, "seconds": 9.20912020400283, "forwards": 3371}
+{"context": "power_010", "phase": "head", "layer": 19, "seconds": 10.287779235979542, "forwards": 3388}
+{"context": "power_010", "phase": "head", "layer": 23, "seconds": 11.525766528997337, "forwards": 3405}
+{"context": "power_010", "phase": "head", "layer": 27, "seconds": 12.817431314993883, "forwards": 3422}
+{"context": "power_010", "phase": "head", "layer": 31, "seconds": 14.07460538999294, "forwards": 3439}
+{"context": "power_010", "phase": "complete", "seconds": 17.83724983499269, "forwards": 3465}
+{"context": "power_029", "phase": "baseline", "seconds": 3.641746335022617, "answer_margin": 19.243410110473633, "tool_logits": {"answer": 35.723045349121094, "click": 16.47963523864746, "double_click": 13.570566177368164, "right_click": 10.910841941833496, "write": 11.675942420959473, "press_key": 11.025810241699219, "hotkey": 12.210223197937012, "scroll": 10.286144256591797, "drag": 7.802913665771484, "wait": 14.330341339111328}, "margin_error": 0.04949378967285156}
+{"context": "power_029", "phase": "head", "layer": 3, "seconds": 4.8260474980052095, "forwards": 3485}
+{"context": "power_029", "phase": "head", "layer": 7, "seconds": 5.937027331005083, "forwards": 3502}
+{"context": "power_029", "phase": "head", "layer": 11, "seconds": 7.341787650017068, "forwards": 3519}
+{"context": "power_029", "phase": "head", "layer": 15, "seconds": 8.798692682001274, "forwards": 3536}
+{"context": "power_029", "phase": "head", "layer": 19, "seconds": 10.353921457019169, "forwards": 3553}
+{"context": "power_029", "phase": "head", "layer": 23, "seconds": 11.788422592013376, "forwards": 3570}
+{"context": "power_029", "phase": "head", "layer": 27, "seconds": 13.017291524010943, "forwards": 3587}
+{"context": "power_029", "phase": "head", "layer": 31, "seconds": 14.230244443024276, "forwards": 3604}
+{"context": "power_029", "phase": "complete", "seconds": 17.0501303380006, "forwards": 3630}
+{"context": "power_011", "phase": "baseline", "seconds": 6.438965366978664, "answer_margin": 20.495553970336914, "tool_logits": {"answer": 35.90167236328125, "click": 15.406118392944336, "double_click": 13.86633586883545, "right_click": 10.30075454711914, "write": 11.949350357055664, "press_key": 12.212800025939941, "hotkey": 14.808778762817383, "scroll": 10.604005813598633, "drag": 8.445053100585938, "wait": 14.91929817199707}, "margin_error": 0.010769844055175781}
+{"context": "power_011", "phase": "head", "layer": 3, "seconds": 7.657184948999202, "forwards": 3650}
+{"context": "power_011", "phase": "head", "layer": 7, "seconds": 8.801485001982655, "forwards": 3667}
+{"context": "power_011", "phase": "head", "layer": 11, "seconds": 10.040332247997867, "forwards": 3684}
+{"context": "power_011", "phase": "head", "layer": 15, "seconds": 11.280645445978735, "forwards": 3701}
+{"context": "power_011", "phase": "head", "layer": 19, "seconds": 12.595561522990465, "forwards": 3718}
+{"context": "power_011", "phase": "head", "layer": 23, "seconds": 13.790584710979601, "forwards": 3735}
+{"context": "power_011", "phase": "head", "layer": 27, "seconds": 14.985486511985073, "forwards": 3752}
+{"context": "power_011", "phase": "head", "layer": 31, "seconds": 16.194160573999397, "forwards": 3769}
+{"context": "power_011", "phase": "complete", "seconds": 19.737309360993095, "forwards": 3795}
+{"context": "power_030", "phase": "baseline", "seconds": 3.6151980939903297, "answer_margin": 18.098276138305664, "tool_logits": {"answer": 33.302757263183594, "click": 15.20448112487793, "double_click": 13.565832138061523, "right_click": 10.390230178833008, "write": 9.791016578674316, "press_key": 10.718257904052734, "hotkey": 12.806856155395508, "scroll": 9.634206771850586, "drag": 8.27402114868164, "wait": 13.473564147949219}, "margin_error": 0.1139383316040039}
+{"context": "power_030", "phase": "head", "layer": 3, "seconds": 4.631772845983505, "forwards": 3815}
+{"context": "power_030", "phase": "head", "layer": 7, "seconds": 5.672158731991658, "forwards": 3832}
+{"context": "power_030", "phase": "head", "layer": 11, "seconds": 6.703981173981447, "forwards": 3849}
+{"context": "power_030", "phase": "head", "layer": 15, "seconds": 7.7503626399848145, "forwards": 3866}
+{"context": "power_030", "phase": "head", "layer": 19, "seconds": 8.783323412993923, "forwards": 3883}
+{"context": "power_030", "phase": "head", "layer": 23, "seconds": 9.7814017769997, "forwards": 3900}
+{"context": "power_030", "phase": "head", "layer": 27, "seconds": 10.69049110999913, "forwards": 3917}
+{"context": "power_030", "phase": "head", "layer": 31, "seconds": 11.58941678199335, "forwards": 3934}
+{"context": "power_030", "phase": "complete", "seconds": 13.878141998982755, "forwards": 3960}
+{"context": "power_012", "phase": "baseline", "seconds": 2.509299472993007, "answer_margin": 19.308931350708008, "tool_logits": {"answer": 36.9125862121582, "click": 17.603654861450195, "double_click": 15.235118865966797, "right_click": 11.651840209960938, "write": 14.815860748291016, "press_key": 12.857012748718262, "hotkey": 13.455836296081543, "scroll": 11.666932106018066, "drag": 9.211963653564453, "wait": 15.159431457519531}, "margin_error": 0.15861129760742188}
+{"context": "power_012", "phase": "head", "layer": 3, "seconds": 3.3631295539962593, "forwards": 3980}
+{"context": "power_012", "phase": "head", "layer": 7, "seconds": 4.2341775549866725, "forwards": 3997}
+{"context": "power_012", "phase": "head", "layer": 11, "seconds": 5.1117997679975815, "forwards": 4014}
+{"context": "power_012", "phase": "head", "layer": 15, "seconds": 5.962208400975214, "forwards": 4031}
+{"context": "power_012", "phase": "head", "layer": 19, "seconds": 6.838256018992979, "forwards": 4048}
+{"context": "power_012", "phase": "head", "layer": 23, "seconds": 7.699300099979155, "forwards": 4065}
+{"context": "power_012", "phase": "head", "layer": 27, "seconds": 8.559305355971446, "forwards": 4082}
+{"context": "power_012", "phase": "head", "layer": 31, "seconds": 9.439620858000126, "forwards": 4099}
+{"context": "power_012", "phase": "complete", "seconds": 11.656678156985436, "forwards": 4125}
+{"context": "power_031", "phase": "baseline", "seconds": 2.2328282730013598, "answer_margin": 18.952075958251953, "tool_logits": {"answer": 36.445533752441406, "click": 17.493457794189453, "double_click": 13.64107894897461, "right_click": 9.807676315307617, "write": 10.921487808227539, "press_key": 11.53074836730957, "hotkey": 11.975539207458496, "scroll": 10.92569637298584, "drag": 7.993594646453857, "wait": 14.121939659118652}, "margin_error": 0.058902740478515625}
+{"context": "power_031", "phase": "head", "layer": 3, "seconds": 3.097757120995084, "forwards": 4145}
+{"context": "power_031", "phase": "head", "layer": 7, "seconds": 3.9553557869803626, "forwards": 4162}
+{"context": "power_031", "phase": "head", "layer": 11, "seconds": 4.8245368610078, "forwards": 4179}
+{"context": "power_031", "phase": "head", "layer": 15, "seconds": 5.670964277989697, "forwards": 4196}
+{"context": "power_031", "phase": "head", "layer": 19, "seconds": 6.541506011999445, "forwards": 4213}
+{"context": "power_031", "phase": "head", "layer": 23, "seconds": 7.41016351498547, "forwards": 4230}
+{"context": "power_031", "phase": "head", "layer": 27, "seconds": 8.281832913984545, "forwards": 4247}
+{"context": "power_031", "phase": "head", "layer": 31, "seconds": 9.152977761987131, "forwards": 4264}
+{"context": "power_031", "phase": "complete", "seconds": 11.274686402990483, "forwards": 4290}
+{"context": "power_013", "phase": "baseline", "seconds": 2.3764922700065654, "answer_margin": 16.61754035949707, "tool_logits": {"answer": 32.34900665283203, "click": 15.731466293334961, "double_click": 15.529681205749512, "right_click": 10.034637451171875, "write": 11.475135803222656, "press_key": 11.386478424072266, "hotkey": 13.080597877502441, "scroll": 9.951262474060059, "drag": 8.144573211669922, "wait": 13.435624122619629}, "margin_error": 0.028329849243164062}
+{"context": "power_013", "phase": "head", "layer": 3, "seconds": 3.2352662420016713, "forwards": 4310}
+{"context": "power_013", "phase": "head", "layer": 7, "seconds": 4.077804936008761, "forwards": 4327}
+{"context": "power_013", "phase": "head", "layer": 11, "seconds": 4.95334197601187, "forwards": 4344}
+{"context": "power_013", "phase": "head", "layer": 15, "seconds": 5.806900818017311, "forwards": 4361}
+{"context": "power_013", "phase": "head", "layer": 19, "seconds": 6.674615749012446, "forwards": 4378}
+{"context": "power_013", "phase": "head", "layer": 23, "seconds": 7.522856412018882, "forwards": 4395}
+{"context": "power_013", "phase": "head", "layer": 27, "seconds": 8.378776696015848, "forwards": 4412}
+{"context": "power_013", "phase": "head", "layer": 31, "seconds": 9.252409367007203, "forwards": 4429}
+{"context": "power_013", "phase": "complete", "seconds": 11.400821712013567, "forwards": 4455}
+{"context": "power_032", "phase": "baseline", "seconds": 2.285030878003454, "answer_margin": 13.024311065673828, "tool_logits": {"answer": 33.83711242675781, "click": 20.812801361083984, "double_click": 12.250572204589844, "right_click": 10.283515930175781, "write": 15.463897705078125, "press_key": 13.93001937866211, "hotkey": 15.709142684936523, "scroll": 12.23219108581543, "drag": 9.654474258422852, "wait": 15.389880180358887}, "margin_error": 0.0027313232421875}
+{"context": "power_032", "phase": "head", "layer": 3, "seconds": 3.1353743110084906, "forwards": 4475}
+{"context": "power_032", "phase": "head", "layer": 7, "seconds": 3.986225996981375, "forwards": 4492}
+{"context": "power_032", "phase": "head", "layer": 11, "seconds": 4.844971633981913, "forwards": 4509}
+{"context": "power_032", "phase": "head", "layer": 15, "seconds": 5.694105743983528, "forwards": 4526}
+{"context": "power_032", "phase": "head", "layer": 19, "seconds": 6.564748698991025, "forwards": 4543}
+{"context": "power_032", "phase": "head", "layer": 23, "seconds": 7.4107428019924555, "forwards": 4560}
+{"context": "power_032", "phase": "head", "layer": 27, "seconds": 8.262145560001954, "forwards": 4577}
+{"context": "power_032", "phase": "head", "layer": 31, "seconds": 9.13814126100624, "forwards": 4594}
+{"context": "power_032", "phase": "complete", "seconds": 11.406340246001491, "forwards": 4620}
+{"context": "power_014", "phase": "baseline", "seconds": 2.672874816984404, "answer_margin": 12.275022506713867, "tool_logits": {"answer": 33.61867904663086, "click": 21.343656539916992, "double_click": 19.80499267578125, "right_click": 13.099958419799805, "write": 13.013961791992188, "press_key": 14.155226707458496, "hotkey": 15.708791732788086, "scroll": 12.009357452392578, "drag": 10.908699035644531, "wait": 17.056621551513672}, "margin_error": 0.06639862060546875}
+{"context": "power_014", "phase": "head", "layer": 3, "seconds": 3.5334335319930688, "forwards": 4640}
+{"context": "power_014", "phase": "head", "layer": 7, "seconds": 4.395276847004425, "forwards": 4657}
+{"context": "power_014", "phase": "head", "layer": 11, "seconds": 5.248412727989489, "forwards": 4674}
+{"context": "power_014", "phase": "head", "layer": 15, "seconds": 6.103702817985322, "forwards": 4691}
+{"context": "power_014", "phase": "head", "layer": 19, "seconds": 6.959076817001915, "forwards": 4708}
+{"context": "power_014", "phase": "head", "layer": 23, "seconds": 7.815971920994343, "forwards": 4725}
+{"context": "power_014", "phase": "head", "layer": 27, "seconds": 8.674901538004633, "forwards": 4742}
+{"context": "power_014", "phase": "head", "layer": 31, "seconds": 9.536560402979376, "forwards": 4759}
+{"context": "power_014", "phase": "complete", "seconds": 11.85487973599811, "forwards": 4785}
+{"context": "power_033", "phase": "baseline", "seconds": 2.4572113290196285, "answer_margin": 20.250595092773438, "tool_logits": {"answer": 39.36055374145508, "click": 14.915266990661621, "double_click": 11.659917831420898, "right_click": 10.312911033630371, "write": 19.10995864868164, "press_key": 12.588693618774414, "hotkey": 13.44107437133789, "scroll": 11.127922058105469, "drag": 7.495464324951172, "wait": 16.343332290649414}, "margin_error": 0.04872703552246094}
+{"context": "power_033", "phase": "head", "layer": 3, "seconds": 3.3447342940198723, "forwards": 4805}
+{"context": "power_033", "phase": "head", "layer": 7, "seconds": 4.354379530996084, "forwards": 4822}
+{"context": "power_033", "phase": "head", "layer": 11, "seconds": 5.359957110020332, "forwards": 4839}
+{"context": "power_033", "phase": "head", "layer": 15, "seconds": 6.38643200599472, "forwards": 4856}
+{"context": "power_033", "phase": "head", "layer": 19, "seconds": 7.37615590900532, "forwards": 4873}
+{"context": "power_033", "phase": "head", "layer": 23, "seconds": 8.322193708008854, "forwards": 4890}
+{"context": "power_033", "phase": "head", "layer": 27, "seconds": 9.187879143020837, "forwards": 4907}
+{"context": "power_033", "phase": "head", "layer": 31, "seconds": 10.064452806022018, "forwards": 4924}
+{"context": "power_033", "phase": "complete", "seconds": 12.226086349022808, "forwards": 4950}
+{"context": "power_015", "phase": "baseline", "seconds": 2.7685754300036933, "answer_margin": 14.809366226196289, "tool_logits": {"answer": 34.03535842895508, "click": 16.768136978149414, "double_click": 12.10982894897461, "right_click": 9.105432510375977, "write": 13.44495677947998, "press_key": 13.293265342712402, "hotkey": 12.961338996887207, "scroll": 19.22599220275879, "drag": 9.02195930480957, "wait": 18.17133140563965}, "margin_error": 0.0026493072509765625}
+{"context": "power_015", "phase": "head", "layer": 3, "seconds": 3.6343222919967957, "forwards": 4970}
+{"context": "power_015", "phase": "head", "layer": 7, "seconds": 4.497460681013763, "forwards": 4987}
+{"context": "power_015", "phase": "head", "layer": 11, "seconds": 5.376278887008084, "forwards": 5004}
+{"context": "power_015", "phase": "head", "layer": 15, "seconds": 6.237566316005541, "forwards": 5021}
+{"context": "power_015", "phase": "head", "layer": 19, "seconds": 7.094151869008783, "forwards": 5038}
+{"context": "power_015", "phase": "head", "layer": 23, "seconds": 7.959043976996327, "forwards": 5055}
+{"context": "power_015", "phase": "head", "layer": 27, "seconds": 8.820002480992116, "forwards": 5072}
+{"context": "power_015", "phase": "head", "layer": 31, "seconds": 9.68352479400346, "forwards": 5089}
+{"context": "power_015", "phase": "complete", "seconds": 12.054441376996692, "forwards": 5115}
+{"context": "power_034", "phase": "baseline", "seconds": 2.369720907008741, "answer_margin": 16.623125076293945, "tool_logits": {"answer": 33.099735260009766, "click": 16.47661018371582, "double_click": 12.693194389343262, "right_click": 10.522418975830078, "write": 14.527576446533203, "press_key": 12.032211303710938, "hotkey": 14.123575210571289, "scroll": 9.834836959838867, "drag": 8.713010787963867, "wait": 15.92055892944336}, "margin_error": 0.09634971618652344}
+{"context": "power_034", "phase": "head", "layer": 3, "seconds": 3.229413121996913, "forwards": 5135}
+{"context": "power_034", "phase": "head", "layer": 7, "seconds": 4.08189529000083, "forwards": 5152}
+{"context": "power_034", "phase": "head", "layer": 11, "seconds": 4.955505058023846, "forwards": 5169}
+{"context": "power_034", "phase": "head", "layer": 15, "seconds": 5.797993376007071, "forwards": 5186}
+{"context": "power_034", "phase": "head", "layer": 19, "seconds": 6.665263721020892, "forwards": 5203}
+{"context": "power_034", "phase": "head", "layer": 23, "seconds": 7.510097318998305, "forwards": 5220}
+{"context": "power_034", "phase": "head", "layer": 27, "seconds": 8.35372275300324, "forwards": 5237}
+{"context": "power_034", "phase": "head", "layer": 31, "seconds": 9.226118632010184, "forwards": 5254}
+{"context": "power_034", "phase": "complete", "seconds": 11.352366186009021, "forwards": 5280}
+{"context": "power_016", "phase": "baseline", "seconds": 2.697286570997676, "answer_margin": 21.509316444396973, "tool_logits": {"answer": 36.58034133911133, "click": 14.918230056762695, "double_click": 14.710062026977539, "right_click": 11.781092643737793, "write": 12.794958114624023, "press_key": 12.682700157165527, "hotkey": 14.073846817016602, "scroll": 10.592887878417969, "drag": 7.5068230628967285, "wait": 15.071024894714355}, "margin_error": 0.0066661834716796875}
+{"context": "power_016", "phase": "head", "layer": 3, "seconds": 3.5622669250005856, "forwards": 5300}
+{"context": "power_016", "phase": "head", "layer": 7, "seconds": 4.425155875011114, "forwards": 5317}
+{"context": "power_016", "phase": "head", "layer": 11, "seconds": 5.285376179002924, "forwards": 5334}
+{"context": "power_016", "phase": "head", "layer": 15, "seconds": 6.147564090002561, "forwards": 5351}
+{"context": "power_016", "phase": "head", "layer": 19, "seconds": 7.009970407991204, "forwards": 5368}
+{"context": "power_016", "phase": "head", "layer": 23, "seconds": 7.869019213016145, "forwards": 5385}
+{"context": "power_016", "phase": "head", "layer": 27, "seconds": 8.727938831987558, "forwards": 5402}
+{"context": "power_016", "phase": "head", "layer": 31, "seconds": 9.599917070998345, "forwards": 5419}
+{"context": "power_016", "phase": "complete", "seconds": 11.97049524000613, "forwards": 5445}
+{"context": "power_035", "phase": "baseline", "seconds": 2.4030517719802447, "answer_margin": 18.842105865478516, "tool_logits": {"answer": 35.595157623291016, "click": 16.7530517578125, "double_click": 15.4563570022583, "right_click": 11.11989974975586, "write": 12.942811965942383, "press_key": 12.14842414855957, "hotkey": 13.558877944946289, "scroll": 11.042783737182617, "drag": 9.252141952514648, "wait": 13.934184074401855}, "margin_error": 0.0382537841796875}
+{"context": "power_035", "phase": "head", "layer": 3, "seconds": 3.265545371978078, "forwards": 5465}
+{"context": "power_035", "phase": "head", "layer": 7, "seconds": 4.114453389978735, "forwards": 5482}
+{"context": "power_035", "phase": "head", "layer": 11, "seconds": 5.068947452993598, "forwards": 5499}
+{"context": "power_035", "phase": "head", "layer": 15, "seconds": 6.141862827993464, "forwards": 5516}
+{"context": "power_035", "phase": "head", "layer": 19, "seconds": 7.3965195619966835, "forwards": 5533}
+{"context": "power_035", "phase": "head", "layer": 23, "seconds": 8.38341565799783, "forwards": 5550}
+{"context": "power_035", "phase": "head", "layer": 27, "seconds": 9.345862314978149, "forwards": 5567}
+{"context": "power_035", "phase": "head", "layer": 31, "seconds": 10.244903811981203, "forwards": 5584}
+{"context": "power_035", "phase": "complete", "seconds": 13.116701725986786, "forwards": 5610}
+{"context": "power_017", "phase": "baseline", "seconds": 3.78838436701335, "answer_margin": 14.084903717041016, "tool_logits": {"answer": 33.696617126464844, "click": 19.611713409423828, "double_click": 15.719799041748047, "right_click": 10.167600631713867, "write": 14.227025985717773, "press_key": 13.674480438232422, "hotkey": 15.18729019165039, "scroll": 11.289716720581055, "drag": 7.908726692199707, "wait": 15.599298477172852}, "margin_error": 0.19873809814453125}
+{"context": "power_017", "phase": "head", "layer": 3, "seconds": 4.988772876007715, "forwards": 5630}
+{"context": "power_017", "phase": "head", "layer": 7, "seconds": 6.021933645999525, "forwards": 5647}
+{"context": "power_017", "phase": "head", "layer": 11, "seconds": 7.275201498996466, "forwards": 5664}
+{"context": "power_017", "phase": "head", "layer": 15, "seconds": 8.623715620022267, "forwards": 5681}
+{"context": "power_017", "phase": "head", "layer": 19, "seconds": 9.795667088008486, "forwards": 5698}
+{"context": "power_017", "phase": "head", "layer": 23, "seconds": 10.950450299016666, "forwards": 5715}
+{"context": "power_017", "phase": "head", "layer": 27, "seconds": 12.444996313017327, "forwards": 5732}
+{"context": "power_017", "phase": "head", "layer": 31, "seconds": 13.859794089017669, "forwards": 5749}
+{"context": "power_017", "phase": "complete", "seconds": 17.804158093000297, "forwards": 5775}
+{"context": "power_036", "phase": "baseline", "seconds": 3.8445370979898144, "answer_margin": 17.706008911132812, "tool_logits": {"answer": 35.58530044555664, "click": 17.879291534423828, "double_click": 16.21996307373047, "right_click": 10.973119735717773, "write": 14.213621139526367, "press_key": 14.680159568786621, "hotkey": 16.775354385375977, "scroll": 12.43342399597168, "drag": 8.895301818847656, "wait": 16.120805740356445}, "margin_error": 0.037662506103515625}
+{"context": "power_036", "phase": "head", "layer": 3, "seconds": 4.944481717015151, "forwards": 5795}
+{"context": "power_036", "phase": "head", "layer": 7, "seconds": 5.923561269999482, "forwards": 5812}
+{"context": "power_036", "phase": "head", "layer": 11, "seconds": 7.15071772999363, "forwards": 5829}
+{"context": "power_036", "phase": "head", "layer": 15, "seconds": 8.409615448996192, "forwards": 5846}
+{"context": "power_036", "phase": "head", "layer": 19, "seconds": 9.424283881002339, "forwards": 5863}
+{"context": "power_036", "phase": "head", "layer": 23, "seconds": 10.390937860996928, "forwards": 5880}
+{"context": "power_036", "phase": "head", "layer": 27, "seconds": 11.40054537699325, "forwards": 5897}
+{"context": "power_036", "phase": "head", "layer": 31, "seconds": 12.38809148001019, "forwards": 5914}
+{"context": "power_036", "phase": "complete", "seconds": 15.4379507790145, "forwards": 5940}
+{"context": "power_018", "phase": "baseline", "seconds": 3.346670119004557, "answer_margin": 15.449506759643555, "tool_logits": {"answer": 34.411781311035156, "click": 18.9622745513916, "double_click": 16.29095458984375, "right_click": 10.28232192993164, "write": 16.668899536132812, "press_key": 15.183048248291016, "hotkey": 17.33391571044922, "scroll": 11.073138236999512, "drag": 8.636104583740234, "wait": 18.184864044189453}, "margin_error": 0.04391670227050781}
+{"context": "power_018", "phase": "head", "layer": 3, "seconds": 4.3076181070064195, "forwards": 5960}
+{"context": "power_018", "phase": "head", "layer": 7, "seconds": 5.329822577012237, "forwards": 5977}
+{"context": "power_018", "phase": "head", "layer": 11, "seconds": 6.356759201007662, "forwards": 5994}
+{"context": "power_018", "phase": "head", "layer": 15, "seconds": 7.448211306007579, "forwards": 6011}
+{"context": "power_018", "phase": "head", "layer": 19, "seconds": 8.481343710998772, "forwards": 6028}
+{"context": "power_018", "phase": "head", "layer": 23, "seconds": 9.517018661019392, "forwards": 6045}
+{"context": "power_018", "phase": "head", "layer": 27, "seconds": 10.5354127860046, "forwards": 6062}
+{"context": "power_018", "phase": "head", "layer": 31, "seconds": 11.569566325022606, "forwards": 6079}
+{"context": "power_018", "phase": "complete", "seconds": 14.422991383005865, "forwards": 6105}
+{"context": "power_037", "phase": "baseline", "seconds": 3.347770870983368, "answer_margin": 20.819326400756836, "tool_logits": {"answer": 35.925819396972656, "click": 15.10649299621582, "double_click": 12.646345138549805, "right_click": 10.00001335144043, "write": 11.137336730957031, "press_key": 10.505602836608887, "hotkey": 10.815571784973145, "scroll": 10.018400192260742, "drag": 7.968389511108398, "wait": 13.442034721374512}, "margin_error": 0.014316558837890625}
+{"context": "power_037", "phase": "head", "layer": 3, "seconds": 4.391122595989145, "forwards": 6125}
+{"context": "power_037", "phase": "head", "layer": 7, "seconds": 5.404909798002336, "forwards": 6142}
+{"context": "power_037", "phase": "head", "layer": 11, "seconds": 6.401692493003793, "forwards": 6159}
+{"context": "power_037", "phase": "head", "layer": 15, "seconds": 7.373312488984084, "forwards": 6176}
+{"context": "power_037", "phase": "head", "layer": 19, "seconds": 8.357333828986157, "forwards": 6193}
+{"context": "power_037", "phase": "head", "layer": 23, "seconds": 9.344033061992377, "forwards": 6210}
+{"context": "power_037", "phase": "head", "layer": 27, "seconds": 10.339817605999997, "forwards": 6227}
+{"context": "power_037", "phase": "head", "layer": 31, "seconds": 11.324214391002897, "forwards": 6244}
+{"context": "power_037", "phase": "complete", "seconds": 14.07356314099161, "forwards": 6270}
+{"context": "power_038", "phase": "baseline", "seconds": 3.4164988349948544, "answer_margin": 21.595133781433105, "tool_logits": {"answer": 36.40083312988281, "click": 14.654278755187988, "double_click": 14.392404556274414, "right_click": 10.548025131225586, "write": 11.691848754882812, "press_key": 11.196794509887695, "hotkey": 13.254124641418457, "scroll": 10.561280250549316, "drag": 7.9409685134887695, "wait": 14.805699348449707}, "margin_error": 0.07172298431396484}
+{"context": "power_038", "phase": "head", "layer": 3, "seconds": 4.41854487801902, "forwards": 6290}
+{"context": "power_038", "phase": "head", "layer": 7, "seconds": 5.441143759002443, "forwards": 6307}
+{"context": "power_038", "phase": "head", "layer": 11, "seconds": 6.469104487012373, "forwards": 6324}
+{"context": "power_038", "phase": "head", "layer": 15, "seconds": 7.48531276700669, "forwards": 6341}
+{"context": "power_038", "phase": "head", "layer": 19, "seconds": 8.517986154009122, "forwards": 6358}
+{"context": "power_038", "phase": "head", "layer": 23, "seconds": 9.553484728996409, "forwards": 6375}
+{"context": "power_038", "phase": "head", "layer": 27, "seconds": 10.58124196800054, "forwards": 6392}
+{"context": "power_038", "phase": "head", "layer": 31, "seconds": 11.711145806009881, "forwards": 6409}
+{"context": "power_038", "phase": "complete", "seconds": 14.996068185020704, "forwards": 6435}
+{"phase": "finished", "seconds": 555.8494265010231, "forwards": 6435, "output": "/workspace/astra/moon-leak/attribution.jsonl"}

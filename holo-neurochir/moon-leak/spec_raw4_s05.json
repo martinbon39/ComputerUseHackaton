@@ -1,0 +1,25 @@
+{
+  "name": "raw4_s05",
+  "heads": [
+    [
+      7,
+      13
+    ],
+    [
+      11,
+      2
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      15,
+      5
+    ]
+  ],
+  "scale": 0.5,
+  "control": false,
+  "ranking": "mean fs+ margin decrease; top4 raw channel strength",
+  "random_seed": 261029609
+}

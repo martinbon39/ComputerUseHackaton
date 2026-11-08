@@ -1,0 +1,22 @@
+{
+  "started_utc": "2026-11-08T07:09:03.748430+00:00",
+  "arm": "A",
+  "frozen_sha256": "9bf07af1f630ffbee0f628347270dff9c3abe068aa9fb76c9c8c747e47585839",
+  "server": {
+    "url": "http://127.0.0.1:18024/v1",
+    "model": "power_A",
+    "vllm_version": "0.23.0",
+    "models": [
+      {
+        "id": "power_A",
+        "root": "/workspace/hf/hub/models--Hcompany--Holo-3.1-4B/snapshots/8c88265a5a159bfd1492db9243733dd2e6e04a6e"
+      }
+    ]
+  },
+  "scheduled": 220,
+  "previously_completed": 0,
+  "max_retries": 0,
+  "workers": 8,
+  "ended_utc": "2026-11-08T07:11:06.362741+00:00",
+  "completed": 220
+}
