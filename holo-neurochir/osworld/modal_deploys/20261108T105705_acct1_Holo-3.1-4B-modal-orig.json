@@ -1,0 +1,33 @@
+{
+ "deployed_at_utc": "2026-11-08T10:57:05Z",
+ "account": 1,
+ "modal_profile": "emilejouannet",
+ "app": "holo-vllm",
+ "url": "https://emilejouannet--holo-vllm-serve.us-east.modal.run/v1",
+ "served_model_name": "Holo-3.1-4B-modal-orig",
+ "checkpoint": "Hcompany/Holo-3.1-4B@8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+ "modal_vllm_py_commit": "8f3216a",
+ "gpu": "1x NVIDIA H100 80GB (Modal gpu=H100, max_containers=1)",
+ "image": "see osworld/MODAL_MANIFEST.md (nvidia/cuda:12.8.1-devel-ubuntu24.04, py3.12, vllm 0.23.0)",
+ "vllm_args": [
+  "--dtype",
+  "bfloat16",
+  "--max-model-len",
+  "32768",
+  "--max-num-seqs",
+  "64",
+  "--gpu-memory-utilization",
+  "0.40",
+  "--kv-cache-memory-bytes",
+  "30G",
+  "--limit-mm-per-prompt",
+  "{\"image\": 5}",
+  "--reasoning-parser",
+  "qwen3",
+  "--enable-prefix-caching",
+  "--api-key",
+  "***"
+ ],
+ "scaledown_s": 120,
+ "modal_client": "1.6.3"
+}
