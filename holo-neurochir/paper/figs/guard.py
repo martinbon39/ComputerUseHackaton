@@ -71,24 +71,56 @@ m.add("fgBasePartialDone", sum(x["last_tool"] == "answer" and 0 < x["score"] < 1
 m.add("fgBaseF", f"{f:.2f}", LS + " false share of answered tasks, partial credit excluded")
 m.add("fgPrecision", f"{prec:.2f}", "det*f/(det*f+rej*(1-f)), Claude rates from " + SRC + " and f from " + LS)
 m.add("fgRepMaxSteps", re.search(r"max (\d+) new steps", (DATA / "local/feci_guard/PREREG.md").read_text()).group(1), "data/local/feci_guard/PREREG.md Repair measure (max new steps)")
-ref = load("local/rescue_bench/HOLO31_REFERENCE.json")
-rp = ref["contemporary_live_measure"]
-RP = "data/local/rescue_bench/HOLO31_REFERENCE.json contemporary_live_measure (audited by rescue-bench)"
-assert rp["measure_complete"] and rp["no_guard"]["branches"] == rp["guard"]["branches"] == rp["primary_branches_per_arm"]
-m.add("fgRepEpisodes", rp["primary_complete_valid_episodes"], RP + " primary_complete_valid_episodes")
-m.add("fgRepExcluded", len(rp["dropped"]), RP + " dropped (replay_invalid)")
-m.add("fgRepBranches", rp["primary_branches_per_arm"], RP + " primary_branches_per_arm")
-m.add("fgRepRepairedNog", rp["no_guard"]["repaired_score1"], RP + " no_guard.repaired_score1")
-m.add("fgRepRepairedGuard", rp["guard"]["repaired_score1"], RP + " guard.repaired_score1")
-m.add("fgRepDiff", f"{rp['paired_diff_mean']:+.2f}", RP + " paired_diff_mean (episode level, mean over K)")
-m.add("fgRepDiffCi", " to ".join(f"{x:.2f}" for x in rp["paired_diff_ci95_episode_bootstrap"]), RP + " paired_diff_ci95_episode_bootstrap")
-m.add("fgRepRefused", rp["guard_branches_refused"], RP + " guard_branches_refused")
-m.add("fgRepRefusedRepaired", rp["guard_refused_then_repaired"], RP + " guard_refused_then_repaired")
-m.add("fgRepBetter", rp["episodes_guard_better"], RP + " episodes_guard_better")
-m.add("fgRepWorse", rp["episodes_guard_worse"], RP + " episodes_guard_worse")
-both = [t for t, v in rp["episode_scores"].items() if not v["excluded"] and min(v["guard_scores"]) == 1 and min(v["no_guard_scores"]) == 1]
+import importlib.util, math
+from common import wilson
+RD = DATA / "local/feci_guard/repair/final"
+RP = "data/local/feci_guard/repair/final/results.json (analyze_repair.py on the final branches.jsonl; RESULTS.md, independently recomputed)"
+rp = load("local/feci_guard/repair/final/results.json")
+ref = load("local/rescue_bench/HOLO31_REFERENCE.json")["provenance"]
+for arm in ("nog", "guard"):
+    sha = __import__("hashlib").sha256((RD / arm / "branches.jsonl").read_bytes()).hexdigest()
+    assert sha == ref[f"/home/orbit/osw/feci_repair/{arm}/branches.jsonl"]["sha256"], arm
+brows = {a: [json.loads(x) for x in (RD / a / "branches.jsonl").read_text().splitlines() if x.strip()] for a in ("nog", "guard")}
+assert rp["no_guard"]["branches"] == rp["guard"]["branches"]
+m.add("fgRepEpisodes", rp["episodes_kept"], RP + " episodes_kept")
+m.add("fgRepExcluded", len(rp["dropped"]), RP + " dropped (replay invalid)")
+m.add("fgRepBranches", rp["guard"]["branches"], RP + " guard.branches (= no_guard.branches)")
+m.add("fgRepRepairedNog", rp["no_guard"]["repaired"], RP + " no_guard.repaired")
+m.add("fgRepRepairedGuard", rp["guard"]["repaired"], RP + " guard.repaired")
+m.add("fgRepDiff", f"{100 * rp['paired_diff_mean']:+.1f}", RP + " paired_diff_mean (points)")
+m.add("fgRepDiffCi", f"{100 * rp['paired_diff_ci95'][0]:.0f} to {100 * rp['paired_diff_ci95'][1]:+.0f}", RP + " paired_diff_ci95 (episode bootstrap)")
+b, w = rp["episodes_guard_better"], rp["episodes_guard_worse"]
+m.add("fgRepBetter", b, RP + " episodes_guard_better")
+m.add("fgRepWorse", w, RP + " episodes_guard_worse")
+m.add("fgRepSignP", f"{min(1.0, 2 * sum(math.comb(b + w, k) for k in range(min(b, w) + 1)) / 2 ** (b + w)):.1f}", RP + " exact two-sided sign test on better/worse episodes")
+spec = importlib.util.spec_from_file_location("ar", DATA / "local/feci_guard/analyze_repair.py")
+ar = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(ar)
+d12 = [sum(v["guard"]) / len(v["guard"]) - sum(v["nog"]) / len(v["nog"]) for v in rp["per_episode"].values()]
+assert len(d12) == rp["episodes_total"]
+m.add("fgRepDiffAll", f"{100 * sum(d12) / len(d12):+.1f}", RP + " per_episode, all episodes incl. replay-invalid (points)")
+m.add("fgRepDiffAllCi", " to ".join(f"{100 * x:+.0f}".replace("+0", "0") for x in ar.boot(d12)), "analyze_repair.boot over all episodes (seed 0, 10,000)")
+m.add("fgRepEpisodesAll", rp["episodes_total"], RP + " episodes_total")
+nref, nrep = rp["guard_branches_refused"], rp["guard_refused_then_repaired"]
+m.add("fgRepRefused", nref, RP + " guard_branches_refused")
+m.add("fgRepRefusals", rp["guard_refusals_total"], RP + " guard_refusals_total")
+m.add("fgRepRefusedRepaired", nrep, RP + " guard_refused_then_repaired")
+m.add("fgRepRefusedRepairedPct", f"{100 * nrep / nref:.0f}", RP + " refused_then_repaired / refused")
+m.add("fgRepRefusedRepairedCi", "--".join(f"{100 * x:.0f}" for x in wilson(nrep, nref)), "Wilson 95% of refused_then_repaired / refused")
+kept = {t for t, v in rp["per_episode"].items() if not v["excluded"]}
+key = lambda t: t.split("/pyautogui/screenshot/Holo-3.1-4B/")[-1]
+g = [x for x in brows["guard"] if key(x["task"]) in kept]
+assert len(g) == rp["guard"]["branches"]
+m.add("fgRepRefusedNoAnswer", sum(x["guard"]["refusals"] > 0 and not x["finished_by_agent"] and x["score"] < 1 for x in g), "final/guard/branches.jsonl kept: refused, no answer within the step limit, not repaired")
+m.add("fgRepCapWrong", sum("passed_cap" in x["guard"]["decisions"] and x["score"] < 1 for x in g), "final/guard/branches.jsonl kept: passed at the refusal cap, still wrong")
+wrong_ok = {key(x["task"]) for x in g if x["guard"]["decisions"] == ["passed_complete"] and x["score"] < 1}
+assert all(all(y["guard"]["decisions"] == ["passed_complete"] and y["score"] < 1 for y in g if key(y["task"]) == t) for t in wrong_ok)
+m.add("fgRepWrongComplete", len(wrong_ok), "final/guard/branches.jsonl kept: episodes accepted as COMPLETE in every branch while wrong")
+both = [t for t, v in rp["per_episode"].items() if not v["excluded"] and min(v["guard"]) == 1 and min(v["nog"]) == 1]
 assert len(both) == 1
-m.add("fgRepBothTask", both[0].split("/")[0].replace("libreoffice_", "") + "/" + both[0].split("/")[1][:8], RP + " episode_scores: solved in every branch of both arms")
+m.add("fgRepBothTask", both[0].split("/")[0].replace("libreoffice_", "") + "/" + both[0].split("/")[1][:8], RP + " per_episode: solved in every branch of both arms")
+assert rp["guard"]["repaired"] - sum(rp["per_episode"][both[0]]["guard"]) == nrep
+m.add("fgRepSpecific", nrep, RP + " repairs specific to the guard: guard repairs minus the episode solved in every branch = refused then repaired")
 pd4 = r["paired_gap_difference_vs_Holo-3.1-4B"]["Holo4-27B"]
 m.add("gbHolofourVsHoloCi", " to ".join(spts(x) for x in pd4["ci95"]), SRC + " paired_gap_difference_vs_Holo-3.1-4B.Holo4-27B.ci95")
 m.add("gbTasks", re.search(r"resample (\d+) task groups", r["judges"]["Claude (Feci Guard verifier)"]["task_cluster_bootstrap"]["method"]).group(1), SRC + " task_cluster_bootstrap.method (task groups resampled)")

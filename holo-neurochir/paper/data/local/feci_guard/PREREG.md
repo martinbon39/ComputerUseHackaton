@@ -48,3 +48,16 @@ branch was refused; K=2. Question: is the absence of repair a lack of steps or a
 with its own counts; no paired test against the no-guard arm (that arm keeps 15 steps).
 
 Sensitivity episodes (fixed 09:18 UTC, before any 30-step branch): the 6 refused episodes with valid replay, writer/0b17a146, calc/37608790, impress/70bca0cc, multi_apps/d68204bf, calc/1de60575, impress/550ce7e7 (vlc/aa4b5023 excluded: replay invalid). One VM, after the rescue test, hard stop 11:00.
+
+## Corrections after the independent review (09:23 UTC), appended rather than rewritten
+- Timing: the "Repair measure" section was written in the working tree before the arms were launched (07:54), but it
+  was first committed at 08:07 (cc671d3), when about 6 branches had already finished. So the registration is
+  self-declared, not externally timestamped. The exclusion rule uses only the replay prefix, which runs before the
+  continuation, so it cannot depend on outcomes.
+- Wording: the sentence "Valid branch = replay_valid ... is not required" contradicts the next one. The rule actually
+  applied is the one stated after it: an episode is kept only if all 4 of its branches (both arms) have
+  replay_valid true and no error.
+- The exploratory addendum (08:29) was not "after the registered runs": both arms were still running (no guard until
+  09:02, guard until 09:18), and its rule (episodes with a refusal) was set while the guard results were partly
+  visible. Its episode list was then filtered by hand to exclude the invalid replay vlc/aa4b5023. The sensitivity
+  run was cancelled by ares before any branch started, so it produced no data.
