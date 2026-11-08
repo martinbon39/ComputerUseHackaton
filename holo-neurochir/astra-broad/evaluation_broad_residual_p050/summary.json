@@ -1,0 +1,85 @@
+{
+ "label": "broad_residual_p050",
+ "seeds": [
+  7100,
+  7101,
+  7102,
+  7103,
+  7104,
+  7105,
+  7106,
+  7107
+ ],
+ "request_settings": {
+  "temperature": 0.8,
+  "top_p": 0.9,
+  "top_k": 20,
+  "max_tokens": 3072,
+  "reasoning_effort": "medium",
+  "enable_thinking": true,
+  "structured_outputs": "holo_agent step schema (build_schema(make_step_model(TOOLS)))",
+  "seed": "per request",
+  "text_prompts": {
+   "temperature": 0.0,
+   "max_tokens": 256,
+   "enable_thinking": false
+  }
+ },
+ "servers": [
+  {
+   "url": "http://127.0.0.1:18020/v1",
+   "model": "broad_residual_p050",
+   "vllm_version": "0.23.0",
+   "models": [
+    {
+     "id": "broad_residual_p050",
+     "root": "/dev/shm/broad_residual_p050"
+    }
+   ]
+  }
+ ],
+ "per_row": {
+  "broad_residual_p050 | fs+ | libreoffice_calc/26a8440e-c166-4c50-aef4-bfb77314b46b@30": {
+   "answer": 8,
+   "valid_nonanswer": 0,
+   "invalid": 0,
+   "error": 0,
+   "n": 8
+  },
+  "broad_residual_p050 | fs+ | multi_apps/b337d106-053f-4d37-8da0-7f9c4043a66b@27": {
+   "answer": 4,
+   "valid_nonanswer": 4,
+   "invalid": 0,
+   "error": 0,
+   "n": 8
+  },
+  "broad_residual_p050 | fs- | multi_apps/f5c13cdd-205c-4719-a562-348ae5cd1d91@9": {
+   "answer": 4,
+   "valid_nonanswer": 4,
+   "invalid": 0,
+   "error": 0,
+   "n": 8
+  },
+  "broad_residual_p050 | fs- | gimp/7b7617bd-57cc-468e-9c91-40c4ec2bcb3d@6": {
+   "answer": 5,
+   "valid_nonanswer": 3,
+   "invalid": 0,
+   "error": 0,
+   "n": 8
+  },
+  "broad_residual_p050 | healthy | libreoffice_impress/455d3c66-7dc6-4537-a39a-36d3e9119df7@0": {
+   "answer": 0,
+   "valid_nonanswer": 8,
+   "invalid": 0,
+   "error": 0,
+   "n": 8
+  },
+  "broad_residual_p050 | healthy | chrome/93eabf48-6a27-4cb6-b963-7d5fe1e0d3a9@0": {
+   "answer": 0,
+   "valid_nonanswer": 8,
+   "invalid": 0,
+   "error": 0,
+   "n": 8
+  }
+ }
+}

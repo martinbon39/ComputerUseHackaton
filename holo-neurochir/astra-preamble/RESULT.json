@@ -1,0 +1,88 @@
+{
+  "status": "rejected",
+  "closure_authority": "ares message6456",
+  "manifest_sha256": "43eae282c73f74b03485bfa9f18b1fc3dd8b8a498e500c0b82faffbb14fbfbf7",
+  "report_sha256": "15d66c02fa4eef404786f4b9a2c7aa467337efaeae891b2cfdb1a07b7782e7e8",
+  "capture_forwards": 158,
+  "capture_budget": 160,
+  "generation_requests": 81,
+  "dose1_behavior": "NOT RUN: construction cancelled under ares stop",
+  "online": "NOT RUN",
+  "candidate_admitted": false,
+  "arms": {
+    "base_d10": {
+      "rows": 27,
+      "errors": 0,
+      "truncations": 0,
+      "done_answers": 7,
+      "exact_preamble": 0,
+      "generic_before": 0,
+      "generation_sha256": "65f89de9dbcbc9bc61488f4cb37c94dd46c8cdb25b6231481ef028301d2c31a6",
+      "checkpoint_integrity": "passed"
+    },
+    "learned_d20": {
+      "rows": 27,
+      "errors": 0,
+      "truncations": 0,
+      "done_answers": 7,
+      "exact_preamble": 0,
+      "generic_before": 7,
+      "generation_sha256": "573362a8ad5929460870d197dbadb2fb618447ddb780537524432ac65ab33818",
+      "checkpoint_integrity": "passed",
+      "healthy_text_differences": 14,
+      "healthy_parsed_differences": 14,
+      "healthy_action_differences": 11,
+      "done_preamble": 0
+    },
+    "random_d20": {
+      "rows": 27,
+      "errors": 0,
+      "truncations": 0,
+      "done_answers": 8,
+      "exact_preamble": 0,
+      "generic_before": 0,
+      "generation_sha256": "610c4767fc624a26a630bdabf993d32e376d5d5d5bcf2ab33c32f0b2b7e5d3f2",
+      "checkpoint_integrity": "passed",
+      "healthy_text_differences": 14,
+      "healthy_parsed_differences": 14,
+      "healthy_action_differences": 11,
+      "done_preamble": 0
+    }
+  },
+  "cleanup": {
+    "utc": "2026-11-08T05:47:52.337546+00:00",
+    "status": "complete",
+    "removed": [
+      {
+        "path": "/dev/shm/astra_preamble_base_d10",
+        "file_bytes": 10373003654,
+        "reason": "rejected dose2 or cancelled incomplete dose1; ares message6456"
+      },
+      {
+        "path": "/dev/shm/astra_preamble_learned_d20",
+        "file_bytes": 10373014368,
+        "reason": "rejected dose2 or cancelled incomplete dose1; ares message6456"
+      },
+      {
+        "path": "/dev/shm/astra_preamble_random_d20",
+        "file_bytes": 10373017314,
+        "reason": "rejected dose2 or cancelled incomplete dose1; ares message6456"
+      },
+      {
+        "path": "/dev/shm/astra_preamble_learned_d10",
+        "file_bytes": 10373001729,
+        "reason": "rejected dose2 or cancelled incomplete dose1; ares message6456"
+      }
+    ],
+    "total_file_bytes": 41492037065,
+    "random_d10_created": false,
+    "retained": [
+      "captures.pt",
+      "factors.pt",
+      "manifests",
+      "checks",
+      "generation results"
+    ],
+    "gpu_processes": "193632, VLLM::EngineCore, 43876 MiB\n"
+  }
+}
