@@ -24,7 +24,7 @@ json.dump({
     "checkpoint": f"holo-models:/ckpt/{ckpt}" if ckpt else f"{mv.HF_ID}@{mv.HF_REV}",
     "modal_vllm_py_commit": commit, "gpu": "1x NVIDIA H100 80GB (Modal gpu=H100, max_containers=1)",
     "image": "see osworld/MODAL_MANIFEST.md (nvidia/cuda:12.8.1-devel-ubuntu24.04, py3.12, vllm 0.23.0)",
-    "vllm_args": mv.VLLM_ARGS + ["--api-key", "***"], "modal_client": version("modal"),
+    "vllm_args": mv.VLLM_ARGS + ["--api-key", "***"], "scaledown_s": mv.SCALEDOWN, "modal_client": version("modal"),
 }, open(out, "w"), indent=1)
 print(out)
 EOF
