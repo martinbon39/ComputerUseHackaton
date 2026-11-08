@@ -21,6 +21,7 @@ import run_holo as RH  # noqa: E402
 from holo_agent import SYSTEM_PROMPTS, HoloComputerAgent  # noqa: E402
 from osworld_computer_env import OSWorldComputerEnv  # noqa: E402
 from probe_answer_rate import client_for  # noqa: E402
+from desktop_env.providers.docker.provider import DockerProvider  # noqa: E402
 
 log = logging.getLogger("duel")
 
@@ -71,6 +72,21 @@ def serialize_screenshots(env):
     env.controller.get_screenshot = get_screenshot
 
 
+def remove_container_on_interrupt(ev):
+    """OSWorld cleans a half-started container only on Exception: a STOP (SystemExit) during the VM boot would leave
+    it running. Remove it on any BaseException, and record each container id so the server can remove it too."""
+    inner = DockerProvider.start_emulator
+    def start_emulator(self, *a, **kw):
+        try:
+            inner(self, *a, **kw)
+        except BaseException:
+            if self.container is not None:
+                self.container.remove(force=True); self.container = None
+            raise
+        ev.emit("phase", phase="vm_started", container=self.container.id)
+    DockerProvider.start_emulator = start_emulator
+
+
 def live_frames(env, ev, every, stop):
     while not stop.wait(every):
         try:
@@ -99,10 +115,12 @@ def main():
     ev.emit("phase", phase="booting", pid=os.getpid(), model=model, task=args.task, instruction=example["instruction"])
 
     def on_term(signum, frame):
+        signal.signal(signal.SIGTERM, signal.SIG_IGN)  # a second STOP must not interrupt the VM close
         raise SystemExit(143)
     signal.signal(signal.SIGTERM, on_term)
 
     env, live_stop = None, threading.Event()
+    remove_container_on_interrupt(ev)
     try:
         env = RH._make_env(rh)
         env.reset(task_config=example)
@@ -131,14 +149,16 @@ def main():
         summary = agent.run()
         if stop_path.exists():
             raise StopFile()
+        if summary.get("steps", 0) == 0 and not summary.get("finished_by_agent"):
+            raise RuntimeError("0 steps: VM or model endpoint not ready (run_holo leaves such an episode unscored)")
         answer = summary.get("answer")
+        live_stop.set()  # run_one sends nothing else to the VM from here on
         declined = bool(answer is not None and RH._INFEASIBLE_RE.search(answer))
         ev.emit("phase", phase="evaluating", answer=answer)
         if answer is not None:
             env.step("FAIL" if declined else "DONE", rh.pause)
         time.sleep(20)
         score = float(env.evaluate())
-        live_stop.set()
         try:
             ev.emit("frame", file=ev.save(Image.open(BytesIO(env.controller.get_screenshot())), "final"))
         except Exception:  # noqa: BLE001

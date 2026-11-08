@@ -105,7 +105,7 @@ class Duels:
         for side in sides:
             sd = d / side
             phases = [e["phase"] for e in read_events(sd / "events.jsonl")[0] if e["kind"] == "phase"]
-            if not sd.exists() or ENDED & set(phases):
+            if not sd.exists() or (ENDED | {"stop_requested"}) & set(phases):
                 continue
             (sd / "STOP").touch()
             with open(sd / "events.jsonl", "a") as f:
@@ -127,6 +127,9 @@ class Duels:
                 return
             time.sleep(1)
         os.kill(pid, signal.SIGKILL)
+        ids = [e["container"] for e in read_events(sd / "events.jsonl")[0] if e.get("container")]
+        if ids:  # killed during its VM close: remove the container it recorded
+            subprocess.run([str(Path.home() / "osw/osh"), f"docker rm -f {ids[-1]}"], timeout=120)
 
     def listing(self):
         out = []
@@ -146,8 +149,17 @@ class Duels:
         return out
 
 
+DUEL_ID = re.compile(r"[\w-]+")
+
+
 class Handler(BaseHTTPRequestHandler):
     duels: Duels = None
+
+    def local_origin(self):
+        """Reject cross-site requests (CSRF, DNS rebinding): a page on another site can POST text/plain here."""
+        ok = {f"127.0.0.1:{self.server.server_port}", f"localhost:{self.server.server_port}"}
+        origin = self.headers.get("Origin")
+        return self.headers.get("Host") in ok and (origin is None or urlparse(origin).netloc in ok)
 
     def log_message(self, fmt, *a):
         pass
@@ -159,6 +171,8 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers(); self.wfile.write(data)
 
     def do_GET(self):
+        if not self.local_origin():
+            return self.send(403, {"error": "local origin only"})
         u = urlparse(self.path); q = {k: v[0] for k, v in parse_qs(u.query).items()}
         root = self.duels.root
         if u.path in ("/", "/index.html"):
@@ -170,8 +184,8 @@ class Handler(BaseHTTPRequestHandler):
         if u.path == "/api/duels":
             return self.send(200, self.duels.listing())
         if u.path == "/api/events":
-            d = root / Path(q.get("duel", "")).name
-            if not (d / "meta.json").exists():
+            d = root / q.get("duel", "")
+            if not DUEL_ID.fullmatch(q.get("duel", "")) or not (d / "meta.json").exists():
                 return self.send(404, {"error": "no such duel"})
             out = {"meta": json.loads((d / "meta.json").read_text()), "running": d.name in self.duels.running()}
             for side in ("left", "right"):
@@ -179,7 +193,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200, out)
         if u.path.startswith("/duels/"):
             parts = u.path.split("/")[2:]
-            if len(parts) == 4 and parts[1] in ("left", "right") and parts[2] == "frames" and re.fullmatch(r"[\w.-]+\.jpg", parts[3]):
+            if len(parts) == 4 and DUEL_ID.fullmatch(parts[0]) and parts[1] in ("left", "right") and parts[2] == "frames" and re.fullmatch(r"[\w.-]+\.jpg", parts[3]):
                 f = root / Path(parts[0]).name / parts[1] / "frames" / parts[3]
                 if f.exists():
                     return self.send(200, f.read_bytes(), "image/jpeg")
@@ -187,6 +201,8 @@ class Handler(BaseHTTPRequestHandler):
         return self.send(404, {"error": "not found"})
 
     def do_POST(self):
+        if not self.local_origin():
+            return self.send(403, {"error": "local origin only"})
         u = urlparse(self.path)
         body = json.loads(self.rfile.read(int(self.headers.get("Content-Length") or 0)) or b"{}")
         try:
@@ -196,7 +212,9 @@ class Handler(BaseHTTPRequestHandler):
                 ids = [body["duel"]] if body.get("duel") else self.duels.running()
                 sides = ["left", "right"] if body.get("side", "all") == "all" else [body["side"]]
                 for i in ids:
-                    self.duels.stop(Path(i).name, sides)
+                    if not DUEL_ID.fullmatch(i):
+                        raise ValueError(f"bad duel id {i}")
+                    self.duels.stop(i, sides)
                 return self.send(200, {"stopped": ids, "sides": sides})
         except (RuntimeError, ValueError, KeyError) as e:
             return self.send(409, {"error": str(e)})

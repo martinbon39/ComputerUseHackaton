@@ -104,7 +104,7 @@ const params = new URLSearchParams(location.search);
 const REPLAY = params.get('replay');
 const PHASES = { booting: 'Démarrage de la VM…', settling: 'Ouverture de la tâche…', thinking: 'Le modèle réfléchit…',
   acting: 'Action en cours', evaluating: 'Évaluation officielle…', done: 'Terminé', stopped: "Arrêté par l'utilisateur",
-  stop_requested: 'Arrêt demandé…', error: 'Erreur', vm_closed: null, vm_close_failed: 'VM : fermeture échouée' };
+  stop_requested: 'Arrêt demandé…', error: 'Erreur', vm_started: null, vm_closed: null, vm_close_failed: 'VM : fermeture échouée' };
 let config = null, duelId = params.get('duel'), state = null, offsets = { left: 0, right: 0 }, meta = null, running = false;
 
 function sideSkeleton(side, label, model) {
@@ -131,7 +131,7 @@ function apply(side, e) {
     if (PHASES[e.phase] !== null) { S.phase = e.phase; const ph = el.querySelector('.ph'); ph.hidden = false;
       ph.textContent = (PHASES[e.phase] || e.phase) + (e.error ? ' — ' + e.error : ''); }
     if (e.phase === 'vm_closed') el.querySelector('.ph').textContent += ' · VM fermée';
-  } else if ((e.kind === 'frame' || e.kind === 'step') && e.file) {
+  } else if (e.kind === 'frame' && e.file) {  // a step's file is the older observation the model saw
     const img = el.querySelector('img'); img.hidden = false; el.querySelector('.empty').hidden = true;
     img.src = `/duels/${meta.id}/${side}/${e.file}`;
   }
@@ -167,7 +167,13 @@ function setupDuel(m) {
 }
 
 // ---- live ----
+let polling = false;
 async function poll() {
+  if (polling) return;  // overlapping polls would send the same offsets and apply events twice
+  polling = true;
+  try { await pollOnce(); } finally { polling = false; }
+}
+async function pollOnce() {
   if (!duelId || (!running && meta)) {  // follow a duel started from elsewhere (another tab, the CLI)
     const c = await (await fetch('/api/config')).json();
     if (c.running.length && c.running[0] !== duelId) { duelId = c.running[0]; meta = null; }
