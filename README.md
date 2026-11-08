@@ -8,9 +8,12 @@ every requirement on the screen, refuses a false "done" with a reason, and can h
 **Online, on 120 held-out OSWorld tasks (pre-registered), the Guard halves the agent's false "done" rate (22.5 % →
 10.8 %, −11.7 pts [−19.2, −4.2]) without a measurable loss of score; no score gain is claimed (+1.6 [−4.4, +7.7]).**
 
-> **Watch first:** [demo video](holo-neurochir/video_demo/holo-demo-video.mp4) · [Guard repair replay](holo-neurochir/demo_live/repair_calc.html)
-> (files in this repo; [hosted video](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7) and [hosted replay](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxelxklo.a9rcuMpAex2GppIQuTZdr5GyIPal9zYu), links expire 2026-12-08): the Guard refuses a false "done" and the agent
-> repairs it, step by step.
+> **Demo video, 3 min:** [`holo-neurochir/video_demo/feci-guard-wall.mp4`](holo-neurochir/video_demo/feci-guard-wall.mp4)
+> (file in this repo, 2:54; generator in [`holo-neurochir/video_wall/`](holo-neurochir/video_wall/)). Hosted copy, link expires
+> 2026-12-08: [video](https://argos.martinbonan.com/artifacts/feci-guard-wall-video.mp4?t=mxemmn8w.RZNeZKw_tnK0Nezq6OvZ6exYV6aMCSOx) · [interactive page](https://argos.martinbonan.com/artifacts/feci-guard-wall.html?t=mxemmnav.usCClc-xmdZJ2WZb3TM3Rqyt64iSkwJL).
+>
+> **Guard repair replay:** [`holo-neurochir/demo_live/repair_calc.html`](holo-neurochir/demo_live/repair_calc.html): the Guard refuses a
+> false "done" and the agent repairs it, step by step ([hosted copy](https://argos.martinbonan.com/artifacts/holo-guard-repair.html?t=mxelxklo.a9rcuMpAex2GppIQuTZdr5GyIPal9zYu), link expires).
 >
 > **Judges in a hurry:** run the 3-command [quickstart](#quickstart-under-5-minutes-no-gpu-no-key-no-vm) (no GPU, no
 > key, no VM). It recomputes our headline numbers and replays the Guard on 268 recorded episodes. Then read the
@@ -206,7 +209,10 @@ Files in this repository come first. Hosted copies are signed links that expire 
   [arXiv-style PDF](holo-neurochir/paper/main.pdf) · [NeurIPS-format PDF](holo-neurochir/paper/neurips.pdf) (anonymous,
   with the filled reproducibility checklist). Every number is regenerated from `paper/data/` by `paper/build.sh`.
   Hosted copies, link expires: [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxelsq99.XBEhB11w3U9yDnECxNhK0KRz1pXqQDRn) · [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxelsqbv.P3FbrvgmO8pRQodN9QTT9UEq3fOKaV3R).
-- **Demo video**: [`holo-neurochir/video_demo/holo-demo-video.mp4`](holo-neurochir/video_demo/holo-demo-video.mp4)
+- **Demo video, 3 min** (submission): [`holo-neurochir/video_demo/feci-guard-wall.mp4`](holo-neurochir/video_demo/feci-guard-wall.mp4),
+  generator in [`holo-neurochir/video_wall/`](holo-neurochir/video_wall/). Hosted copies, links expire: [video](https://argos.martinbonan.com/artifacts/feci-guard-wall-video.mp4?t=mxemmn8w.RZNeZKw_tnK0Nezq6OvZ6exYV6aMCSOx) ·
+  [interactive page](https://argos.martinbonan.com/artifacts/feci-guard-wall.html?t=mxemmnav.usCClc-xmdZJ2WZb3TM3Rqyt64iSkwJL).
+- **Earlier demo video**: [`holo-neurochir/video_demo/holo-demo-video.mp4`](holo-neurochir/video_demo/holo-demo-video.mp4)
   (13 MB). Hosted copy, link expires: [holo-demo-video.mp4](https://argos.martinbonan.com/artifacts/holo-demo-video.mp4?t=mxehzzv8.oOrv2tXPWvEHm_G6O8BX7bPpUc0307h7).
 - **Guard repair replay** (the Guard refuses a false "done" on `calc/1de60575`, the agent renames the sheet, the second
   check passes): [`holo-neurochir/demo_live/repair_calc.html`](holo-neurochir/demo_live/repair_calc.html). Hosted copy,
