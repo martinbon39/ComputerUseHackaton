@@ -74,3 +74,10 @@ rescue model. Journal: `smoke/impress_550ce7e7_rescue_guard.md`.
 - The official score is 0, as in the guard-only run. The remaining difference in the .pptx is not visible on screen.
 The plumbing works end to end: refusal, escalation, rescue, re-check and scoring. No conclusion about efficacy can be
 drawn from one task.
+
+## Guard v2, sprint S1 (offline, judge_bench corpus; v2/PROTOCOL.md, independently recomputed)
+A stronger judge with history (Claude Opus + the 2 screens before the answer + the action list) detects significantly
+more false successes: **+13.8 pts [+2.9, +30]**. Its false rejections are higher, but not significantly: **+4.3 pts
+[−5, +15]**. The variant was selected on dev, and the held-out half was used once, as a single confirmation.
+Held-out: v2 69 % (20/29) detection, 12.9 % (15/116) false rejection; v1 55 % (16/29), 8.6 % (10/116). The target
+(>= 80 % / <= 10 %) was not met. Decision (ares): no online v2 arm; the v2 relay is stopped.
