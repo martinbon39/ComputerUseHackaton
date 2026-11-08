@@ -1,0 +1,12 @@
+{
+ "checkpoint": "holo-models:/ckpt/free_h8_flat",
+ "sha256": {
+  "config.json": "f14ce743951dfd9b96d57b6a96ab5c9761b6c8a9e1abd75949984247ee5beff0",
+  "model-00001-of-00002.safetensors": "f7f12ccce5c518a4039dbcd132077e9822639d580843c9cfa0610bf8812485bc",
+  "model-00002-of-00002.safetensors": "b9d1b35cf114b7d4d2ff7d4171313f80702a61048b3299bccce358b17d8303d8"
+ },
+ "account": 2,
+ "modal_profile": "martinbon39",
+ "measured_at_utc": "2026-11-08T02:37Z",
+ "method": "modal run osworld/modal_vllm.py::revision --ckpt free_h8_flat (CPU, Volume metadata + sha256, no generation)"
+}
