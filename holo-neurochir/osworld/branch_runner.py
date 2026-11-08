@@ -36,6 +36,18 @@ def recorded(task_dir):
     return d, steps, meta, score
 
 
+def stamp(s):
+    """Recorded step timestamp 'YYYYMMDD@HHMMSSffff' -> seconds (same day assumed only for differences)."""
+    t = str(s.get("timestamp", "")).split("@")[-1]
+    return int(t[:2]) * 3600 + int(t[2:4]) * 60 + int(t[4:6]) + int(t[6:] or 0) / 10 ** len(t[6:]) if len(t) >= 6 else None
+
+
+def recorded_gaps(steps):
+    """Seconds between consecutive recorded steps (the original pace, model latency included); None if unknown."""
+    ts = [stamp(x) for x in steps]
+    return [(b - a) % 86400 if a is not None and b is not None else None for a, b in zip(ts, ts[1:])]
+
+
 def pixel_diff(a, b):
     a = np.asarray(a.convert("RGB").resize((480, 270)), dtype=np.float32)
     b = np.asarray(b.convert("RGB").resize((480, 270)), dtype=np.float32)
@@ -43,11 +55,14 @@ def pixel_diff(a, b):
 
 
 class BranchAgent(HoloComputerAgent):
+    pace = True
     def run_branch(self, d, steps, n_replay, replay_answer, max_new):
         """Replay steps[0:n_replay], then (replay_answer) the recorded answer or up to max_new model steps."""
         messages = [self._system_message()]
         diffs, answer, finished, new_steps, tools = [], None, False, 0, []
+        gaps = recorded_gaps(steps)
         for i in range(n_replay):
+            t_step = time.time()
             image = self.env.screenshot()
             diffs.append(pixel_diff(image, Image.open(d / steps[i]["screenshot_file"])))
             messages.append(self._observation_message(image)); trim_to_last_n_images(messages, self.image_budget)
@@ -58,6 +73,8 @@ class BranchAgent(HoloComputerAgent):
             result = self.env.step(self._tool_call_to_event(step.tool_call))
             out = result.info.get("tool_output", "") if isinstance(result.info, dict) else str(result.info)
             messages.append({"role": "user", "content": f'<tool_output tool="{step.tool_call.tool_name}">\n{out}\n</tool_output>'})
+            if self.pace and i < len(gaps) and gaps[i] is not None:  # keep the original pace: apps, network, typing
+                time.sleep(max(0.0, min(20.0, gaps[i]) - (time.time() - t_step)))
         if replay_answer:
             last = steps[-1]
             if last["tool_name"] in TERMINAL_TOOLS:
@@ -123,11 +140,13 @@ def main():
     ap.add_argument("--max_new", type=int, default=15)
     ap.add_argument("--branch_at", type=int)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--no_pace", action="store_true", help="replay as fast as possible (default: recorded pace)")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
     rh_args = RH.parse_args(["--max_steps", "50"])
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
     servers = args.server if args.mode == "branch" else [None]
+    BranchAgent.pace = not args.no_pace
     env = RH._make_env(rh_args)
     try:
         for ep in args.episode:
