@@ -24,7 +24,7 @@ stages = [
     ("6  Steering", "free generation, k=4,\npre-registered gate", "negative"),
     ("7  Weight edit", "compile into writers\nW ← (I − αuuᵀ)W", "blocked"),
     ("8  Paired validation", f"{conf['n']} reserve + test tasks, run on\nnon-admitted arms: no gain", "negative"),
-    ("9  External verifier", f"false done {og['false_done_diff'] * 100:+.1f} pts online ({og['n_tasks']} tasks);\nHolo4 escalation: {rb["mean"] * 100:+.0f} pts repairs (replay)", "positive"),
+    ("9  External verifier", f"false done {og['false_done_diff'] * 100:+.1f} pts online\n({og['n_tasks']} TEST tasks);".replace("-", "\u2212") + f"\nwith Holo4: {rb["mean"] * 100:+.0f} pts repaired (replay)", "positive"),
 ]
 style = {"done": ("#E6F2EC", C["green"], "-"), "partial": ("#FFF4DC", C["orange"], "-"), "positive": ("#E3EEF8", C["blue"], "-"),
          "negative": ("#FBE5DC", C["red"], "-"), "blocked": ("#F4F4F4", "#9A9A9A", "--")}
