@@ -1,0 +1,14 @@
+{
+ "checkpoint": "holo-models:/ckpt/free_h6_s05",
+ "sha256": {
+  "config.json": "f14ce743951dfd9b96d57b6a96ab5c9761b6c8a9e1abd75949984247ee5beff0",
+  "model-00001-of-00002.safetensors": "f7f12ccce5c518a4039dbcd132077e9822639d580843c9cfa0610bf8812485bc",
+  "model-00002-of-00002.safetensors": "b8b275d571fcfb03e8d908a11fd68ad993a8849272055d391af851dfc64a0bff"
+ },
+ "accounts_checked": [
+  "emilejouannet (served)",
+  "martinbon39 (astra-free upload)"
+ ],
+ "identical_on_both_accounts": true,
+ "method": "modal run osworld/modal_vllm.py::revision --ckpt free_h6_s05, CPU, no generation"
+}
