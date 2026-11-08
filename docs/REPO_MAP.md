@@ -56,7 +56,7 @@ Start with the Guard (solution), then the diagnosis, then the weight-edit experi
 | `runs/` | partial | Raw rollout outputs (acceptance, diagnostic, smoke) | DATA | `diagnostic.md` |
 | `report/` | 3 files | Coordination notes; committed: online Guard pre-registration, ExPO report, sprints | DATA | `report/PREREG_ONLINE_GUARD.md` |
 | `dashboard/` | partial | Local "MRI" dashboard of the model's internals | TOOLING | |
-| `devin/` (README), `team_dash/`, `alerts/` | README only / not committed | Agent-team tooling (external agent client, team status page, phone alerts) | TOOLING | |
+| `team_dash/`, `alerts/` | not committed | Agent-team tooling (team status page, phone alerts) | TOOLING | |
 
 ## Demo material
 | Folder | In git | What | Status |
