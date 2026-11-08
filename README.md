@@ -232,7 +232,7 @@ Files in this repository come first. Hosted copies are signed links that expire 
   Hosted copy, link expires: [holo-demo-faux-fini.html](https://argos.martinbonan.com/artifacts/holo-demo-faux-fini.html?t=mxec08h4.ypUQurEtCFn45XOw47vn5eHhOEl5Gyfd).
 - **Slides** (the research system) and **pitch cockpit**: cockpit page committed at
   [`holo-neurochir/pitch_design/pages/cockpit.html`](holo-neurochir/pitch_design/pages/cockpit.html); sources in [`holo-neurochir/pitch_design/`](holo-neurochir/pitch_design/)
-  (`python3 build.py pages/pitch.html out/pitch.html`). Hosted copies, links expire: [slides](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxelxkol.AJDAnrhAH9FvnKfF3n2qxlh1tmsblqOz) · [cockpit](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxene67i.sXStkHiHRfe-qOSp8L4vwJrnag-vMp6y).
+  (`python3 build.py pages/pitch.html out/pitch.html`). Hosted copies, links expire: [slides](https://argos.martinbonan.com/artifacts/holo-pitch-system.html?t=mxelxkol.AJDAnrhAH9FvnKfF3n2qxlh1tmsblqOz) · [cockpit](https://argos.martinbonan.com/artifacts/holo-cockpit-pitch.html?t=mxenkt49.TEHgpo0uAMdgS_GtF_hoIdqPbZDPPSGO).
 - **Watch a recorded duel (real VMs)**: two agents side by side on two OSWorld desktops, replayed step by step by the duel page
   (live server, available during the hackathon): [duel replay, `calc/1de60575`](https://profession-april-suzuki-seed.trycloudflare.com/?replay=20261108-110023_libreoffice_calc_1de60575-bb6e-4c3d-9e6a).
   Screenshots in the repo: [`osworld/duel/shots/`](holo-neurochir/osworld/duel/shots/).
