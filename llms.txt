@@ -1,0 +1,28 @@
+# Cogito, Ergo Feci (ComputerUseHackaton)
+
+> H Company × 42AI hackathon, Computer Use track. H's computer-use agent Holo-3.1-4B often ends OSWorld tasks with a false "done" (29 of its 51 failures). We show that the agent does not internally know this: self-judging is at chance, and weight edits move the decision without targeting it, with no detectable online gain. We built Feci Guard instead, an external verifier that checks each requirement on the screen, refuses a false "done" with a reason, and lets the agent repair or escalate to Holo4. Offline it detects 45/66 false successes at 21/202 false alarms.
+
+Everything below can be checked offline in seconds with Python >= 3.9 standard library: `bash jury_kit/quickstart.sh` (exit 0 = published numbers reproduced). A gain is claimed only if the lower bound of the paired 95 % CI is > 0.
+
+## Start here
+- [AGENTS.md](AGENTS.md): guide for AI reviewers: verify commands, claim → evidence map, measured vs running
+- [README.md](README.md): overview, architecture, results table with CIs, criteria → evidence
+- [docs/QUICKSTART_PROOF.md](docs/QUICKSTART_PROOF.md): outputs of every quickstart command from a fresh clone
+- [docs/REPO_MAP.md](docs/REPO_MAP.md): every experiment folder, its status and source-of-truth file
+
+## Verify
+- [jury_kit/verify_results.py](jury_kit/verify_results.py): recomputes the online paired comparisons from per-task scores
+- [jury_kit/replay_guard.py](jury_kit/replay_guard.py): replays the frozen Feci Guard decision on 268 recorded episodes
+- [jury_kit/guard_live.py](jury_kit/guard_live.py): one live verifier call (claude CLI or Anthropic key)
+- [jury_kit/README.md](jury_kit/README.md): model-side checks (checkpoint rebuild bit-for-bit, decision probe on GPU)
+
+## Code and results
+- [holo-neurochir/feci_guard/README.md](holo-neurochir/feci_guard/README.md): how the Guard works, backends, commands
+- [holo-neurochir/feci_guard/RESULTS.md](holo-neurochir/feci_guard/RESULTS.md): repair measure and end-to-end runs
+- [holo-neurochir/judge_bench/REPORT.md](holo-neurochir/judge_bench/REPORT.md): three judges on the same 268 episodes
+- [holo-neurochir/report/PREREG_ONLINE_GUARD.md](holo-neurochir/report/PREREG_ONLINE_GUARD.md): pre-registration of the online Guard test
+
+## Optional
+- [holo-neurochir/paper/main.pdf](holo-neurochir/paper/main.pdf): the paper (arXiv format); neurips.pdf has the reproducibility checklist
+- [holo-neurochir/osworld/duel/README.md](holo-neurochir/osworld/duel/README.md): live duel page (two VMs, STOP buttons, replay)
+- [holo-neurochir/JOURNAL.md](holo-neurochir/JOURNAL.md): raw chronological log of the agent team (French)
