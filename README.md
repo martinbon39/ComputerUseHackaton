@@ -239,10 +239,6 @@ one human supervised:
 - **Souad Boukhedenna** (SKEMA Business School)
 - **Martin Bonan**, GitHub [martinbon39](https://github.com/martinbon39)
 
-## Sponsors
-
-- **Devin**: Devin API integration installed and authenticated (client + GPU-controller mission, dry-run tested; no session run to preserve credits): [`holo-neurochir/devin/README.md`](holo-neurochir/devin/README.md).
-
 ## Acknowledgements and license
 
 Thanks to H Company for Holo-3.1-4B and Holo4, to 42AI for the hackathon, and to the OSWorld authors (xlang-ai) for
