@@ -1,5 +1,33 @@
 # Audit avant passage en public : martinbon39/ComputerUseHackaton
 
+## Verdict final (2026-11-08) : PRÊT À PUBLIER
+
+- **Pas de réécriture d'historique : aucune n'est nécessaire.**
+- **B1 passe en OK.** Martin confirme qu'Émile, titulaire du compte, accepte que son nom de compte Modal (`emilejouannet`) reste dans le dépôt.
+- **Correctifs appliqués dans HEAD** (petits commits, sans réécriture) :
+  - `c277acc` : suppression de `moon-vision/ARES_ORDERS.json` (N3).
+  - `c32b550` : retrait des commandes SSH, du nom de clé et des IDs de pod et de volume de l'ex-pod RunPod (N2). Cela touche `HANDOFF.md`, `JOURNAL.md` (deux copies), `osworld/ONLINE_EVAL.md`, `osworld/modal_serve_when_ready.sh` et `verif_study/sync.sh`. Ces scripts lisent maintenant `POD`, `POD_HOST` et `POD_SSH` dans l'environnement.
+  - `e42923c` : retrait du lien argos signé vers une archive interne (`astra-circuit-report-final…zip`, N1).
+  - Les autres liens signés pointent tous vers des pages du projet (papier, vidéo, slides, démo, replay du Guard, cockpit et tableau de bord) : ils sont gardés.
+  - Les `.pyc` avaient déjà été retirés du suivi par `fc50f40`.
+  - `devin/README.md` et `pitch/PITCH.md` ont été retirés du suivi par `027eeaf` et `86c0aca`.
+- **Gardés par décision de Martin :**
+  - les montants Modal et RunPod (N5), pour la transparence du coût ;
+  - les fichiers d'outillage argos `HANDOFF.md` et `BRIEF_*.md` (N6), qui montrent la méthode ;
+  - `jury_kit/` tel quel ;
+  - le reste des points À NETTOYER (N7 à N12), qui sont mineurs.
+- **Ce qui reste visible dans l'historique** : l'IP de l'ex-pod RunPod, son port SSH et ses IDs, ainsi que `ARES_ORDERS.json`. Le risque est faible :
+  - le pod est terminé et RunPod a réattribué son IP ;
+  - aucune clé n'est dans le dépôt ;
+  - les messages d'agents ne contiennent aucun secret.
+- **Hors du dépôt :**
+  - arrêter `holo-jury-probe` après la fenêtre jury (N4) ;
+  - confirmer dans la console RunPod la terminaison du pod et la suppression de son volume (N2) ;
+  - vérifier que l'artifact claude.ai de `LOG.md:27` n'est pas partagé (N8).
+- **Re-scan après correctifs.** J'ai refait le scan complet sur les 157 commits (toutes refs, jusqu'à `e42923c`), archives décompressées comprises. Aucun nouveau secret. Les seules nouveautés sont des chemins `/home/orbit` et des liens argos du projet, déjà couverts par N1 et N10.
+
+Le reste du document est l'audit initial, inchangé sauf pour les noms de projets tiers, qui ont été retirés de ce rapport lui-même.
+
 Audit du 2026-11-08 (repo-audit, flotte argos), à la demande de ares. Il ne réécrit rien et ne pousse rien : chaque correctif ci-dessous est une recommandation, et c'est Martin qui décide.
 
 ## Périmètre et méthode
@@ -11,7 +39,7 @@ Audit du 2026-11-08 (repo-audit, flotte argos), à la demande de ares. Il ne ré
      - clés et jetons : `hf_`, `sk-`/`sk-ant-`/`sk-proj-`, `ghp_`/`gho_`/`github_pat_`, `cog_`, `r8_`, Modal `ak-`/`as-`/`wk-`/`ws-`, `rpa_`, `AKIA`, `AIza`, `xox?-`, jeton de bot Telegram, JWT ;
      - en-têtes `-----BEGIN … PRIVATE KEY`, `Bearer …`, et les affectations `password|secret|token|api_key = "…"` ;
      - URL avec identifiants, e-mails, IPv4, téléphones FR ;
-     - motifs internes : martinbonan.com, oopercast/ooper, astry, `/home/orbit`, runpod, tailscale ;
+     - motifs internes : domaines et noms des autres projets et clients de Martin, `/home/orbit`, runpod, réseau privé ;
      - motifs de prompts système : `system-reminder`, `You are Claude Code`, `HARNESS MODE`.
   2. **Archives décompressées** et scannées : les 217 fichiers `.gz`/`.npz`.
   3. **detect-secrets 1.5.0** (`--all-files`) sur l'arbre de `ce6e843`. Les 6 commits suivants, jusqu'à `e880c66`, ont été relus à la main sur leur diff.
@@ -32,7 +60,7 @@ Audit du 2026-11-08 (repo-audit, flotte argos), à la demande de ares. Il ne ré
 |---|---|---|
 | **BLOQUANT** | 1 | Le nom d'un tiers, `emilejouannet` (titulaire du compte Modal 1), apparaît dans 59 fichiers et 21 commits. Il faut son accord, sinon remplacer le nom. |
 | **À NETTOYER** | 12 | Liens argos signés encore valides, SSH et IDs de l'ex-pod, ordres d'agents bruts, budgets et dépenses, endpoint jury public, etc. |
-| **OK** | 9 | Aucun secret propre à Martin. Les e-mails sont des fixtures OSWorld. Aucun fichier ne dépasse 20 Mo. Le VPS 37.187.252.136 n'apparaît jamais. |
+| **OK** | 9 | Aucun secret propre à Martin. Les e-mails sont des fixtures OSWorld. Aucun fichier ne dépasse 20 Mo. L'IP du VPS n'apparaît jamais. |
 
 **Aucune clé ni aucun jeton appartenant à Martin ou à l'équipe n'a été trouvé dans l'historique**, ni en clair ni dans les archives. La seule clé présente (`hk-…`) est celle de l'adaptateur officiel public d'OSWorld (voir A2). Si Martin accepte le constat B1, ou s'il remplace le nom dans HEAD, le dépôt peut passer public sans réécriture d'historique.
 
@@ -100,7 +128,7 @@ Audit du 2026-11-08 (repo-audit, flotte argos), à la demande de ares. Il ne ré
 **N3. Ordres bruts de l'orchestrateur**
 
 - **Où.** `holo-neurochir/moon-vision/ARES_ORDERS.json`, commit `cc671d3`.
-- **Contenu.** Les messages de ares à un worker, avec leur IDs de message (6520, 6532, 6579…) et un ID de session argos, `"to_session": "4DOyaufy2j"`.
+- **Contenu.** Les messages de ares à un worker, avec leur IDs de message (6520, 6532, 6579…) et un ID de session argos (`to_session`).
 - **Risque.** Faible. Ni prompt système ni secret, mais c'est une conversation interne entre agents, avec un identifiant de session argos.
 - **Correctif.** Le supprimer de HEAD (`git rm`), ou retirer `to_session`. Pas de réécriture.
 
@@ -138,7 +166,7 @@ Audit du 2026-11-08 (repo-audit, flotte argos), à la demande de ares. Il ne ré
 
 **N8. Lien vers un artifact claude.ai**
 
-- **Où.** `LOG.md:27`, commit `67f8d9c` : `https://claude.ai/artifact/4pBuLKr…`, qui contient un « pack de contexte complet », environ 364 k caractères de notes brutes.
+- **Où.** `LOG.md:27`, commit `67f8d9c` : un lien vers un artifact claude.ai, qui contient un « pack de contexte complet », environ 364 k caractères de notes brutes.
 - **Risque.** Les artifacts claude.ai sont privés par défaut. Le lien n'expose rien tant que l'artifact n'est pas partagé.
 - **Correctif.** Vérifier côté claude.ai que l'artifact n'est pas partagé publiquement.
 
@@ -183,8 +211,8 @@ Audit du 2026-11-08 (repo-audit, flotte argos), à la demande de ares. Il ne ré
   - `garnett@wustl.edu` dans `neurips_2026.sty` (le style officiel) et `noreply@anthropic.com` (trailers Co-Authored-By).
 
   Aucune adresse de Martin ni d'un tiers réel ne figure dans le contenu des fichiers. Les trois « téléphones » détectés sont des décimales de métriques (`0,0732421875`).
-- **A5. VPS 37.187.252.136** : **aucune occurrence** dans tout l'historique. Les IP restantes sont 127.0.0.1, 172.23.0.2 (Docker interne) et quelques faux positifs, des numéros de version. Pour l'IP de l'ex-pod 213.181.111.151, voir N2.
-- **A6. Autres projets de Martin** : aucune occurrence de Oopercast, Ooper, Astry, ooper.dev ni de clients, dans tout l'historique.
+- **A5. IP du VPS** : **aucune occurrence** dans les fichiers du projet. Elle se déduit de toute façon du DNS public de `argos.martinbonan.com`, qui est cité dans le README. Les IP restantes sont 127.0.0.1, 172.23.0.2 (Docker interne) et quelques faux positifs, des numéros de version. Pour l'IP de l'ex-pod 213.181.111.151, voir N2.
+- **A6. Autres projets de Martin** : aucune occurrence de ses autres projets, de son entreprise ni de ses clients, dans tout l'historique.
 - **A7. Prompts système et transcriptions d'agents** : aucun `system-reminder`, `You are Claude Code` ou `HARNESS MODE`, et aucun contenu de `CLAUDE.md` ou `AGENTS.md` du harnais.
   - Les « system prompt » trouvés sont ceux du modèle Holo étudié.
   - `judge_bench/claude_responses.jsonl` contient des verdicts du vérificateur, pas des conversations.
@@ -204,7 +232,7 @@ Ajouté à la demande de ares après l'audit principal. J'ai scanné le diff com
   - La seule autre chaîne qui ressemble à une clé, `sk-disjoint-from-construction`, est un libellé de split.
 - **OK : aucun autre secret.** Pas de `hf_`, `sk-`, `ghp_`, Modal `ak-`/`as-`, `hk-`, `rpa_` ni clé privée.
 - **OK : aucune donnée de vie privée nouvelle.**
-  - Aucune occurrence de `emilejouannet`, d'IP de pod ou de VPS, d'e-mail, de téléphone, d'Oopercast/Ooper/Astry ni de `to_session`.
+  - Aucune occurrence de `emilejouannet`, d'IP de pod ou de VPS, d'e-mail, de téléphone, des autres projets de Martin ni de `to_session`.
   - Le seul nom propre de personne est Esben Kran (Apart Research), cité avec un lien public LessWrong dans `pitch/PITCH.md:124`.
 - **À NETTOYER (rattaché à N1) : deux URL `?t=` signées.**
   - `holo-guard-repair.html?t=mxehqaqs…`, que je n'avais pas encore recensée, se trouve dans un des fichiers de synthèse.
