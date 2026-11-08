@@ -213,7 +213,7 @@ Files in this repository come first. Hosted copies are signed links that expire 
 - **Paper**: *Cogito, Ergo Feci: False Success, the Limits of Weight Surgery, and What an External Verifier Catches in a Computer-Use Agent*.
   [arXiv-style PDF](holo-neurochir/paper/main.pdf) · [NeurIPS-format PDF](holo-neurochir/paper/neurips.pdf) (anonymous,
   with the filled reproducibility checklist). Every number is regenerated from `paper/data/` by `paper/build.sh`.
-  Hosted copies, link expires: [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxena614.Q8VurYjWjbDBVRFBKtMBzLKIbwD5NjEo) · [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxena638.pEZH3zTVBh08wdSIVscN86WxJPCW0apv).
+  Hosted copies, link expires: [arXiv-style](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxendzty.YtNRzC2XZbOfsCPfKb43m0vI_OuDRaJs) · [NeurIPS-format](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxendzvz.7zzezsDOwwrahm95moLSz3Efcg3-IAzE).
 - **Demo video, 3 min** (submission): [`holo-neurochir/video_demo/feci-guard-wall.mp4`](holo-neurochir/video_demo/feci-guard-wall.mp4),
   generator in [`holo-neurochir/video_wall/`](holo-neurochir/video_wall/). Hosted copies, links expire: [video](https://argos.martinbonan.com/artifacts/feci-guard-wall-video.mp4?t=mxemmn8w.RZNeZKw_tnK0Nezq6OvZ6exYV6aMCSOx) ·
   [interactive page](https://argos.martinbonan.com/artifacts/feci-guard-wall.html?t=mxemmnav.usCClc-xmdZJ2WZb3TM3Rqyt64iSkwJL).

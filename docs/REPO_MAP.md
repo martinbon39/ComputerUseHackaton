@@ -22,6 +22,7 @@ Start with the Guard (solution), then the diagnosis, then the weight-edit experi
 | Folder / file | In git | What | Status | Source of truth | Headline |
 |---|---|---|---|---|---|
 | `paper/` | yes (sources, PDFs) | The paper, arXiv and NeurIPS versions, every number generated from `data/` | RESULT | `paper/README.md`, `main.pdf` | false "done" = 29/51 failures (57 %) |
+| `constraint_drop/` | yes | Does the agent know? Blind annotation of whether Holo names an unmet requirement in its last 3 steps before answering | NEGATIVE (pre-registered) | `constraint_drop/REPORT.md`, `PROTOCOL.md` | 9/56 false successes vs 10/133 true successes, +8.6 pts [−0.8, +20.8], not significant |
 | `text_signal/` | yes | CPU test of text and sampling-consistency detectors of false success | RESULT (negative for detection) | `text_signal/REPORT.md` | best text AUROC 0.66 vs step index 0.72 |
 | `proof_anchor/` | partial | Teacher-forced ablation of the note/thought before the tool call, 39 tasks | RESULT | `proof_anchor/REPORT.md` | removing note + thought shifts the answer margin by 14.0 logits [12.9, 15.1] |
 | `diagnostic.md` | yes | First diagnostic on MiniWoB with the 0.8B model (pilot) | RESULT (pilot) | `diagnostic.md` | 23/70 failures are false success (32.9 %) |
