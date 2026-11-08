@@ -27,14 +27,14 @@ ans = ans if isinstance(ans, dict) else eval(ans)  # recorded as a Python-litera
 assert ans["tool_name"] == "answer" and score == 0.0
 quote_know = "I cannot complete the installation without the password."
 assert quote_know in step[last]["reasoning"], "quoted reasoning must exist verbatim"
-claim = ans["content"].split(". ")[0] + "."
-assert claim in ans["content"]
+claim = ans["content"].strip()  # the full answer: a first sentence alone reads as a success claim, which it is not
 ev = task["evaluator"]
 S = "data/local/spotify/"
 m.add("spInstruction", tx(task["instruction"]), S + "task.json instruction")
 m.add("spSteps", last, S + "traj.jsonl max step_num")
 m.add("spScore", f"{score:.0f}", S + "result.txt")
-m.add("spClaim", tx(claim), S + "traj.jsonl last step tool_call.content (first sentence)")
+m.add("spClaim", tx(claim), S + "traj.jsonl last step tool_call.content (full)")
+m.add("spClaimFirst", tx(claim.split(". ")[0] + "."), S + "traj.jsonl last step tool_call.content (first sentence)")
 m.add("spKnow", tx(quote_know), S + "traj.jsonl last step reasoning (verbatim substring)")
 m.add("spCheck", ev["result"]["command"], S + "task.json evaluator.result.command")
 
@@ -68,7 +68,8 @@ m.write()
 plt = setup_mpl()
 from matplotlib.patches import FancyBboxPatch, Rectangle
 
-W, H = 7.0, 3.34
+EXTRA = 0.34  # extra height of the strip so the full answer fits
+W, H = 7.0, 3.34 + EXTRA
 fig = plt.figure(figsize=(W, H))
 
 
@@ -81,7 +82,7 @@ def label(x, y, s):
 
 
 label(0.0, H - 0.02, "a")
-fig.text(0.2 / W, (H - 0.05) / H, f"A real false success (OSWorld os/94d95f96, {last} steps).  "
+fig.text(0.2 / W, (H - 0.05) / H, f"A real false success (OSWorld os/94d95f96, {last} steps): the agent answers instead of finishing.  "
          f"Task: “{task['instruction']}”", fontsize=7.4, va="top")
 
 # (step, caption, crop box as fractions (x0, y0, x1, y1) of the screen)
@@ -114,20 +115,20 @@ for i, (s, lab, (cx0, cy0, cx1, cy1)) in enumerate(shots):
                  color=col if s == last else "#222222")
 
 # Reasoning -> action -> checker strip.
-by, bh = ytop - sh - 0.62, 0.50
-boxes = [(0.0, 2.15, "What it reasons at the last step", f"“… {quote_know} …”", "#F1F1F1", "#222222", "italic"),
-         (2.40, 2.45, "What it then does", "answer(“" + claim + "”)", "#FBE5DC", C["red"], "normal"),
-         (5.10, 1.90, "What the checker sees", f"{ev['result']['command']}  →  not found\nscore = {score:.0f}",
-          "#F1F1F1", "#222222", "normal")]
+by, bh = ytop - sh - 0.62 - EXTRA, 0.50 + EXTRA
+boxes = [(0.0, 1.55, "What it reasons at the last step", f"“… {quote_know} …”", "#F1F1F1", "#222222", "italic", 7.0, 19.5),
+         (1.80, 3.55, "What it then does: answer, ending the episode (full text)", "answer(“" + claim + "”)", "#FBE5DC", C["red"], "normal", 6.2, 22.0),
+         (5.60, 1.40, "What the checker sees", f"{ev['result']['command']}\n→  not found\nscore = {score:.0f}",
+          "#F1F1F1", "#222222", "normal", 7.0, 19.5)]
 axb = ax_in(0, by, W, bh)
 axb.axis("off")
 axb.set_xlim(0, W), axb.set_ylim(0, bh)
-for xx, ww, head, body, fc, tcol, sty in boxes:
+for xx, ww, head, body, fc, tcol, sty, fsz, cpi in boxes:
     axb.add_patch(FancyBboxPatch((xx, 0.0), ww, bh, boxstyle="round,pad=0,rounding_size=0.06", fc=fc, ec="none"))
     axb.text(xx + 0.08, bh - 0.07, head, fontsize=6.6, fontweight="bold", va="top", color="#555555")
-    wrapped = body if "\n" in body else "\n".join(textwrap.wrap(body, int(ww * 19.5)))
-    axb.text(xx + 0.08, bh - 0.21, wrapped, fontsize=7.0, va="top", color=tcol, style=sty, linespacing=1.15)
-for xa in (2.17, 4.87):
+    wrapped = body if "\n" in body else "\n".join(textwrap.wrap(body, int(ww * cpi)))
+    axb.text(xx + 0.08, bh - 0.21, wrapped, fontsize=fsz, va="top", color=tcol, style=sty, linespacing=1.15)
+for xa in (1.57, 5.37):
     axb.annotate("", xy=(xa + 0.21, bh / 2), xytext=(xa + 0.02, bh / 2),
                  arrowprops=dict(arrowstyle="-|>", color="#555555", lw=1.1))
 

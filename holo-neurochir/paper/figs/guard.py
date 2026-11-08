@@ -12,7 +12,7 @@ r = load("local/judge_bench/RESULT.json")
 assert r["independent_recompute"]["status"].startswith("MATCH on all four judges") and r["independent_recompute"]["counts_exact"]
 m = Macros("guard")
 J = [("Holo-3.1-4B", "Holo", "Holo-3.1-4B judging its own episodes"), ("Holo4-27B", "Holofour", "Holo4-27B, same prompt"),
-     ("Holo4-27B (Feci Guard verifier)", "Holofourfeci", "Holo4-27B, frozen Feci Guard verifier"),
+     ("Holo4-27B (Feci Guard verifier)", "Holofourfeci", "Holo4-27B, Feci Guard prompt, raw verdict"),
      ("Claude (Feci Guard verifier)", "Claude", "Claude Sonnet, frozen Feci Guard verifier")]
 fs_n = r["corpus"]["labels"]["false_success"]
 ts_n = r["corpus"]["labels"]["true_success"]
@@ -259,6 +259,95 @@ m.add("ogBnotFd", sum(not Mb[k]["false_done"] for k in B_keys), OGS + " repaired
 nz = OG["noise_orig_pod_vs_modal"]
 m.add("ogNoiseDown", nz["flips_1_to_0"], OGS + " noise_orig_pod_vs_modal.flips_1_to_0")
 m.add("ogNoiseUp", nz["flips_0_to_1"], OGS + " noise_orig_pod_vs_modal.flips_0_to_1")
+# Decomposition of the online drop by what the guard could do on each task (meta.json feci_guard.answers / refusals).
+GR = DATA / "local/online/results_test_gh_orig_guard_claude"
+GRS = "data/local/online/results_test_gh_orig_guard_claude/**/meta.json feci_guard"
+fg_ = {}
+for f in GR.glob("pyautogui/screenshot/*/*/*/meta.json"):
+    fg_[f"{f.parent.parent.name}/{f.parent.name}"] = json.loads(f.read_text())["feci_guard"]
+assert set(fg_) == set(keys) and len(keys) == 120
+answers = {k: fg_[k]["answers"] for k in keys}
+refusals = {k: fg_[k]["refusals"] for k in keys}
+assert all(refusals[k] == 0 for k in keys if answers[k] == 0)
+Pb = arm("results_test_gh_orig")
+groups = [("NoAns", "agent never answered (guard never ran)", [k for k in keys if answers[k] == 0]),
+          ("AnsNoRef", "answered, guard never refused", [k for k in keys if answers[k] > 0 and refusals[k] == 0]),
+          ("Ref", "guard refused at least once", [k for k in keys if refusals[k] > 0]),
+          ("Ans", "answered at least once (rows 2 and 3)", [k for k in keys if answers[k] > 0]),
+          ("All", "all tasks", keys)]
+drows = []
+for tag_, gname, ks in groups:
+    c_ = {"n": len(ks), "ref": sum(refusals[k] for k in ks),
+          "fdb": sum(Mb[k]["false_done"] for k in ks), "fdg": sum(G[k]["false_done"] for k in ks),
+          "B": sum(Mb[k]["score"] < 1 <= G[k]["score"] for k in ks), "C": sum(G[k]["score"] < 1 <= Mb[k]["score"] for k in ks),
+          "capb": sum(Mb[k]["steps"] >= 50 for k in ks), "capg": sum(G[k]["steps"] >= 50 for k in ks)}
+    if tag_ in ("Ans", "All"):
+        drows.append("\\midrule")
+    drows.append(f"{gname} & {c_['n']} & {c_['ref']} & {c_['fdb']} & {c_['fdg']} & {c_['B']} & {c_['C']} & "
+                 f"{c_['capb']} & {c_['capg']} \\\\ % source: {GRS}; {OGS}")
+    for f_, v_ in c_.items():
+        m.add(f"ogDec{tag_}{f_.capitalize()}", v_, f"{GRS}; {OGS} ({gname}: {f_})")
+assert sum(Mb[k]["score"] < 1 <= G[k]["score"] for k in keys) == OG["primary_vs_modal"]["B_repaired"]
+assert sum(G[k]["score"] < 1 <= Mb[k]["score"] for k in keys) == OG["primary_vs_modal"]["C_true_lost"]
+cap_g = [k for k in keys if G[k]["steps"] >= 50]
+assert len(cap_g) == sum(answers[k] == 0 for k in cap_g) + sum(refusals[k] > 0 for k in cap_g)
+m.add("ogCapRefused", sum(refusals[k] > 0 for k in cap_g), GRS + " episodes at 50 steps after a refusal")
+LSt = {run: {x["task"]: x["last_tool"] for x in map(json.loads, (DATA / f"local/online/{run}/last_steps.jsonl").read_text().splitlines())}
+       for run in ("results_test_gh_orig_modal_test", "results_test_gh_orig")}
+na_m = {k: LSt["results_test_gh_orig_modal_test"][k] != "answer" for k in keys}
+na_p = {k: LSt["results_test_gh_orig"][k] != "answer" for k in keys}
+na_g = {k: answers[k] == 0 for k in keys}
+m.add("ogNoAnsModal", sum(na_m.values()), "results_test_gh_orig_modal_test/last_steps.jsonl last_tool != answer")
+m.add("ogNoAnsPod", sum(na_p.values()), "results_test_gh_orig/last_steps.jsonl last_tool != answer")
+dg, dm = sum(na_g[k] and not na_m[k] for k in keys), sum(na_m[k] and not na_g[k] for k in keys)
+m.add("ogNoAnsOnlyGuard", dg, GRS + " vs Modal original: never answered with the guard only")
+m.add("ogNoAnsOnlyModal", dm, GRS + " vs Modal original: never answered without the guard only")
+mc = min(1.0, 2 * sum(math.comb(dg + dm, i) for i in range(min(dg, dm) + 1)) / 2 ** (dg + dm))
+m.add("ogNoAnsMcnemarP", f"{mc:.2f}", "exact two-sided McNemar (binomial) on the discordant never-answered tasks, guard vs Modal original")
+m.add("ogNoAnsOnlyPod", sum(na_p[k] and not na_m[k] for k in keys), "pod vs Modal original: never answered on the pod only")
+m.add("ogNoAnsOnlyModalPod", sum(na_m[k] and not na_p[k] for k in keys), "pod vs Modal original: never answered on Modal only")
+m.add("ogFdNetDrop", sum(Mb[k]["false_done"] for k in keys) - sum(G[k]["false_done"] for k in keys), OGS + " net false done count drop")
+write_table("guard_online", "\\begin{tabular}{lcccccccc}\n\\toprule\n& & & \\multicolumn{2}{c}{false ``done''} & & & \\multicolumn{2}{c}{50 steps reached} \\\\\n"
+            "\\cmidrule(lr){4-5}\\cmidrule(lr){8-9}\nGuarded episode & $n$ & refusals & original & guarded & B (0$\\to$1) & C (1$\\to$0) & original & guarded \\\\\n\\midrule\n"
+            + "\n".join(drows) + "\n\\bottomrule\n\\end{tabular}\n", "guard")
+# Holo4-27B with the Feci Guard prompt, under the guard's own rule (feci_guard.check: INCOMPLETE needs a requirement "no").
+PE = json.loads((DATA.parent.parent / "judge_bench/per_episode.json").read_text())
+PES = "judge_bench/per_episode.json (repository, outside paper/data)"
+for key, tag in [("Holo4-27B (Feci Guard verifier)", "Holofourrule"), ("Claude (Feci Guard verifier)", "Clauderule")]:
+    rows_ = [dict(x, verdict="INCOMPLETE" if x["verdict"] == "INCOMPLETE" and x["req_no"] > 0 else "PASS") for x in PE[key]]
+    raw = r["judges"][key]
+    assert sum(x["verdict"] == "INCOMPLETE" and x["label"] == "false_success" for x in PE[key]) == raw["false_success"]["incomplete_rate"]["numerator"]
+    nd = sum(x["verdict"] == "INCOMPLETE" and x["label"] == "false_success" for x in rows_)
+    nr = sum(x["verdict"] == "INCOMPLETE" and x["label"] == "true_success" for x in rows_)
+    grp = {}
+    for x in rows_:
+        grp.setdefault((x["domain"], x["task_id"]), []).append(x)
+    gk = sorted(grp)
+    rng = __import__("random").Random(20261108)
+    vals = []
+    for _ in range(10000):
+        smp = [x for k_ in rng.choices(gk, k=len(gk)) for x in grp[k_]]
+        a_ = [x for x in smp if x["label"] == "false_success"]
+        b_ = [x for x in smp if x["label"] == "true_success"]
+        if a_ and b_:
+            vals.append(sum(x["verdict"] == "INCOMPLETE" for x in a_) / len(a_) - sum(x["verdict"] == "INCOMPLETE" for x in b_) / len(b_))
+    vals.sort()
+    glo, ghi = vals[int(.025 * len(vals))], vals[min(len(vals) - 1, int(.975 * len(vals)))]
+    gp = nd / fs_n - nr / ts_n
+    m.add(f"gb{tag}Det", pct(nd / fs_n), PES + f" {key}: INCOMPLETE with a requirement 'no', false successes (%)")
+    m.add(f"gb{tag}Rej", pct(nr / ts_n), PES + f" {key}: INCOMPLETE with a requirement 'no', true successes (%)")
+    m.add(f"gb{tag}DetN", f"{nd}/{fs_n}", PES + f" {key}")
+    m.add(f"gb{tag}RejN", f"{nr}/{ts_n}", PES + f" {key}")
+    m.add(f"gb{tag}Dropped", sum(x["verdict"] == "INCOMPLETE" and x["req_no"] == 0 for x in PE[key]), PES + f" {key}: INCOMPLETE verdicts with no requirement 'no'")
+    m.add(f"gb{tag}RawInc", sum(x["verdict"] == "INCOMPLETE" for x in PE[key]), PES + f" {key}: all INCOMPLETE verdicts")
+    if tag == "Holofourrule":
+        inv = raw["false_success"]["error_or_invalid"]["numerator"] + raw["true_success"]["error_or_invalid"]["numerator"]
+        rows.insert(3, f"Holo4-27B, Feci Guard prompt, guard's rule & {nd}/{fs_n} ({pct(nd / fs_n)}\\%) & {nr}/{ts_n} ({pct(nr / ts_n)}\\%) & "
+                       f"{spts(gp)} [{spts(glo)}, {spts(ghi)}] & {inv} \\\\ % source: {PES}, task-cluster bootstrap seed 20261108")
+        m.add(f"gb{tag}Gap", spts(gp), PES + " detection minus false rejection under the rule")
+        m.add(f"gb{tag}GapCi", f"{spts(glo)} to {spts(ghi)}", PES + " task-cluster bootstrap, 10,000, seed 20261108")
+    else:
+        assert nd == raw["false_success"]["incomplete_rate"]["numerator"] and nr == raw["true_success"]["incomplete_rate"]["numerator"]
 CD = load("local/constraint_drop/RESULT.json")
 CDS = "data/local/constraint_drop/RESULT.json"
 pr = CD["primary"]

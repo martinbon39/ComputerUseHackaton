@@ -54,6 +54,14 @@ for r in pair:
     c["n"] += r["n"]
     c["full"] += r["full_ids_identical"]
     c["reason"] += r["reasoning_ids_identical"]
+    if r["group"] != "text":
+        c["gui_n"] += r["n"]
+        c["gui_reason"] += r["reasoning_ids_identical"]
+for _arm, _key in (("free_h2", "Htwo"), ("free_h3_l05", "Hthreehalf"), ("free_h5_l05", "Hfivehalf")):
+    _c = ident[_arm]
+    m.add(f"att{_key}GuiReason", f"{_c['gui_reason']}/{_c['gui_n']}", S + f"external_pairwise_token_check.json {_arm} reasoning_ids_identical over fs+, fs-, healthy")
+_c = ident["free_h5_l05"]
+m.add("attHfivehalfGuiDiffer", _c["gui_n"] - _c["gui_reason"], S + "external_pairwise_token_check.json free_h5_l05 GUI outputs whose reasoning differs")
 
 
 def counts(arm):

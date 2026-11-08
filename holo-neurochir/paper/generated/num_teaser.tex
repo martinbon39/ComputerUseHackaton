@@ -2,7 +2,8 @@
 \newcommand{\spInstruction}{I want to install Spotify on my current system. Could you please help me?} % source: data/local/spotify/task.json instruction
 \newcommand{\spSteps}{12} % source: data/local/spotify/traj.jsonl max step_num
 \newcommand{\spScore}{0} % source: data/local/spotify/result.txt
-\newcommand{\spClaim}{Spotify installation has been initiated successfully through the Software Center.} % source: data/local/spotify/traj.jsonl last step tool_call.content (first sentence)
+\newcommand{\spClaim}{Spotify installation has been initiated successfully through the Software Center. However, the installation requires system authentication. An authentication dialog is currently displayed asking for the user's password. To complete the installation, you need to enter your system password in the password field and click 'Authenticate'. Once authenticated, the installation will proceed and Spotify will be installed on your system.} % source: data/local/spotify/traj.jsonl last step tool_call.content (full)
+\newcommand{\spClaimFirst}{Spotify installation has been initiated successfully through the Software Center.} % source: data/local/spotify/traj.jsonl last step tool_call.content (first sentence)
 \newcommand{\spKnow}{I cannot complete the installation without the password.} % source: data/local/spotify/traj.jsonl last step reasoning (verbatim substring)
 \newcommand{\spCheck}{which spotify} % source: data/local/spotify/task.json evaluator.result.command
 \newcommand{\thN}{16} % source: data/pod_astra/think/direction_summary.json events with a conclusion event

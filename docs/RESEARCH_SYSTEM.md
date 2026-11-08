@@ -73,7 +73,7 @@ Amendments are dated and say what had been seen when they were written.
 | `holo-neurochir/feci_guard/PREREG.md` | "written 07:36, before opening any blind packet" (line 1); commit `aa5907f` | verifier hash and decision rule of the Guard |
 | `holo-neurochir/verif_study/PROTOCOL.md` | "Registered … before model responses" (line 3); commit `cc671d3` | Holo as its own verifier; labels = official `result.txt` (line 9) |
 | `holo-neurochir/proof_anchor/PROTOCOL.md` | commit `ff16267` | 39-context anchoring study |
-| `holo-neurochir/report/PREREG_ONLINE_GUARD.md` | 09:27 "avant tout lancement" (before any launch) (line 1); amendments at 09:28 (line 15) and 09:40 (line 29) | online Guard arms, primary criterion, benefit/cost rule |
+| `holo-neurochir/report/PREREG_ONLINE_GUARD.md` | 09:27 "avant tout lancement" (before any launch) (line 1); amendments at 09:28 (line 15), 09:40 (line 29) and 10:44 (line 37) | online Guard arms, primary criterion, benefit/cost rule |
 | `holo-neurochir/feci_guard/v2/PROTOCOL.md` | 09:31, held-out half used once | Guard v2 vs v1 |
 | `holo-neurochir/paper/data/local/rescue_bench/PREREG.md` | "registered … before any Holo4 sample" | escalation to Holo4-27B |
 | 10 weight-edit `PROTOCOL.md` files (`astra-*`, `moon-*`) plus `moon-vision/PROTOCOL_v1.md` | before each lot | gates, budgets, stop rules |
@@ -325,6 +325,8 @@ All times are copied from the files; `~` means the source itself is approximate.
 | 11-08 09:27-09:28 | Online Guard study pre-registered, then amended (benefit/cost rule) before launch | `holo-neurochir/report/PREREG_ONLINE_GUARD.md:1,15` |
 | 11-08 ~09:30 | Pod deleted by Runpod (balance below threshold); the 20 runner jobs stop at the model check with 0 tasks played | `holo-neurochir/report/PREREG_ONLINE_GUARD.md:30`, `holo-neurochir/JOURNAL.md:347` |
 | 11-08 09:40 | Amendment 2: agent and comparator both on Modal; relaunch | `holo-neurochir/report/PREREG_ONLINE_GUARD.md:29-35` |
+| 11-08 10:44 | Amendment 3: rerun of 6 tasks lost to infrastructure, before any comparison | `holo-neurochir/report/PREREG_ONLINE_GUARD.md:37-41` |
+| 11-08 10:56 | Online Guard result: false "done" 22.5 % → 10.8 %, score +1.6 [−4.4, +7.7]; most of the drop comes from episodes where the guard never ran, so it is not attributed to the guard | `holo-neurochir/report/ONLINE_GUARD_RESULT.md` |
 | 11-08 09:31-10:08 | Guard v2 (Opus + history) on a held-out half used once: 20/29 vs 16/29 detected; targets not met | `holo-neurochir/feci_guard/v2/PROTOCOL.md`, `holo-neurochir/feci_guard/RESULTS.md` |
 | 11-08 10:05-10:19 | Repository made reviewable: CPU quickstart, CI, public audit | `LOG.md:588-592` |
 
@@ -356,5 +358,6 @@ on GitHub runners; a reviewer cannot run it in 5 minutes. Read each script's hea
 
 - No OSWorld score gain from any weight edit, and no statistically significant repair effect.
 - No cumulative cost figure beyond the recorded pieces above.
-- The online Guard run on the test split and the escalation study were still running when this page was written.
-  Their pre-registrations are in the repo; their results are not reported here.
+- When this page was first written, the online Guard run and the escalation study were still running. Their results are now in
+  `holo-neurochir/report/ONLINE_GUARD_RESULT.md` and `holo-neurochir/rescue_bench/REPORT.md`; the online false-"done" drop is not
+  attributed to the guard (see the Attribution section there).

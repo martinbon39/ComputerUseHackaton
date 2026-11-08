@@ -6,6 +6,7 @@ LaTeX macro together with a comment naming the source file it was read from.
 import json
 import math
 import random
+import re
 from pathlib import Path
 
 PAPER = Path(__file__).resolve().parent.parent
@@ -56,6 +57,8 @@ class Macros:
 
     def add(self, key, value, source):
         assert key.isalpha(), key
+        # A bare "-" prints as a hyphen in text mode; \ensuremath{-} is a minus in text and math.
+        value = re.sub(r"^-(?=[0-9.])", r"\\ensuremath{-}", str(value))
         self.lines.append(f"\\newcommand{{\\{key}}}{{{value}}} % source: {source}")
 
     def write(self):

@@ -38,7 +38,18 @@ af = load("pod_astra/osw_shared_STATUS.json")["auc"]["fs"]
 ofr = load("local/directions_osw_explo_fs_resid.json")
 ofp = load("local/directions_osw_explo_fs_resid_post.json")
 pc = af["position_controlled"]
-m.add("ofN", af["resid"]["n"], SS + ".resid.n")
+SSP = "data/pod_astra/osw_shared_STATUS.json passes"
+_ps = load("pod_astra/osw_shared_STATUS.json")["passes"]
+m.add("replayScoredDiag", _ps["diag"]["n_scored"], SSP + ".diag.n_scored")
+m.add("replayTailDiag", _ps["diag"]["n_replayed_tail_only"], SSP + ".diag.n_replayed_tail_only")
+m.add("replayScoredDiagTwo", _ps["diag2"]["n_scored"], SSP + ".diag2.n_scored")
+m.add("replayTailDiagTwo", _ps["diag2"]["n_replayed_tail_only"], SSP + ".diag2.n_replayed_tail_only")
+m.add("replayOom", sum(p["n_oom_skipped"] for p in _ps.values()), SSP + ".*.n_oom_skipped")
+_fs_all = sum(p["labels_all_scored"]["fs+"] for p in _ps.values())
+m.add("replayFsAll", _fs_all, SSP + ".*.labels_all_scored.fs+")
+m.add("replayFsLost", _fs_all - sum(p["labels_admissible"]["fs+"] for p in _ps.values()),
+      SSP + ".*.labels_all_scored.fs+ - labels_admissible.fs+")
+m.add("ofN",af["resid"]["n"], SS + ".resid.n")
 m.add("ofPos", af["resid"]["pos"], SS + ".resid.pos")
 m.add("ofNeg", af["resid"]["neg"], SS + ".resid.neg")
 m.add("ofTasks", af["resid"]["n_tasks"], SS + ".resid.n_tasks")
@@ -53,6 +64,15 @@ m.add("ofPosPlus", f"{pc['resid_best']['auc']:.3f}", SS + ".position_controlled.
 m.add("ofPosPlusLayer", pc["resid_best"]["layer"], SS + ".position_controlled.resid_best.layer")
 m.add("ofPosGain", f"{pc['resid_best']['auc'] - pc['position_only_cv_auc']:.2f}", SS + " resid_best.auc - position_only_cv_auc")
 m.add("ofPostPosPlus", f"{pc['resid_post_best']['auc']:.3f}", SS + ".position_controlled.resid_post_best.auc")
+_A, _np, _nn = af["resid"]["auc_dom_best"], af["resid"]["pos"], af["resid"]["neg"]
+_q1, _q2 = _A / (2 - _A), 2 * _A ** 2 / (1 + _A)
+_se = ((_A * (1 - _A) + (_np - 1) * (_q1 - _A ** 2) + (_nn - 1) * (_q2 - _A ** 2)) / (_np * _nn)) ** 0.5
+m.add("ofResidSe", f"{_se:.2f}", SS + ".resid Hanley-McNeil (1982) standard error of auc_dom_best with pos/neg counts")
+_conf = load("pod_astra/confirm_tasks.json")["tasks"]
+_conf_ids = {t for v in _conf.values() for t in v}
+m.add("ofReserveIn", sum(t.split("/")[-1] in _conf_ids for t in ofr["tasks"]),
+      "data/pod_astra/confirm_tasks.json tasks found in data/local/directions_osw_explo_fs_resid.json tasks")
+m.add("ofReserveN", len(_conf_ids), "data/pod_astra/confirm_tasks.json len(tasks)")
 write_table("fs_auc", f"% source: {SS}\n\\begin{{tabular}}{{lcc}}\n\\toprule\nPredictor (task-grouped 5-fold CV) & Best layer & AUROC \\\\\n\\midrule\n"
             f"Step index alone & -- & {af['resid']['baseline_step_index']:.3f} \\\\\n"
             f"Context length alone & -- & {af['resid']['baseline_context_len']:.3f} \\\\\n"
@@ -75,7 +95,11 @@ fs_again = trans["false_success"]["false_success"]
 fs_succ = trans["false_success"]["success"]
 lo, hi = wilson(fs_again, fs_n)
 S2 = "data/local/diagnostic_osw_diag.json + data/local/diagnostic_osw_diag2.json"
-m.add("rtmBoth", len(both), S2 + " tasks scored in both passes")
+_fsl = [(t["infeasible"], lab) for d in (load("local/diagnostic_osw_diag.json"), d2) for t in d["tasks"]
+        for lab in (t.get("fs_labels") or []) if lab == "fs+"]
+m.add("fsLabelsAll", len(_fsl), S2 + " fs+ step labels, both passes")
+m.add("fsLabelsInfeasible", sum(inf for inf, _ in _fsl), S2 + " fs+ step labels on infeasible tasks")
+m.add("rtmBoth",len(both), S2 + " tasks scored in both passes")
 m.add("rtmFsN", fs_n, S2 + " pass-1 false_success tasks scored in pass 2")
 m.add("rtmFsAgain", fs_again, S2 + " ... still false_success in pass 2")
 m.add("rtmFsAgainPct", pct(fs_again / fs_n, 0), S2 + " fs_again / fs_n")
@@ -111,7 +135,7 @@ i = max(range(len(loop["auc_dom"])), key=lambda k: loop["auc_dom"][k])
 axs[0].annotate(f"{loop['auc_dom'][i]:.2f}", (i, loop["auc_dom"][i]), xytext=(4, 3), textcoords="offset points",
                 fontsize=6.5, color=C["blue"])
 axs[0].text(0.6, 0.43, "grey: at or below the best\nposition baseline", fontsize=5.8, color="#777777")
-panel(axs[1], ofr, "b  4B false success: does not", "", extra=ofp)
+panel(axs[1], ofr, "b  4B false success: ≈ position", "", extra=ofp)
 bp = max(range(len(ofr["auc_dom"])), key=lambda i: ofr["auc_dom"][i])
 axs[1].annotate(f"{ofr['auc_dom'][bp]:.2f}", (bp, ofr["auc_dom"][bp]), xytext=(-6, 10), textcoords="offset points",
                 fontsize=6.5, color=C["blue"], arrowprops=dict(arrowstyle="-", color=C["blue"], lw=0.5))

@@ -34,12 +34,30 @@ Raw output: `ONLINE_GUARD_RESULT.json`.
 - B = 8, C = 8.
 
 ## Decision under the preregistered rule
-- **Criterion 1 is met.** The false "done" rate halves, and the upper bound of the CI is below 0. The secondary comparator gives the same result.
+- **Criterion 1 is formally met.** The false "done" rate falls from 22.5 % to 10.8 %, and the upper bound of the CI is below 0. The secondary comparator gives the same result. The fall is not attributable to the Guard (see "Attribution" below).
 - **Criterion 2 is not met.** The score gain is +1.6 points, and the CI includes 0. **No OSWorld score gain is claimed.**
-- **Rule 5 is met.** The net gain is ≥ 0 and false "done" goes down, so the Guard is declared useful.
+- **Rule 5 is formally met.** The net gain is ≥ 0 and false "done" goes down, so the rule declares the Guard useful; given the attribution below, this verdict does not show an effect of the Guard.
   - The number of true successes lost (4) is within the original's own run-to-run noise (9 flips 1 → 0).
 
-**In one sentence.** Online, on 120 held-out tasks, Feci Guard halves the agent's false "task complete" claims (22.5 % → 10.8 %, significant), without a measurable loss of score. Holo-3.1 alone rarely turns a refusal into a success. The repair gain comes from escalation to Holo4, which is measured on replays (`rescue_bench/REPORT.md`, +50 pts [22 ; 78]) and was not run online.
+**In one sentence.** Online, on 120 held-out tasks, the guarded run's false "task complete" claims fell from 22.5 % to 10.8 %, which formally meets the registered criterion, but about two thirds of the drop come from episodes in which the Guard never ran, so it is not attributed to the Guard; no measurable loss of score. Holo-3.1 alone rarely turns a refusal into a success. The repair gain comes from escalation to Holo4, which is measured on replays (`rescue_bench/REPORT.md`, +50 pts [22 ; 78]) and was not run online.
+
+## Attribution (added after the result, 2026-11-08; not part of the registered analysis)
+The registered criterion compares the two arms; it does not say what caused the difference. Split by what the Guard could do in each guarded episode (Modal original as comparator; `meta.json` `feci_guard.answers` and `.refusals`; recomputed in `paper/figs/guard.py`, table `paper/generated/tab_guard_online.tex`):
+
+| Guarded episode | n | refusals | false "done", original | false "done", guarded | B (0→1) | C (1→0) | 50 steps, original | 50 steps, guarded |
+|---|---|---|---|---|---|---|---|---|
+| agent never answered (Guard never ran) | 28 | 0 | 9 | 0 | 1 | 1 | 17 | 28 |
+| answered, Guard never refused | 75 | 0 | 12 | 10 | 5 | 1 | 2 | 0 |
+| Guard refused at least once | 17 | 22 | 6 | 3 | 2 | 2 | 5 | 10 |
+| answered at least once (rows 2 and 3) | 92 | 22 | 18 | 13 | 7 | 3 | 7 | 10 |
+| all tasks | 120 | 22 | 27 | 13 | 8 | 4 | 24 | 38 |
+
+- In 28 of 120 guarded episodes the agent never called `answer`, so the Guard never ran. The original had 9 false "done" on those tasks: 9 of the net drop of 14 (27 → 13) involve no Guard action.
+- Never answering is within the original's own run-to-run variation: 28 tasks with the Guard, 23 for the original on Modal, 20 for the original on the pod. The guarded arm and the Modal original disagree on 11 vs 6 tasks (exact McNemar p = 0.33); the two servings of the original disagree on 5 vs 8.
+- The guarded loop is the original loop up to the first `answer` (same 50-step budget, T = 0.8, unseeded, same prompt and checkpoint); a refusal only consumes a step and the episode continues. The 38 guarded episodes at the step limit are the 28 that never answered and 10 that were refused, then ran out of steps.
+- Where the Guard could act (92 tasks answered at least once), false "done" goes 18 → 13; this part was not registered as a separate test and is not tested here. On the 17 tasks the Guard refused (22 refusals), false "done" goes 6 → 3, 2 tasks go 0 → 1 and 2 go 1 → 0.
+- So about two thirds of the drop come from episodes in which the Guard never ran, consistent with the sampling noise of an unseeded agent. We do not claim that the Guard lowers the false "done" rate online. A seeded replication, or the same guarded loop with a neutral verifier that always returns COMPLETE on the same 120 tasks, would settle it; neither has been run.
+- Registration history: three amendments, all before any comparison (09:27 benefit/cost rule, 09:37 Modal comparator, 10:43 rerun of 6 tasks; the 114-task secondary analysis registered in amendment 3 is not reported). The 7 shards rerun after setup failures are listed under Deviations, not in an amendment.
 
 ## Deviations from the preregistration
 1. **Comparator** (amendment 2, before any Guard episode ran). The pod went down at about 09:30 UTC, so the agent was served by Modal. The primary comparator became the original served by the same Modal deployment. The pod-served original is reported as secondary.

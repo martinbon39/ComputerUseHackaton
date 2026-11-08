@@ -62,18 +62,19 @@ for t in tasks:
     if t["score"] is not None:
         dom[D]["scored"] += 1
         dom[D]["succ"] += t["score"] == 1
+        dom[D]["partial"] += 0 < t["score"] < 1
     dom[D][t["category"]] += 1
 rows = []
 for D in sorted(dom, key=lambda k: -dom[k]["n"]):
     c = dom[D]
-    rows.append(f"{D.replace('libreoffice_', 'lo-').replace('_', '-')} & {c['n']} & {c['succ']}/{c['scored']} & "
+    rows.append(f"{D.replace('libreoffice_', 'lo-').replace('_', '-')} & {c['n']} & {c['succ']}/{c['scored']} & {c['partial']} & "
                 f"{c['false_success']} & {c['step_limit']} & {c['loop']} & {c['other'] + c['unscored']} \\\\")
 tot = Counter()
 for c in dom.values():
     tot.update(c)
-body = ("\\begin{tabular}{lrrrrrr}\n\\toprule\nDomain & Tasks & Success & FS & Step lim. & Loop & Other + unsc. \\\\\n\\midrule\n"
+body = ("\\begin{tabular}{lrrrrrrr}\n\\toprule\nDomain & Tasks & Success & Partial & FS & Step lim. & Loop & Other + unsc. \\\\\n\\midrule\n"
         + "\n".join(rows) + "\n\\midrule\n"
-        + f"Total & {tot['n']} & {tot['succ']}/{tot['scored']} & {tot['false_success']} & {tot['step_limit']} & {tot['loop']} & {tot['other'] + tot['unscored']} \\\\\n"
+        + f"Total & {tot['n']} & {tot['succ']}/{tot['scored']} & {tot['partial']} & {tot['false_success']} & {tot['step_limit']} & {tot['loop']} & {tot['other'] + tot['unscored']} \\\\\n"
         + "\\bottomrule\n\\end{tabular}\n")
 write_table("osw_domains", f"% source: {SRC}\n" + body, "osw_diag")
 

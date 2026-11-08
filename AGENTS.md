@@ -12,7 +12,9 @@ which claims are **measured** versus **only predicted or still running**. Human-
    result: no detectable gain.
 3. **Solution**: Feci Guard is an external verifier (Claude Sonnet). It checks each task requirement on the screen, refuses a
    false "done" with a reason, and the agent repairs or escalates to Holo4-27B. Online, on 120 pre-registered
-   OSWorld tasks, it halves the false "done" rate (22.5 % → 10.8 %, significant) with no measurable score change.
+   OSWorld tasks, the guarded run's false "done" rate fell from 22.5 % to 10.8 % (registered criterion formally met), but
+   9 of the 14-task net drop come from episodes in which the agent never answered, so the Guard never ran: the drop is
+   not attributed to the Guard. No measurable score change.
    The online arm is Holo-3.1 plus the Guard's refusal only; escalation to Holo4 is measured in replay only.
 4. **Honesty rule**: a gain is claimed only when the lower bound of the paired 95 % CI is > 0. It was registered before the Guard's online results
    were read; for the merge after its reserve scores had been seen (only its test part is prospective); paper §5.6.
@@ -49,12 +51,14 @@ refusal → repair on `libreoffice_calc/1de60575` (one episode, not an average e
 | Merged checkpoint rebuilt bit-for-bit from 3 pinned public models | measured (on an independent machine) | `jury_kit/expected_sha256.json`, `jury_kit/README.md` | `python3 jury_kit/rebuild_merge.py --check 2 --merged DIR` |
 | Guard repair: 5/18 vs 2/18 branches scored 1, of which 3 genuine repairs vs 0 (impress/8979838c succeeds without any action in all 4 branches), +16.7 [0, +44] | measured, **not distinguishable from 0** | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/repair/results.json` | read |
 | Guard + escalation to Holo4 vs Holo4 alone, replay of 9 recorded false successes × 2 branches: 11/18 vs 2/18 scored 1, +50 pts [+22, +78] (episode-cluster bootstrap) | measured in replay, significant; pre-registered (`PREREG.md`); 9 of 12 episodes kept by the pre-registered replay-validity filter (all 12: +33 [+4, +63]); not an online score gain | `holo-neurochir/rescue_bench/REPORT.md`, `RESULT.json`, `PREREG.md`, `MEASURED_REPAIRS_REVIEW.md` | read |
-| Holo + Guard online on the 120-task test split: false "done" 22.5 % → 10.8 %, −11.7 pts [−19.2, −4.2]; score +1.6 [−4.4, +7.7] → no score gain claimed; B=8 repaired, C=4 lost | measured online, pre-registered (`report/PREREG_ONLINE_GUARD.md`, analysis committed before results) | `jury_kit/results/online_guard_tasks.csv`, `holo-neurochir/report/ONLINE_GUARD_RESULT.md`, `.json` | `python3 jury_kit/verify_online_guard.py` |
+| Guarded run online on the 120-task test split: false "done" 22.5 % → 10.8 %, −11.7 pts [−19.2, −4.2] (criterion formally met); score +1.6 [−4.4, +7.7] → no score gain claimed; B=8, C=4. Attribution: in 28 episodes the agent never answered and the Guard never ran (9 of the net drop of 14); where it answered (92 tasks) 18 → 13, not tested separately; on the 17 refused tasks 6 → 3 | measured online, pre-registered (`report/PREREG_ONLINE_GUARD.md`, analysis committed before results); **drop not attributable to the Guard** (see `ONLINE_GUARD_RESULT.md` "Attribution") | `jury_kit/results/online_guard_tasks.csv`, `holo-neurochir/report/ONLINE_GUARD_RESULT.md`, `.json` | `python3 jury_kit/verify_online_guard.py` |
 | Guard v2 (Opus + history) vs v1 on the held-out half, used once: detection +13.8 pts [+2.9, +30] (20/29 vs 16/29); false rejection +4.3 [−5, +15] (15/116 vs 10/116) | measured offline, not run online; target ≥ 80 % / ≤ 10 % not met | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/v2/PROTOCOL.md`, `v2/runs/` | read |
 | "A verifier can be plugged into an agent loop with one call" | design property, tested on Holo-3.1-4B only | `feci_guard.py` docstring | read 61 lines |
 | End-to-end plumbing: refusal → escalation → re-check → official score | measured on 1 task (no efficacy claim) | `holo-neurochir/feci_guard/smoke/impress_550ce7e7_rescue_guard.md` | read |
 
-Not claimed anywhere: an OSWorld score gain from any weight edit or from the Guard (online score +1.6 [−4.4, +7.7]); a
+Not claimed anywhere: an OSWorld score gain from any weight edit or from the Guard (online score +1.6 [−4.4, +7.7]); that
+the Guard lowers the false "done" rate online (the fall from 22.5 % to 10.8 % comes mostly from episodes in which the
+Guard never ran; no seeded or neutral-verifier replication was run); a
 significant repair by Holo-3.1 alone (+16.7 [0, +44]); an online measure of the Holo4 escalation (significant in
 replay only); comparability of our absolute scores with H's published scores (our harness is more permissive on
 infeasible tasks).

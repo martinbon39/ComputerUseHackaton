@@ -41,6 +41,8 @@
 \newcommand{\mwAstraRuns}{152} % source: data/pod_astra/train_analysis.json len(runs)
 \newcommand{\mwOffNCand}{40} % source: data/pod_astra/a2_ranking.json candidates excluding r2_identity
 \newcommand{\mwOffNQualify}{27} % source: data/pod_astra/a2_ranking.json qualifies == true (screening criterion)
+\newcommand{\mwOffGreyAbove}{6} % source: data/pod_astra/a2_ranking.json failing candidates above the healthy-only 3x line
+\newcommand{\mwOffQualMaxLoop}{0.009} % source: data/pod_astra/a2_ranking.json max loop+ decrease among qualifying (nat/token)
 \newcommand{\mwPatchTargeted}{1{,}966{,}080} % source: data/pod_astra/a2_final_summary.json patch.stats.n_modified
 \newcommand{\mwPatchChanged}{1{,}953{,}863} % source: data/pod_astra/a2_final_summary.json patch.stats.actual_changed
 \newcommand{\mwPatchPct}{0.229} % source: data/pod_astra/a2_final_summary.json patch.stats.actual_pct (percent of all params)

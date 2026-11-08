@@ -102,7 +102,7 @@ assert len(dom) == 1
 m.add("onNoiseMissingTask", miss[0][:8], S + RUNS["res_orig_gh"] + " task absent from " + RUNS["res_orig"])
 m.add("onNoiseMissingDomain", dom.pop().replace("_", "\\_"), S + RUNS["res_orig_gh"] + " domain directory of that task")
 m.add("onNoiseMissingScore", f"{R['res_orig_gh'][miss[0]]:.0f}", S + RUNS["res_orig_gh"] + " its score")
-NOISE3 = [("res_orig", "local/pod"), ("res_orig_gh", "GitHub/pod"), ("res_orig_modal", "GitHub/Modal")]
+NOISE3 = [("res_orig", "local/H200"), ("res_orig_gh", "GitHub/H200"), ("res_orig_modal", "GitHub/Modal")]
 pcts = [100 * sum(R[k].values()) / len(R[k]) for k, _ in NOISE3]
 ns = sorted({len(R[k]) for k, _ in NOISE3})
 m.add("onReserveOrigRange", f"{max(pcts) - min(pcts):.1f}", S + " max - min mean score of the three reserve runs of the original")
@@ -111,21 +111,21 @@ rows = [
     ("Original, three runs, harness/server (" + "; ".join(l for _, l in NOISE3) + ") & " + "--".join(map(str, ns)) + " & \\multicolumn{2}{c}{"
      + " / ".join(f"{x:.1f}" for x in pcts) + f"}} & spread {max(pcts) - min(pcts):.1f} points & -- \\\\ % source: "
      + ", ".join(S + RUNS[k] for k, _ in NOISE3)),
-    compare("res_orig", "res_orig_gh", "onNoise", "Original, local vs.\\ GitHub harness (both served by the pod)", S + RUNS["res_orig"]),
-    compare("res_orig_gh", "res_orig_modal", "onNoiseServer", "Original, pod vs.\\ Modal (both on the GitHub harness)", S + RUNS["res_orig_gh"]),
-    "\\midrule\\multicolumn{6}{l}{\\emph{Reserve, arms served by the pod, vs.\\ the pod original on the local harness}} \\\\",
+    compare("res_orig", "res_orig_gh", "onNoise", "Original, local vs.\\ GitHub harness (both served by our H200)", S + RUNS["res_orig"]),
+    compare("res_orig_gh", "res_orig_modal", "onNoiseServer", "Original, H200 vs.\\ Modal (both on the GitHub harness)", S + RUNS["res_orig_gh"]),
+    "\\midrule\\multicolumn{6}{l}{\\emph{Reserve, arms served by our H200, vs.\\ the H200 original on the local harness}} \\\\",
     compare("res_expo", "res_orig", "onReserveExpo", "ExPO $\\lambda=1.25$", S + RUNS["res_expo"]),
     compare("res_lm40", "res_orig", "onReserveLmrow", "\\texttt{answer} output-row edit (stopped early)", S + RUNS["res_lm40"]),
     compare("res_prompt", "res_orig", "onReservePrompt", "Corrective prompt (stopped early)", S + RUNS["res_prompt"]),
     "\\midrule\\multicolumn{6}{l}{\\emph{Reserve, arms served by Modal, vs.\\ the Modal original on the GitHub harness}} \\\\",
     compare("res_cua", "res_orig_modal", "onReserveCua", "CUA-Lite merge $\\beta=0.5$", S + RUNS["res_cua"]),
     compare("res_broad", "res_orig_modal", "onReserveBroad", "Closed-form edit of 24 writers (100\\%)", S + RUNS["res_broad"]),
-    "\\midrule\\multicolumn{6}{l}{\\emph{\\textsc{test} split (GitHub harness), vs.\\ the pod original}} \\\\",
+    "\\midrule\\multicolumn{6}{l}{\\emph{\\textsc{test} split (GitHub harness), vs.\\ the H200 original}} \\\\",
     compare("test_expo", "test_orig", "onTestExpo", "ExPO $\\lambda=1.25$ (had not passed the gate)", S + RUNS["test_expo"]),
     compare("test_prompt", "test_orig", "onTestPrompt", "Corrective prompt (partial run)", S + RUNS["test_prompt"]),
-    compare("test_orig", "test_orig_modal", "onTestNoiseServer", "Original, pod vs.\\ Modal (noise reference)", S + RUNS["test_orig"]),
+    compare("test_orig", "test_orig_modal", "onTestNoiseServer", "Original, H200 vs.\\ Modal (noise reference)", S + RUNS["test_orig"]),
     compare("test_cua", "test_orig_modal", "onTestCua", "CUA-Lite merge $\\beta=0.5$, vs.\\ the Modal original", S + RUNS["test_cua"]),
-    "\\midrule\\multicolumn{6}{l}{\\emph{Primary verdict, rule fixed in advance: reserve and \\textsc{test}, Modal against Modal}} \\\\",
+    "\\midrule\\multicolumn{6}{l}{\\emph{Primary verdict, rule fixed after the merge's reserve scores were seen: reserve and \\textsc{test}, Modal against Modal}} \\\\",
     compare("all_cua", "all_orig_modal", "onAllCua", "CUA-Lite merge $\\beta=0.5$", S + RUNS_ALL["all_cua"]),
 ]
 for k, label in [("res_orig", "Reserve"), ("res_orig_gh", "ReserveGh"), ("res_orig_modal", "ReserveModal"), ("test_orig", "Test"), ("test_orig_modal", "TestModal")]:

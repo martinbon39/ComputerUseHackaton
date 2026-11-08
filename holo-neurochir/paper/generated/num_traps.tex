@@ -9,6 +9,13 @@
 \newcommand{\prvAucPreLayer}{6} % source: data/local/demo/dir_provisoire_fs_resid.json argmax auc_dom
 \newcommand{\prvBaseStep}{0.870} % source: data/local/demo/dir_provisoire_fs_resid_post.json baseline_auc_step_index
 \newcommand{\prvBaseCtx}{0.880} % source: data/local/demo/dir_provisoire_fs_resid_post.json baseline_auc_context_len
+\newcommand{\replayScoredDiag}{119} % source: data/pod_astra/osw_shared_STATUS.json passes.diag.n_scored
+\newcommand{\replayTailDiag}{52} % source: data/pod_astra/osw_shared_STATUS.json passes.diag.n_replayed_tail_only
+\newcommand{\replayScoredDiagTwo}{80} % source: data/pod_astra/osw_shared_STATUS.json passes.diag2.n_scored
+\newcommand{\replayTailDiagTwo}{61} % source: data/pod_astra/osw_shared_STATUS.json passes.diag2.n_replayed_tail_only
+\newcommand{\replayOom}{26} % source: data/pod_astra/osw_shared_STATUS.json passes.*.n_oom_skipped
+\newcommand{\replayFsAll}{47} % source: data/pod_astra/osw_shared_STATUS.json passes.*.labels_all_scored.fs+
+\newcommand{\replayFsLost}{6} % source: data/pod_astra/osw_shared_STATUS.json passes.*.labels_all_scored.fs+ - labels_admissible.fs+
 \newcommand{\ofN}{150} % source: data/pod_astra/osw_shared_STATUS.json auc.fs.resid.n
 \newcommand{\ofPos}{41} % source: data/pod_astra/osw_shared_STATUS.json auc.fs.resid.pos
 \newcommand{\ofNeg}{109} % source: data/pod_astra/osw_shared_STATUS.json auc.fs.resid.neg
@@ -24,6 +31,11 @@
 \newcommand{\ofPosPlusLayer}{15} % source: data/pod_astra/osw_shared_STATUS.json auc.fs.position_controlled.resid_best.layer
 \newcommand{\ofPosGain}{0.04} % source: data/pod_astra/osw_shared_STATUS.json auc.fs resid_best.auc - position_only_cv_auc
 \newcommand{\ofPostPosPlus}{0.717} % source: data/pod_astra/osw_shared_STATUS.json auc.fs.position_controlled.resid_post_best.auc
+\newcommand{\ofResidSe}{0.05} % source: data/pod_astra/osw_shared_STATUS.json auc.fs.resid Hanley-McNeil (1982) standard error of auc_dom_best with pos/neg counts
+\newcommand{\ofReserveIn}{20} % source: data/pod_astra/confirm_tasks.json tasks found in data/local/directions_osw_explo_fs_resid.json tasks
+\newcommand{\ofReserveN}{45} % source: data/pod_astra/confirm_tasks.json len(tasks)
+\newcommand{\fsLabelsAll}{47} % source: data/local/diagnostic_osw_diag.json + data/local/diagnostic_osw_diag2.json fs+ step labels, both passes
+\newcommand{\fsLabelsInfeasible}{11} % source: data/local/diagnostic_osw_diag.json + data/local/diagnostic_osw_diag2.json fs+ step labels on infeasible tasks
 \newcommand{\rtmBoth}{80} % source: data/local/diagnostic_osw_diag.json + data/local/diagnostic_osw_diag2.json tasks scored in both passes
 \newcommand{\rtmFsN}{18} % source: data/local/diagnostic_osw_diag.json + data/local/diagnostic_osw_diag2.json pass-1 false_success tasks scored in pass 2
 \newcommand{\rtmFsAgain}{9} % source: data/local/diagnostic_osw_diag.json + data/local/diagnostic_osw_diag2.json ... still false_success in pass 2

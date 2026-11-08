@@ -1,4 +1,5 @@
-"""fs+ answer counts with and without the one infeasible fs+ context (chrome/480bcfea...@4).
+"""fs+ answer counts with and without the infeasible fs+ contexts (chrome/480bcfea...@4 and any other context of a task
+flagged infeasible in either diagnostic pass, e.g. Writer bb8ccc78 in the perceive screens).
 
 On an infeasible task the correct action is `answer` with a refusal, so an `answer` there is not a false success.
 For every arm whose fs+ `answer` count the paper reports, this script gives the count over all fs+ contexts and the
@@ -34,8 +35,12 @@ m = Macros("infeasible")
 rows = []  # (group, arm label, macro key, (k, n), (k_ex, n_ex), mode, source)
 
 
+INFEASIBLE = {x["task"].split("/")[-1] for f in ("local/diagnostic_osw_diag.json", "local/diagnostic_osw_diag2.json")
+              for x in load(f)["tasks"] if x["infeasible"]}
+
+
 def is_ctx(task_id, t):
-    return str(task_id).endswith(UUID) and int(t) == STEP
+    return str(task_id).split("/")[-1] in INFEASIBLE
 
 
 def jsonl(rel):
@@ -69,7 +74,7 @@ def add(group, label, key, counts, mode, src):
     (k, n), (kx, nx) = counts
     rows.append((group, label, key, (k, n), (kx, nx), mode, src))
     m.add(f"inf{key}All", f"{k}/{n}", src + f" fs+ answer, all contexts ({mode})")
-    m.add(f"inf{key}Excl", f"{kx}/{nx}", src + f" fs+ answer, without {SHORT}@{STEP} ({mode})")
+    m.add(f"inf{key}Excl", f"{kx}/{nx}", src + f" fs+ answer, without infeasible-task contexts ({mode})")
 
 
 # ---------------------------------------------------------------- the task is infeasible in both diagnostic passes
@@ -156,12 +161,12 @@ for tag, a_, key in [("a0p5", "0.5", "Half"), ("a1", "1", "One"), ("a2", "2", "T
     s_ = d["stats"]["fs+"]
     assert c[0] == (round(s_["candidate"] * s_["n"]), s_["n"])
     rnd = tag.startswith("random")
-    add(G, f"perceive{', random control' if rnd else ''}, $\\alpha={a_}$", "CausalPerceive" + key, c, "per-context",
+    add(G, f"perceived completion{', random control' if rnd else ''}, $\\alpha={a_}$", "CausalPerceive" + key, c, "per-context",
         PA + f"perceive/{f}.metrics.json per_instance")
     if rnd:
         cb = split([(p["task_id"], p["t"], p["baseline_answer"], len(p["baseline_tools"])) for p in pi])
         assert cb[0] == (round(s_["baseline"] * s_["n"]), s_["n"])
-        add(G, "perceive reference contexts (original)", "CausalPerceiveBase", cb, "per-context",
+        add(G, "perceived completion, reference (original)", "CausalPerceiveBase", cb, "per-context",
             PA + f"perceive/{f}.metrics.json per_instance baseline_answer")
 
 vm = load("pod_astra/verify/metrics.json")["metrics"]
@@ -259,7 +264,7 @@ for d_ in ("ratio", "mit2", "short", "tact"):
 m.add("infAbsent", ", ".join(absent), PA + "{" + ",".join(absent) + "}/* contain no occurrence of " + SHORT)
 
 body = ["\\begin{tabular}{llcc}", "\\toprule",
-        "Source & Arm & fs+ \\texttt{answer} (all) & fs+ \\texttt{answer} (excl.\\ infeasible) \\\\", "\\midrule"]
+        "Source & Arm & fs+ \\texttt{answer} (all) & fs+ \\texttt{answer} (feasible contexts only) \\\\", "\\midrule"]
 prev = None
 for group, lab, key, (k, n), (kx, nx), mode, src in rows:
     if prev is not None and group != prev:

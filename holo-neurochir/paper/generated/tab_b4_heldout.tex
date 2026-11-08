@@ -4,22 +4,22 @@
 Comparison & tasks & first \% & second \% & $\Delta$ points [95\% CI] & better/worse \\
 \midrule
 \multicolumn{6}{l}{\emph{Reserve, noise reference: the original against itself}} \\
-Original, three runs, harness/server (local/pod; GitHub/pod; GitHub/Modal) & 44--45 & \multicolumn{2}{c}{43.2 / 46.7 / 42.2} & spread 4.4 points & -- \\ % source: data/local/online/results_val_orig_eager_m40, data/local/online/results_confirm_gh_orig_confirm, data/local/online/results_confirm_gh_orig_modal_confirm
-Original, local vs.\ GitHub harness (both served by the pod) & 44 & 43.2 & 45.5 & $-$2.3 [$-$13.6, +9.1] & 3/4 \\ % source: data/local/online/results_val_orig_eager_m40
-Original, pod vs.\ Modal (both on the GitHub harness) & 45 & 46.7 & 42.2 & +4.4 [$-$6.7, +17.8] & 5/3 \\ % source: data/local/online/results_confirm_gh_orig_confirm
-\midrule\multicolumn{6}{l}{\emph{Reserve, arms served by the pod, vs.\ the pod original on the local harness}} \\
+Original, three runs, harness/server (local/H200; GitHub/H200; GitHub/Modal) & 44--45 & \multicolumn{2}{c}{43.2 / 46.7 / 42.2} & spread 4.4 points & -- \\ % source: data/local/online/results_val_orig_eager_m40, data/local/online/results_confirm_gh_orig_confirm, data/local/online/results_confirm_gh_orig_modal_confirm
+Original, local vs.\ GitHub harness (both served by our H200) & 44 & 43.2 & 45.5 & $-$2.3 [$-$13.6, +9.1] & 3/4 \\ % source: data/local/online/results_val_orig_eager_m40
+Original, H200 vs.\ Modal (both on the GitHub harness) & 45 & 46.7 & 42.2 & +4.4 [$-$6.7, +17.8] & 5/3 \\ % source: data/local/online/results_confirm_gh_orig_confirm
+\midrule\multicolumn{6}{l}{\emph{Reserve, arms served by our H200, vs.\ the H200 original on the local harness}} \\
 ExPO $\lambda=1.25$ & 44 & 40.9 & 43.2 & $-$2.3 [$-$13.6, +9.1] & 3/4 \\ % source: data/local/online/results_val_patched_eager_m40
 \texttt{answer} output-row edit (stopped early) & 14 & 21.4 & 35.7 & $-$14.3 [$-$50.0, +21.4] & 2/4 \\ % source: data/local/online/results_val_lm40_eager_m40
 Corrective prompt (stopped early) & 20 & 25.0 & 30.0 & $-$5.0 [$-$20.0, +10.0] & 1/2 \\ % source: data/local/online/results_val_prompt_eager_m40
 \midrule\multicolumn{6}{l}{\emph{Reserve, arms served by Modal, vs.\ the Modal original on the GitHub harness}} \\
 CUA-Lite merge $\beta=0.5$ & 45 & 48.9 & 42.2 & +6.6 [$-$6.7, +22.1] & 7/4 \\ % source: data/local/online/results_confirm_gh_merge_cua_b050
 Closed-form edit of 24 writers (100\%) & 45 & 44.4 & 42.2 & +2.2 [$-$13.3, +17.8] & 7/6 \\ % source: data/local/online/results_confirm_gh_broad_residual_p100
-\midrule\multicolumn{6}{l}{\emph{\textsc{test} split (GitHub harness), vs.\ the pod original}} \\
+\midrule\multicolumn{6}{l}{\emph{\textsc{test} split (GitHub harness), vs.\ the H200 original}} \\
 ExPO $\lambda=1.25$ (had not passed the gate) & 120 & 58.6 & 60.1 & $-$1.5 [$-$8.9, +5.7] & 11/12 \\ % source: data/local/online/results_test_gh_expo125
 Corrective prompt (partial run) & 38 & 65.8 & 60.4 & +5.3 [$-$5.1, +15.9] & 4/1 \\ % source: data/local/online/results_test_gh_prompt_PARTIAL
-Original, pod vs.\ Modal (noise reference) & 120 & 60.1 & 58.6 & +1.5 [$-$4.5, +7.6] & 9/8 \\ % source: data/local/online/results_test_gh_orig
+Original, H200 vs.\ Modal (noise reference) & 120 & 60.1 & 58.6 & +1.5 [$-$4.5, +7.6] & 9/8 \\ % source: data/local/online/results_test_gh_orig
 CUA-Lite merge $\beta=0.5$, vs.\ the Modal original & 120 & 58.8 & 58.6 & +0.2 [$-$6.5, +7.5] & 11/10 \\ % source: data/local/online/results_test_gh_merge_cua_b050
-\midrule\multicolumn{6}{l}{\emph{Primary verdict, rule fixed in advance: reserve and \textsc{test}, Modal against Modal}} \\
+\midrule\multicolumn{6}{l}{\emph{Primary verdict, rule fixed after the merge's reserve scores were seen: reserve and \textsc{test}, Modal against Modal}} \\
 CUA-Lite merge $\beta=0.5$ & 165 & 56.1 & 54.1 & +1.9 [$-$4.3, +8.0] & 18/14 \\ % source: data/local/online/results_confirm_gh_merge_cua_b050 + results_test_gh_merge_cua_b050
 \bottomrule
 \end{tabular}

@@ -19,17 +19,17 @@ stages = [
     ("1  Rollouts", f"vLLM serves Holo-3.1-4B\n{n_tasks} frozen diag tasks, T=0.8", "done"),
     ("2  Real desktops", "OSWorld VMs (Docker+KVM)\nexecution-based checker", "done"),
     ("3  Taxonomy", "hashed rules: false success,\nstep limit, loop; step labels", "done"),
-    ("4  Exact replay", "rebuild every input, prefill\nin transformers, hook layers", "done"),
+    ("4  Replay", "rebuild each step's input, prefill\nin transformers, hook layers", "done"),
     ("5  Direction", f"diff-of-means, {adm['fs+']} fs+ vs {adm['fs-']} fs−\nno gain over position", "negative"),
     ("6  Steering", "free generation, k=4,\npre-registered gate", "negative"),
     ("7  Weight edit", "compile into writers\nW ← (I − αuuᵀ)W", "blocked"),
     ("8  Paired validation", f"{conf['n']} reserve + test tasks, run on\nnon-admitted arms: no gain", "negative"),
-    ("9  External verifier", f"false done {og['false_done_diff'] * 100:+.1f} pts online\n({og['n_tasks']} TEST tasks);".replace("-", "\u2212") + f"\nwith Holo4: {rb["mean"] * 100:+.0f} pts repaired (replay)", "positive"),
+    ("9  External verifier", f"false done {og['false_done_diff'] * 100:+.1f} pts online, not attributed\n({og['n_tasks']} TEST tasks);".replace("-", "\u2212") + f"\nwith Holo4: {rb["mean"] * 100:+.0f} pts repaired (replay)", "partial"),
 ]
 style = {"done": ("#E6F2EC", C["green"], "-"), "partial": ("#FFF4DC", C["orange"], "-"), "positive": ("#E3EEF8", C["blue"], "-"),
          "negative": ("#FBE5DC", C["red"], "-"), "blocked": ("#F4F4F4", "#9A9A9A", "--")}
 legend = {"done": "done", "negative": "run: negative, or no selective effect",
-          "blocked": "ready, not reached", "positive": "run: positive, false done lowered"}
+          "blocked": "ready, not reached", "partial": "run: offline positive, online not attributed"}
 
 plt = setup_mpl()
 from matplotlib.patches import FancyBboxPatch

@@ -1,5 +1,5 @@
 \section{Value-axis construction}
 \label{app:value}
-The value direction of \texttt{astra-value} contrasts success with failure steps of the same relative stage, averaged within task, on 68 construction tasks; the commitment direction contrasts \texttt{answer} with continuation steps. Neither uses the \fsp/\fsm{} labels. Evaluated on \fsp{} versus \fsm{} under task-grouped cross-validation, the value direction scores below 0.5 at layers 18, 24 and 28, so it is higher on true completions, while step index and trajectory length reach about 0.85. % source: data/pod_astra/value/REPORT.md "Lecture exploratoire en CV par tâche"
-Its separation is thus weaker than position, the same confound as Trap~1.
+The value direction contrasts success with failure steps of the same relative stage, averaged within task, on 68 construction tasks; the commitment direction contrasts \texttt{answer} with continuation steps. Neither uses the \fsp/\fsm{} labels. Evaluated on \fsp{} versus \fsm{} under task-grouped cross-validation, the value direction scores 0.15 to 0.20 at layers 18, 24 and 28: it is higher on true completions, and read with the opposite sign it separates the two classes at 0.80 to 0.85, on par with step index and trajectory length (about 0.85), not beyond them. % source: data/pod_astra/value/REPORT.md "Lecture exploratoire en CV par tâche" (value 0.1756, 0.2000, 0.1512; baselines t 0.851, n_steps 0.851, n_in 0.844)
+The separation it has is the one position already gives, the same confound as Trap~1.
 \FloatBarrier

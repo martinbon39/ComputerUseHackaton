@@ -105,9 +105,14 @@ for r in rk:
 xs = [r["deltas"]["healthy"] for r in rk]
 lim = max(abs(min(xs)), abs(max(xs)), max(abs(r["deltas"]["loop+"]) for r in rk)) * 1.05
 import numpy as np
-g = np.linspace(-lim, lim, 10)
+# symlog draws straight segments in display space: sample densely on both sides of 0 so the curves are exact
+g = np.concatenate([-np.geomspace(lim, 1e-7, 1000), [0.0], np.geomspace(1e-7, lim, 1000)])
 ax.plot(g, g, color=C["grey"], lw=0.7, ls="--", label="equal decrease")
-ax.plot(g, 3 * np.clip(g, 0, None), color=C["red"], lw=0.8, label="3x selectivity bound")
+ax.plot(g, 3 * np.clip(g, 0, None), color=C["red"], lw=0.8, label="3x bound vs healthy steps")
+_above = [r for r in rk if r["deltas"]["loop+"] > 0 and r["deltas"]["loop+"] >= 3 * max(0, r["deltas"]["healthy"])]
+assert all(r in _above for r in rk if r["qualifies"])
+m.add("mwOffGreyAbove", sum(not r["qualifies"] for r in _above), S3 + " failing candidates above the healthy-only 3x line")
+m.add("mwOffQualMaxLoop", f"{max(r['deltas']['loop+'] for r in rk if r['qualifies']):.3f}", S3 + " max loop+ decrease among qualifying (nat/token)")
 ax.axhline(0, color="black", lw=0.4)
 ax.axvline(0, color="black", lw=0.4)
 ax.set_xscale("symlog", linthresh=0.003)
