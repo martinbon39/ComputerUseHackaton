@@ -23,7 +23,7 @@ Page du duel `http://127.0.0.1:8765/` (via le tunnel), preset **« Feci Guard, M
 - **Tâche n°2 : `libreoffice_impress/550ce7e7`** (barré, split diagnostic) : l'original y a dit « fini » à tort 4 fois sur 4, et le Guard
   refuse avec une preuve visible (« le barré s'arrête à “Requ” »). En revanche, la réparation n'y réussit pas (l'écart est dans le fichier) :
   on montre le refus, puis **STOP**.
-- **Fiabilité mesurée : 2 arcs complets sur 4 duels** (R1, R3 ; R2 et R4 : la gauche réussit vraiment), avec un calendrier régulier quand ça marche : refus à droite
+- **Fiabilité mesurée : 2 arcs complets sur 3 duels valides** (R1, R3 ; en R2, la gauche réussit vraiment ; R4 est exclu pour panne d'infra), avec un calendrier régulier quand ça marche : refus à droite
   entre +144 et +172 s, FAUX SUCCÈS à gauche entre +165 et +206 s, Guard qui accepte à ~+216 s, **score 1 à ~+243 s**. En R2, la gauche
   a vraiment réussi et la droite a erré 50 pas sans répondre.
 - **Stratégie retenue (hybride)** : le duel est lancé à 0:00 et montré à 2:15. Le jury voit deux vrais bureaux en action, ce qui
@@ -84,7 +84,7 @@ permet. Résultats ci-dessous, à remplir **uniquement** avec les verdicts enreg
 | R1 **calc/1de60575** (tâche choisie par online-eval) | `20261108-110023_libreoffice_calc_1de60575-bb6e-4c3d-9e6a` | faux « fini » à +139 s, verdict officiel **0** (FAUX SUCCÈS) à +165 s, 12 pas | **REFUS à +144 s** : ✗ « Pivot table is on a sheet named Sheet2 », ✗ « Promotion names are the column headers » ; réparation, puis **accepté à +215 s**, **score officiel 1** à +242 s | **Arc complet en live en 4:02 → devient la tâche live n°1** |
 | R2 **calc/1de60575** | `20261108-110716_libreoffice_calc_1de60575-bb6e-4c3d-9e6a` | « fini » à +145 s, mais **vraie réussite** : score **1** à +171 s, 14 pas | **jamais de réponse** : 50 pas, score 0 à +329 s ; le Guard n'a rien eu à vérifier | **Image inversée** : le live est un pari (1 bonne issue sur 2) → règles de bascule ci-dessous |
 | R3 **calc/1de60575** | `20261108-111313_libreoffice_calc_1de60575-bb6e-4c3d-9e6a` | « fini » à +180 s, verdict **0** (FAUX SUCCÈS) à +206 s, 21 pas | **REFUS à +172 s** (✗ « Promotion names appear as column headers ») ; accepté à +217 s ; **score 1** à +243 s | **Arc complet en 4:03** |
-| R4 **calc/1de60575** (bench-wall, 11:59) | `20261108-115902_libreoffice_calc_1de60575-bb6e-4c3d-9e6a` | **vraie réussite** à gauche | 1 refus du Guard, puis pas de nouveau « fini », score 0 | Sans l'arc → **bilan : 2 arcs sur 4** ; la bascule à 3:30 sur le replay R1 est essentielle |
+| R4 **calc/1de60575** (bench-wall, 11:59) | `20261108-115902_libreoffice_calc_1de60575-bb6e-4c3d-9e6a` | vraie réussite à gauche | 1 refus du Guard, puis **panne d'infra** : le serveur de captures de la VM tombe (`side.log` : « screenshot failed… too many consecutive errors; ending episode early »), score 0 | **Exclu (infra failure)**, à cause de la cadence de capture à 1 s, revenue depuis à 2 s. Bilan : **2 arcs sur 3 duels valides** |
 
 Le **meilleur** duel répété devient le replay du plan B (son id va dans le cockpit).
 

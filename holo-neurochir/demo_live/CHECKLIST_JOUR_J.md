@@ -61,6 +61,9 @@ Un crochet sur l'appel terminal `answer` : `feci_guard.check(task, screenshot)`.
 **« Comment je vérifie tout ça moi-même ? »**
 Kit jury (`jury_kit/`). Niveau 1 : `python verify_results.py`, quelques secondes, bibliothèque standard seule ; il doit afficher +1,94 (165), +0,18 (test), +6,64 (réserve). Niveau 2 : `python rebuild_merge.py --build OUT` (CPU, ~40 Go de disque), comparé au sha256 attendu. Niveau 3 : `probe_decision.py`, ou le notebook sur une T4 Colab. Pendant la fenêtre : la sonde en ligne. **Honnêteté** : la fusion a été reproduite au bit près sur une autre machine, mais avec notre script `merge_v2.py`. Le script du kit, `rebuild_merge.py`, n'a été vérifié que sur 2 tenseurs : son `--build` complet et le niveau 3 GPU n'ont pas été rejoués.
 
+**« Et ce duel de 11:59 dans la liste, à score 0 ? »**
+Panne d'infrastructure, exclue : le serveur de captures de la VM de droite est tombé (« too many consecutive errors; ending episode early » dans `side.log`), à cause d'une cadence de capture à 1 s, revenue depuis à 2 s. Juste avant, le Guard avait refusé normalement. Sur les duels valides de cette tâche, l'arc complet s'est produit 2 fois sur 3.
+
 **« Le live est-il truqué ou choisi ? »**
 La tâche est choisie : sur 550ce7e7 (split diagnostic), l'original a dit « fini » à tort dans 4 runs sur 4 ; sur b8adbc24 (split de test), dans 5 duels sur 5. L'exécution, elle, est réelle et aléatoire (T=0,8). Chaque duel est enregistré (`~/osw/duels/`) et se rejoue sur la même page.
 
