@@ -15,5 +15,8 @@ Prix H100 Modal : ~3,95 $/h (0,001097 $/s), plus le CPU et la mémoire du conten
 | 00:55 | 1 et 2 | mesures en pause (ares) : zéro conteneur sur les deux comptes | 0 | 2,12 $ et 0,83 $ (à 00:50) |
 | 01:05-03:14 | 1 et 2 | file de déploiements (`modal_serve_when_ready.sh`) : modal-orig ×2, free_h3_l1, free_h5_l05, free_h6_s05, free_h6_s025, free_h8_flat, free_h9_a020, free_h2_l2, merge_cua_b050 (test GitHub ~1 h 30), merge_cua_b025, merge_fara_b050, merge_cua_b100, broad_residual_p100 (test GitHub), merge_cua_mid_b050, merge_cua_top_b050, merge_cua_low_b050 | à la demande | |
 | 03:14 | 1 et 2 | les deux comptes en ATTENTE sur ordre d'ares (verrous `~/modal_queue/busy_acct*` maintenus), redescente à zéro | 0 | 9,52 $ et 8,05 $ (à 03:10) |
+| 03:15-05:00 | 2 | merge_cua_b050 redéployé (test GitHub 120 tâches), free_h10_half (lot 21), free_h10_zero (lot 22) ; app arrêtée à 05:00 | à la demande | |
+| 03:21-05:11 | 1 | modal-orig redéployé (tests GitHub orig_modal_test et orig_modal_confirm) ; app arrêtée à 05:11 | ~1 h 50 | |
+| **05:11** | **1 et 2** | **les deux comptes ARRÊTÉS pour la nuit** (`modal app stop` holo-vllm et holo-slot, zéro conteneur, verrous CLOSED) | 0 | **16,65 $ et 15,26 $** |
 
 Rythme : une H100 allumée en continu coûte ~4 $/h, soit une alerte à ~20 $ par compte environ 4 h 30 après le point de 00:49.
