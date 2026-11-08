@@ -219,7 +219,7 @@ lbl('ans','answer <span class="s">· token 8944</span>',ANS,'p big',14,-8);
 lbl('clk','click <span class="s">· autre outil</span>',CLK,'l',14,-8);
 for(const u of units){if(u.kind==='head')lbl('h'+u.h.L,'L'+u.h.L+' H'+u.h.h+' <span class="s">· Δmarge '+u.h.d+'</span>',u.p,'big',12,-10)}
 lbl('n30','L30 N8 · N216 · N345 · N1012 · N1418',V(LX(30),-PH/2-.2,PW/2),'p',-80,10);
-lbl('n31','L31 N302 · N315 · N1591 · N1855 · N3099',V(LX(31),-PH/2-.9,PW/2),'p',-60,14);
+lbl('n31','L31 N302 · N315 · N1591 · N1855 · N3099',V(LX(31),-PH/2-.9,PW/2),'p',-60,40);
 lbl('arc','embed_tokens = lm_head <span class="s">· embeddings liés</span>',V(0,6.6,-1),'',-120,0);
 lbl('stream','flux résiduel <span class="s">· d = 2560</span>',V(X0-3.5,.2,0),'',-40,-26);
 lbl('brE','L0–11 · <span class="s">marge</span> +16,1 <span class="s">· garde « answer »</span>',BR.early.c,'',-120,8);
@@ -230,7 +230,7 @@ lbl('aeM','AlphaEdit · 24 écrivains L12–23 <span class="s">· 12 down_proj �
 lbl('j16','steer L16 · α −1,20',INJ[16].top,'m',10,-10);
 lbl('j24','steer L24 · α −5,54',INJ[24].top,'m',10,-10);
 lbl('j31','direction « conclusion » L31 · α −0,5',INJ[31].top,'m',10,-10);
-lbl('j18','valeur / engagement L18 · L24',INJ[18].top,'m',-210,-10);
+lbl('j18','valeur / engagement L18 · L24',INJ[18].top,'m',-250,-34);
 lbl('cl','espace des activations <span class="s">· L14 · positions illustratives</span>',V(LX(14),3.6,0),'big',-60,0);
 lbl('clF','faux fini',V(LX(14),-.6,2.8),'m big',10,0);
 lbl('clT','vrai fini',V(LX(14),.8,-3.4),'p big',-140,0);
@@ -269,7 +269,7 @@ const VMc=V(VM_X,0,0);
 const CH=[
 {num:'00 · OSWorld',title:'Un faux « fini »',dur:24,
  src:'~/osw/results_test_gh_orig · gimp/77b8ab4d-994f-43ac-8930-8ca087d7c4b4 · bras orig_pod · jury_kit/results/online_guard_tasks.csv',
- cam:[[0,V(VM_X-23,0,0),VMc],[13,V(VM_X-21,0,0),VMc],[16.5,V(VM_X-7.5,-3.9,-1.2),V(VM_X,-4.1,-1.2)],[20.5,V(VM_X-7,-3.95,-1.0),V(VM_X,-4.15,-1.3)],[24,V(VM_X-9,-.5,0),VMc]],
+ cam:[[0,V(VM_X-23,0,0),VMc],[13,V(VM_X-21,0,0),VMc],[16.5,V(VM_X-7.5,-4.6,-1.9),V(VM_X,-4.95,-1.9)],[20.5,V(VM_X-6.8,-4.6,-1.7),V(VM_X,-4.95,-2.0)],[24,V(VM_X-9,-.5,0),VMc]],
  lines:[[1,'<span class="k">tâche</span> « Could you assist me in placing my photo on the desktop and renaming it to export.jpg? »'],[4,'<span class="k">agent</span> Holo-3.1-4B · VM Ubuntu'],[12,'<span class="k">pas 6 · answer</span> « …exported to the desktop with the filename \'export.jpg\'… The task is now complete. »'],[17,'<span class="k">score OSWorld</span> <span class="r">0.0</span> · <span class="m">faux « fini »</span>']],
  caps:[[1,4.5,'<span class="k">pas 1 ·</span> click « File menu »'],[4.5,8,'<span class="k">pas 3 ·</span> write « export.jpg »'],[8,11.5,'<span class="k">pas 5 ·</span> click « Export »'],[11.5,24,'<span class="k">pas 6 ·</span> answer <span class="y">« done »</span>']],
  enter(){setLayerVis(0);streamOp=0;vm.op=1;gs.op=0},
@@ -281,18 +281,18 @@ const CH=[
  enter(){vm.op=0;streamOp=1;streamSpeed=4;setLayerVis(1)},
  update(t,T){vm.op=t<2.5?1-sm(t/2.5):0;setLayerVis(sm(t/2));for(let i=0;i<NL;i++)layers[i].hl=(t>7&&t<13&&isAttn(i))?.6+.4*Math.sin(T*4+i):0;arcM.opacity=.45*win(t,11,21);ansN.op=t>14?1:0;clkN.op=t>14?.6:0;
   const L=[];if(t>3)for(let i=0;i<NL;i++)L.push('L'+i);if(t>4&&t<12)L.push('stream');if(t>11)L.push('arc');if(t>14)L.push('ans','clk');show(L)}},
-{num:'02 · Localiser',title:'Où se décide « answer »',dur:28,
+{num:'02 · Localiser',title:'Où se joue le choix de l’outil',dur:28,
  src:'paper/sec/interventions.tex §patching · paper/data/pod_astra/circuit/REPORT.md · paper/generated/num_causal.tex',
- cam:[[0,V(X1-16,7,16),V(X1-3,0,0)],[5,V(-30,10,24),V(6,0,0)],[11,V(X1-15,6,12),V(X1-2,0,0)],[19,V(X1-21,6,15),V(X1-4,.2,0)],[28,V(X1-23,7,16),V(X1-4,0,0)]],
- lines:[[1,'<span class="k">patching du flux résiduel</span> · 512 patches · 4 contextes × 32 couches × 4 positions'],[5,'<span class="k">fin du prefill</span> Δmarge −0,19'],[6.5,'<span class="k">mi-réflexion</span> Δmarge −2,28'],[8,'<span class="k">nom de l’outil</span> <span class="y">Δmarge −34,8</span> · dès ~L16'],[12,'<span class="k">scans de composants</span> · 992 patches · L19 L23 L30 L31'],[15,'<span class="k">circuit C1</span> · 3 têtes + 10 neurones MLP'],[21,'<span class="k">les têtes lisent</span> la définition de <span class="y">answer</span> (L19 H15, L23 H1) · le JSON en cours (L31 H14)']],
+ cam:[[0,V(X1-16,7,16),V(X1-3,0,0)],[5,V(-30,10,24),V(6,0,0)],[11,V(X1-15,6,12),V(X1-2,0,0)],[19,V(X1+12,7,21),V(X1-7,.2,0)],[28,V(X1+10,8,23),V(X1-8,0,0)]],
+ lines:[[1,'<span class="k">patching du flux résiduel</span> · 512 patches · 4 contextes × 32 couches × 4 positions'],[5,'<span class="k">fin du prefill</span> Δmarge −0,19'],[6.5,'<span class="k">mi-réflexion</span> Δmarge −2,28'],[8,'<span class="k">nom de l’outil</span> <span class="y">Δmarge −34,8</span> · dès ~L16'],[12,'<span class="k">scans de composants</span> · 992 patches · L19 L23 L30 L31'],[15,'<span class="k">circuit C1</span> · 3 têtes + 10 neurones MLP'],[21,'<span class="k">les têtes lisent</span> la définition de <span class="y">answer</span> (L19 H15, L23 H1) · le JSON en cours (L31 H14) <span class="k">· poids d’attention, pas une preuve causale</span>']],
  enter(){setLayerVis(1);streamOp=1},
  update(t,T){for(let i=0;i<NL;i++){layers[i].hl=t>7.5&&t<13?(i>=16?sm((t-7.5-(i-16)*.12)/.8)*(.4+.6*(i-16)/15):0):0;layers[i].dim=t>12?(([19,23,30,31].includes(i))?0:.7):0}
   for(const u of units)u.n.op=t>12.5?1:0;unitLinks.forEach((k,j)=>{k.op=t>15?.75:0;k.draw=t>15+j*.12?1:0});ansN.op=1;clkN.op=.6;
   const L=['ans','clk'];if(t<12)for(let i=0;i<NL;i++)L.push('L'+i);else for(const i of [19,23,30,31])L.push('L'+i);if(t>13)L.push('h19','h23','h31');if(t>16)L.push('n30','n31');show(L)}},
 {num:'03 · Supprimer',title:'Retirer le circuit',dur:24,
  src:'paper/generated/tab_causal_all.tex · num_causal.tex · num_broad.tex (test plafond, projection rang 1)',
- cam:[[0,V(X1-23,7,16),V(X1-4,0,0)],[7,V(X1-20,5,14),V(X1-3,0,0)],[10,V(-14,12,38),V(6,-1.5,0)],[24,V(-10,11,39),V(8,-1.5,0)]],
- lines:[[1,'<span class="k">C1 retiré (α = 1)</span> · Δmarge −11,2 à −12,2 · <span class="y">0/4 décisions basculent</span>'],[4,'<span class="k">faux fini</span> répond 8/8 · <span class="k">vrai fini</span> 8/8 · <span class="k">contrôle aléatoire</span> 8/8'],[9,'<span class="k">test plafond</span> · échanger des blocs d’écrivains · contexte faux fini, marge +16,9'],[17,'<span class="k">un vrai fini bascule aussi</span> · +16,4 → −2,2'],[19.5,'<span class="k">projection rang 1, écrivains L12–23</span> · faux +1,4 / +1,6 · vrais +4,8 / +2,8'],[21.5,'<span class="y">levier causal : oui</span> · <span class="m">sélectif : non</span>']],
+ cam:[[0,V(X1+10,8,23),V(X1-8,0,0)],[7,V(X1+9,6,20),V(X1-6,0,0)],[10,V(-14,12,38),V(6,-1.5,0)],[24,V(-10,11,39),V(8,-1.5,0)]],
+ lines:[[1,'<span class="k">C1 retiré (α = 1)</span> · Δmarge −11,2 à −12,2 · <span class="y">0/4 décisions basculent</span>'],[4,'<span class="k">faux fini</span> répond encore 8/8 <span class="k">· contrôle aléatoire (α = 0,5)</span> 8/8 <span class="k">· données de construction</span>'],[9,'<span class="k">test plafond</span> · échanger des blocs d’écrivains · contexte faux fini, marge +16,9'],[17,'<span class="k">un vrai fini bascule aussi</span> · +16,4 → −2,2'],[19.5,'<span class="k">projection rang 1, écrivains L12–23</span> · faux +1,4 / +1,6 · vrais +4,8 / +2,8'],[21.5,'<span class="y">levier causal : oui</span> · <span class="m">sélectif : non</span>']],
  enter(){setLayerVis(1);streamOp=1},
  update(t,T){for(let i=0;i<NL;i++){layers[i].dim=t<8?(([19,23,30,31].includes(i))?0:.7):0;layers[i].hl=0;layers[i].tintAmt=0}
   const rm=sm((t-1)/2.5);for(const u of units){u.n.op=t<9?1-rm*.85:0;u.n.m.color.set(rm>.5?C.hold:(u.kind==='head'?C.white:C.push))}unitLinks.forEach(k=>{k.op=t<9?.75*(1-rm)+.08:0;k.draw=1});
@@ -301,24 +301,24 @@ const CH=[
   ansN.op=1;clkN.op=.6;const L=['ans','clk'];if(t<9)L.push('h19','h23','h31','L19','L23','L30','L31');if(t>10)L.push('brE');if(t>11.5)L.push('brM');if(t>13)L.push('brL');if(t>14.5)L.push('brA');show(L)}},
 {num:'04 · Ajouter',title:'Pousser contre l’arrêt',dur:26,
  src:'paper/generated/tab_causal_all.tex · num_*.tex (mergeCua, alpha) · tab_b4_heldout.tex · jury_kit/results/scores.csv',ci:[16,26],
- cam:[[0,V(-10,11,39),V(8,-1.5,0)],[6,V(-12,12,24),V(8,1,0)],[10,V(-28,10,26),V(-1,-1,0)],[16,V(-14,14,40),V(8,-5,0)],[26,V(-10,13,41),V(10,-5,0)]],
+ cam:[[0,V(-10,11,39),V(8,-1.5,0)],[6,V(-6,13,40),V(9,1,0)],[10,V(-8,11,38),V(8,-1,0)],[16,V(-14,14,40),V(8,-5,0)],[26,V(-10,13,41),V(10,-5,0)]],
  lines:[[1,'<span class="m">steering</span> · L16 · L24 · L31 · L18'],[4,'<span class="k">faux fini</span> répond toujours <span class="y">8/8</span> <span class="k">à chaque dose</span>'],[8,'<span class="m">AlphaEdit</span> · faux fini 15→8/16 · <span class="r">vrai fini 15→3/16</span>'],[11,'<span class="m">fusion β 0,5</span> · faux fini 16→11/16 · <span class="r">vrai fini 16→2/16</span>'],[13,'<span class="k">bouge l’arrêt</span> · <span class="m">ne cible pas le faux fini</span>'],[16,'<span class="k">en ligne, OSWorld, apparié</span> · aucun gain détectable']],
  enter(){setLayerVis(1);streamOp=1;for(const u of units){u.n.op=0;u.n.m.color.set(u.kind==='head'?C.white:C.push)}unitLinks.forEach(k=>{k.op=0;k.draw=0})},
  update(t,T){for(const k of [16,24,31,18])INJ[k].op=win(t,{16:.8,24:1.6,31:2.4,18:3.2}[k],15.5);
   for(let i=0;i<NL;i++){layers[i].tint=new THREE.Color(C.hold);const ae=(i>=12&&i<=23)?win(t,7.5,10.8):0;const mg=win(t,10.8,15.5)*.55;layers[i].tintAmt=Math.max(ae,mg);layers[i].hl=[16,24,31,18].includes(i)?win(t,1,7.5)*.8:0;layers[i].dim=t>16?.75:0}
   BR.mid.op=win(t,7.5,10.8);ansN.op=1;clkN.op=.6;streamSpeed=4+2*win(t,1,15);
   const L=['ans','clk'];if(t<16)L.push('j16','j24','j31','j18');if(t>7.5&&t<10.8)L.push('aeM');show(L)}},
-{num:'05 · Diagnostic',title:'Faux fini, vrai fini : même nuage',dur:22,
- src:'paper/generated/tab_fs_auc.tex · judge_bench/REPORT.md · verif_study/ · paper/generated/num_*.tex (text_signal)',
+{num:'05 · Diagnostic',title:'Faux fini, vrai fini : rien de plus que le pas',dur:22,
+ src:'paper/generated/tab_fs_auc.tex · num_traps.tex · sec/traps.tex · judge_bench/REPORT.md · verif_study/ · paper/generated/num_*.tex (text_signal)',
  cam:[[0,V(-10,13,41),V(10,-5,0)],[5,V(LX(14)-10,3,10),CL_C],[14,V(LX(14)-8,5,-9),CL_C],[22,V(LX(14)-12,2,-4),CL_C]],
- lines:[[6,'<span class="k">sonde résiduelle</span> · L14 · AUROC <span class="m">0,760</span>'],[8,'<span class="k">numéro du pas seul</span> · AUROC 0,724'],[9.5,'<span class="k">longueur du contexte seule</span> · AUROC 0,735'],[12,'<span class="k">texte du raisonnement</span> · 0,66 <span class="k">vs pas</span> 0,72'],[15,'<span class="k">auto-jugement de Holo</span> · 35/66 détectés · 97/202 rejetés à tort'],[18,'<span class="m">l’information n’est pas dedans</span>']],
+ lines:[[6,'<span class="k">sonde résiduelle</span> · L14 · AUROC <span class="m">0,760</span>'],[8,'<span class="k">numéro du pas seul</span> · AUROC 0,724'],[9.5,'<span class="k">longueur du contexte seule</span> · AUROC 0,735'],[12,'<span class="k">texte du raisonnement</span> · 0,66 <span class="k">vs pas</span> 0,72'],[15,'<span class="k">auto-jugement de Holo</span> · 35/66 détectés · 97/202 rejetés à tort'],[18,'<span class="m">aucun signal au-delà de la longueur de l’épisode</span> <span class="k">· +0,04 AUROC au mieux</span>']],
  enter(){setLayerVis(.12);streamOp=.2},
  update(t,T){cTrue.op=t>2?1:0;cFalse.op=t>2?1:0;this._mix=sm((t-4.5)/2);for(let i=0;i<NL;i++){layers[i].hl=i===14?win(t,5,22)*.6:0;layers[i].tintAmt=0}
   setLayerVis(.12);layers[14].vis=.8;const L=['L14'];if(t>2)L.push('cl');if(t>5)L.push('clF','clT');show(L)}},
 {num:'06 · Vérifier',title:'Le vérificateur, hors du réseau',dur:28,
  src:'feci_guard/feci_guard.py · ~/osw/feci_demo/calc_1de60575/guard_branch_k0/guard.jsonl (demo_live/repair_calc.html) · rescue_bench/REPORT.md',
  cam:[[0,V(LX(14)-12,2,-4),CL_C],[4,V(X1-6,3,12),V(X1+4,.5,0)],[9,V(X1-9,5,19),V(X1+9,.5,-2)],[17,V(X1-8,4.5,18),V(X1+10,1,-3)],[22,V(X1-12,9,26),V(X1+4,2,0)],[28,V(X1-3,4,20),V(X1+10,-1,0)]],
- lines:[[3,'<span class="k">« done » sort du réseau</span> → <span class="y">answer</span>'],[6,'<span class="k">Feci Guard</span> lit l’écran final, exigence par exigence'],[10,'<span class="g">✓</span> tableau croisé créé, promotions en colonnes'],[11.5,'<span class="r">✗</span> dans une nouvelle feuille « Sheet2 » <span class="k">· l’onglet s’appelle « Pivot Table_Sheet1_1 »</span>'],[13,'<span class="r">REFUS · INCOMPLETE</span> <span class="k">· pas 12</span>'],[17,'<span class="k">réparation · pas 17</span> · <span class="g">✓ ✓ ✓ COMPLETE</span>'],[22,'<span class="k">sinon :</span> <span class="c">escalade vers Holo4-27B</span>']],
+ lines:[[3,'<span class="k">« done » sort du réseau</span> → <span class="y">answer</span>'],[6,'<span class="k">Feci Guard</span> lit l’écran final, exigence par exigence'],[10,'<span class="g">✓</span> tableau croisé créé, promotions en colonnes'],[11.5,'<span class="r">✗</span> dans une nouvelle feuille « Sheet2 » <span class="k">· l’onglet s’appelle « Pivot Table_Sheet1_1 »</span>'],[13,'<span class="r">REFUS · INCOMPLETE</span> <span class="k">· pas 12</span>'],[17,'<span class="k">réparation · pas 17</span> · <span class="g">✓ ✓ ✓ COMPLETE</span> <span class="k">· 1 indéterminé (fichier enregistré)</span>'],[22,'<span class="k">sinon :</span> <span class="c">escalade vers Holo4-27B</span>']],
  enter(){setLayerVis(1);streamOp=1;cTrue.op=0;cFalse.op=0;gs.key='c12'},
  update(t,T){setLayerVis(.75);gs.op=t>5?1:0;gs.key=t<17?'c12':'c17';gdBox.op=win(t,11.5,16.5);guardN.op=t>5?1:0;guardShape.material.opacity=t>5?.9:0;guardShape.rotation.y=T*.5;guardShape.rotation.x=T*.2;
   ansN.op=1;clkN.op=.5;lkAnsGuard.op=t>4?.8:0;lkAnsGuard.draw=t>4?1:0;lkScreenGuard.op=t>6?.5:0;lkScreenGuard.draw=t>6?1:0;lkRepair.op=win(t,13.5,21)*.9;lkRepair.draw=t>13.5?1:0;lkH4.op=t>22?.8:0;lkH4.draw=t>22?1:0;h4N.op=t>22?1:0;
@@ -327,7 +327,7 @@ const CH=[
  src:'report/ONLINE_GUARD_RESULT.md · jury_kit/results/online_guard_tasks.csv · rescue_bench/REPORT.md · judge_bench/REPORT.md',
  cam:[[0,V(X1-3,4,20),V(X1+10,-1,0)],[8,V(-12,16,50),V(4,1,0)],[24,V(-18,15,48),V(0,1,0)]],
  lines:[],
- big:[{t:1,v:'<span class="m">22,5 %</span> <span class="k">→</span> <span class="g">10,8 %</span>',d:'faux « done », en ligne, 120 tâches<br><span class="k">−11,7 pts [−19,2 ; −4,2] · score +1,6 [−4,4 ; +7,7], inchangé</span>'},
+ big:[{t:1,v:'<span class="m">22,5 %</span> <span class="k">→</span> <span class="g">10,8 %</span>',d:'faux « done », en ligne, 120 tâches<br><span class="k">−11,7 pts [−19,2 ; −4,2] · score +1,6 [−4,4 ; +7,7], aucun gain détecté</span>'},
       {t:8,v:'<span class="g">11/18</span> <span class="k">vs</span> 2/18',d:'Guard → Holo4-27B vs Holo4 seul<br><span class="k">rejeu de 9 faux succès × 2 · +50 pts [+22 ; +78]</span>'},
       {t:14,v:'<span class="g">45/66</span> <span class="k">vs</span> 35/66',d:'faux « done » détectés<br><span class="k">Feci Guard vs auto-jugement de Holo · 268 écrans</span>'}],
  enter(){gs.op=0;guardN.op=.6;setLayerVis(.5)},
