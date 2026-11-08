@@ -137,7 +137,7 @@ function apply(side, e, speed) {
   } else if (e.kind === 'verdict') {
     const ok = e.score >= 1;
     $('#' + side + ' .state').innerHTML = `<span class="badge ${ok ? 'ok' : 'bad'}">${ok ? '✓ SUCCESS' : '✗ FAILED'}</span>`
-      + `<span>${e.claimed_done ? 'agent said “done”' : e.declined ? 'agent said “infeasible”' : 'no answer'} · ${e.steps} steps</span>`;
+      + `<span>${e.claimed_done ? 'said “done”' : e.declined ? 'said “infeasible”' : 'no answer'}</span>`;
     s.end = true;
   }
 }
