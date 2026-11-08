@@ -25,3 +25,11 @@ Demande de Martin : on ne compte pas une baisse des faux fini sans la mettre en 
    - Le bruit attendu pour C est calculé à part : les basculements 1 → 0 de l'original contre lui-même, entre ses deux runs servis par le pod et par Modal sur les mêmes tâches. Il est rapporté à côté.
 
 Bootstrap apparié par tâche, 10 000 tirages, graine 0. Tâches invalides (job mort, 0 pas) exclues des deux bras, avec la liste publiée. Le bruit d'un run à l'autre de l'original (43,2 / 46,7 / 42,2 sur la réserve) est rappelé à côté de chaque écart.
+
+## Amendement 2 (09:40 UTC, AUCUN épisode des bras Guard n'a tourné)
+Le pod Runpod est tombé vers 09:30. Les 20 jobs ont échoué au contrôle des modèles, avec 0 tâche jouée.
+L'agent sera servi par Modal, avec le même déploiement que les bras `orig_modal`. Le **comparateur principal devient donc l'original servi par Modal** :
+- `results_test_gh_orig_modal_test` pour le test ;
+- `results_confirm_gh_orig_modal_confirm` pour la réserve.
+
+C'est le même serveur, ce qui évite le confondant pod/Modal. Les comparaisons à l'original servi par le pod restent rapportées en secondaire.
