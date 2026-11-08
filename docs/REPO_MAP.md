@@ -64,7 +64,6 @@ Start with the Guard (solution), then the diagnosis, then the weight-edit experi
 | `demo_faux_fini/` | yes | Self-contained replay page of a recorded false "done" (quickstart (c)) | DEMO |
 | `osworld/duel/` | yes | Live duel page, two VMs side by side, STOP buttons, replay; screenshots in `shots/` | DEMO |
 | `demo_live/` | .md + `repair_calc.html` | Guard repair replay page (quickstart (c)), run-of-show, day-of checklist | DEMO |
-| `pitch/` | .md only | Pitch text (hosted slides linked in the README) | DEMO |
 | `demo_banc/`, `demo_graphe/`, `video_*` | not committed | Demo pages and video build pipelines (video hosted, linked in the README) | DEMO |
 
 ## Top-level files
