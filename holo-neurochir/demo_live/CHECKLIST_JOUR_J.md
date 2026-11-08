@@ -18,7 +18,7 @@
 - [ ] **Tunnel** : `ssh -N -L 8765:127.0.0.1:8765 orbit` dans un terminal qui reste ouvert (ajouter `-o ServerAliveInterval=15`). Test : http://127.0.0.1:8765/ s'ouvre.
 - [ ] **Réseau de secours** : partage de connexion du téléphone prêt ; tester le tunnel dessus une fois.
 - [ ] **Copies locales (plan C)** : `holo-demo-video.mp4`, `holo-pitch-system.html`, `holo-demo-faux-fini.html`, `holo-paper.pdf` téléchargés dans un dossier du bureau. Ouvrir la vidéo une fois en local.
-- [ ] **Onglets, dans l'ordre** (ou tout depuis le cockpit) : 1. Cockpit (minuteur) · 2. **Duel live** · 3. Slides · 4. Replay du plan B (`?replay=<id>`) · 5. Vidéo · 6. Papier · 7. Tableau de bord d'équipe.
+- [ ] **Onglets, dans l'ordre** (ou tout depuis le cockpit) : 1. Cockpit (minuteur) · 2. **Duel live** · 3. **Replay R1, OUVERT dès le début, juste à côté du live** : `http://127.0.0.1:8765/?replay=20261108-110023_libreoffice_calc_1de60575-bb6e-4c3d-9e6a`, vitesse ×2, prêt à sauter à +130 s · 4. Slides · 4 bis. Replay R3 en réserve (`?replay=20261108-111313_libreoffice_calc_1de60575-bb6e-4c3d-9e6a`) · 5. Vidéo · 6. Papier · 7. Tableau de bord d'équipe.
 - [ ] **Page du duel préparée** : preset **« Feci Guard, Modal »** (`modal_guard`), tâche **`libreoffice_calc/1de60575…`** (n°1, en tête de liste ; n°2 : `libreoffice_impress/550ce7e7…`), case **Feci Guard à droite** cochée, pas max 50. **Ne pas lancer.**
 - [ ] Zoom du navigateur pour le projecteur (le texte du refus doit se lire du fond de la salle) ; mode « Ne pas déranger » ; batterie branchée.
 - [ ] **Minuteur** : cockpit, Espace pour démarrer à 0:00 en même temps que LANCER.
