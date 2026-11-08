@@ -70,8 +70,11 @@ class BranchAgent(HoloComputerAgent):
             step = parse_step(json.dumps({"note": r["note"], "thought": r["thought"], "tool_call": r["tool_call"]}),
                               self.step_model)
             messages.append({"role": "assistant", "content": step.model_dump_json()})
-            result = self.env.step(self._tool_call_to_event(step.tool_call))
-            out = result.info.get("tool_output", "") if isinstance(result.info, dict) else str(result.info)
+            if (r.get("info") or {}).get("guard") == "refused":  # Feci Guard refused this answer: nothing ran in the VM
+                out = r["info"].get("tool_output", "")
+            else:
+                result = self.env.step(self._tool_call_to_event(step.tool_call))
+                out = result.info.get("tool_output", "") if isinstance(result.info, dict) else str(result.info)
             messages.append({"role": "user", "content": f'<tool_output tool="{step.tool_call.tool_name}">\n{out}\n</tool_output>'})
             if self.pace and i < len(gaps) and gaps[i] is not None:  # keep the original pace: apps, network, typing
                 time.sleep(max(0.0, min(20.0, gaps[i]) - (time.time() - t_step)))

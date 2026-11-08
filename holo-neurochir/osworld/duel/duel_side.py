@@ -5,6 +5,10 @@ Everything the page shows is appended to <out>/events.jsonl (one JSON object per
   frame    {file}             live VM screenshot (every --live_every s, JPEG 960x540, from the VM's own HTTP server)
   step     {i, note, thought, action, tool, file}   one agent step (file = the observation the model saw)
   verdict  {score, claimed_done, answer, declined, steps}
+Feci Guard (--guard): the agent is feci_guard/run_holo_guard.GuardedAgent (its exact policy: a non-infeasible
+answer is checked by the external verifier on a screenshot; INCOMPLETE -> refused, the feedback is the answer's tool
+output and the episode goes on; at most 2 refusals). Extra events: phase guard_checking, guard {decision, verdict,
+requirements [{text, mark, evidence}], feedback, latency_s, error, file}.
 Stop: create <out>/STOP (the episode ends at the next step boundary, no evaluation), or SIGTERM (immediate). The VM
 is closed in every case. Run through ~/osw/osh (docker + kvm), from the OSWorld root (duel_server.py does it).
 Usage: python duel_side.py --task domain/example_id --server URL=NAME[=ENVVAR] --out DIR [--max_steps 50]
@@ -53,13 +57,40 @@ class DuelEnv(OSWorldComputerEnv):
         return super().is_done() or (self.stop_path is not None and self.stop_path.exists())
 
 
-class DuelAgent(HoloComputerAgent):
-    events = None
-    def _call_model(self, messages):
-        self.events.emit("phase", phase="thinking")
-        out = super()._call_model(messages)
-        self.events.emit("phase", phase="acting")
-        return out
+def agent_class(guard):
+    base = HoloComputerAgent
+    if guard:
+        sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "feci_guard"))
+        import run_holo_guard
+        base = run_holo_guard.GuardedAgent
+
+    class DuelAgent(base):
+        events, pending_guard = None, None
+
+        def _call_model(self, messages):
+            self.events.emit("phase", phase="thinking")
+            out = super()._call_model(messages)
+            self.events.emit("phase", phase="acting")
+            return out
+
+        def _check(self, step_idx, answer):  # GuardedAgent only
+            self.events.emit("phase", phase="guard_checking", answer=answer)
+            rec = super()._check(step_idx, answer)
+            v = rec.get("verifier") or {}
+            shot = Path(self.guard_dir) / rec["screenshot"] if rec.get("screenshot") else None
+            self.pending_guard = dict(
+                decision=rec["decision"], verdict=v.get("verdict"), answer=answer,
+                requirements=[{"text": r.get("requirement"), "mark": {"yes": "✓", "no": "✗"}.get(r.get("status"), "?"),
+                               "evidence": r.get("evidence")} for r in v.get("requirements", [])],
+                feedback=run_holo_guard.feci.feedback(v) if rec["decision"] == "refused" else "",
+                latency_s=v.get("latency_s"), error=v.get("error"),
+                file=self.events.save(Image.open(shot), "guard") if shot and shot.exists() else None)
+            return rec
+
+        def flush_guard(self):  # after the answer's step event, so the page lists the answer, then the check
+            if self.pending_guard:
+                self.events.emit("guard", **self.pending_guard); self.pending_guard = None
+    return DuelAgent
 
 
 def serialize_screenshots(env):
@@ -104,6 +135,7 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--max_steps", type=int, default=50)
     ap.add_argument("--live_every", type=float, default=2.0)
+    ap.add_argument("--guard", action="store_true", help="Feci Guard on this side (feci_guard/run_holo_guard.GuardedAgent)")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
     out = Path(args.out); ev = Events(out)
@@ -112,7 +144,7 @@ def main():
     domain, example_id = args.task.split("/")
     rh = RH.parse_args(["--max_steps", str(args.max_steps)])
     example = json.loads(open(os.path.join(rh.examples_dir, domain, f"{example_id}.json")).read())
-    ev.emit("phase", phase="booting", pid=os.getpid(), model=model, task=args.task, instruction=example["instruction"])
+    ev.emit("phase", phase="booting", pid=os.getpid(), model=model, task=args.task, instruction=example["instruction"], guard=args.guard)
 
     def on_term(signum, frame):
         signal.signal(signal.SIGTERM, signal.SIG_IGN)  # a second STOP must not interrupt the VM close
@@ -141,8 +173,15 @@ def main():
                 log.warning("step frame not saved: %s", e); file = None
             ev.emit("step", i=i + 1, note=step.note, thought=step.thought, action=RH._fmt_action(tc),
                     tool=tc.tool_name, file=file)
+            agent.flush_guard() if args.guard else None
+        DuelAgent = agent_class(args.guard)
         DuelAgent.events = ev
-        agent = DuelAgent(client=client_for(url, auth), model=model, env=cenv, max_steps=rh.max_steps,
+        extra = {}
+        if args.guard:
+            import verifier
+            (out / "guard").mkdir(exist_ok=True)
+            extra = dict(guard_dir=str(out / "guard"), instruction=example["instruction"], guard_model=verifier.DEFAULT_MODEL)
+        agent = DuelAgent(**extra, client=client_for(url, auth), model=model, env=cenv, max_steps=rh.max_steps,
                           temperature=rh.temperature, reasoning_effort=rh.reasoning_effort,
                           image_budget=rh.image_budget, on_step=on_step,
                           system_prompt_template=SYSTEM_PROMPTS[rh.prompt])
@@ -163,7 +202,7 @@ def main():
             ev.emit("frame", file=ev.save(Image.open(BytesIO(env.controller.get_screenshot())), "final"))
         except Exception:  # noqa: BLE001
             pass
-        ev.emit("verdict", score=score, claimed_done=answer is not None and not declined, answer=answer,
+        ev.emit("verdict", guard=agent.guard_summary() if args.guard else None, score=score, claimed_done=answer is not None and not declined, answer=answer,
                 declined=declined, steps=summary.get("steps"), finished_by_agent=summary.get("finished_by_agent"))
         ev.emit("phase", phase="done")
     except (StopFile, SystemExit, KeyboardInterrupt):

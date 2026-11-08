@@ -19,10 +19,13 @@ TASKS = [  # original made a false 'done' and the merged model succeeded, in rec
 PRESETS = {
     "pod": {"left": "http://127.0.0.1:8000/v1=Holo-3.1-4B",
             "right": "http://127.0.0.1:8001/v1=Holo-3.1-4B-merge_cua_b050"},
+    # Feci Guard demo: the same original model on both sides, only the guard differs (guard=right)
+    "pod_guard": {"left": "http://127.0.0.1:8000/v1=Holo-3.1-4B", "right": "http://127.0.0.1:8000/v1=Holo-3.1-4B"},
     "modal": {"left": "https://emilejouannet--holo-vllm-serve.us-east.modal.run/v1=Holo-3.1-4B-modal-orig=MODAL_HDR",
               "right": "https://martinbon39--holo-vllm-serve.us-east.modal.run/v1=Holo-3.1-4B-merge_cua_b050=MODAL_HDR"},
 }
 LABELS = {"left": "Holo-3.1-4B original", "right": "Holo-3.1-4B modifié (fusion des poids)"}
+GUARD_LABELS = {"left": "Holo-3.1-4B seul", "right": "Holo-3.1-4B"}  # pod_guard: same model, the badge says + Feci Guard
 EXAMPLES = Path.home() / "osw/rtg/Env/OSWorld/evaluation_examples/examples"
 MIN_AVAIL_GB = 15  # two 5 GB VMs plus the 5 GB floor of the VPS rules
 ENDED = {"done", "stopped", "error", "vm_closed", "vm_close_failed"}
@@ -32,6 +35,10 @@ def env_line():
     line = re.search(r"cd ~/osw/rtg/Env/OSWorld && export [^&]*&&", (Path.home() / "osw/run_osw.sh").read_text())
     assert line, "run_osw.sh layout changed"
     return line.group(0)
+
+
+def guard_available():
+    return (HERE.parent.parent / "feci_guard" / "run_holo_guard.py").exists()
 
 
 def mem_available_gb():
@@ -70,8 +77,12 @@ class Duels:
         ids |= {d.name for d in self.root.iterdir() if any(alive(side_pid(d / s)) for s in ("left", "right"))}
         return sorted(ids)
 
-    def start(self, task, preset=None, max_steps=50):
+    def start(self, task, preset=None, max_steps=50, guard="none"):
         preset = preset or self.preset
+        if guard not in ("none", "left", "right", "both"):
+            raise ValueError(f"bad guard {guard}")
+        if guard != "none" and not guard_available():
+            raise ValueError("Feci Guard module not installed (holo-neurochir/feci_guard)")
         if task not in TASKS and not (EXAMPLES / f"{task}.json").exists():
             raise ValueError(f"unknown task {task}")
         with self.lock:
@@ -89,11 +100,12 @@ class Duels:
             for side in ("left", "right"):
                 server = PRESETS[preset][side]
                 sd = d / side; sd.mkdir(parents=True)
-                meta["sides"][side] = {"label": LABELS[side], "model": server.split("=")[1],
-                                       "server": server.split("=")[0]}
+                guarded = guard in (side, "both")
+                meta["sides"][side] = {"label": (GUARD_LABELS if preset == "pod_guard" else LABELS)[side],
+                                       "model": server.split("=")[1], "server": server.split("=")[0], "guard": guarded}
                 key = 'export MODAL_HDR="Authorization: Bearer $(cat ~/.holo_modal_key)" && ' if server.endswith("=MODAL_HDR") else ""
                 cmd = (f"{env_line()} {key}PYTHONPATH={HERE.parent.parent} ~/osw/venv/bin/python {HERE / 'duel_side.py'} "
-                       f"--task {task} --server '{server}' --out {sd} --max_steps {int(max_steps)} > {sd / 'side.log'} 2>&1")
+                       f"--task {task} --server '{server}' --out {sd} --max_steps {int(max_steps)}{' --guard' if guarded else ''} > {sd / 'side.log'} 2>&1")
                 procs[side] = subprocess.Popen([str(Path.home() / "osw/osh"), cmd], stdin=subprocess.DEVNULL,
                                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             (d / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1))
@@ -180,7 +192,7 @@ class Handler(BaseHTTPRequestHandler):
         if u.path == "/api/config":
             return self.send(200, {"tasks": [{"id": t, "instruction": json.loads((EXAMPLES / f"{t}.json").read_text())["instruction"]} for t in TASKS],
                                    "presets": {k: {s: v.split("=")[1] for s, v in p.items()} for k, p in PRESETS.items()},
-                                   "default_preset": self.duels.preset, "labels": LABELS, "running": self.duels.running()})
+                                   "default_preset": self.duels.preset, "guard_available": guard_available(), "labels": LABELS, "running": self.duels.running()})
         if u.path == "/api/duels":
             return self.send(200, self.duels.listing())
         if u.path == "/api/events":
@@ -207,7 +219,7 @@ class Handler(BaseHTTPRequestHandler):
         body = json.loads(self.rfile.read(int(self.headers.get("Content-Length") or 0)) or b"{}")
         try:
             if u.path == "/api/start":
-                return self.send(200, {"id": self.duels.start(body["task"], body.get("preset"), int(body.get("max_steps", 50)))})
+                return self.send(200, {"id": self.duels.start(body["task"], body.get("preset"), int(body.get("max_steps", 50)), body.get("guard", "none"))})
             if u.path == "/api/stop":
                 ids = [body["duel"]] if body.get("duel") else self.duels.running()
                 sides = ["left", "right"] if body.get("side", "all") == "all" else [body["side"]]

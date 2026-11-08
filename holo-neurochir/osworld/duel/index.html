@@ -69,6 +69,14 @@ td, th { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: lef
 th { color: var(--muted); font-weight: 600; }
 a { color: var(--mod); }
 .replay .side .stop { display: none; }
+.guardp { display: none; margin: 0 12px 10px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: #10141c; }
+.guardp.show { display: block; }
+.guardp .gh { font-weight: 800; font-size: 15px; margin-bottom: 4px; }
+.guardp .gh.reject { color: var(--bad); } .guardp .gh.accept { color: var(--ok); } .guardp .gh.error { color: var(--warn); }
+.guardp .req { display: grid; grid-template-columns: 22px 1fr; gap: 4px; font-size: 13.5px; padding: 2px 0; }
+.guardp .req.ko { color: #ffb3b3; } .guardp .req .ev { grid-column: 2; color: var(--muted); font-size: 12.5px; }
+.gbadge { display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 6px; background: #3a2e7a; color: #d9d2ff; font-size: 12px; font-weight: 700; vertical-align: middle; }
+.hist div.guard-r { color: var(--bad); } .hist div.guard-a { color: var(--ok); }
 .rp { display: none; gap: 8px; align-items: center; }
 .err { color: var(--bad); font-size: 13.5px; }
 </style>
@@ -81,6 +89,7 @@ a { color: var(--mod); }
     <select id="task" aria-label="Tâche"></select>
     <select id="preset" aria-label="Serveurs"></select>
     <label style="color:var(--muted);font-size:13px">pas max <input id="maxSteps" type="number" min="5" max="100" value="50" style="width:64px"></label>
+    <label style="font-size:13px" title="Feci Guard vérifie chaque conclusion du côté droit"><input type="checkbox" id="guardRight"> Feci Guard à droite</label>
     <button class="go" id="start">▶ Lancer le duel</button>
     <button class="stop" id="stopAll" disabled>■ STOP GLOBAL</button>
   </div>
@@ -104,7 +113,7 @@ const params = new URLSearchParams(location.search);
 const REPLAY = params.get('replay');
 const PHASES = { booting: 'Démarrage de la VM…', settling: 'Ouverture de la tâche…', thinking: 'Le modèle réfléchit…',
   acting: 'Action en cours', evaluating: 'Évaluation officielle…', done: 'Terminé', stopped: "Arrêté par l'utilisateur",
-  stop_requested: 'Arrêt demandé…', error: 'Erreur', vm_started: null, vm_closed: null, vm_close_failed: 'VM : fermeture échouée' };
+  stop_requested: 'Arrêt demandé…', guard_checking: '🛡 Feci Guard vérifie la conclusion…', error: 'Erreur', vm_started: null, vm_closed: null, vm_close_failed: 'VM : fermeture échouée' };
 let config = null, duelId = params.get('duel'), state = null, offsets = { left: 0, right: 0 }, meta = null, running = false;
 
 function sideSkeleton(side, label, model) {
@@ -116,6 +125,7 @@ function sideSkeleton(side, label, model) {
       <div class="verdict"><div class="claim"></div><div class="official"></div></div></div>
     <div class="cur"><div class="lbl">action</div><div class="action">—</div><div class="lbl">note</div><div class="txt note2">—</div>
       <div class="lbl">raisonnement</div><div class="thought">—</div></div>
+    <div class="guardp"></div>
     <div class="hist"></div>`;
   $('#' + side + ' .stop').onclick = () => stop(side);
 }
@@ -126,7 +136,8 @@ function esc(s) { return String(s ?? '').replace(/[&<>]/g, c => ({ '&': '&amp;',
 function apply(side, e) {
   const S = state[side], el = $('#' + side);
   if (e.kind === 'phase') {
-    if (e.phase === 'booting') S.start = e.t;
+    if (e.phase === 'booting') { S.start = e.t;
+      if (e.guard) el.querySelector('.name').insertAdjacentHTML('beforeend', '<span class="gbadge">+ Feci Guard</span>'); }
     if (['done', 'stopped', 'error'].includes(e.phase)) S.end = e.t;
     if (PHASES[e.phase] !== null) { S.phase = e.phase; const ph = el.querySelector('.ph'); ph.hidden = false;
       ph.textContent = (PHASES[e.phase] || e.phase) + (e.error ? ' — ' + e.error : ''); }
@@ -142,6 +153,21 @@ function apply(side, e) {
     const h = el.querySelector('.hist'), row = document.createElement('div');
     if (e.tool === 'answer') row.className = 'term';
     row.innerHTML = `<b>${e.i}</b><span>${esc(e.action)}</span>`; h.appendChild(row); h.scrollTop = h.scrollHeight;
+  }
+  if (e.kind === 'guard') {
+    const g = el.querySelector('.guardp'); g.classList.add('show');
+    const refused = e.decision === 'refused';
+    const head = refused ? '🛡 Feci Guard : conclusion REFUSÉE, l\'agent continue'
+      : e.decision === 'passed_complete' ? '🛡 Feci Guard : conclusion vérifiée, acceptée'
+      : e.decision === 'passed_infeasible' ? '🛡 Feci Guard : infaisabilité déclarée, non vérifiée'
+      : e.decision === 'passed_cap' ? '🛡 Feci Guard : 2 refus atteints, conclusion acceptée sans contrôle'
+      : '🛡 Feci Guard : pas de verdict' + (e.error ? ' (' + esc(e.error) + ')' : '') + ', conclusion acceptée';
+    g.innerHTML = `<div class="gh ${refused ? 'reject' : e.decision === 'passed_complete' ? 'accept' : 'error'}">${head}${e.latency_s ? ` <span style="color:var(--muted);font-weight:500;font-size:12px">${Math.round(e.latency_s)} s</span>` : ''}</div>` + (e.requirements || []).map(r =>
+      `<div class="req ${r.mark === '✗' ? 'ko' : 'ok'}"><span>${r.mark}</span><span>${esc(r.text)}</span>${r.evidence ? `<span class="ev">${esc(r.evidence)}</span>` : ''}</div>`).join('');
+    const h = el.querySelector('.hist'), row = document.createElement('div');
+    row.className = refused ? 'guard-r' : 'guard-a';
+    row.innerHTML = `<b>🛡</b><span>${refused ? 'REFUS : ' + esc((e.requirements || []).filter(r => r.mark === '✗').map(r => r.text).join(' ; ')) : 'accepté (' + e.decision.replace('passed_', '') + ')'}</span>`;
+    h.appendChild(row); h.scrollTop = h.scrollHeight;
   }
   if (e.kind === 'verdict') {
     const v = el.querySelector('.verdict'); v.classList.add('show');
@@ -163,6 +189,7 @@ function tickClocks(now) {
 function setupDuel(m) {
   meta = m; state = freshState(); offsets = { left: 0, right: 0 };
   $('#taskId').textContent = m.task; $('#instr').textContent = m.instruction;
+  $('#err').textContent = m.note || '';
   for (const side of ['left', 'right']) sideSkeleton(side, m.sides[side].label, m.sides[side].model);
 }
 
@@ -197,7 +224,7 @@ async function stop(side) {
 }
 async function start() {
   $('#err').textContent = ''; $('#start').disabled = true;
-  const r = await fetch('/api/start', { method: 'POST', body: JSON.stringify({ task: $('#task').value, preset: $('#preset').value, max_steps: +$('#maxSteps').value }) });
+  const r = await fetch('/api/start', { method: 'POST', body: JSON.stringify({ task: $('#task').value, preset: $('#preset').value, max_steps: +$('#maxSteps').value, guard: $('#guardRight').checked ? 'right' : 'none' }) });
   const d = await r.json();
   if (!r.ok) { $('#err').textContent = d.error; $('#start').disabled = false; return; }
   duelId = d.id; meta = null; history.replaceState(null, '', '?duel=' + duelId); poll(); listDuels();
@@ -242,8 +269,10 @@ async function init() {
   }
   config = await (await fetch('/api/config')).json();
   $('#task').innerHTML = config.tasks.map(t => `<option value="${t.id}">${t.id.split('/')[0]} · ${esc(t.instruction.slice(0, 60))}…</option>`).join('');
-  $('#preset').innerHTML = Object.entries(config.presets).map(([k, p]) => `<option value="${k}" ${k === config.default_preset ? 'selected' : ''}>${k === 'modal' ? 'Modal (H100)' : 'pod (H200)'} : ${p.left} vs ${p.right}</option>`).join('');
+  $('#preset').innerHTML = Object.entries(config.presets).map(([k, p]) => `<option value="${k}" ${k === config.default_preset ? 'selected' : ''}>${k === 'modal' ? 'Modal (H100)' : k === 'pod_guard' ? 'Feci Guard, pod' : 'pod (H200)'} : ${p.left} vs ${p.right}</option>`).join('');
   sideSkeleton('left', config.labels.left, ''); sideSkeleton('right', config.labels.right, '');
+  $('#guardRight').disabled = !config.guard_available;
+  $('#preset').onchange = () => { if ($('#preset').value === 'pod_guard' && config.guard_available) $('#guardRight').checked = true; };
   $('#start').onclick = start; $('#stopAll').onclick = () => stop('all');
   if (!duelId && config.running.length) duelId = config.running[0];
   $('#modeBadge').innerHTML = '<span class="badge live">EN DIRECT</span>';
