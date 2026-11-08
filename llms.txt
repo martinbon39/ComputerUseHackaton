@@ -1,6 +1,6 @@
 # Cogito, Ergo Feci (ComputerUseHackaton)
 
-> H Company × 42AI hackathon, Computer Use track. H's computer-use agent Holo-3.1-4B often ends OSWorld tasks with a false "done" (29 of its 51 failures). We show that the agent does not internally know this: self-judging is at chance, and weight edits move the decision without targeting it, with no detectable online gain. We built Feci Guard instead, an external verifier that checks each requirement on the screen, refuses a false "done" with a reason, and lets the agent repair or escalate to Holo4. Offline it detects 45/66 false successes at 21/202 false alarms.
+> H Company × 42AI hackathon, Computer Use track. H's computer-use agent Holo-3.1-4B often ends OSWorld tasks with a false "done" (29 of its 51 failures). We show that the agent does not internally know this: self-judging is at chance, and weight edits move the decision without targeting it, with no detectable online gain. We built Feci Guard instead, an external verifier that checks each requirement on the screen, refuses a false "done" with a reason, and lets the agent repair or escalate to Holo4. Offline it detects 45/66 false successes at 21/202 false alarms; in replay of 9 recorded false successes, Guard + escalation to Holo4 repairs 11/18 branches vs 2/18 without the Guard (+50 pts [+22, +78]).
 
 Everything below can be checked offline in seconds with Python >= 3.9 standard library: `bash jury_kit/quickstart.sh` (exit 0 = published numbers reproduced). A gain is claimed only if the lower bound of the paired 95 % CI is > 0.
 

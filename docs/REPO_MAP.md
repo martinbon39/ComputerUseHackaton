@@ -16,7 +16,7 @@ Start with the Guard (solution), then the diagnosis, then the weight-edit experi
 | `feci_guard/v2/` | yes | Guard v2 variants (history, strict prompt, Opus) on a dev/held-out split | RESULT (offline) | `feci_guard/RESULTS.md`, `v2/PROTOCOL.md` | held-out, used once: detection 20/29 vs v1 16/29, +13.8 pts [+2.9, +30]; target not met |
 | `judge_bench/` | yes | Three judges on the same 268 labelled final screens | RESULT | `judge_bench/REPORT.md`, `RESULT.json` | Claude 45/66 detected, 21/202 wrongly rejected; Holo-3.1-4B 35/66, 97/202 |
 | `verif_study/` | yes | Holo-3.1-4B as its own verifier; the 268-episode manifest, screenshots and tasks | RESULT | `verif_study/REPORT.md`, `manifest.json` | detects 35/66 (53 %), rejects 97/202 (48 %): chance |
-| `rescue_bench/` | not committed (draft [PR #1](https://github.com/martinbon39/ComputerUseHackaton/pull/1)) | Guard refusal → Holo4-27B escalation vs an unguarded control, replayed false successes | IN PROGRESS | `rescue_bench/REPORT.md`, `PREREG.md` | interim 09:51 UTC: 4/10 vs 0/10, 20/48 branches |
+| `rescue_bench/` | yes | Guard refusal → Holo4-27B escalation vs an unguarded control, replayed false successes | RESULT (replay) | `rescue_bench/REPORT.md`, `PREREG.md` | 11/18 vs 2/18, +50 pts [+22, +78], 9 episodes |
 
 ## The diagnosis
 | Folder / file | In git | What | Status | Source of truth | Headline |
