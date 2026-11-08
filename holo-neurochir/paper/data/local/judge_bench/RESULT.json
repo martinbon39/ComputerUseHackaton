@@ -1,0 +1,415 @@
+{
+  "corpus": {
+    "manifest_sha256": "67cc43166d6b13094f858fd11cc631a2c21aa5379638837fa71572255a673fdc",
+    "episodes": 268,
+    "labels": {
+      "true_success": 202,
+      "false_success": 66
+    }
+  },
+  "decision_rule": "INCOMPLETE = detection; COMPLETE = pass; error/timeout/truncated/unparsable = pass, counted separately (error_or_invalid)",
+  "judges": {
+    "Holo-3.1-4B": {
+      "false_success": {
+        "n": 66,
+        "verdict_counts": {
+          "COMPLETE": 28,
+          "INCOMPLETE": 35,
+          "MISSING_VERDICT": 1,
+          "TRUNCATED": 2
+        },
+        "incomplete_rate": {
+          "numerator": 35,
+          "denominator": 66,
+          "rate": 0.5303030303030303,
+          "ci95": [
+            0.41157685726598636,
+            0.6456957150362233
+          ]
+        },
+        "error_or_invalid": {
+          "numerator": 3,
+          "denominator": 66,
+          "rate": 0.045454545454545456,
+          "ci95": [
+            0.015578274334433505,
+            0.1253331411324222
+          ]
+        },
+        "cannot_tell_share_of_requirement_decisions": {
+          "numerator": 26,
+          "denominator": 163,
+          "rate": 0.15950920245398773,
+          "ci95": [
+            0.11123935488469552,
+            0.2234583828083523
+          ]
+        },
+        "episodes_with_any_cannot_tell": {
+          "numerator": 13,
+          "denominator": 66,
+          "rate": 0.19696969696969696,
+          "ci95": [
+            0.11888639703610927,
+            0.3083878799417945
+          ]
+        }
+      },
+      "true_success": {
+        "n": 202,
+        "verdict_counts": {
+          "COMPLETE": 102,
+          "INCOMPLETE": 97,
+          "TRUNCATED": 2,
+          "MISSING_VERDICT": 1
+        },
+        "incomplete_rate": {
+          "numerator": 97,
+          "denominator": 202,
+          "rate": 0.4801980198019802,
+          "ci95": [
+            0.41231528638213755,
+            0.5488198510880613
+          ]
+        },
+        "error_or_invalid": {
+          "numerator": 3,
+          "denominator": 202,
+          "rate": 0.01485148514851485,
+          "ci95": [
+            0.005063474797695092,
+            0.04274739322217691
+          ]
+        },
+        "cannot_tell_share_of_requirement_decisions": {
+          "numerator": 94,
+          "denominator": 481,
+          "rate": 0.19542619542619544,
+          "ci95": [
+            0.16246121199191205,
+            0.23321753067856915
+          ]
+        },
+        "episodes_with_any_cannot_tell": {
+          "numerator": 52,
+          "denominator": 202,
+          "rate": 0.25742574257425743,
+          "ci95": [
+            0.20205345726654003,
+            0.3218519767433959
+          ]
+        }
+      },
+      "gap_detection_minus_false_rejection": 0.050105010501050096,
+      "task_cluster_bootstrap": {
+        "method": "task-cluster percentile bootstrap; resample 90 task groups jointly across labels",
+        "seed": 20261108,
+        "draws": 10000,
+        "ci95": {
+          "false_success": [
+            0.37037037037037035,
+            0.6875
+          ],
+          "true_success": [
+            0.3686635944700461,
+            0.593607305936073
+          ],
+          "detection_minus_false_rejection": [
+            -0.13240093240093243,
+            0.22678275290215588
+          ]
+        }
+      },
+      "missing_responses": 0
+    },
+    "Holo4-27B": {
+      "false_success": {
+        "n": 66,
+        "verdict_counts": {
+          "INCOMPLETE": 31,
+          "COMPLETE": 34,
+          "MISSING_VERDICT": 1
+        },
+        "incomplete_rate": {
+          "numerator": 31,
+          "denominator": 66,
+          "rate": 0.4696969696969697,
+          "ci95": [
+            0.35430428496377675,
+            0.5884231427340136
+          ]
+        },
+        "error_or_invalid": {
+          "numerator": 1,
+          "denominator": 66,
+          "rate": 0.015151515151515152,
+          "ci95": [
+            0.0026796405439821064,
+            0.08095920262066399
+          ]
+        },
+        "cannot_tell_share_of_requirement_decisions": {
+          "numerator": 17,
+          "denominator": 136,
+          "rate": 0.125,
+          "ci95": [
+            0.07952800813071656,
+            0.19107456666947023
+          ]
+        },
+        "episodes_with_any_cannot_tell": {
+          "numerator": 8,
+          "denominator": 66,
+          "rate": 0.12121212121212122,
+          "ci95": [
+            0.06271845599597657,
+            0.22137439022640315
+          ]
+        }
+      },
+      "true_success": {
+        "n": 202,
+        "verdict_counts": {
+          "COMPLETE": 135,
+          "MISSING_VERDICT": 4,
+          "INCOMPLETE": 63
+        },
+        "incomplete_rate": {
+          "numerator": 63,
+          "denominator": 202,
+          "rate": 0.3118811881188119,
+          "ci95": [
+            0.2520085543001925,
+            0.3787752516666966
+          ]
+        },
+        "error_or_invalid": {
+          "numerator": 4,
+          "denominator": 202,
+          "rate": 0.019801980198019802,
+          "ci95": [
+            0.007726890018461812,
+            0.049800193633860484
+          ]
+        },
+        "cannot_tell_share_of_requirement_decisions": {
+          "numerator": 31,
+          "denominator": 295,
+          "rate": 0.10508474576271186,
+          "ci95": [
+            0.07502384378468341,
+            0.14529852741682792
+          ]
+        },
+        "episodes_with_any_cannot_tell": {
+          "numerator": 19,
+          "denominator": 202,
+          "rate": 0.09405940594059406,
+          "ci95": [
+            0.06104400744150522,
+            0.14222631069757136
+          ]
+        }
+      },
+      "gap_detection_minus_false_rejection": 0.15781578157815784,
+      "task_cluster_bootstrap": {
+        "method": "task-cluster percentile bootstrap; resample 90 task groups jointly across labels",
+        "seed": 20261108,
+        "draws": 10000,
+        "ci95": {
+          "false_success": [
+            0.3150684931506849,
+            0.6226415094339622
+          ],
+          "true_success": [
+            0.21145374449339208,
+            0.42134831460674155
+          ],
+          "detection_minus_false_rejection": [
+            -0.02541016406562624,
+            0.33412397216951295
+          ]
+        }
+      },
+      "missing_responses": 0
+    },
+    "Claude (Feci Guard verifier)": {
+      "false_success": {
+        "n": 66,
+        "verdict_counts": {
+          "INCOMPLETE": 45,
+          "COMPLETE": 21
+        },
+        "incomplete_rate": {
+          "numerator": 45,
+          "denominator": 66,
+          "rate": 0.6818181818181818,
+          "ci95": [
+            0.5621255011195574,
+            0.7815099326937003
+          ]
+        },
+        "error_or_invalid": {
+          "numerator": 0,
+          "denominator": 66,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.05500255701354129
+          ]
+        },
+        "cannot_tell_share_of_requirement_decisions": {
+          "numerator": 44,
+          "denominator": 223,
+          "rate": 0.19730941704035873,
+          "ci95": [
+            0.15039360567119953,
+            0.25447708815240977
+          ]
+        },
+        "episodes_with_any_cannot_tell": {
+          "numerator": 31,
+          "denominator": 66,
+          "rate": 0.4696969696969697,
+          "ci95": [
+            0.35430428496377675,
+            0.5884231427340136
+          ]
+        }
+      },
+      "true_success": {
+        "n": 202,
+        "verdict_counts": {
+          "COMPLETE": 181,
+          "INCOMPLETE": 21
+        },
+        "incomplete_rate": {
+          "numerator": 21,
+          "denominator": 202,
+          "rate": 0.10396039603960396,
+          "ci95": [
+            0.06900681680032225,
+            0.1536959326036549
+          ]
+        },
+        "error_or_invalid": {
+          "numerator": 0,
+          "denominator": 202,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.01866222112252115
+          ]
+        },
+        "cannot_tell_share_of_requirement_decisions": {
+          "numerator": 181,
+          "denominator": 647,
+          "rate": 0.2797527047913447,
+          "ci95": [
+            0.2465425237840148,
+            0.3155628151776246
+          ]
+        },
+        "episodes_with_any_cannot_tell": {
+          "numerator": 118,
+          "denominator": 202,
+          "rate": 0.5841584158415841,
+          "ci95": [
+            0.5152391562953871,
+            0.6499365094562677
+          ]
+        }
+      },
+      "gap_detection_minus_false_rejection": 0.5778577857785778,
+      "task_cluster_bootstrap": {
+        "method": "task-cluster percentile bootstrap; resample 90 task groups jointly across labels",
+        "seed": 20261108,
+        "draws": 10000,
+        "ci95": {
+          "false_success": [
+            0.5223880597014925,
+            0.8269230769230769
+          ],
+          "true_success": [
+            0.052884615384615384,
+            0.1658291457286432
+          ],
+          "detection_minus_false_rejection": [
+            0.4054325955734406,
+            0.7387387387387387
+          ]
+        }
+      },
+      "missing_responses": 0,
+      "cost_usd_total": 7.5984066,
+      "error_messages": {}
+    }
+  },
+  "paired_gap_difference_vs_Holo-3.1-4B": {
+    "Holo4-27B": {
+      "point": 0.10771077107710775,
+      "ci95": [
+        -0.07755309125172144,
+        0.2849389416553596
+      ],
+      "draws_used": 10000,
+      "seed": 20261108
+    },
+    "Claude (Feci Guard verifier)": {
+      "point": 0.5277527752775277,
+      "ci95": [
+        0.25912646675358547,
+        0.7878452222714517
+      ],
+      "draws_used": 10000,
+      "seed": 20261108
+    }
+  },
+  "artifacts_sha256": {
+    "REPORT_TABLE.md": "a2bf787cc13f701409f27bf3b903006e42f583e3e3d2c014d9ba2f1837aefc1d",
+    "analyze.py": "659e1246634b76d2779919365339cae13802a383ef1476fd4ce6a7c5ce7a1a42",
+    "claude_responses.jsonl": "de539da20c2f337426b1cd83823b361e245d181c34aed02e7639f215eaeb923b",
+    "claude_run.log": "119406219ceec8155e538f70243b9aec145077ab508560f80951b9431d8ea5d0",
+    "holo4_responses.jsonl": "bbb678b297f8bd37a8d416abe8a66ddb88a036db529b0c76c97a9a9e8aac3d89",
+    "holo4_run.log": "6b733a8c503bacaabcc3240868b7c41ffe222c2bbbd8f8c0b9d48bcfe76c6386",
+    "independent_recompute.py": "780c54fb6976fdf970bbed92ee800d5cd297c1fce16e3123cf4d09d569df717c",
+    "per_episode.json": "f2b164739bb67aaca9ade46d9e03810069d6a631feeaed6ba08007fb9beb13ca",
+    "run_claude.py": "87eb1279a90cf481c7ebaa95639c4ef63509a7c1b934db6818aa5820f8172c48",
+    "run_holo4.py": "e3deca09237b6ebcfa45ad9b74c44091e4d440dcffd990a05ff82af7d1d764fd",
+    "write_report.py": "4db57e6823de67bb49c8f70cd06b5cbc0c62b7855e767c5c295a11f631cd47b7",
+    "feci_guard/verifier.py": "0af76fdbacc723176fd283dedb4bdc93480bd3b6e3dfc105721833d37b1e887e"
+  },
+  "independent_recompute": {
+    "status": "MATCH",
+    "by": "verifier subagent, from-scratch script independent_recompute.py, seed 1",
+    "max_bootstrap_bound_diff_pts": 0.6,
+    "counts_exact": true
+  },
+  "protocol": {
+    "holo4": {
+      "endpoint": "Modal holo-judge-serve",
+      "model": "Holo4-27B",
+      "temperature": 0,
+      "max_tokens": 4096,
+      "enable_thinking": true,
+      "workers": 12,
+      "prompt": "verif_study/run_verifier.py PROMPT (imported)",
+      "run_utc": [
+        "2026-11-08T08:07:33",
+        "2026-11-08T08:12:07"
+      ],
+      "truncated": 0,
+      "transport_errors": 0
+    },
+    "claude": {
+      "function": "feci_guard/verifier.py verify(instruction, image_path) defaults",
+      "model_alias": "sonnet",
+      "timeout_s": 55,
+      "mode": "passive",
+      "cli": "Claude Code 2.1.319",
+      "workers": 4,
+      "prompt": "Feci Guard own prompt (JSON schema; INCOMPLETE only if a requirement is visibly no) - differs from V1 prompt"
+    }
+  },
+  "wording": "with these prompts, on the final screen only"
+}

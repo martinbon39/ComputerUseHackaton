@@ -1,0 +1,6 @@
+\begin{table}[t]
+\centering\small
+\resizebox{\linewidth}{!}{\input{generated/tab_guard.tex}}
+\caption{\textbf{An external verifier separates false from true successes; the agent judging itself does not.} The same \gbEpisodes{} completed episodes of the original agent (\gbFs{} feasible false successes, \gbTrue{} true successes, \gbTasks{} tasks), each judged once from the final screenshot only (the Holo models at temperature 0, the Claude verifier with the CLI's default settings). Detection is an \textsc{incomplete} verdict on a false success; rejection, one on a true success; a call with no verdict lets the answer pass and is counted in the last column. Gap: detection minus rejection, with a percentile bootstrap over tasks. The Claude row uses its own prompt (a JSON verdict per requirement, \textsc{incomplete} only if one is visibly unmet), so model and prompt are confounded. An independent recomputation reproduces every count.}
+\label{tab:guard}
+\end{table}
