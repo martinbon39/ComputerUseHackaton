@@ -1,5 +1,9 @@
 # STATUS — ComputerUseHackaton
 
+> **Reviewers:** this file is the agent team's internal working status (French, overwritten during the hackathon,
+> sometimes behind). The project summary, results and current state of each measurement are in
+> [README.md](README.md) and [AGENTS.md](AGENTS.md).
+
 ## ares — 2026-11-08 05:50 UTC (bilan final : STOPPED, pas de gain détectable ; papier publié)
 - Décisif en cours : merge_cua_b050 contre l'original servi par Modal, sur split_test (120 tâches, GitHub runs 42442054879 et 42442467233). Règle : gain seulement si la borne basse de l'IC95 apparié sur 165 tâches est > 0.
 - Réserve à serveur identique : fusion +6,6 [−6,7 ; +22,1] ; AlphaEdit +2,2. ExPO test −1,5. lmscale16 invalide (vLLM figé).

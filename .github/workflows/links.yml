@@ -1,0 +1,22 @@
+name: links
+# Every relative link and #anchor of the reviewer-facing documents resolves (README.md, AGENTS.md, llms.txt, docs/).
+on:
+  push:
+    paths:
+      - "**.md"
+      - "llms.txt"
+      - "jury_kit/check_links.py"
+      - ".github/workflows/links.yml"
+  workflow_dispatch:
+concurrency:
+  group: links
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 jury_kit/check_links.py

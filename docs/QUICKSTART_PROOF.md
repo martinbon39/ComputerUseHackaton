@@ -145,7 +145,8 @@ holo-neurochir/demo_faux_fini/demo_faux_fini.html: 3.1 MB, self-contained (47 em
 QUICKSTART OK: (a) and (b) match the published numbers, (c) the two demo pages are ready to open in a browser.
 ```
 
-## Level 2 (earlier fresh clone, commit `6bb899f`, about 10:05 UTC)
+## Level 2
+Earlier fresh clone, commit `6bb899f`, about 10:05 UTC.
 `python3 jury_kit/guard_live.py` uses the `claude` CLI (Claude Code, logged in) for fresh verifier calls. Both live
 decisions matched the recorded ones. The `--api` path (Anthropic key through the OpenAI-compatible endpoint) was
 **not run**, because no key was on the machine.

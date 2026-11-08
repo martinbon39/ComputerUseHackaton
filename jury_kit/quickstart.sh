@@ -31,6 +31,6 @@ for name, what in [("holo-neurochir/demo_live/repair_calc.html", "Feci Guard ref
     P().feed(s)
     n_data = s.count("data:image/")
     assert n_data > 0 and not P.ext, (name, n_data, P.ext)
-    print(f"{p}: {p.stat().st_size/1e6:.1f} MB, self-contained ({n_data} embedded screenshots, 0 external scripts): {what}")
+    print(f"{p}: {p.stat().st_size/1e6:.1f} MB, {n_data} embedded screenshots, 0 external scripts: {what}")
 PY
 echo; echo "QUICKSTART OK: (a) and (b) match the published numbers, (c) the two demo pages are ready to open in a browser."
