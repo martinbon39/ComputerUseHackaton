@@ -171,7 +171,7 @@ axt.invert_yaxis()
 axt.set_xlim(0, 1), axt.set_xticks([0, 0.5, 1], ["0", "50%", "100%"])
 axt.tick_params(axis="x", labelsize=6.5)
 axt.set_xlabel("re-sampled steps that call answer (95% CI)", fontsize=6.4, labelpad=1)
-fig.text(3.95 / W, (yb - 0.02) / H, "Re-sampled from the same contexts, the model\nanswers “done” on false and true completions alike",
+fig.text(3.95 / W, (yb - 0.02) / H, "Re-sampled on six contexts, the model answers\n“done” on every false and true completion",
          fontsize=7.0, fontweight="bold", va="top")
 fig.savefig(FIGS / "teaser.pdf")
 print("teaser ok", len(evs), n_verif, dict(cat))

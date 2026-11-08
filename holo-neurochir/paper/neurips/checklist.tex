@@ -8,7 +8,7 @@
 \item {\bf Claims}
     \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: The abstract and \S\ref{nsec:intro} claim a diagnosis, three measured traps, a causal record in which no intervention passes the gate selectively, a mechanistic account of that failure and an offline evaluation of an external verifier; \S\ref{nsec:diag}--\S\ref{nsec:disc} and the appendices support each claim, and the abstract states that the screens are pilots that detect only a fall to 4/8 false answers on a single feasible false-success context, and that the verifier's effect on the OSWorld score is not measured.
+    \item[] Justification: The abstract and \S\ref{nsec:intro} claim a diagnosis, three measured traps, a causal record in which no intervention passes the gate selectively, a mechanistic account of that failure and an offline and online evaluation of an external verifier; \S\ref{nsec:diag}--\S\ref{nsec:disc} and the appendices support each claim, and the abstract states that the screens are pilots that detect only a fall to 4/8 false answers on a single feasible false-success context, and that the verifier's single pre-registered \textsc{test} run lowers the false ``done'' rate with no measurable score change (no score gain is claimed).
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the abstract and introduction do not include the claims made in the paper.
@@ -20,7 +20,7 @@
 \item {\bf Limitations}
     \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: \S\ref{nsec:disc} (Limitations) and Appendix~\ref{sec:limits}: small causal samples that exclude only large effects, infeasible screening contexts, a three-context ceiling test, an exploratory direction analysis, reuse of the reserve and \textsc{test} split by non-admitted arms, many uncorrected comparisons, self-registered rules (the primary online rule was fixed after the merge's reserve scores were read), automatic labels and LLM auditors not validated against humans, a third-party harness, possible donor and verifier contamination, and a single model and benchmark.
+    \item[] Justification: \S\ref{nsec:disc} (Limitations) and Appendix~\ref{sec:limits}: small causal samples that exclude only large effects, infeasible screening contexts, a three-context ceiling test, an exploratory direction analysis, reuse of the reserve and \textsc{test} split by non-admitted arms, many uncorrected comparisons, self-registered rules (the primary online rule was fixed after the merge's reserve scores were read), automatic labels and LLM auditors not validated against humans, a third-party harness, possible donor and verifier contamination, a single online guard run with a proprietary verifier, and a single model and benchmark.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper has no limitation while the answer \answerNo{} means that the paper has limitations, but those are not discussed in the paper. 
@@ -70,7 +70,7 @@
 \item {\bf Open access to data and code}
     \item[] Question: Does the paper provide open access to the data and code, with sufficient instructions to faithfully reproduce the main experimental results, as described in supplemental material?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: Code, frozen splits, raw generations, audits and the scripts that rebuild every number, table and figure will be provided to reviewers as an anonymised supplementary archive; raw outputs are released upon publication. Models and benchmarks are public.
+    \item[] Justification: Code, frozen splits, raw generations, audits and the scripts that rebuild every number, table and figure will be provided to reviewers as an anonymised supplementary archive; raw outputs are released upon publication. Models and benchmarks are public, except the Claude verifier and judges, a proprietary service whose prompts we give and whose exact served version was not recorded.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that paper does not include experiments requiring code.
@@ -165,7 +165,7 @@
 \item {\bf Licenses for existing assets}
     \item[] Question: Are the creators or original owners of assets (e.g., code, data, models), used in the paper, properly credited and are the license and terms of use explicitly mentioned and properly respected?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: All assets are cited, with licences in Appendix~\ref{sec:setting}: Holo-3.1, Qwen3.5-4B, the CUA-Lite donor, OSWorld and BrowserGym are Apache-2.0 and MiniWoB++ is MIT; the RealtimeGUI harness has no licence file at the cited commit, which we state, and we use it unmodified except for the model provider.
+    \item[] Justification: All assets are cited, with licences in Appendix~\ref{sec:setting}: Holo-3.1, Qwen3.5-4B, the CUA-Lite donor, OSWorld and BrowserGym are Apache-2.0 and MiniWoB++ is MIT; the RealtimeGUI harness has no licence file at the cited commit, which we state, and we use it unmodified except for the model provider and three VM-provider infrastructure settings (Appendix~\ref{sec:setting}). Holo4-27B, Fara1.5-4B and TMax-4B are used as published by their authors for evaluation only, and the Claude verifier and judges through Anthropic's service under its terms of use.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not use existing assets.
