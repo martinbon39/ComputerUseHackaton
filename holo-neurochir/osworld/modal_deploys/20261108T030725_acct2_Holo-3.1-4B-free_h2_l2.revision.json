@@ -1,0 +1,13 @@
+{
+ "checkpoint": "holo-models:/ckpt/free_h2_l2",
+ "sha256": {
+  "config.json": "f14ce743951dfd9b96d57b6a96ab5c9761b6c8a9e1abd75949984247ee5beff0",
+  "model-00001-of-00002.safetensors": "f7f12ccce5c518a4039dbcd132077e9822639d580843c9cfa0610bf8812485bc",
+  "model-00002-of-00002.safetensors": "ef1f85a006e9a635841af40b4b99b5b0aefd3c123891ef59431728c1b86ecdeb"
+ },
+ "account": 2,
+ "modal_profile": "martinbon39",
+ "measured_at_utc": "2026-11-08T03:08Z",
+ "method": "modal run osworld/modal_vllm.py::revision --ckpt free_h2_l2 (CPU, Volume metadata + sha256, no generation), at deploy time",
+ "identical_to_pre_deploy_check": true
+}
