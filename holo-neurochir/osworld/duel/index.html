@@ -49,14 +49,26 @@ main { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; paddin
 .details td { padding: 4px 6px; border-bottom: 1px solid var(--line); }
 .details a { color: var(--accent); }
 .err { color: var(--bad); font-size: 13px; }
+.mode { font-weight: 800; font-size: 18px; letter-spacing: .4px; padding: 7px 16px; border-radius: 999px; white-space: nowrap; }
+.mode.live { background: #d92020; color: #fff; }
+.mode.live .dot { animation: blink 1.2s infinite; }
+@keyframes blink { 50% { opacity: .2; } }
+.mode.replay { background: #e9e9e4; color: #4a4a46; }
+.mode.ended { background: #e9e9e4; color: #4a4a46; }
+.empty { position: fixed; inset: 56px 0 0 0; display: grid; place-items: center; background: var(--bg); z-index: 5; }
+.empty h1 { font-size: 40px; font-weight: 800; margin: 0 0 22px; letter-spacing: -.5px; text-align: center; }
+.empty .row { display: flex; gap: 12px; justify-content: center; }
+.empty .big { font: 700 17px Inter, sans-serif; padding: 14px 26px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; text-decoration: none; }
+.empty .big.go { background: var(--accent); border-color: var(--accent); color: #fff; }
+.empty select { display: block; margin: 14px auto 0; font: 14px Inter, sans-serif; border: 1px solid var(--line); border-radius: 8px; background: #fff; padding: 6px 8px; }
 </style>
 </head>
 <body>
 <div class="top">
-  <div class="task" id="task">—</div>
+  <div class="task" id="task"></div>
   <span class="err" id="err"></span>
-  <span class="pill" id="replayPill" hidden></span>
-  <span class="seg" id="speed" hidden><button data-s="1">×1</button><button data-s="2" class="on">×2</button><button data-s="4">×4</button></span>
+  <span class="mode" id="mode" hidden></span>
+  <span class="seg" id="speed" hidden><button data-s="1">×1</button><button data-s="2">×2</button><button data-s="4" class="on">×4</button></span>
   <div class="ctl" id="ctl" hidden>
     <select id="taskSel" aria-label="task"></select>
     <button class="btn run" id="run">Run</button>
@@ -65,6 +77,11 @@ main { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; paddin
     <button class="btn stop" id="stopAll">Stop all</button>
   </div>
   <button class="link" id="detBtn">details</button>
+</div>
+<div class="empty" id="empty" hidden>
+  <div><h1>No live duel running</h1>
+    <div class="row"><button class="big go" id="startBig" hidden>Start live duel</button><a class="big" id="watchBig">Watch recorded duel</a></div>
+    <select id="taskBig" hidden aria-label="task"></select></div>
 </div>
 <main>
   <section id="left"><div class="who"></div><div class="screen"><div class="idle">no live duel</div><img alt="" hidden></div><div class="state"></div></section>
@@ -129,6 +146,8 @@ function apply(side, e, speed) {
   } else if (e.kind === 'phase') {
     if (e.phase === 'thinking') state(side, `step ${s.step + 1} · thinking…`);
     else if (PH[e.phase]) state(side, (['booting', 'settling'].includes(e.phase) ? '' : `step ${s.step} · `) + PH[e.phase]);
+    if (e.phase === 'booting') s.boot = e.t;
+    if (e.phase === 'thinking') s.boot = null;
     if (e.phase === 'stopped' || e.phase === 'error') s.end = true;
   } else if (e.kind === 'guard') {
     toast(e, speed);
@@ -151,13 +170,14 @@ async function poll() {
       const c = await (await fetch('/api/config')).json();
       if (c.running.length && c.running[0] !== duelId) { duelId = c.running[0]; meta = null; }
     }
-    if (!duelId) return;
+    $('#empty').hidden = !!duelId;
+    if (!duelId) { $('#mode').hidden = true; return; }
     const r = await fetch(`/api/events?duel=${duelId}&left=${off.left}&right=${off.right}`);
     if (r.status === 404) { duelId = null; meta = null; return; }
     const d = await r.json();
     if (!meta || meta.id !== d.meta.id) setup(d.meta);
     for (const side of ['left', 'right']) { d[side].forEach(e => apply(side, e, 1)); off[side] = d[side + '_n']; }
-    running = d.running;
+    running = d.running; mode();
     $('#run').disabled = running; for (const b of ['#stopL', '#stopR', '#stopAll']) $(b).disabled = !running;
   } catch (e) { /* network blip: next poll */ } finally { busy = false; }
 }
@@ -165,24 +185,41 @@ async function post(path, body) {
   const r = await fetch(path, { method: 'POST', body: JSON.stringify(body) }), d = await r.json();
   $('#err').textContent = r.ok ? '' : d.error; return r.ok ? d : null;
 }
-async function run() {
+function mode() {  // LIVE only while a duel really runs; a finished duel opened by id says so
+  if (!meta) return;
+  const m = $('#mode'); m.hidden = false;
+  if (running) { const e = Math.max(0, Date.now() / 1000 - meta.t0);
+    m.className = 'mode live'; m.innerHTML = `<span class="dot">●</span> LIVE · ${Math.floor(e / 60)}:${String(Math.floor(e % 60)).padStart(2, '0')}`; }
+  else { m.className = 'mode ended'; m.textContent = `ENDED · recorded ${new Date(meta.t0 * 1000).toISOString().slice(11, 16)} UTC`; }
+}
+function bootClock() {  // live: the ~80 s VM boot is readable
+  if (!running || !S) return;
+  for (const side of ['left', 'right']) {
+    const b = S[side].boot; if (!b) continue;
+    const n = Math.round(Date.now() / 1000 - b), txt = `Booting Ubuntu VM… ${n} s (~80 s)`;
+    state(side, txt); const idle = $('#' + side + ' .idle'); if (!idle.hidden) idle.textContent = txt;
+  }
+}
+async function run(task) {
   $('#run').disabled = true;
-  const d = await post('/api/start', { task: $('#taskSel').value, preset: cfg.guard_preset, guard: 'right' });
+  const d = await post('/api/start', { task: task || $('#taskSel').value, preset: cfg.guard_preset, guard: 'right' });
   if (d) { duelId = d.id; meta = null; running = true; history.replaceState(null, '', '?duel=' + d.id); } else $('#run').disabled = false;
 }
 const stop = side => duelId && post('/api/stop', { duel: duelId, side });
 
 // ---- replay ----
-const R = { ev: [], i: 0, clock: 0, last: null, speed: 2 };
+const R = { ev: [], i: 0, clock: 0, last: null, speed: 4 };
+const FEATURED = '20261108-110023_libreoffice_calc_1de60575-bb6e-4c3d-9e6a';  // R1: Guard refuses a false "done", agent repairs
 async function loadReplay() {
   const r = await fetch(`/api/events?duel=${REPLAY}&left=0&right=0`), d = await r.json();
   if (!r.ok) { $('#err').textContent = d.error; return; }
   R.meta = d.meta; R.ev = [...d.left.map(e => ['left', e]), ...d.right.map(e => ['right', e])].sort((a, b) => a[1].t - b[1].t);
-  $('#replayPill').hidden = false; $('#speed').hidden = false;
-  $('#replayPill').textContent = `Replay · recorded ${new Date(d.meta.t0 * 1000).toISOString().slice(11, 16)} UTC · real VMs`;
+  $('#speed').hidden = false; $('#mode').hidden = false; $('#mode').className = 'mode replay';
+  $('#mode').textContent = `REPLAY · recorded ${new Date(d.meta.t0 * 1000).toISOString().slice(11, 16)} UTC · real VMs`;
   setup(R.meta);
-  const first = R.ev.find(([, e]) => e.kind === 'frame');  // skip the VM boot (nothing to see yet); ?t=<s> seeks
-  const start = P.get('t') ? R.meta.t0 + +P.get('t') : first ? first[1].t : R.meta.t0;
+  // skip the VM boot and the 60 s task settle: start just before the first model call; ?t=<s> seeks
+  const first = R.ev.find(([, e]) => e.kind === 'phase' && e.phase === 'thinking');
+  const start = P.get('t') ? R.meta.t0 + +P.get('t') : first ? first[1].t - 1 : R.meta.t0;
   while (R.i < R.ev.length && R.ev[R.i][1].t < start) { const [s, e] = R.ev[R.i++]; apply(s, e, R.speed); }
   R.clock = start - R.meta.t0;
   requestAnimationFrame(tick);
@@ -191,7 +228,8 @@ const preloaded = new Set();
 function tick(ts) {
   if (R.last !== null) R.clock += (ts - R.last) / 1000 * R.speed;
   R.last = ts;
-  const now = R.meta.t0 + R.clock;
+  let now = R.meta.t0 + R.clock;
+  if (R.i < R.ev.length && R.ev[R.i][1].t - now > 5) { R.clock = R.ev[R.i][1].t - R.meta.t0 - 0.3; now = R.meta.t0 + R.clock; }  // skip waits > 5 s
   while (R.i < R.ev.length && R.ev[R.i][1].t <= now) { const [s, e] = R.ev[R.i++]; apply(s, e, R.speed); }
   for (let j = R.i, n = 0; j < R.ev.length && n < 8; j++) {  // fetch the next frames ahead of time
     const [s, e] = R.ev[j]; if (e.kind !== 'frame' || !e.file) continue; n++;
@@ -222,7 +260,12 @@ async function init() {
     $('#run').onclick = run; $('#stopL').onclick = () => stop('left'); $('#stopR').onclick = () => stop('right'); $('#stopAll').onclick = () => stop('all');
   }
   for (const side of ['left', 'right']) $('#' + side + ' .who').innerHTML = side === 'left' ? 'Holo-3.1' : 'Holo-3.1 <span class="g">+ Feci Guard</span>';
-  setInterval(poll, 400); poll();
+  $('#watchBig').href = '?replay=' + FEATURED;
+  if (cfg.control) {
+    $('#startBig').hidden = false; $('#taskBig').hidden = false; $('#taskBig').innerHTML = $('#taskSel').innerHTML;
+    $('#startBig').onclick = () => run($('#taskBig').value);
+  }
+  setInterval(poll, 400); setInterval(() => { mode(); bootClock(); }, 500); poll();
 }
 init();
 </script>
