@@ -1,0 +1,58 @@
+[
+[
+"v01",
+"Computer-use agents often stop and say done, when the task is not done."
+],
+[
+"v02",
+"For Holo three point one, from H Company, that is twenty-nine of its fifty-one failures, on our hundred and twenty diagnostic tasks."
+],
+[
+"v03",
+"This is a wall of real OSWorld sessions, replayed twenty times faster. Every tile is a recorded run of Holo alone, with its task id."
+],
+[
+"v04",
+"When the agent says done, the official OSWorld checker scores it. Orange means it said done, and it was wrong."
+],
+[
+"v05",
+"We first tried to fix this inside the model, with probes, steering, and about fifteen weight edits. Nothing worked. Asked to judge its own final screen, Holo is at chance."
+],
+[
+"v06",
+"So we built Feci Guard. When the agent answers done, the task and its final screenshot go to Claude Sonnet. It lists every requirement, and marks each one yes, no, or cannot tell, with the evidence it sees. Median latency: six seconds."
+],
+[
+"v07",
+"Here, the agent says the two in H two O is now a subscript. The Guard sees it is still full size. It refuses, and says what to do next."
+],
+[
+"v08",
+"A refusal sends the reason back to the agent. Holo three point one rarely recovers alone, so the episode is handed to Holo four, twenty-seven B, from the same screen. On these tiles, the same replay without the Guard fails every time."
+],
+[
+"v09",
+"These are chosen examples. The Guard also misses some false dones, and sometimes refuses a correct result. So here are the real totals."
+],
+[
+"v10",
+"On two hundred sixty-eight real final screens, the Guard catches sixty-eight percent of false dones, and wrongly refuses only ten percent of real successes. Holo, judging itself, refuses almost half."
+],
+[
+"v16",
+"Behind this wall: thirteen hundred scored OSWorld episodes, thirty thousand agent steps, H two hundred and H one hundred GPUs, and up to twenty GitHub runners with KVM, in parallel."
+],
+[
+"v15",
+"Two arms, both preregistered, with paired bootstrap intervals. Online, on a hundred and twenty tasks, false dones drop from twenty-two point five to ten point eight percent. Significant. The score gain is not. In replay, Holo four solves eleven of eighteen branches, against two without the Guard. Feci Guard halves false completions online. With Holo four as the repairer, half of the caught failures get fixed."
+],
+[
+"v17",
+"The full write-up is a thirty-page preprint."
+],
+[
+"v14",
+"Press run live, and the same task starts on two fresh virtual machines. Recorded live at eleven: on the left, Holo says done, and scores zero. On the right, the Guard refuses once, the agent repairs, and scores one."
+]
+]

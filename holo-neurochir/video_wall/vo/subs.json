@@ -1,0 +1,17 @@
+{
+"v02": "For Holo-3.1, from H Company, that is 29 of its 51 failures on our 120 diagnostic tasks.",
+"v03": "A wall of real OSWorld sessions, replayed 20× faster. Every tile is a recorded run of Holo alone, with its task id.",
+"v05": "We first tried to fix it inside the model: probes, steering, ~15 weight edits. Nothing worked. Judging its own final screen, Holo is at chance.",
+"v07": "Here the agent says the 2 in H2O is now a subscript. The Guard sees it is still full size. It refuses, and says what to do next.",
+"v08": "A refusal sends the reason back. Holo-3.1 rarely recovers alone, so the episode is handed to Holo4-27B from the same screen. Without the Guard, these replays fail every time.",
+"v10": "On 268 real final screens, the Guard catches 68 % of false “done”, and wrongly refuses only 10 % of real successes. Holo, judging itself, refuses almost half.",
+"v11": "With the Guard and escalation to Holo4: 11 of 18 replayed branches solved, vs 2 of 18 for Holo4 alone. After a real refusal, 9 of 11 repaired.",
+"v13": "And this is not only a replay. Press “Run live”: the same task starts on two fresh virtual machines. Holo alone on the left, Holo with Feci Guard on the right.",
+"v10b": "Holo-3.1 repairing itself is weaker: 5 of 18 vs 2 of 18, not distinguishable from zero. That is why refused tasks escalate.",
+"v12": "Online, on all 120 test tasks, the Guard halves false “done”: 22.5 % → 10.8 %, with no measurable change in score.",
+"v14": "Press “Run live”: the same task starts on two fresh VMs. Recorded live at 11:00 UTC: left, Holo says “done”, scores 0. Right, the Guard refuses once, the agent repairs, scores 1.",
+"v06": "So we built Feci Guard. On “done”, the task + final screenshot go to Claude Sonnet: every requirement marked yes / no / can't tell, with evidence. Median latency: 6 s.",
+"v16": "Behind this wall: ~1,300 scored OSWorld episodes, ~30,700 agent steps, H200 and H100 GPUs, up to 20 GitHub runners with KVM in parallel.",
+"v15": "Two preregistered arms, paired bootstrap. Online (120 tasks): false “done” 22.5 % → 10.8 %, significant; score gain not. Replay: Holo4 solves 11/18 branches vs 2/18. Feci Guard halves false completions online; with Holo4 as the repairer, half of the caught failures get fixed.",
+"v17": "Full write-up: a 30-page preprint."
+}
