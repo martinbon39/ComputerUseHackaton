@@ -4,6 +4,7 @@ Secret 'holo-vllm-key', copy on orbit in ~/.holo_modal_key). Budget: 1 GPU max, 
 
   modal run    osworld/modal_vllm.py::download                      # once: HF weights -> Volume holo-models (CPU only)
   modal run    osworld/modal_vllm.py::toolchain                     # CPU check: nvcc + package versions vs the pod
+  modal run    osworld/modal_vllm.py::revision [--ckpt <subdir>]    # CPU: refs/main, snapshot, sha256 of what serve() loads
   modal deploy osworld/modal_vllm.py                                # serve Hcompany/Holo-3.1-4B as 'Holo-3.1-4B'
   HOLO_CKPT=<subdir> HOLO_NAME=Holo-3.1-4B-patched modal deploy osworld/modal_vllm.py
                                                                     # serve /models/ckpt/<subdir> instead
@@ -12,6 +13,7 @@ Secret 'holo-vllm-key', copy on orbit in ~/.holo_modal_key). Budget: 1 GPU max, 
 """
 import os
 import subprocess
+from pathlib import Path
 
 import modal
 
@@ -44,6 +46,33 @@ def download():
     path = snapshot_download(HF_ID, revision=HF_REV)
     models.commit()
     print(path)
+
+
+@app.function(volumes={"/models": models}, timeout=1800)
+def revision(ckpt: str = "") -> dict:
+    """Provenance of what serve() loads: for the base model, refs/main and the snapshot dirs of the HF cache; sha256 of
+    config.json and every *.safetensors (of the snapshot, or of /models/ckpt/<ckpt>)."""
+    import hashlib
+    import json
+
+    if ckpt:
+        root, info = Path(f"/models/ckpt/{ckpt}"), {"checkpoint": f"holo-models:/ckpt/{ckpt}"}
+    else:
+        repo = Path("/models/hf/hub/models--" + HF_ID.replace("/", "--"))
+        ref = (repo / "refs" / "main").read_text().strip()
+        info = {"hf_id": HF_ID, "refs_main": ref, "snapshots": sorted(p.name for p in (repo / "snapshots").iterdir())}
+        root = repo / "snapshots" / ref
+    files = ["config.json"] + sorted(p.name for p in root.glob("*.safetensors"))
+    sha = {}
+    for f in files:
+        h = hashlib.sha256()
+        with open(root / f, "rb") as fh:
+            for block in iter(lambda: fh.read(1 << 24), b""):
+                h.update(block)
+        sha[f] = h.hexdigest()
+    info["sha256"] = sha
+    print(json.dumps(info, indent=1))
+    return info
 
 
 @app.function()
