@@ -7,7 +7,7 @@
 | ACU consumed | **not reported by the API.** `GET /v1/sessions/{id}` and `GET /v1/sessions` return no ACU field, and the usage paths we tried answer 404. The session was capped at `max_acu_limit: 6`. |
 | Input | `gpu_ctl_inputs-1a657617794f.tar.gz` (sha256 `b85d0e38…2b30`, 30 218 bytes): Modal CLI fixtures, `osworld/` modules, deploy manifests and cost notes at commit `1a657617`. Devin had no credentials. |
 | Output | 2 attachments, `gpu_ctl.zip` and `gpu_ctl.patch`, downloaded through `GET https://api.devin.ai/v1/attachments/<uuid>/<name>`. The `app.devin.ai/attachments/...` links in the message answer 401 to an API key. |
-| Review and real run | session `devin-review` of the argos fleet (Claude Opus 5.5), 2026-11-08 11:42-11:50 UTC |
+| Review and real run | session `devin-review` of the argos fleet (Claude Opus 5.5), 2026-11-08 11:42-11:46 UTC |
 
 ## What Devin wrote
 
@@ -136,3 +136,32 @@ exit 0
   days 0" is correct, because both accounts started spending on 2026-11-08 at 00:14 UTC (`osworld/MODAL_COST.md`).
 - During the manual check, one raw `modal billing report` call returned an empty stdout once, then valid JSON. In that
   case `gpu_ctl` reports "billing unreadable" (exit 3), and the guard notifies after 3 such rounds in a row.
+
+## Running monitor
+
+Since **2026-11-08 11:47 UTC**, `gpu_ctl.py guard` has been running on the argos server as a read-only budget monitor
+for both Modal accounts. It runs one round every 5 minutes, without `--enforce`, so it never stops or deploys anything.
+It ends on its own after 4 h, at about 15:47 UTC.
+- It runs in tmux session `gpu_guard`, under `devcap` with a 512 MB memory cap.
+- The config and the journal are outside the repository, in `~/.gpu_ctl/`. The caps are account 1 warn 25 / stop 28 $
+  and account 2 warn 27 / stop 29.5 $.
+
+```
+$ cd holo-neurochir/infra
+$ devcap --mem 512M python3 gpu_ctl.py --config ~/.gpu_ctl/accounts.json --journal ~/.gpu_ctl/guard.jsonl \
+    guard --interval 300 --max-hours 4 --notify-cmd 'argos notify GPU-guard'
+```
+
+- **At warn:** it sends one notification to Martin with `argos notify GPU-guard "<message>"`.
+- **At stop:** it prints `WOULD STOP <apps>` and notifies once.
+- **Billing unreadable 3 rounds in a row:** it notifies.
+
+No threshold has been reached yet, so the notification path has not fired for real. It is covered by the unit tests
+only.
+
+The first two rounds, from the journal (amounts rounded to 0.1 $):
+
+| round | time (UTC) | account 1 | account 2 | decision | subprocesses |
+|---|---|---|---|---|---|
+| 1 | 11:47:15 | 22.9 $ (warn 25) | 24.1 $ (warn 27) | ok, ok, exit 0 | 4 × `modal billing report`, all rc 0 |
+| 2 | 11:52:18 | 22.9 $ (warn 25) | 24.1 $ (warn 27) | ok, ok, exit 0 | 4 × `modal billing report`, all rc 0 |
