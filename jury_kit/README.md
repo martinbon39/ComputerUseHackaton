@@ -17,6 +17,8 @@ H Company × 42AI hackathon. Model studied: `Hcompany/Holo-3.1-4B` (computer-use
 
 Paper (signed links, valid 30 days): [arXiv version](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxe90omd.7gpRaMJXHmLtMnwVSBDjnXGUhX5F8T5N) · [NeurIPS version](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxe90oof._tSev9qqVFlcDHhU-taCxfJ9dEjRsUlf) · [Demo: the original's false "done" vs the merged agent, one illustrative episode, not evidence of a score gain](https://argos.martinbonan.com/artifacts/holo-demo-faux-fini.html?t=mxec08h4.ypUQurEtCFn45XOw47vn5eHhOEl5Gyfd)
 
+Embeddings and output head: `embed_tokens` is merged, and since Holo has `tie_word_embeddings=true` the effective output head, tied to it at load time, changes too.
+
 ### 3 ways to verify
 
 | Level | What | Needs | Time |
@@ -45,6 +47,8 @@ Harness caveat: our OSWorld harness (RealtimeGUI @ a763361) is more permissive t
 3. **Un levier qui déplace une décision hors ligne n'a pas déplacé le score en ligne.** AlphaEdit : Δ de −2,2 à +2,2 points selon la référence, tous les IC contiennent 0 ; fusion : voir le verdict primaire.
 
 Papier (liens signés, valables 30 jours) : [version arXiv](https://argos.martinbonan.com/artifacts/holo-paper.pdf?t=mxe90omd.7gpRaMJXHmLtMnwVSBDjnXGUhX5F8T5N) · [version NeurIPS](https://argos.martinbonan.com/artifacts/holo-paper-neurips.pdf?t=mxe90oof._tSev9qqVFlcDHhU-taCxfJ9dEjRsUlf) · [Démo : le faux « fini » de l'original contre l'agent fusionné](https://argos.martinbonan.com/artifacts/holo-demo-faux-fini.html?t=mxec08h4.ypUQurEtCFn45XOw47vn5eHhOEl5Gyfd)
+
+Embeddings et tête de sortie : `embed_tokens` est fusionné, et comme Holo a `tie_word_embeddings=true`, la tête de sortie effective, liée à cet embedding au chargement, change aussi.
 
 ### 3 façons de vérifier
 

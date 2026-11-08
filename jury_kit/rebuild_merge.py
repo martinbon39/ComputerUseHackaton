@@ -3,7 +3,7 @@
 
     theta = theta_Holo + 0.5 * (theta_CUA - theta_Qwen)      language tower only (keys 'model.language_model.*')
 
-Vision tower, lm_head and every non-language tensor stay exactly Holo's. Arithmetic in float32, result cast back to
+Vision tower and every non-language tensor stay exactly Holo's. Note: `embed_tokens` is part of the language tower and is merged; Holo has tie_word_embeddings=true, so the effective output head (tied to that embedding at load time) is modified too, it is NOT left intact. Arithmetic in float32, result cast back to
 bfloat16 (the dtype of Holo). Same recipe as our merge_v2.py (arithmetic, beta 0.5, no layer range).
 
 Pinned revisions (exact commits):

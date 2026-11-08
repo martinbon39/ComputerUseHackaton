@@ -45,6 +45,8 @@ Can internal states tell a false success from a true finish? 19 vs 19 episodes, 
 ## 4. Localisation of the merge effect (β=0.5; fs+ feasible / true finishes)
 Full merge 3/8 and 2/16; layers 0–11 only 7/8 and 8/16; 12–23 only 8/8 and 9/16; 24–31 only 8/8 and 14/16. The drop in false successes appears only with the three blocks combined (an additivity test was not significant, Fisher p = 0.12, so we do not claim non-additivity); the drop in true finishes is spread over layers 0–23.
 
+Note on the merge: `embed_tokens` is merged and Holo has `tie_word_embeddings=true`, so the effective output head changes too (it is not left intact).
+
 ## 5. Negative leads (all closed, none yields an admissible edit)
 - Replication of the MIT recipe (L17/L20 × 64 columns): 0 useful result, a random control does the same at high dose.
 - Hypotheses H2–H10 (DeltaNet gates, q_norm families, attention exit gates, late MLPs toward Qwen, RoPE redistribution): neutral or breaking; 22/25 batches, 637 requests, no admissible edit.
