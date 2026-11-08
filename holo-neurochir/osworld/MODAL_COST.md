@@ -8,5 +8,10 @@ Prix H100 Modal : ~3,95 $/h (0,001097 $/s), plus le CPU et la mémoire du conten
 | 2026-11-08 00:14 | 1 emilejouannet | téléchargement des poids (CPU), construction des images | 0 | 0,02 $ |
 | 00:16-00:28 | 1 | démarrages ratés : volume sur un chemin non vide, puis pas de nvcc pour le JIT flashinfer | ~8 min | |
 | 00:32-00:41 | 1 | démarrage à froid du modèle de base (torch.compile 200 s, JIT), remplacé par free_h3_l05 | ~9 min | 1,19 $ à 00:45 |
-| 00:38- | 2 martinbon39 | téléchargement des poids, démarrage à froid de free_h2 | en cours | 0,17 $ à 00:45 |
-| 00:41- | 1 | démarrage à froid de free_h3_l05 | en cours | |
+| 00:38-00:47 | 2 martinbon39 | poids, image, démarrage à froid de free_h2 (512 s), test de 3 requêtes | ~9 min | |
+| 00:41-00:49 | 1 | démarrage à froid de free_h3_l05, test de 3 requêtes | ~8 min | |
+| 00:43, 00:45 | 1 | 2 jobs de test du créneau `holo-slot` (2e GPU du compte, FORCE) | ~3 min | |
+| 00:49 | 1 | point de situation | | **2,08 $** (H100 1,91 $) |
+| 00:49 | 2 | point de situation | | **0,80 $** (H100 0,67 $) |
+
+Rythme : une H100 allumée en continu coûte ~4 $/h, soit une alerte à ~20 $ par compte environ 4 h 30 après le point de 00:49.

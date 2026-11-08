@@ -45,8 +45,14 @@ il faut `curl -L`, et le client OpenAI la suit lui-même.
 `modal app stop holo-vllm -y` et `MODAL_PROFILE=martinbon39 modal app stop holo-vllm -y`. Il faut redéployer pour relancer.
 Les coûts sont tenus dans `MODAL_COST.md` (`modal billing report --for today --show-resources`).
 
-## Mesures
-(à compléter après le test)
+## Mesures (2026-11-08, `osworld/modal_probe.py`, tâche chrome `fc6d8143…`, dernier pas)
+
+| Compte, modèle servi | Démarrage à froid | Texte T=0 | Texte avec réflexion | Pas OSWorld (11 024 tokens de prompt + capture, schéma, réflexion) |
+|---|---|---|---|---|
+| 2, `Holo-3.1-4B-free_h2` | 512 s (premier, JIT compris) | 2,2 s | 1,6 s (307 tokens) | 4,7 s, JSON valide |
+| 1, `Holo-3.1-4B-free_h3_l05` | ~17 min (premier, JIT compris, après 2 essais ratés) | 3,2 s | 2,3 s (447 tokens) | 5,4 s, JSON valide |
+
+Sans la clé, `/v1/models` répond 401. Les démarrages suivants profitent du cache du Volume `holo-vllm-cache` (torch.compile et JIT).
 
 ## Créneau de recherche (app `holo-slot`, `osworld/modal_slot.py`)
 
