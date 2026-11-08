@@ -108,7 +108,7 @@ main { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 8px 16
 </div>
 <div class="empty" id="empty" hidden>
   <div class="pickp"><h1>Pick a task</h1>
-    <p class="sub">Recorded duels on real Ubuntu VMs: Holo-3.1 alone vs Holo-3.1 + Feci Guard.</p>
+    <p class="sub">Selected recorded duels on real Ubuntu VMs: Holo-3.1 alone vs Holo-3.1 + Feci Guard. All duels are in the menu above.</p>
     <div class="cards" id="cards"></div>
     <div class="row"><button class="big go" id="runBig" disabled>▶ Run duel</button><button class="big" id="startBig" hidden>Run LIVE</button></div>
     <select id="taskBig" hidden aria-label="task"></select><a id="watchBig" hidden></a></div>
@@ -325,7 +325,10 @@ async function fillPick() {  // always visible: recorded duels by task (outcomes
 }
 async function fillCards() {  // the landing page: one big card per recorded task (its latest duel, Guard duels first)
   const rows = (await (await fetch('/api/duels')).json()).filter(d => d.sides.left.verdict && d.sides.right.verdict && !/INFRA/.test(d.note || ''));
-  const pick = CARDS.map(id => rows.find(d => d.id === id)).filter(Boolean);
+  // selected: the three reference duels (R2 is a Guard loss), then later valid Guard duels the Guard side won
+  const t1 = (rows.find(d => d.id === CARDS[0]) || { t0: Infinity }).t0;
+  const later = rows.filter(d => (d.preset || '').includes('guard') && d.t0 > t1 && !CARDS.includes(d.id) && d.sides.right.verdict.score >= 1).sort((a, b) => a.t0 - b.t0);
+  const pick = [...CARDS.map(id => rows.find(d => d.id === id)).filter(Boolean), ...later];
   const ic = v => v.score >= 1 ? '<b class="ok">✓</b>' : '<b class="ko">✗</b>';
   $('#cards').innerHTML = pick.map(d => `<button class="card" data-id="${d.id}" data-task="${d.task}"><img class="shot" alt=""><div class="cb">
     <div class="nm">${esc(taskName(d.task))} <span style="color:var(--muted);font-weight:500">· ${new Date(d.t0 * 1000).toISOString().slice(11, 16)}</span></div>
