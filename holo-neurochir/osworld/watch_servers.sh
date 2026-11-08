@@ -4,8 +4,8 @@
 # and alerts <agent> (argos send, at most once per 30 min per server) when a server queues requests for 3 minutes,
 # runs at its max-num-seqs, uses > 85 % KV, its minute latency exceeds 2.5x its first-15-minute baseline, or its
 # engine is HUNG (requests running but no generated token for 3 minutes; seen on 8000 at 19:34 and 8012 at 00:44).
-# Usage: bash osworld/watch_servers.sh [agent=ares] [deadline=09:00]
-#   servers: 8000 (max 64 seqs), 8001 (pod 8011, 16), 8002 (pod 8012, 16)
+# Usage: [SERVERS="8000 8001"] bash osworld/watch_servers.sh [agent=ares] [deadline=09:00]
+#   known servers: 8000 (max 64 seqs), 8001 (pod 8011, 16), 8002 (pod 8012, 16)
 set -uo pipefail
 AGENT="${1:-ares}"; DEADLINE="${2:-09:00}"
 end_s=$(date -u -d "$DEADLINE" +%s); [ "$end_s" -gt "$(date +%s)" ] || end_s=$(date -u -d "tomorrow $DEADLINE" +%s)
@@ -13,7 +13,7 @@ declare -A MAXSEQ=([8000]=64 [8001]=16 [8002]=16) LS LC BASE NB QUEUED LAST_ALER
 start=$(date +%s)
 metric() { echo "$1" | awk -v k="$2" '$1 ~ "^"k"({|$)" {s += $NF} END {print s + 0}'; }
 while [ "$(date +%s)" -lt "$end_s" ]; do
-  for p in 8000 8001 8002; do
+  for p in ${SERVERS:-8000 8001}; do
     m=$(curl -s -m 10 "127.0.0.1:$p/metrics") || { echo "$(date -u +%H:%M) $p metrics unreachable" >> ~/osw/server_load.log; continue; }
     run=$(metric "$m" vllm:num_requests_running); wait=$(metric "$m" vllm:num_requests_waiting)
     kv=$(metric "$m" vllm:kv_cache_usage_perc)
