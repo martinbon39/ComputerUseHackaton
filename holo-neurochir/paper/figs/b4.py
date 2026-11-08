@@ -17,6 +17,9 @@ for tag, f in [("Big", "pod_hf/config_holo31_4B.json"), ("Small", "pod_hf/config
     m.add(f"cfg{tag}Hidden", t["hidden_size"], S + " text_config.hidden_size")
     m.add(f"cfg{tag}Inter", t["intermediate_size"], S + " text_config.intermediate_size")
     m.add(f"cfg{tag}FullEvery", t["full_attention_interval"], S + " text_config.full_attention_interval")
+    m.add(f"cfg{tag}NLinear", t["layer_types"].count("linear_attention"), S + " text_config.layer_types == linear_attention (Gated DeltaNet)")
+    m.add(f"cfg{tag}NFull", t["layer_types"].count("full_attention"), S + " text_config.layer_types == full_attention")
+    assert t["layer_types"].count("linear_attention") + t["layer_types"].count("full_attention") == t["num_hidden_layers"]
     m.add(f"cfg{tag}VisDepth", c["vision_config"]["depth"], S + " vision_config.depth")
     m.add(f"cfg{tag}Tied", "tied" if c.get("tie_word_embeddings") else "untied", S + " tie_word_embeddings")
 
