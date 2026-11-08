@@ -157,6 +157,48 @@
     "interpretation": "All 12 x K=2 branches exist in both arms. The registered primary denominator is 9 episodes / 18 branches per arm after common four-branch replay validity; three episodes are excluded for replay drift.",
     "k_per_arm": 2,
     "measure_complete": true,
+    "no_action_success": {
+      "branches_per_arm": 2,
+      "episode": "libreoffice_impress/8979838c-54a5-4454-a2b8-3d135a1a5c8f",
+      "guard": {
+        "k0": {
+          "new_steps": 0,
+          "score": 1.0,
+          "tools": [
+            "answer"
+          ]
+        },
+        "k1": {
+          "new_steps": 0,
+          "score": 1.0,
+          "tools": [
+            "answer"
+          ]
+        }
+      },
+      "implication": "These two official successes occur after replay with no new GUI action in both arms. They are retained in official score counts but are not evidence that either continuation model repaired the recorded score-0 state. Pixel replay validity does not guarantee evaluator-state identity.",
+      "no_guard": {
+        "k0": {
+          "new_steps": 0,
+          "score": 1.0,
+          "tools": [
+            "answer"
+          ]
+        },
+        "k1": {
+          "new_steps": 0,
+          "score": 1.0,
+          "tools": [
+            "answer"
+          ]
+        }
+      },
+      "official_counts_unchanged": true,
+      "successes_after_at_least_one_new_gui_action": {
+        "guard": 3,
+        "no_guard": 0
+      }
+    },
     "no_guard": {
       "answered_done": 17,
       "branches": 18,
@@ -165,10 +207,37 @@
       "no_answer": 1,
       "repaired_score1": 2
     },
-    "paired_diff_ci95_episode_bootstrap": [
-      0.0,
-      0.444
-    ],
+    "paired_diff_ci95_episode_bootstrap": {
+      "independent_recomputation": {
+        "ci95": [
+          0.0,
+          0.3888888888888889
+        ],
+        "draws": 20000,
+        "episode_differences": [
+          1.0,
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "method": "Paired episode-cluster percentile bootstrap. Resample nine episode differences with replacement; lower index floor(0.025*draws), upper index floor(0.975*draws), matching rescue analyze.py interval().",
+        "seed": 1701
+      },
+      "reported_source": {
+        "ci95": [
+          0.0,
+          0.444
+        ],
+        "draws": 10000,
+        "method": "feci_guard/analyze_repair.py boot(), paired episode differences, rounded to three decimals",
+        "seed": 0
+      }
+    },
     "paired_diff_mean": 0.167,
     "primary_branches_per_arm": 18,
     "primary_complete_valid_episodes": 9,

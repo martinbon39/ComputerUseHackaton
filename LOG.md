@@ -483,3 +483,9 @@ Timestamp correction for the preceding astra-free entry: the GO message was deli
 - Why: Test whether stronger-agent escalation repairs feasible false completions after the frozen Claude Guard refuses them.
 - Verified: Independent runner and scheduling CPU reviews PASS; statistical synthetic checks PASS provisionally; one recorded-state Holo4 tool JSON valid. First live guarded pilot replay valid, official score0; full pilot remains running. Frozen Guard/harness hashes unchanged.
 - Result: partial — holo-neurochir/rescue_bench/REPORT.md; no gain claim. Only own new artifacts edited; shared dirty work preserved.
+
+## 2026-11-08 09:39 UTC — rescue-bench analysis correction
+- What: separated official score1 from action-qualified repair credit; preserved historical and completed Holo3.1 references; added reusable independent analysis checks and first Calc pairing audit.
+- Why: immediate-answer positives reveal replay-state drift and must not inflate predicted repair.
+- Verified: independent stats review provisional PASS; verify_analysis.py exit0; independent Calc k0 audit confirms official Guard1/control0 with strict-valid replay; frozen runner unchanged.
+- Result: collection ongoing in two shards, no final cohort or online-gain claim.

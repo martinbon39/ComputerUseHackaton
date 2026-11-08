@@ -1,0 +1,19 @@
+# Rescue bench — live status
+
+Updated 2026-11-08 09:35 UTC.
+- Goal: complete 12 episodes × K2 × Guard-triggered Holo4/control, official evaluator, report before11:45. Frozen Guard and canonical harness untouched.
+- Pilot complete: 0/2 versus0/2, all4 replay+boundary valid, no infrastructure errors. Holo4 schema/live execution confirmed. Full cohort preserves pilot.
+- Shard0 resumed09:33 after RAM rose18GiB with1VM; exec session14726, log ~/osw/rescue_bench/full0_resume1.log. Earlier stop09:28:58 was the RAM gate, after Calc376 k0 Guard1/control0. Shard1 running since09:26 after ares/feci-guard release, exec session30489; log ~/osw/rescue_bench/full1.log. Current2VM/13GiB available. Max fleet2, MemAvailable>=10GiB. A stopped worker should resume only with enough headroom to add its5GiB VM.
+- 8/48 collected at09:33: pilot4 all0; Calc376 k0 Guard1/control0; Impress70bca k0 Guard1/control0. K1 pending for both positive episodes, descriptive only.
+- Runner deadline: stop new branches11:20; hard stop11:29:50. Holo4 Modal account2 automatically stops11:30. Own VMs close in finally.
+- Evidence ~/osw/rescue_bench/{branches*.jsonl,arm/task_k/attempt_N/{result.json,guard.jsonl,frames/calls.jsonl,boundary_context.json}}.
+- Analyze: ~/osw/venv/bin/python holo-neurochir/rescue_bench/analyze.py. RESULT.json/REPORT.md generated; partial status until48 outcomes. Per-episode means, cluster bootstrap20k; zero-action positive outcomes explicitly separated.
+- Important updated Holo3.1 reference: same12/K2 raw complete, primary9 episodes18 branches/arm, Guard5/18 vs control2/18; 2 official positives in each arm are immediate-answer/no-action replay drift on Impress897. Actual after-action positives Guard3 (Calc1de two, Writer0b17 one), control0. Historical0/10 remains separate snapshot. HOLO31_REFERENCE.json owned by design_read, now finalized.
+- Prediction scope feasible FS only: reserve5/45, test25/120; true completions exposed to Guard15/45,60/120. Frozen Claude detection45/66, FPR21/202. Loss of true successes unmeasured; scenarios0,.5,1. 3 cohort IDs overlap reserve; none test. No observed online gain claim.
+- Independent agents: replay_read reviews runner/scheduling (PASS) and pilot failure; design_read produced prevalence/reference; stats_review preliminary statistics PASS, final numeric audit needed after collection. All are idle and can be followup-tasked.
+- Communication: argos send/read ares --session 4F4iCM5jOs (ARGOS_SESSION_ID absent in this tool environment). Only linked to ares; user authorizes short messages. Never display ~/.holo_modal_key. ares released second VM09:24; both slots currently assigned to us.
+- Main checkout dirty shared; never stash/reset/add-A. Root first pull blocked but initial HEAD matched origin. Owned files new rescue_runner.py/rescue_bench only, plus own appended LOG/STATUS entries. Frozen SHA check at every runner start.
+- Commit in isolated worktree /home/orbit/worktrees/rescue-bench, branch feat/rescue-bench. First commit5ea360f pushed. Draft PR https://github.com/martinbon39/ComputerUseHackaton/pull/1 . New analysis/reference updates since commit remain to copy explicitly from shared checkout (exclude __pycache__), commit and push. Worktree LOG has own entry only, don't overwrite it with shared dirty LOG.
+- Final: independent raw-score/numeric audit; record exact missing/invalid/zero-action counts, predictions as scenarios; sync own files and final LOG entry into worktree; git diff --check; commit/push; refresh PR; stop owned jobs/VMs. No email or secrets.
+
+- FIRST POSITIVE: Calc376 k0 Guard→Holo4 official1 after17 valid outputs, control Holo4 immediate answer official0. Strict replay valid both. Independent FIRST_REPAIR_REVIEW.md confirms actual evaluator gold equality; not comparative cohort conclusion yet.
