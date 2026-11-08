@@ -8,7 +8,7 @@ The replayed history is rebuilt like HoloComputerAgent.run builds it (fresh scre
 fresh tool outputs); each replayed screenshot is compared with the recorded one (mean abs pixel diff).
 One JSON line per branch in <out>/branches.jsonl. Run through ~/osw/osh (docker + kvm), from the OSWorld root.
 Usage: python branch_runner.py --episode <task_dir> [--episode ...] --mode full|branch --out <dir> [--k 2]
-       [--server URL=NAME[=ENVVAR]] [--max_new 15] [--branch_at t]
+       [--server URL=NAME[=ENVVAR]] [--max_new 15] [--branch_at t | --branch_back N] [--no_pace]
 """
 import argparse, json, logging, os, sys, time
 from pathlib import Path
@@ -108,7 +108,7 @@ def one_branch(env, args, rh_args, task_dir, mode, server, k_index):
     d, steps, meta, rec_score = recorded(task_dir)
     domain, example_id = d.parent.name, d.name
     example = json.loads(open(os.path.join(rh_args.examples_dir, domain, f"{example_id}.json")).read())
-    t = args.branch_at if args.branch_at is not None else len(steps) - 1
+    t = args.branch_at if args.branch_at is not None else max(0, len(steps) - 1 - args.branch_back)
     assert steps[-1]["tool_name"] == "answer" or mode == "branch", f"{domain}/{example_id}: no final answer"
     t0 = time.time()
     env.reset(task_config=example); time.sleep(rh_args.sleep_after_reset)
@@ -128,6 +128,7 @@ def one_branch(env, args, rh_args, task_dir, mode, server, k_index):
     return {"task": f"{domain}/{example_id}", "mode": mode, "model": model, "k": k_index, "branch_at": n_replay,
             "recorded_score": rec_score, "recorded_steps": len(steps), "score": float(score), "declined": declined,
             "seconds": round(time.time() - t0, 1), "replay_diff_max": max(s["replay_diffs"], default=None),
+            "replay_valid": max(s["replay_diffs"], default=0.0) <= args.max_replay_diff,
             "replay_diff_mean": float(np.mean(s["replay_diffs"])) if s["replay_diffs"] else None, **s}
 
 
@@ -138,7 +139,10 @@ def main():
     ap.add_argument("--server", action="append", default=[])
     ap.add_argument("--k", type=int, default=1)
     ap.add_argument("--max_new", type=int, default=15)
-    ap.add_argument("--branch_at", type=int)
+    ap.add_argument("--branch_at", type=int, help="absolute step index to branch at")
+    ap.add_argument("--branch_back", type=int, default=0, help="branch N steps before the final answer (t-N)")
+    ap.add_argument("--max_replay_diff", type=float, default=0.05,
+                    help="fidelity filter: a branch whose replayed screenshots differ more is marked replay_valid=false")
     ap.add_argument("--out", required=True)
     ap.add_argument("--no_pace", action="store_true", help="replay as fast as possible (default: recorded pace)")
     args = ap.parse_args()
