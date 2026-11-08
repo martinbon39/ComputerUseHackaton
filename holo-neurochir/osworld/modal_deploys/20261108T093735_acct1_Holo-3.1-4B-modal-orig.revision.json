@@ -1,0 +1,12 @@
+{
+ "hf_id": "Hcompany/Holo-3.1-4B",
+ "refs_main": "8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+ "snapshots": [
+  "8c88265a5a159bfd1492db9243733dd2e6e04a6e"
+ ],
+ "sha256": {
+  "config.json": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1",
+  "model-00001-of-00002.safetensors": "f7f12ccce5c518a4039dbcd132077e9822639d580843c9cfa0610bf8812485bc",
+  "model-00002-of-00002.safetensors": "0490ba7c9b4f6b16b9de8cc2fe50e44657af031c27fec49cb0b87571c0a7cab4"
+ }
+}
