@@ -10,6 +10,7 @@ import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import verifier
+import wall
 
 PORT = int(os.environ.get("GUARD_RELAY_PORT", 9911))
 SLOTS = threading.Semaphore(int(os.environ.get("GUARD_RELAY_CONCURRENCY", 4)))
@@ -42,12 +43,35 @@ class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt, *args):  # one line per request, no payloads
         print(f"{self.address_string()} {fmt % args}", flush=True)
 
+    def _raw(self, code: int, body: bytes, ctype: str) -> None:
+        self.send_response(code)
+        self.send_header("Content-Type", ctype)
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        self.wfile.write(body)
+
     def do_GET(self):
+        if self.path.startswith("/wall"):
+            if self.path.startswith("/wall/state"):
+                return self._send(200, wall.state())
+            if self.path.startswith("/wall/frame/"):
+                img = wall.frame(self.path.split("/wall/frame/", 1)[1].split("?")[0].removesuffix(".png"))
+                return self._raw(200, img, "image/png") if img else self._send(404, {"error": "no frame"})
+            got = wall.page(self.path.split("?")[0] if self.path != "/wall" else "/wall/")
+            return self._raw(200, *got) if got else self._send(404, {"error": "not found"})
         if self.path.rstrip("/").endswith("/models"):
             return self._send(200, {"object": "list", "data": [{"id": MODEL_ID, "object": "model"}]})
         self._send(404, {"error": "not found"})
 
     def do_POST(self):
+        if self.path.startswith("/wall/"):
+            body = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
+            if self.path.startswith("/wall/reset"):
+                wall.reset()
+            else:
+                wall.post_event(body)
+            return self._send(200, {"ok": True})
         if not self.path.rstrip("/").endswith("/chat/completions"):
             return self._send(404, {"error": "not found"})
         req = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
