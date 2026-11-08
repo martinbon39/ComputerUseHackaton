@@ -42,7 +42,7 @@ def claude_rows(episodes, responses):
             verdict, counts = 'MISSING', Counter()
         else:
             verdict = v['verdict'] if v['ok'] else 'ERROR'
-            counts = Counter(r.get('status') for r in v.get('requirements', []))
+            counts = Counter(r.get('status') if isinstance(r, dict) else 'not_an_object' for r in v.get('requirements', []))
         rows.append({'episode_id': e['episode_id'], 'domain': e['domain'], 'task_id': e['task_id'],
                      'label': e['label'], 'verdict': verdict,
                      'req_yes': counts['yes'], 'req_no': counts['no'], 'req_cannot_tell': counts['cannot_tell'],
@@ -112,6 +112,8 @@ def main():
         judges['Holo4-27B'] = holo_rows(episodes, jsonl(HERE / 'holo4_responses.jsonl'))
     if (HERE / 'claude_responses.jsonl').exists():
         judges['Claude (Feci Guard verifier)'] = claude_rows(episodes, jsonl(HERE / 'claude_responses.jsonl'))
+    if (HERE / 'holo4_feci_responses.jsonl').exists():
+        judges['Holo4-27B (Feci Guard verifier)'] = claude_rows(episodes, jsonl(HERE / 'holo4_feci_responses.jsonl'))
     result = {'corpus': {'manifest_sha256': sha(STUDY / 'manifest.json'), 'episodes': len(episodes),
                          'labels': dict(Counter(e['label'] for e in episodes))},
               'decision_rule': 'INCOMPLETE = detection; COMPLETE = pass; error/timeout/truncated/unparsable = pass, '
@@ -119,18 +121,22 @@ def main():
               'judges': {name: summary(rows) for name, rows in judges.items()},
               'paired_gap_difference_vs_Holo-3.1-4B': {
                   name: paired_gap_diff(judges['Holo-3.1-4B'], rows) for name, rows in judges.items()
-                  if name != 'Holo-3.1-4B'}}
+                  if name != 'Holo-3.1-4B'},
+              'paired_gap_difference_vs_Claude': {
+                  name: paired_gap_diff(judges['Claude (Feci Guard verifier)'], rows) for name, rows in judges.items()
+                  if name.startswith('Holo4-27B')}}
     v1 = result['judges']['Holo-3.1-4B']
     assert v1['false_success']['verdict_counts'].get('INCOMPLETE') == 35
     assert v1['true_success']['verdict_counts'].get('INCOMPLETE') == 97
     for name, rows in judges.items():
         missing = sum(r['verdict'] == 'MISSING' for r in rows)
         result['judges'][name]['missing_responses'] = missing
-    claude = judges.get('Claude (Feci Guard verifier)')
-    if claude:
-        result['judges']['Claude (Feci Guard verifier)']['cost_usd_total'] = sum(r['cost_usd'] or 0 for r in claude)
-        result['judges']['Claude (Feci Guard verifier)']['error_messages'] = dict(Counter(
-            (r['error'] or '')[:60] for r in claude if r['verdict'] not in ('COMPLETE', 'INCOMPLETE')))
+    for name in ('Claude (Feci Guard verifier)', 'Holo4-27B (Feci Guard verifier)'):
+        rows = judges.get(name)
+        if rows:
+            result['judges'][name]['cost_usd_total'] = sum(r['cost_usd'] or 0 for r in rows)
+            result['judges'][name]['error_messages'] = dict(Counter(
+                (r['error'] or '')[:60] for r in rows if r['verdict'] not in ('COMPLETE', 'INCOMPLETE')))
     (HERE / 'per_episode.json').write_text(json.dumps(judges, indent=1, ensure_ascii=False) + '\n')
     result['artifacts_sha256'] = {p.name: sha(p) for p in sorted(HERE.glob('*')) if p.is_file()
                                   and p.name not in ('RESULT.json', 'REPORT.md')}

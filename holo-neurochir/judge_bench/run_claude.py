@@ -1,8 +1,10 @@
-"""V2b: the frozen Feci Guard verifier (Claude via `claude -p`) on the frozen verif_study corpus, final screenshot."""
+"""V2b/V2c: the frozen Feci Guard verifier on the frozen verif_study corpus, final screenshot. Backend from the GUARD_*
+env of verifier.py: Claude via `claude -p` (V2b) or an OpenAI-compatible endpoint (V2c, Holo4-27B)."""
 import argparse
 import concurrent.futures
 import hashlib
 import json
+import os
 import sys
 import threading
 from datetime import datetime, timezone
@@ -35,7 +37,7 @@ def main():
     ap.add_argument('--limit', type=int)
     ap.add_argument('--out', default='claude_responses.jsonl')
     args = ap.parse_args()
-    assert args.workers <= 4
+    assert args.workers <= (12 if os.environ.get('GUARD_BACKEND') == 'openai' else 4)
     out = HERE / args.out
     episodes = json.loads((STUDY / 'manifest.json').read_text())
     done = set()

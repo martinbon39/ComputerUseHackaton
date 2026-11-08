@@ -33,8 +33,10 @@ rows = [
 ]
 table = ['| | ' + ' | '.join(names) + ' |', '|---|' + '---|' * len(names)]
 table += [f'| {title} | ' + ' | '.join(f(J[n]) for n in names) + ' |' for title, f in rows]
-paired = R['paired_gap_difference_vs_Holo-3.1-4B']
-paired_lines = [f"- {n} : écart {100 * p['point']:+.1f} pts de plus que Holo-3.1-4B, IC 95 % {ci(p['ci95'])} "
-                f"(mêmes tâches rééchantillonnées pour les deux juges)" for n, p in paired.items()]
+paired_lines = [f"- {n} − {ref} : {100 * p['point']:+.1f} pts d'écart, IC 95 % {ci(p['ci95'])} "
+                f"(mêmes tâches rééchantillonnées pour les deux juges)"
+                for ref, key in [('Holo-3.1-4B', 'paired_gap_difference_vs_Holo-3.1-4B'),
+                                 ('Claude', 'paired_gap_difference_vs_Claude')]
+                for n, p in R.get(key, {}).items()]
 (HERE / 'REPORT_TABLE.md').write_text('\n'.join(table) + '\n\n' + '\n'.join(paired_lines) + '\n')
 print('\n'.join(table)); print(); print('\n'.join(paired_lines))
