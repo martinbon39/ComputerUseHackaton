@@ -1,5 +1,9 @@
 # Cogito, Ergo Feci: catching the false "done" of a computer-use agent
 
+> **The paper now lives at [martinbon39/cogito-ergo-feci](https://github.com/martinbon39/cogito-ergo-feci).**
+> This repository is kept public, unchanged, as the full development history: the preregistration and
+> analysis-before-results commits cited there point here.
+
 [![quickstart](https://github.com/martinbon39/ComputerUseHackaton/actions/workflows/quickstart.yml/badge.svg)](https://github.com/martinbon39/ComputerUseHackaton/actions/workflows/quickstart.yml)
 
 **H Company × 42AI hackathon, Computer Use track.** We diagnosed why H's computer-use agent **Holo-3.1-4B** says
