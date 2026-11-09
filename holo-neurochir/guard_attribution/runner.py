@@ -170,6 +170,31 @@ def _dead_record(it, error):
             "base_url": it.get("base_url"), "kind": "attempt"}
 
 
+def _interrupted_record(it, cfg, error):
+    """A worker stopped mid-item. If the episode had already been scored (result.txt written), it is not infra-dead
+    (prereg: dead = 0 steps or failure before scoring): keep its score. Otherwise it is infra-dead."""
+    import arms
+    ep = arms.episode_dir(cfg["results"], it["arm"], it["seed"], cfg["episode"]["served_model"], it["domain"],
+                          it["task"])
+    rp = os.path.join(ep, "result.txt")
+    if not os.path.exists(rp):
+        return _dead_record(it, error)
+    rec = _dead_record(it, error + " after scoring")
+    try:
+        rec["score"] = float(open(rp).read().strip() or 0)
+    except ValueError:
+        rec["score"] = 0.0
+    rec["dead"] = False
+    return rec
+
+
+def _osworld_containers() -> set[str]:
+    if not shutil.which("docker"):
+        return set()
+    out = os.popen("docker ps -aq --filter ancestor=" + PINS["harness"]["docker_image"] + " 2>/dev/null").read()
+    return {x for x in out.split() if x}
+
+
 def _key(it):
     return (it["arm"], it["seed"], it["task"], it.get("attempt", 1))
 
@@ -187,6 +212,7 @@ def _pass(items, cfg) -> list[dict]:
     ctx = mp.get_context("spawn")
     rq = ctx.Queue()
     pending, out, done = list(items), [], set()
+    before = set() if cfg["mock"] else _osworld_containers()
     slots = {}
 
     def spawn(w, failures=0):
@@ -239,7 +265,7 @@ def _pass(items, cfg) -> list[dict]:
             if timed_out or stuck_start or not p.is_alive():
                 stop(sl, 60)
                 if job is not None:
-                    record(_dead_record(job, "episode timeout" if timed_out else f"worker exit {p.exitcode}"))
+                    record(_interrupted_record(job, cfg, "episode timeout" if timed_out else f"worker exit {p.exitcode}"))
                 failures = sl["failures"] + (0 if sl["ready"] else 1)
                 if pending and failures < 3:
                     spawn(w, failures)
@@ -261,6 +287,11 @@ def _pass(items, cfg) -> list[dict]:
     for sl in slots.values():
         sl["proc"].join(120)
         stop(sl, 60)
+    if not cfg["mock"]:
+        orphans = sorted(_osworld_containers() - before)
+        if orphans:
+            os.system("docker rm -f " + " ".join(orphans) + " >/dev/null 2>&1")
+            append_ledger(cfg["results"], {"kind": "cleanup", "t": time.time(), "removed_containers": orphans})
     return out
 
 

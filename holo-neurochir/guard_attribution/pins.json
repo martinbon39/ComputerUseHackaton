@@ -70,7 +70,8 @@
    "no_proxy": "localhost,127.0.0.1",
    "NO_PROXY": "localhost,127.0.0.1"
   },
-  "env_note": "as exported by holo-osworld-runner osworld.yml 'Run Holo on shard'; OSW_NETWORK_SH must point to holo-osworld-runner/scripts/network_nft.sh (set it explicitly)"
+  "env_note": "as exported by holo-osworld-runner osworld.yml 'Run Holo on shard'; OSW_NETWORK_SH must point to holo-osworld-runner/scripts/network_nft.sh (set it explicitly)",
+  "docker_image": "happysixd/osworld-docker:latest"
  },
  "tasks": {
   "split": "osworld/split_test.json",

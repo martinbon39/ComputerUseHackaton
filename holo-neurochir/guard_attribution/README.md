@@ -64,9 +64,11 @@ dies is recorded as infra-dead, never lost.
   generation are ignored.
 - A worker that dies 3 times before it is ready, or takes more than 15 min to start its VM, closes its slot. When no
   slot is left, the remaining items are recorded as infra-dead.
-- If a VM container outlives a killed worker, `docker ps` shows it.
-- An episode killed by the timeout after it wrote `result.txt` is still recorded as dead and rerun (one rule, applied
-  to all arms).
+- After each pass, when all workers are stopped, the OSWorld containers created during the pass are removed (a VM
+  started by a worker killed while still booting). The removal is logged in the ledger as `cleanup`. It only touches
+  containers of the pinned OSWorld image that did not exist before the pass.
+- An episode interrupted after it wrote `result.txt` keeps its score and is not infra-dead (the prereg's definition is
+  "fails before scoring").
 
 Real runs need `--go`, all 120 tasks, and a passing preflight. The preflight refuses to run if any of the following
 holds:
@@ -185,6 +187,8 @@ bias C − B. It is still a deviation and must be listed in the result.
    definition is "0 steps or failure before scoring". Such episodes are not infra-dead, but each one is counted in the
    ledger and in `checks_not_preregistered` (failed model requests). An episode killed by the timeout counts as
    infra-dead (the runner failed before scoring).
+9. `preflight --probe-verifier --go` makes one Claude call outside arm C (about $0.03). The prereg says Claude calls
+   happen only in C. This call is a preflight check, not an episode, and it is listed as a deviation.
 
 ## Open decision for Martin: batch-invariant vLLM
 vLLM does not promise identical outputs for the same seed. A request's result depends on the other requests batched
