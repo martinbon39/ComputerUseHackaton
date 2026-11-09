@@ -1,9 +1,11 @@
 # Expected output
 
-Every command below was run on 2026-11-09 in a fresh clone of the development repository's branch `paper-repo` at commit [`ad63e5f`](https://github.com/martinbon39/ComputerUseHackaton/commit/ad63e5f04e5e41b122426d8153002bd31a6f5469), whose tree this
-repository publishes (later commits changed no script or data these checks read; CI reruns them on every change), with the
-system Python 3.14.4 (Linux x86-64, CPU only, nothing installed). Every command exited 0 and `git status` stayed clean.
-CI runs the same checks on every change to their inputs ([`reproduce.yml`](../.github/workflows/reproduce.yml)).
+Every command below was run on 2026-11-09 in a fresh clone of development commit [`59b2009`](https://github.com/martinbon39/ComputerUseHackaton/commit/59b2009d83181c5ff78ed035b73d44fa7efc9111) (branch
+`paper-repo` of the development repository). This repository's tree is that commit's tree plus the regenerated
+`reproduce/EXPECTED_OUTPUT.md` and `docs/PROVENANCE.md`; only the link check reads them, and its output below is
+that of the final tree. System Python 3.14.4, Linux x86-64,
+CPU only, nothing installed. Every command exited 0 and `git status` stayed clean. CI runs the same checks on every
+change to their inputs ([`reproduce.yml`](../.github/workflows/reproduce.yml), [`links.yml`](../.github/workflows/links.yml)).
 
 ```bash
 git clone https://github.com/martinbon39/cogito-ergo-feci && cd cogito-ergo-feci
@@ -97,7 +99,7 @@ Matches ONLINE_GUARD_RESULT.json exactly.
 
 ## `python3 reproduce/check_links.py`, exit 0
 ```
-173 relative links checked in 160 documents, 0 broken
+203 relative links checked in 161 documents, 0 broken
 ```
 
 ## `bash reproduce/run_all.sh`, exit 0
@@ -162,6 +164,11 @@ Online Feci Guard test, OSWorld test split, paired by task (bootstrap 10,000, se
 Matches ONLINE_GUARD_RESULT.json exactly.
 
 ALL CHECKS OK: (1)-(4) match the numbers reported in the paper.
+```
+
+## `python3 reproduce/check_paths.py`, exit 0
+```
+59 cross-folder script paths checked, 0 unresolved
 ```
 
 ## Level 2
