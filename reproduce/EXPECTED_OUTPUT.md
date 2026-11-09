@@ -1,6 +1,6 @@
 # Expected output
 
-Every command below was run on 2026-11-09 in a fresh clone of development commit [`59b2009`](https://github.com/martinbon39/ComputerUseHackaton/commit/59b2009d83181c5ff78ed035b73d44fa7efc9111) (branch
+Every command below was run on 2026-11-09 in a fresh clone of development commit [`08707a5`](https://github.com/martinbon39/ComputerUseHackaton/commit/08707a532478b8d7d6516cf3a584fa8ccc0520c3) (branch
 `paper-repo` of the development repository). This repository's tree is that commit's tree plus the regenerated
 `reproduce/EXPECTED_OUTPUT.md` and `docs/PROVENANCE.md`; only the link check reads them, and its output below is
 that of the final tree. System Python 3.14.4, Linux x86-64,
@@ -99,7 +99,7 @@ Matches ONLINE_GUARD_RESULT.json exactly.
 
 ## `python3 reproduce/check_links.py`, exit 0
 ```
-203 relative links checked in 161 documents, 0 broken
+220 relative links checked in 161 documents, 0 broken
 ```
 
 ## `bash reproduce/run_all.sh`, exit 0

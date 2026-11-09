@@ -98,7 +98,7 @@ amendment.
 | [`42a99b0`](https://github.com/martinbon39/ComputerUseHackaton/commit/42a99b07410d44fa2270bb0d1187c7088c3e4edd) | 2026-11-08 11:49 | holo-neurochir/constraint_drop: annotate.py with frozen prompt (before any annot | `experiments/constraint_drop/REPORT.md:2`; `paper/data/local/constraint_drop/REPORT.md:2`; `paper/sec/discussion.tex:10` |
 | [`26565da`](https://github.com/martinbon39/ComputerUseHackaton/commit/26565dace87c55db3f1ce69cfe4dead6ba1472a6) | 2026-11-08 22:33 | report: PREREG_GUARD_ATTRIBUTION timestamp matches its first commit | `docs/REPO_MAP.md:63` |
 | [`b8d2ddd`](https://github.com/martinbon39/ComputerUseHackaton/commit/b8d2ddd41be971848940bb1e57ecf14a46ca4689) | 2026-11-08 22:33 | report: preregister the three-arm guard attribution study (A original loop, B gu | `experiments/online_guard/PREREG_GUARD_ATTRIBUTION.md:3` |
-| [`59b2009`](https://github.com/martinbon39/ComputerUseHackaton/commit/59b2009d83181c5ff78ed035b73d44fa7efc9111) | 2026-11-09 10:12 | Provenance for a one-commit snapshot: link every cited commit to the development | `reproduce/EXPECTED_OUTPUT.md:3` |
+| [`08707a5`](https://github.com/martinbon39/ComputerUseHackaton/commit/08707a532478b8d7d6516cf3a584fa8ccc0520c3) | 2026-11-09 10:20 | Provenance: review fixes (scope of hash claims, full pre-registration table with | `reproduce/EXPECTED_OUTPUT.md:3` |
 
 Commits of other repositories are cited too and are not listed above: RealtimeGUI `a763361` (the OSWorld harness,
 paper §2 and `paper/refs.bib`), commit `c1feb74` of the local RealtimeGUI checkout (a source comment of
