@@ -56,8 +56,17 @@ the verifier's calls, decisions, errors and cost. `<results>/cost.json` sums the
 The start record holds the repo HEAD.
 
 Every task is pinned to one vLLM server (task index mod number of servers), so its three arms use the same GPU.
-An episode that runs longer than `--episode-timeout-min` (default 45) is killed and recorded as infra-dead. Its worker
-and VM are then replaced. The docker container of a killed VM may need `docker rm -f`.
+
+The parent hands items one at a time to each worker slot (one VM) and keeps the assignment, so an item whose worker
+dies is recorded as infra-dead, never lost.
+- An episode that runs longer than `--episode-timeout-min` (default 45) gets SIGTERM. The worker then closes its VM
+  (`env.close()`), is killed after 60 s if still alive, and is replaced by a new generation. Messages from an old
+  generation are ignored.
+- A worker that dies 3 times before it is ready, or takes more than 15 min to start its VM, closes its slot. When no
+  slot is left, the remaining items are recorded as infra-dead.
+- If a VM container outlives a killed worker, `docker ps` shows it.
+- An episode killed by the timeout after it wrote `result.txt` is still recorded as dead and rerun (one rule, applied
+  to all arms).
 
 Real runs need `--go`, all 120 tasks, and a passing preflight. The preflight refuses to run if any of the following
 holds:
@@ -69,12 +78,18 @@ holds:
 - `GUARD_BACKEND` is not the relay, or the relay does not answer `/models`. If the verifier fails, C passes every answer
   and so silently becomes B.
 - A local GPU is not an H100.
+- `OSW_NETWORK_SH` does not point to the earlier runs' VM network script.
+
+`preflight --probe` sends 3 seeded requests per endpoint. `preflight --probe-verifier --go` makes one real verifier call
+through the relay on a recorded screenshot (about $0.03). The relay's `/models` answers without reaching Claude, so
+only this call shows that C will get verdicts.
 
 A sharded job must run exactly one seed. `--max-tasks` exists only for `--mock`.
 
 `--pilot` runs the one-task real test that the prereg asks for before any arm ("tested on one task"). It uses the
 first TEST task, the three arms and seed 99 (not a study seed), and writes into `<results>/pilot`, which
-`analysis.py` never reads.
+`analysis.py` never reads. It ends with PILOT OK (exit 0) only if all three arms scored with no failed model request
+and C's verifier calls, if any, had no error. Otherwise it ends with PILOT FAILED (exit 4).
 
 **Analysis (`analysis.py`).** Python stdlib only. Episode outcomes are those of `online_guard_analysis.py`. `boot()` is
 identical to its `boot()`, and a test checks this. Primary: the per-task false-"done" rate averaged over valid seeds,

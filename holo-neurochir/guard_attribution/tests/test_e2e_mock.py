@@ -92,6 +92,25 @@ class EndToEnd(unittest.TestCase):
             self.assertEqual(len(att), 6)
             self.assertTrue(all(r["dead"] and r["error"] == "episode timeout" for r in att))
 
+    def test_worker_dying_with_an_item_is_recorded_not_lost(self):
+        with tempfile.TemporaryDirectory() as d:
+            code, log = run(d, "--seeds", "0", "--mock-crash-task", TASK)
+            self.assertEqual(code, 3, log[-3000:])
+            att = [r for r in jl(os.path.join(d, "ledger.jsonl")) if r.get("kind") == "attempt"]
+            self.assertEqual(len(att), 6)
+            self.assertEqual(len({(r["arm"], r["attempt"]) for r in att}), 6)
+            self.assertTrue(all(r["dead"] and r["error"] == "worker exit 1" for r in att))
+
+    def test_pilot(self):
+        with tempfile.TemporaryDirectory() as d:
+            code, log = run(d, "--pilot")
+            self.assertEqual(code, 0, log[-3000:])
+            self.assertIn("PILOT OK", log)
+            att = [r for r in jl(os.path.join(d, "pilot", "ledger.jsonl")) if r.get("kind") == "attempt"]
+            self.assertEqual(sorted(r["arm"] for r in att), ["A", "B", "C"])
+            self.assertTrue(all(r["seed"] == 99 for r in att))
+            self.assertFalse(os.path.exists(os.path.join(d, "ledger.jsonl")))
+
     def test_refusals_before_any_episode(self):
         with tempfile.TemporaryDirectory() as d:
             runner = os.path.join(HERE, "runner.py")

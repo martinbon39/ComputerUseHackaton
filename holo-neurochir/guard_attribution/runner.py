@@ -118,38 +118,49 @@ def cost_summary(root: str, n_gpus: int, gpu_hour_usd: float | None, t_start: fl
 
 # ---------------------------------------------------------------- execution
 
-def _worker(wid, items_q, results_q, cfg):
+def _worker(wid, gen, inbox, results_q, cfg):
+    """One slot = one VM. Takes items only from its own inbox, so the parent always knows what each slot holds."""
+    import signal
+
+    def _term(signum, frame):
+        raise SystemExit(143)
+
+    signal.signal(signal.SIGTERM, _term)
     import arms
-    if cfg["mock"]:
-        import mock
-        env = mock.FakeDesktopEnv()
-    mods = arms.load(cfg["rtg"], no_sleep=cfg["mock"])
-    from openai import OpenAI
-    clients = {u: OpenAI(base_url=u, api_key=os.environ.get(cfg["api_key_env"], "EMPTY"),
-                         **({"max_retries": 0} if cfg["mock"] else {})) for u in cfg["base_urls"]}
-    if not cfg["mock"]:
-        os.chdir(os.path.join(cfg["rtg"], "Env", "OSWorld"))
-        for k, v in PINS["harness"]["env"].items():
-            os.environ.setdefault(k, v)
-        env = mods.run_holo._make_env(mods.run_holo.parse_args(
-            ["--screen_width", "1920", "--screen_height", "1080"]))
-    sleep = (lambda s: None) if cfg["mock"] else time.sleep
+    env = None
     try:
+        mods = arms.load(cfg["rtg"], no_sleep=cfg["mock"])
+        from openai import OpenAI
+        clients = {u: OpenAI(base_url=u, api_key=os.environ.get(cfg["api_key_env"], "EMPTY"),
+                             **({"max_retries": 0} if cfg["mock"] else {})) for u in cfg["base_urls"]}
+        if cfg["mock"]:
+            import mock
+            env = mock.FakeDesktopEnv()
+        else:
+            os.chdir(os.path.join(cfg["rtg"], "Env", "OSWorld"))
+            for k, v in PINS["harness"]["env"].items():
+                os.environ.setdefault(k, v)
+            env = mods.run_holo._make_env(mods.run_holo.parse_args(
+                ["--screen_width", "1920", "--screen_height", "1080"]))
+        sleep = (lambda s: None) if cfg["mock"] else time.sleep
+        results_q.put(("ready", wid, gen, None))
         while True:
-            it = items_q.get()
+            it = inbox.get()
             if it is None:
                 break
-            results_q.put(("start", wid, it, time.time()))
+            if cfg["mock"] and cfg.get("mock_crash_task") == it["task"]:
+                os._exit(1)
             rec = arms.run_episode(mods, it["arm"], it["seed"], it["domain"], it["task"], env,
                                    clients[it["base_url"]], cfg["results"], cfg["episode"],
                                    attempt=it.get("attempt", 1), sleep=sleep)
             rec.update(worker=wid, base_url=it["base_url"], kind="attempt")
-            results_q.put(("done", wid, rec, time.time()))
+            results_q.put(("done", wid, gen, rec))
     finally:
-        try:
-            env.close()
-        except Exception:  # noqa: BLE001
-            pass
+        if env is not None:
+            try:
+                env.close()
+            except Exception:  # noqa: BLE001
+                pass
 
 
 def _dead_record(it, error):
@@ -159,74 +170,97 @@ def _dead_record(it, error):
             "base_url": it.get("base_url"), "kind": "attempt"}
 
 
+def _key(it):
+    return (it["arm"], it["seed"], it["task"], it.get("attempt", 1))
+
+
 def _pass(items, cfg) -> list[dict]:
-    """Run items on cfg['workers'] workers (one VM each). An episode running longer than cfg['episode_timeout_s'], or
-    whose worker dies, is recorded as infra-dead and its worker is replaced. Records are appended to the ledger."""
+    """Run items on cfg['workers'] slots (one VM each). The parent hands one item at a time to a ready slot and keeps
+    the assignment, so nothing is lost if a worker dies. An episode running longer than cfg['episode_timeout_s'], or
+    whose worker dies, is recorded as infra-dead and the slot gets a new worker (new generation; late messages of an
+    old generation are ignored). A slot whose worker dies 3 times before taking work is closed; when no slot is left,
+    the remaining items are recorded as infra-dead. Each item is recorded exactly once."""
     if not items:
         return []
     for it in items:
         it["base_url"] = cfg["base_urls"][it["task_index"] % len(cfg["base_urls"])]
     ctx = mp.get_context("spawn")
-    iq, rq = ctx.Queue(), ctx.Queue()
-    for it in items:
-        iq.put(it)
-    n = min(cfg["workers"], len(items))
-    procs, running, out, idle_exits = {}, {}, [], {}
+    rq = ctx.Queue()
+    pending, out, done = list(items), [], set()
+    slots = {}
 
-    def spawn(w):
-        procs[w] = ctx.Process(target=_worker, args=(w, iq, rq, cfg))
-        procs[w].start()
+    def spawn(w, failures=0):
+        gen = (slots[w]["gen"] + 1) if w in slots else 0
+        inbox = ctx.Queue()
+        p = ctx.Process(target=_worker, args=(w, gen, inbox, rq, cfg))
+        p.start()
+        slots[w] = {"gen": gen, "proc": p, "inbox": inbox, "ready": False, "job": None, "t": None,
+                    "failures": failures, "born": time.time()}
 
     def record(rec):
+        k = _key(rec)
+        if k in done:
+            return
+        done.add(k)
         append_ledger(cfg["results"], rec)
         out.append(rec)
         print(f"[{len(out)}/{len(items)}] seed{rec['seed']} arm{rec['arm']} {rec['domain']}/{rec['task'][:8]} "
               f"score={rec['score']} dead={rec['dead']} {rec['wall_s']}s {rec.get('error') or ''}", flush=True)
 
-    for w in range(n):
+    def stop(sl, grace):
+        p = sl["proc"]
+        if p.is_alive():
+            p.terminate()
+            p.join(grace)
+        if p.is_alive():
+            p.kill()
+            p.join(10)
+
+    for w in range(min(cfg["workers"], len(items))):
         spawn(w)
-        if not cfg["mock"] and w < n - 1:
+        if not cfg["mock"] and w < cfg["workers"] - 1:
             time.sleep(8)
     while len(out) < len(items):
         try:
-            kind, w, payload, t = rq.get(timeout=5)
-            if kind == "start":
-                running[w] = (payload, t)
-                idle_exits[w] = 0
-            else:
-                running.pop(w, None)
-                record(payload)
-            continue
+            kind, w, gen, payload = rq.get(timeout=1)
+            sl = slots.get(w)
+            if sl and gen == sl["gen"]:
+                if kind == "ready":
+                    sl["ready"], sl["failures"] = True, 0
+                elif kind == "done":
+                    record(payload)
+                    sl["job"] = None
         except Exception:  # noqa: BLE001
             pass
-        for w, p in list(procs.items()):
-            job = running.get(w)
-            timed_out = job and time.time() - job[1] > cfg["episode_timeout_s"]
-            if timed_out or not p.is_alive():
-                if p.is_alive():
-                    p.terminate()
-                    p.join(10)
-                if job:
-                    running.pop(w)
-                    record(_dead_record(job[0], "episode timeout" if timed_out else f"worker exit {p.exitcode}"))
+        for w, sl in list(slots.items()):
+            p, job = sl["proc"], sl["job"]
+            timed_out = job is not None and time.time() - sl["t"] > cfg["episode_timeout_s"]
+            stuck_start = not sl["ready"] and time.time() - sl["born"] > cfg["worker_start_timeout_s"]
+            if timed_out or stuck_start or not p.is_alive():
+                stop(sl, 60)
+                if job is not None:
+                    record(_dead_record(job, "episode timeout" if timed_out else f"worker exit {p.exitcode}"))
+                failures = sl["failures"] + (0 if sl["ready"] else 1)
+                if pending and failures < 3:
+                    spawn(w, failures)
                 else:
-                    idle_exits[w] = idle_exits.get(w, 0) + 1
-                if len(out) + len(running) < len(items) and idle_exits.get(w, 0) < 3:
-                    spawn(w)
-                else:
-                    procs.pop(w)
-        if not procs:
-            break
-    seen = {(r["arm"], r["seed"], r["task"], r["attempt"]) for r in out}
-    for it in items:
-        if (it["arm"], it["seed"], it["task"], it.get("attempt", 1)) not in seen:
-            record(_dead_record(it, "no worker could start (VM or harness failure)"))
-    for _ in procs:
-        iq.put(None)
-    for p in procs.values():
-        p.join(60)
-        if p.is_alive():
-            p.terminate()
+                    del slots[w]
+            elif sl["ready"] and job is None and pending:
+                it = pending.pop(0)
+                sl["job"], sl["t"] = it, time.time()
+                sl["inbox"].put(it)
+        if not slots:
+            for it in pending:
+                record(_dead_record(it, "no worker could start (VM or harness failure)"))
+            pending = []
+            for it in items:
+                if _key(it) not in done:
+                    record(_dead_record(it, "lost"))
+    for sl in slots.values():
+        sl["inbox"].put(None)
+    for sl in slots.values():
+        sl["proc"].join(120)
+        stop(sl, 60)
     return out
 
 
@@ -249,8 +283,8 @@ def run(a) -> int:
     if a.pilot:
         tasks, seeds, results = tasks_all[:1], [PILOT_SEED], os.path.join(results, "pilot")
     os.makedirs(results, exist_ok=True)
-    cfg = {"mock": a.mock, "rtg": a.rtg, "results": results, "workers": a.workers,
-           "episode_timeout_s": a.episode_timeout_min * 60,
+    cfg = {"mock": a.mock, "mock_crash_task": a.mock_crash_task, "rtg": a.rtg, "results": results, "workers": a.workers,
+           "episode_timeout_s": a.episode_timeout_min * 60, "worker_start_timeout_s": 15 * 60,
            "api_key_env": a.api_key_env, "base_urls": a.base_urls.split(",") if a.base_urls else [],
            "episode": {"served_model": a.served_model, "max_steps": PINS["harness"]["max_steps"],
                        "test_meta": os.path.abspath(a.tasks), "examples_dir": os.path.abspath(a.examples_dir),
@@ -312,6 +346,10 @@ def run(a) -> int:
                 break
             if s == 0 and a.shard:
                 print("Sharded run: the 10 % stop rule is applied by `runner.py status` on the collected seed-0 results.")
+        if a.pilot:
+            ok, msg = pilot_verdict(cfg["results"])
+            print(msg + "\n" + ("PILOT OK: read the three episodes, then start seed 0" if ok else "PILOT FAILED"))
+            code = 0 if ok else 4
     finally:
         if server:
             server.stop()
@@ -414,6 +452,12 @@ def preflight_errors(a) -> list[str]:
                 errs.append(f"verifier relay serves {ids}, not {a.guard_model}")
         except Exception as e:  # noqa: BLE001
             errs.append(f"verifier relay {gb}/models unreachable ({e}): arm C would fail open and become arm B")
+    nsh = os.environ.get("OSW_NETWORK_SH")
+    if not nsh or not os.path.isfile(nsh):
+        errs.append("OSW_NETWORK_SH must point to holo-osworld-runner/scripts/network_nft.sh (the VM network script "
+                    "of the earlier runs)")
+    if a.probe_verifier and not errs:
+        errs += verifier_probe(a)
     if shutil.which("nvidia-smi"):
         names = os.popen("nvidia-smi --query-gpu=name --format=csv,noheader").read().split("\n")
         names = [n.strip() for n in names if n.strip()]
@@ -422,6 +466,40 @@ def preflight_errors(a) -> list[str]:
     if a.probe and not errs:
         errs += determinism_probe(a.base_urls.split(","), a.served_model, key)
     return errs
+
+
+def verifier_probe(a) -> list[str]:
+    """One real verifier call through the relay on a recorded screenshot (costs about $0.03): the relay's /models
+    answers without reaching Claude, so only this shows that arm C will get verdicts."""
+    if not a.go:
+        return ["--probe-verifier calls Claude (about $0.03): add --go"]
+    import glob
+    import arms
+    mods = arms.load(a.rtg)
+    shots = sorted(glob.glob(os.path.join(NEURO, "verif_study", "images", "*.png")))
+    if not shots:
+        return ["no recorded screenshot found for the verifier probe"]
+    r = mods.real_feci.check("Open a terminal window.", open(shots[0], "rb").read(), mode="passive",
+                             model=a.guard_model)
+    det = r["detail"]
+    print(f"verifier probe: verdict={det.get('verdict')} backend={det.get('backend')} latency={det.get('latency_s')}s "
+          f"error={det.get('error')}")
+    return [] if det.get("verdict") and not det.get("error") else [f"verifier probe got no verdict: {det.get('error')}"]
+
+
+def pilot_verdict(root: str) -> tuple[bool, str]:
+    att = [r for r in read_ledger(root) if r.get("kind") == "attempt" and r["seed"] == PILOT_SEED]
+    by = {r["arm"]: r for r in att}
+    msgs = [f"arm {k}: score={by[k]['score']} dead={by[k]['dead']} requests={by[k]['model_requests']} "
+            f"failed={by[k].get('model_request_failures')} decisions={by[k].get('guard_decisions')}" for k in sorted(by)]
+    ok = len(by) == 3 and not any(r["dead"] or r.get("model_request_failures") for r in by.values())
+    c = by.get("C", {})
+    if c.get("verifier_calls") and c.get("verifier_errors"):
+        ok = False
+        msgs.append("arm C: the verifier returned errors (C would fail open)")
+    if not c.get("verifier_calls"):
+        msgs.append("arm C made no verifier call (no answer): run preflight --probe-verifier --go to exercise it")
+    return ok, "\n".join(msgs)
 
 
 def determinism_probe(base_urls, model, key) -> list[str]:
@@ -469,7 +547,9 @@ def main(argv=None) -> int:
     ap.add_argument("--mock", action="store_true")
     ap.add_argument("--mock-fail-task", default=None, help=argparse.SUPPRESS)
     ap.add_argument("--mock-hang-task", default=None, help=argparse.SUPPRESS)
+    ap.add_argument("--mock-crash-task", default=None, help=argparse.SUPPRESS)
     ap.add_argument("--probe", action="store_true", help="preflight: send 3 short seeded requests per endpoint")
+    ap.add_argument("--probe-verifier", action="store_true", help="preflight: one real verifier call (needs --go)")
     ap.add_argument("--go", action="store_true", help="really run (GPU, VMs, Claude calls)")
     a = ap.parse_args(argv)
     if a.cmd == "plan":
