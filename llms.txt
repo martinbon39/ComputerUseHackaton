@@ -10,7 +10,7 @@
 - [paper/README.md](paper/README.md): how the paper is built from data (every macro, table and figure)
 - [docs/REPO_MAP.md](docs/REPO_MAP.md): every folder, its status and its source-of-truth file
 - [docs/RESEARCH_SYSTEM.md](docs/RESEARCH_SYSTEM.md): how the research was run (agents, compute, statistics)
-- [docs/PROVENANCE.md](docs/PROVENANCE.md): this repository is a one-commit snapshot; cited commit hashes and pre-registration timestamps live in the archived development repository martinbon39/ComputerUseHackaton
+- [docs/PROVENANCE.md](docs/PROVENANCE.md): this repository is a one-commit snapshot; hashes of the project's history and pre-registration commit times live in the archived development repository martinbon39/ComputerUseHackaton
 
 ## Verify
 - [reproduce/run_all.sh](reproduce/run_all.sh): all CPU checks

@@ -12,7 +12,7 @@ on:
   pull_request:
   workflow_dispatch:
 concurrency:
-  group: links
+  group: links-${{ github.ref }}
   cancel-in-progress: true
 permissions:
   contents: read

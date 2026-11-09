@@ -158,12 +158,13 @@ give the details.
 
 ## Provenance
 This repository is a snapshot of the work at publication, in a single commit. The full development history is in the
-archived, read-only repository [martinbon39/ComputerUseHackaton](https://github.com/martinbon39/ComputerUseHackaton):
-the commit times of the pre-registrations, protocols and amendments, and of the analysis code committed before the
-results it analyses were read, are there. Every commit hash cited in this repository, in the paper or in a data file
-refers to that repository. [`docs/PROVENANCE.md`](docs/PROVENANCE.md) gives the first commit of every pre-registration
-and links every cited commit. Pre-registration, protocol and amendment files are byte-identical to their last version
-in the development repository; reports differ only in updated paths.
+archived, read-only repository [martinbon39/ComputerUseHackaton](https://github.com/martinbon39/ComputerUseHackaton).
+Its git history records when each pre-registration, protocol and amendment was committed, and when analysis code was
+committed relative to the results it analyses (git times are set by the committer; they are not an independent
+timestamp). Every hash of the project's own history cited in this repository, the paper or a data file refers to it.
+[`docs/PROVENANCE.md`](docs/PROVENANCE.md) gives the commits of every pre-registration and links every cited commit.
+Pre-registration, protocol and amendment files, and data files (JSON, CSV, arrays, images, logs), are byte-identical
+to the development repository; reports and scripts differ in paths, links and scrubbed secrets, and no number changed.
 
 ## Citation
 ```bibtex
