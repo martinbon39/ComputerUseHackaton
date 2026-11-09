@@ -1,17 +1,14 @@
-# Quickstart proof
+# Expected output
 
-Every command of the README quickstart, run on 2026-11-08 at 11:07 UTC in a **fresh clone** of `main` at commit `37b00e0`,
-with a **fresh virtual environment** (nothing installed), Python 3.14.4, Linux x86-64, CPU only. Every command exited 0, and
-`git status` in the clone was still clean afterwards. The same quickstart runs in GitHub Actions with the runner's
-preinstalled Python 3, whenever the jury kit, the Guard code or its data change:
-.github/workflows/quickstart.yml (`../.github/workflows/quickstart.yml`, not in the repository).
+Every command below was run on 2026-11-09 in a fresh clone of branch `paper-repo` at commit `ad63e5f`, with the
+system Python 3.14.4 (Linux x86-64, CPU only, nothing installed). Every command exited 0 and `git status` stayed clean.
+CI runs the same checks on every change to their inputs ([`reproduce.yml`](../.github/workflows/reproduce.yml)).
 
 ```bash
-git clone https://github.com/martinbon39/ComputerUseHackaton && cd ComputerUseHackaton
-python3 -m venv venv && . venv/bin/activate
+git clone https://github.com/martinbon39/cogito-ergo-feci && cd cogito-ergo-feci
 ```
 
-## (a) `python3 reproduce/verify_results.py`, exit 0
+## `python3 reproduce/verify_results.py`, exit 0
 The columns "92.5 vs 89.3" are sums of per-task scores over the n tasks.
 ```
 == PRIMARY VERDICT (rule fixed before reading results): merge vs Modal-served original, Modal vs Modal ==
@@ -35,7 +32,7 @@ checks against the published values:
 Verdict rule: a gain is claimed only if the CI95 lower bound is > 0. Lower bound = -4.3 pt -> NO DETECTABLE GAIN
 ```
 
-## (b) `python3 reproduce/replay_guard.py --show 2`, exit 0
+## `python3 reproduce/replay_guard.py --show 2`, exit 0
 ```
 --- refusal 1: chrome/47543840
 TASK: On the current website, show me the cars available for pickup at Boston Logan Intl Airport from the 10th to the 11th of next month, sorted by the number of seats to find the largest capacity.
@@ -65,7 +62,7 @@ Feci Guard replay: frozen feci_guard.check on 268 recorded final screens, record
 Matches the published judge-bench numbers.
 ```
 
-## (b2) `python3 reproduce/recount_judges.py`, exit 0
+## `python3 reproduce/recount_judges.py`, exit 0
 ```
 manifest 268 268 90
 A t0 lines 268 unique 268 in manifest 268
@@ -86,7 +83,7 @@ OK  Claude Sonnet (Feci Guard)  45/66         21/202             [+41, +74]  pub
 (this recount uses its own seed, the published CIs come from judge_bench/analyze.py).
 ```
 
-## (b3) `python3 reproduce/verify_online_guard.py`, exit 0
+## `python3 reproduce/verify_online_guard.py`, exit 0
 ```
 Online Feci Guard test, OSWorld test split, paired by task (bootstrap 10,000, seed 0)
   tasks: 120, excluded: 0
@@ -97,14 +94,14 @@ Online Feci Guard test, OSWorld test split, paired by task (bootstrap 10,000, se
 Matches ONLINE_GUARD_RESULT.json exactly.
 ```
 
-## Links: `python3 reproduce/check_links.py`, exit 0
+## `python3 reproduce/check_links.py`, exit 0
 ```
-109 relative links checked in 6 documents, 0 broken
+173 relative links checked in 160 documents, 0 broken
 ```
 
-## All of it: `bash reproduce/run_all.sh`, exit 0
+## `bash reproduce/run_all.sh`, exit 0
 ```
-== (a) OSWorld paired comparisons, recomputed from per-task scores ==
+== (1) OSWorld paired comparisons of the weight edits, recomputed from per-task scores ==
 == PRIMARY VERDICT (rule fixed before reading results): merge vs Modal-served original, Modal vs Modal ==
 merge_cua_b050 vs orig_modal, reserve + test               n=165    92.5 vs   89.3  delta +1.94 pt  CI95 [ -4.3 ;  +8.0]  18 wins / 14 losses
   test only (120)                                          n=120    70.5 vs   70.3  delta +0.18 pt  CI95 [ -6.5 ;  +7.5]  11 wins / 10 losses
@@ -125,7 +122,7 @@ checks against the published values:
 
 Verdict rule: a gain is claimed only if the CI95 lower bound is > 0. Lower bound = -4.3 pt -> NO DETECTABLE GAIN
 
-== (b) Feci Guard replayed on 268 recorded episodes (frozen decision code, recorded verdicts) ==
+== (2) Feci Guard replayed on 268 recorded episodes (frozen decision code, recorded verdicts) ==
 --- refusal 1: chrome/47543840
 TASK: On the current website, show me the cars available for pickup at Boston Logan Intl Airport from the 10th to the 11th of next month, sorted by the number of seats to find the largest capacity.
   [v] Pickup location is Boston Logan Intl Airport: Pick-Up shows Boston Logan Intl Airport, BOS.
@@ -146,7 +143,7 @@ Feci Guard replay: frozen feci_guard.check on 268 recorded final screens, record
   OK  verifier_sha: 0af76fdb (expected 0af76fdb)
 Matches the published judge-bench numbers.
 
-== (b2) the three judges recounted from their raw responses (README rows 2 and 7) ==
+== (3) the three judges recounted from their raw responses ==
 judge                         detected      wrongly rejected   gap CI95 (task bootstrap, pts)
 OK  Holo-3.1-4B (self-judge)    35/66         97/202             [-13, +23]  published [-13, +23]
 OK  Holo4-27B                   31/66         63/202             [-2, +34]  published [-3, +33]
@@ -154,7 +151,7 @@ OK  Claude Sonnet (Feci Guard)  45/66         21/202             [+41, +74]  pub
 268 episodes from 90 tasks; the bootstrap resamples tasks. Counts must match exactly; the CI bounds within 2 pts
 (this recount uses its own seed, the published CIs come from judge_bench/analyze.py).
 
-== (b3) online Feci Guard test, 120 OSWorld tasks (README row 10) ==
+== (4) online Feci Guard test, 120 OSWorld tasks ==
 Online Feci Guard test, OSWorld test split, paired by task (bootstrap 10,000, seed 0)
   tasks: 120, excluded: 0
   false 'done' rate : original 22.5 % -> Guard 10.8 %   diff -11.7 pts CI95 [-19.2, -4.2]
@@ -163,15 +160,12 @@ Online Feci Guard test, OSWorld test split, paired by task (bootstrap 10,000, se
   criterion 1 (false done down): True   criterion 2 (score gain): False -> NO SCORE GAIN CLAIMED   rule 5 useful: True
 Matches ONLINE_GUARD_RESULT.json exactly.
 
-== (c) demo replay pages ==
-holo-neurochir/demo_live/repair_calc.html: 1.0 MB, 8 embedded screenshots, 0 external scripts: Feci Guard refuses a false done, the agent repairs
-holo-neurochir/demo_faux_fini/demo_faux_fini.html: 3.1 MB, 47 embedded screenshots, 0 external scripts: one task, the original's false done next to the merged agent
-
-QUICKSTART OK: (a) and (b) match the published numbers, (c) the two demo pages are ready to open in a browser.
+ALL CHECKS OK: (1)-(4) match the numbers reported in the paper.
 ```
 
 ## Level 2
-Earlier fresh clone, commit `6bb899f`, about 10:05 UTC.
+Run on 2026-11-08 at about 10:05 UTC in a fresh clone of commit `6bb899f`, before the repository was restructured (the
+script was then `jury_kit/guard_live.py`; its logic is unchanged).
 `python3 reproduce/guard_live.py` uses the `claude` CLI (Claude Code, logged in) for fresh verifier calls. Both live
 decisions matched the recorded ones. The `--api` path (Anthropic key through the OpenAI-compatible endpoint) was
 **not run**, because no key was on the machine.
@@ -202,5 +196,5 @@ recorded : COMPLETE -> accept   same decision: True
 ```
 
 ## Oldest supported Python
-Fresh clone at `6bb899f`, Python 3.9.25 (`uv run --python 3.9 --no-project python ...`): `verify_results.py` exited 0,
-`replay_guard.py` exited 0, and `guard_live.py --list` printed 268 episodes.
+Same clone, Python 3.9.25 (`uv run --python 3.9 --no-project`): `bash reproduce/run_all.sh` ended with "ALL CHECKS OK",
+and `python reproduce/check_links.py` reported 0 broken links.
