@@ -1,6 +1,7 @@
 # Expected output
 
-Every command below was run on 2026-11-09 in a fresh clone of branch `paper-repo` at commit `ad63e5f`, with the
+Every command below was run on 2026-11-09 in a fresh clone of the development repository's branch `paper-repo` at commit [`ad63e5f`](https://github.com/martinbon39/ComputerUseHackaton/commit/ad63e5f04e5e41b122426d8153002bd31a6f5469), whose tree this
+repository publishes (later commits changed no script or data these checks read; CI reruns them on every change), with the
 system Python 3.14.4 (Linux x86-64, CPU only, nothing installed). Every command exited 0 and `git status` stayed clean.
 CI runs the same checks on every change to their inputs ([`reproduce.yml`](../.github/workflows/reproduce.yml)).
 
@@ -164,7 +165,7 @@ ALL CHECKS OK: (1)-(4) match the numbers reported in the paper.
 ```
 
 ## Level 2
-Run on 2026-11-08 at about 10:05 UTC in a fresh clone of commit `6bb899f`, before the repository was restructured
+Run on 2026-11-08 at about 10:05 UTC in a fresh clone of development commit [`6bb899f`](https://github.com/martinbon39/ComputerUseHackaton/commit/6bb899f4b2d824237c6d1f42700a21dfdd33ad24), before the repository was restructured
 (`reproduce/guard_live.py` was then at its old path; its logic is unchanged).
 `python3 reproduce/guard_live.py` uses the `claude` CLI (Claude Code, logged in) for fresh verifier calls. Both live
 decisions matched the recorded ones. The `--api` path (Anthropic key through the OpenAI-compatible endpoint) was

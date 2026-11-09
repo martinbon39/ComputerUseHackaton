@@ -6,7 +6,8 @@ finding reported in the paper), **NEGATIVE** (ran to a verdict and found no effe
 protocols and verification files are committed, while checkpoints, raw logs and images stayed on the machines that
 produced them.
 
-The last column gives the folder's path before the repository was restructured. The lab notebook
+The last column gives the folder's path in the development repository
+([martinbon39/ComputerUseHackaton](https://github.com/martinbon39/ComputerUseHackaton), see [PROVENANCE.md](PROVENANCE.md)). The lab notebook
 (`docs/lab_notebook/`), the source comments of the paper and some reports use those paths.
 
 ## Paper and verification
@@ -48,6 +49,7 @@ gives each folder's status, headline and former name (`astra-*`, `moon-*`, `repo
 | Path | What | Former path |
 |---|---|---|
 | [`docs/RESEARCH_SYSTEM.md`](RESEARCH_SYSTEM.md) | How the research was run: agents, compute, VMs, statistics, incidents | same |
+| [`docs/PROVENANCE.md`](PROVENANCE.md) | First commit of every pre-registration; every cited commit, linked to the development repository | new |
 | [`docs/reviews/`](reviews/) | Adversarial reviews and fresh-eyes rounds of 8 November | `holo-neurochir/report/{REDTEAM_0305, REDTEAM2_0335, IDEATION_ROUNDS}.md` |
 | [`docs/lab_notebook/`](lab_notebook/) | Raw working logs (mostly French): orchestrator log, journal, original brief, handover notes | `LOG.md`, `holo-neurochir/{JOURNAL, BRIEF_neurochirurgie_holo_LOCAL, HANDOFF}.md` |
 | [`reproduce/EXPECTED_OUTPUT.md`](../reproduce/EXPECTED_OUTPUT.md) | Expected output of the CPU checks | `docs/QUICKSTART_PROOF.md` |
@@ -58,4 +60,4 @@ the live duel page (`osworld/duel/`), videos and their generators (`video_demo/`
 (`pitch_design/`), the internals dashboard (`dashboard/`), the GPU budget monitor written after the experiments
 (`infra/`), the public evaluation endpoint (`osworld/modal_jury_*`), status and sprint notes (`STATUS.md`,
 `report/{SPRINTS, CLEANUP, CONTEXT_2026-11-07, ADDENDUM_2026-11-07_2010, PUBLIC_AUDIT}.md`). They remain in the git
-history before commit `26565da`.
+history of the development repository at commit [`26565da`](https://github.com/martinbon39/ComputerUseHackaton/commit/26565dace87c55db3f1ce69cfe4dead6ba1472a6) ([PROVENANCE.md](PROVENANCE.md)).

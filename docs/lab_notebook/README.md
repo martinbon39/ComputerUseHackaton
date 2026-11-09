@@ -12,4 +12,6 @@ maps every old path to the current one.
 | [`BRIEF_neurochirurgie_holo_LOCAL.md`](BRIEF_neurochirurgie_holo_LOCAL.md) | The original research brief |
 | [`HANDOFF.md`](HANDOFF.md) | Handover notes between sessions |
 
+Commit hashes in these logs refer to the development repository
+[martinbon39/ComputerUseHackaton](https://github.com/martinbon39/ComputerUseHackaton) ([`../PROVENANCE.md`](../PROVENANCE.md)).
 Signed links to hosted pages were removed from these files; the rest is unchanged.

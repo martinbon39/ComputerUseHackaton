@@ -9,6 +9,7 @@ on:
       - "reproduce/check_paths.py"
       - "**.py"
       - ".github/workflows/links.yml"
+  pull_request:
   workflow_dispatch:
 concurrency:
   group: links

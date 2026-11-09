@@ -138,7 +138,8 @@ src/
 experiments/    one folder per study, each with its protocol and its report
   miniwob_pilot/  verif_study/  judge_bench/  constraint_drop/  text_signal/  proof_anchor/
   rescue_bench/   online_guard/  weight_edits/ (17 edit families, mostly negative)
-docs/           REPO_MAP.md (every folder, status, source of truth), RESEARCH_SYSTEM.md (how the work was run),
+docs/           REPO_MAP.md (every folder, status, source of truth), PROVENANCE.md (commits, prereg times),
+                RESEARCH_SYSTEM.md (how the work was run),
                 reviews/ (adversarial reviews), lab_notebook/ (raw working logs, mostly French)
 ```
 
@@ -154,6 +155,15 @@ of the authors, over about 22 hours. Splits, labels, gates and decision rules we
 judge, and results were checked by agents that had not produced them. Paper appendix "How the research was run",
 [`docs/RESEARCH_SYSTEM.md`](docs/RESEARCH_SYSTEM.md) and the raw logs in [`docs/lab_notebook/`](docs/lab_notebook/)
 give the details.
+
+## Provenance
+This repository is a snapshot of the work at publication, in a single commit. The full development history is in the
+archived, read-only repository [martinbon39/ComputerUseHackaton](https://github.com/martinbon39/ComputerUseHackaton):
+the commit times of the pre-registrations, protocols and amendments, and of the analysis code committed before the
+results it analyses were read, are there. Every commit hash cited in this repository, in the paper or in a data file
+refers to that repository. [`docs/PROVENANCE.md`](docs/PROVENANCE.md) gives the first commit of every pre-registration
+and links every cited commit. Pre-registration, protocol and amendment files are byte-identical to their last version
+in the development repository; reports differ only in updated paths.
 
 ## Citation
 ```bibtex

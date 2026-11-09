@@ -5,7 +5,7 @@ machines, the statistics, what happened during the night, and how to reproduce e
 and the claim → evidence → command table are in [README.md](../README.md).
 
 **How to read this page.** Each number is followed by the file it comes from, as `path:line`. Paths are relative to
-the repository root. The line numbers are those of `main` at commit `407b672` (2026-11-08); the paths were updated to the current layout
+the repository root. The line numbers are those of `main` at commit [`407b672`](https://github.com/martinbon39/ComputerUseHackaton/commit/407b67269faae8d5eb6a7de6c60c0d144c3b11c1) (2026-11-08) of the development repository ([PROVENANCE.md](PROVENANCE.md)); the paths were updated to the current layout
 ([REPO_MAP.md](REPO_MAP.md) maps old to new), and the counts that cite `docs/REPO_MAP.md` refer to its version at that commit. Most working notes are in
 French (`JOURNAL.md`, `docs/lab_notebook/LOG.md`), so quoted strings are in French and translated inline. A few counts come from the raw
 episode folders on our server (`~/osw/`, not in the repo); those are marked **server-only**, with the command that
@@ -71,9 +71,9 @@ Amendments are dated and say what had been seen when they were written.
 
 | File | Written / committed (2026-11-08 UTC) | What it froze |
 |---|---|---|
-| `src/feci_guard/PREREG.md` | "written 07:36, before opening any blind packet" (line 1); commit `aa5907f` | verifier hash and decision rule of the Guard |
-| `experiments/verif_study/PROTOCOL.md` | "Registered … before model responses" (line 3); commit `cc671d3` | Holo as its own verifier; labels = official `result.txt` (line 9) |
-| `experiments/proof_anchor/PROTOCOL.md` | commit `ff16267` | 39-context anchoring study |
+| `src/feci_guard/PREREG.md` | "written 07:36, before opening any blind packet" (line 1); commit [`aa5907f`](https://github.com/martinbon39/ComputerUseHackaton/commit/aa5907f231ed5051c1331167883d5fa21c741022) | verifier hash and decision rule of the Guard |
+| `experiments/verif_study/PROTOCOL.md` | "Registered … before model responses" (line 3); commit [`cc671d3`](https://github.com/martinbon39/ComputerUseHackaton/commit/cc671d3071949103c3cf1f8eef300d447fe200fc) | Holo as its own verifier; labels = official `result.txt` (line 9) |
+| `experiments/proof_anchor/PROTOCOL.md` | commit [`ff16267`](https://github.com/martinbon39/ComputerUseHackaton/commit/ff16267d9f55a4a97734a74050a33039124961bb) | 39-context anchoring study |
 | `experiments/online_guard/PREREG_ONLINE_GUARD.md` | 09:27 "avant tout lancement" (before any launch) (line 1); amendments at 09:28 (line 15), 09:40 (line 29) and 10:44 (line 37) | online Guard arms, primary criterion, benefit/cost rule |
 | `src/feci_guard/v2/PROTOCOL.md` | 09:31, held-out half used once | Guard v2 vs v1 |
 | `paper/data/local/rescue_bench/PREREG.md` | "registered … before any Holo4 sample" | escalation to Holo4-27B |
