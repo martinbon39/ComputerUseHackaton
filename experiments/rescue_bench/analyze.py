@@ -11,6 +11,7 @@ from pathlib import Path
 import random
 
 HERE = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[2]  # repository root
 ARMS = ("guard", "control")
 
 
@@ -182,7 +183,7 @@ def analyze(root):
         "all_complete_sensitivity": summarize(groups, complete), "per_episode": per,
         "historical_holo31": {"source": "paper/data/local/feci_guard/repair/snapshot/results.json", "snapshot_utc": "2026-11-08T08:36:00Z", "episodes": 5, "K": 2, "guard_full_repairs": 0, "guard_branches": 10, "control_full_repairs": 0, "control_branches": 10, "guard_refused_branches": 6, "guard_refused_then_repaired": 0, "any_episode_wilson95": wilson(0, 5), "comparison": "historical, not concurrent/randomized; 15 new turns versus 20 in rescue"},
         "guard_detection": {"false_success_rejected": 45, "false_success_total": 66, "true_success_rejected": 21, "true_success_total": 202, "source": "judge_bench/RESULT.json", "repair_losses_on_true_successes": "not measured"},
-        "provenance": {"branches_sha256": {str(source): hashlib.sha256(source.read_bytes()).hexdigest() for source in sources}, "runner_sha256": hashlib.sha256((HERE.parent / "feci_guard/rescue_runner.py").read_bytes()).hexdigest()},
+        "provenance": {"branches_sha256": {str(source): hashlib.sha256(source.read_bytes()).hexdigest() for source in sources}, "runner_sha256": hashlib.sha256((REPO / "src/feci_guard/rescue_runner.py").read_bytes()).hexdigest()},
         "prediction": {"label": "prediction, not measured online gain", "formula": "Delta = p_FS_feasible * d_FS * r_score_after_reject - p_TS_exposed * fpr_TS * loss_after_false_reject", "status": "pending prevalence artifact or measured conditional repair", "unmeasured_strata": "infeasible false completions and partial-score endpoints; repair measured only on selected feasible short episodes"},
         "independent_review": {
             "runner": ["VERIFY_RUNNER.md", "SCHEDULING_REVIEW.md"],

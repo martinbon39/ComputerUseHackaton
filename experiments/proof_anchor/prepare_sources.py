@@ -5,7 +5,7 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-SOURCE = ROOT.parent / 'astra-power'
+SOURCE = ROOT.parents[1] / 'experiments/weight_edits/power_cohort'
 EXPECTED = '2faee8f1af5a1243b8c8bacbf0369e4e035ab9dc336307c9f6678c0d134c24d0'
 
 

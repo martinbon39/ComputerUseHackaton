@@ -7,10 +7,11 @@ import argparse, concurrent.futures, json, os, sys, threading
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[3]  # repository root
 sys.path.insert(0, str(HERE.parent))
 import verifier_v2  # noqa: E402
 
-STUDY = HERE.parent.parent / "verif_study"
+STUDY = REPO / "experiments/verif_study"
 LOCK = threading.Lock()
 MAX_CONCURRENT = 3
 

@@ -6,7 +6,7 @@ except Exception:
     pass
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[2]  # repository root
 os.environ.setdefault("HF_HOME", str(ROOT / ".hf"))
 os.environ.setdefault("PLAYWRIGHT_BROWSERS_PATH", str(ROOT / ".pw-browsers"))
 os.environ.setdefault("MINIWOB_URL", "http://127.0.0.1:8765/miniwob/")
@@ -14,7 +14,7 @@ os.environ.setdefault("HF_HUB_OFFLINE", "1")
 
 MODEL_ID = os.environ.get("HOLO_MODEL", "Hcompany/Holo-3.1-0.8B")
 MODEL_TAG = MODEL_ID.split("-")[-1].lower()  # "0.8b" / "4b"
-RUNS_DIR = Path(os.environ.get("HOLO_RUNS", ROOT / "runs"))
+RUNS_DIR = Path(os.environ.get("HOLO_RUNS", ROOT / "experiments" / "miniwob_pilot" / "runs"))
 
 # Identical for every evaluation arm (brief §2.5)
 MAX_NEW_TOKENS = 512

@@ -3,7 +3,8 @@ import json, math, random, sys
 from collections import defaultdict
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
-M = {e["episode_id"]: e for e in json.loads((HERE.parent.parent / "verif_study/manifest.json").read_text())}
+REPO = Path(__file__).resolve().parents[3]  # repository root
+M = {e["episode_id"]: e for e in json.loads((REPO / "experiments/verif_study/manifest.json").read_text())}
 
 
 def wilson(k, n, z=1.96):
@@ -14,7 +15,7 @@ def wilson(k, n, z=1.96):
 
 def load(variant, half):
     ids = set(json.loads((HERE / "SPLIT.json").read_text())[half])
-    p = (HERE.parent.parent / "judge_bench/claude_responses.jsonl") if variant == "v1" else HERE / "runs" / f"{variant}_{half}.jsonl"
+    p = (REPO / "experiments/judge_bench/claude_responses.jsonl") if variant == "v1" else HERE / "runs" / f"{variant}_{half}.jsonl"
     rows = {}
     for l in open(p):
         j = json.loads(l)

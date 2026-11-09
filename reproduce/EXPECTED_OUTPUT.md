@@ -164,8 +164,8 @@ ALL CHECKS OK: (1)-(4) match the numbers reported in the paper.
 ```
 
 ## Level 2
-Run on 2026-11-08 at about 10:05 UTC in a fresh clone of commit `6bb899f`, before the repository was restructured (the
-script was then `jury_kit/guard_live.py`; its logic is unchanged).
+Run on 2026-11-08 at about 10:05 UTC in a fresh clone of commit `6bb899f`, before the repository was restructured
+(`reproduce/guard_live.py` was then at its old path; its logic is unchanged).
 `python3 reproduce/guard_live.py` uses the `claude` CLI (Claude Code, logged in) for fresh verifier calls. Both live
 decisions matched the recorded ones. The `--api` path (Anthropic key through the OpenAI-compatible endpoint) was
 **not run**, because no key was on the machine.

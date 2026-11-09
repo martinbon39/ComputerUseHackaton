@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 .venv/
+# caches of src/holo/settings.py
+.hf/
+.pw-browsers/

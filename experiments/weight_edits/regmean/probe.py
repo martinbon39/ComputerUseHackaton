@@ -10,9 +10,10 @@ from pathlib import Path
 import jsonschema
 
 ROOT = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[3]  # repository root
 sys.dont_write_bytecode = True
-sys.path.insert(0, str(ROOT.parent))
-sys.path.insert(0, str(ROOT.parent / "osworld"))
+sys.path.insert(0, str(REPO / "src"))
+sys.path.insert(0, str(REPO / "src" / "osworld"))
 from astra_cohort_probe import call, server_info, REQUEST_SETTINGS, SCHEMA
 from holo.osw_replay import check_traj, rebuild, to_openai
 from holo.osw_taxonomy import load_task
@@ -48,7 +49,7 @@ def main():
     args = ap.parse_args()
     out = ROOT / ("evaluation_" + args.label)
     assert not out.exists()
-    co = json.loads((ROOT.parent / "astra-broad/evaluation_cohort.json").read_text())
+    co = json.loads((ROOT.parent / "alphaedit_broad/evaluation_cohort.json").read_text())
     manifest = json.loads((ROOT / "manifest.json").read_text())
     assert co["train"] == manifest["evaluation"] and co["seeds"] == list(range(7100, 7108))
     assert not {r["task_id"] for r in co["train"]} & {r["task_id"] for r in manifest["rows"]}
@@ -56,7 +57,7 @@ def main():
     assert info["vllm_version"].startswith("0.23.") and args.model in [m["id"] for m in info["models"]], info
     jobs = []
     for row in co["train"]:
-        d = ROOT.parent / "astra-broad/evaluation_data" / row["task_id"]
+        d = ROOT.parent / "alphaedit_broad/evaluation_data" / row["task_id"]
         for filename, expected in {**row["sha256"], **row["images_sha256"]}.items():
             assert hashlib.sha256((d / filename).read_bytes()).hexdigest() == expected
         _, _, steps = load_task(d)
@@ -73,7 +74,7 @@ def main():
     out.mkdir()
     record = dict(server=info, settings=REQUEST_SETTINGS, seed_list=co["seeds"], planned_calls=len(jobs),
                   schema_sha256=hashlib.sha256(json.dumps(SCHEMA, sort_keys=True).encode()).hexdigest(),
-                  canonical_probe_sha256=hashlib.sha256((ROOT.parent / "osworld/astra_cohort_probe.py").read_bytes()).hexdigest(),
+                  canonical_probe_sha256=hashlib.sha256((REPO / "src/osworld/astra_cohort_probe.py").read_bytes()).hexdigest(),
                   privacy="Email strings redacted after parsing and validation; raw-response hash retained, token IDs omitted.")
     (out / "plan.json").write_text(json.dumps(record, indent=2) + "\n")
     with ThreadPoolExecutor(8) as pool, (out / "generations.jsonl").open("w") as log:

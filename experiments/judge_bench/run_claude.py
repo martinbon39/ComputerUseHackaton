@@ -11,8 +11,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[2]  # repository root
 STUDY = HERE.parent / 'verif_study'
-sys.path.insert(0, str(HERE.parent / 'feci_guard'))
+sys.path.insert(0, str(REPO / 'src' / 'feci_guard'))
 import verifier  # noqa: E402  (frozen; called with its defaults)
 
 LOCK = threading.Lock()

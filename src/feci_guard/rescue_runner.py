@@ -15,6 +15,7 @@ from datetime import datetime, timezone
 from types import SimpleNamespace
 
 HERE = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[2]  # repository root
 sys.path.insert(0, str(HERE.parent))
 sys.path.insert(0, str(HERE.parent / "osworld"))
 sys.path.insert(0, str(HERE))
@@ -190,7 +191,7 @@ def compatibility(args, rh_args, episode):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--episodes", type=Path, default=HERE.parent / "rescue_bench/episodes.txt")
+    ap.add_argument("--episodes", type=Path, default=REPO / "experiments/rescue_bench/episodes.txt")
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--base_url", default="https://martinbon39--holo-judge-serve.us-east.modal.run/v1")
     ap.add_argument("--model", default="Holo4-27B")
@@ -209,7 +210,7 @@ def main():
     args.episodes = args.episodes.expanduser().resolve()
     args.key_file = args.key_file.expanduser().resolve()
     os.chdir(Path(BR.HOLO_REPRO).parent)
-    frozen = json.loads((HERE.parent / "rescue_bench/FROZEN.json").read_text())
+    frozen = json.loads((REPO / "experiments/rescue_bench/FROZEN.json").read_text())
     for path, expected in frozen.items():
         assert hashlib.sha256(Path(path).read_bytes()).hexdigest() == expected, f"frozen source changed: {path}"
     os.environ["RESCUE_AUTH"] = "Authorization: Bearer " + args.key_file.read_text().strip()

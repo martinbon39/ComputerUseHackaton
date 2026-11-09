@@ -1,11 +1,13 @@
 name: links
-# Every relative link and #anchor of the Markdown files resolves (see reproduce/check_links.py for the scope).
+# Every relative link of the Markdown files and every cross-folder path of the scripts resolves.
 on:
   push:
     paths:
       - "**.md"
       - "llms.txt"
       - "reproduce/check_links.py"
+      - "reproduce/check_paths.py"
+      - "**.py"
       - ".github/workflows/links.yml"
   workflow_dispatch:
 concurrency:
@@ -20,3 +22,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 reproduce/check_links.py
+      - run: python3 reproduce/check_paths.py

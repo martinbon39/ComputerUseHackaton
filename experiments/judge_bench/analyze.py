@@ -10,6 +10,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parents[2]  # repository root
 STUDY = HERE.parent / 'verif_study'
 sys.path.insert(0, str(STUDY))
 from analyze import cluster_ci, parse_response, wilson  # noqa: E402
@@ -140,7 +141,7 @@ def main():
     (HERE / 'per_episode.json').write_text(json.dumps(judges, indent=1, ensure_ascii=False) + '\n')
     result['artifacts_sha256'] = {p.name: sha(p) for p in sorted(HERE.glob('*')) if p.is_file()
                                   and p.name not in ('RESULT.json', 'REPORT.md')}
-    result['artifacts_sha256']['feci_guard/verifier.py'] = sha(HERE.parent / 'feci_guard' / 'verifier.py')
+    result['artifacts_sha256']['feci_guard/verifier.py'] = sha(REPO / 'src' / 'feci_guard' / 'verifier.py')
     (HERE / 'RESULT.json').write_text(json.dumps(result, indent=2, ensure_ascii=False) + '\n')
     for name, s in result['judges'].items():
         f, t = s['false_success'], s['true_success']
