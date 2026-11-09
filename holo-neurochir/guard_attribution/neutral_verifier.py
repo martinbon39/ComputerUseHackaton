@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import inspect
 import json
 import math
 import os
@@ -21,7 +22,6 @@ import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 LATENCIES = os.path.join(HERE, "recorded_latencies.json")
-VERIFIER_SHA = "neutral-" + hashlib.sha256(open(__file__, "rb").read()).hexdigest()[:8]
 
 
 def recorded() -> list[float]:
@@ -29,6 +29,15 @@ def recorded() -> list[float]:
 
 
 _VALUES = recorded()
+
+
+def _code_sha(*objs) -> str:
+    """sha of the latency data and of the given functions/classes only, so that editing another stub in this file
+    does not change it."""
+    h = hashlib.sha256(open(LATENCIES, "rb").read())
+    for o in objs:
+        h.update(inspect.getsource(o).encode())
+    return h.hexdigest()[:8]
 
 
 def draw_latency(seed: int, task_id: str, step: int, values: list[float] | None = None) -> float:
@@ -40,7 +49,7 @@ def draw_latency(seed: int, task_id: str, step: int, values: list[float] | None 
 class NeutralFeci:
     """Drop-in for the feci_guard module inside run_holo_guard: same check() signature and return shape."""
 
-    VERIFIER_SHA = VERIFIER_SHA
+    VERIFIER_SHA = None
 
     def __init__(self, seed: int, task_id: str, sleep=time.sleep):
         self.seed, self.task_id, self.sleep, self.calls = int(seed), task_id, sleep, 0
@@ -54,6 +63,48 @@ class NeutralFeci:
                   "error": None, "cost_usd": 0.0, "latency_s": lat, "verifier_sha": VERIFIER_SHA,
                   "screenshot_received": bool(screenshot_png)}
         return {"verdict": "accept", "kind": "complete", "requirements": [], "feedback": "", "detail": detail}
+
+
+NeutralFeci.VERIFIER_SHA = VERIFIER_SHA = "neutral-" + _code_sha(draw_latency, NeutralFeci)
+
+PLACEBO_RATE = 0.23
+PLACEBO_MESSAGE = ("Verifier: the task is not complete yet. Check on the screen that every requirement of the task is "
+                   "met before answering. Continue the task.")
+
+
+def placebo_refuses(seed: int, task_id: str, call: int, rate: float = PLACEBO_RATE) -> bool:
+    h = hashlib.sha256(f"placebo-refusal|{int(seed)}|{task_id}|{int(call)}".encode()).digest()
+    return int.from_bytes(h[:8], "big") / 2 ** 64 < rate
+
+
+class PlaceboFeci(NeutralFeci):
+    """Arm D (supplementary prereg PREREG_GUARD_PLACEBO.md): refuses each checked answer with probability PLACEBO_RATE,
+    drawn from (study seed, task id, index of the verifier call in the episode), with one fixed generic message;
+    otherwise COMPLETE. Same latency draw as arm B for the same call. Reruns of an episode draw the same refusals.
+    Like the real guard (feci_guard.check), a failed fresh screenshot gives no verdict and the answer passes."""
+
+    VERIFIER_SHA = None
+
+    def __init__(self, seed: int, task_id: str, sleep=time.sleep, rate: float = PLACEBO_RATE):
+        super().__init__(seed, task_id, sleep=sleep)
+        self.rate = rate
+
+    def check(self, instruction, screenshot_png, answer="", history=None, mode=None, model=None) -> dict:
+        call = self.calls
+        r = super().check(instruction, screenshot_png, answer, history, mode, model)
+        r["detail"].update(model="placebo-stub", backend="placebo_stub", verifier_sha=self.VERIFIER_SHA,
+                           placebo_rate=self.rate)
+        if not screenshot_png:
+            r["detail"].update(ok=False, verdict=None, error="no screenshot")
+            r.update(kind="no_verdict")
+            return r
+        if placebo_refuses(self.seed, self.task_id, call, self.rate):
+            r["detail"].update(verdict="INCOMPLETE", missing_requirement="(placebo)", next_action="")
+            r.update(verdict="reject", kind="incomplete", feedback=PLACEBO_MESSAGE)
+        return r
+
+
+PlaceboFeci.VERIFIER_SHA = "placebo-" + _code_sha(draw_latency, NeutralFeci, placebo_refuses, PlaceboFeci)
 
 
 def ks_two_sample(a: list[float], b: list[float]) -> tuple[float, float]:

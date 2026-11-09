@@ -86,10 +86,10 @@ def read_episode(d: str) -> dict | None:
             "step_cap": loop_steps >= STEP_CAP, "actions": actions}
 
 
-def load(root: str) -> dict:
+def load(root: str, arms=ARMS) -> dict:
     """{(arm, seed, task): episode}. task = '<domain>/<id>'."""
     out = {}
-    for arm in ARMS:
+    for arm in arms:
         for sd in glob.glob(os.path.join(root, f"arm{arm}", "seed*")):
             seed = int(os.path.basename(sd)[4:])
             for d in glob.glob(os.path.join(sd, "pyautogui", "screenshot", "*", "*", "*")):
@@ -106,7 +106,7 @@ def ledger_events(root: str) -> dict:
     if not os.path.exists(p):
         return {"reruns": [], "dead_attempts": [], "restarted_after_crash": [], "stops": []}
     rows = [json.loads(x) for x in open(p)]
-    att = [r for r in rows if r.get("kind") == "attempt"]
+    att = [r for r in rows if r.get("kind") == "attempt" and r.get("arm") in ARMS]
     return {"reruns": [f"arm{r['arm']} seed{r['seed']} {r['domain']}/{r['task']} -> "
                        f"{'dead' if r['dead'] else 'scored'}" for r in att if r["attempt"] > 1],
             "dead_attempts": [f"arm{r['arm']} seed{r['seed']} {r['domain']}/{r['task']} attempt {r['attempt']}"

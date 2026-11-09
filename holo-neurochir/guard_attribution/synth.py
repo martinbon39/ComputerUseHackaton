@@ -32,7 +32,7 @@ def _write(ep_dir: str, outcome: str, actions_seed: int) -> None:
 
 
 def make(root: str, p_fd: dict, n_tasks: int = 120, seeds=(0, 1, 2), gen_seed: int = 0,
-         dead: list[tuple[str, int, int]] | None = None) -> list[str]:
+         dead: list[tuple[str, int, int]] | None = None, refusal: dict | None = None) -> list[str]:
     """p_fd: {"A": .., "B": .., "C": ..}. dead: (arm, seed, task_index) left without result.txt. Returns task ids."""
     rng = random.Random(gen_seed)
     tasks = [f"dom{t % 5}/task{t:04d}" for t in range(n_tasks)]
@@ -42,8 +42,9 @@ def make(root: str, p_fd: dict, n_tasks: int = 120, seeds=(0, 1, 2), gen_seed: i
     for s in seeds:
         for ti, t in enumerate(tasks):
             shared = (rng.random(), rng.random())
-            for arm in ("A", "B", "C"):
+            for arm in tuple(p_fd):
                 coupled = arm in ("A", "B") or rng.random() < 0.7
+                rate = (refusal or {}).get(arm)
                 r, r2 = shared if coupled else (rng.random(), rng.random())
                 if r < min(1.0, 2 * u[t] * p_fd[arm]):
                     outcome = "false_done"
@@ -52,6 +53,11 @@ def make(root: str, p_fd: dict, n_tasks: int = 120, seeds=(0, 1, 2), gen_seed: i
                 d, i = t.split("/")
                 ep = os.path.join(root, f"arm{arm}", f"seed{s}", "pyautogui", "screenshot", MODEL, d, i)
                 is_dead = (arm, s, ti) in dead
+                if not is_dead and rate is not None:
+                    os.makedirs(ep, exist_ok=True)
+                    dec = ["refused", "passed_complete"] if rng.random() < rate else ["passed_complete"]
+                    with open(os.path.join(ep, "guard.jsonl"), "w") as f:
+                        f.write("".join(json.dumps({"decision": x}) + "\n" for x in dec))
                 if not is_dead:
                     _write(ep, outcome, zlib.crc32(f"{t}|{s}|{outcome}".encode()) & 0xFFFF if arm in ("A", "B") else rng.randrange(1 << 16))
                 ledger.append({"kind": "attempt", "arm": arm, "seed": s, "domain": d, "task": i, "attempt": 1,

@@ -190,6 +190,20 @@ bias C − B. It is still a deviation and must be listed in the result.
 9. `preflight --probe-verifier --go` makes one Claude call outside arm C (about $0.03). The prereg says Claude calls
    happen only in C. This call is a preflight check, not an episode, and it is listed as a deviation.
 
+## Arm D: placebo refusal (supplementary, draft prereg `report/PREREG_GUARD_PLACEBO.md`)
+- `neutral_verifier.PlaceboFeci` refuses each checked answer with probability 0.23, with a fixed generic message. The
+  draw is seeded by (seed, task, verifier call index), so reruns draw the same refusals. Latency is drawn as in B.
+- `runner.py --arms A,B,C,D` rotates ABCD by task. The default stays `A,B,C` until Martin approves the supplement. The
+  frozen stop rule, drops and `analysis.py` use A, B and C only.
+- Supplementary analysis: `analysis_placebo.py` (primary C − D false "done", kill rule on C's seed-0 refusal rate).
+- Why: `placebo_power.py` (simulation). A random refuser at r = 0.23 meets the frozen primary in about 27 % of
+  replications if seeding holds, and 17-22 % if it holds in 40-70 % of episodes. Its effect is −1.9 pts. The figure
+  ranges from 0.4 % to 78 % depending on post-refusal behaviour.
+- B's stub hash now covers only the latency data and B's code (`neutral-63939f75`; it was `neutral-b76422a8` in
+  3f66e6a, before any episode).
+- Every episode now keeps its step screenshots and `final_screen_after_eval.png` on the node. The pilot fails if any
+  are missing.
+
 ## Open decision for Martin: batch-invariant vLLM
 vLLM does not promise identical outputs for the same seed. A request's result depends on the other requests batched
 with it (vLLM docs "Reproducibility", https://docs.vllm.ai/en/latest/usage/reproducibility/; Thinking Machines,

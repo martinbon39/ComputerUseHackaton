@@ -3,6 +3,7 @@
 A: holo_repro/run_holo.py run_one (RealtimeGUI HoloComputerAgent), no guard.
 B: feci_guard/run_holo_guard.py run_one with --guard on, `feci` replaced by NeutralFeci (always COMPLETE, recorded delay).
 C: feci_guard/run_holo_guard.py run_one with --guard on and the frozen verifier (sha 0af76fdbacc72317).
+D: (supplementary, report/PREREG_GUARD_PLACEBO.md) as B, but `feci` is PlaceboFeci: random refusals at rate 0.23.
 
 Nothing in those files is edited. load() imports both modules and swaps, in their module globals, the agent classes for
 seeded subclasses (seeding.seeded); run_episode() sets the episode context and, for B and C, the `feci` object that
@@ -22,7 +23,7 @@ sys.path.insert(0, HERE)
 import neutral_verifier  # noqa: E402
 import seeding  # noqa: E402
 
-ARMS = ("A", "B", "C")
+ARMS = ("A", "B", "C", "D")
 FROZEN_VERIFIER_SHA = "0af76fdbacc72317"
 FECI_DIR = os.path.join(os.path.dirname(HERE), "feci_guard")
 
@@ -71,7 +72,7 @@ def build_args(mods: Modules, arm: str, root: str, seed: int, c: dict):
         argv.append("--no_report")
     if arm == "A":
         return mods.run_holo.parse_args(argv)
-    gm = "neutral-stub" if arm == "B" else c["guard_model"]
+    gm = {"B": "neutral-stub", "D": "placebo-stub"}.get(arm, c["guard_model"])
     return mods.run_holo_guard.parse_args(argv + ["--guard", "on", "--guard_model", gm, "--guard_mode", "passive",
                                                   "--guard_max_refusals", "2"])
 
@@ -104,6 +105,18 @@ def _guard_stats(ep: str) -> dict:
     return out
 
 
+def _save_final_screen(env, ep: str) -> bool:
+    """The screen after the episode was scored, kept with the step screenshots (TrajectoryRecorder) on the node."""
+    try:
+        png = env.controller.get_screenshot()
+    except Exception:  # noqa: BLE001 - a missing final screen must not lose the episode
+        png = None
+    if png:
+        with open(os.path.join(ep, "final_screen_after_eval.png"), "wb") as f:
+            f.write(png)
+    return bool(png)
+
+
 def _requests(ep: str) -> tuple[int, int]:
     p = os.path.join(ep, "seeds.jsonl")
     if not os.path.exists(p):
@@ -128,6 +141,8 @@ def run_episode(mods: Modules, arm: str, seed: int, domain: str, task: str, env,
     seeding.EpisodeContext.set(seed, task, ep)
     if arm == "B":
         mods.run_holo_guard.feci = neutral_verifier.NeutralFeci(seed, task, sleep=sleep)
+    elif arm == "D":
+        mods.run_holo_guard.feci = neutral_verifier.PlaceboFeci(seed, task, sleep=sleep)
     elif arm == "C":
         mods.run_holo_guard.feci = mods.real_feci
     module = mods.run_holo if arm == "A" else mods.run_holo_guard
@@ -139,9 +154,11 @@ def run_episode(mods: Modules, arm: str, seed: int, domain: str, task: str, env,
     finally:
         seeding.EpisodeContext.clear()
         mods.run_holo_guard.feci = mods.real_feci
+    final_screen = _save_final_screen(env, ep)
     wall = time.time() - t0
     n_req, n_fail = _requests(ep)
     return {"arm": arm, "seed": seed, "domain": domain, "task": task, "attempt": attempt, "score": score,
             "dead": not os.path.exists(os.path.join(ep, "result.txt")), "error": err, "wall_s": round(wall, 1),
             "model_requests": n_req, "model_request_failures": n_fail, **_guard_stats(ep),
-            "stale_moved_to": stale, "started_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(t0))}
+            "stale_moved_to": stale, "final_screen": final_screen,
+            "step_screenshots": len([f for f in os.listdir(ep) if f.startswith("step_") and f.endswith(".png")]), "started_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(t0))}

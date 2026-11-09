@@ -101,6 +101,36 @@ class EndToEnd(unittest.TestCase):
             self.assertEqual(len({(r["arm"], r["attempt"]) for r in att}), 6)
             self.assertTrue(all(r["dead"] and r["error"] == "worker exit 1" for r in att))
 
+    def test_four_arms_with_placebo(self):
+        import neutral_verifier as nv
+        with tempfile.TemporaryDirectory() as d:
+            code, log = run(d, "--seeds", "0,1,2", "--arms", "A,B,C,D")
+            self.assertEqual(code, 0, log[-3000:])
+            att = [r for r in jl(os.path.join(d, "ledger.jsonl")) if r.get("kind") == "attempt"]
+            self.assertEqual(sorted({r["arm"] for r in att}), ["A", "B", "C", "D"])
+            self.assertTrue(all(r["final_screen"] and r["step_screenshots"] > 0 for r in att))
+            for s in (0, 1, 2):
+                ep = glob.glob(os.path.join(d, "armD", f"seed{s}", "pyautogui", "screenshot", "*", "*", TASK))[0]
+                dec = [g["decision"] for g in jl(os.path.join(ep, "guard.jsonl"))]
+                want = []
+                for c in range(len(dec)):
+                    if len([x for x in want if x == "refused"]) >= 2:
+                        want.append("passed_cap")
+                        break
+                    want.append("refused" if nv.placebo_refuses(s, TASK, c) else "passed_complete")
+                self.assertEqual(dec, want[:len(dec)])
+                self.assertTrue(os.path.exists(os.path.join(ep, "final_screen_after_eval.png")))
+                seeds_b = [(r["step"], r["k"], r["request_seed"]) for r in jl(os.path.join(
+                    glob.glob(os.path.join(d, "armB", f"seed{s}", "pyautogui", "screenshot", "*", "*", TASK))[0],
+                    "seeds.jsonl"))]
+                seeds_d = [(r["step"], r["k"], r["request_seed"]) for r in jl(os.path.join(ep, "seeds.jsonl"))]
+                self.assertEqual(seeds_d[:len(seeds_b)] if "refused" in dec else seeds_d, seeds_b)
+            self.assertEqual(analysis.analyse(d)["n_pairs_valid"], 3)
+            st = json.loads(subprocess.run([sys.executable, os.path.join(HERE, "runner.py"), "status", "--results", d],
+                                           capture_output=True, text=True).stdout)
+            self.assertEqual(st["0"]["episodes_first_attempt"], 3)
+            self.assertEqual(st["0"]["arm_D"]["episodes_first_attempt"], 1)
+
     def test_pilot(self):
         with tempfile.TemporaryDirectory() as d:
             code, log = run(d, "--pilot")

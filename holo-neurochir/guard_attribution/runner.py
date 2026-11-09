@@ -44,15 +44,18 @@ def load_tasks(path: str, max_tasks: int = 0) -> list[tuple[str, str]]:
     return tasks[:max_tasks] if max_tasks else tasks
 
 
-def rotation(i: int) -> tuple[str, ...]:
-    arms = ("A", "B", "C")
-    r = i % 3
+FROZEN_ARMS = ("A", "B", "C")
+
+
+def rotation(i: int, arms=FROZEN_ARMS) -> tuple[str, ...]:
+    arms = tuple(arms)
+    r = i % len(arms)
     return arms[r:] + arms[:r]
 
 
-def schedule(tasks, seeds) -> list[dict]:
+def schedule(tasks, seeds, arms=FROZEN_ARMS) -> list[dict]:
     return [{"seed": s, "domain": d, "task": t, "arm": a, "task_index": i}
-            for s in seeds for i, (d, t) in enumerate(tasks) for a in rotation(i)]
+            for s in seeds for i, (d, t) in enumerate(tasks) for a in rotation(i, arms)]
 
 
 def shard(tasks, spec: str | None):
@@ -79,10 +82,16 @@ def append_ledger(root: str, rec: dict) -> None:
 
 
 def status(root: str, seeds=(0, 1, 2), n_tasks: int | None = None) -> dict:
-    """Per seed: first-attempt dead rate, reruns, drops; the 10 % stop rule on seed 0."""
-    led = [r for r in read_ledger(root) if r.get("kind", "attempt") == "attempt"]
+    """Per seed: first-attempt dead rate, reruns, drops; the 10 % stop rule on seed 0. These are computed on the frozen
+    arms A, B, C only; arm D (supplementary) is reported apart and never changes them."""
+    all_led = [r for r in read_ledger(root) if r.get("kind", "attempt") == "attempt"]
+    led = [r for r in all_led if r["arm"] in FROZEN_ARMS]
     out = {}
     for s in seeds:
+        d_rs = [r for r in all_led if r["seed"] == s and r["arm"] == "D"]
+        d_last = {}
+        for r in sorted(d_rs, key=lambda r: r["attempt"]):
+            d_last[r["task"]] = r
         rs = [r for r in led if r["seed"] == s]
         first = {(r["arm"], r["task"]): r for r in rs if r["attempt"] == 1}
         last = {}
@@ -95,7 +104,10 @@ def status(root: str, seeds=(0, 1, 2), n_tasks: int | None = None) -> dict:
         out[s] = {"episodes_first_attempt": len(first), "expected": expected,
                   "dead_first_attempt": len(dead_first), "dead_rate_first_attempt": len(dead_first) / max(expected, 1),
                   "reruns": sum(1 for r in rs if r["attempt"] > 1), "dead_after_rerun": dead_final,
-                  "dropped_tasks": dropped}
+                  "dropped_tasks": dropped,
+                  "arm_D": {"episodes_first_attempt": sum(1 for r in d_rs if r["attempt"] == 1),
+                            "dead_first_attempt": sum(1 for r in d_rs if r["attempt"] == 1 and r["dead"]),
+                            "dead_after_rerun": sorted(t for t, r in d_last.items() if r["dead"])}}
     s0 = out.get(0)
     out["stop_rule"] = {"applies_after": "seed 0 of all three arms", "threshold": STOP_DEAD_RATE,
                         "seed0_complete": bool(s0 and s0["episodes_first_attempt"] >= s0["expected"] > 0),
@@ -307,6 +319,10 @@ def run(a) -> int:
     tasks_all = load_tasks(a.tasks, a.max_tasks)
     tasks = shard(tasks_all, a.shard)
     seeds = [int(s) for s in a.seeds.split(",")]
+    arms = tuple(a.arms.split(","))
+    if arms not in (FROZEN_ARMS, FROZEN_ARMS + ("D",)):
+        print("REFUSED: --arms is A,B,C (frozen study) or A,B,C,D (with the supplementary placebo arm).")
+        return 2
     if a.shard and len(seeds) != 1:
         print("REFUSED: a sharded job runs exactly one seed (the 10 % stop rule is checked between seeds).")
         return 2
@@ -332,7 +348,7 @@ def run(a) -> int:
         _write_mock_examples(tasks, cfg["episode"]["examples_dir"])
     elif not a.go:
         print("DRY RUN: this would start real episodes (GPU, VMs, Claude calls). Re-run with --go. Plan:")
-        print(json.dumps(plan_summary(tasks, seeds, a.workers), indent=1))
+        print(json.dumps(plan_summary(tasks, seeds, a.workers, arms), indent=1))
         return 0
     else:
         if not a.pilot and (a.max_tasks or (a.tasks != DEFAULT_TASKS and not a.allow_other_tasks)):
@@ -343,7 +359,7 @@ def run(a) -> int:
             print("REFUSED, preflight failed:\n  " + "\n  ".join(missing))
             return 2
     append_ledger(cfg["results"], {"kind": "pilot" if a.pilot else "start", "t": time.time(), "argv": sys.argv,
-                                   "pins": PINS, "code": code_state(), "shard": a.shard, "seeds": seeds,
+                                   "pins": PINS, "code": code_state(), "shard": a.shard, "seeds": seeds, "arms": arms,
                                    "n_tasks": len(tasks)})
     t0, code = time.time(), 0
     index = {t: i for i, (_, t) in enumerate(tasks)}
@@ -351,7 +367,7 @@ def run(a) -> int:
         for s in seeds:
             tried = {(r["arm"], r["task"]) for r in read_ledger(cfg["results"])
                      if r.get("kind") == "attempt" and r["seed"] == s}
-            items = [it for it in schedule(tasks, [s]) if (it["arm"], it["task"]) not in tried]
+            items = [it for it in schedule(tasks, [s], arms) if (it["arm"], it["task"]) not in tried]
             _pass(items, cfg)
             led = [r for r in read_ledger(cfg["results"]) if r.get("kind") == "attempt" and r["seed"] == s]
             attempts = {}
@@ -378,7 +394,7 @@ def run(a) -> int:
             if s == 0 and a.shard:
                 print("Sharded run: the 10 % stop rule is applied by `runner.py status` on the collected seed-0 results.")
         if a.pilot:
-            ok, msg = pilot_verdict(cfg["results"])
+            ok, msg = pilot_verdict(cfg["results"], arms)
             print(msg + "\n" + ("PILOT OK: read the three episodes, then start seed 0" if ok else "PILOT FAILED"))
             code = 0 if ok else 4
     finally:
@@ -396,8 +412,8 @@ def _write_mock_examples(tasks, examples_dir):
                       open(p, "w"))
 
 
-def plan_summary(tasks, seeds, workers) -> dict:
-    sch = schedule(tasks, seeds)
+def plan_summary(tasks, seeds, workers, arms=FROZEN_ARMS) -> dict:
+    sch = schedule(tasks, seeds, arms)
     ep_min = PINS["cost"]["episode_minutes_estimate"]
     return {"episodes": len(sch), "tasks": len(tasks), "seeds": seeds, "first_items": [
         f"seed{x['seed']} arm{x['arm']} {x['domain']}/{x['task'][:8]}" for x in sch[:9]],
@@ -518,12 +534,15 @@ def verifier_probe(a) -> list[str]:
     return [] if det.get("verdict") and not det.get("error") else [f"verifier probe got no verdict: {det.get('error')}"]
 
 
-def pilot_verdict(root: str) -> tuple[bool, str]:
+def pilot_verdict(root: str, arms=FROZEN_ARMS) -> tuple[bool, str]:
     att = [r for r in read_ledger(root) if r.get("kind") == "attempt" and r["seed"] == PILOT_SEED]
     by = {r["arm"]: r for r in att}
     msgs = [f"arm {k}: score={by[k]['score']} dead={by[k]['dead']} requests={by[k]['model_requests']} "
             f"failed={by[k].get('model_request_failures')} decisions={by[k].get('guard_decisions')}" for k in sorted(by)]
-    ok = len(by) == 3 and not any(r["dead"] or r.get("model_request_failures") for r in by.values())
+    ok = set(by) == set(arms) and not any(r["dead"] or r.get("model_request_failures") for r in by.values())
+    if any(not r.get("final_screen") or not r.get("step_screenshots") for r in by.values()):
+        ok = False
+        msgs.append("screenshots missing: every episode must keep its step screenshots and final screen")
     c = by.get("C", {})
     if c.get("verifier_calls") and c.get("verifier_errors"):
         ok = False
@@ -559,6 +578,7 @@ def main(argv=None) -> int:
     ap.add_argument("--tasks", default=DEFAULT_TASKS)
     ap.add_argument("--examples-dir", default=os.path.join(DEFAULT_RTG, "Env", "OSWorld", "evaluation_examples", "examples"))
     ap.add_argument("--seeds", default="0,1,2")
+    ap.add_argument("--arms", default="A,B,C", help="A,B,C (frozen study) or A,B,C,D (adds the placebo arm D)")
     ap.add_argument("--results", default=None)
     ap.add_argument("--rtg", default=DEFAULT_RTG)
     ap.add_argument("--base-urls", default=None, help="comma-separated vLLM /v1 endpoints, one per GPU")
@@ -585,7 +605,8 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     if a.cmd == "plan":
         print(json.dumps(plan_summary(shard(load_tasks(a.tasks, a.max_tasks), a.shard),
-                                      [int(s) for s in a.seeds.split(",")], a.workers), indent=1))
+                                      [int(s) for s in a.seeds.split(",")], a.workers, tuple(a.arms.split(","))),
+                         indent=1))
         return 0
     if a.cmd == "status":
         starts = [r for r in read_ledger(a.results) if r.get("kind") == "start" and not r.get("shard")]
