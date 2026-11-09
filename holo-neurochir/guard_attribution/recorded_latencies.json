@@ -1,0 +1,375 @@
+{
+ "source": "results_test_gh_orig_guard_claude",
+ "n_episodes": 120,
+ "n_episodes_with_latency": 86,
+ "n_values": 96,
+ "meta_json_sha256": "27671ae4bb7f2782bb5a4d362d50554cf3cfad23c317eff4ee62bbd2eb86f451",
+ "values_s": [
+  7.2,
+  5.4,
+  5.4,
+  7.1,
+  5.6,
+  5.7,
+  5.7,
+  5.1,
+  8.4,
+  7.1,
+  6.6,
+  6.7,
+  5.1,
+  6.4,
+  7.0,
+  8.0,
+  6.6,
+  5.7,
+  8.2,
+  8.5,
+  6.8,
+  8.6,
+  7.8,
+  6.3,
+  6.5,
+  6.5,
+  8.9,
+  6.9,
+  8.4,
+  8.7,
+  8.4,
+  9.2,
+  9.6,
+  8.8,
+  9.0,
+  9.9,
+  7.0,
+  6.8,
+  6.6,
+  11.5,
+  8.4,
+  8.1,
+  6.4,
+  7.2,
+  6.7,
+  10.6,
+  8.1,
+  7.5,
+  8.6,
+  6.3,
+  8.9,
+  6.7,
+  7.3,
+  5.8,
+  5.4,
+  8.3,
+  8.3,
+  9.0,
+  8.0,
+  9.0,
+  7.0,
+  7.1,
+  6.4,
+  6.9,
+  8.2,
+  6.3,
+  7.3,
+  9.6,
+  6.9,
+  6.4,
+  6.0,
+  6.9,
+  5.9,
+  9.9,
+  6.8,
+  9.6,
+  8.0,
+  7.3,
+  8.1,
+  7.1,
+  6.1,
+  5.5,
+  9.1,
+  7.3,
+  12.1,
+  7.3,
+  8.9,
+  5.7,
+  5.3,
+  10.8,
+  5.9,
+  6.4,
+  6.9,
+  8.8,
+  9.5,
+  9.7
+ ],
+ "per_episode": {
+  "chrome/12086550-11c0-466b-b367-1d9e75b3910e": [
+   7.2
+  ],
+  "chrome/2ad9387a-65d8-4e33-ad5b-7580065a27ca": [
+   5.4
+  ],
+  "chrome/44ee5668-ecd5-4366-a6ce-c1c9b8d4e938": [
+   5.4
+  ],
+  "chrome/59155008-fe71-45ec-8a8f-dc35497b6aa8": [
+   7.1
+  ],
+  "chrome/9656a811-9b5b-4ddf-99c7-5117bcef0626": [
+   5.6
+  ],
+  "chrome/9f935cce-0a9f-435f-8007-817732bfc0a5": [
+   5.7
+  ],
+  "chrome/a728a36e-8bf1-4bb6-9a03-ef039a5233f0": [
+   5.7
+  ],
+  "chrome/cabb3bae-cccb-41bd-9f5d-0f3a9fecd825": [
+   5.1
+  ],
+  "chrome/da46d875-6b82-4681-9284-653b0c7ae241": [
+   8.4
+  ],
+  "chrome/e1e75309-3ddb-4d09-92ec-de869c928143": [
+   7.1
+  ],
+  "chrome/f0b971a1-6831-4b9b-a50e-22a6e47f45ba": [
+   6.6
+  ],
+  "chrome/f3b19d1e-2d48-44e9-b4e1-defcae1a0197": [
+   6.7,
+   5.1
+  ],
+  "gimp/06ca5602-62ca-47f6-ad4f-da151cde54cc": [
+   6.4
+  ],
+  "gimp/554785e9-4523-4e7a-b8e1-8016f565f56a": [
+   7.0
+  ],
+  "gimp/72f83cdc-bf76-4531-9a1b-eb893a13f8aa": [
+   8.0
+  ],
+  "gimp/734d6579-c07d-47a8-9ae2-13339795476b": [
+   6.6
+  ],
+  "gimp/77b8ab4d-994f-43ac-8930-8ca087d7c4b4": [
+   5.7
+  ],
+  "gimp/f4aec372-4fb0-4df5-a52b-79e0e2a5d6ce": [
+   8.2
+  ],
+  "libreoffice_calc/0bf05a7d-b28b-44d2-955a-50b41e24012a": [
+   8.5
+  ],
+  "libreoffice_calc/1e8df695-bd1b-45b3-b557-e7d599cf7597": [
+   6.8
+  ],
+  "libreoffice_calc/21df9241-f8d7-4509-b7f1-37e501a823f7": [
+   8.6,
+   7.8
+  ],
+  "libreoffice_calc/357ef137-7eeb-4c80-a3bb-0951f26a8aff": [
+   6.3
+  ],
+  "libreoffice_calc/42e0a640-4f19-4b28-973d-729602b5a4a7": [
+   6.5
+  ],
+  "libreoffice_calc/4f07fbe9-70de-4927-a4d5-bb28bc12c52c": [
+   6.5
+  ],
+  "libreoffice_calc/a9f325aa-8c05-4e4f-8341-9e4358565f4f": [
+   8.9
+  ],
+  "libreoffice_calc/d681960f-7bc3-4286-9913-a8812ba3261a": [
+   6.9
+  ],
+  "libreoffice_calc/ecb0df7a-4e8d-4a03-b162-053391d3afaf": [
+   8.4
+  ],
+  "libreoffice_impress/0a211154-fda0-48d0-9274-eaac4ce5486d": [
+   8.7
+  ],
+  "libreoffice_impress/0f84bef9-9790-432e-92b7-eece357603fb": [
+   8.4
+  ],
+  "libreoffice_impress/2b94c692-6abb-48ae-ab0b-b3e8a19cb340": [
+   9.2
+  ],
+  "libreoffice_impress/3161d64e-3120-47b4-aaad-6a764a92493b": [
+   9.6
+  ],
+  "libreoffice_impress/5c1a6c3d-c1b3-47cb-9b01-8d1b7544ffa1": [
+   8.8
+  ],
+  "libreoffice_impress/5d901039-a89c-4bfb-967b-bf66f4df075e": [
+   9.0,
+   9.9
+  ],
+  "libreoffice_impress/841b50aa-df53-47bd-a73a-22d3a9f73160": [
+   7.0
+  ],
+  "libreoffice_impress/a434992a-89df-4577-925c-0c58b747f0f4": [
+   6.8,
+   6.6
+  ],
+  "libreoffice_impress/b8adbc24-cef2-4b15-99d5-ecbe7ff445eb": [
+   11.5
+  ],
+  "libreoffice_impress/c59742c0-4323-4b9d-8a02-723c251deaa0": [
+   8.4
+  ],
+  "libreoffice_impress/e4ef0baf-4b52-4590-a47e-d4d464cca2d7": [
+   8.1
+  ],
+  "libreoffice_impress/edb61b14-a854-4bf5-a075-c8075c11293a": [
+   6.4
+  ],
+  "libreoffice_writer/0810415c-bde4-4443-9047-d5f70165a697": [
+   7.2
+  ],
+  "libreoffice_writer/3ef2b351-8a84-4ff2-8724-d86eae9b842e": [
+   6.7
+  ],
+  "libreoffice_writer/6a33f9b9-0a56-4844-9c3f-96ec3ffb3ba2": [
+   10.6
+  ],
+  "libreoffice_writer/6ada715d-3aae-4a32-a6a7-429b2e43fb93": [
+   8.1
+  ],
+  "libreoffice_writer/88fe4b2d-3040-4c70-9a70-546a47764b48": [
+   7.5
+  ],
+  "libreoffice_writer/b21acd93-60fd-4127-8a43-2f5178f4a830": [
+   8.6
+  ],
+  "libreoffice_writer/d53ff5ee-3b1a-431e-b2be-30ed2673079b": [
+   6.3
+  ],
+  "libreoffice_writer/e246f6d8-78d7-44ac-b668-fcf47946cb50": [
+   8.9
+  ],
+  "multi_apps/47f7c0ce-a5fb-4100-a5e6-65cd0e7429e5": [
+   6.7
+  ],
+  "multi_apps/48c46dc7-fe04-4505-ade7-723cba1aa6f6": [
+   7.3
+  ],
+  "multi_apps/48d05431-6cd5-4e76-82eb-12b60d823f7d": [
+   5.8
+  ],
+  "multi_apps/510f64c8-9bcc-4be1-8d30-638705850618": [
+   5.4
+  ],
+  "multi_apps/58565672-7bfe-48ab-b828-db349231de6b": [
+   8.3
+  ],
+  "multi_apps/5bc63fb9-276a-4439-a7c1-9dc76401737f": [
+   8.3,
+   9.0
+  ],
+  "multi_apps/6f4073b8-d8ea-4ade-8a18-c5d1d5d5aa9a": [
+   8.0
+  ],
+  "multi_apps/788b3701-3ec9-4b67-b679-418bfa726c22": [
+   9.0
+  ],
+  "multi_apps/ce2b64a2-ddc1-4f91-8c7d-a88be7121aac": [
+   7.0,
+   7.1
+  ],
+  "multi_apps/da52d699-e8d2-4dc5-9191-a2199e0b6a9b": [
+   6.4
+  ],
+  "multi_apps/da922383-bfa4-4cd3-bbad-6bebab3d7742": [
+   6.9
+  ],
+  "multi_apps/dd60633f-2c72-42ba-8547-6f2c8cb0fdb0": [
+   8.2
+  ],
+  "multi_apps/e135df7c-7687-4ac0-a5f0-76b74438b53e": [
+   6.3
+  ],
+  "multi_apps/f7dfbef3-7697-431c-883a-db8583a4e4f9": [
+   7.3
+  ],
+  "os/37887e8c-da15-4192-923c-08fa390a176d": [
+   9.6
+  ],
+  "os/5ced85fc-fa1a-4217-95fd-0fb530545ce2": [
+   6.9
+  ],
+  "os/6f56bf42-85b8-4fbb-8e06-6c44960184ba": [
+   6.4
+  ],
+  "os/a4d98375-215b-4a4d-aee9-3d4370fccc41": [
+   6.0
+  ],
+  "os/b3d4a89c-53f2-4d6b-8b6a-541fb5d205fa": [
+   6.9,
+   5.9
+  ],
+  "os/bedcedc4-4d72-425e-ad62-21960b11fe0d": [
+   9.9
+  ],
+  "os/ec4e3f68-9ea4-4c18-a5c9-69f89d1178b3": [
+   6.8
+  ],
+  "thunderbird/08c73485-7c6d-4681-999d-919f5c32dcfa": [
+   9.6
+  ],
+  "thunderbird/10a730d5-d414-4b40-b479-684bed1ae522": [
+   8.0
+  ],
+  "thunderbird/3f28fe4f-5d9d-4994-a456-efd78cfae1a3": [
+   7.3
+  ],
+  "thunderbird/9b7bc335-06b5-4cd3-9119-1a649c478509": [
+   8.1,
+   7.1
+  ],
+  "thunderbird/dfac9ee8-9bc4-4cdc-b465-4a4bfcd2f397": [
+   6.1
+  ],
+  "vlc/8d9fd4e2-6fdb-46b0-b9b9-02f06495c62f": [
+   5.5
+  ],
+  "vlc/bba3381f-b5eb-4439-bd9e-80c22218d5a7": [
+   9.1
+  ],
+  "vlc/d06f0d4d-2cd5-4ede-8de9-598629438c6e": [
+   7.3
+  ],
+  "vlc/efcf0d81-0835-4880-b2fd-d866e8bc2294": [
+   12.1,
+   7.3
+  ],
+  "vlc/f3977615-2b45-4ac5-8bba-80c17dbe2a37": [
+   8.9
+  ],
+  "vs_code/53ad5833-3455-407b-bbc6-45b4c79ab8fb": [
+   5.7
+  ],
+  "vs_code/57242fad-77ca-454f-b71b-f187181a9f23": [
+   5.3
+  ],
+  "vs_code/5e2d93d8-8ad0-4435-b150-1692aacaa994": [
+   10.8
+  ],
+  "vs_code/70745df8-f2f5-42bd-8074-fbc10334fcc5": [
+   5.9
+  ],
+  "vs_code/9d425400-e9b2-4424-9a4b-d4c7abac4140": [
+   6.4
+  ],
+  "vs_code/dcbe20e8-647f-4f1d-8696-f1c5bbb570e3": [
+   6.9
+  ],
+  "vs_code/ea98c5d7-3cf9-4f9b-8ad3-366b58e0fcae": [
+   8.8
+  ],
+  "vs_code/ec71221e-ac43-46f9-89b8-ee7d80f7e1c5": [
+   9.5,
+   9.7
+  ]
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "_doc": "What the study pins (PREREG_GUARD_ATTRIBUTION.md 'Common to all arms'). Sources: see 'source' fields. runner.py preflight checks harness, tasks, endpoint model name and vLLM version; check_weights.py checks the weight files on the serving node.",
+ "model": {
+  "hf_repo": "Hcompany/Holo-3.1-4B",
+  "revision": "8c88265a5a159bfd1492db9243733dd2e6e04a6e",
+  "sha256": {
+   "config.json": "33102ec9e0846357803b65cd3b579de494ed55ae3c29bc7aec14c4b563dff7d1",
+   "model-00001-of-00002.safetensors": "f7f12ccce5c518a4039dbcd132077e9822639d580843c9cfa0610bf8812485bc",
+   "model-00002-of-00002.safetensors": "0490ba7c9b4f6b16b9de8cc2fe50e44657af031c27fec49cb0b87571c0a7cab4"
+  },
+  "served_model_name": "Holo-3.1-4B-modal-orig",
+  "source": "osworld/modal_deploys/20261108T093735_acct1_Holo-3.1-4B-modal-orig.revision.json; osworld/modal_vllm.py:23-24",
+  "study_served_model_name": "Holo-3.1-4B-orig",
+  "served_model_name_note": "served_model_name is the name used on Modal in the earlier run; the study serves the same weights as study_served_model_name (the name is not in the prompt)."
+ },
+ "vllm": {
+  "version": "0.23.0",
+  "image": "nvidia/cuda:12.8.1-devel-ubuntu24.04, python 3.12",
+  "pip": [
+   "vllm==0.23.0",
+   "torch==2.11.0",
+   "torchvision==0.26.0",
+   "transformers==4.57.6",
+   "flashinfer-python==0.6.12",
+   "flashinfer-cubin==0.6.12",
+   "triton==3.6.0",
+   "xgrammar==0.2.5.post1"
+  ],
+  "args": [
+   "--dtype",
+   "bfloat16",
+   "--max-model-len",
+   "32768",
+   "--max-num-seqs",
+   "64",
+   "--gpu-memory-utilization",
+   "0.40",
+   "--kv-cache-memory-bytes",
+   "30G",
+   "--limit-mm-per-prompt",
+   "{\"image\": 5}",
+   "--reasoning-parser",
+   "qwen3",
+   "--enable-prefix-caching"
+  ],
+  "gpu": "1 x H100 80GB per server, tensor-parallel 1 (default), no server --seed",
+  "source": "osworld/modal_vllm.py:25-35,66-93; deploy json 20261108T093735_acct1_Holo-3.1-4B-modal-orig.json"
+ },
+ "sampling": {
+  "temperature": 0.8,
+  "top_p": 0.9,
+  "max_tokens": 3072,
+  "reasoning_effort": "medium",
+  "enable_thinking": true,
+  "image_budget": 3,
+  "prompt": "v2",
+  "source": "RealtimeGUI Agent/holo_agent/agent.py:110-120,163-180; run_holo.py defaults"
+ },
+ "harness": {
+  "realtimegui_repo": "https://github.com/1azybug/RealtimeGUI",
+  "realtimegui_commit": "a763361f9fffad5fcbbdb16bdb51ea3ff667c183",
+  "patch": "holo-osworld-runner/patches/rtg-a763361.patch (OSW_PROVIDER, docker provider memory cap, ports on 127.0.0.1)",
+  "max_steps": 50,
+  "provider": "docker (happysixd/osworld-docker:latest, digest not pinned in the earlier runs) with KVM",
+  "vm_image": "https://huggingface.co/datasets/xlangai/ubuntu_osworld/resolve/main/Ubuntu.qcow2.zip (revision not pinned in the earlier runs; record its sha256 before seed 0)",
+  "source": "holo-osworld-runner/.github/workflows/osworld.yml:143-183,222,297-314",
+  "env": {
+   "OSWORLD_FORCE_KVM": "1",
+   "OSW_MEM_LIMIT": "5g",
+   "no_proxy": "localhost,127.0.0.1",
+   "NO_PROXY": "localhost,127.0.0.1"
+  },
+  "env_note": "as exported by holo-osworld-runner osworld.yml 'Run Holo on shard'; OSW_NETWORK_SH must point to holo-osworld-runner/scripts/network_nft.sh (set it explicitly)"
+ },
+ "tasks": {
+  "split": "osworld/split_test.json",
+  "n": 120,
+  "split_test_sha256": "b8172a0426bcd69f3baa80671e0871aef94d99820d78e961327197a6cac759e9"
+ },
+ "verifier": {
+  "sha": "0af76fdbacc72317",
+  "guard_model": "claude-sonnet",
+  "mode": "passive",
+  "max_refusals": 2,
+  "backend": "openai via guard_server.py relay on orbit 127.0.0.1:9911 (as in the earlier online run)"
+ },
+ "cost": {
+  "episode_minutes_estimate": 3.5,
+  "episode_minutes_source": "run 42442467233 shard 1: (4547-381) s / 20 episodes, _jobs/*/timing.json",
+  "claude_calls_per_seed_estimate": 100,
+  "claude_usd_per_call_estimate": 0.03
+ },
+ "frozen_files": {
+  "_doc": "sha256 of the code that defines the three arms; runner.py preflight refuses to run if any differs. rtg files are RealtimeGUI a763361 + holo-osworld-runner/patches/rtg-a763361.patch (checked identical 2026-11-09).",
+  "repo": {
+   "holo-neurochir/feci_guard/feci_guard.py": "f246601ce7504d2e8517cc113f9ef19044080915134a836876e6ca71be7a8757",
+   "holo-neurochir/feci_guard/verifier.py": "0af76fdbacc723176fd283dedb4bdc93480bd3b6e3dfc105721833d37b1e887e",
+   "holo-neurochir/feci_guard/run_holo_guard.py": "84161ef1bf500a5f38c74120619d940b68f0aa7a6433d331210e6c15680c7162"
+  },
+  "rtg": {
+   "Agent/holo_agent/agent.py": "c498e254f7b2f70fc8cc23133eadbe95335f21d04aa63048b0b16589a4fb168d",
+   "Agent/holo_agent/tools.py": "cfc19d67ee03222ecf8dbfbba9d7c0829018dae4092b6caa6b57db0868871141",
+   "Env/OSWorld/holo_repro/run_holo.py": "c0248d35da8d1719906620dae08b922e1f7038e868d358ed9609ce78de46e7f6",
+   "Env/OSWorld/holo_repro/osworld_computer_env.py": "0300a04ad05090e62f8ec09bc14b272f0efb36004ab6d705d8a2c2707ca36ae8",
+   "Env/OSWorld/desktop_env/providers/docker/provider.py": "0b106fae82b4592566c40ea8d18e1e50ed83c7c13d1f734df1b3352d2f22b00e"
+  }
+ }
+}
