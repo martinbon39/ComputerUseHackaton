@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the paper below."
+title: "Cogito, Ergo Feci: companion repository"
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/martinbon39/cogito-ergo-feci"
+authors:
+  - family-names: Jouannet
+    given-names: Émile
+  - family-names: Boukhedenna
+    given-names: Souad
+  - family-names: Bonan
+    given-names: Martin
+preferred-citation:
+  type: article
+  title: "Cogito, Ergo Feci: False Success, the Limits of Weight Surgery, and What an External Verifier Catches in a Computer-Use Agent"
+  authors:
+    - family-names: Jouannet
+      given-names: Émile
+    - family-names: Boukhedenna
+      given-names: Souad
+    - family-names: Bonan
+      given-names: Martin
+  year: 2026
+  notes: "arXiv preprint, forthcoming"

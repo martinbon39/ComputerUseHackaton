@@ -1,0 +1,34 @@
+name: reproduce
+# Recomputes the paper's headline numbers on CPU with no secret: the same commands as the README.
+on:
+  push:
+    paths:
+      - "reproduce/**"
+      - "src/feci_guard/*.py"
+      - "experiments/online_guard/online_guard_analysis.py"
+      - "experiments/online_guard/ONLINE_GUARD_RESULT.json"
+      - "experiments/verif_study/manifest.json"
+      - "experiments/verif_study/images/**"
+      - "experiments/judge_bench/*.jsonl"
+      - ".github/workflows/reproduce.yml"
+  pull_request:
+  workflow_dispatch:
+concurrency:
+  group: reproduce-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: preinstalled Python, nothing downloaded or installed
+        run: python3 --version
+      - name: recompute the headline numbers
+        run: bash reproduce/run_all.sh
+      - name: guard_live.py lists the 268 episodes (no network call)
+        run: |
+          python3 reproduce/guard_live.py --list > episodes.txt
+          test "$(wc -l < episodes.txt)" -eq 268

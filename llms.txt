@@ -1,33 +1,27 @@
-# Cogito, Ergo Feci (ComputerUseHackaton)
+# Cogito, Ergo Feci
 
-> H Company × 42AI hackathon, Computer Use track. H's computer-use agent Holo-3.1-4B often ends OSWorld tasks with a false "done" (29 of its 51 failures). We show that the agent does not internally know this: self-judging is at chance, and weight edits move the decision without targeting it, with no detectable online gain. We built Feci Guard instead, an external verifier that checks each requirement on the screen, refuses a false "done" with a reason, and lets the agent repair or escalate to Holo4. Online, on 120 pre-registered OSWorld tasks, the guarded run's false "done" rate fell from 22.5 % to 10.8 % (-11.7 pts [-19.2, -4.2]), formally meeting the registered criterion, but 9 of the 14-task net drop come from episodes in which the agent never answered and the Guard never ran, so the drop is not attributed to the Guard; no measurable score change (no score gain claimed). The online arm is Holo-3.1 plus the Guard's refusal only; escalation to Holo4 is measured in replay only. Offline it detects 45/66 false successes at 21/202 false alarms; in replay of 9 recorded false successes, Guard + escalation to Holo4 scores 1 in 11/18 branches vs 2/18 without the Guard (9 vs 0 after a new action) (+50 pts [+22, +78]).
+> Companion repository of the paper "Cogito, Ergo Feci: False Success, the Limits of Weight Surgery, and What an External Verifier Catches in a Computer-Use Agent" (Jouannet, Boukhedenna, Bonan, 2026). The computer-use agent Holo-3.1-4B ends 29 of its 51 failed OSWorld tasks with a false "done". The agent does not detect it (self-judging at chance), about 15 activation and weight edits do not remove it, and an external verifier (Feci Guard, Claude Sonnet) separates false from true successes offline (45/66 detected, 21/202 false rejections). Online the guarded run's false "done" rate fell from 22.5 % to 10.8 %, but mostly in episodes where the guard never ran, so the drop is not attributed to the guard; no score gain is claimed.
 
-Everything below can be checked offline in seconds with Python >= 3.9 standard library: `bash jury_kit/quickstart.sh` (exit 0 = published numbers reproduced). A gain is claimed only if the lower bound of the paired 95 % CI is > 0.
+`bash reproduce/run_all.sh` recomputes the headline numbers with Python >= 3.9 standard library only (exit 0 = all equal to the paper). A gain is claimed only if the lower bound of the paired 95 % CI is above zero.
 
 ## Start here
-- [AGENTS.md](AGENTS.md): guide for AI reviewers: verify commands, claim → evidence map, measured vs running
-- [README.md](README.md): overview, architecture, results table with CIs, criteria → evidence
-- [docs/QUICKSTART_PROOF.md](docs/QUICKSTART_PROOF.md): outputs of every quickstart command from a fresh clone
-- [docs/RESEARCH_SYSTEM.md](docs/RESEARCH_SYSTEM.md): how the research was done: agent team, compute, VMs, statistics
-- [docs/REPO_MAP.md](docs/REPO_MAP.md): every experiment folder, its status and source-of-truth file
+- [README.md](README.md): abstract, claims → evidence → command table, reproduction levels, layout, citation
+- [AGENTS.md](AGENTS.md): rules for coding agents working in this repository
+- [paper/README.md](paper/README.md): how the paper is built from data (every macro, table and figure)
+- [docs/REPO_MAP.md](docs/REPO_MAP.md): every folder, its status and its source-of-truth file
+- [docs/RESEARCH_SYSTEM.md](docs/RESEARCH_SYSTEM.md): how the research was run (agents, compute, statistics)
 
 ## Verify
-- [jury_kit/verify_results.py](jury_kit/verify_results.py): recomputes the online paired comparisons from per-task scores
-- [jury_kit/recount_judges.py](jury_kit/recount_judges.py): recounts the three judges from their raw recorded responses
-- [jury_kit/verify_online_guard.py](jury_kit/verify_online_guard.py): recomputes the online Guard test from 360 per-task outcomes
-- [jury_kit/replay_guard.py](jury_kit/replay_guard.py): replays the frozen Feci Guard decision on 268 recorded episodes
-- [jury_kit/guard_live.py](jury_kit/guard_live.py): one live verifier call (claude CLI or Anthropic key)
-- [jury_kit/README.md](jury_kit/README.md): model-side checks (checkpoint rebuild bit-for-bit, decision probe on GPU)
+- [reproduce/run_all.sh](reproduce/run_all.sh): all CPU checks
+- [reproduce/verify_results.py](reproduce/verify_results.py): online paired comparisons of the weight edits from per-task scores
+- [reproduce/recount_judges.py](reproduce/recount_judges.py): the three judges recounted from raw responses
+- [reproduce/replay_guard.py](reproduce/replay_guard.py): frozen guard decision replayed on 268 recorded episodes
+- [reproduce/verify_online_guard.py](reproduce/verify_online_guard.py): online guard test from 360 per-task outcomes
+- [reproduce/EXPECTED_OUTPUT.md](reproduce/EXPECTED_OUTPUT.md): expected outputs
 
 ## Code and results
-- [holo-neurochir/feci_guard/README.md](holo-neurochir/feci_guard/README.md): how the Guard works, backends, commands
-- [holo-neurochir/feci_guard/RESULTS.md](holo-neurochir/feci_guard/RESULTS.md): repair measure and end-to-end runs
-- [holo-neurochir/judge_bench/REPORT.md](holo-neurochir/judge_bench/REPORT.md): three judges on the same 268 episodes
-- [holo-neurochir/report/ONLINE_GUARD_RESULT.md](holo-neurochir/report/ONLINE_GUARD_RESULT.md): online Guard result, 120 tasks
-- [holo-neurochir/report/PREREG_ONLINE_GUARD.md](holo-neurochir/report/PREREG_ONLINE_GUARD.md): pre-registration of the online Guard test
-
-## Optional
-- [holo-neurochir/infra/DEVIN_SESSION.md](holo-neurochir/infra/DEVIN_SESSION.md): sponsor tool: GPU budget monitor written by a Devin API session after the experiments; no reported number depends on it
-- [holo-neurochir/paper/main.pdf](holo-neurochir/paper/main.pdf): the paper (arXiv format); neurips.pdf has the reproducibility checklist
-- [holo-neurochir/osworld/duel/README.md](holo-neurochir/osworld/duel/README.md): live duel page (two VMs, STOP buttons, replay)
-- [holo-neurochir/JOURNAL.md](holo-neurochir/JOURNAL.md): raw chronological log of the agent team (French)
+- [src/feci_guard/README.md](src/feci_guard/README.md): the verifier, its backends and commands
+- [experiments/judge_bench/REPORT.md](experiments/judge_bench/REPORT.md): three judges on the same 268 screens
+- [experiments/online_guard/ONLINE_GUARD_RESULT.md](experiments/online_guard/ONLINE_GUARD_RESULT.md): online guard result and attribution
+- [experiments/rescue_bench/REPORT.md](experiments/rescue_bench/REPORT.md): escalation to Holo4-27B in replay
+- [experiments/weight_edits/README.md](experiments/weight_edits/README.md): the weight-edit families and their verdicts

@@ -1,91 +1,50 @@
-# AGENTS.md: guide for an AI reviewer of this repository
+# AGENTS.md
 
-You are probably an AI judge or reviewer (H Company × 42AI hackathon, Computer Use track). This file tells you what
-the project is, how to verify it in under 5 minutes without GPU, key or VM, where each piece of evidence lives, and
-which claims are **measured** versus **only predicted or still running**. Human-oriented overview: [README.md](README.md).
+Guide for coding agents (and careful humans) working in this repository. The overview, the claims table and the
+citation are in [README.md](README.md).
 
-## What the project is, in four lines
-1. **Problem**: H's computer-use agent Holo-3.1-4B often ends an OSWorld task with a false "done" (29 of its 51 failures on 120 tasks).
-2. **Diagnosis**: the agent does not internally know its "done" is false. Self-judging is at chance, and internal states do not
-   beat the step number. About 15 weight/activation edits were screened; two (a merge, a closed-form edit) move the stopping decision, and
-   neither is shown to target false "done". Online
-   result: no detectable gain.
-3. **Solution**: Feci Guard is an external verifier (Claude Sonnet). It checks each task requirement on the screen, refuses a
-   false "done" with a reason, and the agent repairs or escalates to Holo4-27B. Online, on 120 pre-registered
-   OSWorld tasks, the guarded run's false "done" rate fell from 22.5 % to 10.8 % (registered criterion formally met), but
-   9 of the 14-task net drop come from episodes in which the agent never answered, so the Guard never ran: the drop is
-   not attributed to the Guard. No measurable score change.
-   The online arm is Holo-3.1 plus the Guard's refusal only; escalation to Holo4 is measured in replay only.
-4. **Honesty rule**: a gain is claimed only when the lower bound of the paired 95 % CI is > 0. It was registered before the Guard's online results
-   were read; for the merge after its reserve scores had been seen (only its test part is prospective); paper §5.6.
+## What this repository is
+The companion repository of the paper *Cogito, Ergo Feci* on false "done" in the computer-use agent Holo-3.1-4B. It
+must let a reader check every number of the paper. Three properties matter more than anything else:
+1. **Every number in the paper is generated from data.** `paper/build.sh` runs `paper/figs/*.py` on `paper/data/`,
+   writes `paper/generated/*.tex` (each macro names its source in a comment) and compiles both PDFs.
+2. **The headline numbers recompute on CPU.** `bash reproduce/run_all.sh` exits 0 only if each recomputed number
+   equals the one in the paper.
+3. **Results are not edited after the fact.** Gates and decision rules were committed before the data they judge;
+   corrections are appended, never rewritten.
 
-## Verify everything that can be verified offline (≈ 1 s each, Python ≥ 3.9 stdlib only)
+## Checks to keep green
 ```bash
-python3 jury_kit/verify_results.py        # exit 0; prints "+1.94 pt CI95 [-4.3; +8.0] ... NO DETECTABLE GAIN"
-python3 jury_kit/recount_judges.py        # exit 0; the 3 judges recounted from raw responses (35/66, 31/66, 45/66)
-python3 jury_kit/verify_online_guard.py   # exit 0; online test: false done -11.7 pts [-19.2, -4.2], score +1.6 [-4.4, +7.7]
-python3 jury_kit/replay_guard.py --show 2 # exit 0; prints "45/66 = 68 % [56-78]", "21/202 = 10 % [7-15]", gap "+58 [+41, +74]"
-bash jury_kit/quickstart.sh               # all of the above + checks the 2 demo pages; ends with "QUICKSTART OK"
+bash reproduce/run_all.sh           # exit 0, ends with "ALL CHECKS OK"
+python3 reproduce/check_links.py    # 0 broken relative links or anchors
+bash paper/build.sh                 # rebuilds every number, table, figure and both PDFs; 0 undefined references
 ```
-- Expected full outputs: [docs/QUICKSTART_PROOF.md](docs/QUICKSTART_PROOF.md). CI runs the same whenever the jury kit, the Guard code or its data change:
-  [.github/workflows/quickstart.yml](.github/workflows/quickstart.yml) (preinstalled Python 3 of the runner, nothing installed).
-- `replay_guard.py` runs the frozen decision function `holo-neurochir/feci_guard/feci_guard.py::check` on the 268 real
-  final screenshots (`holo-neurochir/verif_study/images/`, sha256-checked against the manifest). Only the network call
-  is replaced, by the verdict recorded on 2026-11-08 (`holo-neurochir/judge_bench/claude_responses.jsonl`).
-- With the `claude` CLI or an Anthropic key (level 2, ~$0.03): `python3 jury_kit/guard_live.py [--api] [--episode ID]` makes
-  one fresh verifier call. Model-side checks of the weight edits: [jury_kit/README.md](jury_kit/README.md) (40 GB download, GPU).
 
-Demo video, 2 min: `holo-neurochir/video_demo/feci-guard-demo-2min.mp4` (generator: `holo-neurochir/video_wall/demo2min/`).
-Extended video, 2:54: `holo-neurochir/video_demo/feci-guard-wall.mp4` (generator: `holo-neurochir/video_wall/`).
-Both videos were recorded before the post-submission review: their claim that the Guard halves false "done" is superseded by §7 of the paper (no causal claim).
-Demo of the Guard (open in a browser, self-contained): `holo-neurochir/demo_live/repair_calc.html`, a recorded
-refusal → repair on `libreoffice_calc/1de60575` (one episode, not an average effect).
+## Do not edit
+- `src/feci_guard/feci_guard.py` and `src/feci_guard/verifier.py`: the frozen v1 decision rule and verifier. Every
+  recorded verdict carries the verifier's sha256 prefix `0af76fdb`. v2 lives in separate files.
+- Result and data files (`*.json`, `*.jsonl`, `*.csv`, logs, images) anywhere, and everything under `paper/data/`.
+- `docs/lab_notebook/`: raw working logs, kept verbatim as provenance. They use the pre-restructure paths
+  (`holo-neurochir/...`, `jury_kit/...`); [docs/REPO_MAP.md](docs/REPO_MAP.md) maps them to the current layout.
+- Pre-registration and protocol files (`PREREG*.md`, `PROTOCOL.md`, `AMENDMENT*.md`).
 
-## Claim → evidence map
-| Claim | Status | Evidence (path) | How to check |
-|---|---|---|---|
-| 29/51 failures (57 %) are false "done"; success 66/119 (55.5 %) | measured | `holo-neurochir/paper/generated/num_osw_diag.tex`, paper §3 | read |
-| Holo self-judge: 35/66 detected, 97/202 wrongly rejected (268 screens, 90 tasks) | measured | `holo-neurochir/judge_bench/RESULT.json`, `REPORT.md`, `verif_study/responses.jsonl` | `python3 jury_kit/recount_judges.py` |
-| Feci Guard verifier: 45/66 detected, 21/202 wrongly rejected, gap +58 [+41, +74] | measured | `holo-neurochir/judge_bench/claude_responses.jsonl` | `python3 jury_kit/replay_guard.py` |
-| Merge vs original online: +1.94 [−4.3, +8.0], n=165 → no gain | measured | `jury_kit/results/scores.csv` | `python3 jury_kit/verify_results.py` |
-| AlphaEdit +2.2 [−13.3, +17.8] n=45; ExPO −1.5 [−8.9, +5.7] n=120 → no gain | measured | same | same |
-| Merged checkpoint rebuilt bit-for-bit from 3 pinned public models | measured (on an independent machine) | `jury_kit/expected_sha256.json`, `jury_kit/README.md` | `python3 jury_kit/rebuild_merge.py --check 2 --merged DIR` |
-| Guard repair: 5/18 vs 2/18 branches scored 1, of which 3 genuine repairs vs 0 (impress/8979838c succeeds without any action in all 4 branches), +16.7 [0, +44] | measured, **not distinguishable from 0** | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/repair/results.json` | read |
-| Guard + escalation to Holo4 vs Holo4 alone, replay of 9 recorded false successes × 2 branches: 11/18 vs 2/18 scored 1, +50 pts [+22, +78] (episode-cluster bootstrap) | measured in replay, significant; pre-registered (`PREREG.md`); 9 of 12 episodes kept by the pre-registered replay-validity filter (all 12: +33 [+4, +63]); not an online score gain | `holo-neurochir/rescue_bench/REPORT.md`, `RESULT.json`, `PREREG.md`, `MEASURED_REPAIRS_REVIEW.md` | read |
-| Guarded run online on the 120-task test split: false "done" 22.5 % → 10.8 %, −11.7 pts [−19.2, −4.2] (criterion formally met); score +1.6 [−4.4, +7.7] → no score gain claimed; B=8, C=4. Attribution: in 28 episodes the agent never answered and the Guard never ran (9 of the net drop of 14); where it answered (92 tasks) 18 → 13, not tested separately; on the 17 refused tasks 6 → 3 | measured online, pre-registered (`report/PREREG_ONLINE_GUARD.md`, analysis committed before results); **drop not attributable to the Guard** (see `ONLINE_GUARD_RESULT.md` "Attribution") | `jury_kit/results/online_guard_tasks.csv`, `holo-neurochir/report/ONLINE_GUARD_RESULT.md`, `.json` | `python3 jury_kit/verify_online_guard.py` |
-| Guard v2 (Opus + history) vs v1 on the held-out half, used once: detection +13.8 pts [+2.9, +30] (20/29 vs 16/29); false rejection +4.3 [−5, +15] (15/116 vs 10/116) | measured offline, not run online; target ≥ 80 % / ≤ 10 % not met | `holo-neurochir/feci_guard/RESULTS.md`, `feci_guard/v2/PROTOCOL.md`, `v2/runs/` | read |
-| "A verifier can be plugged into an agent loop with one call" | design property, tested on Holo-3.1-4B only | `feci_guard.py` docstring | read 61 lines |
-| End-to-end plumbing: refusal → escalation → re-check → official score | measured on 1 task (no efficacy claim) | `holo-neurochir/feci_guard/smoke/impress_550ce7e7_rescue_guard.md` | read |
-
-Not claimed anywhere: an OSWorld score gain from any weight edit or from the Guard (online score +1.6 [−4.4, +7.7]); that
-the Guard lowers the false "done" rate online (the fall from 22.5 % to 10.8 % comes mostly from episodes in which the
-Guard never ran; no seeded or neutral-verifier replication was run); a
-significant repair by Holo-3.1 alone (+16.7 [0, +44]); an online measure of the Holo4 escalation (significant in
-replay only); comparability of our absolute scores with H's published scores (our harness is more permissive on
-infeasible tasks).
-
-## Repository map
-- `README.md`: overview, results table, criteria → evidence. `docs/REPO_MAP.md`: one line per folder of
-  `holo-neurochir/` with status (RESULT / NEGATIVE / ABANDONED / IN PROGRESS / TOOLING / DEMO) and its source-of-truth file.
-- `docs/RESEARCH_SYSTEM.md`: how the research was done (agent team, compute, VMs, statistics), each number sourced to `path:line`.
-- `jury_kit/`: everything a judge can run (levels 1–3), with `results/scores.csv` and frozen `contexts/`.
-- `holo-neurochir/feci_guard/`: the Guard (verifier, decision rule, agent loop copy, repair and rescue runners, prereg, results).
-- `holo-neurochir/judge_bench/`, `verif_study/`: offline comparison of judges on 268 labelled final screens.
-- `holo-neurochir/paper/`: the paper (`main.pdf`, `neurips.pdf`), with every number generated from `data/` by `build.sh`.
-- `holo-neurochir/osworld/`: online evaluation (Modal serving, GitHub runner collection, live duel page).
-- `holo-neurochir/infra/`: GPU and Modal budget monitor `gpu_ctl.py`, built through the Devin API (Devin's cloud agent) in one session (10:51–11:05 UTC) **after** the
-  reported experiments, reviewed, running read-only and warn-only since 11:47 UTC. No reported number depends on it.
-  Evidence: `holo-neurochir/infra/DEVIN_SESSION.md`.
-- `holo-neurochir/holo/`, `scripts/`: harness and weight-edit code. `astra-*`, `moon-*`: weight-edit experiments, mostly negative.
-- `holo-neurochir/JOURNAL.md` and the root `LOG.md`: raw working logs of the agent team (French, chronological). They are not needed for review.
+## Where things are
+- `paper/`: sources (`sec/`, `fig/`, `shared/`, `neurips/`), `data/`, `figs/*.py`, `generated/`, PDFs. Read
+  [paper/README.md](paper/README.md) before changing a number.
+- `reproduce/`: CPU checks, checkpoint rebuild (`rebuild_merge.py`), decision probe (`probe_decision.py`),
+  per-task scores in `results/`, expected output.
+- `src/`: `feci_guard/` (the verifier and its agent loops), `holo/` (harness), `osworld/` (online evaluation),
+  `scripts/` (checkpoint builders).
+- `experiments/`: one folder per study with its protocol and report. Status of each:
+  [docs/REPO_MAP.md](docs/REPO_MAP.md).
 
 ## Things that look odd but are intended
-- Many folders hold negative results. They are kept on purpose, and `docs/REPO_MAP.md` gives each one's status.
-- Some scripts contain absolute paths of our server (`/home/orbit/...`, `~/osw/...`). They document what ran. The
-  jury-facing scripts (`jury_kit/*.py`, `jury_kit/quickstart.sh`) use relative paths only.
-- In `holo-neurochir/feci_guard/`, the v1 decision code (`feci_guard.py`, `verifier.py`, sha256 prefix `0af76fdb` recorded in every verdict) is **frozen**; v2 lives in separate files (`verifier_v2.py`, `v2/`).
-- The split called "reserve" in the paper is `confirm` in `scores.csv`.
-
-## If you are an agent asked to work on this repo
-Read `LOG.md` first. Do not edit `holo-neurochir/feci_guard/*.py`, results files or the paper sources
-without their owner. Keep `bash jury_kit/quickstart.sh` green.
+- Many folders hold negative results. They are kept on purpose and labelled in `docs/REPO_MAP.md`.
+- Scripts contain absolute paths of the machines they ran on (`/home/orbit/...`, `~/osw/...`, `/workspace/...`).
+  They document what ran. The scripts in `reproduce/` use relative paths only.
+- The split called "reserve" in the paper is `confirm` in `reproduce/results/scores.csv`.
+- Weight-edit folders were renamed from the agent code names used while the work ran (`astra-merge` became
+  `experiments/weight_edits/task_vector_merge`, and so on; the table is in
+  [experiments/weight_edits/README.md](experiments/weight_edits/README.md)). Reports inside them may still use the
+  old names.
+- Claims follow one rule: a gain is claimed only if the lower bound of the paired 95 % CI is above zero.
